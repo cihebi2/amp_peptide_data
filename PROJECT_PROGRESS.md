@@ -4264,6 +4264,9 @@ POST 处理 JSON-RPC，普通 GET 返回服务描述。该修复已经公网复�
 - 访问模式：`public`；
 - 部署源码 commit：
   `dc71a283954f86c90d1e133db1380d17bd9e8777`。
+- 公共安全投影、站点源码、API/MCP 脚本、文档和验证证据已同步到
+  `https://github.com/cihebi2/amp_peptide_data.git`；
+  公共快照 commit：`7fa2b29f78ef0b53412535cc5586b9fa449fb005`。
 
 证据目录：
 
