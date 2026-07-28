@@ -3854,11 +3854,11 @@ Primary evidence:
 
 - `https://github.com/cihebi2/amp_peptide_data`
 - Git commit `0ed51ecd37ef837196a488b41b3e6be18c2553a9`
-- `/tmp/amp_peptide_data_publish_20260728/README.md`
-- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/SNAPSHOT_MANIFEST.json`
-- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/compressed_large_files.json`
-- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/local_only_artifact_inventory_summary.json`
-- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/local_only_artifact_inventory.tsv.gz`
+- `/home/cihebi/抗菌肽/数据集/batch/amp_peptide_data_publish/README.md`
+- `/home/cihebi/抗菌肽/数据集/batch/amp_peptide_data_publish/repository_metadata/SNAPSHOT_MANIFEST.json`
+- `/home/cihebi/抗菌肽/数据集/batch/amp_peptide_data_publish/repository_metadata/compressed_large_files.json`
+- `/home/cihebi/抗菌肽/数据集/batch/amp_peptide_data_publish/repository_metadata/local_only_artifact_inventory_summary.json`
+- `/home/cihebi/抗菌肽/数据集/batch/amp_peptide_data_publish/repository_metadata/local_only_artifact_inventory.tsv.gz`
 
 ## Evidence Index
 
