@@ -2,14 +2,19 @@
 
 抗菌肽文献证据数据、审查记录、自动化审查流程与本地检索网站代码的可复现快照。
 
-## 当前权威数据
+## 当前版本与公开边界
 
-- `releases/amp_evidence_atlas_v1_rc2/`：当前 RC2 发布候选，是本仓库的数据权威层。
+- 内部数据权威版本已冻结为 `amp-evidence-atlas-v1.0`；由于来源授权仍未全部
+  关闭，完整 v1.0 不作为五库原始字段公共下载包发布。
+- `public_exports/amp_evidence_atlas_v1_0_public_safe/`：v1.0 的字段级
+  rights-filtered 公共投影，包含项目自产索引、统计、benchmark 和规范化 SQLite。
+- `releases/amp_evidence_atlas_v1_rc2/`：历史 RC2 快照，用于追溯，不再代表
+  当前公开服务口径。
 - `papers/`：逐论文的最终结构化审查结果，包括活性/毒性、数据库记录核验、机制证据和审查报告。
 - `reports/nar_resource_freeze_v1/`：NAR 资源冻结、统一口径、validation420 与人工核验状态。
 - `reports/`：数据库—文献冲突、质量检查、后续队列和数据审计结果。
 
-RC1 仅用于历史追溯；分析与网站默认应读取 RC2。
+RC1/RC2 仅用于历史追溯；生产网站默认读取公共安全 v1.0 投影。
 
 ## 审查流程
 
@@ -25,12 +30,17 @@ RC1 仅用于历史追溯；分析与网站默认应读取 RC2。
 
 ## 网站与接口
 
+- 生产门户：https://amp-evidence-atlas.daoyu7974.chatgpt.site
+- 分层 REST API：https://amp-evidence-atlas.daoyu7974.chatgpt.site/api/v1/schema/openapi.json
+- AI MCP：https://amp-evidence-atlas.daoyu7974.chatgpt.site/api/mcp
+- `atlas_public_site/`：生产门户、API 与 Streamable HTTP MCP 源码和测试。
 - `portal/portal_server.py`：本地数据网站。
 - `portal/mcp_server.py`：MCP 查询接口。
 - `portal/build_db.py`：从结构化数据重建 `portal/atlas.db`。
 - `portal/benchmark_protocol.md`：基准与数据使用边界。
 
-生成的 SQLite 数据库不直接提交，可通过构建脚本重建。
+本地完整 `portal/atlas.db` 不直接提交。公共安全
+`public_exports/.../atlas_public_safe.db` 是经过字段过滤和独立校验的例外。
 
 ## 大文件
 
@@ -75,4 +85,3 @@ GitHub 官方限制说明：
 - `docs/`：数据字典、执行计划、专题审计与项目路线图。
 
 发布或论文引用前，请以最新冻结 manifest 和独立 verifier 结果为准，不要把 `candidate`、`accepted_with_cautions` 或机器 fallback 等同于权威数据库入库。
-

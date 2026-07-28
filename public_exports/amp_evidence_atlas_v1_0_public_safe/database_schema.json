@@ -1,0 +1,86 @@
+{
+  "description": "Normalized, rights-filtered read model. It contains project-created indexes and aggregates only; it is not a mirror of source databases.",
+  "engine": "SQLite 3",
+  "excluded": [
+    "source-database raw records and copied source fields",
+    "row-level database-versus-paper comparisons",
+    "primary article full text and local file paths",
+    "DRAMP patent AMP content"
+  ],
+  "layers": [
+    {
+      "name": "system",
+      "purpose": "Release identity, provenance checksum and scope flags.",
+      "tables": [
+        "system_release"
+      ]
+    },
+    {
+      "name": "governance",
+      "purpose": "Per-source redistribution decisions and terms links.",
+      "tables": [
+        "governance_source_rights"
+      ]
+    },
+    {
+      "name": "catalog",
+      "purpose": "Derived paper and peptide discovery indexes.",
+      "tables": [
+        "catalog_paper",
+        "catalog_peptide",
+        "catalog_peptide_sequence",
+        "catalog_peptide_endpoint",
+        "catalog_peptide_target_example",
+        "catalog_peptide_evidence_tier",
+        "catalog_peptide_paper"
+      ]
+    },
+    {
+      "name": "evidence",
+      "purpose": "Aggregate audit outcomes; no row-level source comparison.",
+      "tables": [
+        "evidence_audit_aggregate",
+        "evidence_difference_category"
+      ]
+    },
+    {
+      "name": "evaluation",
+      "purpose": "Project-authored benchmark questions and answer keys.",
+      "tables": [
+        "evaluation_benchmark_item"
+      ]
+    },
+    {
+      "name": "api",
+      "purpose": "Stable read views used by API and AI/MCP clients.",
+      "views": [
+        "api_peptide_summary",
+        "api_paper_summary"
+      ]
+    }
+  ],
+  "public_safe": true,
+  "relationships": [
+    {
+      "cardinality": "many-to-one",
+      "from": "catalog_peptide_sequence.peptide_id",
+      "to": "catalog_peptide.peptide_id"
+    },
+    {
+      "cardinality": "many-to-one",
+      "from": "catalog_peptide_endpoint.peptide_id",
+      "to": "catalog_peptide.peptide_id"
+    },
+    {
+      "cardinality": "many-to-one",
+      "from": "catalog_peptide_paper.peptide_id",
+      "to": "catalog_peptide.peptide_id"
+    },
+    {
+      "cardinality": "many-to-one",
+      "from": "catalog_peptide_paper.paper_id",
+      "to": "catalog_paper.paper_id"
+    }
+  ],
+  "schema_version": "2.0"
+}

@@ -3963,3 +3963,320 @@ Use these files first:
 - 2026-07-06: Recorded AI-first work decision. Manual/human paper validation is deferred or delegated; immediate focus shifts to DBAASP/incremental data cleanup, portal/site completion, release-vs-portal reconciliation, automated QA, and reviewer-packet preparation.
 - 2026-07-05: Second-pass update after inspecting latest modified scripts/files. Added latest-modified project layer, explicit evidence-tier model, DBAASP pending-batch status and DOI-key defect, portal ingest contract and non-DBAASP boundary, human-review/backfill reconciliation gap, latest script/data risks, and refresh commands.
 - 2026-07-05: Created this living document after local folder investigation. Established RC2 as current release authority, documented RC1/RC2 drift, validation420 pause, pilot20 closure, portal/deepmine boundaries, and next maintenance tasks.
+
+---
+
+# 2026-07-28 17:50 CST — AMP Evidence Atlas v1.0 四项基础工作闭环
+
+## 本轮完成内容
+
+### 1. 唯一 v1.0 数据冻结
+
+- 正式版本：`amp-evidence-atlas-v1.0`
+- 完整论文 final artifact：1,471 篇
+- public-v1 候选论文：1,374 篇
+- 数据库审计行：139,259
+- 活性/毒性观察：115,184
+- 机制证据主张：4,774
+- 不可变负载清单 SHA-256：
+  `cb08afed8f53ae74591ca354a7d331541624a60d5019549e33c44bbd4ee99376`
+
+权威目录：
+`releases/amp_evidence_atlas_v1_0/`
+
+### 2. RC1/RC2、Portal 与 benchmark 口径统一
+
+- Portal 默认只载入 v1.0 的 `public_v1_included=true` 投影；
+- machine/recovered 增量默认排除；
+- Portal 当前为1,374篇、128,976条审计记录、108,761条活性/毒性观察、
+  4,508条机制主张、28,813条 `source_conflict`；
+- 40题 benchmark 明确为 pilot，并强制比较
+  `NO_RETRIEVAL`、`RAW_DB`、`ATLAS` 三组；
+- 删除“多 Agent 一致即人工金标准”和未经支持的历史准确率表述。
+
+分母合同：
+`docs/AMP_EVIDENCE_ATLAS_V1_0_DENOMINATOR_CONTRACT.md`
+
+### 3. 人工验证案例包
+
+- 已准备21个待人工核对案例；
+- 覆盖 APD6、CAMP、DBAASP、DRAMP、dbAMP；
+- 覆盖 `source_verified`、`source_conflict`、
+  `sequence_modified_not_normalized`、
+  `database_only_no_primary_source` 和 `unresolved_record`；
+- 所有人工标签字段保持空白，不能宣称已完成人工验证。
+
+案例目录：
+`reports/nar_resource_freeze_v1/manual_validation/v1_0_human_check_examples/`
+
+validation420 仍为软暂停：39/224篇有有效结果，覆盖114/420行，
+待人工核对185篇、306行。
+
+### 4. 来源版本与许可审查
+
+- 五库本地快照日期、版本解释、主文件、大小和 SHA-256 已固定；
+- DRAMP 普通/临床数据可按 CC BY 4.0 和署名条件使用，专利 AMP 需另行授权；
+- APD6、CAMP、dbAMP 未找到明确的整库公共再分发授权；
+- DBAASP 条款内部同时出现“可自由分发”和“不得向任何人分发”，需书面澄清；
+- 因此“许可审查”已完成，但“五库原始字段公共再分发许可”尚未完成；
+  v1.0 保持 `public_release_ready=false`。
+
+审查文件：
+
+- `releases/amp_evidence_atlas_v1_0/SOURCE_DATABASE_VERSIONS.tsv`
+- `releases/amp_evidence_atlas_v1_0/LICENSES.tsv`
+- `releases/amp_evidence_atlas_v1_0/governance/source_license_review.json`
+- `docs/AMP_EVIDENCE_ATLAS_V1_0_SOURCE_VERSION_AND_LICENSE_REVIEW.md`
+
+## 验证证据
+
+- 新增 fail-closed 验证器：
+  `scripts/validate_amp_evidence_atlas_v1_0_release.py`
+- 17/17 项检查通过；
+- 30/30 个发布包治理/数据文件 checksum 通过；
+- 22个不可变负载文件未改变；
+- 五个来源快照主文件 hash/大小全部匹配；
+- 40/40 benchmark `source_ref` 在 canonical Portal 中可解析；
+- 21/21 人工案例可回溯到 source final，人工字段全部为空。
+
+验证报告：
+`reports/amp_evidence_atlas_v1_0/validation_20260728_175025_CST.json`
+
+## 当前真实状态
+
+四项基础工作已经按要求完成；但项目仍不是公开 NAR 资源完成态。
+后续硬门槛仍是：
+
+1. 由人类完成分层盲审并统计错误率；
+2. 取得来源库书面授权，或完成公共导出的字段级 rights filter；
+3. 完成公共网站、API、下载服务的生产部署；
+4. 将 post-v1.0 严格候选增量放入下一版本，不得回写 v1.0 分母。
+
+---
+
+# 2026-07-28 18:18 CST — 公共安全字段过滤与网站/API生产部署
+
+## 本轮结果
+
+已完成可由 AI 自动完成的“来源权利治理 + 字段过滤 + 公共服务部署”：
+
+1. 建立 field-level rights filter；
+2. 生成 `amp-evidence-atlas-v1.0-public-safe-beta` 公共投影；
+3. 构建公共搜索网站；
+4. 构建只读、CORS-enabled JSON API 和 OpenAPI 3.1；
+5. 部署 Sites version 1 到生产环境；
+6. 将访问模式由初始 owner-only 改为 `public`；
+7. 从未登录公网环境完成在线验证。
+
+生产地址：
+
+<https://amp-evidence-atlas.daoyu7974.chatgpt.site>
+
+## 字段过滤范围
+
+公共服务包含：
+
+- 1,374篇 public-v1 论文的项目审核/计数索引；
+- 9,263个派生肽摘要；
+- 108,761条活性观察、128,976条数据库审计记录、
+  4,508条机制主张和28,813条冲突状态的聚合统计；
+- 40题项目自建 grounding benchmark；
+- 肽名、序列、paper ID、DOI 搜索。
+
+公共服务剔除：
+
+- 五库原始记录镜像；
+- `source_id`、`source_table`、数据库记录名、数据库 endpoint/value/unit；
+- 逐行数据库—原文值对照；
+- 论文全文、PDF、表格、图片和原始本地路径；
+- mechanism 原文主张文本；
+- DRAMP patent AMP 内容。
+
+因此公共 beta 的 `public_release_ready=true` 只表示**受限公共投影可发布**；
+完整内部 v1.0 包继续保持 `public_release_ready=false`。
+
+## 授权状态
+
+第三方书面授权不能由 AI 自行授予。当前：
+
+- DRAMP 普通/临床数据按 CC BY 4.0 条件处理，专利 AMP 排除；
+- APD6、CAMP、DBAASP、dbAMP 仍待数据库团队书面回复；
+- 已建立五库授权追踪表和可发送的英文请求模板；
+- 书面授权到达前，公共 fallback 始终是剔除复制字段。
+
+授权治理文件：
+
+- `releases/amp_evidence_atlas_v1_0/SOURCE_PERMISSION_TRACKER.tsv`
+- `docs/AMP_EVIDENCE_ATLAS_SOURCE_PERMISSION_REQUEST_PACK.md`
+
+## 网站/API
+
+主要接口：
+
+- `/healthz`
+- `/api/v1/release`
+- `/api/v1/stats`
+- `/api/v1/search?q=LL-37`
+- `/api/v1/peptides`
+- `/api/v1/papers`
+- `/api/v1/audit-summary`
+- `/api/v1/benchmark`
+- `/api/v1/rights`
+- `/api/v1/openapi.json`
+
+站点源码：
+`atlas_public_site/`
+
+公共安全投影：
+`public_exports/amp_evidence_atlas_v1_0_public_safe/`
+
+## 验证证据
+
+- 公共投影字段过滤：6/6通过；
+- v1.0 数据/治理验证：18/18通过；
+- 公网首页、health、stats、search、rights、OpenAPI、benchmark：7/7通过；
+- OpenAPI 路径：12；
+- `LL-37` 公网搜索返回10个肽命中；
+- 生产截图 1200×750 已人工目视检查，无布局阻断；
+- Sites 部署状态：`succeeded`；
+- Sites access mode：`public`；
+- 部署源码 commit：
+  `ad06c6c3222ed41765925915d42b548ae16a6d4e`。
+
+部署证据目录：
+`reports/amp_evidence_atlas_v1_0/public_deployment_20260728_181508_CST/`
+
+## 仍然没有虚假宣称的内容
+
+- 没有宣称 APD6、CAMP、DBAASP、dbAMP 已书面授权；
+- 没有把公共聚合 beta 冒充完整 v1.0 下载包；
+- 没有把 AI 多 worker 一致当作人工金标准；
+- 没有把 `source_conflict` 自动称为人工确认的数据库错误。
+
+---
+
+# 2026-07-28 19:05 CST — 公共门户、分层 API、AI MCP 与数据库层级 v2
+
+## 本轮完成结果
+
+### 1. 页面由单页展示升级为完整资源门户
+
+生产站点仍使用原地址：
+
+<https://amp-evidence-atlas.daoyu7974.chatgpt.site>
+
+当前页面已补齐：
+
+- 数据范围与版本总览；
+- 六层公共安全数据库模型；
+- 肽与论文的搜索、筛选、排序和浏览；
+- 五库审查状态与差异类别的聚合可视化；
+- 40题 grounding benchmark 浏览；
+- REST API 文档和在线调用控制台；
+- MCP 工具说明、客户端配置、cURL 和在线工具调用；
+- 来源授权、字段排除和发布边界。
+
+生产首页 1200×750 截图已目视检查，导航、主标题、操作入口和范围提示均无
+布局阻断。
+
+### 2. REST API 改为分层结构
+
+新的权威路由层级为：
+
+- `/api/v1/system/*`
+- `/api/v1/catalog/*`
+- `/api/v1/evidence/*`
+- `/api/v1/evaluation/*`
+- `/api/v1/governance/*`
+- `/api/v1/schema/*`
+
+成功响应统一使用 `data / meta / links`，分页信息进入 `meta.pagination`；
+错误响应统一使用 `error.code / error.message`。肽和论文接口支持查询、条件过滤、
+排序、limit/offset；OpenAPI 3.1 当前描述14条路径。旧扁平接口继续保留，避免
+破坏现有调用。
+
+所有 GET 接口支持 CORS、ETag、HEAD 和公共缓存。
+
+### 3. AI 可通过远程 MCP 直接调用
+
+生产 MCP 地址：
+
+<https://amp-evidence-atlas.daoyu7974.chatgpt.site/api/mcp>
+
+提供10个只读工具：
+
+1. `atlas.describe`
+2. `atlas.search`
+3. `atlas.list_peptides`
+4. `atlas.get_peptide`
+5. `atlas.list_papers`
+6. `atlas.get_paper`
+7. `atlas.get_audit_summary`
+8. `atlas.get_benchmark`
+9. `atlas.get_rights_policy`
+10. `atlas.get_database_schema`
+
+MCP 同时支持：
+
+- `2025-11-25` 的 `initialize`、`notifications/initialized`、
+  `tools/list` 和 `tools/call`；
+- `2026-07-28` 的无状态 `server/discover`、`Mcp-Method`、
+  `Mcp-Name`、结果类型、缓存提示和响应级服务器元数据。
+
+所有工具都有关闭额外字段的 JSON Schema、只读/非破坏注解、输入长度和分页
+上限。服务不创建 session，不提供 SQL 或写入工具。
+
+公网验证时发现 Sites 边缘层会在 Worker 前拦截 `/mcp` 和
+`/.well-known/*`。最终采用标准允许的自定义单端点 `/api/mcp`：
+POST 处理 JSON-RPC，普通 GET 返回服务描述。该修复已经公网复测通过。
+
+### 4. 公共数据库改为六层规范化 SQLite
+
+新增：
+
+`public_exports/amp_evidence_atlas_v1_0_public_safe/atlas_public_safe.db`
+
+层级：
+
+1. `system`：版本、校验和、范围；
+2. `governance`：来源授权与公开决策；
+3. `catalog`：论文、肽、序列、endpoint、evidence tier 和论文—肽关系；
+4. `evidence`：审查状态与差异类别聚合；
+5. `evaluation`：benchmark；
+6. `api`：稳定读取视图。
+
+实际数据库包含12张表、2个视图，大小12,288,000 bytes；含1,374篇论文、
+9,263个肽、1,526条公开派生序列、10,283条肽—论文关系和40个 benchmark
+条目。审查聚合计数为128,976，与 Portal 分母一致。
+
+数据库启用主键、外键、计数约束和检索索引；不存在源数据库原始记录表、
+逐行数据库—论文对照表或被禁止字段。
+
+## 验证证据
+
+- 公共投影与 SQLite rights filter：11/11通过；
+- 内部 v1.0 不可变性与治理：18/18通过；
+- 本地站点构建和 API/MCP 协议测试：通过；
+- 公网门户、API、MCP 双版本和真实 `tools/call`：15/15通过；
+- SQLite `integrity_check`、`foreign_key_check`：通过；
+- Sites version：4；
+- Sites 部署状态：`succeeded`；
+- 访问模式：`public`；
+- 部署源码 commit：
+  `dc71a283954f86c90d1e133db1380d17bd9e8777`。
+
+证据目录：
+
+`reports/amp_evidence_atlas_v1_0/public_api_mcp_v2_20260728_190510_CST/`
+
+设计与调用文档：
+
+`docs/AMP_EVIDENCE_ATLAS_PUBLIC_API_MCP_V2.md`
+
+## 仍未改变的项目边界
+
+- 完整内部 v1.0 继续 `public_release_ready=false`；
+- 分层人工验证仍未闭环；
+- APD6、CAMP、DBAASP、dbAMP 和 DRAMP 专利肽的授权跟进仍未关闭；
+- `source_conflict` 仍然不能自动称为人工确认的数据库错误；
+- 公共 MCP/API 是受限只读投影，不是五库原始数据下载服务。
