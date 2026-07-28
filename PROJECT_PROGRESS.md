@@ -4283,3 +4283,65 @@ POST 处理 JSON-RPC，普通 GET 返回服务描述。该修复已经公网复�
 - APD6、CAMP、DBAASP、dbAMP 和 DRAMP 专利肽的授权跟进仍未关闭；
 - `source_conflict` 仍然不能自动称为人工确认的数据库错误；
 - 公共 MCP/API 是受限只读投影，不是五库原始数据下载服务。
+
+---
+
+# 2026-07-28 21:03 CST — GitHub 公开安全全量同步
+
+## 同步结果
+
+已将当前所有**可公开、可复现且不处于活动写入状态**的项目内容同步到：
+
+<https://github.com/cihebi2/amp_peptide_data>
+
+分支：`main`
+
+本轮内容提交：
+`6b254b704d939323527eecdc707555cb5fec087f`
+
+本轮补齐17个源文件，并连同GitHub包装元数据形成20个变更文件，主要包括：
+
+- v1.0 冻结、治理、人工核验样例和发布验证脚本；
+- 本地 Portal 的版本元数据、MCP、数据库构建和页面口径更新；
+- 40题 grounding benchmark 与协议更新；
+- v1.0 的17/18和18/18历史验证摘要；
+- 首次公共部署记录与字段过滤、公网 smoke test 证据；
+- 时间戳同步报告和新版仓库快照清单。
+
+公共安全投影六个文件和生产网站源码在同步前已存在于GitHub发布副本，本轮重新
+逐文件校验：公共投影 checksum 全部一致，网站10个必要文件0个不一致。
+
+## 同步边界
+
+“所有内容”按公开发布边界执行，不把以下材料写入公共Git历史：
+
+- 账号凭据、token、`.env`、`.omx`、锁和本机运行状态；
+- 论文PDF、补充材料二进制、图片、OCR/全文派生表面和OA缓存；
+- 未获明确再分发许可的APD6、CAMP、DBAASP、dbAMP原始镜像/复制字段及
+  DRAMP专利肽内容；
+- `public_release_ready=false` 的完整内部v1.0 TSV和可重建的
+  `portal/atlas.db`；
+- 正在运行的严格论文队列中的worker stdout/stderr、session日志、重做工作区和
+  非终态packet。
+
+排除不是遗漏。原因、活动论文边界、选中文件、公开投影checksum和验证结果均记录于：
+
+`repository_metadata/SYNC_REPORT_20260728T210048_CST.json`
+
+## 提交前与远端验证
+
+- 17/17选中源文件与发布副本SHA-256一致；
+- 公开安全投影：11/11通过；
+- 内部v1.0冻结与治理：18/18通过，并正确保持
+  `public_release_ready=false`；
+- 生产REST API/MCP：15/15通过；
+- 网站build、Portal/API/MCP/security验证：通过；
+- 公共SQLite：`integrity_check=ok`，12张表、2个视图；
+- changed JSON/JSONL：0解析失败；
+- 高风险凭据扫描：0命中；
+- changed文件本机绝对路径扫描：0命中；
+- staged最大blob：46,570 bytes，0个超过90 MiB；
+- 推送后远端`main`已核对等于内容提交。
+
+严格200篇队列在本次同步观察点仍为9篇终态、191篇非终态，没有新的终态冻结论文
+可发布；活动中间结果没有被冒充为最终数据。
