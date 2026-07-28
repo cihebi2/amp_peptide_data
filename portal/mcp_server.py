@@ -76,11 +76,23 @@ def rows_to_dicts(cur, limit=None):
     return out
 
 
+def release_metadata():
+    try:
+        return {r["k"]: r["v"] for r in db().execute("SELECT k,v FROM metadata")}
+    except sqlite3.OperationalError:
+        return {"release_id": "unknown-release", "portal_scope": "unknown"}
+
+
 # ------------------------------------------------------------------ tool implementations
 def t_get_stats(_):
     s = {r["k"]: int(r["v"]) for r in db().execute("SELECT k,v FROM stats")}
+    meta = release_metadata()
     return {
-        "release": "amp_evidence_atlas_v1_rc2",
+        "release": meta.get("release_id"),
+        "release_version": meta.get("release_version"),
+        "release_status": meta.get("release_status"),
+        "portal_scope": meta.get("portal_scope"),
+        "experimental_increments_included": meta.get("experimental_increments_included"),
         "papers": s.get("papers"), "activity_observations": s.get("activity"),
         "database_audit_records": s.get("audit"), "source_conflicts": s.get("conflicts_audit"),
         "human_confirmed_errors": s.get("human_confirmed"),
@@ -88,11 +100,13 @@ def t_get_stats(_):
         "machine_extracted_activity": s.get("machine_activity"),
         "mechanism_claims": s.get("mechanism"), "distinct_peptides": s.get("peptides"),
         "distinct_sequences": s.get("sequences"),
-        "evidence_tiers": {"atlas_core": "source-verified core (human-reviewed subset at ~99% precision)",
-                           "dual_model_recovered": "recovered from excluded papers, claude+codex consensus, ~93% spot-check precision",
-                           "machine_extracted": "from never-processed downloaded papers (PDF+HTML), claude+codex union, ~100% source-traceable in spot-checks"},
-        "description": "A source-verified atlas of antimicrobial-peptide activity evidence; "
-                       "every value is checked against the primary literature and labeled with an evidence tier.",
+        "evidence_tiers": {
+            "atlas_core": "source-reviewed canonical v1.0 records; stratified human validation is incomplete",
+            "dual_model_recovered": "post-freeze experimental increment; excluded from canonical v1.0 by default",
+            "machine_extracted": "post-freeze experimental increment; excluded from canonical v1.0 by default",
+        },
+        "description": "A source-traceable atlas of antimicrobial-peptide activity evidence; "
+                       "records retain audit status and primary-source locators. AI agreement is not a human gold standard.",
     }
 
 

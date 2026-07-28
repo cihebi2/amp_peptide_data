@@ -4,19 +4,12 @@
 Loads only public_v1_included rows. Builds FTS5 indexes for peptide/sequence/DOI search.
 Run:  python3 build_db.py [--release <dir>] [--out atlas.db]
 """
-import csv, json, sqlite3, sys, argparse, time
+import csv, json, sqlite3, sys, argparse, time, hashlib
 from pathlib import Path
 
 csv.field_size_limit(10**9)
 HERE = Path(__file__).resolve().parent
-DEFAULT_RELEASE = HERE.parent / "releases" / "amp_evidence_atlas_v1_rc2"
-
-
-# publication_grade* statuses were wrongly excluded from the public set by an upstream whitelist
-# bug (fixed in scripts/build_nar_resource_freeze_v1.py). Until the release is rebuilt to rc2,
-# recover those higher-grade papers/records here so the portal reflects the fix.
-_ACCEPT_STATUS = {"accepted_clean", "accepted", "accepted_with_cautions",
-                  "publication_grade", "publication_grade_ready", "publication_grade_with_cautions"}
+DEFAULT_RELEASE = HERE.parent / "releases" / "amp_evidence_atlas_v1_0"
 
 
 def _truthy(v):
@@ -24,9 +17,8 @@ def _truthy(v):
 
 
 def pub(r):
-    if _truthy(r.get("public_v1_included", "")):
-        return True
-    return _truthy(r.get("publication_grade", "")) and (r.get("review_status", "") or "").strip() in _ACCEPT_STATUS
+    """Use the frozen release inclusion flag without portal-side recovery rules."""
+    return _truthy(r.get("public_v1_included", ""))
 
 
 def rows(path, want_public=True):
@@ -45,13 +37,46 @@ def col(r, *names):
     return ""
 
 
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def verify_frozen_payload(release):
+    checksums = release / "payload_checksums.txt"
+    if not checksums.exists():
+        return
+    failures = []
+    for line in checksums.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        expected, relative = line.split(maxsplit=1)
+        target = release / relative.strip()
+        if not target.is_file():
+            failures.append(f"missing:{relative.strip()}")
+        elif sha256_file(target) != expected:
+            failures.append(f"sha256:{relative.strip()}")
+    if failures:
+        raise RuntimeError("frozen payload verification failed: " + ", ".join(failures))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--release", type=Path, default=DEFAULT_RELEASE)
     ap.add_argument("--out", type=Path, default=HERE / "atlas.db")
+    ap.add_argument(
+        "--include-experimental-increments",
+        action="store_true",
+        help="Opt in to recovered/machine-extracted post-freeze records. Never use for canonical v1.0 counts.",
+    )
     args = ap.parse_args()
     rel, out = args.release, args.out
     assert rel.exists(), f"release dir missing: {rel}"
+    verify_frozen_payload(rel)
+    release_manifest = json.loads((rel / "release_manifest.json").read_text(encoding="utf-8"))
     if out.exists():
         out.unlink()
     t0 = time.time()
@@ -77,7 +102,23 @@ def main():
     CREATE TABLE mechanism(mechanism_claim_id TEXT, paper_id TEXT, doi TEXT,
         claim_text TEXT, evidence_class TEXT, direct_assay_types TEXT, limitations TEXT);
     CREATE TABLE figures(paper_id TEXT, label TEXT, figure_index TEXT, caption TEXT, locator TEXT);
+    CREATE TABLE metadata(k TEXT PRIMARY KEY, v TEXT);
     """)
+    metadata = {
+        "release_id": release_manifest.get("release_id", rel.name),
+        "release_version": release_manifest.get("release_version", ""),
+        "release_status": release_manifest.get("status", ""),
+        "release_directory": rel.name,
+        "payload_checksum_manifest_sha256": release_manifest.get(
+            "payload_checksum_manifest_sha256", ""
+        ),
+        "portal_scope": "public_v1_included_only",
+        "experimental_increments_included": str(
+            args.include_experimental_increments
+        ).lower(),
+    }
+    db.executemany("INSERT INTO metadata(k,v) VALUES(?,?)", metadata.items())
+    db.commit()
 
     def load(name, table, cols, mapper):
         path = rel / name
@@ -134,7 +175,11 @@ def main():
 
     # dual-model-recovered activity records from excluded papers (evidence_tier=dual_model_recovered).
     # Only approved (dual-consensus supported) rows with a real peptide identity; ~93% spot-check precision.
-    rec_tsv = HERE.parent / "pipeline_v2" / "deepmine" / "recovered_approved.tsv"
+    rec_tsv = (
+        HERE.parent / "pipeline_v2" / "deepmine" / "recovered_approved.tsv"
+        if args.include_experimental_increments
+        else HERE / ".experimental_increments_disabled"
+    )
     n_rec = 0
     if rec_tsv.exists():
         _JUNK = {"mic", "mbc", "ic50", "ec50", "hc50", "cc50", "mbec", "mbic", "fici", "ki", "kd", "ec90",
@@ -171,10 +216,17 @@ def main():
     n_mx = 0
     mx_have = {r[0] for r in db.execute("SELECT paper_id FROM papers")}
     mx_newp = {}
-    for mx_tsv in (HERE.parent / "pipeline_v2" / "deepmine" / "newpapers_extracted.tsv",
-                   HERE.parent / "pipeline_v2" / "deepmine" / "supphtml_extracted.tsv",
-                   HERE.parent / "pipeline_v2" / "deepmine" / "docxocr_extracted.tsv",
-                   HERE.parent / "pipeline_v2" / "deepmine" / "hardcases_extracted.tsv"):
+    mx_sources = (
+        (
+            HERE.parent / "pipeline_v2" / "deepmine" / "newpapers_extracted.tsv",
+            HERE.parent / "pipeline_v2" / "deepmine" / "supphtml_extracted.tsv",
+            HERE.parent / "pipeline_v2" / "deepmine" / "docxocr_extracted.tsv",
+            HERE.parent / "pipeline_v2" / "deepmine" / "hardcases_extracted.tsv",
+        )
+        if args.include_experimental_increments
+        else ()
+    )
+    for mx_tsv in mx_sources:
         if not mx_tsv.exists():
             continue
         batch = []
@@ -201,7 +253,11 @@ def main():
         print(f"  machine     {n_mx:7d} activity rows (machine_extracted tier; +{len(mx_newp)} papers)")
 
     # machine-extracted mechanism claims from the new papers → mechanism table (id suffixed :mx).
-    mech_tsv = HERE.parent / "pipeline_v2" / "deepmine" / "mechanism_extracted.tsv"
+    mech_tsv = (
+        HERE.parent / "pipeline_v2" / "deepmine" / "mechanism_extracted.tsv"
+        if args.include_experimental_increments
+        else HERE / ".experimental_increments_disabled"
+    )
     n_mech_mx = 0
     if mech_tsv.exists():
         mrows = []

@@ -554,7 +554,7 @@ def write_licenses(outdir: Path) -> int:
 def write_readme(outdir: Path, manifest: dict[str, Any]) -> None:
     scope = manifest["source_freeze_summary"]["scope"]
     lines = [
-        "# AMP Evidence Atlas v1 RC1 Release Package",
+        "# AMP Evidence Atlas v1 RC2 Release Package",
         "",
         f"Release id: `{manifest['release_id']}`",
         f"Generated at: `{manifest['generated_at']}`",
@@ -604,8 +604,8 @@ def write_readme(outdir: Path, manifest: dict[str, Any]) -> None:
             "Validate with:",
             "",
             "```bash",
-            "python -m json.tool releases/amp_evidence_atlas_v1_rc1/release_manifest.json >/dev/null",
-            "(cd releases/amp_evidence_atlas_v1_rc1 && sha256sum -c checksums.txt)",
+            "python -m json.tool releases/amp_evidence_atlas_v1_rc2/release_manifest.json >/dev/null",
+            "(cd releases/amp_evidence_atlas_v1_rc2 && sha256sum -c checksums.txt)",
             "```",
             "",
         ]

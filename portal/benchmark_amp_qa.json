@@ -1,14 +1,14 @@
 {
-  "benchmark": "AMP Evidence Atlas Grounding Benchmark (v1)",
-  "description": "40 factual QA items with ground truth traceable to the AMP Evidence Atlas (atlas.db). Designed to measure whether serving a source-verified AMP database to an LLM via MCP reduces hallucination and improves factual accuracy versus the same LLM answering from parametric memory alone.",
+  "benchmark": "AMP Evidence Atlas Grounding Benchmark (v1.0 pilot)",
+  "description": "40 source-traceable factual QA pilot items for comparing no retrieval, raw-database retrieval, and AMP Evidence Atlas retrieval. The pilot measures factual accuracy, abstention, and recognition of recorded database–primary-source conflicts; it does not itself establish Atlas curation accuracy.",
   "n_items": 40,
   "categories": {
     "activity_value": "specific peptide activity values (MIC/CC50) traceable to a paper_id",
-    "database_error_awareness": "questions whose answer is a known database-vs-primary-source disagreement (audit.status='source_conflict')",
+    "database_error_awareness": "questions whose answer concerns a recorded database-vs-primary-source disagreement (audit.status='source_conflict'); conflict is not automatically a confirmed database error",
     "sequence_fact": "amino-acid sequence facts traceable to a paper_id",
     "target_organism_fact": "target/organism/strain/Gram-status facts traceable to a paper_id"
   },
-  "provenance": "All ground-truth values were queried read-only from portal/atlas.db (tables: papers, activity, audit, figures). Each source_ref is a resolvable paper_id or audit_record_id.",
+  "provenance": "Ground truths are traceable to the frozen AMP Evidence Atlas v1.0 public portal projection. Each source_ref must resolve to a paper_id or audit_record_id; conflict items use audit_record_id.",
   "items": [
     {
       "id": "amp-001",
@@ -16,7 +16,7 @@
       "question": "In the study reported under paper doi__10.1002_advs.202205301, what is the MIC of the peptide KTA (sequence RIKTATWRLALRWLKL) against Escherichia coli O157:H7 ATCC 35150?",
       "ground_truth": "2.5 umol/L (2.5 µM).",
       "source_ref": "doi__10.1002_advs.202205301",
-      "why_hard": "KTA is a novel engineered chickpea-derived peptide (FCLAP series) not in any pretraining corpus; an ungrounded model has no stored value and will fabricate a plausible single-digit MIC."
+      "why_hard": "KTA is an engineered FCLAP-series peptide and the exact strain-specific value is source-specific; an unaided model may guess a plausible MIC instead of abstaining."
     },
     {
       "id": "amp-002",
@@ -24,7 +24,7 @@
       "question": "What MIC did KTR (RIKTRTWRLALRWLKL) show against Klebsiella pneumoniae ATCC 13883 in paper doi__10.1002_advs.202205301?",
       "ground_truth": "2.4 umol/L (2.4 µM).",
       "source_ref": "doi__10.1002_advs.202205301",
-      "why_hard": "Engineered analog with a strain-specific value; the model cannot distinguish KTR from sibling analogs KTA/RI/RT and will guess."
+      "why_hard": "Engineered analog with a strain-specific value that is easy to confuse with sibling analogs KTA/RI/RT without source retrieval."
     },
     {
       "id": "amp-003",
@@ -32,7 +32,7 @@
       "question": "In paper doi__10.1016_j.csbj.2024.05.020, what is the MIC of TS-CATH (KRFKKFFKKIKKSVKKRVKKLFKKPRVIPISIPF) against Escherichia coli ATCC 25922?",
       "ground_truth": "4 µg/mL.",
       "source_ref": "doi__10.1016_j.csbj.2024.05.020",
-      "why_hard": "TS-CATH is a recently designed cathelicidin hybrid; exact assay value is paper-specific and not memorized."
+      "why_hard": "TS-CATH is a designed cathelicidin hybrid; the exact assay value is paper-specific and should be retrieved rather than assumed."
     },
     {
       "id": "amp-004",
@@ -80,7 +80,7 @@
       "question": "In paper doi__10.1021_acsomega.5c07214, what is the MIC of Onc19 (VDKPPYLPRPRPPRRIYNR) against Escherichia coli MRE600?",
       "ground_truth": "2 µg/mL.",
       "source_ref": "doi__10.1021_acsomega.5c07214",
-      "why_hard": "Onc19 is an oncocin-derived proline-rich analog tested on an unusual E. coli MRE600 strain; the model cannot recall the strain-specific MIC."
+      "why_hard": "Onc19 is an oncocin-derived proline-rich analog tested on E. coli MRE600; the strain-specific MIC is difficult to answer reliably without the paper."
     },
     {
       "id": "amp-010",
@@ -120,7 +120,7 @@
       "question": "DBAASP reports MIC 4 µg/mL for Polymyxin F379 against Acinetobacter baumannii FADDI-AB030 (paper doi__10.1038_s41467-022-29234-3). Does the primary source agree?",
       "ground_truth": "No. Recorded source_conflict: primary XML Table 1 reports 2 µg/mL. The database over-states the MIC 2-fold.",
       "source_ref": "doi__10.1038_s41467-022-29234-3:database_audit:198",
-      "why_hard": "The discrepancy is small (2 vs 4 µg/mL) and only detectable by consulting the primary table; an ungrounded model cannot flag it."
+      "why_hard": "The discrepancy is small (2 vs 4 µg/mL) and requires consulting the primary table or its audit record."
     },
     {
       "id": "amp-015",
@@ -152,7 +152,7 @@
       "question": "DBAASP records MIC 3.7 µM for the peptide in paper doi__10.1039_d4md00383g against its matched target. Does the primary source agree?",
       "ground_truth": "No. Recorded source_conflict: the primary Table 2 value is 4.1 (µM), not 3.7.",
       "source_ref": "doi__10.1039_d4md00383g:database_audit:102",
-      "why_hard": "Close-but-wrong numeric database entries cannot be caught without the source table; ungrounded answers will restate 3.7."
+      "why_hard": "Close numeric disagreements are difficult to detect without the source table; a raw-database answer may restate 3.7."
     },
     {
       "id": "amp-019",
@@ -184,7 +184,7 @@
       "question": "DBAASP reports MIC 4000 µM for the peptide FELPLGAG in paper doi__10.1016_j.psj.2023.102695. Is the peptide identity/value consistent with the primary source?",
       "ground_truth": "Partly, but it is a preserved source_conflict: primary Table 4 and DBAASP use FELPLGAG (MIC 4 mmol/L, i.e. 4000 µM), whereas primary Table 3 lists the LC-MS plausible peptide as FELPTGAGL. The sequence identity conflicts across the paper's own tables and no normalization was applied.",
       "source_ref": "doi__10.1016_j.psj.2023.102695:database_audit:5",
-      "why_hard": "The conflict is an internal sequence-identity ambiguity (FELPLGAG vs FELPTGAGL); an ungrounded model cannot know the paper itself is inconsistent."
+      "why_hard": "The conflict is an internal sequence-identity ambiguity (FELPLGAG vs FELPTGAGL) that requires source-level inspection."
     },
     {
       "id": "amp-023",
@@ -216,7 +216,7 @@
       "question": "DBAASP's note says a peptide in paper doi__10.1021_acsomega.4c09054 is 'not active up to 32 µg/mL' (hemolytic/cytotoxic). Does that match the primary-source table?",
       "ground_truth": "No. Recorded source_conflict: the primary-source table records the value as >32 µg/mL. The database's 'not active/NA' phrasing conflicts with the source's explicit >32 µg/mL entry.",
       "source_ref": "doi__10.1021_acsomega.4c09054:database_audit:5",
-      "why_hard": "Free-text 'NA/not active' vs a bounded numeric '>32' is a qualitative-vs-quantitative mismatch models cannot detect without the source."
+      "why_hard": "Free-text 'NA/not active' vs a bounded numeric '>32' is a qualitative-vs-quantitative mismatch requiring the source or audit record."
     },
     {
       "id": "amp-027",
@@ -232,7 +232,7 @@
       "question": "What is the amino-acid sequence of TS-CATH as reported in paper doi__10.1016_j.csbj.2024.05.020?",
       "ground_truth": "KRFKKFFKKIKKSVKKRVKKLFKKPRVIPISIPF.",
       "source_ref": "doi__10.1016_j.csbj.2024.05.020",
-      "why_hard": "TS-CATH is a novel cathelicidin design; the long lysine/arginine-rich sequence cannot be recalled and errors compound over 34 residues."
+      "why_hard": "TS-CATH has a long lysine/arginine-rich sequence for which exact residue-level retrieval is preferable to recall."
     },
     {
       "id": "amp-029",
@@ -296,7 +296,7 @@
       "question": "In paper doi__10.1016_j.jare.2025.01.029, what is the target organism (with strain) for the reported sC184b MIC of 6.25 µM?",
       "ground_truth": "Bacillus subtilis ATCC 6633 (Gram-positive).",
       "source_ref": "doi__10.1016_j.jare.2025.01.029",
-      "why_hard": "Strain-level target identity for a novel peptide's specific assay is not memorizable; the model cannot tie 6.25 µM to B. subtilis ATCC 6633."
+      "why_hard": "Strain-level target identity for this peptide-specific assay is source-specific and easy to confuse without retrieval."
     },
     {
       "id": "amp-037",
@@ -304,7 +304,7 @@
       "question": "What organism and strain was arenicin-3 tested against for its 0.5 µg/mL MIC in paper doi__10.1021_acsinfecdis.6b00045, and what is its Gram status?",
       "ground_truth": "Escherichia coli ATCC 25922, a Gram-negative bacterium.",
       "source_ref": "doi__10.1021_acsinfecdis.6b00045",
-      "why_hard": "The model may recall arenicin-3 as broad-spectrum but cannot pin the 0.5 µg/mL value to E. coli ATCC 25922 specifically."
+      "why_hard": "General knowledge that arenicin-3 is broad-spectrum does not establish this paper-specific strain/value pairing."
     },
     {
       "id": "amp-038",
@@ -328,7 +328,14 @@
       "question": "In paper doi__10.1021_acsinfecdis.3c00421, against which E. coli strain is peptide ln65's MIC of 4 µg/mL reported?",
       "ground_truth": "Escherichia coli W3110.",
       "source_ref": "doi__10.1021_acsinfecdis.3c00421",
-      "why_hard": "E. coli W3110 is a less common lab strain, and ln65 is a designed peptide; the strain-specific value cannot be recalled and may be confused with the ln65 PAO1 value (3 µg/mL) from a sibling paper."
+      "why_hard": "E. coli W3110 is a less common lab strain, and the ln65 assay may be confused with the PAO1 value (3 µg/mL) from a sibling paper without retrieval."
     }
+  ],
+  "benchmark_status": "pilot_not_load_bearing_for_resource_claims",
+  "release_id": "amp-evidence-atlas-v1.0",
+  "required_conditions": [
+    "NO_RETRIEVAL",
+    "RAW_DB",
+    "ATLAS"
   ]
 }

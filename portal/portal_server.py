@@ -15,7 +15,6 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent
 DB_PATH = os.environ.get("ATLAS_DB", str(BASE / "atlas.db"))
 PAPERS_DIR = Path(os.environ.get("PAPERS_DIR", str(BASE / "papers")))
-RELEASE = "amp_evidence_atlas_v1_rc2"
 PAGE_SIZE = 50
 
 
@@ -67,6 +66,17 @@ def db():
 
 def stats():
     return {r["k"]: int(r["v"]) for r in db().execute("SELECT k,v FROM stats")}
+
+
+def metadata():
+    try:
+        return {r["k"]: r["v"] for r in db().execute("SELECT k,v FROM metadata")}
+    except sqlite3.OperationalError:
+        return {"release_id": "unknown-release", "portal_scope": "unknown"}
+
+
+def release_id():
+    return metadata().get("release_id", "unknown-release")
 
 
 def e(s):
@@ -166,10 +176,10 @@ def layout(title, body, q=""):
  </nav></div></header>
 {body}
 <footer>
- <b>AMP Evidence Atlas</b> — release {e(RELEASE)} ·
+ <b>AMP Evidence Atlas</b> — release {e(release_id())} ·
  {fmt_num(st['activity'])} activity observations · {fmt_num(st['audit'])} database audit records ·
  {fmt_num(st['conflicts_audit'])} source conflicts across {fmt_num(st['papers'])} primary papers.<br>
- Every value is linked to its primary-source locator and independently source-verified. See <a href="/about">About &amp; citation</a>.
+ Records retain primary-source locators and explicit evidence status; stratified human validation is reported separately. See <a href="/about">About &amp; citation</a>.
 </footer></body></html>"""
 
 
@@ -492,7 +502,7 @@ def page_downloads():
     rows = "".join(f"""<tr><td><a href="/export/{e(t)}.tsv">{e(fn)}</a></td><td>{e(d)}</td><td>{fmt_num(counts[t])}</td></tr>"""
                    for t, (fn, d) in EXPORT_TABLES.items())
     body = f"""<div class=wrap><div class=card><h2>Downloads</h2>
-     <p class=muted>Release <b>{e(RELEASE)}</b> — public v1 subset. Tab-separated, UTF-8; streamed live from the database, so downloads match exactly what this portal shows.</p>
+     <p class=muted>Release <b>{e(release_id())}</b> — frozen public-v1 subset. Tab-separated, UTF-8; streamed live from the database, so downloads match exactly what this portal shows.</p>
      <table><thead><tr><th>File</th><th>Description</th><th>Rows</th></tr></thead><tbody>{rows}</tbody></table>
      <p class=small muted style="margin-top:12px">Programmatic access: this dataset is also served to AI agents over <b>MCP</b> — see <a href="/about">About</a>.
        The full release package (JSON schemas + SHA-256 checksums) is archived separately.</p>
@@ -507,7 +517,7 @@ def flow_diagram():
         ("Normalize", "endpoints, units, targets", ""),
         ("Audit vs database", "DBAASP · CAMP · DRAMP · dbAMP · APD", "audit"),
         ("Flag conflicts", "database ≠ primary source", "audit"),
-        ("Human review", "99% precision (n=192)", "human"),
+        ("Human validation", "stratified review in progress", "human"),
     ]
     html = ['<div class=flow>']
     for i, (t, s, cls) in enumerate(steps):
@@ -569,9 +579,9 @@ def page_stats():
      </div>
      <div class=card><h2>Evidence tiers</h2><p class=small muted>Every activity record carries an <b>evidence_tier</b> so humans and AI agents can filter by trust level:</p>
        <div class=bars>
-       <div class=bar><div class=lbl>atlas_core (human-reviewed core)</div><div class=track><div class=fillb style="width:99%"></div></div><div class=num>{fmt_num(st.get('activity',0))}</div></div>
-       <div class=bar><div class=lbl>dual_model_recovered (~93% spot-check)</div><div class=track><div class="fillb bad" style="width:{min(100,100*st.get('recovered_activity',0)/max(1,st.get('activity',1))*20):.0f}%"></div></div><div class=num>{fmt_num(st.get('recovered_activity',0))}</div></div>
-       <div class=bar><div class=lbl>machine_extracted (new papers, ~100% traceable)</div><div class=track><div class="fillb bad" style="width:{min(100,100*st.get('machine_activity',0)/max(1,st.get('activity',1))*20):.0f}%"></div></div><div class=num>{fmt_num(st.get('machine_activity',0))}</div></div>
+       <div class=bar><div class=lbl>atlas_core (source-reviewed; human validation incomplete)</div><div class=track><div class=fillb style="width:100%"></div></div><div class=num>{fmt_num(st.get('activity',0))}</div></div>
+       <div class=bar><div class=lbl>dual_model_recovered (excluded from canonical v1.0)</div><div class=track><div class="fillb bad" style="width:{min(100,100*st.get('recovered_activity',0)/max(1,st.get('activity',1))*20):.0f}%"></div></div><div class=num>{fmt_num(st.get('recovered_activity',0))}</div></div>
+       <div class=bar><div class=lbl>machine_extracted (excluded from canonical v1.0)</div><div class=track><div class="fillb bad" style="width:{min(100,100*st.get('machine_activity',0)/max(1,st.get('activity',1))*20):.0f}%"></div></div><div class=num>{fmt_num(st.get('machine_activity',0))}</div></div>
        </div></div>
      <div class=card><h2>Activity observations by endpoint</h2>{_bars(ep_rows)}</div>
      <div class=card><h2>Conflicts by database <span class=small muted>(count · % of that database's audited records)</span></h2>{_bars(conf_rows, bad_key=lambda r: True)}</div>
@@ -612,9 +622,9 @@ def page_about():
       <p><b>Conflict definition.</b> A record is <span class="chip bad">source_conflict</span> when the database's value/endpoint/subject
        cannot be reconciled with the primary article; <span class="chip ok">source_verified</span> when it matches. Difference
        categories (value/unit, endpoint label, target/organism, sequence/modification) are recorded per record.</p>
-      <p><b>Human validation.</b> A dual-model audit pass flagged candidate errors; a domain expert manually reviewed a
-       prioritized set of <b>192</b> (52 dual-model-consensus + 140 single-model). Result: <b>190 confirmed / 2 non-errors →
-       99% precision</b>. Human review also caught cases the automated pass had marked source_verified, i.e. false negatives.</p>
+      <p><b>Human validation.</b> AI extraction, worker agreement, and automated gates are not treated as a human gold
+       standard. A predeclared stratified validation set is being reviewed independently; publication-grade error
+       estimates will be reported only after human adjudication is complete.</p>
       <p><b>Physicochemical properties</b> are computed from each linear standard-residue sequence: net charge &amp; isoelectric
        point (pH 7.4, EMBOSS pKa), GRAVY (Kyte-Doolittle), hydrophobic-residue fraction, and Eisenberg hydrophobic moment
        (α-helix). Branched/modified constructs are left unprofiled.</p>
@@ -632,10 +642,10 @@ def page_about():
      </div>
      <div class=card><h2>Versioning, license &amp; citation</h2>
       <div class=kv>
-        <div class=k>Release</div><div>{e(RELEASE)}</div>
+        <div class=k>Release</div><div>{e(release_id())}</div>
         <div class=k>License</div><div>Research use; per-source database terms apply (see LICENSES in the release package)</div>
       </div>
-      <div class=notice style="margin-top:10px">AMP Evidence Atlas ({e(RELEASE)}): a source-verified, AI-queryable atlas of antimicrobial-peptide activity evidence. 2026.</div>
+      <div class=notice style="margin-top:10px">AMP Evidence Atlas ({e(release_id())}): a source-traceable, evidence-status-aware atlas of antimicrobial-peptide activity evidence. 2026.</div>
      </div>
     </div>"""
     return layout("About & Methods", body)

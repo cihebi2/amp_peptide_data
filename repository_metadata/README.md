@@ -20,3 +20,5 @@ No canonical final evidence row is rewritten by these repository packaging
 steps. Large structured files are compressed byte-for-byte and carry the
 digest of their uncompressed source.
 
+
+- `SYNC_REPORT_20260728T210048_CST.json`: timestamped public-safe synchronization scope, selected paths, checksum checks, active-queue boundary, and explicit exclusions.
