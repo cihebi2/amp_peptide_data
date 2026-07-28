@@ -3826,6 +3826,40 @@ Primary evidence:
 - `pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/supervisor/drain_pause_watcher.pid`
 - `pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/supervisor/drain_pause_watcher_20260728T034931Z.stderr.log`
 
+## 2026-07-28 12:13 CST — Existing publishable data and complete review workflow uploaded to GitHub
+
+- Created the first `main` branch in the previously empty public repository:
+  `https://github.com/cihebi2/amp_peptide_data`.
+- The push used the dedicated local SSH identity authenticated as GitHub account `cihebi2`. Commit author and committer are both `cihebi2 <cihebi@163.com>`.
+- Published root commit:
+  `0ed51ecd37ef837196a488b41b3e6be18c2553a9`
+  (`publish AMP evidence data and review workflow`).
+  The remote `refs/heads/main` was independently re-read and exactly matches this hash.
+- The repository snapshot contains **100,819 tracked files** and approximately **29.88 million inserted lines**. It includes:
+  - RC1 history and the current authoritative RC2 release-candidate data;
+  - all canonical per-paper final activity/toxicity, database-verification, mechanism, and review records;
+  - NAR freeze, validation420, conflict, quality, queue, and topic-support reports;
+  - ticket, response, closure, locator, linked-database, extraction-quality, and workflow-state evidence;
+  - the strict six-worker/leader/verifier controllers, serial/parallel supervisors, recovery and pause logic;
+  - all repository-local Codex worker/orchestrator skills and regression tests;
+  - portal/MCP/server/build code, benchmark protocol, project plans, data dictionaries, and the living progress document.
+- GitHub publication packaging did not rewrite canonical scientific rows. Four RC1/RC2 TSV blobs above the safe threshold were losslessly gzip-compressed with the original uncompressed byte count and SHA-256 stored in `repository_metadata/compressed_large_files.json`. Decompression/hash verification passed for all four.
+- Pre-push checks found **zero files at or above 100 MiB**, no GitHub PAT, private key, literal bearer token, or actual OpenAI key, and `git fsck --full --strict` passed after repository packing. The final Git pack is approximately **118.9 MiB**. GitHub accepted the push; it emitted only a recommendation warning for the 59.28 MiB conflict CSV, which is below the enforced 100 MiB limit.
+- The local working corpus is approximately 20 GiB and contains redistributability/hosting-unfriendly primary-source material. Raw PDFs, office supplements, videos, OA caches, repeated source/raw mirrors, generated SQLite, runtime streams, and duplicated intermediate packet finals were therefore not inserted into public Git history. This is not silent loss:
+  **61,119 local-only artifacts totaling 16,367,813,392 bytes** are path/size/mtime/reason inventoried in `repository_metadata/local_only_artifact_inventory.tsv.gz`; duplicate and derived-fulltext pruning is separately enumerated.
+- A repository-level `README.md`, `.gitignore`, snapshot manifest, compression manifest, symlink conversion report, pruning report, and local-only inventory explain the authority hierarchy and permit the hosted snapshot to be audited.
+- The user-requested strict-review natural pause remains in its previously captured four-paper drain boundary while this upload completes; no new review paper has been launched.
+
+Primary evidence:
+
+- `https://github.com/cihebi2/amp_peptide_data`
+- Git commit `0ed51ecd37ef837196a488b41b3e6be18c2553a9`
+- `/tmp/amp_peptide_data_publish_20260728/README.md`
+- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/SNAPSHOT_MANIFEST.json`
+- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/compressed_large_files.json`
+- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/local_only_artifact_inventory_summary.json`
+- `/tmp/amp_peptide_data_publish_20260728/repository_metadata/local_only_artifact_inventory.tsv.gz`
+
 ## Evidence Index
 
 Use these files first:
@@ -3871,6 +3905,7 @@ Use these files first:
 
 ## Changelog
 
+- 2026-07-28 12:13 CST: Published the existing release data, canonical per-paper finals, review evidence/state, complete six-worker/leader/verifier workflow, skills, tests, reports, and portal code to the new public `cihebi2/amp_peptide_data` main branch as root commit `0ed51ecd37ef837196a488b41b3e6be18c2553a9`, authored by `cihebi2 <cihebi@163.com>`. Verified the remote hash, gzip round trips/digests, zero enforced-size violations, no real credential pattern, and strict Git object integrity. Kept 61,119 raw/cache/runtime/duplicate/source artifacts totaling 16.37 GB outside public Git while publishing their complete path/size/mtime/reason inventory.
 - 2026-07-28 11:48 CST: Armed a user-requested natural pause without interrupting active review work. Scheduler PID `2243091` is `SIGSTOP`-paused and cannot refill slots; four captured campaigns (`PMC11845615`, `PMC12162962`, `PMC12606902`, and `PMC12812963`) continue to their natural boundary. Added and tested an explicit `--pause-only` drain path, passed 5/5 targeted tests plus compile validation, and launched fully detached watcher PID `3845417` to journal all four normal completions and terminate the scheduler without replacement.
 - 2026-07-28 11:44 CST: Strict review advanced to 9/200 after `PMC12715223` obtained complete six-worker, leader, and verifier closure. The campaign has 191 papers remaining, 22 open tickets, 16 touched papers, and 184 untouched/material-ready papers. Supervisor PID `2243091` and all four campaigns remain healthy, but every slot is currently in audit/repair work, so breadth is temporarily flat. The `PMC11889930` leader Codex call hit the classified biology safety rejection and triggered only the allowed read-only Grok leader fallback; `PMC12606902` remains fail-closed despite a nominal verifier PASS because deterministic validation found a missing evidence path.
 - 2026-07-28 09:36 CST: Confirmed the lossless hardened-scheduler reload completed and live supervisor PID `2243091` is healthy. The frozen 200-paper campaign advanced from 2 to 8 terminal papers overnight, with 192 remaining, 16 touched, 184 untouched/material-ready, 19 fail-closed tickets, and four active exact `gpt-5.5/xhigh` lanes operating as three repairs plus one fresh paper. No Grok replacement, quota, crash, or supervisor-stderr fault is active; `PMC12606902` is at the independent verifier and is not counted until `PASS`.
