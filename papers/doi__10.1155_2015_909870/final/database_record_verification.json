@@ -1,0 +1,3527 @@
+{
+  "paper_id": "doi__10.1155_2015_909870",
+  "generated_at": "2026-05-03T05:32:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 source-reviewed DBAASP linked assay/experiment/literature rows against primary XML/PDF/OA package, Table 1, MG-63 and biofilm results text/figures, and merged sequence/literature database rows; unsupported database endpoint/target labels remain source_conflict cautions.",
+  "checked_inputs": [
+    "rework_context/doi__10.1155_2015_909870/handoff_context.json",
+    "paper_packets/doi__10.1155_2015_909870/packet_manifest.json",
+    "paper_packets/doi__10.1155_2015_909870/locators/locator_index.json",
+    "paper_packets/doi__10.1155_2015_909870/extraction/extraction_status.json",
+    "paper_packets/doi__10.1155_2015_909870/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1155_2015_909870/extracted/xml_sections.json",
+    "paper_packets/doi__10.1155_2015_909870/extracted/pdf_text/BMRI2015-909870.txt",
+    "paper_packets/doi__10.1155_2015_909870/extracted/figure_captions.json",
+    "paper_packets/doi__10.1155_2015_909870/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1155_2015_909870/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1155_2015_909870/extracted/supplementary_tables.json",
+    "papers/doi__10.1155_2015_909870/source/paper.xml",
+    "papers/doi__10.1155_2015_909870/source/paper.pdf",
+    "papers/doi__10.1155_2015_909870/source/supplementary",
+    "paper_packets/doi__10.1155_2015_909870/raw/oa_package/local-DBAASP-PMC4325973.tar.gz",
+    "paper_packets/doi__10.1155_2015_909870/extracted/oa_package/local-DBAASP-PMC4325973/PMC4325973/BMRI2015-909870.nxml",
+    "paper_packets/doi__10.1155_2015_909870/database/database_source_manifest.json",
+    "paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1155_2015_909870/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 18,
+    "linked_experiment_records": 18,
+    "linked_literature_records": 3,
+    "linked_sequence_records": 0,
+    "linked_dramp_activity_records": 0
+  },
+  "status_summary": {
+    "source_conflict": 10,
+    "source_verified": 29
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_strain_conflict_s_sanguis",
+      "affected_rows": [
+        "database:linked_assay_records.jsonl:row=2",
+        "database:linked_assay_records.jsonl:row=5",
+        "database:linked_assay_records.jsonl:row=8",
+        "database:linked_assay_records.jsonl:row=13",
+        "database:linked_experiment_records.jsonl:row=2",
+        "database:linked_experiment_records.jsonl:row=5",
+        "database:linked_experiment_records.jsonl:row=8",
+        "database:linked_experiment_records.jsonl:row=13"
+      ],
+      "evidence_context": "Primary paper labels the streptococcal target as S. sanguis 10556/ATCC10556, while linked DBAASP rows use Streptococcus sanguinis ATCC 10566; endpoint/value support is not normalized into a clean target match."
+    },
+    {
+      "caution_code": "database_mbec50_endpoint_not_in_primary_source",
+      "affected_rows": [
+        "database:linked_assay_records.jsonl:row=1",
+        "database:linked_experiment_records.jsonl:row=1"
+      ],
+      "evidence_context": "Primary results support Pac-525 biofilm activity at 0.5 mg/mL but do not state an MBEC50 endpoint; DBAASP MBEC50 label remains source_conflict."
+    },
+    {
+      "caution_code": "terminal_modifications_preserved_from_primary_source",
+      "evidence_context": "Primary sequences include Ac-/NH2 terminal annotations; database core sequence rows omit terminal annotations, so final review records modifications explicitly instead of silently normalizing them."
+    }
+  ],
+  "record_audits": [
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 1,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBEC50",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "antibiofilm",
+      "database_note": "BHIB with sucrose",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary source supports Pac-525 biofilm killing/thickness reduction at 0.5 mg/mL but does not report an MBEC50 endpoint; database endpoint label is preserved as a conflict.",
+      "conflict_context": "database_mbec50_endpoint_not_reported_by_primary_source",
+      "conflict_flags": [
+        "database_mbec50_endpoint_not_reported_by_primary_source"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-biofilm-pac525-pgingivalis-live_fraction-0.5mgml",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "biofilm_target",
+        "treatment_concentration"
+      ],
+      "source_conflict_fields": [
+        "endpoint_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+      },
+      "matched_primary_target": "P. gingivalis 33277 biofilm on titanium",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277 biofilm on titanium",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 2,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 supports the endpoint/value after unit review, but the database target label differs from the primary table label; conflict preserved instead of normalized.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-s_sanguis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:column=1"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:column=1"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL",
+      "human_review": [
+        {
+          "verdict": "confirmed",
+          "severity": "",
+          "reviewer": "expert",
+          "notes": "",
+          "reviewed_at": "2026-07-03T00:00:00Z",
+          "review_id": "R013",
+          "link_confidence": "medium",
+          "match_method": "audit_record_id"
+        }
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 3,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=3"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "7.8",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=1"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=1"
+        }
+      },
+      "matched_primary_value": "0.0078",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 4,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=1"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=1"
+        }
+      },
+      "matched_primary_value": "0.0625",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 5,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=5"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 supports the endpoint/value after unit review, but the database target label differs from the primary table label; conflict preserved instead of normalized.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:column=2"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:column=2"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL",
+      "human_review": [
+        {
+          "verdict": "confirmed",
+          "severity": "",
+          "reviewer": "expert",
+          "notes": "",
+          "reviewed_at": "2026-07-03T00:00:00Z",
+          "review_id": "R014",
+          "link_confidence": "medium",
+          "match_method": "audit_record_id"
+        }
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 6,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=6"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=2"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=2"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 7,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=7"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=2"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=2"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 8,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=8"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:columns=3-6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 reports no MIC/MBC within the tested concentration range; database dash/no-activity row is source-supported, with target-label conflict preserved where present.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "not_observed_within_test_range"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:columns=3-6"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:columns=3-6"
+        }
+      },
+      "matched_primary_value": "not_observed",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL",
+      "human_review": [
+        {
+          "verdict": "confirmed",
+          "severity": "",
+          "reviewer": "expert",
+          "notes": "",
+          "reviewed_at": "2026-07-03T00:00:00Z",
+          "review_id": "R015",
+          "link_confidence": "medium",
+          "match_method": "audit_record_id"
+        }
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 9,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=9"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=5"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=5"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=5"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 10,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=10"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "31.3",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=6"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        }
+      },
+      "matched_primary_value": "0.0313",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 11,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=11"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=5"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=5"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=5"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 12,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=12"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=6"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 13,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=13"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:columns=3-6"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 reports no MIC/MBC within the tested concentration range; database dash/no-activity row is source-supported, with target-label conflict preserved where present.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "not_observed_within_test_range"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:columns=3-6"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:columns=3-6"
+        }
+      },
+      "matched_primary_value": "not_observed",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 14,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=14"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=3"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=3"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=3"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 15,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=15"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "31.3",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=4"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=4"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=4"
+        }
+      },
+      "matched_primary_value": "0.0313",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 16,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=16"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=3"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=3"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=3"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 17,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=17"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=4"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=4"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=4"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_number": 18,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=18"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Human osteosarcoma MG-63",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "Not active up to 500 µg/ml",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Primary MTT results support no cytotoxicity/no proliferation difference for KSL-W across the tested range up to 0.5 mg/mL.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-mtt-mg63-kslw-no_cytotoxicity",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "cell_line",
+        "noncytotoxicity_range"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+      },
+      "matched_primary_target": "MG-63 cells",
+      "source_organism_check": {
+        "database_target": "Human osteosarcoma MG-63",
+        "primary_target": "MG-63 cells",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+        }
+      },
+      "matched_primary_value": "no_statistical_difference_vs_untreated",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 1,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBEC50",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "antibiofilm",
+      "database_note": "BHIB with sucrose",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary source supports Pac-525 biofilm killing/thickness reduction at 0.5 mg/mL but does not report an MBEC50 endpoint; database endpoint label is preserved as a conflict.",
+      "conflict_context": "database_mbec50_endpoint_not_reported_by_primary_source",
+      "conflict_flags": [
+        "database_mbec50_endpoint_not_reported_by_primary_source"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-biofilm-pac525-pgingivalis-live_fraction-0.5mgml",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "biofilm_target",
+        "treatment_concentration"
+      ],
+      "source_conflict_fields": [
+        "endpoint_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+      },
+      "matched_primary_target": "P. gingivalis 33277 biofilm on titanium",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277 biofilm on titanium",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=15:3.3. The Effects of Pac-525 Peptide on P. gingivalis Biofilm; xml:fig=5:Figure 5; xml:fig=6:Figure 6"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 2,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 supports the endpoint/value after unit review, but the database target label differs from the primary table label; conflict preserved instead of normalized.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-s_sanguis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:column=1"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:column=1"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 3,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=3"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "7.8",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=1"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=1"
+        }
+      },
+      "matched_primary_value": "0.0078",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 4,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=1"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=1"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=1"
+        }
+      },
+      "matched_primary_value": "0.0625",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 5,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=5"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 supports the endpoint/value after unit review, but the database target label differs from the primary table label; conflict preserved instead of normalized.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:column=2"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:column=2"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 6,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=6"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=2"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=2"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 7,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=7"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=2"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-pac525-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=2"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=2"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 8,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=8"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:columns=3-6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 reports no MIC/MBC within the tested concentration range; database dash/no-activity row is source-supported, with target-label conflict preserved where present.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "not_observed_within_test_range"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:columns=3-6"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:columns=3-6"
+        }
+      },
+      "matched_primary_value": "not_observed",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 9,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=9"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=5"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=5"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=5"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 10,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=10"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "31.3",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=6"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        }
+      },
+      "matched_primary_value": "0.0313",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 11,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=11"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=5"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=5"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=5"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 12,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=12"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=6"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-ksl-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=6"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 13,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=13"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Streptococcus sanguinis ATCC 10566",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=5:columns=3-6"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "Primary Table 1 reports no MIC/MBC within the tested concentration range; database dash/no-activity row is source-supported, with target-label conflict preserved where present.",
+      "conflict_context": "database_target_name_and_strain_differ_from_primary_table",
+      "conflict_flags": [
+        "database_target_name_and_strain_differ_from_primary_table"
+      ],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-s_sanguis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "not_observed_within_test_range"
+      ],
+      "source_conflict_fields": [
+        "target_species_or_strain_label"
+      ],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5:columns=3-6"
+      },
+      "matched_primary_target": "S. sanguis 10556",
+      "source_organism_check": {
+        "database_target": "Streptococcus sanguinis ATCC 10566",
+        "primary_target": "S. sanguis 10556",
+        "status": "source_conflict",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=5:columns=3-6"
+        }
+      },
+      "matched_primary_value": "not_observed",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 14,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=14"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MIC",
+      "database_concentration": "15.6",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=3"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-f_nucleatum-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=3"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=3"
+        }
+      },
+      "matched_primary_value": "0.0156",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 15,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=15"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Fusobacterium nucleatum ATCC 10953",
+      "database_measure": "MBC",
+      "database_concentration": "31.3",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=6:column=4"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-f_nucleatum-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6:column=4"
+      },
+      "matched_primary_target": "F. nucleatum 10953",
+      "source_organism_check": {
+        "database_target": "Fusobacterium nucleatum ATCC 10953",
+        "primary_target": "F. nucleatum 10953",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=6:column=4"
+        }
+      },
+      "matched_primary_value": "0.0313",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 16,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=16"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=3"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-p_gingivalis-MIC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=3"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=3"
+        }
+      },
+      "matched_primary_value": "0.125",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 17,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=17"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Porphyromonas gingivalis ATCC 33277",
+      "database_measure": "MBC",
+      "database_concentration": "500",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:table=1:row=7:column=4"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Database assay row matches primary Table 1 for peptide, endpoint, target strain, and value after preserving source mg/mL units and database µg/mL normalization.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-table1-kslw-p_gingivalis-MBC",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "endpoint",
+        "raw_value",
+        "unit",
+        "target_strain"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7:column=4"
+      },
+      "matched_primary_target": "P. gingivalis 33277",
+      "source_organism_check": {
+        "database_target": "Porphyromonas gingivalis ATCC 33277",
+        "primary_target": "P. gingivalis 33277",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1:row=7:column=4"
+        }
+      },
+      "matched_primary_value": "0.5",
+      "matched_primary_unit": "mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_number": 18,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=18"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "Human osteosarcoma MG-63",
+      "database_measure": "-",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "target_activity",
+      "database_note": "Not active up to 500 µg/ml",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Primary MTT results support no cytotoxicity/no proliferation difference for KSL-W across the tested range up to 0.5 mg/mL.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "doi__10.1155_2015_909870-mtt-mg63-kslw-no_cytotoxicity",
+      "source_supported_fields": [
+        "sequence",
+        "name",
+        "citation",
+        "cell_line",
+        "noncytotoxicity_range"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+      },
+      "matched_primary_target": "MG-63 cells",
+      "source_organism_check": {
+        "database_target": "Human osteosarcoma MG-63",
+        "primary_target": "MG-63 cells",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:3.1. MTT Analysis of MG-63 Cells; xml:fig=2:Figure 2"
+        }
+      },
+      "matched_primary_value": "no_statistical_difference_vs_untreated",
+      "matched_primary_unit": "tested_range_0.0039-0.5 mg/mL"
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_1164",
+      "sequence_key": "DBAASP:DBAASPS_1164",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_number": 1,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+      "database_measure": "",
+      "database_concentration": "",
+      "database_unit": "",
+      "database_assay_type": "",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "database_sequence": "KKVVFKVKFK",
+        "primary_sequence": "KKVVFKVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL",
+        "database_name": "KSL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID; primary Section 2.1 verifies peptide identity and sequence/modification context.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "",
+      "source_supported_fields": [
+        "citation",
+        "doi",
+        "pmid",
+        "pmcid",
+        "sequence",
+        "name",
+        "terminal_modification_context"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2.1. AMPs Synthesis"
+      },
+      "matched_primary_target": "article metadata and peptide synthesis section",
+      "source_organism_check": {
+        "database_target": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+        "primary_target": "article metadata and peptide synthesis section",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      }
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_710",
+      "sequence_key": "DBAASP:DBAASPS_710",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_number": 2,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+      "database_measure": "",
+      "database_concentration": "",
+      "database_unit": "",
+      "database_assay_type": "",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "database_sequence": "KWRRWVRWI",
+        "primary_sequence": "Ac-KWRRWVRWI-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "Pac-525",
+        "database_name": "Pac-525",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "N-terminal acetylation",
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports N-terminal acetylation and C-terminal amidation for Pac-525; DBAASP sequence row stores the core residues."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID; primary Section 2.1 verifies peptide identity and sequence/modification context.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "",
+      "source_supported_fields": [
+        "citation",
+        "doi",
+        "pmid",
+        "pmcid",
+        "sequence",
+        "name",
+        "terminal_modification_context"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2.1. AMPs Synthesis"
+      },
+      "matched_primary_target": "article metadata and peptide synthesis section",
+      "source_organism_check": {
+        "database_target": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+        "primary_target": "article metadata and peptide synthesis section",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      }
+    },
+    {
+      "source_id": "DBAASP:DBAASPS_7769",
+      "sequence_key": "DBAASP:DBAASPS_7769",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_number": 3,
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2015_909870/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=3"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "database_subject": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+      "database_measure": "",
+      "database_concentration": "",
+      "database_unit": "",
+      "database_assay_type": "",
+      "database_note": "",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis",
+          "evidence": "Primary source Section 2.1 reports peptide name, residue string, terminal modification, molecular weight, synthesis, HPLC/MS characterization, and purity.",
+          "activity_locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "database_sequence": "KKVVFWVKFK",
+        "primary_sequence": "KKVVFWVKFK-NH2",
+        "primary_sequence_status": "core_sequence_verified_with_terminal_modification_context"
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "KSL-W",
+        "database_name": "KSL-W",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified",
+        "primary_modifications": [
+          "C-terminal amidation"
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        },
+        "note": "Primary source reports C-terminal amidation for KSL-W; no N-terminal blocking is reported."
+      },
+      "review_model": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "worker4_source_reviewed_at": "2026-05-03T05:32:25Z",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID; primary Section 2.1 verifies peptide identity and sequence/modification context.",
+      "conflict_context": "",
+      "conflict_flags": [],
+      "matched_activity_record_id": "",
+      "source_supported_fields": [
+        "citation",
+        "doi",
+        "pmid",
+        "pmcid",
+        "sequence",
+        "name",
+        "terminal_modification_context"
+      ],
+      "source_conflict_fields": [],
+      "primary_activity_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2.1. AMPs Synthesis"
+      },
+      "matched_primary_target": "article metadata and peptide synthesis section",
+      "source_organism_check": {
+        "database_target": "High in vitro antibacterial activity of Pac-525 against Porphyromonas gingivalis biofilms cultured on titanium.",
+        "primary_target": "article metadata and peptide synthesis section",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=4:2.1. AMPs Synthesis"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "paper_id": "doi__10.1021_acsomega.9b02278",
+  "generated_at": "2026-05-02T13:23:24Z",
+  "reviewed_at": "2026-05-02T13:23:24Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "quality_status": "source_reviewed_final_accepted_with_cautions",
+  "remaining_cautions": [
+    {
+      "scope": "database_name_vs_primary_short_label",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "records": [
+        "DBAASP:DBAASPS_14162",
+        "DBAASP:DBAASPS_14163",
+        "DBAASP:DBAASPS_14165"
+      ],
+      "note": "Primary table short names are less specific than DBAASP substitution/linker names; sequence and current-paper activity values match the source."
+    },
+    {
+      "scope": "database_schema",
+      "severity": "caution",
+      "status": "packet_scope_limited",
+      "record": "linked_sequence_records.jsonl",
+      "note": "The packet contains no linked sequence rows, so merged all_sequences.csv and CAMP text rows were reopened for identity checks."
+    },
+    {
+      "scope": "terminal_modification",
+      "severity": "caution",
+      "status": "source_supported_schema_gap",
+      "record": "Rink amide MBHA resin",
+      "note": "The primary methods imply C-terminal amidated synthetic peptides; packet sequence schemas do not carry an explicit terminal-modification field."
+    },
+    {
+      "scope": "activity_table_context",
+      "severity": "caution",
+      "status": "source_only_values_preserved",
+      "record": "Table 2 +R9 slash values",
+      "note": "Free-R9 co-incubation values were retained as source-supported activity contexts, but they are not separate linked database peptide records."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "no_supplementary_assets_present",
+      "record": "supplementary_index.json",
+      "note": "Packet and landed inventory show no supplementary files; the OA package has article NXML/PDF and image members."
+    },
+    {
+      "scope": "mechanism_quantification",
+      "severity": "caution",
+      "status": "qualitative_figure_claims_only",
+      "record": "Figures 2-6",
+      "note": "Figure claims are retained qualitatively from XML text/captions; exact graph values were not invented from image panels."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    {
+      "stage": "handoff_context",
+      "path": "rework_context/doi__10.1021_acsomega.9b02278/handoff_context.json",
+      "decision": "used",
+      "summary": "owner workers, failure reasons, source inventory, and bounded recovery policy checked"
+    },
+    {
+      "stage": "packet_manifest",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/packet_manifest.json",
+      "decision": "used",
+      "summary": "paper ID and packet roots checked"
+    },
+    {
+      "stage": "locator_index",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/locators/locator_index.json",
+      "decision": "used",
+      "summary": "Table 1, Table 2, and figure locators checked"
+    },
+    {
+      "stage": "primary_xml",
+      "path": "papers/doi__10.1021_acsomega.9b02278/source/paper.xml",
+      "decision": "used",
+      "summary": "Table 1 sequences/masses/hemolysis, Table 2 MIC matrix, methods, and mechanism sections reopened"
+    },
+    {
+      "stage": "packet_xml_sections",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/extracted/xml_sections.json",
+      "decision": "used",
+      "summary": "section and figure-caption text checked for mechanism claims and methods"
+    },
+    {
+      "stage": "pdf_text",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/extracted/pdf_text/ao9b02278.txt",
+      "decision": "used",
+      "summary": "PDF text cross-check for tables, methods, and mechanism narrative"
+    },
+    {
+      "stage": "oa_package",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/extracted/oa_package/local-DBAASP-PMC6761801/PMC6761801",
+      "decision": "used",
+      "summary": "NXML/PDF/image package inventory checked; no separate supplementary files present"
+    },
+    {
+      "stage": "packet_database_assays",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/database/linked_assay_records.jsonl",
+      "decision": "used",
+      "summary": "36 current-paper DBAASP assay rows checked against Table 1/Table 2"
+    },
+    {
+      "stage": "packet_database_experiments",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/database/linked_experiment_records.jsonl",
+      "decision": "used",
+      "summary": "39 linked experiment rows checked, including 3 CAMP text summaries"
+    },
+    {
+      "stage": "packet_database_literature",
+      "path": "paper_packets/doi__10.1021_acsomega.9b02278/database/linked_literature_records.jsonl",
+      "decision": "used",
+      "summary": "4 current-paper DBAASP literature links checked against DOI/PMID/PMCID"
+    },
+    {
+      "stage": "merged_sequences",
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "decision": "used",
+      "summary": "4 DBAASP sequence rows checked because packet linked_sequence_records is empty"
+    },
+    {
+      "stage": "merged_camp_rows",
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+      "decision": "used",
+      "summary": "3 CAMP sequence/activity text rows checked"
+    }
+  ],
+  "resolution_summary": "Bounded worker-2/4/6 repair closed the full_source_review_not_completed, database_conflicts_require_adjudication, and activity_extraction_requires_worker2_rework failures. Remaining cautions are nonblocking and recorded in final review_report.json."
+}

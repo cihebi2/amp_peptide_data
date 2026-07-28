@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.3390_md19060303",
+  "reviewed_at": "2026-05-09T09:20:25Z",
+  "generated_at": "2026-05-09T09:20:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened XML/NXML, PDF text/table layout, OA package, nested s001 supplement PDF, linked DBAASP assay/experiment/literature rows, local DBAASP sequence catalog rows, and landed asset mirrors. Remaining conflicts are explicit curation cautions, not open material blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md19060303/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/raw/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/raw/oa_package/local-DBAASP-PMC8225045.tar.gz",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/raw/oa_package/local-DBAASP-PMC8225045.tar.gz!PMC8225045/marinedrugs-19-00303-s001.zip!marinedrugs-1234633-supplementary.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/database/linked_literature_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md19060303/database/linked_experiment_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_md19060303/xml/local-DBAASP-PMC8225045.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_md19060303/pdf/local-DBAASP-PMC8225045.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_md19060303/package/local-DBAASP-PMC8225045.tar.gz"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 206,
+    "database_records_source_reviewed": 210,
+    "database_record_status_summary": {
+      "source_verified": 124,
+      "source_conflict": 86
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "supplementary_pdf_checked": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rebuilt DBAASP row adjudication against Table 1 and local sequence catalog rows. The previous wrong compound-column matching was removed. Two A5/E. coli value rows and A7-A10 identity-text conflicts remain source_conflict with explicit context; other rows are source_verified.",
+    "layer_2_activity_toxicity": "Worker-6 rebuilt final activity records from all non-not-tested Table 1 values for cyclic hexapeptides and controls, preserving raw MIC values and units including the source-rendered >12 value.",
+    "layer_3_mechanism": "Worker-6 replaced the placeholder with bounded source-reviewed SAR/no-direct-mechanism claims and did not promote SAR to direct_mechanism.",
+    "supplementary_material": "The OA package nested supplement PDF was recovered and checked; it contains characterization spectra and no additional activity/toxicity/mechanism table affecting this gate.",
+    "publication_grade_review": "The original blocking ticket is closed because source review is now complete and remaining conflicts are preserved cautions with locators, no unresolved rework target."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "primary_structure_text_conflict_A7_A10",
+      "evidence_context": "For Desotamide A7-A10, the primary design paragraph/database sequence support Leu at position II while the experimental compound headings render Ile/A0 variants; affected DBAASP rows remain source_conflict with explicit context."
+    },
+    {
+      "caution_code": "database_value_conflict_A5_E_coli",
+      "evidence_context": "For Desotamide A5 against E. coli ATCC 13124, XML/PDF Table 1 renders >12 while linked DBAASP assay/experiment rows list >128; the two affected database rows remain source_conflict."
+    },
+    {
+      "caution_code": "database_mrsa_rows_collapsed",
+      "evidence_context": "Linked DBAASP rows aggregate four MRSA clinical-isolate Table 1 rows into one Staphylococcus aureus row with isolate notes; values were checked as collapsed ranges."
+    },
+    {
+      "caution_code": "supplement_pdf_recovered_after_packet_inventory_gap",
+      "evidence_context": "The packet extraction inventory listed zero supplementary assets, but the OA package contains s001.zip with a 40-page spectra PDF; it was opened and did not add gate-changing activity/toxicity/mechanism tables."
+    },
+    {
+      "caution_code": "mechanism_not_direct_assay",
+      "evidence_context": "Mechanism layer is limited to target-unknown/SAR evidence; no direct target or membrane assay is asserted."
+    }
+  ],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "summary": "Source-reviewed worker-4/6 re-review rebuilt Table 1 activity, DBAASP row adjudication, and final review. Remaining source/database conflicts are explicit cautions, so the paper is accepted_with_cautions rather than accepted_clean.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "paper_id": "doi__10.3390_ijms15045680",
+  "doi": "10.3390/ijms15045680",
+  "reviewed_at": "2026-05-08T15:24:43Z",
+  "updated_at": "2026-05-08T15:24:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local source/packet contains XML, PDF, OA package figures, and linked DRAMP rows. Source supplementary directories and packet supplementary index were opened and contain no supplementary assets for this paper."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms15045680/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms15045680/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms15045680/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms15045680/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms15045680/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/pdf_text/ijms-15-05680.txt",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/pdf_text/local-DRAMP-24705462.txt",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680.nxml",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f1.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f3.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f4.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms15045680/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_ijms15045680/source/paper.xml",
+    "papers/doi__10.3390_ijms15045680/source/paper.pdf",
+    "papers/doi__10.3390_ijms15045680/source/supplementary/"
+  ],
+  "summary": "Worker-2/4/6 re-review rebuilt the missing activity layer from primary XML/PDF/figure evidence, adjudicated all linked DRAMP rows with sequence/activity conflicts preserved, and replaced the framework-test review with source-reviewed final adjudication.",
+  "adjudication_summary": "The prior ticket is closed: supported anticancer cytotoxicity/apoptosis rows are now present, database-only antimicrobial/activity annotations are not promoted, and final acceptance is limited to accepted_with_cautions because source conflicts and figure-only approximations remain explicit.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Three DRAMP peptide records and their experiment/activity/literature links were checked against primary Table 1 and article metadata. DRAMP35255 remains source_conflict for sequence/name mismatch; DRAMP antimicrobial/anticancer annotations are conflict-preserved where unsupported by primary assays.",
+    "layer_2_activity_toxicity": "Primary XML/PDF/figure evidence supports TP10-SRC1LXXLL cytotoxicity in MCF-7 and MDA-MB-231 cells, fibroblast toxicity at higher concentration, and annexin V/7-AAD apoptosis. Exact figure source data are absent, so figure-derived percentages are marked as approximations.",
+    "layer_3_mechanism": "Directly supported mechanism is apoptosis by annexin V/7-AAD plus cellular uptake/localization. ER-transcription inhibition is bounded as unsupported by the reported qRT-PCR result, and speculative intracellular targets remain hypotheses.",
+    "supplementary_material": "Packet and paper-local supplementary directories/indexes were opened; no supplementary assets are present, so no supplement-derived row is available or required for this paper."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_conflict_DRAMP35255",
+      "evidence_context": "DRAMP35255 name is TP10-SRC1LXXLL but sequence matches the TP10-SRC11222-1245 control fragment rather than the Table 1 LXXLL sequence."
+    },
+    {
+      "caution_code": "database_activity_annotation_conflict",
+      "evidence_context": "DRAMP antimicrobial/anticancer labels are broader than the primary paper; antimicrobial activity is not assayed in the local source and control peptides did not show anticancer survival effects."
+    },
+    {
+      "caution_code": "figure_only_exact_values",
+      "evidence_context": "Figures 1 and 4 provide plotted values without local numeric source tables; approximate rows are marked manual_approximation_from_paper_figure."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 9,
+    "activity_rows_have_values_units_targets_locators": true,
+    "database_snapshots": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 3,
+      "linked_experiment_records": 3,
+      "linked_literature_records": 3,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 7,
+      "source_verified": 2
+    },
+    "database_source_conflicts_preserved": true,
+    "database_only_rows_have_reason": true,
+    "mechanism_claims": 4,
+    "mechanism_direct_claims_have_assay_types": true,
+    "review_provenance_gpt55_xhigh_present": true,
+    "open_rework_targets": 0
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-3789296_v1",
+  "generated_at": "2026-05-05T18:28:51Z",
+  "reviewed_at": "2026-05-05T18:28:51Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml opened; raw XML was not a clean table source for this paper",
+    "paper_pdf",
+    "oa_package_absent_confirmed_in_packet_manifest",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": "opened but not relied on for tables because the local Research Square XML/HTML dump was not a clean JATS table surface",
+    "paper_pdf": true,
+    "oa_package": "not present; packet manifest reports package_files=0",
+    "supplementary_assets": "landing-3.docx parsed; landing-1/2/4.bin inspected as non-source HTML/support/browse pages",
+    "merged_database_rows": true
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.21203_rs.3.rs-3789296_v1/handoff_context.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/packet_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/locators/locator_index.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_status.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.pdf",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.xml",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-4.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/database_source_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_assay_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "tools_attempted": [
+    "jq artifact inspection",
+    "rg targeted source/database search",
+    "pdftotext-derived packet text inspection",
+    "python OOXML table parser for supplementary DOCX",
+    "python csv.DictReader for merged DBAASP sequence/assay rows",
+    "file/unzip for supplementary asset type checks"
+  ],
+  "summary": "Source-reviewed re-review repaired the missing worker-2 activity rows and worker-4 DBAASP reconciliation for the three lead peptides. The paper is accepted with cautions because the primary/source DOCX reports C-terminal amidation while the merged sequence catalog stores unmodified sequence letters.",
+  "adjudication_summary": "Worker-2 recovered 15 Table 1 activity/toxicity rows; worker-4 reconciled three DBAASP records to primary source plus merged sequence/assay rows; worker-6 closed the broad rework ticket with retained amidation cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "The three DBAASP sequence records match primary source sequence letters but omit the C-terminal -NH2 marker shown in the supplementary DOCX tables.",
+      "affected_records": [
+        "DBAASPS_22030",
+        "DBAASPS_22031",
+        "DBAASPS_22032"
+      ]
+    },
+    {
+      "caution_code": "packet_database_snapshot_incomplete_but_recovered_from_merged_output",
+      "evidence_context": "Packet linked_sequence_records.jsonl and linked_assay_records.jsonl were empty; source-reviewed final repair used local merged DBAASP sequence and assay CSV rows plus primary PDF/DOCX locators."
+    },
+    {
+      "caution_code": "research_square_preprint_source",
+      "evidence_context": "The article is a Research Square preprint; curation acceptance is based on obtainable local source evidence, not peer-review status."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Three DBAASP sequence IDs are source-reviewed against merged sequence rows, merged assay rows, PDF Table 1, and supplementary DOCX sequence tables; all are retained as sequence_modified_not_normalized due terminal amidation caveat.",
+    "layer_2_activity_toxicity": "Fifteen MIC/IC50/HC50 rows are source-supported by PDF Table 1 and assay methods, with units, target species/strain or cell sample, and database row locators.",
+    "layer_3_mechanism": "Mechanism is accepted with cautions as qualitative membrane disruption from SEM/TEM plus resistance/in vivo context; no unsupported quantitative figure values were fabricated.",
+    "worker_6_review": "The broad framework-test ticket is closed after source-reviewed repair; no open rework target remains in final review artifacts."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 15,
+    "database_record_audits": 3,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 3
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0
+  },
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

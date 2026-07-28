@@ -1,0 +1,150 @@
+{
+  "worker2_requests": [
+    {
+      "ticket_id": "rwk-PMC13031788-w6-001",
+      "paper_id": "PMC13031788",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "requested_by": "worker-6",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "expected_observation_counts": null,
+      "requested_outputs": [
+        {
+          "need": "Resolve toxicity row attribution or close as no source-located toxicity rows with durable evidence.",
+          "required_locators": [
+            "xml:*",
+            "pdf:*"
+          ]
+        }
+      ],
+      "acceptance_check": null
+    },
+    {
+      "ticket_id": "rwk-PMC13031788-semantic-001",
+      "paper_id": "PMC13031788",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "requested_by": "semantic_gate_hardening",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "expected_observation_counts": null,
+      "requested_outputs": [
+        {
+          "need": "Discard non-activity Table 1/2 rows and rebuild from true activity Tables 4/5 with source-supported endpoints, targets, and units.",
+          "required_locators": [
+            "xml:table-wrap:4",
+            "xml:table-wrap:5"
+          ]
+        }
+      ],
+      "acceptance_check": "semantic gate has no non_activity_source_table or non_biological_target_label findings"
+    },
+    {
+      "ticket_id": "rwk-PMC13031788-semantic-002",
+      "paper_id": "PMC13031788",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "requested_by": "semantic_gate_hardening",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "expected_observation_counts": null,
+      "requested_outputs": [
+        {
+          "need": "Add Table 5 row-level Log CFU/mL observations with sample, target, timepoint, raw value, unit, statistics/qualifier, and locator.",
+          "required_locators": [
+            "xml:table-wrap:5"
+          ],
+          "expected_shape": "4 sample rows x 6 timepoints = 24 observations unless source inspection documents a narrower justified representation"
+        }
+      ],
+      "acceptance_check": "semantic and publication gates have no missing_activity_table_coverage for xml:table-wrap:5"
+    },
+    {
+      "ticket_id": "rwk-PMC13031788-semantic-003",
+      "paper_id": "PMC13031788",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "requested_by": "semantic_row_completeness_audit",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "expected_observation_counts": {
+        "xml:table-wrap:5": 24
+      },
+      "requested_outputs": [
+        {
+          "need": "Extract exactly 4 sample rows x 6 timepoints as 24 unique Log CFU/mL observations, preserving sample, timepoint, raw value/qualifier, unit, target, statistics, and row/cell locator.",
+          "required_locators": [
+            "xml:table-wrap:5"
+          ],
+          "expected_shape": "4 samples x 6 timepoints = exactly 24 unique observations"
+        }
+      ],
+      "acceptance_check": "exactly 24 total records cite xml:table-wrap:5 and all are Table 5 Log CFU/mL observations"
+    }
+  ],
+  "worker2_existing_responses": [
+    {
+      "ticket_id": "rwk-PMC13031788-w6-001",
+      "status": "closed_repaired",
+      "response_type": "activity_repaired_toxicity_no_source_located",
+      "analysis_can_resume": true,
+      "evidence_counts": {
+        "accepted_activity_locators": [
+          "xml:table-wrap:4"
+        ],
+        "activity_records": 14,
+        "excluded_activity_locator_hints": [
+          "xml:table-wrap:5"
+        ],
+        "toxicity_keyword_count": 0,
+        "toxicity_records": 0
+      },
+      "artifact_paths": [
+        "papers/PMC13031788/work/activity_evidence/activity_records.json",
+        "packets/PMC13031788/analysis/activity_toxicity_evidence.worker2.json",
+        "papers/PMC13031788/work/activity_evidence/toxicity_bounded_scan.worker2.json",
+        "papers/PMC13031788/work/activity_evidence/required_outputs_validation.worker2.json"
+      ]
+    },
+    {
+      "ticket_id": "rwk-PMC13031788-semantic-001",
+      "status": "closed_repaired",
+      "response_type": "activity_repaired_toxicity_no_source_located",
+      "analysis_can_resume": true,
+      "evidence_counts": {
+        "accepted_activity_locators": [
+          "xml:table-wrap:4"
+        ],
+        "activity_records": 14,
+        "excluded_activity_locator_hints": [
+          "xml:table-wrap:5"
+        ],
+        "toxicity_keyword_count": 0,
+        "toxicity_records": 0
+      },
+      "artifact_paths": [
+        "papers/PMC13031788/work/activity_evidence/activity_records.json",
+        "packets/PMC13031788/analysis/activity_toxicity_evidence.worker2.json",
+        "papers/PMC13031788/work/activity_evidence/toxicity_bounded_scan.worker2.json",
+        "papers/PMC13031788/work/activity_evidence/required_outputs_validation.worker2.json"
+      ]
+    }
+  ]
+}

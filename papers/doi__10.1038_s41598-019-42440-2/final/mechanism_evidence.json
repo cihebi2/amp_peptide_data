@@ -1,0 +1,108 @@
+{
+  "checked_inputs": [
+    "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+    "papers/doi__10.1038_s41598-019-42440-2/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/analysis/mechanism_evidence.json"
+  ],
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from XML/PDF results, methods, tables, and figure captions; automated pending-review placeholders were replaced.",
+  "generated_at": "2026-05-03T07:35:21Z",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-lps-neutralization",
+      "claim_text": "Melimine and Mel4 neutralize P. aeruginosa LPS activity in the LAL assay, with higher OD405 reduction for melimine than Mel4 at matched MIC multiples.",
+      "direct_assay_types": [
+        "Limulus amoebocyte lysate chromogenic LPS neutralization assay"
+      ],
+      "entity_scope": "Melimine and Mel4 against P. aeruginosa LPS",
+      "evidence_class": "direct_mechanism",
+      "limitations": "LAL neutralization supports interaction/neutralization of endotoxin activity; exact molecular binding site is discussed as likely lipid A/phosphate interaction, not directly mapped.",
+      "source_locator": {
+        "locator": "xml:sec=3:Interaction with Lipopolysaccharides;xml:table=2",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "supporting_activity_record_ids": [
+        "act-table2-r4-melimine-1x-mic-lps-neutralization",
+        "act-table2-r6-melimine-2x-mic-lps-neutralization",
+        "act-table2-r8-mel4-1x-mic-lps-neutralization",
+        "act-table2-r10-mel4-2x-mic-lps-neutralization"
+      ]
+    },
+    {
+      "claim_id": "mech-002-cytoplasmic-membrane-depolarization",
+      "claim_text": "Both peptides rapidly depolarize the P. aeruginosa cytoplasmic membrane, measured by DiSC3-5 release, and this coincides with rapid viability loss.",
+      "direct_assay_types": [
+        "DiSC3-5 membrane-potential fluorescence assay",
+        "parallel viable-count assay"
+      ],
+      "entity_scope": "Melimine and Mel4 against P. aeruginosa 6294, with source text stating similar effects across strains",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Main text provides exact log-reduction summary for P. aeruginosa 6294; local supplementary landing assets did not provide additional all-strain curves.",
+      "source_locator": {
+        "locator": "xml:sec=4:Membrane disruption;xml:fig=1",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      }
+    },
+    {
+      "claim_id": "mech-003-membrane-permeabilization",
+      "claim_text": "Sytox green and Syto9/propidium iodide assays support cytoplasmic membrane permeabilization after peptide exposure, with stronger reported effect for melimine than Mel4.",
+      "direct_assay_types": [
+        "Sytox green uptake assay",
+        "flow cytometry with Syto9 and propidium iodide"
+      ],
+      "entity_scope": "Melimine and Mel4 against P. aeruginosa 6294",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Figure-level numeric values beyond source-stated percentages/directions were not digitized; claim is limited to source-stated readout and direction.",
+      "source_locator": {
+        "locator": "xml:sec=4:Membrane disruption;xml:fig=2;xml:fig=3",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      }
+    },
+    {
+      "claim_id": "mech-004-intracellular-content-leakage",
+      "claim_text": "Peptide exposure causes leakage of ATP and DNA/RNA from P. aeruginosa, supporting membrane-disruption-mediated loss of cellular contents.",
+      "direct_assay_types": [
+        "ATP bioluminescence leakage assay",
+        "OD260 DNA/RNA release assay"
+      ],
+      "entity_scope": "Melimine and Mel4 against P. aeruginosa 6294",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Primary source reports selected ATP percentages and time-course direction; detailed plotted curve values were not extracted from figure pixels.",
+      "source_locator": {
+        "locator": "xml:sec=5:The release of cytoplasmic contents;xml:fig=4;xml:fig=5",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      }
+    },
+    {
+      "claim_id": "mech-005-bacterial-lysis",
+      "claim_text": "Longer peptide exposure produces measurable bacteriolysis by OD620 decrease, with source-stated reductions at 2 h, 6.5 h, and 24 h.",
+      "direct_assay_types": [
+        "OD620 bacteriolysis assay"
+      ],
+      "entity_scope": "Melimine and Mel4 against P. aeruginosa 6294 at MIC and 2x MIC",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Bacteriolysis is a later event in the source timeline and should not be restated as the sole initial killing mechanism.",
+      "source_locator": {
+        "locator": "xml:sec=6:Bacterial lysis;xml:fig=6",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      }
+    },
+    {
+      "claim_id": "mech-006-comparative-timeline",
+      "claim_text": "The source-supported sequence of events is LPS interaction, rapid depolarization, membrane permeabilization and ATP/DNA-RNA leakage within minutes, followed by later lysis; melimine generally produces stronger membrane-disruption readouts than Mel4.",
+      "direct_assay_types": [],
+      "entity_scope": "Comparative melimine versus Mel4 mode of action",
+      "evidence_class": "phenotype_supported",
+      "limitations": "This is an adjudicated timeline summary from multiple direct assays, not a separate direct assay record.",
+      "source_locator": {
+        "locator": "xml:abstract;xml:sec=7:Discussion;xml:fig=8",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      }
+    }
+  ],
+  "paper_id": "doi__10.1038_s41598-019-42440-2",
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "source_reviewed": true
+}

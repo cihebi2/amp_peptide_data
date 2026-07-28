@@ -1,0 +1,2231 @@
+{
+  "audit_scope": "Worker-4 source-reviewed reconciliation of linked DBAASP/dbAMP rows against primary XML/PDF Table 1, article metadata, peptide sequence/name statements, Table 3 properties, and merged sequence rows.",
+  "caution_summary": [
+    {
+      "caution_code": "dbamp_activity_text_cross_paper_conflict",
+      "evidence_context": "Mel4 identity is source-supported, but dbAMP activity text mixes references and mislabels one P. aeruginosa 6294 Table 1 value for this paper.",
+      "sequence_key": "dbAMP:dbAMP_24834",
+      "status": "source_conflict"
+    }
+  ],
+  "checked_inputs": [
+    "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+    "papers/doi__10.1038_s41598-019-42440-2/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_literature_records.jsonl"
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 11,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 12,
+    "linked_literature_records": 2,
+    "linked_sequence_records": 0
+  },
+  "generated_at": "2026-05-03T07:35:21Z",
+  "paper_id": "doi__10.1038_s41598-019-42440-2",
+  "reasoning_effort": "xhigh",
+  "record_audits": [
+    {
+      "audit_id": "linked_assay_records.jsonl:row1:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-melimine-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r3-melimine-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "66 (250)",
+          "record_id": "act-table1-r3-melimine-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=1",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=1",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103166",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row2:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-melimine-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r3-melimine-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "132 (500)",
+          "record_id": "act-table1-r3-melimine-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=2",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=2",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103167",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row3:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-melimine-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r6-melimine-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "132 (500)",
+          "record_id": "act-table1-r6-melimine-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=1",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=1",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103168",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row4:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "1000",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-melimine-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r6-melimine-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "1000",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "264 (1000)",
+          "record_id": "act-table1-r6-melimine-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=2",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=2",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103169",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row5:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6294",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r4-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r4-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "106.5 (250)",
+          "record_id": "act-table1-r4-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=4:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=4:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103170",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row6:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r3-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.6 (62.5)",
+          "record_id": "act-table1-r3-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103171",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row7:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "125",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r3-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "125",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "53.2 (125)",
+          "record_id": "act-table1-r3-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103172",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row8:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa PAER1",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r5-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r5-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "106.5 (250)",
+          "record_id": "act-table1-r5-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=5:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=5:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103173",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row9:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa PAER1",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r5-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r5-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "213 (500)",
+          "record_id": "act-table1-r5-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=5:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=5:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103174",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row10:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r6-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.6 (62.5)",
+          "record_id": "act-table1-r6-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103175",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row11:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r6-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.2 (62.5)",
+          "record_id": "act-table1-r6-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103176",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-melimine-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r3-melimine-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "66 (250)",
+          "record_id": "act-table1-r3-melimine-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=1",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=1",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103166",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row2:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-melimine-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r3-melimine-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "132 (500)",
+          "record_id": "act-table1-r3-melimine-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=2",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=2",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103167",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row3:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-melimine-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r6-melimine-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "132 (500)",
+          "record_id": "act-table1-r6-melimine-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=1",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=1",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103168",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row4:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "1000",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-melimine-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r6-melimine-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "1000",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "264 (1000)",
+          "record_id": "act-table1-r6-melimine-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=2",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Melimine",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=2",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103169",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row5:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6294",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r4-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r4-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "106.5 (250)",
+          "record_id": "act-table1-r4-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=4:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=4:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103170",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row6:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r3-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.6 (62.5)",
+          "record_id": "act-table1-r3-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103171",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row7:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "125",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa 6206",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r3-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r3-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "125",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "53.2 (125)",
+          "record_id": "act-table1-r3-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=3:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=3:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103172",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row8:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "250",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa PAER1",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r5-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r5-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "250",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "106.5 (250)",
+          "record_id": "act-table1-r5-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=5:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=5:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103173",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row9:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "500",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa PAER1",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r5-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r5-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "500",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "213 (500)",
+          "record_id": "act-table1-r5-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=5:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=5:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103174",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row10:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MIC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-mel4-mic",
+      "matched_activity_record_ids": [
+        "act-table1-r6-mel4-mic"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.6 (62.5)",
+          "record_id": "act-table1-r6-mel4-mic",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=3",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=3",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103175",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row11:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "62.5",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 19660",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-table1-r6-mel4-mbc",
+      "matched_activity_record_ids": [
+        "act-table1-r6-mel4-mbc"
+      ],
+      "matched_primary_table_cells": [
+        {
+          "paired_mass_unit": "µg/ml",
+          "paired_mass_value": "62.5",
+          "primary_unit": "nmol/ml (µg/ml)",
+          "primary_value": "26.2 (62.5)",
+          "record_id": "act-table1-r6-mel4-mbc",
+          "source_locator": {
+            "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+            "locator": "xml:table=1:row=6:column=4",
+            "pdf_crosscheck": {
+              "locator": "pdf_text:landing-1.txt:Table 1",
+              "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+            },
+            "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+            "table": "Table 1"
+          }
+        }
+      ],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "primary_name": "Mel4",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "caption": "MIC and MBC values of melimine and Mel4 against strains of P. aeruginosa.",
+        "locator": "xml:table=1:row=6:column=4",
+        "pdf_crosscheck": {
+          "locator": "pdf_text:landing-1.txt:Table 1",
+          "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/extracted/pdf_text/landing-1.txt"
+        },
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml",
+        "table": "Table 1"
+      },
+      "review_notes": "Database assay target/value is reconciled to a primary XML/PDF Table 1 row with peptide identity and dual-unit concentration preserved.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Database sequence/name agrees with primary-source sequence/name statement and Table 3 peptide properties.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "103176",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row12:dbAMP:dbAMP_24834",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "source_conflict: dbAMP_24834 activity text includes multi-paper organism/value annotations; for this paper its P. aeruginosa 6294 MIC=250 µg/ml annotation conflicts with primary Table 1, where 250 µg/ml is the Mel4 MBC while the Mel4 MIC is 62.5 µg/ml.",
+      "database": "dbAMP",
+      "database_concentration": "",
+      "database_measure": "text",
+      "database_subject": "Pseudomonas aeruginosa 6294 (MIC=250μg/ml)\nStaphylococcus aureus 31 (MIC=125μg/ml)\nStenotrophomonas maltophilia (MIC=31.2μg/ml)\nElizabethkingia meningoseptica (MIC=500μg/ml)\nDelftia acidovorans (MIC=1000μg/ml)\nBurkholderia cepacia (MIC=1000μg/ml)\nPseudomonas aeruginosa 6294 (MBC=250μg/ml)\nPseudomonas aeruginosa 6206 (MIC=62.5μg/ml)\nPseudomonas aeruginosa 6206 (MBC=125μg/ml)\nPseudomonas aeruginosa PAER1 (MIC=250μg/ml)\nPseudomonas aeruginosa PAER1 (MBC=500μg/ml)\nPseudomonas aeruginosa ATCC 19660 (MIC=62.5μg/ml)\nPseudomonas aeruginosa ATCC 19660 (MBC=62.5μg/ml)\nStaphylococcus aureus 31 (MIC=106.48μM)\nStaphylococcus aureus 31 (MBC=212.96μM)\nStaphylococcus aureus 38 (MIC=106.48μM)\nStaphylococcus aureus 38 (MBC=212.96μM)\nStaphylococcus aureus ATCC 6538 (MIC=53.24μM)\nStaphylococcus aureus ATCC 6538 (MBC=53.24μM)",
+      "database_unit": "",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_primary_source"
+      },
+      "name_check": {
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=1;xml:sec=2:Inhibitory concentrations of peptides",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "review_notes": "Preserved as source_conflict rather than source_verified; source-supported Mel4 Table 1 rows remain in activity evidence and DBAASP rows.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+        ],
+        "database_sequence_status": "Mel4 sequence identity is source-supported, but the dbAMP activity text mixes this paper with other references and mislabels at least one P. aeruginosa 6294 value.",
+        "full_primary_sequence_embedded": true,
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "dbAMP:dbAMP_24834",
+      "source_id": "dbAMP:dbAMP_24834",
+      "source_organism_check": {
+        "source_locator": {
+          "locator": "xml:sec=10:Synthesis of peptides",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "synthetic_peptide"
+      },
+      "source_record_id": "dbAMP_24834",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:DBAASP:DBAASPS_8787",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "",
+      "database_measure": "literature_citation",
+      "database_subject": "Comparative mode of action of the antimicrobial peptide melimine and its derivative Mel4 against Pseudomonas aeruginosa.",
+      "database_unit": "",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_literature_row"
+      },
+      "name_check": {
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "review_notes": "Literature linkage is source_verified for citation traceability only; activity rows are audited separately.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Literature row DOI/PMID/PMCID matches primary article metadata; peptide sequence crosslink checked separately in sequence catalog.",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=2",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source_id": "DBAASP:DBAASPS_8787",
+      "source_organism_check": {
+        "status": "not_applicable_literature_link"
+      },
+      "source_record_id": "DBAASPS_8787",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row2:DBAASP:DBAASPS_8788",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "",
+      "database_measure": "literature_citation",
+      "database_subject": "Comparative mode of action of the antimicrobial peptide melimine and its derivative Mel4 against Pseudomonas aeruginosa.",
+      "database_unit": "",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "modification_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "not_reported_in_literature_row"
+      },
+      "name_check": {
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+      },
+      "review_notes": "Literature linkage is source_verified for citation traceability only; activity rows are audited separately.",
+      "sequence_check": {
+        "database_sequence_rows_checked": [
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "database_sequence_status": "Literature row DOI/PMID/PMCID matches primary article metadata; peptide sequence crosslink checked separately in sequence catalog.",
+        "source_locator": {
+          "locator": "xml:sec=1:Introduction;xml:table=3:row=3",
+          "source_path": "papers/doi__10.1038_s41598-019-42440-2/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source_id": "DBAASP:DBAASPS_8788",
+      "source_organism_check": {
+        "status": "not_applicable_literature_link"
+      },
+      "source_record_id": "DBAASPS_8788",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-42440-2/database/linked_literature_records.jsonl"
+      }
+    }
+  ],
+  "review_model": "gpt-5.5",
+  "sequence_catalog_rows_checked": {
+    "APD6:AP02709": {
+      "database": "APD6",
+      "name": "Melimine (Arg-rich; a hybrid peptide of melittin and protamine, synthetic AMPs20, UCLL1a)",
+      "sequence": "TLISWIKNKRKQRPRVSRRRRRRGGRRRR",
+      "sequence_key": "APD6:AP02709",
+      "source": "hybrid peptide, designed, man-made sequences",
+      "source_id": "AP02709"
+    },
+    "DBAASP:DBAASPS_8787": {
+      "database": "DBAASP",
+      "name": "Melittin (15-26) + Protamine (16-32), Melimine",
+      "sequence": "TLISWIKNKRKQRPRVSRRRRRRGGRRRR",
+      "sequence_key": "DBAASP:DBAASPS_8787",
+      "source": "",
+      "source_id": "DBAASPS_8787"
+    },
+    "DBAASP:DBAASPS_8788": {
+      "database": "DBAASP",
+      "name": "Melittin (21-25) + Protamine (21-32), Mel-4",
+      "sequence": "KNKRKRRRRRRGGRRRR",
+      "sequence_key": "DBAASP:DBAASPS_8788",
+      "source": "",
+      "source_id": "DBAASPS_8788"
+    },
+    "DRAMP:DRAMP18458": {
+      "database": "DRAMP",
+      "name": "Melimine (a hybrid peptide of melittin and protamine, synthetic)",
+      "sequence": "TLISWIKNKRKQRPRVSRRRRRRGGRRRR",
+      "sequence_key": "DRAMP:DRAMP18458",
+      "source": "Synthetic",
+      "source_id": "DRAMP18458"
+    }
+  },
+  "source_reviewed": true,
+  "status_summary": {
+    "source_conflict": 1,
+    "source_verified": 24
+  }
+}

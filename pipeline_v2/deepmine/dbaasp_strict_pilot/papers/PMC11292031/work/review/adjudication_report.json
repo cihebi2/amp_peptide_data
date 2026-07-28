@@ -1,0 +1,93 @@
+{
+  "artifact_role": "worker6_adjudication_report",
+  "caution_findings": [
+    {
+      "code": "no_authoritative_dbaasp_linked_rows",
+      "disposition": "fallback DBAASP machine rows remain unresolved/database-only and are not authoritative ingest-ready",
+      "evidence": "database_source_manifest and authoritative_match_report row counts are zero for linked authoritative article/assay/sequence/literature rows",
+      "severity": "caution",
+      "ticket_id": "rwk-PMC11292031-worker6-no-authoritative-dbaasp"
+    },
+    {
+      "code": "figure_digitization_approximate",
+      "disposition": "quantitative figure-derived toxicity values remain approximate/digitized, not exact table values",
+      "evidence": "figure digitization records preserve extraction method and uncertainty",
+      "severity": "caution",
+      "ticket_id": "rwk-PMC11292031-figure1-hepg2-digitization-002"
+    }
+  ],
+  "checked_inputs": [
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/packet_manifest.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/extracted/xml_sections.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/extracted/pdf_text.jsonl",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/extracted/figure1_hepg2_digitization.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/database/database_source_manifest.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/database/authoritative_match_report.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/analysis/activity_toxicity_evidence.worker2.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/analysis/database_record_audit.worker4.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/analysis/mechanism_evidence.worker5.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/rework/rework_requests.jsonl",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11292031/rework/rework_responses.jsonl"
+  ],
+  "final_counts": {
+    "activity_records": 16,
+    "database_record_audits": 10,
+    "mechanism_claims": 5,
+    "review_rework_targets": 0,
+    "toxicity_records": 42
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11292031/work/review/gate_two_queue_packets.worker6.runtime_terminal.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11292031/work/review/gate_publication_quality.worker6.runtime_terminal.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11292031/work/review/gate_semantic_three_layer.worker6.runtime_terminal.json"
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "publication": 0,
+    "semantic": 0
+  },
+  "paper_id": "PMC11292031",
+  "per_layer_decision_rationale": {
+    "activity": "The current worker-2 table matrix artifact satisfies the expected Table 2 observation count, cell-bound field contract, normalization checks, and owner-response prerequisite.",
+    "adjudication": "All runtime-open ticket contracts pass; worker-6 may proceed to strict gate runs and terminal closure responses.",
+    "database": "No linked authoritative DBAASP rows are present; the database layer remains non-ingest-ready and preserves fallback machine rows as unresolved/database-only caution evidence.",
+    "mechanism": "Mechanism claims are source-located and remain separated by evidence class; no mechanism hard rework target is present.",
+    "toxicity": "The current figure digitization artifact provides the expected toxicity observation array with non-null raw values, units, calibration metadata, uncertainty, treatment role, and consistent concentration copies."
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T11:15:23.186313+00:00",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "database_no_authoritative_caution_contract_pass": true,
+    "duplicate_activity_toxicity_observation_pass": true,
+    "figure1_digitization_contract_pass": true,
+    "owner_response_prerequisite_pass": {
+      "rwk-PMC11292031-figure1-hepg2-digitization-002": true,
+      "rwk-PMC11292031-table2-full-mic-matrix-001": true,
+      "rwk-PMC11292031-worker6-no-authoritative-dbaasp": true
+    },
+    "per_ticket_contract_pass": {
+      "rwk-PMC11292031-figure1-hepg2-digitization-002": true,
+      "rwk-PMC11292031-table2-full-mic-matrix-001": true,
+      "rwk-PMC11292031-worker6-no-authoritative-dbaasp": true
+    },
+    "runtime_open_ticket_ids": [
+      "rwk-PMC11292031-figure1-hepg2-digitization-002",
+      "rwk-PMC11292031-table2-full-mic-matrix-001",
+      "rwk-PMC11292031-worker6-no-authoritative-dbaasp"
+    ],
+    "table2_cell_contract_pass": true,
+    "ticket_contract_overall_pass": true
+  },
+  "source_reviewed": true,
+  "source_text_not_emitted": true,
+  "strict_gate_summary_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11292031/work/review/strict_gate_summary.worker6.runtime_terminal.json",
+  "strict_non_allowing_gates_passed": true,
+  "ticket_contract_verification_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11292031/work/review/ticket_contract_verification.worker6.current_runtime.json",
+  "validator_contract_passed": true,
+  "worker6_terminal_closure_appended": true,
+  "worker6_terminal_closure_blocker": null
+}

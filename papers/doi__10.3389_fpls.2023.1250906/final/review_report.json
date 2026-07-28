@@ -1,0 +1,95 @@
+{
+  "paper_id": "doi__10.3389_fpls.2023.1250906",
+  "generated_at": "2026-05-07T15:26:20Z",
+  "reviewed_at": "2026-05-07T15:26:20Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Source-reviewed rework repaired the missing SHC-AMP activity table into ten MIC rows, reconciled linked DBAASP assay/experiment rows against the primary table, and downgraded mechanism language to phenotype/context only. Remaining caveats are nonblocking and explicitly recorded.",
+  "summary": "SHC-AMP has source-located MIC evidence against ten plant-pathogen targets and in planta Pst DC3000 protection evidence; database rows are reconciled to the primary table with nonblocking taxonomy/sequence-snapshot cautions.",
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fpls.2023.1250906/handoff_context.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/packet_manifest.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/pdf_text/fpls-14-1250906.txt",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/pdf_text/DataSheet_1.txt",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/oa_package/local-DBAASP-PMC10585065/PMC10585065/Table_1.xlsx",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/extracted/oa_package/local-DBAASP-PMC10585065/PMC10585065/DataSheet_1.pdf",
+    "papers/doi__10.3389_fpls.2023.1250906/source/paper.xml",
+    "papers/doi__10.3389_fpls.2023.1250906/source/paper.pdf",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fpls.2023.1250906/database/linked_literature_records.jsonl"
+  ],
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF, OA package NXML/PDF, DataSheet PDF text, Table_1.xlsx workbook, figure captions, landing-bin HTML surfaces, and linked DBAASP rows were checked for owner-layer blockers."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 10,
+    "activity_core_fields_complete": true,
+    "mic_like_rows_have_units": true,
+    "activity_rows_have_source_locators": true,
+    "database_status_summary": {
+      "source_verified": 21
+    },
+    "mechanism_claims": 3,
+    "direct_mechanism_claims": 0,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay and experiment rows are source-verified against primary Table 2 and paper metadata; no source_conflict or database-only row remains after rework, while taxonomy/spelling and absent sequence-snapshot cautions are preserved.",
+    "layer_2_activity_toxicity": "Table 2 was reparsed into ten MIC rows with raw values, units, target species/strain where available, assay conditions, locators, and database links. No local toxicity assay values are reported, so none were invented.",
+    "layer_3_mechanism": "The final mechanism layer preserves only phenotypic antimicrobial/plant-protection evidence and mechanism context; it does not promote prediction or discussion text to direct mechanism evidence.",
+    "worker_6_final_review": "The previous full_source_review_not_completed ticket is closed by explicit source path checking, repaired worker-2 and worker-4 outputs, and a strict gate rerun."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "no_direct_mechanism_assay",
+      "severity": "nonblocking_caution",
+      "evidence_context": "The paper supports MIC and plant-protection phenotypes but does not directly demonstrate a molecular target, membrane permeabilization assay, or killing mechanism for SHC-AMP."
+    },
+    {
+      "caution_code": "no_toxicity_or_hemolysis_assay_reported",
+      "severity": "nonblocking_caution",
+      "evidence_context": "Local XML/PDF/supplement/database material did not report hemolysis, cytotoxicity, or plant phytotoxicity rows beyond disease-symptom observations; no such unsupported values were fabricated."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "severity": "nonblocking_caution",
+      "evidence_context": "The packet includes linked DBAASP assay/experiment/literature rows but no linked sequence row; peptide sequence verification is therefore grounded in the primary paper sequence locator."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "tools_attempted": [
+    "jq artifact inspection",
+    "rg source search",
+    "file type inspection",
+    "python xml.etree JATS table parser",
+    "python zipfile OOXML workbook parser",
+    "existing pdftotext outputs from packet extraction"
+  ]
+}

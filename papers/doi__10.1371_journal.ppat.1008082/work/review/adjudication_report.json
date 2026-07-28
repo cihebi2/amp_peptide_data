@@ -1,0 +1,109 @@
+{
+  "paper_id": "doi__10.1371_journal.ppat.1008082",
+  "reviewed_at": "2026-05-05T18:31:32Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded source review exhausted local XML/PDF/OA package DOCX/figure captions and linked database snapshots for the worker-2/4/6 rework scope."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.ppat.1008082/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extraction/extraction_quality_report.json",
+    "papers/doi__10.1371_journal.ppat.1008082/source/paper.xml",
+    "papers/doi__10.1371_journal.ppat.1008082/source/paper.pdf",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.nxml",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s001.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s002.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s003.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s004.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s005.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s006.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/extracted/oa_package/local-DBAASP-PMC6894747/PMC6894747/ppat.1008082.s007.docx",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1371_journal.ppat.1008082/analysis/mechanism_evidence.json"
+  ],
+  "summary": "Source-reviewed rework repaired the omitted Table 4 and misparsed activity rows, reconciled linked database rows against primary table/text locators, and preserved database-only/source-conflict rows instead of promoting unsupported values.",
+  "adjudication_summary": "Worker-6 accepted with cautions after worker-2 activity-table repair and worker-4 database reconciliation. The final artifacts are publication-grade for locally obtainable evidence, with conflict/database-only labels retained where local sources do not support exact database assertions.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 125,
+    "activity_table_counts": {
+      "Table 3": 80,
+      "Table 4": 20,
+      "Table 5": 20,
+      "text_or_supplement_figure_exact_values": 5
+    },
+    "database_status_summary": {
+      "source_conflict": 29,
+      "source_verified": 50,
+      "database_only_no_primary_source": 20
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "supplement_assets_reopened": 7,
+    "latest_re_review_at": "2026-05-05T18:31:32Z"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked database rows were reconciled against source-reviewed activity records where exact table/text support exists; blank, aggregate, graph-only, or target-conflicting rows remain database_only_no_primary_source or source_conflict with locators and reasons.",
+    "layer_2_activity_toxicity": "Table 3, omitted Table 4, Table 5, and exact article-text/S2 values were rebuilt as target/entity/value rows with nM units, non-generic endpoints, strain/variant targets, and source locators. Figure-only toxicity curves were not fabricated into numeric rows.",
+    "layer_3_mechanism": "Final mechanism claims are bounded to gp41 fusion inhibition, Fc-binding/PK extension context, and functional bNAb synergy; no membrane-disruption or antimicrobial mechanism is overclaimed.",
+    "adjudication": "The previous full_source_review_not_completed ticket is resolved for worker-2/4/6 scope; acceptance is with cautions because some database snapshots remain source_conflict/database_only rather than silently normalized."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "count": 29,
+      "evidence_context": "Database rows with graph-only exact values, broad aggregate CAMP rows, or target/value mismatches are retained as source_conflict."
+    },
+    {
+      "caution_code": "database_only_rows_preserved",
+      "count": 20,
+      "evidence_context": "Rows with blank or NA database concentration are not promoted to primary-source assay rows."
+    },
+    {
+      "caution_code": "figure_only_toxicity_not_numeric",
+      "evidence_context": "Local text/figures support no obvious toxicity qualitatively; exact toxicity curves were not digitized or fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_target_count": 0,
+    "semantic_gate_report": "reports/doi__10.1371_journal.ppat.1008082.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.1371_journal.ppat.1008082.publication_quality.json"
+  },
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "packet_analysis_status": "analysis_source_reviewed_accepted",
+  "upstream_artifact_summary": {
+    "activity_records": 125,
+    "database_record_audits": 99,
+    "mechanism_claims": 3
+  }
+}

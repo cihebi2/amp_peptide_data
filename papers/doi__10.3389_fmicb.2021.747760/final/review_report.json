@@ -1,0 +1,123 @@
+{
+  "accepted_with_cautions": true,
+  "adjudication_summary": "Worker-6 re-review closed the local worker-2 and worker-5 artifact-shape blockers while preserving database cautions and source-locator provenance.",
+  "caution_count": 4,
+  "caution_findings": [
+    {
+      "affected_records": [
+        "DBAASP:DBAASPS_12587",
+        "DBAASP:DBAASPS_14436",
+        "DBAASP:DBAASPS_14437"
+      ],
+      "caution_code": "database_synonym_not_normalized",
+      "finding": "DBAASP rows use legacy pEM-2 derivative names while the primary article names the peptides S1, S1-Nal, and S1-Nal-Nal; the synonym relationship is preserved with Table 1 and introduction locators."
+    },
+    {
+      "affected_records": [
+        "DBAASP:DBAASPS_14436",
+        "DBAASP:DBAASPS_14437",
+        "CAMP:CAMPSQ14465",
+        "CAMP:CAMPSQ14466",
+        "dbAMP:dbAMP_34035",
+        "dbAMP:dbAMP_34036"
+      ],
+      "caution_code": "nonstandard_residue_notation_preserved",
+      "finding": "Database X/U notation for Nal is mapped to the primary article Nal residue notation and retained as modified-sequence evidence, not normalized to an ordinary amino acid."
+    },
+    {
+      "affected_records": [
+        "CAMP:CAMPSQ14464",
+        "CAMP:CAMPSQ14465",
+        "CAMP:CAMPSQ14466",
+        "dbAMP:dbAMP_34035",
+        "dbAMP:dbAMP_34036"
+      ],
+      "caution_code": "entry_text_rows_not_assay_granular",
+      "finding": "CAMP/dbAMP rows are entry-level activity summaries with PubMed linkage; they are supported by primary identity/MIC tables but are not promoted to individual assay rows."
+    },
+    {
+      "caution_code": "supplementary_landing_captures_no_tables",
+      "finding": "Ten local supplementary_original .bin files were opened and identified as Frontiers HTML landing captures; extracted supplementary table count remains zero.",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2021.747760/raw/supplementary_original",
+        "paper_packets/doi__10.3389_fmicb.2021.747760/extracted/supplementary_tables.json"
+      ]
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fmicb.2021.747760/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/extracted/supplementary_tables.json",
+    "papers/doi__10.3389_fmicb.2021.747760/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2021.747760/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2021.747760/analysis/database_record_audit.json"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Bounded owner-worker re-review used only indexed local materials and preserved unsupported facts as cautions/gaps.",
+    "oa_package": true,
+    "packet_activity": true,
+    "packet_mechanism": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3389_fmicb.2021.747760",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Database audit remains source-reviewed; existing caution findings are preserved without status promotion.",
+    "layer_2_activity_toxicity": "Activity rows now expose required top-level endpoint, value, unit, target, condition, statistic-status, and locator fields from source-backed table rows.",
+    "layer_3_mechanism": "Mechanism claims now use allowed ontology classes with direct-assay types for direct claims and inference-only classification for contextual claims.",
+    "supplementary_material": "Local supplementary/package checks were reopened through the packet index; no unsupported value was fabricated.",
+    "worker_6_final_decision": "Publication-grade acceptance with cautions is supportable after closing local rework targets."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_response_to_ticket": {
+    "closed_ticket_ids": [
+      "rwk-worker2-activity-table-20260506T191610Z",
+      "rwk-worker5-mechanism-20260506T191610Z",
+      "rwk-complete-test-0001"
+    ],
+    "remaining_blockers": [],
+    "status": "closed_after_source_backed_local_repair"
+  },
+  "review_status": "accepted_with_cautions",
+  "review_worker": "worker-6",
+  "reviewed_at": "2026-06-21T02:02:13Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_artifact_publication_grade": true,
+    "activity_records_current": true,
+    "activity_required_field_missing_count": 0,
+    "database_record_audits": true,
+    "database_status_summary": true,
+    "mechanism_artifact_publication_grade": true,
+    "mechanism_claims_current": true,
+    "mechanism_pending_placeholder_class_count": 0,
+    "open_rework_target_count": 0,
+    "worker4_database_source_review": true
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "packet_activity",
+    "packet_mechanism"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "updated_at": "2026-06-21T02:03:36Z",
+  "validator_contract_passed": true
+}

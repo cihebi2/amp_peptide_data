@@ -1,0 +1,126 @@
+{
+  "adjudication_summary": "Worker-2 recovered all source-supported MIC/MHC rows from XML Tables 3-6, worker-4 rechecked linked DBAASP/DRAMP rows against Table 1 identity and activity locators, and worker-6 closed the ticket as accepted_with_cautions only because remaining database conflicts are explicit nonblocking cautions.",
+  "caution_findings": [
+    {
+      "blocks_publication_grade": false,
+      "code": "source_conflict_database_exact_cytotoxicity_values",
+      "count": 60,
+      "evidence_context": "DRAMP exact IPEC-J2 percentage arrays are database annotations/figure-derived and not tabulated in local primary XML/PDF/supplement; they remain source_conflict rather than source_verified.",
+      "severity": "caution"
+    },
+    {
+      "blocks_publication_grade": false,
+      "code": "supplement_hplc_only_no_activity_table",
+      "evidence_context": "OA package Data_Sheet_1 is an HPLC elution-profile supplement; activity/toxicity values were recovered from article XML Tables 3-6 instead.",
+      "severity": "caution"
+    },
+    {
+      "blocks_publication_grade": false,
+      "code": "historical_taxon_synonym_adjudicated",
+      "evidence_context": "Database Pseudomonas/Enterococcus/Salmonella expanded names were matched only to the same source-reported strains in primary tables and not silently rewritten in raw database fields.",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "papers/doi__10.3389_fmicb.2018.02832/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2018.02832/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/pdf_text/fmicb-09-02832.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/pdf_text/Data_Sheet_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/oa_package/local-DBAASP-PMC6277555/PMC6277555/Data_Sheet_1.pdf",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Owned-layer re-review opened local XML/PDF/OA package/Data_Sheet_1/database snapshots; no activity-relevant local supplement table remained missing after Tables 3-6 were recovered from XML.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "source_paths_checked": [
+      "papers/doi__10.3389_fmicb.2018.02832/source/paper.xml",
+      "papers/doi__10.3389_fmicb.2018.02832/source/paper.pdf",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/raw/paper.xml",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/raw/paper.pdf",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/xml_sections.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/pdf_text/fmicb-09-02832.txt",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/pdf_text/Data_Sheet_1.txt",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/oa_package/local-DBAASP-PMC6277555/PMC6277555/Data_Sheet_1.pdf",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/extracted/archive_manifest.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/locators/locator_index.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_dramp_activity_records.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02832/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+    ],
+    "supplementary_assets": true,
+    "tools_attempted": [
+      "xml.etree.ElementTree table parser",
+      "jq artifact inspection",
+      "rg XML/PDF text locator checks",
+      "pdftotext-derived packet text for primary PDF and Data_Sheet_1.pdf",
+      "file type check for supplementary landing assets",
+      "CSV/JSONL database snapshot parser",
+      "semantic_three_layer_gate.py",
+      "check_three_layer_publication_quality.py"
+    ]
+  },
+  "paper_id": "doi__10.3389_fmicb.2018.02832",
+  "per_layer_decision_rationale": {
+    "worker-2_activity_toxicity": "162 source-located activity/toxicity records now cover baseline MIC, MHC, salt, serum/heat, and pH tables with units and target strains.",
+    "worker-4_database": "251 linked database rows adjudicated; source_verified rows carry primary locators and 60 source_conflict rows are preserved with explicit context.",
+    "worker-5_mechanism_context": "Mechanism claims are bounded to membrane-disruption assays, LPS-binding context, and high-concentration DNA-binding context; no unsupported direct intracellular mechanism is promoted.",
+    "worker-6_final_gate": "No blocking or major owner-layer issue remains when strict gates pass; historical rework ticket is closed in rework_responses and current open-ticket state is cleared."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T17:16:22Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_extraction_issue_count": 0,
+    "activity_rows_parsed": 162,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "database_record_audits": 251,
+    "database_status_summary": {
+      "source_conflict": 60,
+      "source_verified": 191
+    },
+    "mechanism_claims": 3,
+    "mhc_records": 6,
+    "mic_records": 156,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": []
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "open_rework_ticket_count": 0,
+    "required_rework_count": 0
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

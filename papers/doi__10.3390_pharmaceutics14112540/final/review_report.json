@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics14112540",
+  "reviewed_at": "2026-05-09T18:29:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Paper-local XML/PDF, OA figures, supplement zip/PDF pages, and APD6/DBAASP linked rows were opened. Remaining cautions are interpretation/provenance cautions, not blocking source gaps."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_pharmaceutics14112540/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/locators/locator_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/pdf_text/pharmaceutics-14-02540.txt",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/raw/paper.xml",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/raw/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/raw/supplementary_original/local-APD6-pharmaceutics-14-02540-s001.zip",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/oa_package/local-APD6-pmc_package/PMC9698133/pharmaceutics-14-02540-g001.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/oa_package/local-APD6-pmc_package/PMC9698133/pharmaceutics-14-02540-g002.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/oa_package/local-APD6-pmc_package/PMC9698133/pharmaceutics-14-02540-g003.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/oa_package/local-APD6-pmc_package/PMC9698133/pharmaceutics-14-02540-g004.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics14112540/extracted/oa_package/local-APD6-pmc_package/PMC9698133/pharmaceutics-14-02540-g005.jpg"
+  ],
+  "adjudication_summary": "Worker-2 recovered source-backed MIC, antibiofilm, hemolysis, FICI, and selected checkerboard rows; worker-4 reconciled APD6/DBAASP rows with conflict preservation; worker-6 closed the prior full-source-review ticket as accepted_with_cautions, not accepted_clean.",
+  "summary": "Source-reviewed re-review repaired the missing activity layer and database adjudication while preserving figure-derived hemolysis and empty sequence-snapshot cautions.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP target-activity, antibiofilm, synergy, and F1 hemolysis rows were source-verified where Figure 2, text, Table 1, or supplement figures support them. APD6 entry-text rows lacking local sequence/name fields and exact E1 hemolysis from plotted data remain caution-bearing rather than smoothed.",
+    "layer_2_activity_toxicity": "Figure 2 MIC/ND rows, text-supported biofilm percentages, F1 hemolysis, Table 1 FICI rows, and selected text-supported MDR checkerboard values now have endpoints, raw values, units, targets, conditions, and locators.",
+    "layer_3_mechanism": "Mechanism conclusions are bounded to direct SEM/time-kill/salt-sensitivity and phenotypic biofilm/checkerboard evidence; molecular target specificity is not overclaimed."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 180,
+    "activity_extraction_issue_count": 0,
+    "database_status_summary": {
+      "source_verified": 50,
+      "source_conflict": 48,
+      "database_only_no_primary_source": 2
+    },
+    "mechanism_claims": 4,
+    "source_conflicts_preserved": 48,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "not_accepted_clean",
+      "evidence_context": "The paper is accepted_with_cautions because linked database rows include figure-derived and database-only provenance cases."
+    },
+    {
+      "caution_code": "empty_sequence_snapshot",
+      "evidence_context": "linked_sequence_records.jsonl is empty; peptide identity is source-located in Figure 1A, but APD6 entry-text rows without local sequence/name fields are not promoted to source_verified."
+    },
+    {
+      "caution_code": "figure_derived_hemolysis",
+      "evidence_context": "LS-AMP-E1 exact hemolysis percentage from DBAASP is preserved as source_conflict because the local source is a plotted supplement figure, while LS-AMP-F1 17% at 200 µM is source-text supported."
+    },
+    {
+      "caution_code": "figure_heatmap_partial_normalization",
+      "evidence_context": "Figure 4 and Figure S6 heatmaps were opened; source-text-supported high-impact values are normalized, while full heatmap matrices remain source-image evidence rather than a required activity table."
+    },
+    {
+      "caution_code": "nd_mic_rows",
+      "evidence_context": "ND values from Figure 2 are retained as MIC_not_detected within tested concentration ranges, not converted to numeric MIC values."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "decision": "accepted_with_cautions",
+    "required_rework_count": 0,
+    "open_rework_target_count": 0
+  }
+}

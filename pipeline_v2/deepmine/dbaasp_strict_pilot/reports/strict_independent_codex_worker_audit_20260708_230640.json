@@ -1,0 +1,579 @@
+{
+  "generated_at_cst": "2026-07-08T23:06:40+08:00",
+  "generated_at_utc": "2026-07-08T15:06:40Z",
+  "audit_question": "Are strict pilot papers independently reviewed by Codex CLI through worker-1..worker-6, and did they pass strict gates?",
+  "short_answer": {
+    "strict_pilot_papers_all_have_independent_codex_worker_sessions": true,
+    "scope_warning": "This applies to the 5-paper DBAASP strict pilot only, not the whole DBAASP worklist or the fast 10-paper Codex fallback extraction batch.",
+    "runtime_boundary": "Sequential independent codex exec bridge; not full durable OMX team mailbox production state.",
+    "paper_level_source_reviewed_complete_count": 5,
+    "authoritative_dbaasp_ingest_ready_count": 0
+  },
+  "global_status": {
+    "paper_count": 5,
+    "counts": {
+      "material_status": {
+        "material_extracted_complete": 5
+      },
+      "analysis_status": {
+        "analysis_source_reviewed_accepted": 5
+      },
+      "review_status": {
+        "accepted_with_cautions": 5
+      }
+    },
+    "source_reviewed_publication_grade_count": 5,
+    "authoritative_dbaasp_ingest_ready_count": 0,
+    "open_rework_ticket_count": 0,
+    "missing_final_paper_count": 0
+  },
+  "gate_evidence": {
+    "verify_returncode_summary": {
+      "packet_check": 0,
+      "semantic_gate": 0,
+      "publication_gate": 0,
+      "strict_worker_run_gate": 0
+    },
+    "strict_worker_run_gate": {
+      "returncode": 0,
+      "json_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/reports/strict_worker_run_gate_latest.json",
+      "hard_finding_count": 0,
+      "hard_finding_papers": []
+    }
+  },
+  "script_hardening_this_audit": [
+    "status no longer backfills old run_sequence reports from stderr logs newer than the sequence file",
+    "worker_run_clean now requires stale_or_mutated_log_reference_count == 0",
+    "future run_worker writes immutable run_id-prefixed stdout/stderr/final_message/run_report files and still updates worker-*.latest compatibility paths"
+  ],
+  "per_paper": [
+    {
+      "paper_id": "PMC13036774",
+      "review_status": "accepted_with_cautions",
+      "publication_grade": true,
+      "worker_run_clean": true,
+      "worker_count": 6,
+      "unique_session_count": 6,
+      "all_returncode_zero": true,
+      "all_gpt55_xhigh": true,
+      "stale_or_mutated_log_reference_count": 0,
+      "activity_record_count": 3,
+      "database_record_audit_count": 3,
+      "database_status_summary": {
+        "unresolved_record": 3
+      },
+      "mechanism_claim_count": 5,
+      "caution_count": 4,
+      "authoritative_dbaasp_ingest_ready": false,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "started_at_min": "2026-07-08T14:11:22Z",
+      "finished_at_max": "2026-07-08T15:03:44Z",
+      "workers": [
+        {
+          "worker": "worker-1",
+          "returncode": 0,
+          "session_id": "019f4211-adc7-77d1-89e4-d9b4d0d273f4",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:11:22Z",
+          "finished_at": "2026-07-08T14:17:38Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-1.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-1.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-1.last_message.md"
+        },
+        {
+          "worker": "worker-2",
+          "returncode": 0,
+          "session_id": "019f4217-68ce-7022-8c74-3162bbbdeef6",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:17:38Z",
+          "finished_at": "2026-07-08T14:24:41Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-2.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-2.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-2.last_message.md"
+        },
+        {
+          "worker": "worker-3",
+          "returncode": 0,
+          "session_id": "019f421d-df6c-7ec2-b4fd-a4355a5ba5ed",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:24:41Z",
+          "finished_at": "2026-07-08T14:35:52Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-3.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-3.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-3.last_message.md"
+        },
+        {
+          "worker": "worker-4",
+          "returncode": 0,
+          "session_id": "019f4228-1db5-73d3-8f91-94d1f1121331",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:35:52Z",
+          "finished_at": "2026-07-08T14:44:13Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-4.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-4.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-4.last_message.md"
+        },
+        {
+          "worker": "worker-5",
+          "returncode": 0,
+          "session_id": "019f422f-c132-7361-86c4-d423a5e2f070",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:44:13Z",
+          "finished_at": "2026-07-08T14:53:39Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-5.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-5.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-5.last_message.md"
+        },
+        {
+          "worker": "worker-6",
+          "returncode": 0,
+          "session_id": "019f4238-63fa-7031-8ceb-0cf8cd0ff7f5",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T14:53:39Z",
+          "finished_at": "2026-07-08T15:03:44Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036774/worker-6.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-6.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036774/worker-6.last_message.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "PMC13036000",
+      "review_status": "accepted_with_cautions",
+      "publication_grade": true,
+      "worker_run_clean": true,
+      "worker_count": 6,
+      "unique_session_count": 6,
+      "all_returncode_zero": true,
+      "all_gpt55_xhigh": true,
+      "stale_or_mutated_log_reference_count": 0,
+      "activity_record_count": 8,
+      "database_record_audit_count": 0,
+      "database_status_summary": {
+        "source_verified": 0,
+        "source_conflict": 0,
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 0,
+        "unresolved_record": 0
+      },
+      "mechanism_claim_count": 5,
+      "caution_count": 2,
+      "authoritative_dbaasp_ingest_ready": false,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "started_at_min": "2026-07-08T10:18:37Z",
+      "finished_at_max": "2026-07-08T14:04:28Z",
+      "workers": [
+        {
+          "worker": "worker-1",
+          "returncode": 0,
+          "session_id": "019f413c-978f-79f3-970b-92cb89dd3a1b",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T10:18:37Z",
+          "finished_at": "2026-07-08T10:26:43Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-1.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-1.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-1.last_message.md"
+        },
+        {
+          "worker": "worker-2",
+          "returncode": 0,
+          "session_id": "019f41fa-9efb-7e30-bacd-73db343d44e0",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T13:46:11Z",
+          "finished_at": "2026-07-08T13:54:05Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-2.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-2.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-2.last_message.md"
+        },
+        {
+          "worker": "worker-3",
+          "returncode": 0,
+          "session_id": "019f4147-f770-7912-8e0c-7d95ed4b81ff",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T10:31:03Z",
+          "finished_at": "2026-07-08T10:40:18Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-3.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-3.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-3.last_message.md"
+        },
+        {
+          "worker": "worker-4",
+          "returncode": 0,
+          "session_id": "019f4150-7107-7872-8f9d-bced99357482",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T10:40:18Z",
+          "finished_at": "2026-07-08T10:46:39Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-4.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-4.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-4.last_message.md"
+        },
+        {
+          "worker": "worker-5",
+          "returncode": 0,
+          "session_id": "019f4156-426b-78c1-a046-8fd0b75bc652",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T10:46:39Z",
+          "finished_at": "2026-07-08T10:54:14Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-5.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-5.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-5.last_message.md"
+        },
+        {
+          "worker": "worker-6",
+          "returncode": 0,
+          "session_id": "019f4201-dbaf-70b1-99fc-e9937582e65b",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T13:54:05Z",
+          "finished_at": "2026-07-08T14:04:28Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13036000/worker-6.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-6.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13036000/worker-6.last_message.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "PMC11735859",
+      "review_status": "accepted_with_cautions",
+      "publication_grade": true,
+      "worker_run_clean": true,
+      "worker_count": 6,
+      "unique_session_count": 6,
+      "all_returncode_zero": true,
+      "all_gpt55_xhigh": true,
+      "stale_or_mutated_log_reference_count": 0,
+      "activity_record_count": 57,
+      "database_record_audit_count": 5,
+      "database_status_summary": {
+        "source_verified": 0,
+        "source_conflict": 0,
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 0,
+        "unresolved_record": 5
+      },
+      "mechanism_claim_count": 7,
+      "caution_count": 6,
+      "authoritative_dbaasp_ingest_ready": false,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "started_at_min": "2026-07-08T07:29:21Z",
+      "finished_at_max": "2026-07-08T08:29:49Z",
+      "workers": [
+        {
+          "worker": "worker-1",
+          "returncode": 0,
+          "session_id": "019f40a1-9e2b-7c73-afbd-b388661d24b3",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T07:29:21Z",
+          "finished_at": "2026-07-08T07:34:55Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-1.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-1.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-1.last_message.md"
+        },
+        {
+          "worker": "worker-2",
+          "returncode": 0,
+          "session_id": "019f40a6-b796-78d0-bdf0-f620bb0b0128",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T07:34:55Z",
+          "finished_at": "2026-07-08T07:49:17Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-2.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-2.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-2.last_message.md"
+        },
+        {
+          "worker": "worker-3",
+          "returncode": 0,
+          "session_id": "019f40b3-df6e-72c2-92f7-f9382a2c6c45",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T07:49:17Z",
+          "finished_at": "2026-07-08T07:59:14Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-3.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-3.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-3.last_message.md"
+        },
+        {
+          "worker": "worker-4",
+          "returncode": 0,
+          "session_id": "019f40bc-fa7f-7792-b14a-0e5e04194c60",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T07:59:14Z",
+          "finished_at": "2026-07-08T08:11:37Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-4.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-4.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-4.last_message.md"
+        },
+        {
+          "worker": "worker-5",
+          "returncode": 0,
+          "session_id": "019f40c8-520e-72d0-925b-292c5f044094",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T08:11:37Z",
+          "finished_at": "2026-07-08T08:22:14Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-5.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-5.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-5.last_message.md"
+        },
+        {
+          "worker": "worker-6",
+          "returncode": 0,
+          "session_id": "019f40d2-08b1-75a3-80fa-559a449b75f7",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T08:22:14Z",
+          "finished_at": "2026-07-08T08:29:49Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11735859/worker-6.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-6.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11735859/worker-6.last_message.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "PMC13054752",
+      "review_status": "accepted_with_cautions",
+      "publication_grade": true,
+      "worker_run_clean": true,
+      "worker_count": 6,
+      "unique_session_count": 6,
+      "all_returncode_zero": true,
+      "all_gpt55_xhigh": true,
+      "stale_or_mutated_log_reference_count": 0,
+      "activity_record_count": 13,
+      "database_record_audit_count": 16,
+      "database_status_summary": {
+        "source_verified": 0,
+        "source_conflict": 3,
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 0,
+        "unresolved_record": 13
+      },
+      "mechanism_claim_count": 5,
+      "caution_count": 5,
+      "authoritative_dbaasp_ingest_ready": false,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "started_at_min": "2026-07-08T08:52:15Z",
+      "finished_at_max": "2026-07-08T09:53:26Z",
+      "workers": [
+        {
+          "worker": "worker-1",
+          "returncode": 0,
+          "session_id": "019f40ed-842f-75d1-a152-fdbcb7991e52",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T08:52:15Z",
+          "finished_at": "2026-07-08T08:58:54Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-1.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-1.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-1.last_message.md"
+        },
+        {
+          "worker": "worker-2",
+          "returncode": 0,
+          "session_id": "019f40f3-998c-7e01-9034-530a20506bb0",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T08:58:54Z",
+          "finished_at": "2026-07-08T09:14:59Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-2.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-2.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-2.last_message.md"
+        },
+        {
+          "worker": "worker-3",
+          "returncode": 0,
+          "session_id": "019f4102-5309-72f3-b180-d22d838be333",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T09:14:59Z",
+          "finished_at": "2026-07-08T09:22:08Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-3.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-3.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-3.last_message.md"
+        },
+        {
+          "worker": "worker-4",
+          "returncode": 0,
+          "session_id": "019f4108-e148-7393-9575-fa81265b0f07",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T09:22:08Z",
+          "finished_at": "2026-07-08T09:35:20Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-4.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-4.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-4.last_message.md"
+        },
+        {
+          "worker": "worker-5",
+          "returncode": 0,
+          "session_id": "019f4114-f6d3-7321-a9bb-1298d671a684",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T09:35:20Z",
+          "finished_at": "2026-07-08T09:44:14Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-5.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-5.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-5.last_message.md"
+        },
+        {
+          "worker": "worker-6",
+          "returncode": 0,
+          "session_id": "019f411d-1e0d-72b2-aaab-b1bb91c2b138",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T09:44:14Z",
+          "finished_at": "2026-07-08T09:53:26Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC13054752/worker-6.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-6.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC13054752/worker-6.last_message.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "PMC11752523",
+      "review_status": "accepted_with_cautions",
+      "publication_grade": true,
+      "worker_run_clean": true,
+      "worker_count": 6,
+      "unique_session_count": 6,
+      "all_returncode_zero": true,
+      "all_gpt55_xhigh": true,
+      "stale_or_mutated_log_reference_count": 0,
+      "activity_record_count": 8,
+      "database_record_audit_count": 8,
+      "database_status_summary": {
+        "source_verified": 0,
+        "source_conflict": 0,
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 8,
+        "unresolved_record": 0
+      },
+      "mechanism_claim_count": 5,
+      "caution_count": 5,
+      "authoritative_dbaasp_ingest_ready": false,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "started_at_min": "2026-07-08T11:43:44Z",
+      "finished_at_max": "2026-07-08T13:41:33Z",
+      "workers": [
+        {
+          "worker": "worker-1",
+          "returncode": 0,
+          "session_id": "019f418a-84bd-7690-bf14-a73967a7ea47",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T11:43:44Z",
+          "finished_at": "2026-07-08T11:51:23Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-1.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-1.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-1.last_message.md"
+        },
+        {
+          "worker": "worker-2",
+          "returncode": 0,
+          "session_id": "019f41da-b83f-7b23-bed0-5b88c57fa04c",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T13:11:20Z",
+          "finished_at": "2026-07-08T13:17:10Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-2.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-2.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-2.last_message.md"
+        },
+        {
+          "worker": "worker-3",
+          "returncode": 0,
+          "session_id": "019f41d2-0f13-7602-9156-4b964e5440ca",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T13:01:53Z",
+          "finished_at": "2026-07-08T13:11:20Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-3.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-3.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-3.last_message.md"
+        },
+        {
+          "worker": "worker-4",
+          "returncode": 0,
+          "session_id": "019f41a0-a41f-7b23-8d1f-36660113d808",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T12:07:54Z",
+          "finished_at": "2026-07-08T12:15:47Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-4.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-4.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-4.last_message.md"
+        },
+        {
+          "worker": "worker-5",
+          "returncode": 0,
+          "session_id": "019f41a7-da51-7b91-8807-9bdbf2ed0d92",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T12:15:47Z",
+          "finished_at": "2026-07-08T12:26:58Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-5.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-5.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-5.last_message.md"
+        },
+        {
+          "worker": "worker-6",
+          "returncode": 0,
+          "session_id": "019f41ec-057b-74f3-acb2-4a13b7ee1517",
+          "model": "gpt-5.5",
+          "reasoning_effort": "xhigh",
+          "started_at": "2026-07-08T13:30:14Z",
+          "finished_at": "2026-07-08T13:41:33Z",
+          "prompt_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11752523/worker-6.md",
+          "stderr_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-6.stderr.log",
+          "final_message_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11752523/worker-6.last_message.md"
+        }
+      ]
+    }
+  ],
+  "primary_artifacts": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/status_latest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/verify_latest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/strict_worker_run_gate_latest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC13036774_strict_acceptance_audit_latest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs"
+  ]
+}

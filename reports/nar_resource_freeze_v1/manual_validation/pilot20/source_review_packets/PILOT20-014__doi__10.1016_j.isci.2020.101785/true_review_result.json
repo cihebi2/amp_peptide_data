@@ -1,0 +1,209 @@
+{
+  "paper_id": "doi__10.1016_j.isci.2020.101785",
+  "pilot_sample_id": "PILOT20-014",
+  "audit_record_id": "doi__10.1016_j.isci.2020.101785:database_audit:12",
+  "reviewed_at": "2026-06-22T04:16:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "needs_targeted_rework",
+  "confidence": "medium",
+  "material_review": {
+    "material_decision": "primary_material_present_for_sample",
+    "material_inventory_reopened": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/material_inventory.json",
+    "surfaces_present": {
+      "paper_xml": "paper_packets/doi__10.1016_j.isci.2020.101785/raw/paper.xml",
+      "paper_pdf": "paper_packets/doi__10.1016_j.isci.2020.101785/raw/paper.pdf",
+      "oa_package": "paper_packets/doi__10.1016_j.isci.2020.101785/raw/oa_package",
+      "supplementary_original": "paper_packets/doi__10.1016_j.isci.2020.101785/raw/supplementary_original/local-DRAMP-mmc1.pdf",
+      "extracted_xml_sections": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/xml_sections.json",
+      "extracted_pdf_text": [
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt"
+      ],
+      "supplementary_index": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_index.json",
+      "supplementary_tables": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_tables.json",
+      "supplementary_text": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_text/local-DRAMP-mmc1.txt",
+      "database_rows": [
+        "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_literature_records.jsonl"
+      ]
+    },
+    "material_status_notes": [
+      "material_inventory reports material_extracted_with_gaps, but known_missing_or_blocked_materials is empty.",
+      "The original blocking ticket rwk-complete-test-0001 is closed in analysis_status.json and rework_responses.jsonl after worker-2/4/6 repair.",
+      "No missing primary XML/PDF/supplement/database material blocked review of this sampled row."
+    ]
+  },
+  "layer1_database_record_review": {
+    "source_id": "DBAASP:DBAASPR_20591",
+    "release_row": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:tsv_row=7631",
+    "release_vs_final": "matches sample_final_record.json for status, sequence key, database subject, source locators, and non-promoted database context",
+    "sampled_database_row": {
+      "path": "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_assay_records.jsonl",
+      "locator": "database:linked_assay_records:row=12",
+      "assay_id": "161511",
+      "subject_name": "Human colon adenocarcinoma HCT 116",
+      "concentration": "NA",
+      "measure_group": "",
+      "unit": ""
+    },
+    "status_under_review": "database_only_no_primary_source",
+    "status_decision": "justified_for_sampled_row",
+    "rationale": "The DBAASP row has no exact concentration/value/unit for HCT 116, and no matched activity record is present. Primary/supplementary material supports Felipeptin A2 identity and qualitative cancer-cell context, but does not provide a source-backed row-level HCT 116 concentration/unit endpoint for this DBAASP row.",
+    "identity_support": [
+      "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/main.txt:275-289 supports Felipeptin A2 sequence/topology context.",
+      "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt:774-784 supports Felipeptin A2 sequence/stability context.",
+      "paper_packets/doi__10.1016_j.isci.2020.101785/raw/paper.xml:xml:fig=3:Figure 2 supports Felipeptin A1/A2 structure panels."
+    ],
+    "not_promoted_to_source_verified": true
+  },
+  "layer2_activity_toxicity_review": {
+    "sampled_row_relevance": "The sampled HCT 116 DBAASP row is not a Table S5 MIC row and remains database-only because it lacks primary numeric value/unit support.",
+    "source_backed_activity_spot_check": {
+      "activity_records_path": "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/activity_toxicity_evidence.json",
+      "supported_activity_record_count": 6,
+      "table_s5_locator": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt:1776-1803",
+      "method_locator": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt:196-206",
+      "main_text_locator": "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/main.txt:324-331",
+      "spot_checked_values": [
+        "Felipeptin A2 / Streptococcus pyogenes / MIC / >128 ug/mL",
+        "Felipeptin A2 / Streptococcus pneumoniae ATCC 49619 / MIC / >128 ug/mL",
+        "Felipeptin A1 + Felipeptin A2 mixture / Streptococcus pyogenes / MIC / 64 ug/mL"
+      ]
+    },
+    "quality_findings": [
+      "The MIC rows inspected have endpoint, raw value, raw unit, target species/strain context, assay method locators, and source locators.",
+      "No HCT 116 row-level concentration/unit was recovered from local text; the release row correctly avoids fabricating one."
+    ]
+  },
+  "layer3_mechanism_review": {
+    "mechanism_paths_checked": [
+      "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/mechanism_evidence.json",
+      "papers/doi__10.1016_j.isci.2020.101785/final/mechanism_ontology_record.json",
+      "papers/doi__10.1016_j.isci.2020.101785/final/review_report.json"
+    ],
+    "decision": "hard_rework_required",
+    "rationale": "The final mechanism ontology artifact still describes itself as a message-transfer/framework-test locator note, not publication-grade mechanism adjudication. Its mechanism_claims use the nonstandard evidence_class mechanism_context_pending_review and claim_texts that say final mechanism strength remains targeted rework. This fails the layer-3 requirement that mechanism claims use the standard evidence-strength ontology and remain correctly classified.",
+    "claim_shape": {
+      "claim_count": 3,
+      "claim_ids_present": true,
+      "claim_text_present": true,
+      "locators_present": true,
+      "direct_mechanism_claims_found": false,
+      "standard_evidence_classes_present": false
+    },
+    "blocking_defect": "mechanism_evidence_class_not_standard_and_final_artifact_self_identifies_as_non_publication_grade"
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "terminal_decision": "cannot_confirm_existing_final_artifact",
+    "reason": "Layer 1 sampled-row status and layer 2 source-backed MIC repairs are acceptable with cautions, but the paper-level mechanism ontology final remains a pending/test-scope artifact with nonstandard evidence classes. The existing worker-6 report therefore over-accepts the paper-level final relative to the source-review contract.",
+    "model_provenance_note": "The packet-provided nested command was attempted with codex exec -m gpt-5.5 and model_reasoning_effort=xhigh; it launched and printed model gpt-5.5 / reasoning effort xhigh, but could not complete because outbound API streaming was unavailable. This JSON records the requested review_model/reasoning_effort fields, while preserving the nested-run completion limitation in best_effort_limits.",
+    "requires_rework_ticket": true
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1016_j.isci.2020.101785/final/mechanism_ontology_record.json",
+      "failing_object": "mechanism_claims[*].evidence_class",
+      "failure_code": "nonstandard_pending_mechanism_class_in_final",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1016_j.isci.2020.101785/raw/paper.xml",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/xml_sections.json",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt",
+        "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/figure_captions.json"
+      ],
+      "required_action": "Replace pending/test-scope mechanism notes with source-reviewed mechanism claims using only standard evidence classes: direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. Include direct assay types only when a direct mechanism claim is made.",
+      "acceptance_check": "mechanism ontology contains no mechanism_context_pending_review values and worker-6 re-adjudicates the final report without relying on the test-scope mechanism scaffold."
+    },
+    {
+      "worker": "worker-6",
+      "layer": "adjudication",
+      "artifact_path": "papers/doi__10.1016_j.isci.2020.101785/final/review_report.json",
+      "failing_object": "review_status/publication_grade",
+      "failure_code": "review_over_accepts_invalid_mechanism_final",
+      "source_evidence_to_check": [
+        "papers/doi__10.1016_j.isci.2020.101785/final/mechanism_ontology_record.json",
+        "papers/doi__10.1016_j.isci.2020.101785/final/review_report.json"
+      ],
+      "required_action": "After worker-5 repair, re-adjudicate layer 3 and update review_status/publication_grade only if the repaired mechanism artifact passes the source-review contract.",
+      "acceptance_check": "No rework_targets remain and the mechanism layer uses only accepted ontology classes with locators."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "sampled_database_row",
+      "severity": "caution",
+      "status": "database_only_no_primary_source",
+      "note": "DBAASP:DBAASPR_20591 assay_id 161511 for HCT 116 has no exact value/unit in the linked database row and no primary source row-level value was recovered."
+    },
+    {
+      "scope": "material_packet_status",
+      "severity": "caution",
+      "status": "material_extracted_with_gaps",
+      "note": "The legacy packet status contains gaps, but the local sources needed for this sampled row were present and inspected."
+    },
+    {
+      "scope": "figure_heatmap_quantification",
+      "severity": "caution",
+      "status": "not_promoted_to_exact_activity_rows",
+      "note": "Cancer-cell heatmap effects remain qualitative/source-located context and are not converted into exact HCT 116 activity rows."
+    },
+    {
+      "scope": "model_provenance",
+      "severity": "caution",
+      "status": "nested_xhigh_run_failed_before_completion",
+      "note": "A nested gpt-5.5/xhigh Codex reviewer launch was attempted from the packet script but failed due unavailable outbound streaming."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    ".codex/skills/paper-intake-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-014__doi__10.1016_j.isci.2020.101785/material_inventory.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/analysis_status.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/pdf_text/mmc1.txt",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/extracted/supplementary_text/local-DRAMP-mmc1.txt",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1016_j.isci.2020.101785/analysis/mechanism_evidence.json",
+    "papers/doi__10.1016_j.isci.2020.101785/final/database_record_verification.json",
+    "papers/doi__10.1016_j.isci.2020.101785/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1016_j.isci.2020.101785/final/mechanism_ontology_record.json",
+    "papers/doi__10.1016_j.isci.2020.101785/final/review_report.json",
+    "reports/doi__10.1016_j.isci.2020.101785.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1016_j.isci.2020.101785.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per instruction.",
+    "The packet-provided nested Codex reviewer command launched with model gpt-5.5 and reasoning effort xhigh but did not complete because outbound API streaming was unavailable from the sandbox.",
+    "The source-review decision is based on local packet materials and existing extracted text; no image-level quantification of cancer heatmaps was attempted."
+  ]
+}

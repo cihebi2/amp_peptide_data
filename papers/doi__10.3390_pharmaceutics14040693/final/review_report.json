@@ -1,0 +1,176 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics14040693",
+  "reviewed_at": "2026-05-09T17:42:10Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "needs_targeted_rework",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded worker-4/6 source recovery exhausted paper-local XML/PDF/OA supplement and merged database rows relevant to the open ticket."
+  },
+  "checked_inputs": [
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/packet_manifest.json",
+      "role": "packet manifest"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/locators/locator_index.json",
+      "role": "locator inventory"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.xml",
+      "role": "primary XML tables/sections"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.pdf",
+      "role": "primary PDF text fallback"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/raw/oa_package/local-DBAASP-PMC9026428.tar.gz",
+      "role": "OA package and embedded supplement ZIP/PDF"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/database/linked_assay_records.jsonl",
+      "role": "DBAASP linked assay rows"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/database/linked_experiment_records.jsonl",
+      "role": "DBAASP linked experiment rows"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_pharmaceutics14040693/database/linked_literature_records.jsonl",
+      "role": "DBAASP literature links"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "role": "merged database sequence catalog cross-check"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_final_adjudicated": 340,
+    "database_record_audits": 215,
+    "database_status_summary": {
+      "source_verified": 141,
+      "source_conflict": 74
+    },
+    "mechanism_claims_final_adjudicated": 3,
+    "open_rework_target_count": 1,
+    "unrecoverable_material_gap_count": 1
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Assay/experiment rows were rechecked against XML Tables 2 and 3 and literature rows against article metadata. Source conflicts are preserved for strain identifier/collapsed-subject rows. Exact DBAASP one-letter sequence identity remains database-only because no primary sequence table was recoverable.",
+    "layer_2_activity_toxicity": "Worker-6 final activity surface was rebuilt from source tables to correct prior row/column misalignment. Supplement Table S2 was captured as derived selectivity-index context; Supplement Table S1 remains ancillary comparator context and is not used to close DBAASP sequence identity.",
+    "layer_3_mechanism": "Automated pending-review mechanism notes were replaced in final output with source-located direct mechanism/phenotype claims limited to the two TP10 conjugates and their actual assays.",
+    "layer_4_publication_grade": "Publication-grade acceptance is refused because worker-4 primary sequence evidence remains unrecoverable after bounded local source recovery."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_identity_database_only",
+      "evidence_context": "Merged database catalog has sequence strings for DBAASPS_23072-23076, but local primary paper materials checked here do not expose a primary one-letter sequence table.",
+      "affected_records": [
+        "DBAASP:DBAASPS_23072",
+        "DBAASP:DBAASPS_23073",
+        "DBAASP:DBAASPS_23074",
+        "DBAASP:DBAASPS_23075",
+        "DBAASP:DBAASPS_23076"
+      ]
+    },
+    {
+      "caution_code": "database_target_conflicts_preserved",
+      "evidence_context": "Some linked DBAASP assay rows conflict with or collapse primary-source strain labels; these remain source_conflict in the worker-4 audit."
+    }
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "primary_one_letter_sequence_table_not_locally_recoverable",
+      "owner_worker": "worker-4",
+      "severity": "blocking",
+      "reason": "Bounded local source recovery found no primary-paper one-letter sequence table for DBAASPS_23072-23076; database catalog sequences remain database-only evidence."
+    },
+    {
+      "code": "database_source_conflicts_preserved",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "major",
+      "reason": "Linked DBAASP rows include source conflicts such as strain identifier mismatches and species-level collapsed target rows; these were preserved instead of converted to clean source_verified records."
+    },
+    {
+      "code": "publication_grade_refused_due_unrecoverable_gap",
+      "owner_worker": "worker-6",
+      "severity": "blocking",
+      "reason": "Worker-6 completed source-reviewed adjudication of the owned layers but must leave the paper non-accepted because a blocking worker-4 material gap remains."
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-worker46-20260509-0002",
+      "paper_id": "doi__10.3390_pharmaceutics14040693",
+      "created_at": "2026-05-09T17:42:10Z",
+      "requested_by": "codex_worker46_rereview",
+      "worker": "worker-4",
+      "owner_worker": "worker-4",
+      "target_queue": "analysis",
+      "layer": "database",
+      "severity": "blocking",
+      "failure_code": "primary_one_letter_sequence_table_not_locally_recoverable",
+      "omission_code": "primary_sequence_evidence_absent_after_bounded_local_recovery",
+      "failing_object": "database_sequence_identity_source_verification",
+      "artifact_path": "papers/doi__10.3390_pharmaceutics14040693/final/database_record_verification.json",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.xml",
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.pdf",
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/oa_package/local-DBAASP-PMC9026428.tar.gz::PMC9026428/pharmaceutics-14-00693-s001.zip::pharmaceutics-1612841-supplementary.pdf",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "required_action": "Keep DBAASP sequence identity non-accepted unless new primary sequence-bearing material is added; do not fabricate or infer exact one-letter sequences from database catalog alone.",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "blocks_publication_grade": true
+    }
+  ],
+  "closed_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "primary_one_letter_sequence_table_not_locally_recoverable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.xml",
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/paper.pdf",
+        "paper_packets/doi__10.3390_pharmaceutics14040693/raw/oa_package/local-DBAASP-PMC9026428.tar.gz::PMC9026428/pharmaceutics-14-00693-s001.zip::pharmaceutics-1612841-supplementary.pdf",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "XML table parser",
+        "rg over XML/PDF text",
+        "tarfile+zipfile supplement member inspection",
+        "pdftotext on supplementary PDF",
+        "merged sequence catalog lookup"
+      ],
+      "why_unrecoverable": "Local primary XML/PDF/supplement material supports compound names, masses, assays, and Nle/amide naming, but no primary machine-readable one-letter sequence table for DBAASPS_23072-23076 was recoverable from the paper-local materials. The one-letter sequences are database-catalog evidence only, not primary-paper evidence.",
+      "impact": "Assay rows can be source-reviewed, but DBAASP exact sequence identity cannot be promoted to source_verified under worker-4 rules without additional primary sequence-bearing material.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": true
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 1,
+    "semantic_gate_pass": false,
+    "publication_quality_pass": false,
+    "closed_rework_ticket_ids": []
+  },
+  "adjudication_summary": "Worker-4/6 source review repaired row-level database adjudication and final review provenance, but the paper remains non-accepted because exact DBAASP sequence identity cannot be primary-source verified from local materials."
+}

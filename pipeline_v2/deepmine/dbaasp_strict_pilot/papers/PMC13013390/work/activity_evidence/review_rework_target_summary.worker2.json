@@ -1,0 +1,32 @@
+{
+  "paper_id": "PMC13013390",
+  "review_status": "needs_targeted_rework",
+  "publication_grade": false,
+  "rework_target_count": 3,
+  "targets": [
+    {
+      "worker": "worker-1",
+      "layer": "database",
+      "artifact_path": "packets/PMC13013390/database/linked_*_records.jsonl and packets/PMC13013390/rework/rework_responses.jsonl",
+      "failing_object": "linked authoritative DBAASP/merged row snapshot",
+      "failure_code": "missing_authoritative_linked_rows_or_closed_no_match_response",
+      "target_queue": "material_extraction"
+    },
+    {
+      "worker": "worker-3",
+      "layer": "supplementary_materials",
+      "artifact_path": "packets/PMC13013390/extracted/supplementary_tables.json",
+      "failing_object": "structured DOCX supplementary table surfaces",
+      "failure_code": "supplementary_structured_table_export_gap",
+      "target_queue": "material_extraction"
+    },
+    {
+      "worker": "worker-4",
+      "layer": "database",
+      "artifact_path": "packets/PMC13013390/analysis/database_record_audit.worker4.json and papers/PMC13013390/final/database_record_verification.json",
+      "failing_object": "record_audits[0..5]",
+      "failure_code": "unresolved_records_pending_material_linkage_closure",
+      "target_queue": "analysis"
+    }
+  ]
+}

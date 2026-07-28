@@ -1,0 +1,69 @@
+{
+  "paper_id": "doi__10.3390_antibiotics9090566",
+  "generated_at": "2026-05-07T16:58:14Z",
+  "status": "resolved_after_worker2_worker4_worker6_source_review",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "temporin_a_exact_sequence_not_embedded_in_local_primary_source",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9090566/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/xml_sections.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/pdf_text/antibiotics-09-00566.txt",
+        "paper_packets/doi__10.3390_antibiotics9090566/database/linked_sequence_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg sequence/name search",
+        "XML section inspection",
+        "linked_sequence_records.jsonl row count check"
+      ],
+      "why_unrecoverable": "Local primary XML/PDF names Temporin A and its source/background but does not embed its exact amino-acid sequence; linked_sequence_records is empty.",
+      "impact": "Database identity is curated as name/source/activity-value supported with a nonblocking exact-sequence caveat; no exact Temporin A sequence is fabricated.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "supplementary_assets_absent_locally",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "jq supplementary index/table inspection",
+        "archive manifest inspection",
+        "wc supplementary text jsonl"
+      ],
+      "why_unrecoverable": "The OA package inventory contains article XML/PDF and figure images but no structured supplementary assets; supplementary text/table outputs are empty.",
+      "impact": "No supplementary table changes the worker-2/4/6 repair; source review relies on XML/PDF tables and linked database rows.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "nonblocking_cautions": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "evidence_context": "Rows with computed/unlisted FICI/FBEC-style values or broad CAMP activity text are retained as source_conflict/database-only rather than promoted."
+    },
+    {
+      "caution_code": "temporin_a_sequence_not_fabricated",
+      "evidence_context": "The paper supports Temporin A name/source/activity rows but does not embed an exact amino-acid sequence in local XML/PDF."
+    },
+    {
+      "caution_code": "supplementary_assets_absent_locally",
+      "evidence_context": "OA/package inventory and supplementary outputs contain no local supplement table/text assets."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Figure captions support biofilm combination context; exact plotted metabolic-activity percentages are not digitized because table rows resolve the gate blocker."
+    }
+  ]
+}

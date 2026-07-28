@@ -1,0 +1,88 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1038_s41598-018-34087-2",
+  "doi": "10.1038/s41598-018-34087-2",
+  "run_id": "codex_worker246_20260503",
+  "worker": "worker-6",
+  "stage_id": "single_paper_re_review_worker6_mechanism_adjudication",
+  "generated_at": "2026-05-03T03:05:28Z",
+  "reviewed_at": "2026-05-03T03:05:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "GarA, GarB and GarC sensitivity is Man-PTS dependent in the assayed Lactococcus systems.",
+      "entity_scope": "GarA/GarB/GarC interaction with bacterial Man-PTS receptor context",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "gene deletion resistance phenotype",
+        "heterologous complementation sensitivity phenotype",
+        "mutant resistance fold table"
+      ],
+      "source_locator": {
+        "locator": [
+          "xml:fig=1:Figure 1",
+          "xml:table=1",
+          "xml:sec=13:Man-PTS subunits IIC and IID are necessary for GarA-C activity"
+        ],
+        "source_path": "papers/doi__10.1038_s41598-018-34087-2/source/paper.xml"
+      },
+      "limitations": "This is receptor/sensitivity evidence, not direct pore-formation or killing-kinetics evidence."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "The extracellular gamma-plus region of Man-PTS IID is implicated in GarA-C sensitivity, especially GarB and GarC.",
+      "entity_scope": "L. garvieae / L. lactis Man-PTS IID extracellular loop mutant and deletion phenotypes",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "gamma-plus deletion phenotype",
+        "mutant resistance fold table",
+        "comparative Man-PTS complementation phenotype"
+      ],
+      "source_locator": {
+        "locator": [
+          "xml:sec=15:GarA-C target a specific extracellular loop of subunit IID",
+          "xml:table=1",
+          "xml:fig=4:Figure 4"
+        ],
+        "source_path": "papers/doi__10.1038_s41598-018-34087-2/source/paper.xml"
+      },
+      "limitations": "Specific contact residues are inferred from resistance/comparison patterns; no direct binding structure is reported."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Predicted GarA/GarB/GarC and Man-PTS structures provide model context for receptor interaction but are computational, not direct mechanism measurements.",
+      "entity_scope": "template-based structural models of garvicins and Man-PTS subunits",
+      "evidence_class": "computational_model_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "locator": [
+          "xml:fig=3:Figure 3",
+          "xml:fig=5:Figure 5",
+          "xml:fig=6:Figure 6"
+        ],
+        "source_path": "papers/doi__10.1038_s41598-018-34087-2/source/paper.xml"
+      },
+      "limitations": "Model-derived membrane orientation and interaction suggestions are kept as contextual/inferred evidence only."
+    }
+  ],
+  "quality_controls": [
+    {
+      "check": "no_generic_mechanism_placeholders",
+      "result": "pass",
+      "detail": "Automated membrane/protein-synthesis/nucleic-acid placeholder notes were replaced by source-reviewed receptor-dependency claims."
+    },
+    {
+      "check": "direct_mechanism_assay_types",
+      "result": "pass",
+      "detail": "Direct mechanism claims list deletion/complementation/mutant phenotype assay types."
+    },
+    {
+      "check": "overclaim_guard",
+      "result": "pass",
+      "detail": "Computational structural models are not promoted to direct binding or pore-formation evidence."
+    }
+  ]
+}

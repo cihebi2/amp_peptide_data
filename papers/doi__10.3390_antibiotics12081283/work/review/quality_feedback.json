@@ -1,0 +1,61 @@
+{
+  "paper_id": "doi__10.3390_antibiotics12081283",
+  "generated_at": "2026-05-07T16:24:18Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_targets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "owner_workers": [
+        "worker-4",
+        "worker-6"
+      ],
+      "status": "closed_accepted_with_cautions",
+      "resolution": "Completed source-reviewed database row adjudication and worker-6 final review; remaining database/source differences are preserved as nonblocking cautions in final review and database audit."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "caution_findings": [
+    {
+      "caution_code": "cytotoxicity_database_unit_conflict_preserved",
+      "severity": "nonblocking_major",
+      "owner_worker": "worker-4/worker-6",
+      "evidence_context": "HaCaT and RAW264.7 database rows report cell-death complements at 128 µg/ml, while the source prose reports viability percentages at 128 mg/mL; final activity preserves source viability and database audit preserves the unit conflict.",
+      "affected_records": [
+        "DBAASP:DBAASPS_23237 assay 22224",
+        "DBAASP:DBAASPS_23237 assay 183237"
+      ]
+    },
+    {
+      "caution_code": "database_duplicate_mrsa_mic_conflict_preserved",
+      "severity": "nonblocking_major",
+      "owner_worker": "worker-4/worker-6",
+      "evidence_context": "A duplicate DBAASP PN7/MRSA row reports 16 µg/ml for S. aureus ATCC 43300, but local primary Table 6/Figure 8 context supports 8 µg/mL for PN7 against that target.",
+      "affected_records": [
+        "DBAASP:DBAASPS_23237 assay 183236"
+      ]
+    },
+    {
+      "caution_code": "candida_collection_label_conflict_preserved",
+      "severity": "nonblocking_minor",
+      "owner_worker": "worker-4/worker-6",
+      "evidence_context": "DBAASP Candida row uses CMCC 98001 while the primary Table 6 row uses CICC 98001; value and species are otherwise traceable.",
+      "affected_records": [
+        "DBAASP:DBAASPS_23237 assay 183235"
+      ]
+    },
+    {
+      "caution_code": "supplement_pdf_nonblocking_no_activity_table",
+      "severity": "nonblocking_minor",
+      "owner_worker": "worker-6",
+      "evidence_context": "The local supplement zip contains a two-page PDF; pdfinfo/pdftotext review found Figure S1 in vivo safety indices, not additional sequence/MIC/toxicity table values needed to change final gate status.",
+      "affected_records": []
+    }
+  ],
+  "database_status_summary": {
+    "source_verified": 127,
+    "source_conflict": 8
+  }
+}

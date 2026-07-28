@@ -1,0 +1,92 @@
+{
+  "paper_id": "doi__10.1186_s12866-022-02621-y",
+  "generated_at": "2026-05-03T09:12:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-ll1-membrane-permeability",
+      "claim_text": "LL-1 increases E. coli membrane permeability, supported by beta-galactosidase leakage, nucleic acid/protein leakage, PI uptake, and microscopy morphology changes.",
+      "entity_scope": "LL-1 against Escherichia coli ATCC 25922",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "beta-galactosidase leakage",
+        "A260/A280 leakage",
+        "PI staining",
+        "TEM",
+        "SEM"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "locator": "xml:sec=16,20 and xml:fig=3,4,7,8; supplement MOESM2 caption"
+      },
+      "limitations": "Exact figure-level numeric values for Fig. S2 are not locally recoverable because MOESM2 TIF is absent; source text still supports the qualitative/direct mechanism class."
+    },
+    {
+      "claim_id": "mech-ll1-dna-binding",
+      "claim_text": "LL-1 binds E. coli DNA in a concentration-dependent gel-shift style assay, but this is reported as an intracellular-interaction observation rather than the sole killing mechanism.",
+      "entity_scope": "LL-1 with extracted E. coli genomic DNA",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "nucleic acid gel electrophoresis DNA binding assay"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "locator": "xml:sec=17:The interaction between LL-1 and E. coli DNA; xml:fig=5"
+      },
+      "limitations": "No exact band densitometry values are reported in local text; preserve as qualitative DNA-binding evidence."
+    },
+    {
+      "claim_id": "mech-ll1-atp-depletion-associated",
+      "claim_text": "LL-1 lowers intracellular ATP in E. coli in a dose-dependent manner; the paper frames this as associated with altered energy metabolism and/or membrane permeability rather than a resolved molecular target.",
+      "entity_scope": "LL-1-treated E. coli",
+      "evidence_class": "mechanism_associated_phenotype",
+      "direct_assay_types": [
+        "intracellular ATP assay"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "locator": "xml:sec=18:Effects of LL-1 on intracellular ATP; xml:fig=6"
+      },
+      "limitations": "The paper states the ATP mechanism needs further study; do not promote this to a specific molecular target."
+    }
+  ],
+  "checked_inputs": [
+    "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+    "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "source_paths_checked": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over XML/PDF text/HTML wrappers/database JSONL",
+        "find targeted DOI-local landed/downloaded assets",
+        "PDF text extraction already present in packet",
+        "XML associated-data media-reference inspection"
+      ],
+      "why_unrecoverable": "Local packet and landed/downloaded DOI folders contain article XML/PDF and HTML .bin wrappers. The XML/HTML identify MOESM1/2 TIF and MOESM3 DOCX payload names, but those TIF/DOCX payload files are not present in the local packet, landed assets, or downloaded assets checked in this bounded pass.",
+      "impact": "Exact supplemental Fig. S1/S2 dose-curve values and Table S1 MIC values for non-E. coli microorganisms cannot be source-verified locally; database rows for those Table S1 values are preserved as database_only_no_primary_source and the paper remains non-publication-grade.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

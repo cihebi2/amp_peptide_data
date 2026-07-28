@@ -1,0 +1,2512 @@
+{
+  "artifact_type": "database_record_verification",
+  "paper_id": "doi__10.1002_mbo3.606",
+  "doi": "10.1002/mbo3.606",
+  "run_id": "codex_rereview_20260501_worker4_6",
+  "generated_at": "2026-05-01T02:36:00Z",
+  "reviewed_at": "2026-05-01T02:36:00Z",
+  "worker": "worker-4",
+  "role": "paper-database-record-auditor",
+  "protocol": "amp_three_layer_v2",
+  "source_reviewed": true,
+  "audit_scope": "Reopened paper-local XML/PDF/OA/package database snapshots and merged sequence/experiment catalogs; reconciled linked DBAASP rows against primary Table 1 and toxicity figures while preserving modified-sequence cautions.",
+  "database_row_counts": {
+    "linked_assay_records": 10,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 10,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0,
+    "supplemental_merged_sequence_records_checked": 3
+  },
+  "record_audits": [
+    {
+      "audit_id": "linked_assay_records.jsonl:row1:DBAASP:DBAASPR_20512:19568",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "19568",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Human dermal fibroblasts",
+      "database_concentration": "not active up to 400",
+      "database_unit": "ug/mL",
+      "database_note": "Not active up to 400 ug/ml",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:fig3:fibroblast_cytotoxicity:no_activity_up_to_400ugml",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:fig3:fibroblast_cytotoxicity:no_activity_up_to_400ugml"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_results_and_figure",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=14:Gallidermin shows low cytotoxicity and induces a low immune response in fibroblasts; xml:fig=3",
+          "supports": [
+            "fibroblast viability/LDH and cytokine results across 25-400 ug/mL"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP hemolytic/cytotoxic note is supported by primary fibroblast/RBC/whole-blood result sections and figures; no database-only blocker remains.",
+      "adjudication_decision": "source_verified_toxicity_note_with_primary_figure_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row2:DBAASP:DBAASPR_20512:19569",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "19569",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Human erythrocytes",
+      "database_concentration": "not active up to 400",
+      "database_unit": "ug/mL",
+      "database_note": "Not active up to 400 ug/ml",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:fig4:rbc_hemolysis:less_than_1_percent_up_to_400ugml",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:fig4:rbc_hemolysis:less_than_1_percent_up_to_400ugml"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_results_and_figure",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=15:Gallidermin causes no hemolysis, cell aggregation, or reactive oxygen species production in whole blood; xml:fig=4",
+          "supports": [
+            "RBC hemolysis, whole-blood ROS, and aggregation results"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP hemolytic/cytotoxic note is supported by primary fibroblast/RBC/whole-blood result sections and figures; no database-only blocker remains.",
+      "adjudication_decision": "source_verified_toxicity_note_with_primary_figure_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row3:DBAASP:DBAASPR_20512:160578",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160578",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:12228:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:12228:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row4:DBAASP:DBAASPR_20512:160579",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160579",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus epidermidis RP62A",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "Also S. epidermidis 117 and N15",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mic",
+        "doi__10.1002_mbo3.606:table1:gallidermin:117:mic",
+        "doi__10.1002_mbo3.606:table1:gallidermin:n15:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row5:DBAASP:DBAASPR_20512:160580",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160580",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_concentration": "12.5",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row6:DBAASP:DBAASPR_20512:160581",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160581",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus CCUG 35601",
+      "database_concentration": "1.56",
+      "database_unit": "ug/ml",
+      "database_note": "MRSA",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row7:DBAASP:DBAASPR_20512:160582",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160582",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:12228:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:12228:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row8:DBAASP:DBAASPR_20512:160583",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160583",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus epidermidis RP62A",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "Also S. epidermidis 117 and N15",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mbc",
+        "doi__10.1002_mbo3.606:table1:gallidermin:117:mbc",
+        "doi__10.1002_mbo3.606:table1:gallidermin:n15:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row9:DBAASP:DBAASPR_20512:160584",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160584",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_concentration": "12.5",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row10:DBAASP:DBAASPR_20512:160585",
+      "database": "DBAASP",
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160585",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus CCUG 35601",
+      "database_concentration": "1.56",
+      "database_unit": "ug/ml",
+      "database_note": "MRSA",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:DBAASP:DBAASPR_20512:19568",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "19568",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Human dermal fibroblasts",
+      "database_concentration": "not active up to 400",
+      "database_unit": "ug/mL",
+      "database_note": "Not active up to 400 ug/ml",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:fig3:fibroblast_cytotoxicity:no_activity_up_to_400ugml",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:fig3:fibroblast_cytotoxicity:no_activity_up_to_400ugml"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_results_and_figure",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=14:Gallidermin shows low cytotoxicity and induces a low immune response in fibroblasts; xml:fig=3",
+          "supports": [
+            "fibroblast viability/LDH and cytokine results across 25-400 ug/mL"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP hemolytic/cytotoxic note is supported by primary fibroblast/RBC/whole-blood result sections and figures; no database-only blocker remains.",
+      "adjudication_decision": "source_verified_toxicity_note_with_primary_figure_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row2:DBAASP:DBAASPR_20512:19569",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "19569",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Human erythrocytes",
+      "database_concentration": "not active up to 400",
+      "database_unit": "ug/mL",
+      "database_note": "Not active up to 400 ug/ml",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:fig4:rbc_hemolysis:less_than_1_percent_up_to_400ugml",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:fig4:rbc_hemolysis:less_than_1_percent_up_to_400ugml"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_results_and_figure",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=15:Gallidermin causes no hemolysis, cell aggregation, or reactive oxygen species production in whole blood; xml:fig=4",
+          "supports": [
+            "RBC hemolysis, whole-blood ROS, and aggregation results"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP hemolytic/cytotoxic note is supported by primary fibroblast/RBC/whole-blood result sections and figures; no database-only blocker remains.",
+      "adjudication_decision": "source_verified_toxicity_note_with_primary_figure_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row3:DBAASP:DBAASPR_20512:160578",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160578",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:12228:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:12228:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row4:DBAASP:DBAASPR_20512:160579",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160579",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus epidermidis RP62A",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "Also S. epidermidis 117 and N15",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mic",
+        "doi__10.1002_mbo3.606:table1:gallidermin:117:mic",
+        "doi__10.1002_mbo3.606:table1:gallidermin:n15:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row5:DBAASP:DBAASPR_20512:160580",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160580",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_concentration": "12.5",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row6:DBAASP:DBAASPR_20512:160581",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160581",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus CCUG 35601",
+      "database_concentration": "1.56",
+      "database_unit": "ug/ml",
+      "database_note": "MRSA",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mic"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row7:DBAASP:DBAASPR_20512:160582",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160582",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:12228:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:12228:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row8:DBAASP:DBAASPR_20512:160583",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160583",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus epidermidis RP62A",
+      "database_concentration": "6.25",
+      "database_unit": "ug/ml",
+      "database_note": "Also S. epidermidis 117 and N15",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:rp62a:mbc",
+        "doi__10.1002_mbo3.606:table1:gallidermin:117:mbc",
+        "doi__10.1002_mbo3.606:table1:gallidermin:n15:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row9:DBAASP:DBAASPR_20512:160584",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160584",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_concentration": "12.5",
+      "database_unit": "ug/ml",
+      "database_note": "",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mssa:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row10:DBAASP:DBAASPR_20512:160585",
+      "database": "DBAASP",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "160585",
+      "peptide_name_database": "Gallidermin",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus CCUG 35601",
+      "database_concentration": "1.56",
+      "database_unit": "ug/ml",
+      "database_note": "MRSA",
+      "matched_activity_record_id": "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mbc",
+      "matched_activity_record_ids": [
+        "doi__10.1002_mbo3.606:table1:gallidermin:mrsa:mbc"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1",
+          "supports": [
+            "Table 1 reports the matching MIC/MBC value for the linked database row"
+          ]
+        },
+        {
+          "kind": "primary_xml_table_footnote",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:table=1:footnote",
+          "supports": [
+            "MIC and MBC share the same value for each strain; median values with n=3"
+          ]
+        },
+        {
+          "kind": "primary_xml_methods",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=4:Minimal inhibitory concentration and minimal bactericidal concentration",
+          "supports": [
+            "broth microdilution MIC method, gallidermin dilution range, 24 h incubation, OD620 readout, and MBC plating definition"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl"
+      },
+      "conflict_flags": [
+        "modified_sequence_notation_caution"
+      ],
+      "conflict_context": "Activity/toxicity rows match the 2018 primary paper; sequence notation remains cautioned because the primary paper does not print the full mature sequence and merged databases differ at the modified-position notation.",
+      "review_notes": "DBAASP activity row matches primary Table 1 value/unit/target after source review; rows with notes for S. epidermidis 117 and N15 are represented by source-located Table 1 records.",
+      "adjudication_decision": "source_verified_with_primary_table_locator"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:DBAASP:DBAASPR_20512:29536668",
+      "database": "DBAASP",
+      "source_table": "linked_literature_records.jsonl",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "The lantibiotic gallidermin acts bactericidal against Staphylococcus epidermidis and Staphylococcus aureus and antagonizes the bacteria-induced proinflammatory responses in dermal fibroblasts.",
+      "matched_activity_record_id": "",
+      "source_locator": [
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "citation_traceability_only",
+        "source_locator": [
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "name_or_synonym": "source_verified_gallidermin_paper_context"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/database/linked_literature_records.jsonl"
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Literature row matches selected paper DOI/PMID/PMCID and title in article metadata.",
+      "adjudication_decision": "source_verified_literature_trace"
+    },
+    {
+      "audit_id": "merged_sequences:all_sequences.csv:DBAASP:DBAASPR_20512",
+      "database": "DBAASP",
+      "source_table": "all_sequences.csv",
+      "source_id": "DBAASP:DBAASPR_20512",
+      "sequence_key": "DBAASP:DBAASPR_20512",
+      "source_record_id": "DBAASPR_20512",
+      "peptide_name_database": "Gallidermin",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_measure": "",
+      "database_subject": "Gallidermin sequence identity and modified-residue notation",
+      "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+      "cross_database_sequences": [
+        {
+          "database": "APD6",
+          "sequence_key": "APD6:AP01611",
+          "sequence": "IASKFLCTPGCAKTGSFNSYCC",
+          "note": "linear T notation"
+        },
+        {
+          "database": "DRAMP",
+          "sequence_key": "DRAMP:DRAMP00040",
+          "sequence": "IASKFLCTPGCAKTGSFNSYCC",
+          "note": "linear T notation"
+        }
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_xml_identity_context",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+          "supports": [
+            "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+          ]
+        },
+        {
+          "kind": "merged_database_sequence_catalog",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+          "supports": [
+            "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+          ]
+        },
+        {
+          "kind": "article_metadata",
+          "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+          "locator": "xml:article-meta",
+          "supports": [
+            "DOI 10.1002/mbo3.606",
+            "PMID 29536668",
+            "PMCID PMC6291784"
+          ]
+        }
+      ],
+      "sequence_check": {
+        "status": "paper_identity_supported_with_modified_sequence_caution",
+        "database_sequence": "IASKFLCTPGCAKXGSFNSYCC",
+        "primary_source_sequence_basis": "The 2018 primary paper identifies gallidermin as a 22-aa lantibiotic from Staphylococcus gallinarum but does not embed the full mature sequence; merged catalogs show DBAASP X-modified notation versus APD6/DRAMP linear T notation.",
+        "source_locator": [
+          {
+            "kind": "primary_xml_identity_context",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:sec=1:INTRODUCTION:gallidermin_identity",
+            "supports": [
+              "paper identifies gallidermin as a 22-amino-acid lantibiotic produced by Staphylococcus gallinarum and cites structural characterization"
+            ]
+          },
+          {
+            "kind": "merged_database_sequence_catalog",
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "locator": "all_sequences.csv:sequence_key=DBAASP:DBAASPR_20512;APD6:AP01611;DRAMP:DRAMP00040",
+            "supports": [
+              "DBAASP gallidermin row uses X at a modified position; APD6/DRAMP use linear T notation for the corresponding 22-aa sequence"
+            ]
+          },
+          {
+            "kind": "article_metadata",
+            "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+            "locator": "xml:article-meta",
+            "supports": [
+              "DOI 10.1002/mbo3.606",
+              "PMID 29536668",
+              "PMCID PMC6291784"
+            ]
+          }
+        ]
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "sequence_modified_not_normalized_caution",
+        "name_or_synonym": "source_verified_gallidermin",
+        "terminal_or_noncanonical_modifications": "lantibiotic post-translational modifications preserved as caution; DBAASP X placeholder not normalized to clean T notation",
+        "source_organism_or_origin": "paper identifies gallidermin as produced by Staphylococcus gallinarum; reagent source/purity used in assays is reported separately",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "source_path": "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+        "locator": "xml:article-meta",
+        "supports": [
+          "DOI 10.1002/mbo3.606",
+          "PMID 29536668",
+          "PMCID PMC6291784"
+        ]
+      },
+      "traceability": {
+        "kind": "merged_database_sequence_catalog",
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "all_sequences.csv:line=26844",
+        "supports": [
+          "DBAASP sequence row for DBAASPR_20512"
+        ]
+      },
+      "conflict_flags": [
+        "DBAASP_X_modified_position_notation",
+        "APD6_DRAMP_linear_T_notation",
+        "primary_2018_paper_does_not_print_full_sequence"
+      ],
+      "conflict_context": "The paper-local source verifies the gallidermin identity and 22-aa lantibiotic context but not the exact full sequence. DBAASP uses X where APD6/DRAMP use T; the modified residue caveat is preserved and not normalized.",
+      "review_notes": "Sequence identity is usable for entity linkage with modified-position cautions; exact mature modified chemistry remains a source-preserved caution.",
+      "adjudication_decision": "accepted_with_modified_sequence_caution"
+    }
+  ],
+  "status_summary": {
+    "source_verified": 21,
+    "sequence_modified_not_normalized": 1
+  },
+  "source_review": {
+    "status": "source_reviewed_repaired_with_modified_sequence_caution",
+    "checked_inputs": [
+      "rework_context/doi__10.1002_mbo3.606/handoff_context.json",
+      "paper_packets/doi__10.1002_mbo3.606/packet_manifest.json",
+      "paper_packets/doi__10.1002_mbo3.606/locators/locator_index.json",
+      "paper_packets/doi__10.1002_mbo3.606/extraction/extraction_status.json",
+      "paper_packets/doi__10.1002_mbo3.606/extraction/extraction_quality_report.json",
+      "papers/doi__10.1002_mbo3.606/source/paper.xml",
+      "papers/doi__10.1002_mbo3.606/source/paper.pdf",
+      "papers/doi__10.1002_mbo3.606/source/supplementary/",
+      "paper_packets/doi__10.1002_mbo3.606/raw/paper.xml",
+      "paper_packets/doi__10.1002_mbo3.606/raw/paper.pdf",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/oa_package/local-DBAASP-PMC6291784/PMC6291784/MBO3-7-e00606.nxml",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/oa_package/local-DBAASP-PMC6291784/PMC6291784/MBO3-7-e00606.pdf",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/archive_manifest.json",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/supplementary_index.json",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/supplementary_tables.json",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/xml_sections.json",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/figure_captions.json",
+      "paper_packets/doi__10.1002_mbo3.606/extracted/pdf_text/MBO3-7-e00606.txt",
+      "paper_packets/doi__10.1002_mbo3.606/database/database_source_manifest.json",
+      "paper_packets/doi__10.1002_mbo3.606/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1002_mbo3.606/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1002_mbo3.606/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.1002_mbo3.606/database/linked_sequence_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+    ],
+    "conflict_policy": "Preserve modified sequence notation and source-context cautions; do not normalize DBAASP X to APD6/DRAMP T.",
+    "notes": [
+      "All linked DBAASP Table 1 activity rows were reconciled to primary source rows or source table notes.",
+      "The two hemolytic/cytotoxic database rows are supported by primary fibroblast and RBC/whole-blood sections/figures.",
+      "The packet has no linked_sequence_records rows; merged sequence catalog rows were checked to preserve the DBAASP/APD6/DRAMP notation difference."
+    ]
+  },
+  "unresolved_record_count": 0,
+  "unrecoverable_material_gaps": []
+}

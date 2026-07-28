@@ -1,0 +1,83 @@
+{
+  "adjudication_summary": "Source-reviewed worker-4/6 rework repaired the prior framework-only review: Table 2 now yields 49 source-located MIC records, soybean IAP prose yields two additional source-located MIC records, linked database rows are reconciled against primary source locators with conflicts preserved, and mechanism claims are bounded to membrane-interaction/phenotypic evidence.",
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "count": 13,
+      "evidence_context": "Conflicts are retained for rows with incomplete DRAMP structured target/name fields, CAMP multi-reference aggregation, or other database-field limits; source-supported values remain recorded."
+    },
+    {
+      "caution_code": "no_toxicity_rows_in_primary_source",
+      "evidence_context": "The local paper evidence reviewed for this rework supports antimicrobial MIC and mechanism/phenotype rows, but no source-located hemolysis or cytotoxicity measurements were recovered."
+    },
+    {
+      "caution_code": "material_packet_has_nonblocking_extraction_gaps",
+      "evidence_context": "Packet status remains material_extracted_with_gaps because image/bin assets are indexed, but the XML and parsed local XLSX supplements are sufficient for the worker-4/6 gate decision."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0045848/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0045848/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0045848/raw/oa_package/local-APD6-pmc_package.tar.gz",
+    "paper_packets/doi__10.1371_journal.pone.0045848/raw/oa_package/local-DBAASP-PMC3461044.tar.gz",
+    "paper_packets/doi__10.1371_journal.pone.0045848/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0045848/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0045848/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0045848/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0045848/database/linked_literature_records.jsonl"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Bounded obtainable-only review reopened XML, PDF text, OA package inventory, parsed local XLSX supplements S1-S4, figure captions/text, locator index, and linked database JSONL snapshots. No blocking local material gap remains for worker-4/6 adjudication.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1371_journal.pone.0045848",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 record_audits now carry row-level database traceability, primary-source sequence/name locators, and source_conflict context where database fields are incomplete or aggregate external references.",
+    "layer_2_activity_toxicity": "Final activity records are rebuilt from Table 2 target columns plus section 5 soybean IAP prose; MIC units and raw inequality values are preserved. No local hemolysis/cytotoxicity table was found, so no toxicity rows are fabricated.",
+    "layer_3_mechanism": "Mechanism ontology is limited to DSC/CD model-membrane interaction and plant/pathogen phenotype context; no unsupported molecular target is promoted.",
+    "worker_6_gate": "The prior open ticket is resolved by source-reviewed adjudication; remaining cautions are nonblocking and explicit."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T04:07:48Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 51,
+    "database_record_audits": 288,
+    "database_status_summary": {
+      "source_conflict": 13,
+      "source_verified": 275
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "supplementary_tables_reviewed": [
+      "Table S1",
+      "Table S2",
+      "Table S3",
+      "Table S4"
+    ],
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

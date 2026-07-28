@@ -1,0 +1,94 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0162537",
+  "doi": "10.1371/journal.pone.0162537",
+  "reviewed_at": "2026-05-06T00:53:10Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": "checked_raw_oa_package_path_no_members_available",
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/NXML, PDF text, raw OA package path, supplementary landing assets, figure captions, and linked database JSONL rows were checked. Recoverable Table 1 activity values and source/database conflicts are recorded; no blocking local material gap remains for obtainable-only review."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0162537/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0162537/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0162537/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0162537/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0162537/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0162537/database/linked_sequence_records.jsonl",
+    "papers/doi__10.1371_journal.pone.0162537/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0162537/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0162537/supplementary"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 20,
+    "database_record_status_summary": {
+      "database_only_no_primary_source": 7,
+      "source_conflict": 32,
+      "source_verified": 44
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "fresh_codex_cli_rereview_at": "2026-05-06T00:53:10Z"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled all linked assay/experiment/literature rows. MIC rows matching XML/PDF Table 1 are source_verified; exact database hemolysis percentages and broad CAMP/dbAMP annotations are preserved as source_conflict or database_only_no_primary_source rather than hidden.",
+    "layer_2_activity_toxicity": "Worker-2/6 rebuilt final activity evidence from 20 primary Table 1 MIC values with units, species/strain labels, method context, and XML locators. Figure-only exact toxicity values were not fabricated.",
+    "layer_3_mechanism": "Worker-6 replaced automated mechanism placeholders with source-reviewed claims; direct mechanism is limited to the DiOC2/FACS membrane-disruption assay for C16-KGGK/E. faecalis, with formulation antibiofilm/release effects kept as phenotype/delivery context.",
+    "supplementary_material": "The eight local supplementary paths were opened with file/rg review and are HTML landing/help/metric pages, not separate source data tables; the article data-availability statement says relevant data are within the paper."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_hemolysis_values_not_primary_table_supported",
+      "evidence_context": "Linked DBAASP rows contain exact percent hemolysis values, while local XML/PDF text provides Fig. 3/prose hemolysis context but not parser-supported exact numeric table values. These rows remain source_conflict."
+    },
+    {
+      "caution_code": "merged_database_cross_source_rows_not_promoted",
+      "evidence_context": "CAMP/dbAMP merged rows include broad/undefined-title activity annotations from outside the primary paper scope; they are preserved as database_only_no_primary_source."
+    },
+    {
+      "caution_code": "supplementary_assets_are_html_landing_pages",
+      "evidence_context": "Eight local supplementary files were opened and identified as HTML landing/help/metric pages rather than assay spreadsheets or primary supplementary tables."
+    },
+    {
+      "caution_code": "figure_only_plotted_values_not_fabricated",
+      "evidence_context": "Fig. 1-6 qualitative and method claims are source-located, but exact plotted values not present in XML/PDF text were not converted into invented rows."
+    },
+    {
+      "caution_code": "modified_lipopeptide_identity_preserved",
+      "evidence_context": "Table 1 formulae and the D-enantiomer footnote are retained; no modified lipopeptide sequence is silently normalized to an unmodified peptide sequence."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "adjudication_summary": "Fresh Codex CLI worker-2/4/6 re-review reopened the handoff packet, XML/PDF, supplement inventory, and linked database rows. The existing source-reviewed repair remains valid: 20 Table 1 MIC rows are source-located, database conflicts/database-only rows are preserved as cautions, and worker-6 adjudication has no blocking or major open rework target."
+}

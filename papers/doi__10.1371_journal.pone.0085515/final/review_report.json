@@ -1,0 +1,114 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0085515",
+  "reviewed_at": "2026-05-05T17:41:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Source-reviewed worker-2/4/6 rework recovered the primary Table 3/4 MIC and hemolysis matrix, reconciled linked DBAASP rows against primary source locators, preserved the Xav database target-name conflict, and closed the prior open rework without promoting unsupported mechanism claims.",
+  "summary": "Source-reviewed rework recovered the activity/toxicity rows from XML Tables 3/4 and resolved the prior publication blocker with cautions for database nomenclature and limited mechanism depth.",
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0085515/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0085515/database/database_source_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0085515/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0085515/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0085515/database/linked_literature_records.jsonl",
+    "papers/doi__10.1371_journal.pone.0085515/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0085515/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0085515/supplementary/*"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": "not_available_locally; landed XML/PDF and packet archive manifest checked",
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded best-effort local review opened XML/PDF packet surfaces, supplementary index/assets, and linked DBAASP rows relevant to the owner-layer blockers."
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 258,
+    "database_snapshots": {
+      "linked_assay_records": 200,
+      "linked_experiment_records": 200,
+      "linked_literature_records": 43,
+      "linked_dramp_activity_records": 0,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_verified": 373,
+      "source_conflict": 70
+    },
+    "mechanism_claims": 1,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay/experiment rows were rechecked against primary XML Tables 1-4. Rows with exact value/entity support are source_verified except Xav rows, where a primary-source/database target-name conflict is explicitly preserved as source_conflict.",
+    "layer_2_activity_toxicity": "All Table 3/4 MIC and hemolysis cells were converted into row-level records with endpoint, raw value, unit, target, assay conditions, and primary-source locators. Primary-source-only rows are retained when the linked database snapshot has no corresponding row.",
+    "layer_3_mechanism": "Mechanism output is accepted only as indirect contextual framing; no direct mechanism assay is claimed from this paper.",
+    "layer_4_publication_grade": "The prior hard blockers are closed; remaining issues are nonblocking cautions and no targeted rework remains open."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "xav_database_taxon_name_conflict_preserved",
+      "evidence_context": "Primary source footnote/methods use Xanthomonas axonopodis pv. vesicatoria 2133-2 for Xav, while linked DBAASP rows use Xanthomonas campestris pv. Vesicatoria 2133-2. MIC values are table-matched but these database rows remain source_conflict.",
+      "affected_layer": "database_record_audit"
+    },
+    {
+      "caution_code": "database_rows_do_not_cover_all_primary_table_peptides",
+      "evidence_context": "Worker-2 extracted all Table 3/4 peptide rows; the linked DBAASP snapshot covers a subset and sometimes condenses repeated hemolysis values, so unmatched primary-source-only rows are retained without fabricating database identifiers.",
+      "affected_layer": "activity_toxicity"
+    },
+    {
+      "caution_code": "supplementary_assets_indexed_only_no_activity_tables",
+      "evidence_context": "Local supplementary assets were opened by file type and packet supplementary indexes; they are HTML/indexed-only surfaces and no structured supplementary activity spreadsheet/table was locally recoverable.",
+      "affected_layer": "material_packet"
+    },
+    {
+      "caution_code": "mechanism_context_not_direct_assay",
+      "evidence_context": "Mechanism record is limited to source-located contextual background; no direct paper-local mechanism assay is promoted.",
+      "affected_layer": "mechanism_ontology"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": false,
+    "expected_semantic_gate": "pass_after_worker2_worker4_worker6_source_review",
+    "expected_publication_quality_gate": "pass_after_worker2_worker4_worker6_source_review",
+    "semantic_gate_passed": true,
+    "publication_quality_passed": true,
+    "semantic_report": "reports/doi__10.1371_journal.pone.0085515.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.1371_journal.pone.0085515.publication_quality.json"
+  },
+  "gate_evidence": {
+    "semantic_report": "reports/doi__10.1371_journal.pone.0085515.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.1371_journal.pone.0085515.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  },
+  "updated_at": "2026-05-05T17:44:49Z"
+}

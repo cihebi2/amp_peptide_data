@@ -1,0 +1,116 @@
+{
+  "paper_id": "doi__10.1021_acs.jmedchem.1c00477",
+  "reviewed_at": "2026-06-20T08:50:59Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml_table_1",
+    "paper_xml_results_sections",
+    "figure_5_caption",
+    "supplementary_pdf_table_s5_pdftotext_layout",
+    "packet_database_snapshots",
+    "prior_final_and_packet_artifacts_as_hypotheses_only",
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf_or_pdf_text": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "supplementary_table_s5": true,
+    "merged_database_rows": true,
+    "note": "All previously blocking worker-2/4/6 evidence was recoverable from local materials; remaining cautions are scope/conflict annotations, not open rework."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/packet_manifest.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/locators/locator_index.json",
+    "papers/doi__10.1021_acs.jmedchem.1c00477/source/paper.xml",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/extracted/figure_captions.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/raw/supplementary_original/local-DRAMP-jm1c00477_si_001.pdf",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/extracted/supplementary_text/local-DRAMP-jm1c00477_si_001.txt",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c00477/database/linked_literature_records.jsonl",
+    "papers/doi__10.1021_acs.jmedchem.1c00477/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_acs.jmedchem.1c00477/final/database_record_verification.json",
+    "papers/doi__10.1021_acs.jmedchem.1c00477/final/mechanism_ontology_record.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": {
+      "pass": true,
+      "count": 26,
+      "endpoint_families": [
+        "IC50",
+        "Kd",
+        "percent inhibition",
+        "negative infection CPE"
+      ],
+      "previous_issue_resolved": "activity_table_shape_not_supported"
+    },
+    "database_snapshots": {
+      "pass": true,
+      "status_summary": {
+        "source_conflict": 12,
+        "source_verified": 52
+      },
+      "conflicts_preserved": [
+        "DRAMP overbroad Antimicrobial/Antiviral label and virus-entry wording",
+        "DRAMP31562 malformed sequence token"
+      ]
+    },
+    "mechanism_claims": {
+      "pass": true,
+      "claim_count": 3,
+      "overclaim_check": "No nucleic-acid or immune-modulation mechanism retained; no infection-blocking efficacy claimed."
+    },
+    "open_rework_targets": {
+      "pass": true,
+      "count": 0
+    },
+    "activity_schema_contract": {
+      "pass": true,
+      "target_object_species_present": 26,
+      "repair": "activity target converted to structured object with species while preserving target_entity text"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "worker_2_activity_toxicity": "Accepted with cautions: Table 1 provides row-level IC50 and Kd values for peptides 1-6; results text provides percent inhibition context; Supplementary Table S5 provides negative VERO-E6 infection assay evidence. No cytotoxicity/hemolysis row is fabricated.",
+    "worker_4_database_record_audit": "Accepted with cautions: DBAASP IC50/percent/negative infection rows are source-matched; DRAMP rows remain source_conflict where database wording or sequence text exceeds/contradicts the primary source.",
+    "worker_5_mechanism_context": "Final adjudication supersedes automated placeholder mechanism notes with source-supported S-RBD binding and S-RBD:ACE2 antagonism claims only.",
+    "worker_6_final_review": "Prior open rework target is closed because source-reviewed artifacts now contain activity rows, database conflict preservation, mechanism scope control, and explicit cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "interaction_assay_not_confirmed_antiviral_replication",
+      "evidence_context": "IC50 rows are for S-RBD:ACE2 interaction antagonism; Supplementary Table S5 states infection blocking was not confirmed."
+    },
+    {
+      "caution_code": "dramp_overbroad_activity_scope",
+      "evidence_context": "DRAMP rows label Antimicrobial/Antiviral and virus entry; final database audit preserves these as source_conflict, not source_verified broad efficacy."
+    },
+    {
+      "caution_code": "dramp31562_sequence_conflict",
+      "evidence_context": "DRAMP31562 sequence string contains a malformed token not present in Table 1."
+    },
+    {
+      "caution_code": "minor_table_text_numeric_discrepancies",
+      "evidence_context": "A few narrative SD/mean values differ from Table 1; final activity rows use Table 1 values and record cautions on affected rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Targeted re-review recovered the missing activity layer from XML Table 1 and Supplementary Table S5. The final curation accepts the paper with cautions: source-supported interaction IC50/Kd and negative infection assay rows are present, while DRAMP/database overclaims remain explicitly preserved as conflicts.",
+  "decision_status": "accepted_with_cautions",
+  "schema_repair_note": "Review status normalized to accepted_with_cautions; publication_grade retained true after source-backed activity repair and conflict-preserving adjudication."
+}

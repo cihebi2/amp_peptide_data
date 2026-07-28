@@ -1,0 +1,93 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2020.563030",
+  "generated_at": "2026-05-06T22:22:04Z",
+  "reviewed_at": "2026-05-06T22:34:51Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmicb.2020.563030/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/extracted/pdf_text/fmicb-11-563030.txt",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/raw/oa_package/local-DBAASP-PMC7688903.tar.gz!PMC7688903/Data_Sheet_1.docx",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2020.563030/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 176,
+    "activity_primary_tables": [
+      "TABLE 4",
+      "TABLE 9"
+    ],
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 201,
+      "source_conflict": 4,
+      "source_verified": 171
+    },
+    "database_record_audits": 376,
+    "mechanism_claims": 3,
+    "supplement_docx": {
+      "docx_found": true,
+      "paragraph_count": 23,
+      "table_count": 1,
+      "text_scope": [
+        "Supplementary Figures and Tables",
+        "Supplementary Figures",
+        "Supplementary Figure 1.  ESI(+)-MS spectra of prepared Pep05 and derivatives.",
+        "Supplementary Figure 2 Stabilities of Pep05 and derivatives towards trypsin monitored by HPLC. Chromatograms of each reaction at different time points are overlapped for comparison. The turquoise (”──”) chromatogram represents the negative control without trypsin and the main peak represents the peptide at 0h. The purple (”──”) chromatogram represents 1h, the orange (”──”) represents 5h and the blue (”──”) represents 18h.",
+        "Supplementary Figure 3 Antimicrobial activities of Pep05 and its derivatives after incubation with human plasma. Each peptide was tested at five concentrations ranging from 1- to 16-fold MIC. The values at the top of the 96-well plate represent multiples of the concentration relative to the respective MIC. A change in color from colorless to green indicated microorganism growth.",
+        "Supplementary Figure 4 Stability of DP06 toward proteases secreted by various bacterial strains. DP06 was incubated with supernatants from cultures of (A) E. coli, (B) P. aeruginosa, (C) A. baumannii, (D) S. aureus, and (E) C. albicans for 24 h. The peptide stability was then determined by HPLC. Chromatograms 1 correspond to the peptide only, chromatograms 2 correspond to the supernatant only, and chromatograms 3 correspond to the mixed supernatant and peptide."
+      ],
+      "source_path": "paper_packets/doi__10.3389_fmicb.2020.563030/raw/oa_package/local-DBAASP-PMC7688903.tar.gz!PMC7688903/Data_Sheet_1.docx"
+    },
+    "open_rework_ticket_ids": [],
+    "worker4_repair": {
+      "changed_to_source_verified": 40,
+      "changed_to_sequence_modified_not_normalized": 48,
+      "source_conflict_context_rows_fixed": 3,
+      "remaining_source_conflict_rows": 4
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled 376 linked rows. DBAASP assay/literature values are source-traced to Tables 2/4/9 or article metadata; noncanonical X placeholders and aggregated CAMP rows are preserved as cautions/conflicts.",
+    "layer_2_activity_toxicity": "Worker-6 final activity evidence was rebuilt from primary Table 4 and Table 9 into 176 source-located rows with peptide entity, target organism/cell, raw value, and unit preserved.",
+    "layer_3_mechanism": "Mechanism evidence is bounded to structure/activity, protease-stability, and in vivo efficacy/toxicity context; direct mechanism is not overclaimed.",
+    "supplementary_material": "Local OA Data_Sheet_1.docx and staged landing-page assets were checked; no extra structured table changes the final curation."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized_noncanonical_placeholders",
+      "severity": "minor",
+      "evidence_context": "UP07-UP15 and related database rows use X placeholders or blank names for Aib/Hor/Dap/Dab/Thi residues; source Table 2 exact residue names are preserved instead of normalized."
+    },
+    {
+      "caution_code": "camp_aggregated_database_rows_preserved",
+      "severity": "minor",
+      "evidence_context": "CAMP rows with generic Dhvar4 names, broad Antibacterial/Antifungal labels, or aggregated duplicate values remain source_conflict rather than clean source_verified."
+    },
+    {
+      "caution_code": "supplement_figures_no_extra_table_values",
+      "severity": "minor",
+      "evidence_context": "OA Data_Sheet_1.docx was parsed from the local package; it contains supplementary figures/captions and no additional structured activity/toxicity/database table."
+    },
+    {
+      "caution_code": "mechanism_bounded_to_indirect_context",
+      "severity": "minor",
+      "evidence_context": "Membrane/structure/stability/in vivo context is retained, but no direct molecular target or exact figure-derived mechanism quantification is fabricated."
+    }
+  ],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_decision": "source_reviewed_accepted_with_cautions",
+  "qc_failure_reasons": []
+}

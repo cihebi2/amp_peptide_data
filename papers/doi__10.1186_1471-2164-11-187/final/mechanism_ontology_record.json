@@ -1,0 +1,70 @@
+{
+  "paper_id": "doi__10.1186_1471-2164-11-187",
+  "generated_at": "2026-05-03T09:47:32Z",
+  "reviewed_at": "2026-05-03T09:47:32Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 bounded mechanism adjudication from local XML/PDF; mechanism is not promoted beyond source-supported phenotype and family-context statements.",
+  "source_paths_checked": [
+    "papers/doi__10.1186_1471-2164-11-187/source/paper.xml",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/xml_sections.json"
+  ],
+  "tools_attempted": [
+    "rg",
+    "jq",
+    "python xml.etree.ElementTree"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Nasonin-1 has directly measured antibacterial phenotype in inhibition-zone assays against two Gram-negative bacteria, but the paper does not directly test a molecular killing mechanism.",
+      "entity_scope": "Nasonin-1",
+      "evidence_class": "direct_activity_phenotype_not_mechanism",
+      "direct_assay_types": [
+        "inhibition zone assay"
+      ],
+      "limitations": "Do not promote to direct membrane, protein-synthesis, or nucleic-acid mechanism; Figure 4C/prose only support antibacterial activity and LC values.",
+      "source_locator": {
+        "locator": "xml:fig=4:Figure 4C; pdf_text:landing-1.txt:lines=319-323,410-422",
+        "source_path": "papers/doi__10.1186_1471-2164-11-187/source/paper.xml",
+        "source_pdf_text_path": "paper_packets/doi__10.1186_1471-2164-11-187/extracted/pdf_text/landing-1.txt"
+      }
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Pronavicin has directly measured antibacterial phenotype in inhibition-zone assays against Gram-positive and Gram-negative bacteria, with strongest reported activity against Bacillus megaterium.",
+      "entity_scope": "Pronavicin / Nahymenoptaecin-2 amino-terminal Pro-rich peptide",
+      "evidence_class": "direct_activity_phenotype_not_mechanism",
+      "direct_assay_types": [
+        "inhibition zone assay"
+      ],
+      "limitations": "Table 1 supports antibacterial LC values but not a molecular mechanism of action.",
+      "source_locator": {
+        "locator": "xml:table=1; xml:sec=17:Hymenoptaecin-like peptides; pdf_text:landing-1.txt:lines=436-446,513-544",
+        "source_path": "papers/doi__10.1186_1471-2164-11-187/source/paper.xml",
+        "source_pdf_text_path": "paper_packets/doi__10.1186_1471-2164-11-187/extracted/pdf_text/landing-1.txt"
+      }
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The article discusses AMP-family membrane/metabolic mechanisms as background and structural/evolutionary context, not as direct assays for the newly synthesized Nasonia peptides.",
+      "entity_scope": "Nasonia vitripennis AMP-like repertoire",
+      "evidence_class": "mechanism_context_only_not_direct_assay",
+      "direct_assay_types": [],
+      "limitations": "Family-level background and structural modeling are preserved as inferred/contextual evidence only.",
+      "source_locator": {
+        "locator": "xml:sec=4:Background; xml:sec=7:Classification of N. Vitripennis AMPs; xml:fig=2:Figure 2",
+        "source_path": "papers/doi__10.1186_1471-2164-11-187/source/paper.xml"
+      }
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "no_direct_killing_mechanism_assay",
+      "evidence_context": "Local primary material supports inhibition-zone antibacterial phenotypes, structural modeling, and family-context discussion; it does not directly assay membrane disruption, translation inhibition, or nucleic-acid binding for pronavicin or nasonin-1.",
+      "affected_layer": "mechanism"
+    }
+  ]
+}

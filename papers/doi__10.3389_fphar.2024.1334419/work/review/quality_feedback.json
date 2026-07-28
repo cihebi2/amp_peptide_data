@@ -1,0 +1,211 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 5,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-07T17:23:55Z"
+  },
+  "generated_at": "2026-05-07T17:17:27Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.3389_fphar.2024.1334419",
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "database_sequence_identity_unrecoverable_local_material",
+      "owner_worker": "worker-4",
+      "reason": "Local primary article/supplement and packet database rows do not provide exact DBAASP sequence identity for DBAASPN_23279/23280; source_verified database identity would be fabricated.",
+      "severity": "blocking"
+    },
+    {
+      "code": "publication_grade_blocked_by_database_only_records",
+      "owner_worker": "worker-6",
+      "reason": "Worker-6 source review completed the bounded repair but must keep publication_grade false because linked database identities remain database-only/unrecoverable from local material.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.3389_fphar.2024.1334419/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "review_status": "blocked_missing_primary_material",
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.3389_fphar.2024.1334419/final/database_record_verification.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-07T17:17:27Z",
+      "failing_object": "DBAASP sequence identity for DBAASPN_23279 and DBAASPN_23280",
+      "failure_code": "database_sequence_identity_unrecoverable_local_material",
+      "layer": "database",
+      "omission_code": "missing_primary_sequence_identity_for_dbaasp_af4_af5",
+      "owner_worker": "worker-4",
+      "packet_artifact_path": "paper_packets/doi__10.3389_fphar.2024.1334419/analysis/database_record_audit.json",
+      "paper_id": "doi__10.3389_fphar.2024.1334419",
+      "required_action": "Do not mark source_verified from activity-table locators. Only reopen if an external/local DBAASP sequence snapshot or primary characterization source with exact AF4/AF5 identity becomes available; otherwise keep this as an unrecoverable material gap and advance the queue.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "rework_context/doi__10.3389_fphar.2024.1334419/handoff_context.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/packet_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/locators/locator_index.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_status.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.xml",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.pdf",
+        "papers/doi__10.3389_fphar.2024.1334419/source/paper.xml",
+        "papers/doi__10.3389_fphar.2024.1334419/source/paper.pdf",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/xml_sections.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/fphar-15-1334419.txt",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/DataSheet1.txt",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/oa_package/local-DBAASP-PMC11066293/PMC11066293/DataSheet1.PDF",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/archive_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/database_source_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_sequence_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/package/local-DBAASP-PMC11066293.tar.gz",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/supplementary/landing-1.bin"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-worker4-unrecoverable-sequence-20260507T171556Z",
+      "unrecoverable": true,
+      "unrecoverable_material_gap": {
+        "blocks_publication_grade": true,
+        "gap_code": "missing_primary_sequence_identity_for_dbaasp_af4_af5",
+        "impact": "worker-4 database identity remains database-only for the linked DBAASP peptide records; worker-6 must leave publication_grade false until an exact primary-source or linked database sequence snapshot is available.",
+        "next_action": "record_and_continue",
+        "owner_worker": "worker-4",
+        "source_paths_checked": [
+          "rework_context/doi__10.3389_fphar.2024.1334419/handoff_context.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/packet_manifest.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/locators/locator_index.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_status.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_quality_report.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.xml",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.pdf",
+          "papers/doi__10.3389_fphar.2024.1334419/source/paper.xml",
+          "papers/doi__10.3389_fphar.2024.1334419/source/paper.pdf",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/xml_sections.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/fphar-15-1334419.txt",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/DataSheet1.txt",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/oa_package/local-DBAASP-PMC11066293/PMC11066293/DataSheet1.PDF",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/archive_manifest.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_index.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/database/database_source_manifest.json",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_literature_records.jsonl",
+          "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_sequence_records.jsonl",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/package/local-DBAASP-PMC11066293.tar.gz",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/supplementary/landing-1.bin"
+        ],
+        "tools_attempted": [
+          "jq JSON inspection",
+          "rg over XML/PDF/supplement extracted text",
+          "xml.etree.ElementTree table/section extraction",
+          "pdftotext-derived packet text review",
+          "file MIME inspection for supplementary originals",
+          "archive_manifest review for PMC OA package members",
+          "linked DBAASP JSONL row review"
+        ],
+        "why_unrecoverable": "Local primary XML/PDF and DataSheet material identify AF4/AF5 as purified Bacillus-derived lipopeptide leads and support Table 1 activity values, but they do not contain exact DBAASP sequence records or primary-source sequence/structural identity for DBAASPN_23279 and DBAASPN_23280. The packet database has zero linked_sequence_records, so source_verified database identity cannot be claimed from local material."
+      },
+      "worker": "worker-4"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_records_source_reviewed": 40,
+    "database_linked_sequence_records": 0,
+    "database_records_reviewed": 14,
+    "database_status_summary": {
+      "database_only_no_primary_source": 14
+    },
+    "mechanism_claims_carried_forward": 3,
+    "open_rework_ticket_ids": [
+      "rwk-worker4-unrecoverable-sequence-20260507T171556Z"
+    ],
+    "strict_acceptance_decision": "blocked_missing_primary_material",
+    "unrecoverable_material_gap_count": 1
+  },
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "missing_primary_sequence_identity_for_dbaasp_af4_af5",
+      "impact": "worker-4 database identity remains database-only for the linked DBAASP peptide records; worker-6 must leave publication_grade false until an exact primary-source or linked database sequence snapshot is available.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-4",
+      "source_paths_checked": [
+        "rework_context/doi__10.3389_fphar.2024.1334419/handoff_context.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/packet_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/locators/locator_index.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_status.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.xml",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/raw/paper.pdf",
+        "papers/doi__10.3389_fphar.2024.1334419/source/paper.xml",
+        "papers/doi__10.3389_fphar.2024.1334419/source/paper.pdf",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/xml_sections.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/fphar-15-1334419.txt",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/pdf_text/DataSheet1.txt",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/oa_package/local-DBAASP-PMC11066293/PMC11066293/DataSheet1.PDF",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/archive_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/database_source_manifest.json",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database/linked_sequence_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/package/local-DBAASP-PMC11066293.tar.gz",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419/supplementary/landing-1.bin"
+      ],
+      "tools_attempted": [
+        "jq JSON inspection",
+        "rg over XML/PDF/supplement extracted text",
+        "xml.etree.ElementTree table/section extraction",
+        "pdftotext-derived packet text review",
+        "file MIME inspection for supplementary originals",
+        "archive_manifest review for PMC OA package members",
+        "linked DBAASP JSONL row review"
+      ],
+      "why_unrecoverable": "Local primary XML/PDF and DataSheet material identify AF4/AF5 as purified Bacillus-derived lipopeptide leads and support Table 1 activity values, but they do not contain exact DBAASP sequence records or primary-source sequence/structural identity for DBAASPN_23279 and DBAASPN_23280. The packet database has zero linked_sequence_records, so source_verified database identity cannot be claimed from local material."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1334419",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/database",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/extracted",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/locators",
+        "paper_packets/doi__10.3389_fphar.2024.1334419/raw",
+        "papers/doi__10.3389_fphar.2024.1334419/final",
+        "papers/doi__10.3389_fphar.2024.1334419/source",
+        "papers/doi__10.3389_fphar.2024.1334419/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

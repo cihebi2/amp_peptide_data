@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-11T11:51:03Z",
+  "paper_id": "PMC13031788",
+  "decision": "needs_targeted_rework",
+  "failure_code": "non_activity_tables_misclassified_as_activity",
+  "invalid_activity_record_count": 18,
+  "invalid_source_locators": [
+    "xml:table-wrap:1",
+    "xml:table-wrap:2"
+  ],
+  "invalid_source_table_classes": [
+    "formulation_and_solvent_table",
+    "FTIR_assignment_table"
+  ],
+  "valid_activity_table_candidates": [
+    {
+      "locator": "xml:table-wrap:4",
+      "matched_terms": [
+        "antibacterial",
+        "inhibition_zone"
+      ]
+    },
+    {
+      "locator": "xml:table-wrap:5",
+      "matched_terms": [
+        "cfu"
+      ]
+    }
+  ],
+  "toxicity_locator_candidates_after_handoff_fix": [],
+  "toxicity_gap_interpretation": "No paper-local hemolysis/cytotoxicity locator was found; TGA Figure 6 percentages are material mass-loss measurements, not toxicity.",
+  "required_action": "Worker-2 must discard the 18 false MIC rows, rebuild source-located activity from Tables 4 and 5, preserve endpoint/header units exactly, and close toxicity as no source-located rows with durable evidence.",
+  "acceptance_checks": [
+    "semantic gate has no non_biological_target_label",
+    "semantic gate has no non_activity_source_table",
+    "worker-2 source_reviewed_complete is true with toxicity gap durably closed"
+  ],
+  "authoritative_ingest_boundary": "No change; fallback rows remain machine candidates and authoritative DBAASP ingest remains false."
+}

@@ -1,0 +1,128 @@
+{
+  "paper_id": "doi__10.1007_s13659-014-0037-z",
+  "generated_at": "2026-05-01T12:29:29Z",
+  "reviewed_at": "2026-05-01T12:29:29Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 source-reviewed APD6 row reconciliation against primary XML/PDF/Fig. 1/Fig. 2 plus merged APD6 activity/sequence exports. Packet database snapshots were read-only inputs.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0,
+    "merged_apd6_activity_text_records_checked": 1,
+    "merged_apd6_sequence_records_checked": 1
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP00999",
+      "sequence_key": "APD6:AP00999",
+      "source_table": "peptides.csv / all_sequences.csv",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_subject": "Amolopin (UCLL1c; natural AMPs; frog, amphibians, animals; XXA)",
+      "database_measure": "anti-diabetes; APD6 text notes insulin release in INS-1 cells and interest for type 2 diabetes",
+      "matched_activity_record_id": [
+        "doi__10.1007_s13659-014-0037-z-fig2-amolopin-7ug_mL-insulin-release",
+        "doi__10.1007_s13659-014-0037-z-fig2-amolopin-12p5ug_mL-insulin-release",
+        "doi__10.1007_s13659-014-0037-z-fig2-amolopin-25ug_mL-insulin-release",
+        "doi__10.1007_s13659-014-0037-z-fig2-amolopin-50ug_mL-insulin-release"
+      ],
+      "sequence_check": {
+        "database_sequence": "FLPIVGKSLSGLSGKL",
+        "primary_source_sequence": "FLPIVGKSLSGLSGKL-NH2",
+        "agreement": "linear residue string agrees, but primary source C-terminal amidation is not represented in the APD6 plain sequence field",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=11:Structural Analysis",
+          "figure_locator": "xml:fig=1:Fig. 1",
+          "primary_source_statement": "Primary source reports amolopin as FLPIVGKSLSGLSGKL with C-terminal amidation."
+        },
+        "database_locator": {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "locator": "APD6:AP00999"
+        }
+      },
+      "name_check": {
+        "database_name": "Amolopin",
+        "primary_source_name": "amolopin",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=11:Structural Analysis"
+        }
+      },
+      "source_organism_check": {
+        "database_source": "Amolops loloensis, China, Asia",
+        "primary_source": "skin secretion of Amolops loloensis collected in Yunnan Province of China",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Collection of Frog Skin Secretions"
+        }
+      },
+      "activity_check": {
+        "database_activity": "anti-diabetes",
+        "primary_source_activity": "insulin release stimulation in INS-1 cells",
+        "status": "source_verified_with_scope_caution",
+        "scope_caution": "Primary paper does not report antimicrobial MIC/MBC/hemolysis/cytotoxicity assays for amolopin.",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:Insulin Secretion"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1007/s13659-014-0037-z",
+        "pmid": "25294221",
+        "pmcid": "PMC4199949"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1007_s13659-014-0037-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "conflict_context": "APD6 stores the linear sequence without the C-terminal NH2 modification that the primary paper reports; this is preserved as sequence_modified_not_normalized rather than silently normalized.",
+      "review_notes": "APD6 anti-diabetes/insulin-release annotation is supported at paper level, but antimicrobial activity must not be inferred from APD/CAMP naming or similarity to temporins."
+    },
+    {
+      "source_id": "APD6:AP00999:literature",
+      "sequence_key": "APD6:AP00999",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "A Novel Insulinotropic Peptide from the Skin Secretions of Amolops loloensis Frog.",
+      "database_measure": "",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=11:Structural Analysis",
+          "figure_locator": "xml:fig=1:Fig. 1",
+          "primary_source_statement": "Primary source reports amolopin as FLPIVGKSLSGLSGKL with C-terminal amidation."
+        },
+        "review_note": "Literature row is citation linkage; sequence identity is verified from article source to support the linked APD6 record."
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1007/s13659-014-0037-z",
+        "pmid": "25294221",
+        "pmcid": "PMC4199949"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1007_s13659-014-0037-z/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "The APD6 literature link matches DOI/PMID/PMCID and title in article metadata."
+    }
+  ],
+  "status_summary": {
+    "sequence_modified_not_normalized": 1,
+    "source_verified": 1
+  },
+  "unrecoverable_material_gaps": []
+}

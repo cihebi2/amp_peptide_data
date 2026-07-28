@@ -1,0 +1,184 @@
+{
+  "paper_id": "doi__10.1021_acsinfecdis.2c00307",
+  "review_sample_id": "V420P0021",
+  "reviewed_at": "2026-06-25T01:50:36Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "decision_basis": "Local primary and database materials confirm the sampled PmxB4 MIC value and recover its unit, but the accepted database-audit/release representation leaves the MIC unit blank. The accepted mechanism ontology also contains non-standard evidence_class values, which the validation prompt defines as a hard failure for accepted outputs.",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0420",
+      "audit_record_id": "doi__10.1021_acsinfecdis.2c00307:database_audit:38",
+      "row_decision": "needs_targeted_rework",
+      "evidence_summary": "Source evidence confirms PmxB4 MIC 0.25 for Pseudomonas aeruginosa ATCC 10145. Paper XML Table 1 row for P. aeruginosa ATCC 10145 has PmxB4 value 0.25, and the Table 1 footnote states MIC values are expressed as ug/mL. The linked DBAASP experiment row 10 also records concentration 0.25 with unit ug/ml, and the final activity_toxicity_evidence row records raw_value 0.25 and raw_unit ug/mL at xml:table=1:row=11:column=2. However, validation_samples.json/release_rows.json/sample_final_records.json leave database_unit, primary_source_unit, and source_unit-style fields blank for this MIC-like source_verified audit row. Because the unit is locally recoverable, this is repairable rather than blocked, but it is a hard row-level rework target under the validation prompt's MIC-like-unit rule.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/validation_samples.json::sample_id=VAL0420",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/release_rows.json::doi__10.1021_acsinfecdis.2c00307:database_audit:38",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/sample_final_records.json::VAL0420",
+        "papers/doi__10.1021_acsinfecdis.2c00307/final/database_record_verification.json::record_audits[source_table=linked_experiment_records.jsonl,row=10]",
+        "papers/doi__10.1021_acsinfecdis.2c00307/final/activity_toxicity_evidence.json::record_id=doi__10.1021_acsinfecdis.2c00307-table1-r11-c2-pmxb4",
+        "papers/doi__10.1021_acsinfecdis.2c00307/source/paper.xml::Table 1 row=P. aeruginosa ATCC 10145, PmxB4 column; table footnote units",
+        "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_experiment_records.jsonl::line=10",
+        "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1021_acsinfecdis.2c00307/final/review_report.json"
+      ],
+      "cautions": [
+        "The sampled value is source-backed, but the accepted database-audit/release row omits the MIC unit even though the unit is present in the primary table footnote, linked DBAASP row, and final activity evidence.",
+        "The row's top-level release source_locator field is blank; source support is carried in nested sequence_check/source_organism_check locators and database traceability.",
+        "The paper has preserved nonblocking cautions for an unrelated DBAASP FICI conflict, value-less linked_experiment FICI rows, empty linked_sequence_records.jsonl, and supplement evidence recovered from PDF text rather than spreadsheet source."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-V420P0021-001"
+      ]
+    }
+  ],
+  "material_review": {
+    "material_status": "materials_available_with_cautions",
+    "packet_material_queue_status": "material_extracted_with_gaps",
+    "packet_analysis_queue_status": "analysis_adjudicated_with_cautions",
+    "primary_material_available": true,
+    "blocked_missing_primary_material": false,
+    "materials_checked": [
+      "papers/doi__10.1021_acsinfecdis.2c00307/source/paper.xml",
+      "papers/doi__10.1021_acsinfecdis.2c00307/source/paper.pdf",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/raw/paper.xml",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/raw/paper.pdf",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/raw/oa_package/local-DBAASP-PMC9745799.tar.gz",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/oa_package/local-DBAASP-PMC9745799/PMC9745799/id2c00307.nxml",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/oa_package/local-DBAASP-PMC9745799/PMC9745799/id2c00307_si_001.pdf",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/pdf_text/id2c00307.txt",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/pdf_text/id2c00307_si_001.txt",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/archive_manifest.json",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/extracted/figure_captions.json",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/locators/locator_index.json",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/database_source_manifest.json",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/rework/rework_requests.jsonl",
+      "paper_packets/doi__10.1021_acsinfecdis.2c00307/rework/rework_responses.jsonl",
+      "papers/doi__10.1021_acsinfecdis.2c00307/work/review/quality_feedback.json"
+    ],
+    "material_cautions": [
+      "packet_manifest.json retains a test_scope note saying the workflow test terminal status was needs_targeted_rework, but later rework_responses.jsonl entries report rwk-complete-test-0001 resolved and strict gates passed.",
+      "extraction_status.json reports material_extracted_with_gaps and one caution that no supplementary assets were found in the local landed folder or OA package.",
+      "review_report.json says supplementary evidence was reviewed from the OA-package SI PDF text and no spreadsheet asset exists locally."
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "layer_1_database_identity_status": "needs_targeted_rework",
+    "layer_1_rationale": "The sampled DBAASP linked_experiment audit row is correctly tied to PmxB4, article PMID 36342383, source table row 10, and XML Table 1 row 11. The source_verified value is supported, but the accepted row omits the recoverable MIC unit and therefore should not remain clean source_verified without repair or explicit unit rationale.",
+    "layer_2_activity_toxicity_status": "confirmed",
+    "layer_2_rationale": "The final activity_toxicity_evidence record for Table 1 row 11, PmxB4, P. aeruginosa ATCC 10145 has endpoint MIC, raw_value 0.25, raw_unit ug/mL, bacteria target class, species/strain, assay context, and XML source locator. No toxicity rows were relevant to this sampled audit row.",
+    "layer_3_mechanism_status": "needs_targeted_rework",
+    "layer_3_rationale": "The sampled MIC row does not depend on mechanism evidence, but accepted paper-level mechanism_ontology_record.json contains evidence_class values functional_synergy_assay and source_interpretive_conclusion. The required ontology permits only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, and unknown_or_not_tested, so the accepted mechanism output has a hard repairable defect.",
+    "semantic_qa_summary": {
+      "sampled_value_source_backed": true,
+      "sampled_unit_source_backed": true,
+      "sampled_release_unit_missing": true,
+      "open_hard_rework_targets": 2,
+      "non_standard_mechanism_evidence_classes": [
+        {
+          "claim_id": "mech-003-rifampicin-potentiation",
+          "evidence_class": "functional_synergy_assay"
+        },
+        {
+          "claim_id": "mech-004-stereochemical-requirement",
+          "evidence_class": "source_interpretive_conclusion"
+        }
+      ]
+    }
+  },
+  "rework_targets": [
+    {
+      "target_id": "rwk-validation420-V420P0021-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-4/database_record_auditor",
+      "artifact_path": "papers/doi__10.1021_acsinfecdis.2c00307/final/database_record_verification.json",
+      "release_artifact_path": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+      "failing_object": "audit_record_id=doi__10.1021_acsinfecdis.2c00307:database_audit:38; release tsv_row=14711",
+      "failure_code": "mic_like_row_unit_missing_in_accepted_database_audit",
+      "reason": "The row is a MIC value-bearing source_verified audit row, but database_unit/primary_source_unit are blank in the sampled release/final representation even though paper XML Table 1 footnote, linked_experiment_records.jsonl line 10, and final activity evidence recover ug/mL.",
+      "requested_outputs": [
+        "Populate or otherwise preserve the recovered MIC unit for audit_record_id doi__10.1021_acsinfecdis.2c00307:database_audit:38 in the database audit/release path, or add an explicit no-unit rationale if the target schema intentionally suppresses units.",
+        "Keep the XML Table 1 row 11 locator and linked DBAASP row 10 traceability attached to the corrected audit row.",
+        "Re-run the validation/export check that produced database_record_audits.tsv row 14711 and confirm no MIC-like accepted row remains without unit or rationale."
+      ],
+      "blocks": [
+        "database_record_verification",
+        "database_record_audits.tsv publication-grade acceptance",
+        "validation420 VAL0420 acceptance"
+      ],
+      "created_at": "2026-06-25T01:50:36Z"
+    },
+    {
+      "target_id": "rwk-validation420-V420P0021-002",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5/mechanism_ontology_extractor",
+      "artifact_path": "papers/doi__10.1021_acsinfecdis.2c00307/final/mechanism_ontology_record.json",
+      "failing_object": "mechanism_claims claim_id=mech-003-rifampicin-potentiation and claim_id=mech-004-stereochemical-requirement",
+      "failure_code": "non_standard_mechanism_evidence_class",
+      "reason": "Accepted mechanism output uses functional_synergy_assay and source_interpretive_conclusion, which are outside the required mechanism ontology.",
+      "requested_outputs": [
+        "Reclassify mech-003 and mech-004 using only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+        "Preserve claim_id, claim text, entity scope, source locator, and direct_assay_types only where the selected class is direct_mechanism.",
+        "Update worker-6 review provenance or semantic QA so non-standard mechanism classes cannot pass accepted outputs."
+      ],
+      "blocks": [
+        "mechanism_ontology_record",
+        "worker6 accepted_with_cautions decision",
+        "publication-grade mechanism ontology acceptance"
+      ],
+      "created_at": "2026-06-25T01:50:36Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "source_backed_row_needs_unit_propagation",
+      "evidence_context": "The sampled MIC value and unit are source-backed, but the accepted database-audit/release representation omits the unit field."
+    },
+    {
+      "caution_code": "source_locator_nested_not_top_level",
+      "evidence_context": "release_rows.json has an empty top-level source_locator while nested sequence_check/source_organism_check and traceability fields point to xml:table=1:row=11:column=2 and linked_experiment_records.jsonl row 10."
+    },
+    {
+      "caution_code": "preexisting_database_conflicts_preserved",
+      "evidence_context": "review_report.json preserves unrelated cautions for one DBAASP FICI source_conflict and value-less linked_experiment FICI rows; these are not the sampled MIC row but remain paper-level cautions."
+    },
+    {
+      "caution_code": "material_packet_has_stale_test_scope_note",
+      "evidence_context": "packet_manifest.json still contains a test-scope note from an earlier complete-message workflow, while later rework responses and strict reports say the earlier ticket was resolved."
+    }
+  ],
+  "checked_inputs": [
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0021__doi__10.1021_acsinfecdis.2c00307/true_review_result.schema.json",
+    "papers/doi__10.1021_acsinfecdis.2c00307/source/paper.xml",
+    "papers/doi__10.1021_acsinfecdis.2c00307/source/paper.pdf",
+    "papers/doi__10.1021_acsinfecdis.2c00307/final/database_record_verification.json",
+    "papers/doi__10.1021_acsinfecdis.2c00307/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_acsinfecdis.2c00307/final/mechanism_ontology_record.json",
+    "papers/doi__10.1021_acsinfecdis.2c00307/final/review_report.json",
+    "papers/doi__10.1021_acsinfecdis.2c00307/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/extraction/extraction_errors.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.2c00307/rework/rework_responses.jsonl",
+    "reports/doi__10.1021_acsinfecdis.2c00307.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1021_acsinfecdis.2c00307.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ]
+}

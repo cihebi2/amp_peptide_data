@@ -1,0 +1,119 @@
+{
+  "paper_id": "doi__10.3390_molecules24244571",
+  "reviewed_at": "2026-05-09T19:20:20Z",
+  "gate_rerun_at": "2026-05-09T19:20:20Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": {
+      "path": "papers/doi__10.3390_molecules24244571/source/paper.xml",
+      "status": "inspected_directly_for_article_metadata_Table_1_sections_figures_and_methods"
+    },
+    "paper_pdf": {
+      "path": "papers/doi__10.3390_molecules24244571/source/paper.pdf",
+      "status": "available_and_cross_checked_via_extracted_pdf_text"
+    },
+    "oa_package": {
+      "path": "paper_packets/doi__10.3390_molecules24244571/extracted/oa_package/local-DBAASP-PMC6943423/PMC6943423",
+      "status": "NXML_PDF_figures_and_supplementary_pdf_members_available_and_checked"
+    },
+    "supplementary_assets": {
+      "paths": [
+        "paper_packets/doi__10.3390_molecules24244571/extracted/supplementary_text/molecules-24-04571-s001.txt",
+        "paper_packets/doi__10.3390_molecules24244571/extracted/oa_package/local-DBAASP-PMC6943423/PMC6943423/molecules-24-04571-s001.pdf"
+      ],
+      "status": "supplementary_PDF_checked; contains peptide QC/SAXS fit material not extra activity rows"
+    },
+    "merged_database_rows": {
+      "paths": [
+        "paper_packets/doi__10.3390_molecules24244571/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_molecules24244571/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3390_molecules24244571/database/linked_literature_records.jsonl"
+      ],
+      "status": "all local linked rows audited; row-granular DBAASP rows matched, non-row-granular CAMP rows preserved as source_conflict"
+    },
+    "unavailable_materials": [],
+    "extraction_blockers": []
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules24244571/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules24244571/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules24244571/locators/locator_index.json",
+    "papers/doi__10.3390_molecules24244571/source/paper.xml",
+    "papers/doi__10.3390_molecules24244571/source/paper.pdf",
+    "paper_packets/doi__10.3390_molecules24244571/extracted/pdf_text/local-DBAASP-PMC6943423.txt",
+    "paper_packets/doi__10.3390_molecules24244571/extracted/pdf_text/molecules-24-04571.txt",
+    "paper_packets/doi__10.3390_molecules24244571/extracted/supplementary_text/molecules-24-04571-s001.txt",
+    "paper_packets/doi__10.3390_molecules24244571/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules24244571/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules24244571/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules24244571/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules24244571/database/linked_literature_records.jsonl"
+  ],
+  "adjudication_summary": "Source-reviewed rework repaired the prior activity-table parser gap by extracting XML Table 1 into 185 MIC/hemolysis rows, reconciled row-granular DBAASP database rows, preserved non-row-resolvable CAMP rows as conflicts, and replaced framework mechanism placeholders with bounded source-located mechanism/phenotype claims.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "403 database/literature rows are source_verified against Table 1 or article metadata; 17 CAMP entry-text rows remain source_conflict because local packet evidence is not row-granular.",
+    "layer_2_activity_toxicity": "Table 1 supports 148 MIC rows and 37 hemolysis rows with raw values, units, targets, strain/accession labels, assay footnotes, and XML locators.",
+    "layer_3_mechanism": "Mechanism evidence is accepted with cautions: SAXS supports model-membrane lipid interaction, time-kill supports phenotype, and CD/SAXS structure data are retained as context rather than overclaimed.",
+    "review_gate": "The previous open rework target rwk-complete-test-0001 is resolved by current worker-2/4/6 source-reviewed artifacts; no blocking or major QC failure remains in owned layers."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 185,
+    "activity_endpoint_counts": {
+      "MIC": 148,
+      "percent_hemolysis": 37
+    },
+    "database_record_audits": 420,
+    "database_status_summary": {
+      "source_verified": 403,
+      "source_conflict": 17
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "activity_table_1_repaired": true,
+    "database_conflicts_preserved_as_cautions": true,
+    "supplementary_pdf_checked": true
+  },
+  "caution_findings": [
+    {
+      "caution_code": "camp_entry_text_not_row_resolvable",
+      "evidence_context": "17 CAMP linked_experiment entry-text rows remain source_conflict/database-only at row level because local packet evidence lacks one-to-one peptide mapping."
+    },
+    {
+      "caution_code": "mechanism_model_membrane_only",
+      "evidence_context": "SAXS lipid interaction is direct model-membrane evidence and should not be stated as intact-cell membrane disruption."
+    },
+    {
+      "caution_code": "no_separate_database_sequence_snapshot",
+      "evidence_context": "linked_sequence_records.jsonl is empty; sequence identity is source-reviewed from XML Table 1 and linked literature ordering."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "gate_results": {
+    "semantic_gate_ready": true,
+    "publication_grade_ready": true,
+    "validator_contract_ready": true
+  },
+  "artifact_type": "adjudication_report"
+}

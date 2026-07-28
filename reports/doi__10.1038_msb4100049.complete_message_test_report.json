@@ -1,0 +1,289 @@
+{
+  "analysis": {
+    "activity_records": 0,
+    "activity_extraction_issue_count": 1,
+    "database_row_counts": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 3,
+      "linked_experiment_records": 4,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 6,
+      "database_only_no_primary_source": 1,
+      "source_verified": 1
+    },
+    "database_record_audits": 8,
+    "mechanism_claims": 0,
+    "review_status": "blocked_missing_primary_material",
+    "publication_grade": false,
+    "unrecoverable_material_gaps": [
+      {
+        "gap_code": "no_primary_activity_or_amp_assay_local_material",
+        "owner_worker": "worker-2 + worker-4 + worker-6",
+        "source_paths_checked": [
+          "paper_packets/doi__10.1038_msb4100049/raw/paper.xml",
+          "paper_packets/doi__10.1038_msb4100049/raw/paper.pdf",
+          "paper_packets/doi__10.1038_msb4100049/extracted/xml_sections.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/msb4100049.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/landing-1.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/figure_captions.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/local-DRAMP-msb4100049-s2.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/msb4100049-s2.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/local-DRAMP-msb4100049-s3.csv",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/msb4100049-s3.csv",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s1.doc",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s2.pdf",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s3.xls",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s4.doc",
+          "paper_packets/doi__10.1038_msb4100049/database/database_source_manifest.json",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_dramp_activity_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_literature_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_sequence_records.jsonl"
+        ],
+        "tools_attempted": [
+          "jq/json inspection of handoff, packet manifest, locator index, extraction status, prior final artifacts, and rework ticket",
+          "rg over XML, extracted PDF text, supplementary text/tables, and linked database JSONL for AMP activity/toxicity/mechanism/database terms",
+          "python xml.etree.ElementTree table and supplementary-material extraction from paper.xml",
+          "antiword on local DOC supplements s1 and s4",
+          "xls2csv-derived CSV review for supplementary spreadsheet s3",
+          "file -L and head inspection of local landing *.bin assets as HTML landing pages"
+        ],
+        "why_unrecoverable": "Local XML/PDF/OOXML-derived supplements and linked database snapshots support this paper as an E. coli K-12 genome-sequence correction article, not an AMP activity paper. No primary local table, prose section, figure caption, supplement, assay row, or linked sequence row supports a source-verified AMP assay endpoint, target, raw value, unit, toxicity value, or Cas2/defensin mechanism. The remaining AMP labels are database annotations without primary-source assay support in the obtainable local material.",
+        "impact": "No activity/toxicity records can be source-verified without fabrication; DRAMP/dbAMP AMP labels remain conflict/database-only provenance, and the paper must remain non-publication-grade.",
+        "next_action": "record_and_continue",
+        "blocks_publication_grade": true
+      }
+    ]
+  },
+  "completion_claim": "source_reviewed_worker2_worker4_worker6_repair_completed_nonaccepted_blocked_after_best_effort",
+  "current_state": "blocked_after_best_effort",
+  "doi": "10.1038/msb4100049",
+  "final_approval_status": "refused_blocked_missing_primary_material",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "semantic_publication_grade_pass_count": 0,
+    "semantic_publication_grade_fail_count": 1,
+    "semantic_issue_count": 3,
+    "semantic_issue_codes": [
+      "review_status_not_publication_grade",
+      "publication_grade_not_true",
+      "missing_activity_records"
+    ],
+    "publication_quality_pass": false,
+    "publication_risk_counts": {
+      "open_rework_targets": 1
+    }
+  },
+  "gate_summary": {
+    "structural_ready": true,
+    "validator_contract_ready": true,
+    "semantic_gate_ready": false,
+    "publication_grade_ready": false
+  },
+  "generated_at": "2026-05-02T05:40:00Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_msb4100049.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": 17,
+    "figures": 3,
+    "locators": 58,
+    "sections": 5,
+    "supplementary_assets": 18,
+    "supplementary_tables": 2,
+    "tables": 2
+  },
+  "message_counts": {
+    "artifacts": 16,
+    "chat_messages": 14,
+    "events": 30,
+    "rework_requests": 1,
+    "state_executions": 13
+  },
+  "not_publication_grade_reason": "Bounded local source review found no source-supported AMP activity/toxicity rows; open ticket rwk-codex-rereview-20260502-0001 records the unrecoverable local-material gap.",
+  "open_rework_ticket_count": 1,
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_msb4100049",
+  "paper_id": "doi__10.1038_msb4100049",
+  "pmcid": "",
+  "publication_quality_gate": "failed_open_unrecoverable_rework",
+  "queue_status": {
+    "material": "material_extracted_with_gaps",
+    "analysis": "analysis_blocked_after_best_effort"
+  },
+  "rework_requests": [
+    {
+      "ticket_id": "rwk-codex-rereview-20260502-0001",
+      "severity": "blocking",
+      "target_queue": "adjudication",
+      "failure_code": "no_primary_activity_or_amp_assay_local_material"
+    }
+  ],
+  "rework_ticket_ids": [
+    "rwk-codex-rereview-20260502-0001"
+  ],
+  "semantic_gate": "failed_expected_unrecoverable_activity_gap",
+  "state_count_expected": 13,
+  "terminal_status": "blocked_after_best_effort",
+  "test_type": "complete_real_paper_message_transfer_test",
+  "title": "Highly accurate genome sequences of Escherichia coli K-12 strains MG1655 and W3110.",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1038_msb4100049",
+  "workflow_test_ok": true,
+  "source_review_repair": {
+    "owner_workers": [
+      "worker-2",
+      "worker-4",
+      "worker-6"
+    ],
+    "checked_inputs": [
+      "rework_context/doi__10.1038_msb4100049/handoff_context.json",
+      "paper_packets/doi__10.1038_msb4100049/packet_manifest.json",
+      "paper_packets/doi__10.1038_msb4100049/locators/locator_index.json",
+      "paper_packets/doi__10.1038_msb4100049/extraction/extraction_status.json",
+      "paper_packets/doi__10.1038_msb4100049/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.1038_msb4100049/raw/paper.xml",
+      "paper_packets/doi__10.1038_msb4100049/raw/paper.pdf",
+      "paper_packets/doi__10.1038_msb4100049/extracted/xml_sections.json",
+      "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/msb4100049.txt",
+      "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/landing-1.txt",
+      "paper_packets/doi__10.1038_msb4100049/extracted/figure_captions.json",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_index.json",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/local-DRAMP-msb4100049-s2.txt",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/msb4100049-s2.txt",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables.json",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/local-DRAMP-msb4100049-s3.csv",
+      "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/msb4100049-s3.csv",
+      "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s1.doc",
+      "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s2.pdf",
+      "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s3.xls",
+      "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s4.doc",
+      "paper_packets/doi__10.1038_msb4100049/database/database_source_manifest.json",
+      "paper_packets/doi__10.1038_msb4100049/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1038_msb4100049/database/linked_dramp_activity_records.jsonl",
+      "paper_packets/doi__10.1038_msb4100049/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1038_msb4100049/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.1038_msb4100049/database/linked_sequence_records.jsonl"
+    ],
+    "qc_failure_reasons": [
+      {
+        "code": "no_source_supported_activity_or_toxicity_rows",
+        "severity": "blocking",
+        "owner_worker": "worker-2 + worker-6",
+        "reason": "Bounded source review found no local primary activity/toxicity assay rows; no endpoint/raw value/unit/target row can be created without fabricating unsupported values."
+      },
+      {
+        "code": "database_amp_annotations_not_primary_supported",
+        "severity": "major",
+        "owner_worker": "worker-4 + worker-6",
+        "reason": "Linked DRAMP/dbAMP rows associate Cas2/antimicrobial/antiviral labels with this citation, but local primary material does not support AMP identity, assay values, or target-organism activity for those rows."
+      }
+    ],
+    "rework_targets": [
+      {
+        "ticket_id": "rwk-codex-rereview-20260502-0001",
+        "paper_id": "doi__10.1038_msb4100049",
+        "created_at": "2026-05-02T05:36:31Z",
+        "updated_at": "2026-05-02T05:36:31Z",
+        "supersedes_ticket_id": "rwk-complete-test-0001",
+        "worker": "worker-6",
+        "owner_worker": "worker-6",
+        "target_queue": "adjudication",
+        "layer": "review",
+        "artifact_path": "papers/doi__10.1038_msb4100049/final/review_report.json",
+        "failing_object": "publication_grade_ready",
+        "failure_code": "no_primary_activity_or_amp_assay_local_material",
+        "omission_code": "unrecoverable_material_gap_no_source_supported_activity_rows",
+        "severity": "blocking",
+        "blocks": [
+          "publication_grade_ready",
+          "final_approval"
+        ],
+        "qc_failure_reasons": [
+          {
+            "code": "no_source_supported_activity_or_toxicity_rows",
+            "severity": "blocking",
+            "owner_worker": "worker-2 + worker-6",
+            "reason": "Bounded source review found no local primary activity/toxicity assay rows; no endpoint/raw value/unit/target row can be created without fabricating unsupported values."
+          },
+          {
+            "code": "database_amp_annotations_not_primary_supported",
+            "severity": "major",
+            "owner_worker": "worker-4 + worker-6",
+            "reason": "Linked DRAMP/dbAMP rows associate Cas2/antimicrobial/antiviral labels with this citation, but local primary material does not support AMP identity, assay values, or target-organism activity for those rows."
+          }
+        ],
+        "source_paths_to_check": [
+          "paper_packets/doi__10.1038_msb4100049/raw/paper.xml",
+          "paper_packets/doi__10.1038_msb4100049/raw/paper.pdf",
+          "paper_packets/doi__10.1038_msb4100049/extracted/xml_sections.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/msb4100049.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/landing-1.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/figure_captions.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/local-DRAMP-msb4100049-s2.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/msb4100049-s2.txt",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables.json",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/local-DRAMP-msb4100049-s3.csv",
+          "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/msb4100049-s3.csv",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s1.doc",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s2.pdf",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s3.xls",
+          "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s4.doc",
+          "paper_packets/doi__10.1038_msb4100049/database/database_source_manifest.json",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_dramp_activity_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_literature_records.jsonl",
+          "paper_packets/doi__10.1038_msb4100049/database/linked_sequence_records.jsonl"
+        ],
+        "unrecoverable_material_gaps": [
+          {
+            "gap_code": "no_primary_activity_or_amp_assay_local_material",
+            "owner_worker": "worker-2 + worker-4 + worker-6",
+            "source_paths_checked": [
+              "paper_packets/doi__10.1038_msb4100049/raw/paper.xml",
+              "paper_packets/doi__10.1038_msb4100049/raw/paper.pdf",
+              "paper_packets/doi__10.1038_msb4100049/extracted/xml_sections.json",
+              "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/msb4100049.txt",
+              "paper_packets/doi__10.1038_msb4100049/extracted/pdf_text/landing-1.txt",
+              "paper_packets/doi__10.1038_msb4100049/extracted/figure_captions.json",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_index.json",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/local-DRAMP-msb4100049-s2.txt",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_text/msb4100049-s2.txt",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables.json",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/local-DRAMP-msb4100049-s3.csv",
+              "paper_packets/doi__10.1038_msb4100049/extracted/supplementary_tables/msb4100049-s3.csv",
+              "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s1.doc",
+              "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s2.pdf",
+              "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s3.xls",
+              "paper_packets/doi__10.1038_msb4100049/raw/supplementary_original/local-DRAMP-msb4100049-s4.doc",
+              "paper_packets/doi__10.1038_msb4100049/database/database_source_manifest.json",
+              "paper_packets/doi__10.1038_msb4100049/database/linked_assay_records.jsonl",
+              "paper_packets/doi__10.1038_msb4100049/database/linked_dramp_activity_records.jsonl",
+              "paper_packets/doi__10.1038_msb4100049/database/linked_experiment_records.jsonl",
+              "paper_packets/doi__10.1038_msb4100049/database/linked_literature_records.jsonl",
+              "paper_packets/doi__10.1038_msb4100049/database/linked_sequence_records.jsonl"
+            ],
+            "tools_attempted": [
+              "jq/json inspection of handoff, packet manifest, locator index, extraction status, prior final artifacts, and rework ticket",
+              "rg over XML, extracted PDF text, supplementary text/tables, and linked database JSONL for AMP activity/toxicity/mechanism/database terms",
+              "python xml.etree.ElementTree table and supplementary-material extraction from paper.xml",
+              "antiword on local DOC supplements s1 and s4",
+              "xls2csv-derived CSV review for supplementary spreadsheet s3",
+              "file -L and head inspection of local landing *.bin assets as HTML landing pages"
+            ],
+            "why_unrecoverable": "Local XML/PDF/OOXML-derived supplements and linked database snapshots support this paper as an E. coli K-12 genome-sequence correction article, not an AMP activity paper. No primary local table, prose section, figure caption, supplement, assay row, or linked sequence row supports a source-verified AMP assay endpoint, target, raw value, unit, toxicity value, or Cas2/defensin mechanism. The remaining AMP labels are database annotations without primary-source assay support in the obtainable local material.",
+            "impact": "No activity/toxicity records can be source-verified without fabrication; DRAMP/dbAMP AMP labels remain conflict/database-only provenance, and the paper must remain non-publication-grade.",
+            "next_action": "record_and_continue",
+            "blocks_publication_grade": true
+          }
+        ],
+        "reason": "Local XML/PDF/OOXML-derived supplements and linked database snapshots support this paper as an E. coli K-12 genome-sequence correction article, not an AMP activity paper. No primary local table, prose section, figure caption, supplement, assay row, or linked sequence row supports a source-verified AMP assay endpoint, target, raw value, unit, toxicity value, or Cas2/defensin mechanism. The remaining AMP labels are database annotations without primary-source assay support in the obtainable local material.",
+        "required_action": "Keep this paper non-accepted unless a future external/manual source adds primary AMP assay evidence; do not convert database-only AMP labels into source_verified rows."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ticket_id": "pilot20-002-rwk-mechanism-ontology-001",
+  "paper_id": "doi__10.1002_cmdc.201900465",
+  "audit_record_id": "doi__10.1002_cmdc.201900465:database_audit:305",
+  "target_queue": "analysis",
+  "severity": "major",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "The sampled DRAMP activity row is source-backed, but the paper-level final mechanism artifact uses non-ontology evidence_class values (mechanism_context_pending_review) and states the claims are automated locator notes, not publication-grade mechanism adjudication. Worker-6 final acceptance cannot be confirmed until worker-5 rebuilds the mechanism ontology and worker-6 re-adjudicates.",
+  "requested_outputs": [
+    {
+      "artifact": "paper_packets/doi__10.1002_cmdc.201900465/analysis/mechanism_evidence.json",
+      "need": "Rebuild mechanism_claims using only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+      "required_locators": [
+        "source/paper.xml mechanism-relevant sections",
+        "paper_packets/doi__10.1002_cmdc.201900465/extracted/pdf_text.jsonl",
+        "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_text.jsonl"
+      ]
+    },
+    {
+      "artifact": "papers/doi__10.1002_cmdc.201900465/final/review_report.json",
+      "need": "Worker-6 re-adjudication after mechanism repair; publication_grade must not remain true if non-ontology mechanism evidence classes persist."
+    }
+  ],
+  "blocks": [
+    "layer3_mechanism_review",
+    "worker6_publication_grade_confirmation",
+    "pilot20_terminal_source_review_confirmation"
+  ],
+  "created_at": "2026-06-22T03:49:55Z"
+}

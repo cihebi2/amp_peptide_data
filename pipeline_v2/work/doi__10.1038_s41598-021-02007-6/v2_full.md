@@ -1,0 +1,1 @@
+[{"assertion_index":0,"db_claimed":{"organism":"","endpoint":"inhibition zones and IC50","value":"","peptide":"TGIATSGATFTLHTGSLAPAT"},"verification_outcome":"cannot_determine","normalization_note":"none","is_database_error":false,"evidence":null,"short_reason":"No provided longform_cells support comparison; header_rows are not admissible evidence under the rules."}]

@@ -1,0 +1,165 @@
+{
+  "paper_id": "doi__10.1126_science.abf4896",
+  "reviewed_at": "2026-06-20T09:32:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "blocked_missing_primary_material",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "figure_images_F1_F3",
+    "oa_package_manifest",
+    "paper_local_supplementary_directory",
+    "linked_dramp_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "figure_images": true,
+    "supplementary_assets": false,
+    "merged_database_rows": true,
+    "note": "Local primary and database materials were exhausted for obtainable-only mode; the Science DC1 supplement listed by XML is absent locally."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1126_science.abf4896/handoff_context.json",
+    "paper_packets/doi__10.1126_science.abf4896/packet_manifest.json",
+    "paper_packets/doi__10.1126_science.abf4896/locators/locator_index.json",
+    "paper_packets/doi__10.1126_science.abf4896/raw/paper.xml",
+    "paper_packets/doi__10.1126_science.abf4896/raw/paper.pdf",
+    "paper_packets/doi__10.1126_science.abf4896/raw/oa_package/local-DRAMP-33597220.tar.gz",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/figure_captions.json",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/pdf_text.jsonl",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/xml_sections.json",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/oa_package/local-DRAMP-33597220/PMC8011693/371_1379_F1.jpg",
+    "paper_packets/doi__10.1126_science.abf4896/extracted/oa_package/local-DRAMP-33597220/PMC8011693/371_1379_F3.jpg",
+    "paper_packets/doi__10.1126_science.abf4896/database/database_source_manifest.json",
+    "paper_packets/doi__10.1126_science.abf4896/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1126_science.abf4896/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1126_science.abf4896/database/linked_dramp_activity_records.jsonl",
+    "papers/doi__10.1126_science.abf4896/source/supplementary/"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 3,
+    "activity_rows_source_reviewed": true,
+    "database_conflicts_preserved": true,
+    "database_source_verified_rows": "literature link only",
+    "database_only_rows_promoted": false,
+    "mechanism_claims_source_reviewed": true,
+    "unrecoverable_material_gaps_recorded": true,
+    "open_rework_targets": 1,
+    "blocking_issue_remaining": "local_supplementary_dc1_absent"
+  },
+  "per_layer_decision_rationale": {
+    "worker-2_activity_toxicity": "Repaired from primary XML/PDF/Fig. 3: two main-text IC50 rows and one bounded MTT toxicity row. Did not promote DRAMP Ref.33082259 values or figure-only/supplement-only exact values.",
+    "worker-4_database": "Repaired audit rationale: eight DRAMP activity/experiment rows remain source_conflict because local Science sources do not verify the full database sequence/linker or Ref.33082259 quantitative row set; the DOI/PMID literature link is source_verified only as literature linkage.",
+    "worker-5_mechanism_context": "Final adjudication records direct fusion/entry inhibition mechanism from local main text/Fig. 1/Fig. 3 without relying on unavailable supplemental assets.",
+    "worker-6_adjudication": "Non-publication-grade. Local materials are sufficient for partial source-reviewed repair but insufficient for strict closure because DC1/Table S1/Fig. S5 is absent."
+  },
+  "adjudication_summary": "Owner-worker re-review recovered primary-source IC50 and toxicity rows from the Science main text/PDF, preserved DRAMP29198 conflicts instead of normalizing them, and updated final mechanism/review provenance. The paper remains blocked because the local packet lacks the article-linked Science DC1 supplement needed for Table S1/Fig. S5-level publication-grade extraction.",
+  "caution_findings": [
+    {
+      "caution_code": "dramp_conflicts_preserved",
+      "evidence_context": "DRAMP rows contain Ref.33082259/mBio-tagged quantitative activity/cytotoxicity values and a full GSGSGC database sequence; local Science source supports only base HRC sequence and main-text Fig. 3 IC50 statements."
+    },
+    {
+      "caution_code": "main_text_values_are_approximate",
+      "evidence_context": "Science main text reports approximate IC50 values (~300 nM and ~5 nM); exact Table S1 values are not locally available."
+    }
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "local_supplementary_dc1_absent",
+      "owner_worker": "worker-2 + worker-6",
+      "severity": "blocking",
+      "reason": "Primary XML links Science DC1/Table S1/Fig. S5, but the local packet/package/source supplementary directory contains no supplementary file; exact supplemental activity/toxicity values cannot be source-reviewed locally."
+    },
+    {
+      "code": "database_rows_preserved_as_source_conflict",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "caution",
+      "reason": "DRAMP rows for DRAMP29198 include Ref.33082259/mBio-tagged quantitative activity/cytotoxicity values and a full GSGSGC database sequence not fully verified from the local Science primary material; rows are preserved as source_conflict, not promoted."
+    },
+    {
+      "code": "publication_grade_blocked_by_missing_primary_material",
+      "owner_worker": "worker-6",
+      "severity": "blocking",
+      "reason": "Owner-worker review recovered main-text activity/toxicity rows and database conflict rationale, but obtainable-only local material is insufficient for publication-grade closure because supplemental DC1/Table S1 is absent."
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-owner-20260620-supp-dc1-gap",
+      "paper_id": "doi__10.1126_science.abf4896",
+      "created_at": "2026-06-20T09:32:22Z",
+      "updated_at": "2026-06-20T09:32:22Z",
+      "requested_by": "owner_worker_re_review",
+      "worker": "worker-2 + worker-6",
+      "owner_worker": "worker-2",
+      "target_queue": "material_extraction",
+      "layer": "activity_toxicity",
+      "artifact_path": "papers/doi__10.1126_science.abf4896/final/activity_toxicity_evidence.json",
+      "omission_code": "local_supplementary_dc1_absent",
+      "failure_code": "supplementary_table_s1_unavailable_locally",
+      "severity": "blocking",
+      "status": "open_blocked_missing_primary_material",
+      "failing_object": "Science DC1/Table S1/Fig. S5 local source material",
+      "reason": "Local materials support main-text IC50/toxicity rows but do not include the supplement that the article says summarizes in vitro efficacy and toxicity support.",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1126_science.abf4896/raw/paper.xml",
+        "paper_packets/doi__10.1126_science.abf4896/raw/paper.pdf",
+        "paper_packets/doi__10.1126_science.abf4896/raw/oa_package/local-DRAMP-33597220.tar.gz",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_tables.json",
+        "papers/doi__10.1126_science.abf4896/source/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1126_science.abf4896/package/local-DRAMP-33597220.tar.gz"
+      ],
+      "requested_outputs": [
+        {
+          "asset": "Science supplementary DC1 / Table S1 / Fig. S5",
+          "need": "If supplied later, parse exact in vitro efficacy and toxicity values and reconcile against current main-text rows and DRAMP conflicts."
+        }
+      ],
+      "required_action": "Acquire or provide the missing local supplementary DC1 package; otherwise keep unrecoverable_material_gaps and non-publication-grade status."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "local_supplementary_dc1_absent",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1126_science.abf4896/raw/paper.xml",
+        "paper_packets/doi__10.1126_science.abf4896/raw/paper.pdf",
+        "paper_packets/doi__10.1126_science.abf4896/raw/oa_package/local-DRAMP-33597220.tar.gz",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1126_science.abf4896/extracted/supplementary_tables.json",
+        "papers/doi__10.1126_science.abf4896/source/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1126_science.abf4896/package/local-DRAMP-33597220.tar.gz"
+      ],
+      "tools_attempted": [
+        "packet manifest review",
+        "XML paragraph extraction",
+        "PDF text extraction review",
+        "OA archive manifest review",
+        "paper-local supplementary directory check",
+        "Fig. 1/Fig. 3 visual inspection",
+        "linked DRAMP JSONL review"
+      ],
+      "why_unrecoverable": "The local PMC/DRAMP package contains paper XML/PDF and figures only; XML points to external Science DC1 for Table S1/Fig. S5, but no DC1 supplement is present in the local packet or landed package. Obtainable-only mode forbids fabricating or chasing absent external supplements.",
+      "impact": "Main-text IC50 and bounded MTT toxicity rows are recorded, but exact supplemental Table S1/Fig. S5 values remain unavailable; paper remains non-publication-grade.",
+      "owner_worker": "worker-2 + worker-6",
+      "blocks_publication_grade": true
+    }
+  ]
+}

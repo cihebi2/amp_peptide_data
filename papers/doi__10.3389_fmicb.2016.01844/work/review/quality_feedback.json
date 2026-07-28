@@ -1,0 +1,63 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2016.01844",
+  "generated_at": "2026-05-06T18:57:47Z",
+  "status": "cleared_after_worker4_worker6_source_review",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_caution_codes": [
+    "database_source_conflicts_preserved",
+    "amidation_not_normalized",
+    "exact_figure_point_values_not_text_recoverable",
+    "no_direct_molecular_mechanism"
+  ],
+  "resolution_summary": "Worker-4 reconciled database rows; worker-6 rebuilt final activity/mechanism/review outputs from local source artifacts and closed the framework-only rework ticket.",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_figure_point_values_not_text_recoverable",
+      "source_paths_checked": [
+        "papers/doi__10.3389_fmicb.2016.01844/source/paper.xml",
+        "papers/doi__10.3389_fmicb.2016.01844/source/paper.pdf",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/pdf_text/fmicb-07-01844.txt",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/figure_captions.json",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/oa_package/local-APD6-pmc_package/PMC5114273/fmicb-07-01844-g003.jpg",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/oa_package/local-APD6-pmc_package/PMC5114273/fmicb-07-01844-g004.jpg",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/oa_package/local-APD6-pmc_package/PMC5114273/fmicb-07-01844-g005.jpg"
+      ],
+      "tools_attempted": [
+        "xml.etree.ElementTree",
+        "pdftotext-derived packet text",
+        "rg",
+        "file",
+        "jq"
+      ],
+      "why_unrecoverable": "Hemolysis, cytotoxicity, and biofilm figures are present locally, but exact per-point graph values are not text/table data. The review preserves qualitative claims and text-supported thresholds instead of inventing numeric point estimates.",
+      "impact": "Exact database-derived graph percentages remain source_conflict cautions; Table 1 identity, Table 3 MICs, biofilm thresholds, and mechanism classes are still controllable from local material.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "landing_bin_files_are_publisher_html_not_extra_tables",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2016.01844/raw/supplementary_original/landing-*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2016.01844/supplementary/landing-*.bin",
+        "paper_packets/doi__10.3389_fmicb.2016.01844/extracted/supplementary_text/local-DRAMP-Presentation_1.txt"
+      ],
+      "tools_attempted": [
+        "file",
+        "pdftotext-derived packet text",
+        "rg"
+      ],
+      "why_unrecoverable": "The landing-*.bin files are HTML landing pages rather than structured supplementary tables. The true local supplement is Presentation_1.PDF and its text was parsed.",
+      "impact": "No additional peptide activity/toxicity table was recoverable beyond the parsed supplement PDF control SMIC50 and microscopy notes.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

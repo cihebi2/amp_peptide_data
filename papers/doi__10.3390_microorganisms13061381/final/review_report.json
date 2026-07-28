@@ -1,0 +1,85 @@
+{
+  "paper_id": "doi__10.3390_microorganisms13061381",
+  "reviewed_at": "2026-05-09T10:44:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Source-reviewed rework recovered the primary Table 1 MIC/MBC matrix, hemolysis values, and database-row reconciliation for rPpRcys1. DBAASP assay rows now match source-backed activity/toxicity records; the APD6 aggregate peptide entry is retained as a cautionary source_conflict because it includes unsupported target/strain claims.",
+  "adjudication_summary": "Worker-6 adjudication closes rwk-complete-test-0001 after source-backed worker-2 activity/toxicity repair and worker-4 database conflict preservation. The paper is publication-grade as accepted_with_cautions, not accepted_clean.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_microorganisms13061381/handoff_context.json",
+    "paper_packets/doi__10.3390_microorganisms13061381/packet_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms13061381/locators/locator_index.json",
+    "paper_packets/doi__10.3390_microorganisms13061381/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_microorganisms13061381/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_microorganisms13061381/extracted/pdf_text/microorganisms-13-01381.txt",
+    "paper_packets/doi__10.3390_microorganisms13061381/raw/supplementary_original/local-APD6-microorganisms-13-01381-s001.zip!Supplementary.pdf",
+    "paper_packets/doi__10.3390_microorganisms13061381/raw/supplementary_original/local-APD6-microorganisms-13-01381-s001.zip!supplementary code S1.pdf",
+    "paper_packets/doi__10.3390_microorganisms13061381/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms13061381/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms13061381/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv:AP05670",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv:DBAASPR_24405 rows"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded obtainable-only source review opened XML, extracted PDF text, OA package inventory, supplementary ZIP PDFs via pdftotext, and linked/merged database rows relevant to the gate."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 17,
+    "toxicity_records": 3,
+    "database_status_summary": {
+      "source_verified": 36,
+      "source_conflict": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "suspicious_activity_target_scan": "passed",
+    "mic_like_unit_scan": "passed",
+    "source_verified_database_locator_scan": "passed",
+    "supplementary_source_check": "zip opened; Supplementary.pdf and supplementary code S1.pdf text checked; no extra MIC/MBC table recovered"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP linked assay/experiment rows for Table 1 and hemolysis values are source_verified against primary XML/prose; APD6 AP05670 aggregate text is source_conflict because of unsupported extra targets and strain mismatches.",
+    "layer_2_activity_toxicity": "Recovered 14 MIC/MBC records from XML Table 1 and 3 hemolysis records from primary text/Figure 8 with units, targets, strain context, assay conditions, and locators.",
+    "layer_3_mechanism": "Primary paper supports membrane disruption/surface binding as direct mechanism evidence for selected bacteria and negative respiratory/protease/DNA migration findings; simulation-only details remain contextual."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_activity_comment_conflict_preserved",
+      "evidence_context": "APD6 AP05670 has supported sequence/name/literature context but lists unsupported extra targets and strain mismatches; kept as source_conflict, not smoothed into source_verified."
+    },
+    {
+      "caution_code": "supplementary_growth_curve_exact_points_not_required",
+      "evidence_context": "Supplementary ZIP was opened with unzip/pdftotext. It contains Table S1/S2/S3, Code S1, and figure-only S1-S3 content; no additional parser-supported MIC/MBC table was present."
+    },
+    {
+      "caution_code": "abstract_acinetobacter_label_typo",
+      "evidence_context": "Article abstract text abbreviates Acinetobacter as L3, while methods, Table 1, and linked DBAASP rows support Acinetobacter sp. L32."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

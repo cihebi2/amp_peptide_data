@@ -1,0 +1,40 @@
+# Pilot20 Mechanism Ontology Class QC
+
+Generated at: `2026-06-22T08:27:43Z`
+
+- Papers checked: `11`
+- Mechanism files checked: `44`
+- Files with non-standard classes: `13`
+
+## Bad Class Counts
+
+| class | files |
+| --- | ---: |
+| `background_mechanism_context` | 4 |
+| `immunomodulatory_cell_phenotype` | 4 |
+| `indirect_mechanism_context` | 4 |
+| `mechanism_context_pending_review` | 1 |
+| `mechanism_hypothesis_context` | 4 |
+| `phenotype_activity_context` | 4 |
+| `phenotypic_synergy_context` | 4 |
+| `structural_supporting_mechanism` | 4 |
+| `supportive_activity_mechanism` | 4 |
+| `toxicity_selectivity_context` | 4 |
+
+## Files With Bad Classes
+
+| paper | path | bad classes |
+| --- | --- | --- |
+| `doi__10.1038_s41522-024-00637-y` | `paper_packets/doi__10.1038_s41522-024-00637-y/analysis/mechanism_evidence.json` | `background_mechanism_context;indirect_mechanism_context;phenotypic_synergy_context` |
+| `doi__10.1038_s41522-024-00637-y` | `paper_packets/doi__10.1038_s41522-024-00637-y/final/mechanism_evidence.json` | `background_mechanism_context;indirect_mechanism_context;phenotypic_synergy_context` |
+| `doi__10.1038_s41522-024-00637-y` | `papers/doi__10.1038_s41522-024-00637-y/final/mechanism_evidence.json` | `background_mechanism_context;indirect_mechanism_context;phenotypic_synergy_context` |
+| `doi__10.1038_s41522-024-00637-y` | `papers/doi__10.1038_s41522-024-00637-y/final/mechanism_ontology_record.json` | `background_mechanism_context;indirect_mechanism_context;phenotypic_synergy_context` |
+| `doi__10.1038_s41598-017-16784-6` | `papers/doi__10.1038_s41598-017-16784-6/final/mechanism_evidence.json` | `mechanism_context_pending_review` |
+| `doi__10.21203_rs.3.rs-578319_v1` | `paper_packets/doi__10.21203_rs.3.rs-578319_v1/analysis/mechanism_evidence.json` | `structural_supporting_mechanism;supportive_activity_mechanism` |
+| `doi__10.21203_rs.3.rs-578319_v1` | `paper_packets/doi__10.21203_rs.3.rs-578319_v1/final/mechanism_evidence.json` | `structural_supporting_mechanism;supportive_activity_mechanism` |
+| `doi__10.21203_rs.3.rs-578319_v1` | `papers/doi__10.21203_rs.3.rs-578319_v1/final/mechanism_evidence.json` | `structural_supporting_mechanism;supportive_activity_mechanism` |
+| `doi__10.21203_rs.3.rs-578319_v1` | `papers/doi__10.21203_rs.3.rs-578319_v1/final/mechanism_ontology_record.json` | `structural_supporting_mechanism;supportive_activity_mechanism` |
+| `doi__10.2174_1381612822666161027120518` | `paper_packets/doi__10.2174_1381612822666161027120518/analysis/mechanism_evidence.json` | `immunomodulatory_cell_phenotype;mechanism_hypothesis_context;phenotype_activity_context;toxicity_selectivity_context` |
+| `doi__10.2174_1381612822666161027120518` | `paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json` | `immunomodulatory_cell_phenotype;mechanism_hypothesis_context;phenotype_activity_context;toxicity_selectivity_context` |
+| `doi__10.2174_1381612822666161027120518` | `papers/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json` | `immunomodulatory_cell_phenotype;mechanism_hypothesis_context;phenotype_activity_context;toxicity_selectivity_context` |
+| `doi__10.2174_1381612822666161027120518` | `papers/doi__10.2174_1381612822666161027120518/final/mechanism_ontology_record.json` | `immunomodulatory_cell_phenotype;mechanism_hypothesis_context;phenotype_activity_context;toxicity_selectivity_context` |

@@ -1,0 +1,27 @@
+{
+  "ticket_id": "pilot20-014-true-review-rwk-001",
+  "paper_id": "doi__10.1016_j.isci.2020.101785",
+  "audit_record_id": "doi__10.1016_j.isci.2020.101785:database_audit:12",
+  "target_queue": "analysis",
+  "severity": "blocking",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "The sampled DBAASP database-only row is justified, but the paper-level final mechanism ontology remains a pending/test-scope scaffold: mechanism_claims use nonstandard evidence_class mechanism_context_pending_review and the artifact states it is not publication-grade mechanism adjudication. Worker-6 review currently over-accepts this final artifact as publication_grade.",
+  "requested_outputs": [
+    {
+      "artifact": "papers/doi__10.1016_j.isci.2020.101785/final/mechanism_ontology_record.json",
+      "owner": "worker-5",
+      "need": "Rebuild mechanism_claims from local XML/PDF/supplement/figure-caption evidence using only standard ontology classes: direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. Include direct assay types only for direct_mechanism claims."
+    },
+    {
+      "artifact": "papers/doi__10.1016_j.isci.2020.101785/final/review_report.json",
+      "owner": "worker-6",
+      "need": "Re-adjudicate layer 3 after mechanism repair and update review_status/publication_grade/rework_targets based on the repaired source-reviewed mechanism artifact."
+    }
+  ],
+  "blocks": [
+    "publication_grade_ready",
+    "final_review_confirmation",
+    "layer3_mechanism_ontology_acceptance"
+  ],
+  "created_at": "2026-06-22T04:16:46Z"
+}

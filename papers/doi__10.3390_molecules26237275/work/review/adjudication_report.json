@@ -1,0 +1,90 @@
+{
+  "paper_id": "doi__10.3390_molecules26237275",
+  "doi": "10.3390/molecules26237275",
+  "pmid": "34885850",
+  "pmcid": "PMC8659278",
+  "title": "Dianthiamides A-E, Proline-Containing Orbitides from Dianthus chinensis.",
+  "reviewed_at": "2026-05-09T17:02:12Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened XML, publisher PDF text, OA package members, supplementary zip member via pdftotext, linked DBAASP JSONL rows, merged sequence catalog, and merged experiment row. The remaining material limitation is nonblocking: supplement contains spectra/Marfey data rather than additional activity tables."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_molecules26237275/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules26237275/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/pdf_text/local-DBAASP-PMC8659278.txt",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/pdf_text/molecules-26-07275.txt",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/oa_package/local-DBAASP-PMC8659278/PMC8659278/molecules-26-07275-s001.zip",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules26237275/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules26237275/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26237275/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26237275/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 9,
+    "activity_rows_source_supported": 9,
+    "database_record_status_summary": {
+      "sequence_modified_not_normalized": 2,
+      "source_verified": 1
+    },
+    "mechanism_claims_source_reviewed": 2,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_report": "reports/doi__10.3390_molecules26237275.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_molecules26237275.publication_quality.json"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled DBAASP assay/experiment rows against the primary A549 IC50 result, cytotoxicity method, article metadata, and merged sequence catalog. Activity value and citation are source-supported; sequence status is retained as sequence_modified_not_normalized because DBAASP omits cyclization/proline geometry.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 9 source-supported cytotoxicity rows from the paper text and methods: one quantified dianthiamide A A549 IC50 row plus inactive >200 uM rows explicitly reported for compounds 2-5 against A549 and MKN-28. No MIC/MBC/hemolysis rows were present.",
+    "layer_3_mechanism": "Worker-6 replaced automated placeholder mechanism notes with source-bounded statements: the paper supports structure elucidation and MTT cytotoxic phenotype, but no direct molecular antimicrobial mechanism.",
+    "publication_grade_review": "The prior ticket is closed because the source-supported activity row set, database adjudication, and final provenance are now paper-specific and gate-clean."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "cytotoxicity_not_antimicrobial_assay",
+      "evidence_context": "Primary article reports cytotoxicity against mammalian cancer cell lines, not antimicrobial MIC/MBC assays."
+    },
+    {
+      "caution_code": "database_sequence_modified_not_normalized",
+      "evidence_context": "DBAASP sequence GFLPPIN matches residue order but omits cyclic closure and trans/cis proline details from the primary source."
+    },
+    {
+      "caution_code": "supplement_non_activity_only",
+      "evidence_context": "Supplementary zip contains a PDF of spectra/Marfey figures, with no extra activity/toxicity tables."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 source-reviewed rework closed rwk-complete-test-0001: cytotoxicity rows are source-located, DBAASP records are adjudicated with sequence-modification cautions preserved, and framework placeholder mechanism text was replaced with source-bounded final review.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_report": "reports/doi__10.3390_molecules26237275.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_molecules26237275.publication_quality.json"
+  }
+}

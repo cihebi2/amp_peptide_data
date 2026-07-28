@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1038_srep35347",
+  "reviewed_at": "2026-05-03T06:25:09Z",
+  "generated_at": "2026-05-03T06:25:09Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_image_review",
+    "database_jsonl"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Relevant local source surfaces were exhausted for the worker-2/4/6 blockers; supplementary PDF text contained no structured activity table beyond figure supplements and did not change Table 1/database adjudication."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_srep35347/handoff_context.json",
+    "paper_packets/doi__10.1038_srep35347/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep35347/locators/locator_index.json",
+    "papers/doi__10.1038_srep35347/source/paper.xml",
+    "papers/doi__10.1038_srep35347/source/paper.pdf",
+    "paper_packets/doi__10.1038_srep35347/extracted/pdf_text/srep35347.txt",
+    "paper_packets/doi__10.1038_srep35347/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep35347/extracted/oa_package/local-DRAMP-27734947/PMC5062114/srep35347-f2.jpg",
+    "paper_packets/doi__10.1038_srep35347/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_srep35347/extracted/supplementary_text/srep35347-s1.txt",
+    "paper_packets/doi__10.1038_srep35347/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_srep35347/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_srep35347/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep35347/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 84,
+    "activity_extraction_issue_count": 0,
+    "toxicity_records": 1,
+    "database_snapshots": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 18,
+      "linked_experiment_records": 18,
+      "linked_literature_records": 18,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 36,
+      "source_verified": 18
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DRAMP peptide sequences were checked against Figure 2 and activity values against Table 1. The rows remain accepted_with_cautions because DRAMP carries an Antimicrobial activity label and a Reference elocation mismatch not supported by the primary source, both preserved as source_conflict context.",
+    "layer_2_activity_toxicity": "Worker-2 recovered all Table 1 IC50 target/entity/value rows for four human cell-line targets; qualitative hemolysis/non-toxicity is preserved with figure/text locators without fabricating graphical percentages.",
+    "layer_3_mechanism": "Worker-6 replaced generic automated mechanism notes with paper-specific phenotypic anti-angiogenic claims and downgraded receptor/signaling language to author-proposed indirect mechanism only.",
+    "final_gate": "The original ticket rwk-complete-test-0001 is closed because the blocking source-review/activity/database issues have paper-local evidence and no major unresolved rework remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_activity_label_reference_conflict_preserved",
+      "evidence_context": "DRAMP rows reconcile to Table 1 and Figure 2 but retain non-primary Antimicrobial labels and a Sci Rep 6:35019 reference string despite article metadata for 6:35347."
+    },
+    {
+      "caution_code": "hemolysis_exact_percentages_not_tabulated",
+      "evidence_context": "Primary text and Figure 4 support qualitative non-hemolysis/non-toxicity; exact graph-derived percentages were not fabricated."
+    },
+    {
+      "caution_code": "mechanism_indirect_not_direct_binding",
+      "evidence_context": "MCoAA-02 mechanism is supported as phenotypic anti-angiogenic activity plus an author-proposed indirect model, not direct receptor engagement."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "bounded_rework_result": {
+    "status": "resolved_after_source_review",
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "updated_at": "2026-05-03T06:25:09Z",
+    "note": "Worker-2/4/6 re-review closed rwk-complete-test-0001 after reopening XML/PDF text/Figure 2/supplementary text/database snapshots and preserving nonblocking conflicts."
+  },
+  "summary": "Source re-review recovered Table 1 activity rows, reconciled DRAMP rows to primary evidence while preserving database conflicts, and replaced generic mechanism notes with paper-specific anti-angiogenic adjudication; final status is accepted_with_cautions rather than clean acceptance.",
+  "adjudication_summary": "Worker-6 accepts the paper with cautions after source-reviewed worker-2/4 repairs; no blocking rework target remains open."
+}

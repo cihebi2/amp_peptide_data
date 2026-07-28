@@ -1,0 +1,81 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-3535234_v1",
+  "generated_at": "2026-05-05T16:34:56Z",
+  "review_status": "source_reviewed_worker6_mechanism_adjudicated",
+  "publication_grade": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "designed AMP panel",
+      "claim_text": "The article frames the designed peptides within the general AMP membrane-insertion/disruption rationale, but does not directly demonstrate a single killing mechanism for the new peptides.",
+      "evidence_class": "background_mechanism_rationale",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf:page=1:introduction:membrane_disruption_background",
+        "text_lines": "37-41"
+      },
+      "limitations": "Background mechanism rationale only; not a direct mechanism assay for the generated peptides."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "generated C.acnes AMP candidates",
+      "claim_text": "Physicochemical analysis reports positive charge and predicted alpha-helical propensity resembling known C.acnes AMPs.",
+      "evidence_class": "computational_property_support",
+      "direct_assay_types": [
+        "physicochemical calculation",
+        "secondary-structure prediction"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf:page=2:generated_amp_physicochemical_profile",
+        "text_lines": "90-96"
+      },
+      "limitations": "Computational property support should not be promoted to direct membrane-disruption evidence."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "tested potent peptides",
+      "claim_text": "Hemolysis and HaCaT assays provide toxicity/safety context for the potent peptides but do not establish antibacterial mechanism.",
+      "evidence_class": "toxicity_context_not_killing_mechanism",
+      "direct_assay_types": [
+        "rabbit erythrocyte hemolysis",
+        "HaCaT CCK-8 viability"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf:page=4:hemolysis_cytotoxicity_results",
+        "text_lines": "180-192"
+      },
+      "limitations": "Safety assays are retained as toxicity evidence, not mechanism evidence."
+    }
+  ],
+  "source_review": {
+    "source_paths_checked": [
+      "rework_context/doi__10.21203_rs.3.rs-3535234_v1/handoff_context.json",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/packet_manifest.json",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/locators/locator_index.json",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.xml",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.pdf",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-1.bin",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-2.bin",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-3.docx",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-4.bin",
+      "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+    ],
+    "tools_attempted": [
+      "jq over handoff, packet, final, quality feedback, and gate reports",
+      "rg over XML/PDF text/supplement/database surfaces",
+      "pdftotext -layout on paper.pdf",
+      "OOXML zip parse of landing-3.docx word/document.xml",
+      "file/rg inspection of supplementary .bin HTML assets",
+      "csv.DictReader over merged sequence and experimental database snapshots"
+    ],
+    "overclaim_guard": "No direct antibacterial mechanism is claimed because local material supports design rationale, predicted physicochemical properties, and toxicity context only."
+  },
+  "unrecoverable_material_gaps": []
+}

@@ -1,0 +1,73 @@
+{
+  "paper_id": "PMC11752523",
+  "ticket_id": "rwk-PMC11752523-figure6-7-quantitation-002",
+  "generated_at": "2026-07-15T07:45:11Z",
+  "worker": "worker-3",
+  "status": "digitized_approximation_recovered_with_exact_value_gap",
+  "analysis_can_resume": true,
+  "blocked_missing_primary_material": false,
+  "gap_summary": "Approximate Figure 6/7 bar means were recovered from staged PDF raster images; exact original chart data and XML-referenced JPEG assets remain unavailable locally.",
+  "attempts": [
+    {
+      "command_id": "find_target_graphics",
+      "tool": "find",
+      "target": "paper and packet PMC11752523 roots",
+      "result": "no mt4c01635_0006/0007 image files or other staged image assets found"
+    },
+    {
+      "command_id": "pdftoppm_page9",
+      "tool": "pdftoppm",
+      "target": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/raw/paper.pdf",
+      "output": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extracted/figure_digitization/page9_300dpi-09.png",
+      "result": "page render created"
+    },
+    {
+      "command_id": "pdfimages_page9",
+      "tool": "pdfimages",
+      "target": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/raw/paper.pdf",
+      "outputs": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extracted/figure_digitization/page9_image-000.png",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extracted/figure_digitization/page9_image-001.png"
+      ],
+      "result": "two page-9 raster figure images extracted"
+    },
+    {
+      "command_id": "paddleocr_import_check",
+      "tool": "/root/software/PaddleOCR/.venv/bin/python",
+      "target": "import paddleocr",
+      "stdout_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extraction/figure_digitization_attempts/paddleocr_import_check.stdout",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extraction/figure_digitization_attempts/paddleocr_import_check.stderr",
+      "result": "failed: ModuleNotFoundError: No module named paddleocr"
+    },
+    {
+      "command_id": "supplement_pdf_image_extract",
+      "tool": "pdfimages",
+      "target": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/raw/supplementary_original/mt4c01635_si_001.pdf",
+      "output_dir": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extracted/supplementary_image_inventory",
+      "result": "16 embedded supplement images extracted for inventory"
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "material": "mt4c01635_0006.jpg",
+      "gap_type": "referenced_xml_graphic_not_staged",
+      "impact": "exact/vector-like Figure 6 recovery unavailable; PDF-raster approximation used"
+    },
+    {
+      "material": "mt4c01635_0007.jpg",
+      "gap_type": "referenced_xml_graphic_not_staged",
+      "impact": "exact/vector-like Figure 7 recovery unavailable; PDF-raster approximation used"
+    },
+    {
+      "material": "Figure 6/7 numeric source table",
+      "gap_type": "not present in staged supplement table/text extraction",
+      "impact": "bar means and error bars remain approximate, not exact tabulated values"
+    },
+    {
+      "material": "PaddleOCR runtime",
+      "gap_type": "configured interpreter lacks paddleocr module",
+      "impact": "OCR escalation unavailable; image-only supplement details remain partially parsed"
+    }
+  ],
+  "repair_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11752523/extracted/figure6_7_toxicity_digitization.json"
+}

@@ -1,0 +1,234 @@
+{
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review repaired the missing activity layer, preserved database conflicts, and closes the previous full-source-review ticket as accepted_with_cautions rather than accepted_clean.",
+  "caution_findings": [
+    {
+      "caution_code": "u251_ic50_database_source_conflict_preserved",
+      "evidence_context": "DBAASP states U251 IC50=10 μM, while local primary text supports U251 dose-dependent RT-qPCR inhibition but not that exact IC50 value.",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "WL-1 residue sequence is source-supported, but primary text also reports C-terminal amidation; database sequence strings do not normalize the terminal modification.",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "exact_figure_values_not_fabricated",
+      "evidence_context": "Figure-only exact bar heights are not converted into numeric rows; final activity rows retain only source text/locator-supported values and qualitative trends.",
+      "owner_worker": "worker-2 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "supplementary_landing_pages_nonblocking",
+      "evidence_context": "Local supplementary assets are HTML landing/article pages with no structured supplementary data table; primary XML/PDF evidence is sufficient for the repaired layers.",
+      "owner_worker": "worker-6",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmicb.2023.1201505/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/adjudication_report.json",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/*.bin",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "gate_evidence": {
+    "packet_hard_finding_count": 0,
+    "packet_report": "reports/doi__10.3389_fmicb.2023.1201505.packet_check.json",
+    "publication_quality_pass": true,
+    "publication_report": "reports/doi__10.3389_fmicb.2023.1201505.publication_quality.json",
+    "publication_returncode": 0,
+    "publication_risk_counts": {},
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_report": "reports/doi__10.3389_fmicb.2023.1201505.semantic_gate.json",
+    "semantic_returncode": 0
+  },
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "All locally available source surfaces relevant to worker-2/4/6 were reopened. Remaining unsupported exact figure/supplement table values are nonblocking and not fabricated.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true,
+    "unavailable_or_nonblocking_materials": [
+      {
+        "blocks_publication_grade": false,
+        "gap_code": "exact_figure_panel_values_not_locally_digitized",
+        "impact": "Exact graph-derived scalar values are not fabricated; source-supported primary rows remain publication-grade with caution.",
+        "owner_worker": "worker-2",
+        "source_paths_checked": [
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0001.jpg",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0002.jpg",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt"
+        ],
+        "tools_attempted": [
+          "pdftotext text review",
+          "XML/figure-caption review",
+          "local figure-image availability check"
+        ],
+        "why_unrecoverable": "Exact bar heights for all figure concentrations are image-only and not present as machine-readable local tables; source text supplies the decisive 50 μM cytotoxicity threshold and Vero plaque 10 μM 50% antiviral point."
+      },
+      {
+        "blocks_publication_grade": false,
+        "gap_code": "supplementary_assets_are_html_landing_pages_no_structured_tables",
+        "impact": "No source-supported activity/toxicity/mechanism values are lost; primary XML/PDF and figure captions provide the needed review evidence.",
+        "owner_worker": "worker-6",
+        "source_paths_checked": [
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-1.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-2.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-3.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-4.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-5.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-6.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-7.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-8.bin",
+          "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-10.bin"
+        ],
+        "tools_attempted": [
+          "file type identification",
+          "HTML title/text extraction",
+          "rg targeted term search",
+          "supplementary_tables.json inspection"
+        ],
+        "why_unrecoverable": "The staged supplementary .bin assets are HTML landing/article/reference pages, and no structured XLSX/CSV/PDF supplementary data table is locally present."
+      }
+    ]
+  },
+  "paper_id": "doi__10.3389_fmicb.2023.1201505",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/APD6 linked rows were reconciled row-by-row. Source-supported Vero/U251 cytotoxicity and Vero plaque IC50-like rows are verified; the exact U251 IC50 database value and APD-only sequence-analysis percentages remain explicit source conflicts.",
+    "layer_2_activity_toxicity": "Worker-2 recovered source-located cytotoxicity, plaque-antiviral, RT-qPCR trend, survival, and facial-palsy phenotype rows. No database-only row is treated as primary evidence.",
+    "layer_3_mechanism": "Mechanism output is bounded to antiviral/in-vivo phenotype and inflammation-context evidence; no unresolved molecular mechanism is overclaimed.",
+    "worker_6_final_gate": "The prior open rework ticket is closed because blocking/major QC failures are resolved, caution findings are nonblocking, and strict gates are ready to rerun."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T22:49:48Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 7,
+    "blocking_unrecoverable_material_gap_count": 0,
+    "database_record_audits": 11,
+    "database_status_summary": {
+      "source_conflict": 3,
+      "source_verified": 8
+    },
+    "mechanism_claims": 3,
+    "open_rework_target_count": 0,
+    "qc_failure_reason_count": 0,
+    "unrecoverable_material_gap_count": 2
+  },
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fmicb.2023.1201505/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/adjudication_report.json",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/*.bin",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "exact_figure_panel_values_not_locally_digitized",
+      "impact": "Exact graph-derived scalar values are not fabricated; source-supported primary rows remain publication-grade with caution.",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0001.jpg",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0002.jpg",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt"
+      ],
+      "tools_attempted": [
+        "pdftotext text review",
+        "XML/figure-caption review",
+        "local figure-image availability check"
+      ],
+      "why_unrecoverable": "Exact bar heights for all figure concentrations are image-only and not present as machine-readable local tables; source text supplies the decisive 50 μM cytotoxicity threshold and Vero plaque 10 μM 50% antiviral point."
+    },
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "supplementary_assets_are_html_landing_pages_no_structured_tables",
+      "impact": "No source-supported activity/toxicity/mechanism values are lost; primary XML/PDF and figure captions provide the needed review evidence.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-3.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-4.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-5.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-6.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-7.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-8.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-10.bin"
+      ],
+      "tools_attempted": [
+        "file type identification",
+        "HTML title/text extraction",
+        "rg targeted term search",
+        "supplementary_tables.json inspection"
+      ],
+      "why_unrecoverable": "The staged supplementary .bin assets are HTML landing/article/reference pages, and no structured XLSX/CSV/PDF supplementary data table is locally present."
+    }
+  ],
+  "validator_contract_passed": true
+}

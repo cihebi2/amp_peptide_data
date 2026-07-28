@@ -1,0 +1,83 @@
+{
+  "paper_id": "doi__10.5713_ajas.18.0571",
+  "generated_at": "2026-05-10T18:45:47Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 final mechanism adjudication from local XML/PDF/figure evidence; generic intro-only nucleic-acid/protein-synthesis hits were not promoted.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Disulfide duck LEAP-2 damages bacterial envelopes/membranes, as LIVE/DEAD staining showed treated cells with red fluorescence after 200 ug/mL peptide exposure.",
+      "entity_scope": "disulfide duck LEAP-2 mature peptide",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "LIVE/DEAD BacLight fluorescence microscopy"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.5713_ajas.18.0571/source/paper.xml",
+        "locator": "xml:sec=26:Fluorescence microscopic analysis; xml:fig=6"
+      },
+      "limitations": "Microscopy is qualitative in local material; no membrane-potential, pore-size, or electron-microscopy quantitative assay is present."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Two disulfide bonds in duck LEAP-2 are associated with stronger bactericidal activity than the linear peptide for most tested organisms.",
+      "entity_scope": "linear versus disulfide duck LEAP-2 mature peptide",
+      "evidence_class": "structure_activity_supported_by_phenotype",
+      "source_locator": {
+        "source_path": "papers/doi__10.5713_ajas.18.0571/source/paper.xml",
+        "locator": "xml:sec=14:Peptide synthesis; xml:sec=24:Antimicrobial activity; xml:fig=4; xml:sec=27:DISCUSSION"
+      },
+      "limitations": "Structure-function inference is based on comparative killing phenotypes, not a separate biophysical binding assay."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The paper frames killing as cell-envelope disruption after cationic LEAP-2 binding to negatively charged bacterial surfaces.",
+      "entity_scope": "duck LEAP-2 peptides",
+      "evidence_class": "mechanistic_interpretation_supported_by_direct_microscopy_and_literature_context",
+      "source_locator": {
+        "source_path": "papers/doi__10.5713_ajas.18.0571/source/paper.xml",
+        "locator": "xml:sec=27:DISCUSSION"
+      },
+      "limitations": "The binding/pore model is a discussion-level mechanism interpretation; only envelope damage by LIVE/DEAD staining is directly assayed in this paper."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_only_exact_activity_values_not_tabulated",
+      "source_paths_checked": [
+        "rework_context/doi__10.5713_ajas.18.0571/handoff_context.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/packet_manifest.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/locators/locator_index.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/xml_sections.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/figure_captions.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/pdf_text/ajas-18-0571.txt",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/oa_package/local-APD6-pmc_package/PMC6601062/ajas-18-0571.nxml",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/oa_package/local-APD6-pmc_package/PMC6601062/ajas-18-0571f4.jpg",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/oa_package/local-APD6-pmc_package/PMC6601062/ajas-18-0571f5.jpg",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/oa_package/local-APD6-pmc_package/PMC6601062/ajas-18-0571f6.jpg",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/supplementary_index.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.5713_ajas.18.0571/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.5713_ajas.18.0571/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.5713_ajas.18.0571/database/linked_literature_records.jsonl",
+        "/mnt/d/work/\u6297\u83cc\u80bd/\u6570\u636e\u5e93/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+      ],
+      "tools_attempted": [
+        "jq for packet/final/rework JSON inspection",
+        "ElementTree XML section/table parsing",
+        "rg over XML/PDF text/database snapshots/merged output",
+        "file and strings over local supplementary landing assets",
+        "manual visual inspection of local Figure 4, Figure 5, and Figure 6 images",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py"
+      ],
+      "why_unrecoverable": "The local XML, PDF text, OA NXML, package images, and indexed supplementary landing assets support assay conditions, thresholds, qualitative killing claims, and figure curves, but no local table/spreadsheet/source text contains exact point-level cell-survival values or SEMs for every Figure 4 and Figure 5 dose/time point. Digitizing plotted points would create approximate values, not source-tabulated exact values.",
+      "impact": "Activity/toxicity layer is partially repaired with source-supported rows, but exact numeric activity matrix remains non-publication-grade; final review must stay non-accepted.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

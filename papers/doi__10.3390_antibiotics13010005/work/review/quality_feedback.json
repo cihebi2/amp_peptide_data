@@ -1,0 +1,51 @@
+{
+  "paper_id": "doi__10.3390_antibiotics13010005",
+  "generated_at": "2026-05-07T18:01:58Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "enterococcus_label_conflict_preserved",
+      "evidence_context": "Tables 2-3 and linked DBAASP rows use E. faecium/NTCC 12697; body/method prose also uses E. faecalis/NCTC 12697. Activity rows preserve the table header and carry a source_conflict_note."
+    },
+    {
+      "caution_code": "database_sequence_modification_caveats_preserved",
+      "evidence_context": "Several APD6/DBAASP analogue sequence rows omit or underlabel C-terminal amidation that primary Table 1 prints as -NH2; database_record_verification.json preserves these as sequence_modified_not_normalized/source_conflict cases instead of smoothing them."
+    },
+    {
+      "caution_code": "hemolysis_exact_figure_values_not_promoted",
+      "evidence_context": "Figure 11/prose support qualitative and approximate haemolysis findings; exact DBAASP hemolysis bins are retained as source_conflict unless a local source table supports them exactly."
+    },
+    {
+      "caution_code": "supplement_checked_no_activity_tables",
+      "evidence_context": "The local supplementary ZIP contains a PDF with Ramachandran/HPLC/MALDI figure captions; no supplementary activity/toxicity table was recovered from local material."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_figure_series_not_tabulated_locally",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics13010005/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics13010005/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_antibiotics13010005/extracted/pdf_text/antibiotics-13-00005.txt",
+        "paper_packets/doi__10.3390_antibiotics13010005/raw/supplementary_original/local-APD6-antibiotics-13-00005-s001.zip"
+      ],
+      "tools_attempted": [
+        "xml table/caption parser",
+        "rg over extracted XML/PDF text",
+        "unzip -l",
+        "pdftotext on supplementary PDF"
+      ],
+      "why_unrecoverable": "Figures 6-11 are available as images/captions and prose summaries, but the local XML/PDF does not contain machine-readable per-timepoint or per-dose numeric data tables for those curves.",
+      "impact": "Nonblocking: source-supported table values for MIC/MBC, MBIC/MBEC, IC50, and prose-supported toxicity/in vivo context were captured; exact figure-series datapoints are preserved as caution rather than fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "status": "qc_passed_with_cautions_after_worker_2_4_6_repair"
+}

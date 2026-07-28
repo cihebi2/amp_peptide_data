@@ -1,0 +1,1 @@
+[{"assertion_index": 0, "db_claimed": {"organism": "", "endpoint": "", "value": "", "peptide": ""}, "verification_outcome": "not_in_provided_tables", "normalization_note": "none", "is_database_error": false, "evidence": null, "short_reason": "No longform_cells were provided and all assertion fields are empty; no source table evidence exists to support or contradict any claim."}]

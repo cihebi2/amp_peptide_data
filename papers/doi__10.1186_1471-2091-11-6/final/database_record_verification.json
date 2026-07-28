@@ -1,0 +1,1208 @@
+{
+  "paper_id": "doi__10.1186_1471-2091-11-6",
+  "generated_at": "2026-05-03T09:24:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "reviewed_at": "2026-05-03T09:24:28Z",
+  "source_paths_checked": [
+    "rework_context/doi__10.1186_1471-2091-11-6/handoff_context.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/packet_manifest.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/locators/locator_index.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/pdf_text/1471-2091-11-6.txt",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+    "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-6.jpg",
+    "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_literature_records.jsonl",
+    "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+    "papers/doi__10.1186_1471-2091-11-6/source/paper.pdf",
+    "papers/doi__10.1186_1471-2091-11-6/work/supplementary_methods/supplementary_evidence.json"
+  ],
+  "tools_attempted": [
+    "jq over handoff, packet, final, and gate JSON",
+    "rg over XML, extracted PDF text, source XML, supplementary HTML bins, and database JSONL",
+    "file over packet raw/OA/supplementary assets",
+    "pdftoppm page render for Figure 3 sequence OCR",
+    "PaddleOCR PP-OCRv5 mobile CPU on Figure 3 rendered page",
+    "manual source review of Figure 6 values from XML/PDF text and caption"
+  ],
+  "audit_scope": "Worker-4 source-reviewed DRAMP/dbAMP/literature rows against primary XML/PDF Figure 3 and Figure 6 evidence plus linked database snapshots.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 6,
+    "linked_experiment_records": 8,
+    "linked_literature_records": 2,
+    "linked_sequence_records": 0
+  },
+  "status_summary": {
+    "source_verified": 14,
+    "database_only_no_primary_source": 2
+  },
+  "record_audits": [
+    {
+      "source_table": "general_amps.txt",
+      "source_row_number": 1,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "general_amps.txt",
+      "source_row_number": 2,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "Insecticidal_amps.txt",
+      "source_row_number": 3,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "Insecticidal_amps.txt",
+      "source_row_number": 4,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "plant_amps.txt",
+      "source_row_number": 5,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found on DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "plant_amps.txt",
+      "source_row_number": 6,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_dramp_activity_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "Insecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found on DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "Morus alba (White mulberry)",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "general_amps.txt",
+      "source_row_number": 1,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "latex abundant protein a",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found in DRAMP database",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "general_amps.txt",
+      "source_row_number": 2,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "latex abundant protein b",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found in DRAMP database",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "Insecticidal_amps.txt",
+      "source_row_number": 3,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "latex abundant protein a",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found in DRAMP database",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "Insecticidal_amps.txt",
+      "source_row_number": 4,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "latex abundant protein b",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found in DRAMP database",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found in DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "plant_amps.txt",
+      "source_row_number": 5,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "latex abundant protein a",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEPQXGRDAGGAL",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found on DRAMP database",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found on DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "plant_amps.txt",
+      "source_row_number": 6,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "latex abundant protein b",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "database_sequence": "SEQQXGRDVGGAL",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "agreement": "primary_figure3_n_terminal_sequence_agrees_unknown_X_retained",
+        "source_locator": {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+          "figure_locator": "paper_packets/doi__10.1186_1471-2091-11-6/extracted/oa_package/local-DRAMP-20109180/PMC2827359/1471-2091-11-6-3.jpg",
+          "primary_source_statement": "Figure 3 gives the LA-a/LA-b N-terminal sequence alignment; X denotes an unidentified residue and is retained rather than normalized."
+        },
+        "ocr_crosscheck": "PaddleOCR on a 300 dpi rendered page found the LA-a/LA-b sequence lines with the same internal residues and X position; low-resolution OCR ambiguity at the first residue was resolved against the DRAMP row and primary figure locator, not external sources."
+      },
+      "name_check": {
+        "database_name": "No MICs found on DRAMP database",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "source_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "modification_check": {
+        "n_terminal": "N-terminal sequence determined by Edman degradation; unknown residue retained as X.",
+        "c_terminal": "not reported in local primary material; no terminal modification normalized",
+        "glycosylation": "source reports LA-a and LA-b are glycosylated and RCA120-reactive",
+        "d_residues_cyclization_lipidation": "not reported in local primary material",
+        "source_locators": [
+          "xml:sec=8:Amino acid sequence analysis",
+          "xml:sec=9:Analysis of glycosylation",
+          "xml:fig=3:Figure 3",
+          "xml:fig=4:Figure 4"
+        ]
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "No MICs found on DRAMP database",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "source_organism_check": {
+        "database_source": "",
+        "primary_source_organism": "mulberry (Morus sp.; methods specify Morus alba cv. Minamisakari)",
+        "agreement": "source_supported"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "target_context": "Drosophila melanogaster Canton-S second-instar larvae fed 0.1% (w/w) LA protein in artificial diet",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "activity_check": {
+        "agreement": "primary_text_supports_qualitative_insecticidal_activity_and_percent_mortality",
+        "source_note": "The paper supports insecticidal activity but does not report MIC, hemolysis, or cytotoxicity values."
+      },
+      "conflict_context": "",
+      "review_notes": "Worker-4 resolved the previous source_conflict by matching DRAMP LA-a/LA-b rows to primary Figure 3 identity evidence and Figure 6 feeding-assay activity evidence."
+    },
+    {
+      "source_table": "data/dbamp3_detail_basic.csv",
+      "source_row_number": 7,
+      "source_id": "dbAMP:dbAMP_14986",
+      "sequence_key": "dbAMP:dbAMP_14986",
+      "database_peptide_name": "Morus alba (White mulberry)\nInsecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+      "source_designation": "LA-b",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "status": "database_only_no_primary_source",
+        "database_sequence": "",
+        "primary_source_sequence": "SEQQXGRDVGGAL",
+        "source_locator": {
+          "locator": "database:linked_experiment_records.jsonl:row=7",
+          "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+        },
+        "reason": "The linked dbAMP detail row is entry-level text and lacks a sequence or assay value in the local snapshot; primary paper supports the protein name/activity context but not enough database fields for exact row-level verification."
+      },
+      "name_check": {
+        "database_name": "Morus alba (White mulberry)\nInsecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+        "source_name": "LA-b (latex abundant protein b)",
+        "agreement": "name_context_supported_not_sequence_row_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "Morus alba (White mulberry)\nInsecticidal protein LA-b (Latex abundant protein b; Plant defensin)",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "status": "database_only_no_primary_source",
+      "layer1_status": "database_only_no_primary_source",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-b:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "40",
+        "raw_unit": "% mortality after 6 days",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "conflict_context": "Preserved as database_only_no_primary_source because the linked dbAMP row lacks local sequence and assay fields even though the paper supports the LA-a/LA-b activity context.",
+      "review_notes": "Do not upgrade to source_verified unless a dbAMP sequence/assay snapshot is locally available."
+    },
+    {
+      "source_table": "data/dbamp3_detail_basic.csv",
+      "source_row_number": 8,
+      "source_id": "dbAMP:dbAMP_14985",
+      "sequence_key": "dbAMP:dbAMP_14985",
+      "database_peptide_name": "Morus alba (White mulberry)\nInsecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+      "source_designation": "LA-a",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "status": "database_only_no_primary_source",
+        "database_sequence": "",
+        "primary_source_sequence": "SEPQXGRDAGGAL",
+        "source_locator": {
+          "locator": "database:linked_experiment_records.jsonl:row=8",
+          "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_experiment_records.jsonl"
+        },
+        "reason": "The linked dbAMP detail row is entry-level text and lacks a sequence or assay value in the local snapshot; primary paper supports the protein name/activity context but not enough database fields for exact row-level verification."
+      },
+      "name_check": {
+        "database_name": "Morus alba (White mulberry)\nInsecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+        "source_name": "LA-a (latex abundant protein a)",
+        "agreement": "name_context_supported_not_sequence_row_verified",
+        "source_locator": {
+          "locator": "xml:sec=7:Purification of LA-a and LA-b",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        }
+      },
+      "database_measure": "Insecticidal",
+      "database_subject": "Morus alba (White mulberry)\nInsecticidal protein LA-a (Latex abundant protein a; Plant defensin)",
+      "database_assay_type": "entry_activity",
+      "database_value": "",
+      "database_unit": "",
+      "status": "database_only_no_primary_source",
+      "layer1_status": "database_only_no_primary_source",
+      "matched_activity_record_id": "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality",
+      "matched_activity_record_ids": [
+        "doi__10.1186_1471-2091-11-6:fig6:la-a:larval_mortality"
+      ],
+      "primary_source_activity": {
+        "endpoint": "larval_mortality",
+        "raw_value": "80",
+        "raw_unit": "% mortality after 6 days",
+        "locator": "xml:sec=11:Insecticidal activity against larvae of D. melanogaster; xml:fig=6:Figure 6",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+      },
+      "conflict_context": "Preserved as database_only_no_primary_source because the linked dbAMP row lacks local sequence and assay fields even though the paper supports the LA-a/LA-b activity context.",
+      "review_notes": "Do not upgrade to source_verified unless a dbAMP sequence/assay snapshot is locally available."
+    },
+    {
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_number": 1,
+      "source_id": "DRAMP:DRAMP00322",
+      "sequence_key": "DRAMP:DRAMP00322",
+      "database_peptide_name": "latex abundant protein a",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_literature_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        },
+        "agreement": "literature_link_matches_article_metadata"
+      },
+      "database_measure": "",
+      "database_subject": "Two chitinase-like proteins abundantly accumulated in latex of mulberry show insecticidal activity.",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected DOI/PMID and title."
+    },
+    {
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_number": 2,
+      "source_id": "DRAMP:DRAMP00323",
+      "sequence_key": "DRAMP:DRAMP00323",
+      "database_peptide_name": "latex abundant protein b",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1186_1471-2091-11-6/database/linked_literature_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml",
+        "pmid": "20109180",
+        "doi": "10.1186/1471-2091-11-6"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1186_1471-2091-11-6/source/paper.xml"
+        },
+        "agreement": "literature_link_matches_article_metadata"
+      },
+      "database_measure": "",
+      "database_subject": "Two chitinase-like proteins abundantly accumulated in latex of mulberry show insecticidal activity.",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected DOI/PMID and title."
+    }
+  ],
+  "source_review_findings": {
+    "resolved_prior_source_conflicts": 12,
+    "preserved_database_only_rows": 2,
+    "literature_links_verified": 2,
+    "notes": [
+      "DRAMP duplicated LA-a/LA-b rows from general, insecticidal, plant, and experiment snapshots are source-supported at entry/activity level.",
+      "dbAMP detail rows remain database_only_no_primary_source because the local linked rows contain entry text but no sequence/assay values."
+    ]
+  }
+}

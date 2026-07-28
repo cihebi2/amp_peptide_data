@@ -1,0 +1,330 @@
+# AMP paper review workflow template for the Codex CLI / Claude CLI orchestrator.
+# This is a starter template; adapt field names to the concrete workflow builder schema.
+
+
+message_bus:
+  # Local bridge for Miaobi-style message passing before database integration.
+  local_root: .miaobi-paper-review
+  workflow_context_schema: docs/schemas/workflow_context.schema.json
+  state_execution_schema: docs/schemas/state_execution_record.schema.json
+  artifact_schema: docs/schemas/artifact_record.schema.json
+  chat_message_schema: docs/schemas/chat_message_record.schema.json
+  agent_log_schema: docs/schemas/agent_log_record.schema.json
+  event_schema: docs/schemas/workflow_event.schema.json
+  source_of_truth: packet_and_final_files
+  pass_between_states:
+    - paper_id
+    - workflow_context_path
+    - packet_root
+    - packet_manifest
+    - locator_index
+    - open_rework_tickets
+    - gate_summary
+  required_outputs_per_state:
+    - state_execution
+    - workflow_event
+    - chat_message_summary
+    - artifact_records_when_files_change
+  forbidden_as_acceptance_evidence:
+    - chat_message
+    - natural_language_summary_only
+    - copied_final_file_without_source_review
+
+queue_policy:
+  start_policy: start_once_per_manifest_or_paper
+  retry_policy: use_rework_context_packet_only
+  max_rework_attempts: 5
+  retry_bootstrap_allowed: false
+  unrecoverable_gap_behavior: record_and_continue
+  quality_efficiency_rule: prioritize gate-changing local sources; stop after source exhaustion or attempt cap
+
+best_effort_source_recovery:
+  required_surfaces:
+    - packet_manifest
+    - locator_index
+    - xml_or_nxml
+    - pdf_text_or_tables
+    - oa_package_members
+    - declared_supplementary_files
+    - archives
+    - office_or_spreadsheet_files
+    - image_or_ocr_outputs
+    - linked_database_snapshots
+  unrecoverable_gap_fields:
+    - gap_code
+    - owner_worker
+    - source_paths_checked
+    - tools_attempted
+    - why_unrecoverable
+    - impact
+    - blocks_publication_grade
+    - next_action
+
+state_defaults:
+  context_inputs:
+    - workflow_context
+    - packet_manifest
+    - locator_index
+    - open_rework_tickets
+  messages_out:
+    - state_execution
+    - event
+    - chat_message
+    - artifact_record
+  on_failure:
+    write_rework_ticket: true
+    update_workflow_context: true
+    route_by_target_queue: true
+    build_rework_context_packet: true
+    do_not_restart_initial_queue: true
+
+
+roles:
+  material_worker:
+    type: researcher
+    provider: codex-cli
+    model: gpt-5.5
+    reasoning_effort: xhigh
+    purpose: Build source-grounded packets with locators and extraction errors.
+
+  analysis_worker:
+    type: researcher
+    provider: codex-cli
+    model: gpt-5.5
+    reasoning_effort: xhigh
+    purpose: Audit database records, activity/toxicity evidence, and mechanism claims from packets.
+
+  adjudicator:
+    type: approver
+    provider: codex-cli
+    model: gpt-5.5
+    reasoning_effort: xhigh
+    purpose: Make paper-specific source-reviewed acceptance, caution, rework, or blocked decisions.
+
+  quality_gate:
+    type: approver
+    provider: codex-cli
+    model: gpt-5.5
+    reasoning_effort: xhigh
+    purpose: Enforce semantic and publication-grade gates without terminal allow-risk shortcuts.
+
+  reader_report_writer:
+    type: writer
+    provider: claude-cli
+    model: claude-sonnet-4-6
+    purpose: Optional human-readable narrative summary after strict artifacts exist.
+
+rounds:
+  - id: paper_review
+    name: AMP paper source review
+    states:
+      select_paper:
+        type: agent
+        role: material_worker
+        provider: codex-cli
+        output_schema: docs/schemas/packet_manifest.schema.json
+        prompt_template: |
+          Select or load exactly one paper from the Batch 4 manifest.
+          Resolve DOI/PMID/PMCID, source roots, linked database rows, and packet path.
+          Do not claim scientific acceptance.
+        transitions:
+          - event: COMPLETE
+            target: material_intake
+          - event: BLOCKED
+            target: __blocked__
+
+      material_intake:
+        type: agent
+        role: material_worker
+        provider: codex-cli
+        prompt_template: |
+          Run worker-1 intake/linkage using `.codex/skills/paper-intake-worker/SKILL.md`.
+          Stage XML/PDF/OA/supplement/database inputs into the packet manifest.
+          Record material status and missing-source gaps. Start this queue only once;
+          later retries must consume the rework context packet instead of rerunning bootstrap.
+        transitions:
+          - event: COMPLETE
+            target: main_text_extract
+          - event: NEEDS_REWORK
+            target: material_intake
+          - event: BLOCKED
+            target: __blocked__
+
+      main_text_extract:
+        type: agent
+        role: material_worker
+        provider: codex-cli
+        prompt_template: |
+          Run worker-2 main-text/table extraction using `.codex/skills/paper-body-table-worker/SKILL.md`.
+          Extract row-level activity/toxicity candidate evidence with locators.
+          Check XML/PDF/table/figure-caption/supplement evidence best-effort. If a
+          value cannot be recovered, write `unrecoverable_material_gaps` and do not fabricate it.
+          Do not write final adjudicated conclusions.
+        transitions:
+          - event: COMPLETE
+            target: supplement_extract
+          - event: NEEDS_REWORK
+            target: main_text_extract
+
+      supplement_extract:
+        type: agent
+        role: material_worker
+        provider: codex-cli
+        prompt_template: |
+          Run worker-3 supplementary extraction using `.codex/skills/paper-supp-evidence-worker/SKILL.md`.
+          Try local OCR/archive/office recovery where relevant and record exact errors.
+          If an evidence-bearing supplement is not locally recoverable after bounded attempts,
+          write `unrecoverable_material_gaps` with paths/tools/impact and continue.
+          Do not declare evidence-bearing supplements harmless without impact assessment.
+        transitions:
+          - event: COMPLETE
+            target: material_qc
+          - event: NEEDS_REWORK
+            target: supplement_extract
+
+      material_qc:
+        type: agent
+        role: quality_gate
+        provider: codex-cli
+        prompt_template: |
+          Verify packet layout, manifest metadata, database snapshots, locators, and extraction status.
+          If material is incomplete, emit durable rework tickets instead of accepting the packet.
+        transitions:
+          - event: PASS
+            target: database_audit
+          - event: REWORK_INTAKE
+            target: material_intake
+          - event: REWORK_MAIN_TEXT
+            target: main_text_extract
+          - event: REWORK_SUPPLEMENT
+            target: supplement_extract
+          - event: BLOCKED
+            target: __blocked__
+
+      database_audit:
+        type: agent
+        role: analysis_worker
+        provider: codex-cli
+        prompt_template: |
+          Run worker-4 database record audit using `.codex/skills/paper-database-record-auditor/SKILL.md`.
+          Preserve source conflicts and database-only rows; do not mark source_verified without primary-source locators.
+        transitions:
+          - event: COMPLETE
+            target: activity_toxicity_audit
+          - event: NEEDS_MATERIAL_REWORK
+            target: material_qc
+          - event: NEEDS_ANALYSIS_REWORK
+            target: database_audit
+
+      activity_toxicity_audit:
+        type: agent
+        role: analysis_worker
+        provider: codex-cli
+        prompt_template: |
+          Build source-located activity/toxicity evidence from the packet.
+          Reject sentence-fragment species, generic endpoint placeholders, and database-only primary evidence.
+        transitions:
+          - event: COMPLETE
+            target: mechanism_audit
+          - event: NEEDS_MATERIAL_REWORK
+            target: material_qc
+          - event: NEEDS_ANALYSIS_REWORK
+            target: activity_toxicity_audit
+
+      mechanism_audit:
+        type: agent
+        role: analysis_worker
+        provider: codex-cli
+        prompt_template: |
+          Run worker-5 mechanism ontology using `.codex/skills/paper-mechanism-ontology-worker/SKILL.md`.
+          Keep direct, phenotype-supported, inferred, computational, and unknown mechanisms separate.
+        transitions:
+          - event: COMPLETE
+            target: adjudication
+          - event: NEEDS_MATERIAL_REWORK
+            target: material_qc
+          - event: NEEDS_ANALYSIS_REWORK
+            target: mechanism_audit
+
+      adjudication:
+        type: agent
+        role: adjudicator
+        provider: codex-cli
+        output_schema: docs/schemas/final_review_report.schema.json
+        prompt_template: |
+          Run worker-6 adjudication using `.codex/skills/paper-adjudicator-review-worker/SKILL.md`.
+          Compare workers 1-5 against packet sources and database rows.
+          Write final review report, cautions, or targeted durable rework tickets.
+        transitions:
+          - event: ACCEPTED
+            target: semantic_gate
+          - event: ACCEPTED_WITH_CAUTIONS
+            target: semantic_gate
+          - event: NEEDS_MATERIAL_REWORK
+            target: material_qc
+          - event: NEEDS_ANALYSIS_REWORK
+            target: database_audit
+          - event: BLOCKED
+            target: __blocked__
+
+      semantic_gate:
+        type: agent
+        role: quality_gate
+        provider: codex-cli
+        prompt_template: |
+          Run the strict semantic gate over the paper outputs.
+          Do not use --allow-findings, --allow-risk, or shell `|| true` as terminal success.
+        transitions:
+          - event: PASS
+            target: publication_quality_gate
+          - event: FAIL_MATERIAL
+            target: material_qc
+          - event: FAIL_ANALYSIS
+            target: database_audit
+          - event: FAIL_ADJUDICATION
+            target: adjudication
+
+      publication_quality_gate:
+        type: agent
+        role: quality_gate
+        provider: codex-cli
+        prompt_template: |
+          Verify publication-grade readiness: provenance, materials_exhausted, semantic checks,
+          paper-specific rationale, caution preservation, and zero blocking rework targets.
+        transitions:
+          - event: PASS
+            target: reader_report
+          - event: FAIL
+            target: adjudication
+
+      reader_report:
+        type: agent
+        role: reader_report_writer
+        provider: claude-cli
+        optional: true
+        prompt_template: |
+          Write a concise human-readable summary from the strict final artifacts.
+          Do not create new scientific claims and do not override the Codex adjudication.
+        transitions:
+          - event: COMPLETE
+            target: final_approval
+          - event: SKIP
+            target: final_approval
+
+      final_approval:
+        type: agent
+        role: quality_gate
+        provider: codex-cli
+        prompt_template: |
+          Approve only if the paper has named tier counts, strict semantic pass,
+          publication-quality pass, worker-6 source-reviewed acceptance, and no blocking tickets.
+          If max rework attempts are exhausted, keep legacy `blocked_after_best_effort`,
+          also write richer `result_status` / `result_reason_code` fields,
+          preserve unrecoverable gaps, and advance to the next paper.
+        transitions:
+          - event: APPROVE
+            target: __complete__
+          - event: REVISE
+            target: adjudication
+          - event: BLOCK
+            target: __blocked__

@@ -1,0 +1,89 @@
+{
+  "paper_id": "doi__10.1073_pnas.2123379119",
+  "reviewed_at": "2026-05-03T01:15:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Source re-review closed rwk-complete-test-0001 by repairing the worker-2 activity target fields, adding SI Table S16 MIC rows, resolving DBAASP assay conflicts against primary/source-local tables, and replacing automated mechanism placeholders with non-overclaiming ontology context.",
+  "checked_inputs": [
+    "rework_context/doi__10.1073_pnas.2123379119/handoff_context.json",
+    "paper_packets/doi__10.1073_pnas.2123379119/packet_manifest.json",
+    "paper_packets/doi__10.1073_pnas.2123379119/locators/locator_index.json",
+    "papers/doi__10.1073_pnas.2123379119/source/paper.xml",
+    "paper_packets/doi__10.1073_pnas.2123379119/extracted/pdf_text/pnas.202123379.txt",
+    "paper_packets/doi__10.1073_pnas.2123379119/extracted/pdf_text/pnas.2123379119.sapp.txt",
+    "paper_packets/doi__10.1073_pnas.2123379119/extracted/oa_package/local-DBAASP-PMC9371744/PMC9371744/pnas.202123379.nxml",
+    "paper_packets/doi__10.1073_pnas.2123379119/extracted/oa_package/local-DBAASP-PMC9371744/PMC9371744/pnas.2123379119.sapp.pdf",
+    "paper_packets/doi__10.1073_pnas.2123379119/raw/supplementary_original/landing-*.bin",
+    "paper_packets/doi__10.1073_pnas.2123379119/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2123379119/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2123379119/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2123379119/database/database_source_manifest.json"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML/NXML, extracted main-PDF text, OA package supplement PDF text, raw landing HTML supplementary assets, and filtered DBAASP rows were checked. No gate-relevant local source remains unopened."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 27,
+    "activity_rows_with_suspicious_target_species": 0,
+    "database_snapshots": {
+      "linked_assay_records": 8,
+      "linked_experiment_records": 8,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0,
+      "linked_dramp_activity_records": 0
+    },
+    "database_status_summary": {
+      "source_verified": 17
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 8 linked DBAASP assay rows and 8 linked experiment rows are source-supported after SI Table S16 was reopened; the literature row matches article metadata. The local snapshot has no sequence row, so sequence strings were not invented and the family-level DBAASP ID is carried as a caution.",
+    "layer_2_activity_toxicity": "Main Table 1 supports 12 IC50 rows against Plasmodium falciparum 3D7 with units and n=9 statistics; SI Table S16 supports 15 MIC rows (>20 µg/mL) for xylomyrocin A-C against bacterial/fungal test strains. Header text was removed from target species fields.",
+    "layer_3_mechanism": "The source supports phenotypic antiprotozoal activity and xylomyrocin biosynthetic machinery. It does not support a direct antimicrobial target/mechanism claim, so final ontology records remain contextual rather than direct-mechanism assertions.",
+    "worker_6_adjudication": "The prior framework-test rework target is closed because source-local evidence now supports the repaired activity/database artifacts and no blocking/major QC issue remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "family_level_dbaasp_record_without_linked_sequence_snapshot",
+      "evidence_context": "DBAASP rows are verified for assay/citation values, but the local linked snapshot contains no linked_sequence_records row for DBAASPN_21740; no sequence normalization was attempted."
+    },
+    {
+      "caution_code": "no_direct_antimicrobial_mode_of_action",
+      "evidence_context": "Activity is phenotypic antiprotozoal/MIC screening. Biosynthesis is source-supported, but no direct pathogen target or killing mechanism is assigned."
+    },
+    {
+      "caution_code": "publisher_landing_html_supplements_nonblocking",
+      "evidence_context": "Raw supplementary landing-*.bin files are HTML landing pages; the OA package supplement PDF and extracted text contain the gate-relevant antimicrobial methods and Table S16."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_blocking_issue_count": 0,
+    "publication_grade_ready": true
+  }
+}

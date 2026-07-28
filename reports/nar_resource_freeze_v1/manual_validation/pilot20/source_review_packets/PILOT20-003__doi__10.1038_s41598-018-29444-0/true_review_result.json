@@ -1,0 +1,257 @@
+{
+  "paper_id": "doi__10.1038_s41598-018-29444-0",
+  "pilot_sample_id": "PILOT20-003",
+  "audit_record_id": "doi__10.1038_s41598-018-29444-0:database_audit:61",
+  "reviewed_at": "2026-06-22T03:51:44Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "needs_targeted_rework",
+  "confidence": "high",
+  "model_provenance": {
+    "packet_runner": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/run_codex_review.sh",
+    "runner_flags": "-m gpt-5.5; -c model_reasoning_effort=\"xhigh\""
+  },
+  "material_review": {
+    "status": "primary_material_available",
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_after_source_review",
+    "analysis_queue_status": "analysis_accepted_with_cautions",
+    "surfaces_verified_present": {
+      "paper_xml": "paper_packets/doi__10.1038_s41598-018-29444-0/raw/paper.xml",
+      "paper_pdf": "paper_packets/doi__10.1038_s41598-018-29444-0/raw/paper.pdf",
+      "oa_package": "paper_packets/doi__10.1038_s41598-018-29444-0/raw/oa_package/local-APD6-pmc_package.tar.gz",
+      "oa_nxml": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_Article_29444.nxml",
+      "oa_pdf": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_Article_29444.pdf",
+      "figure1_image": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_Fig1_HTML.jpg",
+      "supplement_docx": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_MOESM1_ESM.docx",
+      "database_rows": [
+        "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_literature_records.jsonl"
+      ]
+    },
+    "nonblocking_gaps_or_cautions": [
+      "packet manifest has test_scope note: real complete message-transfer workflow test; worker-4/6 source-reviewed repair completed",
+      "linked_sequence_records.jsonl exists but has zero rows; sequence support was verified from primary Figure 1/DOCX and final database audit cross-checks",
+      "supplementary_text.jsonl indexes landed supplemental files only, but the OA package DOCX was directly reopened and readable"
+    ],
+    "blocking_missing_primary_material": false
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "dbAMP:dbAMP_17348",
+    "release_status_under_review": "source_verified",
+    "source_verified_justified_for_sample": true,
+    "release_row_matches_sample_final_record": true,
+    "final_record_path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/sample_final_record.json",
+    "source_evidence": [
+      {
+        "claim": "E10-Ctn[15-34] sequence is the deca-glutamic-acid extension of Ctn[15-34] with C-terminal amide.",
+        "locator": "xml:fig=1:Figure 1b",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_Fig1_HTML.jpg"
+      },
+      {
+        "claim": "Primary methods list Ctn[15-34] as KKRLKKIFKKPMVIGVTIPF-NH2 and E10-Ctn[15-34] as a study peptide.",
+        "locator": "xml:sec=3:Materials",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/xml_sections.json"
+      },
+      {
+        "claim": "DOCX supplement supports ten N-terminal glutamates and no pyroglutamization for E10-Ctn[15-34].",
+        "locator": "supp:41598_2018_29444_MOESM1_ESM.docx:MALDI MS/MS analysis section",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_MOESM1_ESM.docx"
+      },
+      {
+        "claim": "Sampled final database audit object records database_sequence and primary_source_sequence as EEEEEEEEEEKKRLKKIFKKPMVIGVTIPF.",
+        "locator": "record_audits[] source_id=dbAMP:dbAMP_17348",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/final/database_record_verification.json"
+      }
+    ],
+    "conflict_preservation": {
+      "sample_conflict_context": "",
+      "paper_level_conflicts_preserved_elsewhere": [
+        "GS4 sequence conflicts in DBAASP/dbAMP rows",
+        "database-only or overbroad activity labels in other DRAMP/dbAMP rows"
+      ]
+    }
+  },
+  "layer2_activity_toxicity_review": {
+    "sample_relevant_activity_backing": "source_backed",
+    "release_row_database_subject": "five MIC=>128 ug/ml entries for E. coli, K. pneumoniae, and S. aureus targets",
+    "source_evidence": [
+      {
+        "claim": "Table 2 gives E10-Ctn[15-34] MIC/MBC as >128 (>128) for E. coli ATCC 25922.",
+        "locator": "xml:table=2:row=3:column=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json"
+      },
+      {
+        "claim": "Table 2 gives E10-Ctn[15-34] MIC/MBC as >128 (>128) for E. coli KPC+001812446.",
+        "locator": "xml:table=2:row=4:column=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json"
+      },
+      {
+        "claim": "Table 2 gives E10-Ctn[15-34] MIC/MBC as >128 (>128) for K. pneumoniae ATCC 13883.",
+        "locator": "xml:table=2:row=5:column=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json"
+      },
+      {
+        "claim": "Table 2 gives E10-Ctn[15-34] MIC/MBC as >128 (>128) for K. pneumoniae KPC+001825971.",
+        "locator": "xml:table=2:row=6:column=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json"
+      },
+      {
+        "claim": "Table 2 gives E10-Ctn[15-34] MIC/MBC as >128 (>128) for S. aureus ATCC 25923.",
+        "locator": "xml:table=2:row=7:column=4",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json"
+      },
+      {
+        "claim": "MIC/MBC method reports 2-fold dilution from 128 ug.mL^-1, 24 h at 37 C, triplicate outcome, and MBC plating.",
+        "locator": "xml:sec=6:In vitro antimicrobial assays",
+        "source_path": "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/xml_sections.json"
+      }
+    ],
+    "final_activity_rows_checked": [
+      "doi__10.1038_s41598-018-29444-0-table2-r3-c4-MIC",
+      "doi__10.1038_s41598-018-29444-0-table2-r4-c4-MIC",
+      "doi__10.1038_s41598-018-29444-0-table2-r5-c4-MIC",
+      "doi__10.1038_s41598-018-29444-0-table2-r6-c4-MIC",
+      "doi__10.1038_s41598-018-29444-0-table2-r7-c4-MIC"
+    ],
+    "field_quality": {
+      "endpoint": "MIC and MBC are concrete",
+      "raw_value": ">128 present",
+      "raw_unit": "ug.mL^-1 present in source and final rows",
+      "target_species_strain": "source-backed organism/strain strings, not sentence fragments",
+      "locators": "Table 2 row/column locators present",
+      "toxicity_rows": "qualitative toxicity rows are kept qualitative and not digitized from figures"
+    }
+  },
+  "layer3_mechanism_review": {
+    "overall_status": "targeted_rework_required",
+    "direct_claims_supported": [
+      {
+        "claim_id": "mech-001",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types": [
+          "optical reflectometry on DOPC:DOPG supported lipid bilayers"
+        ],
+        "locator": "xml:sec=17:Interaction of the peptides with model membranes; xml:fig=6:Figure 6"
+      },
+      {
+        "claim_id": "mech-002",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types": [
+          "calcein liposome leakage assay"
+        ],
+        "locator": "xml:sec=17:Interaction of the peptides with model membranes; xml:fig=7:Figure 7"
+      }
+    ],
+    "hard_issue": {
+      "claim_id": "mech-003",
+      "failure_code": "non_standard_evidence_class",
+      "observed_evidence_class": "mechanistic_inference_with_direct_biophysical_support",
+      "allowed_classes": [
+        "direct_mechanism",
+        "phenotype_supported",
+        "inferred_mechanism",
+        "computational_only",
+        "unknown_or_not_tested"
+      ],
+      "why_it_matters": "The claim mixes Table 2 phenotype, CD/model-membrane direct biophysics, and author inference; it needs a standard ontology class or split claims before paper-level confirmation.",
+      "source_backing_exists": true,
+      "not_a_missing_material_block": true
+    }
+  },
+  "worker6_adjudication": {
+    "sampled_row_layer1": "source_verified justified for dbAMP:dbAMP_17348",
+    "sampled_row_layer2": "E10 MIC values/units/targets are source-backed by Table 2 and method text",
+    "paper_level_final_artifact": "not confirmed as-is",
+    "existing_review_status": "accepted_with_cautions",
+    "fresh_review_status": "needs_targeted_rework",
+    "publication_grade_confirmed_by_this_review": false,
+    "rationale": "The sampled dbAMP row is source-backed, but the paper-level mechanism artifact contains a repairable ontology defect in mech-003. Per the worker-5/worker-6 contracts, final acceptance cannot preserve a mechanism claim outside the standard evidence-class vocabulary.",
+    "rework_owner": "worker-5/mechanism_ontology_extractor with worker-6 re-adjudication"
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1038_s41598-018-29444-0/final/mechanism_ontology_record.json",
+      "also_update": [
+        "paper_packets/doi__10.1038_s41598-018-29444-0/final/mechanism_evidence.json",
+        "papers/doi__10.1038_s41598-018-29444-0/final/review_report.json"
+      ],
+      "failing_object": "mechanism_claims[2] claim_id=mech-003",
+      "failure_code": "non_standard_evidence_class",
+      "source_evidence_to_check": [
+        "xml:table=2:rows=3-7",
+        "xml:sec=15:Characterization of peptides in solution",
+        "xml:sec=17:Interaction of the peptides with model membranes",
+        "xml:sec=18:Concluding Remarks",
+        "supp:41598_2018_29444_MOESM1_ESM.docx:MS/MS and Table SI-1 text"
+      ],
+      "required_action": "Recast mech-003 into the allowed evidence ontology, likely as inferred_mechanism with limitations, or split direct biophysical claims from the author inference; then have worker-6 re-adjudicate.",
+      "acceptance_check": "All mechanism_claims use one of the allowed evidence classes and direct_mechanism claims retain direct_assay_types plus locators."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "material_extracted_with_nonblocking_gaps",
+      "severity": "caution",
+      "evidence_context": "Packet status contains gaps, but XML/PDF/OA package/Figure 1/DOCX/database rows needed for this sample were locally available."
+    },
+    {
+      "caution_code": "paper_level_database_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "Other database rows retain GS4 sequence and activity-label conflicts; these do not invalidate dbAMP:dbAMP_17348 but prevent a clean paper-level pass."
+    },
+    {
+      "caution_code": "toxicity_quantification_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Final toxicity rows correctly avoid fabricating exact values from Figure 5."
+    },
+    {
+      "caution_code": "mechanism_ontology_rework_required",
+      "severity": "major",
+      "evidence_context": "mech-003 has source locators but uses non-standard evidence_class mechanistic_inference_with_direct_biophysical_support."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per prompt.",
+    "Review was bounded to the packet, paper_packets mirror, papers final/work artifacts, and local merged corpus paths referenced by the packet.",
+    "PDF was spot-checked through packet/OA availability and extracted text context; the decisive sampled row evidence came from NXML/Table 2, Figure 1 image, DOCX supplement text, and database JSONL rows."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/true_review_result.schema.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-003__doi__10.1038_s41598-018-29444-0/run_codex_review.sh",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/analysis/analysis_status.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_Article_29444.nxml",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_Fig1_HTML.jpg",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/extracted/oa_package/local-APD6-pmc_package/PMC6057973/41598_2018_29444_MOESM1_ESM.docx",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/final/database_record_verification.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/final/mechanism_evidence.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/final/review_report.json",
+    "papers/doi__10.1038_s41598-018-29444-0/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_s41598-018-29444-0/rework/rework_responses.jsonl"
+  ]
+}

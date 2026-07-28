@@ -1,0 +1,126 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T09:21:10Z"
+  },
+  "generated_at": "2026-05-03T09:12:22Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.1186_s12866-022-02621-y",
+  "qc_failure_reasons": [
+    {
+      "code": "local_supplement_payloads_missing_moesm1_2_3",
+      "owner_worker": "worker-2",
+      "reason": "Local source recovery found only article XML/PDF and HTML supplementary wrappers; MOESM1/2 TIF and MOESM3 DOCX payloads needed for exact supplement figure/table values are absent locally.",
+      "severity": "blocking"
+    },
+    {
+      "code": "database_table_s1_values_database_only_no_primary_source",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "DBAASP rows for non-E. coli Table S1 MIC values are preserved, but cannot be source-verified without the missing MOESM3 DOCX payload.",
+      "severity": "major"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_s12866-022-02621-y/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "resolved_previous_rework_items": [
+    "full_source_review_not_completed resolved by bounded worker-6 source review",
+    "no_supported_activity_rows_extracted resolved with four primary-source activity/toxicity records",
+    "database_conflicts_require_adjudication narrowed to source-verified rows plus database_only_no_primary_source rows tied to missing Table S1 payload"
+  ],
+  "review_model": "gpt-5.5",
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1186_s12866-022-02621-y/final/activity_toxicity_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "blocks_publication_grade": true,
+      "created_at": "2026-05-03T09:12:22Z",
+      "failure_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "layer": "activity_toxicity",
+      "omission_code": "missing_moesm3_table_s1_docx_and_moesm1_2_tif_payloads",
+      "owner_worker": "worker-2",
+      "paper_id": "doi__10.1186_s12866-022-02621-y",
+      "required_action": "If the missing MOESM payload files become locally available, extract Fig. S1/S2 and Table S1; verify or correct the database-only MIC rows and update activity/database/final review artifacts. Do not fabricate values from DBAASP alone.",
+      "severity": "blocking",
+      "source_evidence_to_check": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml associated-data media hrefs",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin",
+        "expected local payloads: 12866_2022_2621_MOESM1_ESM.tif, 12866_2022_2621_MOESM2_ESM.tif, 12866_2022_2621_MOESM3_ESM.docx"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-local-source-gap-ll1-supplement-20260503",
+      "unrecoverable_material_gap_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "worker": "worker-2"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "impact": "Exact supplemental Fig. S1/S2 dose-curve values and Table S1 MIC values for non-E. coli microorganisms cannot be source-verified locally; database rows for those Table S1 values are preserved as database_only_no_primary_source and the paper remains non-publication-grade.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over XML/PDF text/HTML wrappers/database JSONL",
+        "find targeted DOI-local landed/downloaded assets",
+        "PDF text extraction already present in packet",
+        "XML associated-data media-reference inspection"
+      ],
+      "why_unrecoverable": "Local packet and landed/downloaded DOI folders contain article XML/PDF and HTML .bin wrappers. The XML/HTML identify MOESM1/2 TIF and MOESM3 DOCX payload names, but those TIF/DOCX payload files are not present in the local packet, landed assets, or downloaded assets checked in this bounded pass."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/database",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/locators",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/raw",
+        "papers/doi__10.1186_s12866-022-02621-y/final",
+        "papers/doi__10.1186_s12866-022-02621-y/source",
+        "papers/doi__10.1186_s12866-022-02621-y/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

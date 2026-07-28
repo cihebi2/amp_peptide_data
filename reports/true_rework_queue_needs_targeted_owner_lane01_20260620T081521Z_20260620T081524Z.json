@@ -1,0 +1,966 @@
+{
+  "accepted_sample_audit_manifest_path": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_accepted_sample_audit.json",
+  "blocked_or_infrastructure_count": 6,
+  "clean_initial_pass_count": 0,
+  "completion_claim": "queue_control_and_rework_execution_report_not_blanket_publication_grade_acceptance",
+  "dry_run": true,
+  "followup_queue_manifest_paths": {
+    "infra_recovery": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_infra_recovery.json",
+    "owner_context_rework_needed": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_owner_context_rework_needed.json",
+    "parser_manual_extraction_needed": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_parser_manual_extraction_needed.json",
+    "source_staging_needed": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_source_staging_needed.json",
+    "watchdog_retry": "/root/work/抗菌肽/数据库/batch/4-team/reports/followup_queues/true_rework_queue_needs_targeted_owner_lane01_20260620T081521Z_20260620T081524Z_watchdog_retry.json"
+  },
+  "generated_at": "2026-06-20T08:15:24Z",
+  "max_rework_attempts": 5,
+  "ok": true,
+  "paper_ids": [
+    "doi__10.1016_j.antiviral.2005.10.005",
+    "doi__10.1021_acs.jmedchem.9b01078",
+    "doi__10.1038_s41392-021-00698-x",
+    "doi__10.1038_s41467-019-10754-4",
+    "doi__10.1080_22221751.2021.1937329",
+    "doi__10.1186_1743-422x-6-187"
+  ],
+  "post_rework_acceptance_count": 0,
+  "quality_control": {
+    "acceptance_requires": [
+      "open_rework_tickets=0",
+      "semantic gate pass",
+      "publication-quality gate pass",
+      "worker-6 source-reviewed acceptance"
+    ],
+    "followup_queues": {
+      "infra_recovery": {
+        "default_next_action": "retry_after_infrastructure_stabilization",
+        "meaning": "Infrastructure/API/bootstrap/runtime failures that should be retried outside the paper-quality lane."
+      },
+      "owner_context_rework_needed": {
+        "default_next_action": "build_more_specific_owner_context_then_retry",
+        "meaning": "Quality gates remain unresolved after bounded rework and need more specific owner context."
+      },
+      "parser_manual_extraction_needed": {
+        "default_next_action": "repair_table_parser_or_manual_extract_then_retry",
+        "meaning": "Activity/table extraction blockers that need parser repair or manual/vision fallback."
+      },
+      "source_staging_needed": {
+        "default_next_action": "stage_missing_source_or_digitize_chart_then_retry",
+        "meaning": "Missing external supplement or figure/chart exact-value blockers that require source staging or digitization."
+      },
+      "watchdog_retry": {
+        "default_next_action": "retry_with_longer_watchdog_or_narrower_owner_prompt",
+        "meaning": "Owner-worker watchdog timeouts that need a longer watchdog or a narrower prompt."
+      }
+    },
+    "no_infinite_loop": true,
+    "obtainable_only_mode": true,
+    "paper_runtime_retries": 5,
+    "queue_start_policy": "start once; retries consume rework_context only",
+    "refined_status": "refined_status/refined_category are first-class queue outputs; accepted_after_rework must not be reported as clean initial acceptance.",
+    "rich_result_status": "terminal_status remains backward-compatible; result_status/result_category/result_reason_code describe why the queue stopped",
+    "unrecoverable_policy": "record unrecoverable_material_gaps/blocked_after_best_effort and advance to next paper after cap",
+    "worker_infra_retries": 5
+  },
+  "recommended_next_action_counts": {
+    "retry_with_worker2_table_shape_or_manual_vision_fallback": 6
+  },
+  "refined_category_counts": {
+    "blocked_parser_or_manual_extraction_gap": 6
+  },
+  "refined_status_counts": {
+    "blocked_parser_gap_activity_table": 6
+  },
+  "result_category_counts": {
+    "blocked_parser_or_manual_extraction_gap": 6
+  },
+  "result_status_counts": {
+    "blocked_activity_table_extraction_gap": 6
+  },
+  "results": [
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1016_j.antiviral.2005.10.005/handoff_context.json",
+            "failure_reason_count": 10,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1016_j.antiviral.2005.10.005/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "__10.1016_j.antiviral.2005.10.005/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1016_j.antiviral.2005.10.005/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 10,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1016_j.antiviral.2005.10.005/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "bounded_rework_limit_reached",
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.antiviral.2005.10.005.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1016_j.antiviral.2005.10.005\",\n  \"counts\": {\n    \"chat\": 31,\n    \"state\": 30,\n    \"log\": 8,\n    \"artifact\": 78,\n    \"event\": 109\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1016_j.antiviral.2005.10.005",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "activity_extraction_requires_worker2_rework",
+        "bounded_rework_limit_reached",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1021_acs.jmedchem.9b01078/handoff_context.json",
+            "failure_reason_count": 9,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1021_acs.jmedchem.9b01078/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "\"rework_context/doi__10.1021_acs.jmedchem.9b01078/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1021_acs.jmedchem.9b01078/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 9,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1021_acs.jmedchem.9b01078/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acs.jmedchem.9b01078.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1021_acs.jmedchem.9b01078\",\n  \"counts\": {\n    \"chat\": 20,\n    \"state\": 19,\n    \"log\": 3,\n    \"artifact\": 37,\n    \"event\": 57\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1021_acs.jmedchem.9b01078",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "activity_extraction_requires_worker2_rework",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1038_s41392-021-00698-x/handoff_context.json",
+            "failure_reason_count": 7,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1038_s41392-021-00698-x/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": " \"context\": \"rework_context/doi__10.1038_s41392-021-00698-x/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1038_s41392-021-00698-x/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 7,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1038_s41392-021-00698-x/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41392-021-00698-x.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1038_s41392-021-00698-x\",\n  \"counts\": {\n    \"chat\": 20,\n    \"state\": 19,\n    \"log\": 3,\n    \"artifact\": 37,\n    \"event\": 57\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1038_s41392-021-00698-x",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1038_s41467-019-10754-4/handoff_context.json",
+            "failure_reason_count": 7,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1038_s41467-019-10754-4/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": " \"context\": \"rework_context/doi__10.1038_s41467-019-10754-4/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1038_s41467-019-10754-4/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 7,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1038_s41467-019-10754-4/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41467-019-10754-4.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1038_s41467-019-10754-4\",\n  \"counts\": {\n    \"chat\": 20,\n    \"state\": 19,\n    \"log\": 3,\n    \"artifact\": 37,\n    \"event\": 57\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1038_s41467-019-10754-4",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1080_22221751.2021.1937329/handoff_context.json",
+            "failure_reason_count": 8,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1080_22221751.2021.1937329/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "k_context/doi__10.1080_22221751.2021.1937329/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1080_22221751.2021.1937329/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 8,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1080_22221751.2021.1937329/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1080_22221751.2021.1937329.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1080_22221751.2021.1937329\",\n  \"counts\": {\n    \"chat\": 33,\n    \"state\": 32,\n    \"log\": 4,\n    \"artifact\": 46,\n    \"event\": 79\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1080_22221751.2021.1937329",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1186_1743-422x-6-187/handoff_context.json",
+            "failure_reason_count": 10,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1186_1743-422x-6-187/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "43-422x-6-187\",\n  \"context\": \"rework_context/doi__10.1186_1743-422x-6-187/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1186_1743-422x-6-187/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 10,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.true_rework_queue_attempt_1.codex_last_message.md",
+              "-c",
+              "model_reasoning_effort=\"xhigh\"",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1186_1743-422x-6-187/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.complete_message_test_report.json",
+        "started": false
+      },
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_nonzero_exit",
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_1743-422x-6-187.complete_message_test_manifest.json",
+      "max_rework_attempts": 5,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1186_1743-422x-6-187\",\n  \"counts\": {\n    \"chat\": 29,\n    \"state\": 28,\n    \"log\": 4,\n    \"artifact\": 46,\n    \"event\": 75\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1186_1743-422x-6-187",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "activity_extraction_requires_worker2_rework",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "recommended_next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "refined_category": "blocked_parser_or_manual_extraction_gap",
+      "refined_reason_code": "activity_table_rows_not_safely_extracted",
+      "refined_reason_summary": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "refined_status": "blocked_parser_gap_activity_table",
+      "result_category": "blocked_parser_or_manual_extraction_gap",
+      "result_reason_code": "activity_table_rows_not_safely_extracted",
+      "result_reason_summary": "Activity/toxicity rows are missing or unsafe under current parser/table-shape handling.",
+      "result_status": "blocked_activity_table_extraction_gap",
+      "retryability": "retry_with_worker2_table_shape_or_manual_vision_fallback",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "dry_run_rework_prompt_prepared",
+      "watchdog_seconds": 1800,
+      "worker_infra_failed": false,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0,
+      "worker_infra_retry_exhausted": false,
+      "worker_returncodes": [],
+      "worker_timed_out": false
+    }
+  ],
+  "status_catalog": {
+    "accepted_after_rework_attempt1": {
+      "category": "accepted_after_rework",
+      "meaning": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "next_action": "sample_audit_only"
+    },
+    "accepted_after_rework_attempt1_with_infra_retry": {
+      "category": "accepted_after_rework_with_infra_noise",
+      "meaning": "One owner-worker re-review eventually passed after transient Codex/API/process retry noise.",
+      "next_action": "sample_audit_plus_infra_log_check"
+    },
+    "accepted_after_rework_multi_attempt": {
+      "category": "accepted_after_rework",
+      "meaning": "More than one bounded rework attempt was needed before strict gates passed.",
+      "next_action": "targeted_sample_audit"
+    },
+    "accepted_after_rework_multi_attempt_with_infra_retry": {
+      "category": "accepted_after_rework_with_infra_noise",
+      "meaning": "Multiple rework attempts plus transient infra retries were needed before strict gates passed.",
+      "next_action": "targeted_sample_audit_plus_infra_log_check"
+    },
+    "accepted_clean_initial_gate_pass": {
+      "category": "accepted_clean",
+      "meaning": "Strict gates already passed before owner-worker rework.",
+      "next_action": "none"
+    },
+    "blocked_parser_gap_activity_table": {
+      "category": "blocked_parser_or_manual_extraction_gap",
+      "meaning": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback"
+    },
+    "blocked_process_timeout_1800s_retryable": {
+      "category": "blocked_process_timeout",
+      "meaning": "Owner-worker hit the 1800s watchdog; this is retryable and not proof that material is absent.",
+      "next_action": "retry_with_longer_watchdog_or_narrower_prompt"
+    },
+    "blocked_process_timeout_retryable": {
+      "category": "blocked_process_timeout",
+      "meaning": "Owner-worker hit the configured watchdog; this is retryable and not proof that material is absent.",
+      "next_action": "retry_with_longer_watchdog_or_narrower_prompt"
+    },
+    "blocked_quality_gate_rework_cap_unresolved": {
+      "category": "blocked_quality_gate_unresolved",
+      "meaning": "Strict gates remained blocked after the bounded obtainable-only rework cap.",
+      "next_action": "retry_only_with_more_specific_owner_context"
+    },
+    "blocked_source_gap_figure_chart_exact_value": {
+      "category": "blocked_source_gap",
+      "meaning": "Remaining exact values are figure/chart-only or not safely promotable from local structured material.",
+      "next_action": "retry_only_with_digitization_or_external_source"
+    },
+    "blocked_source_gap_missing_external_supplement": {
+      "category": "blocked_source_gap",
+      "meaning": "A specific supplementary source/table is absent or only present as a non-data placeholder.",
+      "next_action": "retry_only_after_source_staging"
+    },
+    "infrastructure_initial_queue_failed": {
+      "category": "infrastructure_failed",
+      "meaning": "Initial workflow/bootstrap failed before owner-worker review could run.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_api_or_network": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex/API/network-like failures exhausted the configured infra retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_mixed": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Multiple infrastructure failure families exhausted the configured retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_paper_runtime": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Per-paper controller/runtime exceptions exhausted the configured retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_worker_interrupted": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex worker interruption exhausted the configured infra retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_worker_nonzero_exit": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex worker exited non-zero until the configured infra retry cap was exhausted.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "unclassified_queue_status": {
+      "category": "unclassified",
+      "meaning": "No refined rule matched this queue result.",
+      "next_action": "inspect_result_payload"
+    }
+  },
+  "terminal_status_counts": {
+    "dry_run_rework_prompt_prepared": 6
+  },
+  "test_type": "true_rework_queue_start_once_bounded_best_effort"
+}

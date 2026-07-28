@@ -1,0 +1,125 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics16010129",
+  "reviewed_at": "2026-05-09T17:20:15Z",
+  "updated_at": "2026-05-09T17:20:50Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "All local XML/PDF/OA package/supplement ZIP/database packet paths relevant to worker-2/4/6 blockers were reopened. No blocking unrecoverable material gap remains."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_pharmaceutics16010129/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/locators/locator_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/raw/paper.xml",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/raw/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/raw/supplementary_original/local-APD6-pharmaceutics-16-00129-s001.zip",
+    "papers/doi__10.3390_pharmaceutics16010129/source/paper.xml",
+    "papers/doi__10.3390_pharmaceutics16010129/source/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/pdf_text/pharmaceutics-16-00129.txt",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/pdf_text/local-DBAASP-PMC10818355.txt",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/oa_package/local-APD6-pmc_package/PMC10818355/pharmaceutics-16-00129-g002.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/oa_package/local-APD6-pmc_package/PMC10818355/pharmaceutics-16-00129-g004.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/extracted/oa_package/local-APD6-pmc_package/PMC10818355/pharmaceutics-16-00129-g008.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16010129/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq over handoff, packet, final, quality, and database JSON artifacts",
+    "rg over XML/PDF-derived text and source locators",
+    "pdftotext -layout over article PDF",
+    "unzip -l and unzip -p over local supplementary ZIP",
+    "pdftotext -layout over embedded supplementary PDF",
+    "pdftoppm plus manual local image inspection for Figure S1",
+    "manual local image inspection for Figure 2, Figure 4, and Figure 8",
+    "JSONL linked database row reconciliation",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "summary": "Worker-2 recovered source-supported LC-AMP-F1 MIC, stability, biofilm, toxicity, and synergy rows from local XML/PDF/figures/supplement tables; worker-4 reconciled linked APD6/DBAASP rows while preserving database/source cautions; worker-6 closes the prior rework ticket as accepted_with_cautions.",
+  "adjudication_summary": "The previous zero-activity/parser-only state has been replaced by source-reviewed rows and conflict-preserving database adjudication. Remaining uncertainties are nonblocking figure/database cautions, not open rework.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay rows are matched to recovered activity/toxicity records where source-supported; CCTCC spelling and S. aureus 1065 figure-threshold uncertainty remain source_conflict cautions; APD6 AP04051 remains database-only context.",
+    "layer_2_activity_toxicity": "Figure 2 and supplementary Tables S1/S2 provide exact MIC/stability values; Figure 4/Figure 8/body text provide bounded antibiofilm/toxicity values; no database-only activity row is treated as a primary row.",
+    "layer_3_mechanism": "SYTOX Green and SEM support membrane permeabilization/damage for E. coli; biofilm results are kept as phenotype; structural predictions/CD are context only.",
+    "worker_6_gate": "Review provenance, checked inputs, source depth, materials exhaustion, and caution findings are paper-specific and non-templated."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 36,
+    "database_status_summary": {
+      "database_only_no_primary_source": 2,
+      "source_conflict": 22,
+      "source_verified": 31
+    },
+    "mechanism_claims": 3,
+    "unrecoverable_material_gaps": 0,
+    "open_rework_targets": 0,
+    "figure_only_numeric_bars_digitized": false,
+    "gate_evidence": {
+      "semantic_report": "reports/doi__10.3390_pharmaceutics16010129.semantic_gate.json",
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "publication_report": "reports/doi__10.3390_pharmaceutics16010129.publication_quality.json",
+      "publication_quality_pass": true,
+      "packet_check_report": "reports/doi__10.3390_pharmaceutics16010129.packet_check.json",
+      "packet_open_rework_ticket_count": 1
+    }
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_label_conflict_cctcc",
+      "severity": "nonblocking",
+      "evidence_context": "Linked DBAASP rows spell the standard E. coli target as CCTCCC AB 2018675, while primary Figure 2 shows CCTCC AB 2018675; values are retained with source_conflict context."
+    },
+    {
+      "caution_code": "supplement_figure_threshold_without_numeric_table",
+      "severity": "nonblocking",
+      "evidence_context": "S. aureus 1065 MBIC50=10 µM is database-reported and visually related to Supplement Figure S1, but the local supplement provides a plotted bar figure rather than a numeric table."
+    },
+    {
+      "caution_code": "figure_only_bars_not_digitized",
+      "severity": "nonblocking",
+      "evidence_context": "Unlabelled Figure 4/Figure 8/Supplement Figure S1 bar heights are described qualitatively or by text-supported thresholds instead of fabricated exact values."
+    },
+    {
+      "caution_code": "apd6_database_only_context_preserved",
+      "severity": "nonblocking",
+      "evidence_context": "APD6 AP04051 contains source-supported facts plus review/database commentary; it remains database_only_no_primary_source rather than source_verified."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "rework_ticket_ids_closed": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0
+  }
+}

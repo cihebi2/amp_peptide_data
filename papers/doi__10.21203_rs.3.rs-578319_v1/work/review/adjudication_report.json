@@ -1,0 +1,213 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-578319_v1",
+  "reviewed_at": "2026-05-05T19:24:01Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "blocked_missing_primary_material",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Worker-2/4/6 re-review recovered the main-PDF Figure 4 MIC matrix and reconciled linked DBAASP rows, but publication-grade acceptance remains blocked because local XML and true supplementary PDFs are not recoverable from the paper packet/landed assets.",
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/pdf_text/landing-1.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/raw/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.21203_rs.3.rs-578319_v1/source/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/supplementary_text.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-1.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-2.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-3.bin",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_pdf": {
+      "checked": true,
+      "usable": true,
+      "evidence": "Figure 4 MIC matrix; Figure 5 TEM context; Methods MIC/culture conditions"
+    },
+    "paper_xml": {
+      "checked": true,
+      "usable": false,
+      "reason": "local XML is not a usable article XML for this paper"
+    },
+    "oa_package": {
+      "checked": true,
+      "usable": false,
+      "reason": "raw oa_package has no recoverable package members"
+    },
+    "supplementary_assets": {
+      "checked": true,
+      "usable": false,
+      "reason": "landing-*.bin files are HTML pages, not the named supplementary PDFs"
+    },
+    "merged_database_rows": {
+      "checked": true,
+      "usable": true,
+      "evidence": "linked literature rows, all_sequences.csv, all_experimental_records.csv"
+    }
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 36,
+    "toxicity_records": 0,
+    "database_record_audits": 19,
+    "database_status_summary": {
+      "database_only_no_primary_source": 1,
+      "sequence_modified_not_normalized": 16,
+      "unresolved_record": 2
+    },
+    "mechanism_claims": 3,
+    "direct_mechanism_claims_with_assay_types": 1,
+    "open_rework_targets": 1,
+    "closed_rework_ticket_ids": [],
+    "unrecoverable_material_gap_count": 2,
+    "source_review_gap_remaining": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature links were rechecked against the primary PDF, merged sequence catalog, and merged experiment rows. Record identities remain database-only or modified-sequence-not-normalized because exact sequence/dimer topology is not embedded in recovered primary source tables.",
+    "layer_2_activity_toxicity": "The main PDF Figure 4 supports 36 MIC rows for hLL-37(17-29) and eight cysteine mutants against four bacteria with µM units, DTT sensitivity, strains/conditions where reported, and PDF locators. Supplement-only uperin exact values remain unavailable.",
+    "layer_3_mechanism": "Mechanism claims are limited to redox-sensitive disulfide assembly, I24C fibril structure, DTT/DLS/TEM support, and cautious membrane-interaction interpretation. Supplement-only quantitative mechanism details remain blocked.",
+    "adjudication": "The original broad ticket is answered as partially repaired but kept open via a targeted material-source gap ticket; final acceptance is refused until true supplements/XML are recovered or externally ruled unavailable by the controller."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "main_pdf_activity_rows_recovered",
+      "evidence_context": "Figure 4 MIC values and Methods conditions are usable local primary evidence."
+    },
+    {
+      "caution_code": "database_sequence_identity_not_primary_table_verified",
+      "evidence_context": "Merged DBAASP sequence rows were checked, but recovered primary PDF/XML/supplement surfaces do not embed every exact sequence/dimer topology."
+    },
+    {
+      "caution_code": "true_supplementary_files_missing_locally",
+      "evidence_context": "The PDF lists two supplementary PDFs, but local supplementary files are HTML pages."
+    },
+    {
+      "caution_code": "paper_xml_unusable",
+      "evidence_context": "The local XML/extracted XML sections do not represent the Engelberg article body/tables."
+    }
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "true_supplementary_files_unrecoverable_locally",
+      "owner_worker": "worker-3 + worker-6",
+      "severity": "blocking",
+      "reason": "Named supplementary PDFs are absent from local packet/landed assets; landing-*.bin files are HTML pages, so supplement-only tables/figures cannot be source-reviewed."
+    },
+    {
+      "code": "paper_xml_not_primary_article_source",
+      "owner_worker": "worker-3 + worker-6",
+      "severity": "blocking",
+      "reason": "Local XML/extracted XML sections are not usable article XML for this paper; XML Table 1/2/3 reconciliation requested by the ticket cannot be completed locally."
+    },
+    {
+      "code": "database_sequence_identity_not_primary_table_verified",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "major",
+      "reason": "Linked DBAASP sequence IDs were rechecked against merged rows and primary PDF names/activity, but exact sequence/dimer topology remains database-derived rather than primary-source-table verified."
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-source-gap-0002",
+      "paper_id": "doi__10.21203_rs.3.rs-578319_v1",
+      "target_queue": "material_extraction",
+      "severity": "blocking",
+      "requested_by": "worker-6",
+      "worker": "worker-3",
+      "owner_worker": "worker-3",
+      "failure_code": "true_supplementary_pdfs_not_local",
+      "omission_code": "missing_true_supplementary_pdf_assets",
+      "reason": "The local packet lists supplementary landing-*.bin files, but these are Research Square HTML/help/browse pages rather than the named supplementary PDFs required for Supplementary Tables/Figures source review.",
+      "artifact_path": "paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/supplementary_text.jsonl",
+      "failing_object": "raw/supplementary_original and extracted/supplementary_text.jsonl",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.21203_rs.3.rs-578319_v1/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/",
+        "primary PDF Supplementary Files list: D1292113255valreportfullP1.pdf; SIEngerbergFK13Cys2021.7.pdf"
+      ],
+      "requested_outputs": [
+        {
+          "asset": "SIEngerbergFK13Cys2021.7.pdf",
+          "need": "Recover/extract true supplementary figures/tables, especially Supplementary Table 5 and DTT/DLS figures, or confirm external source absence.",
+          "required_locators": [
+            "supp:SIEngerbergFK13Cys2021.7.pdf"
+          ]
+        },
+        {
+          "asset": "D1292113255valreportfullP1.pdf",
+          "need": "Recover/check validation report only if it affects source identity or supplement provenance.",
+          "required_locators": [
+            "supp:D1292113255valreportfullP1.pdf"
+          ]
+        }
+      ],
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval",
+        "supplementary_source_review"
+      ],
+      "created_at": "2026-05-05T19:24:01Z",
+      "updated_at": "2026-05-05T19:24:01Z",
+      "keep_open": true,
+      "unrecoverable_material_gap_code": "true_research_square_supplementary_pdfs_not_local"
+    }
+  ],
+  "closed_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "true_research_square_supplementary_pdfs_not_local",
+      "source_paths_checked": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/raw/paper.pdf",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/pdf_text/landing-1.txt",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/supplementary_index.json",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-2.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-578319_v1/supplementary/landing-3.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "head",
+        "rg",
+        "pdftotext",
+        "supplementary_index review"
+      ],
+      "why_unrecoverable": "The primary PDF names supplementary files D1292113255valreportfullP1.pdf and SIEngerbergFK13Cys2021.7.pdf, but the local supplementary landing-*.bin files are Research Square help/browse HTML pages and no true supplementary PDF/XLSX/archive is present in the packet or landed paper folder.",
+      "impact": "Supplementary Tables/Figures cannot be source-reviewed locally; exact uperin 3.5 Supplementary Table 5 values and supplement-only crystallography/DLS details remain unavailable, so publication-grade acceptance is blocked.",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "paper_xml_not_primary_article_xml",
+      "source_paths_checked": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/raw/paper.xml",
+        "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.21203_rs.3.rs-578319_v1/source/paper.xml",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-578319_v1/extracted/xml_sections.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "xml_sections review"
+      ],
+      "why_unrecoverable": "The local XML/extracted XML sections are not usable article XML for this paper; extracted XML content includes unrelated Research Square/search metadata and no source table structure for the Engelberg AMP article.",
+      "impact": "XML Table 1/2/3 reconciliation requested by the ticket cannot be performed from local XML; activity recovery therefore uses the primary PDF Figure 4 and methods only, with XML-based publication-grade verification blocked.",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

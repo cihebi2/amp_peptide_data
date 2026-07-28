@@ -1,0 +1,75 @@
+{
+  "paper_id": "doi__10.3390_md15080261",
+  "generated_at": "2026-05-09T09:06:21Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 source-reviewed mechanism ontology from primary XML/PDF, Figure 6 caption, methods, and supplement Figure S1.",
+  "overall_mechanism_evidence_class": "direct_mechanism_with_cautions",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "Seven chemically synthesized myticalins; peptide-specific MIC values in Table 2",
+      "claim_text": "The paper directly supports antibacterial activity by broth microdilution MIC assays, but MIC phenotype alone is not promoted to a molecular mechanism.",
+      "evidence_class": "direct_activity_assay_not_mechanism",
+      "direct_assay_types": [
+        "broth_microdilution_MIC"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2"
+      },
+      "limitations": "This supports antimicrobial phenotype and spectrum, not a direct molecular target."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "Myticalin A5",
+      "claim_text": "The authors tested whether A5 behaves like proline-rich AMPs that block translation and concluded that ribosomal-tunnel/protein-synthesis inhibition is unlikely under their assays.",
+      "evidence_class": "negative_mechanism_evidence",
+      "direct_assay_types": [
+        "coupled_transcription_translation_assay",
+        "in_vitro_translation_assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=9:2.7. Molecular Mode of Action of Myticalin A5;xml:fig=6"
+      },
+      "limitations": "Negative/weak translation evidence should prevent overclaiming canonical PR-AMP ribosomal inhibition."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "Myticalin A5",
+      "claim_text": "The strongest direct mechanism evidence is inhibition of T7 RNA polymerase-mediated RNA synthesis in vitro; antiviral relevance remains a hypothesis, not a demonstrated antiviral assay result.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "in_vitro_transcription_assay",
+        "T7_RNA_polymerase_assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=9:2.7. Molecular Mode of Action of Myticalin A5;xml:fig=6"
+      },
+      "supporting_source_locators": [
+        {
+          "source_path": "paper_packets/doi__10.3390_md15080261/extracted/supplementary_text/marinedrugs-15-00261-s001.txt",
+          "locator": "supp:marinedrugs-15-00261-s001.pdf:Figure S1"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=11:3.6. In Vitro RNA Synthesis, Purification and Quantification"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:3.7. In Vitro Trasncription and Translation Assays"
+        }
+      ],
+      "limitations": "No direct antiviral assay or bacterial intracellular target mapping was recovered locally."
+    }
+  ],
+  "semantic_quality_control": {
+    "direct_claims_have_direct_assay_types": true,
+    "activity_not_promoted_to_direct_mechanism": true,
+    "negative_translation_result_preserved": true,
+    "antiviral_effect_not_promoted_without_assay": true
+  }
+}

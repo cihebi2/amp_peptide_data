@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.1016_j.jsps.2023.04.001",
+  "generated_at": "2026-05-01T14:51:30Z",
+  "reviewed_at": "2026-05-01T14:51:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "source_review_outcome": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "caution_findings": [
+    {
+      "scope": "database_activity_scope",
+      "severity": "caution",
+      "status": "source_conflict",
+      "records": [
+        "DRAMP:DRAMP35970",
+        "DRAMP:DRAMP35971"
+      ],
+      "note": "DRAMP lists Antimicrobial, Anticancer for IWDTIEK and WWSDHR. The local primary paper supports anticancer fraction activity, sequence identity, and EGFR docking, but not antimicrobial assays or individual peptide IC50 values.",
+      "conflict_flags": [
+        "database_antimicrobial_activity_not_primary_supported",
+        "individual_peptide_ic50_not_reported"
+      ],
+      "source_context": [
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+          "locator": "xml:table=3",
+          "supports": [
+            "25% methanol fraction IC50/selectivity"
+          ]
+        },
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+          "locator": "xml:table=4",
+          "supports": [
+            "peptide sequences IWDTIEK and WWSDHR identified in active fraction"
+          ]
+        },
+        {
+          "kind": "primary_xml_table",
+          "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+          "locator": "xml:table=5",
+          "supports": [
+            "EGFR docking affinities for IWDTIEK and WWSDHR"
+          ]
+        },
+        {
+          "kind": "database_jsonl",
+          "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/database/linked_dramp_activity_records.jsonl",
+          "locator": "database:linked_dramp_activity_records:rows=1-2",
+          "supports": [
+            "DRAMP activity claims preserved as database metadata"
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "material_packet_status_label",
+      "severity": "caution",
+      "status": "nonblocking_after_analysis_repair",
+      "note": "The packet was originally labelled material_extracted_with_gaps because Table 4 was treated as unsupported activity-bearing material. Re-review found no supplementary assets and reclassified Table 4 as peptide-identification evidence, not an assay matrix."
+    },
+    {
+      "scope": "mechanism_strength",
+      "severity": "caution",
+      "status": "computational_only_for_EGFR",
+      "note": "EGFR binding is supported by docking only; no direct EGFR inhibition or cellular mechanism assay is present locally."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.pdf",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/pdf_text/local-DRAMP-37293380.txt",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/database/database_source_manifest.json",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.jsps.2023.04.001/database/linked_literature_records.jsonl",
+    "papers/doi__10.1016_j.jsps.2023.04.001/source/paper.xml",
+    "papers/doi__10.1016_j.jsps.2023.04.001/source/paper.pdf"
+  ],
+  "notes": "Worker-2 repaired activity/toxicity rows; worker-4 preserved DRAMP conflicts; worker-6 completed source-reviewed adjudication. No blocking or major QC issue remains after bounded local-source review."
+}

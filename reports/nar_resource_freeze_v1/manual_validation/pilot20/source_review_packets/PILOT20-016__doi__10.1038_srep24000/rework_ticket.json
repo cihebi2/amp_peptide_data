@@ -1,0 +1,38 @@
+{
+  "ticket_id": "pilot20-016-true-review-rwk-001",
+  "paper_id": "doi__10.1038_srep24000",
+  "audit_record_id": "doi__10.1038_srep24000:database_audit:167",
+  "target_queue": "analysis",
+  "severity": "blocking",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "Bounded true source review could not terminally confirm publication-grade status because the runtime model/effort provenance was not independently verifiable, and the paper-level mechanism/adjudication artifacts contain repairable hard issues: mechanism claims mech-001 and mech-003 use non-standard evidence_class value mechanistic_context, and packet-level status metadata still carries analysis-needs-rework/test-scope/open-ticket signals while finals claim publication_grade=true.",
+  "requested_outputs": [
+    {
+      "artifact": "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+      "need": "Replace non-standard mechanism evidence classes with allowed ontology values while preserving source locators and limitations.",
+      "required_locators": [
+        "xml:sec=4:Cytotoxicity assay",
+        "xml:sec=5:Cell membrane constituents assays",
+        "xml:sec=10:Discussion"
+      ],
+      "acceptance_check": "All mechanism_claims evidence_class values are one of direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; direct_mechanism claims retain direct_assay_types and locators."
+    },
+    {
+      "artifact": "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+      "need": "Reconcile packet terminal metadata with analysis_status, rework request/response records, and final review_report after mechanism repair.",
+      "required_locators": [
+        "paper_packets/doi__10.1038_srep24000/analysis/analysis_status.json",
+        "paper_packets/doi__10.1038_srep24000/rework/rework_requests.jsonl",
+        "paper_packets/doi__10.1038_srep24000/rework/rework_responses.jsonl",
+        "papers/doi__10.1038_srep24000/final/review_report.json"
+      ],
+      "acceptance_check": "Packet manifest, analysis status, rework state, and final review_report agree on terminal status with no contradictory open rework/test-scope indicators."
+    }
+  ],
+  "blocks": [
+    "publication_grade_confirmation_for_pilot20_true_source_review",
+    "final_review_report_acceptance_without_caution_reconciliation",
+    "mechanism_ontology_record_acceptance"
+  ],
+  "created_at": "2026-06-22T04:20:14Z"
+}

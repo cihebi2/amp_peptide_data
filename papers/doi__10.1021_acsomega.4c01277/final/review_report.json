@@ -1,0 +1,85 @@
+{
+  "paper_id": "doi__10.1021_acsomega.4c01277",
+  "reviewed_at": "2026-05-02T10:45:48Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package/SI PDF text-layout and linked DBAASP rows were reopened; exact unsupported figure-only database annotations are preserved as cautions rather than fabricated."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1021_acsomega.4c01277/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extracted/oa_package/local-DBAASP-PMC11191095/PMC11191095/ao4c01277_si_001.pdf",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extracted/pdf_text/ao4c01277_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.4c01277/extracted/pdf_text/ao4c01277_si_001.layout.txt",
+    "paper_packets/doi__10.1021_acsomega.4c01277/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.4c01277/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.4c01277/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.4c01277/rework/rework_requests.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 195,
+    "activity_extraction_issue_count": 0,
+    "database_status_summary": {
+      "source_verified": 435,
+      "source_conflict": 10
+    },
+    "mechanism_claims": 2,
+    "rework_ticket_closed": "rwk-complete-test-0001"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay/experiment rows were reconciled to Table 1 identities plus SI Tables S3-S12 when exact local table support exists; remaining exact HaCat category annotations are retained as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Primary activity/toxicity evidence now contains source-located MIC/MIC50/MIC90, hemolysis, and HaCat threshold rows from local SI tables; QSAR correlation tables were not misused as assay rows.",
+    "layer_3_mechanism": "Mechanism ontology remains contextual QSAR/selectivity evidence rather than a direct membrane-killing mechanism claim; no direct_mechanism overclaim is introduced by this repair.",
+    "adjudication": "The prior blocking ticket is resolved because parser-empty activity output was replaced by source-located primary rows and database conflicts are preserved explicitly."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "figure_only_hacat_database_annotations_preserved",
+      "severity": "caution",
+      "record_count": 5,
+      "evidence_context": "Some DBAASP HaCat screening annotations are category/figure-only in local material; they remain source_conflict database annotations and are not promoted to primary activity rows."
+    },
+    {
+      "caution_code": "qsar_correlation_table_not_assay_matrix",
+      "severity": "caution",
+      "evidence_context": "Main-text Table 4/Table S15 are descriptor-correlation tables and were used for mechanism/context, not converted into assay rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_tickets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "closed_at": "2026-05-02T10:45:48Z",
+      "closure_status": "resolved_with_cautions",
+      "owner_workers": [
+        "worker-2",
+        "worker-4",
+        "worker-6"
+      ]
+    }
+  ],
+  "adjudication_summary": "Source re-review converted the ACS Omega packet from empty activity extraction to source-located SI table evidence, reconciled linked DBAASP rows where local primary support exists, and preserves figure-only HaCat database annotations as cautions without fabricating exact values.",
+  "unrecoverable_material_gaps": []
+}

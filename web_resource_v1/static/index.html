@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMP Evidence Atlas v1 RC1</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">AMP Evidence Atlas</div>
+      <a href="#search">Search</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#methods">Methods</a>
+      <a href="#help">Help</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">v1 RC1 · primary-literature evidence layer</p>
+        <h1>把抗菌肽数据库记录放回原始论文证据中审查。</h1>
+        <p class="lead">本地预览版读取 release package，展示 source-verified、source-conflict、database-only、modification-normalization 和 unresolved 等证据状态。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#search">开始检索</a>
+          <a class="button" href="#downloads">下载数据</a>
+        </div>
+      </div>
+      <div class="status-card">
+        <div class="status-label">Release Status</div>
+        <div id="release-status" class="status-value">loading...</div>
+        <p>不是 NAR-ready public database；仍需公开部署、许可审查和人工分层验证。</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="metrics" id="metrics"></section>
+
+    <section class="panel" id="search">
+      <div class="section-head">
+        <p class="eyebrow">Evidence Search</p>
+        <h2>按 paper、database、status、category 查询</h2>
+      </div>
+      <form id="search-form" class="search-form">
+        <input name="q" placeholder="DOI / paper_id / source_id / organism / endpoint" />
+        <select name="table">
+          <option value="database_records">Database audit rows</option>
+          <option value="papers">Papers</option>
+          <option value="activities">Activity observations</option>
+          <option value="mechanisms">Mechanism claims</option>
+          <option value="conflicts">Conflicts & cautions</option>
+        </select>
+        <select name="database">
+          <option value="">All databases</option>
+          <option>APD6</option>
+          <option>CAMP</option>
+          <option>DBAASP</option>
+          <option>DRAMP</option>
+          <option>dbAMP</option>
+          <option>unknown</option>
+        </select>
+        <select name="status">
+          <option value="">All statuses</option>
+          <option>source_verified</option>
+          <option>source_conflict</option>
+          <option>sequence_modified_not_normalized</option>
+          <option>database_only_no_primary_source</option>
+          <option>unresolved_record</option>
+        </select>
+        <select name="category">
+          <option value="">All categories</option>
+          <option>activity_value_or_unit</option>
+          <option>sequence_or_modification</option>
+          <option>target_or_organism</option>
+          <option>mechanism_or_claim_scope</option>
+          <option>database_only_no_primary_source</option>
+          <option>row_granularity</option>
+          <option>unresolved_or_missing_material</option>
+        </select>
+        <input name="limit" type="number" min="1" max="200" value="25" />
+        <button class="button primary" type="submit">Search</button>
+      </form>
+      <div id="search-summary" class="muted"></div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="split">
+      <article class="panel" id="downloads">
+        <div class="section-head">
+          <p class="eyebrow">Downloads</p>
+          <h2>Release package</h2>
+        </div>
+        <div id="downloads-list" class="download-list"></div>
+      </article>
+      <article class="panel" id="methods">
+        <div class="section-head">
+          <p class="eyebrow">Methods</p>
+          <h2>证据状态边界</h2>
+        </div>
+        <ul class="method-list">
+          <li><strong>source_verified</strong>：当前 primary literature evidence 支持该数据库记录。</li>
+          <li><strong>source_conflict</strong>：数据库字段与论文证据存在冲突、粒度压缩或单位/对象差异。</li>
+          <li><strong>database_only_no_primary_source</strong>：数据库断言当前 primary source 无可定位支持。</li>
+          <li><strong>unresolved_record</strong>：材料或行级映射不足，不能安全判定。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel" id="help">
+      <div class="section-head">
+        <p class="eyebrow">API</p>
+        <h2>本地接口</h2>
+      </div>
+      <div class="api-grid">
+        <code>GET /api/v1/releases</code>
+        <code>GET /api/v1/search?q=&database=&status=&category=</code>
+        <code>GET /api/v1/papers/{paper_id}</code>
+        <code>GET /api/v1/database-records/{database}/{source_id}</code>
+        <code>GET /api/v1/activities?q=</code>
+        <code>GET /api/v1/mechanisms?q=</code>
+        <code>GET /api/v1/conflicts?q=</code>
+        <code>GET /api/v1/downloads</code>
+        <code>GET /api/v1/schemas</code>
+      </div>
+      <p class="muted">Guardrail: non-source-verified 不是自动数据库错误；accepted-with-cautions 不是 clean。</p>
+    </section>
+  </main>
+
+  <template id="result-card">
+    <article class="result-card"></article>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{
+  "paper_id": "doi__10.3390_ph12020082",
+  "artifact_type": "adjudication_review_report",
+  "schema_version": "amp_three_layer_v2.worker246_repair.1",
+  "generated_at": "2026-05-09T18:12:27Z",
+  "reviewed_at": "2026-05-09T18:12:27Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, extracted supplement text, figure captions/images, and linked database snapshots were exhausted for the rework blocker. Exact Figure 3 numeric viability values remain database-only rather than source-exact."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ph12020082/handoff_context.json",
+    "paper_packets/doi__10.3390_ph12020082/packet_manifest.json",
+    "paper_packets/doi__10.3390_ph12020082/locators/locator_index.json",
+    "papers/doi__10.3390_ph12020082/source/paper.xml",
+    "papers/doi__10.3390_ph12020082/source/paper.pdf",
+    "paper_packets/doi__10.3390_ph12020082/extracted/pdf_text/pharmaceuticals-12-00082.txt",
+    "paper_packets/doi__10.3390_ph12020082/extracted/supplementary_text/pharmaceuticals-12-00082-s001.txt",
+    "paper_packets/doi__10.3390_ph12020082/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ph12020082/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ph12020082/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ph12020082/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ph12020082/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_ph12020082/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_ph12020082/analysis/mechanism_evidence.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 115,
+    "activity_endpoint_counts": {
+      "MIC": 98,
+      "LC10": 17
+    },
+    "database_record_audits": 445,
+    "database_status_summary": {
+      "source_verified": 214,
+      "database_only_no_primary_source": 48,
+      "source_conflict": 183
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 1,
+    "unrecoverable_material_gaps_blocking_count": 0,
+    "table2_classified_non_assay": true,
+    "database_conflicts_preserved_as_cautions": true,
+    "source_supported_activity_core_fields_present": true
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material remains a separate structural packet and still records complete-with-gaps extraction status; local XML/PDF/OA supplement and database snapshots are sufficient for the worker-2/4/6 analysis repair.",
+    "validator_contract": "Required final JSON artifacts are present and parseable; validator readiness is reported separately from source-reviewed publication-grade acceptance.",
+    "layer_1_database": "Worker-4 reconciled 445 linked DBAASP/DRAMP/literature rows. Source-supported MIC/LC10/literature identity rows are verified, while Table 4 header ambiguity, ambiguous Enterobacter labels, and exact Figure 3 database-only cytotoxicity values remain explicit cautions.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt 115 source-located rows from Table 3 MIC/LC10 and Table 4 Gram-negative MIC values. Table 1 and Table 2 are correctly rejected as non-assay model/property tables, and exact Figure 3 viability percentages are not fabricated.",
+    "layer_3_mechanism": "Worker-6 bounded mechanism claims to FITC membrane-permeability imaging, phenotype-level MIC evidence, and an explicitly inferred SP15 intracellular-target hypothesis without promoting unsupported molecular targets.",
+    "worker_6_publication_grade": "The targeted rework ticket is closed because owner-layer artifacts now preserve supported facts, source/database conflicts, and nonblocking unavailable exact values without open blocking or major issues."
+  },
+  "adjudication_summary": "Source-reviewed worker-2/4/6 rework closed rwk-complete-test-0001 with accepted_with_cautions: primary Table 3/4 assay rows are repaired, database-only/ambiguous rows are preserved as cautions, and no blocking rework target remains.",
+  "summary": "Source-reviewed worker-2/4/6 rework closed rwk-complete-test-0001 with accepted_with_cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "table4_second_sp_column_header_duplicate",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-4",
+      "evidence_context": "The second peptide column in Table 4 prints as SP1 in XML/PDF; it is adjudicated as SP2 from caption/body/database-value context and retained as a source_conflict caution."
+    },
+    {
+      "caution_code": "figure3_exact_viability_values_database_only",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "Exact Hepa 1-6 viability/killing percentages in database rows are not available as source-exact local table values and remain database_only_no_primary_source."
+    },
+    {
+      "caution_code": "ambiguous_enterobacter_label_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "Primary Table 4 labels one isolate as E. asburiae/cloacae; database rows that split this to Enterobacter asburiae or Enterobacter cloacae are retained as source_conflict."
+    },
+    {
+      "caution_code": "mechanism_scope_limited",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "FITC imaging supports membrane-permeability context, but molecular targets and exact fluorescence quantification remain unclaimed."
+    }
+  ],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure3_exact_viability_values_not_source_exact",
+      "source_paths_checked": [
+        "papers/doi__10.3390_ph12020082/source/paper.xml",
+        "papers/doi__10.3390_ph12020082/source/paper.pdf",
+        "paper_packets/doi__10.3390_ph12020082/extracted/pdf_text/pharmaceuticals-12-00082.txt",
+        "paper_packets/doi__10.3390_ph12020082/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_ph12020082/extracted/oa_package/local-DBAASP-PMC6631481/PMC6631481/pharmaceuticals-12-00082-g003.jpg",
+        "paper_packets/doi__10.3390_ph12020082/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_ph12020082/database/linked_dramp_activity_records.jsonl"
+      ],
+      "tools_attempted": [
+        "ElementTree XML parse",
+        "pdftotext output review",
+        "rg over extracted supplement/PDF text",
+        "packet database JSONL reconciliation"
+      ],
+      "why_unrecoverable": "The local primary XML/PDF provides Figure 3 and a qualitative cytotoxicity statement, but no source table with exact Hepa 1-6 viability percentages; linked database exact percentages are retained as database-only provenance rather than promoted to primary-source rows.",
+      "impact": "Exact cell-viability percentages from linked databases remain database_only_no_primary_source; source-supported activity/toxicity rows from Tables 3 and 4 are retained.",
+      "owner_worker": "worker-2 + worker-4 + worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

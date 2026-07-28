@@ -1,0 +1,181 @@
+{
+  "paper_id": "doi__10.1021_ja410385c",
+  "review_sample_id": "V420P0027",
+  "reviewed_at": "2026-06-25T10:04:25+08:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "reviewer_role": "worker-6",
+  "model_provenance_note": "Runner command/header states codex exec -m gpt-5.5 -c model_reasoning_effort=\"xhigh\"; no local runtime status contradicted it.",
+  "final_decision": "needs_targeted_rework",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0031",
+      "audit_record_id": "doi__10.1021_ja410385c:database_audit:35",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled DBAASP MIC row for DBAASPS_24255 is source-backed for citation, compound label, target, value, and unit: linked experiment row 14 and linked assay row 14 report ADEP 1e / Streptococcus pneumoniae / MIC 0.003 ug/ml, and primary XML Table 1 row 8 reports compound 1e with S. pneumoniae MIC 0.003 ug/mL. The row is not clean source_verified because the sequence field is the DBAASP placeholder XXPXAP for a noncanonical cyclic acyldepsipeptide; final/database_record_verification.json correctly preserves sequence_modified_not_normalized rather than normalizing the chemistry into a linear peptide.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/release_rows.json:_release_tsv_row_number=18901",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/sample_final_records.json",
+        "papers/doi__10.1021_ja410385c/source/paper.xml:xml:article-meta",
+        "papers/doi__10.1021_ja410385c/source/paper.xml:xml:table=1:row=8:column=6",
+        "paper_packets/doi__10.1021_ja410385c/database/linked_experiment_records.jsonl:row=14",
+        "paper_packets/doi__10.1021_ja410385c/database/linked_assay_records.jsonl:row=14",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:DBAASP:DBAASPS_24255",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv:DBAASP:DBAASPS_24255",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv:DBAASP:DBAASPS_24255 assay 191625",
+        "paper_packets/doi__10.1021_ja410385c/extracted/pdf_text/ja410385c_si_001.txt:compound=1e",
+        "papers/doi__10.1021_ja410385c/final/database_record_verification.json:record_audits[source_id=DBAASP:DBAASPS_24255,source_table=assay_refs.csv]",
+        "papers/doi__10.1021_ja410385c/final/activity_toxicity_evidence.json:activity_records[record_id=doi__10.1021_ja410385c-table1-r8-c6-mic-streptococcus_pneumoniae]"
+      ],
+      "cautions": [
+        "Layer 1 remains sequence_modified_not_normalized because DBAASP sequence XXPXAP is a placeholder for a noncanonical cyclic depsipeptide structure, not a clean linear peptide sequence.",
+        "The packet material status is material_extracted_with_gaps and the supplementary_index is stale, but OA package inventory and extracted SI PDF text were checked; no sampled-row blocker was found.",
+        "The paper-level final decision is needs_targeted_rework because accepted mechanism ontology output uses non-standard evidence_class values; that defect does not invalidate this sampled MIC row."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_inventory_reopened": true,
+    "packet_dir": "paper_packets/doi__10.1021_ja410385c",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_accepted_with_cautions",
+    "primary_materials_available": {
+      "paper_xml": true,
+      "paper_pdf": true,
+      "oa_package": true,
+      "si_pdf_text": true,
+      "linked_database_rows": true
+    },
+    "materials_checked": [
+      "paper_packets/doi__10.1021_ja410385c/packet_manifest.json",
+      "paper_packets/doi__10.1021_ja410385c/raw/paper.xml",
+      "paper_packets/doi__10.1021_ja410385c/raw/paper.pdf",
+      "paper_packets/doi__10.1021_ja410385c/raw/oa_package/local-DBAASP-PMC4004210.tar.gz",
+      "paper_packets/doi__10.1021_ja410385c/extracted/archive_manifest.json",
+      "paper_packets/doi__10.1021_ja410385c/extracted/pdf_text/ja410385c_si_001.txt",
+      "paper_packets/doi__10.1021_ja410385c/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1021_ja410385c/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1021_ja410385c/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+    ],
+    "material_cautions": [
+      "packet_manifest.json still contains a test_scope note saying the original complete-message workflow was not publication-grade acceptance.",
+      "extraction_status.json reports material_extracted_with_gaps and extraction_errors.jsonl says no supplementary assets were found in the initial local landed/OA scan.",
+      "archive_manifest.json and later review_report.json show the OA package includes ja410385c_si_001.pdf and two CIF files; extracted SI text was inspected for the sampled compound."
+    ],
+    "blocked_missing_primary_material": false
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "sampled_rows_reviewed": 1,
+    "layer_1_database_identity": "confirmed_with_caution: DBAASP:DBAASPS_24255 maps to the sampled paper and Table 1 compound 1e, but the XXPXAP sequence placeholder is correctly preserved as sequence_modified_not_normalized.",
+    "layer_2_activity_toxicity": "confirmed: the matched activity record has endpoint MIC, raw value 0.003, raw unit ug/mL, target Streptococcus pneumoniae, assay footnote inoculum, and XML Table 1 locator.",
+    "layer_3_mechanism_ontology": "needs_targeted_rework: accepted final mechanism claims include non-standard evidence_class values biophysical_support and source_stated_hypothesis. The ontology must use only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+    "semantic_quality_summary": "The sampled row is caution-preserving and source-backed, but the accepted paper output has a repairable mechanism ontology hard-gate defect. No canonical final artifacts were edited in this validation phase.",
+    "hard_failures": [
+      {
+        "target_id": "rwk-v420p0027-001",
+        "failure_code": "non_standard_mechanism_evidence_class",
+        "reason": "papers/doi__10.1021_ja410385c/final/mechanism_ontology_record.json uses non-standard evidence_class values in accepted output.",
+        "owner_worker": "worker-5",
+        "target_queue": "analysis"
+      }
+    ]
+  },
+  "rework_targets": [
+    {
+      "target_id": "rwk-v420p0027-001",
+      "ticket_id": "rwk-v420p0027-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1021_ja410385c/final/mechanism_ontology_record.json",
+      "failing_objects": [
+        "mechanism_claims[2].evidence_class=biophysical_support",
+        "mechanism_claims[3].evidence_class=source_stated_hypothesis"
+      ],
+      "reason": "Accepted mechanism ontology output uses evidence_class values outside the required AMP ontology.",
+      "requested_outputs": [
+        {
+          "asset": "papers/doi__10.1021_ja410385c/final/mechanism_ontology_record.json",
+          "need": "Reclassify claim mech-003-conformational-rigidity and claim mech-004-cell-permeability-hypothesis using only the standard ontology classes, preserving source locators and limitations.",
+          "required_locators": [
+            "source/paper.xml:xml:fig=2",
+            "source/paper.xml:xml:fig=4",
+            "source/paper.xml:xml:table=1",
+            "paper_packets/doi__10.1021_ja410385c/extracted/pdf_text/ja410385c_si_001.txt:S1-S2",
+            "source/paper.xml:xml:sec=8:Conclusion"
+          ]
+        },
+        {
+          "asset": "papers/doi__10.1021_ja410385c/final/review_report.json",
+          "need": "Update worker-6 review after mechanism rework so semantic_quality_checks and caution findings no longer accept non-standard mechanism classes.",
+          "required_locators": [
+            "papers/doi__10.1021_ja410385c/final/mechanism_ontology_record.json"
+          ]
+        }
+      ],
+      "blocks": [
+        "publication_grade_acceptance",
+        "final_decision:accepted_with_cautions"
+      ],
+      "created_at": "2026-06-25T10:04:25+08:00"
+    }
+  ],
+  "caution_findings": [
+    {
+      "code": "sequence_modified_not_normalized",
+      "severity": "caution",
+      "finding": "DBAASP:DBAASPS_24255 has database sequence XXPXAP for cyclic ADEP 1e; the paper and SI support the compound/MIC row but do not provide a clean unmodified linear peptide sequence."
+    },
+    {
+      "code": "material_status_with_gaps_nonblocking_for_sampled_row",
+      "severity": "caution",
+      "finding": "The packet status and initial supplement index contain gaps, but primary XML Table 1, OA package inventory, extracted SI PDF text, and linked database rows were sufficient for the sampled MIC row."
+    },
+    {
+      "code": "stale_packet_test_scope_note",
+      "severity": "caution",
+      "finding": "packet_manifest.json still carries a complete-message-test note from an earlier workflow state. Later rework responses and strict gate reports were inspected, but the current validation decision is based on source review rather than that note."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0027__doi__10.1021_ja410385c/true_review_result.schema.json",
+    "paper_packets/doi__10.1021_ja410385c/packet_manifest.json",
+    "paper_packets/doi__10.1021_ja410385c/final/review_report.json",
+    "paper_packets/doi__10.1021_ja410385c/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_ja410385c/rework/rework_responses.jsonl",
+    "reports/doi__10.1021_ja410385c.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1021_ja410385c.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+    "papers/doi__10.1021_ja410385c/source/paper.xml",
+    "paper_packets/doi__10.1021_ja410385c/extracted/pdf_text/ja410385c_si_001.txt",
+    "paper_packets/doi__10.1021_ja410385c/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_ja410385c/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_ja410385c/database/linked_assay_records.jsonl",
+    "papers/doi__10.1021_ja410385c/final/database_record_verification.json",
+    "papers/doi__10.1021_ja410385c/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_ja410385c/final/mechanism_ontology_record.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ]
+}

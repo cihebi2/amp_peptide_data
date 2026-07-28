@@ -1,0 +1,1 @@
+[{"assertion_index": 0, "db_claimed": {"organism": "", "endpoint": "", "value": "", "peptide": ""}, "verification_outcome": "cannot_determine", "normalization_note": "none", "is_database_error": false, "evidence": null, "short_reason": "All assertion fields are empty strings; there is no claim to compare against the source tables."}]

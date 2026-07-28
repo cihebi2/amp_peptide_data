@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.3390_ph7010058",
+  "reviewed_at": "2026-05-09T17:20:00Z",
+  "updated_at": "2026-05-09T17:20:00Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No supplementary files are present in the packet/OA package; XML Table 1, PDF text, figure captions, OA archive manifest, and linked database JSONL rows were reopened."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_ph7010058/packet_manifest.json",
+    "paper_packets/doi__10.3390_ph7010058/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ph7010058/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ph7010058/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ph7010058/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ph7010058/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ph7010058/extracted/pdf_text/pharmaceuticals-07-00058.txt",
+    "paper_packets/doi__10.3390_ph7010058/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_ph7010058/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ph7010058/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ph7010058/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ph7010058/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ph7010058/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ph7010058/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_ph7010058/source/paper.xml",
+    "papers/doi__10.3390_ph7010058/source/paper.pdf",
+    "paper_packets/doi__10.3390_ph7010058/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_ph7010058/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_ph7010058/analysis/mechanism_evidence.json",
+    "papers/doi__10.3390_ph7010058/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_ph7010058/final/database_record_verification.json",
+    "papers/doi__10.3390_ph7010058/final/mechanism_ontology_record.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 35,
+    "activity_omissions_repaired": 5,
+    "database_status_summary": {
+      "source_verified": 30,
+      "source_conflict": 2
+    },
+    "database_snapshots": {
+      "linked_assay_records": 13,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 15,
+      "linked_literature_records": 4,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 3,
+    "supplementary_asset_count": 0,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All row-granular DBAASP assay/literature rows in the packet were reconciled to local XML/PDF Table 1 or metadata. Two aggregate CAMP/dbAMP rows remain source_conflict cautions because this DOI supports only a subset of their mixed claims.",
+    "layer_2_activity_toxicity": "Worker-6 rebuilt final activity/toxicity from XML Table 1 and retained every non-ND value with MIC or LC50 endpoint, unit, target, raw value, and locator.",
+    "layer_3_mechanism": "Mechanism statements were downgraded from pending automated notes to source-reviewed review-context claims; none are overclaimed as direct assays from this review article.",
+    "layer_4_materials": "OA package contains XML, PDF, and figures but no supplementary assets; no local Table 2/3 or supplement file exists to recover."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "aggregate_database_rows_source_conflict_preserved",
+      "source_ids": [
+        "CAMP:CAMPSQ20029",
+        "dbAMP:dbAMP_31727"
+      ],
+      "evidence_context": "Local DOI supports the Table 1 antimicrobial/hemolysis subset for [E6k,D9k] hymenochirin-1B, but aggregate rows include exact cancer and extra-organism values attributed to other PMIDs or not fully present in local source material."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "Packet contains no linked_sequence_records; peptide identity is source-located to Table 1 and family figure/prose locators rather than database sequence-row comparison."
+    },
+    {
+      "caution_code": "review_article_not_underlying_primary_dataset",
+      "evidence_context": "This paper is a review article. Table 1 and review prose are valid local source evidence for what this paper states, but exact underlying primary-study rows outside the local packet are not silently imported."
+    },
+    {
+      "caution_code": "supplementary_assets_absent_not_blocking",
+      "evidence_context": "Packet, OA archive, supplementary index, and paper source tree contain no supplementary files; requested supplement extraction cannot change this gate."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed re-review closed rwk-complete-test-0001: Table 1 activity/hemolysis rows were repaired, row-granular DBAASP database rows were reconciled, aggregate database conflicts were preserved as cautions, and no local supplement/Table 2/Table 3 material exists."
+}

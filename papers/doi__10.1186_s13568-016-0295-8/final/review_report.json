@@ -1,0 +1,83 @@
+{
+  "paper_id": "doi__10.1186_s13568-016-0295-8",
+  "reviewed_at": "2026-05-03T01:28:40Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML/PDF/OA package/database rows were sufficient for source-reviewed finalization. Paper-local supplementary .bin assets were HTML landing/support pages and did not contain recoverable supplementary data tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s13568-016-0295-8/handoff_context.json",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/packet_manifest.json",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/locators/locator_index.json",
+    "papers/doi__10.1186_s13568-016-0295-8/source/paper.xml",
+    "papers/doi__10.1186_s13568-016-0295-8/source/paper.pdf",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/extracted/pdf_text/13568_2016_Article_295.txt",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-016-0295-8/database/linked_literature_records.jsonl",
+    "papers/doi__10.1186_s13568-016-0295-8/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1186_s13568-016-0295-8/final/database_record_verification.json",
+    "papers/doi__10.1186_s13568-016-0295-8/final/mechanism_ontology_record.json"
+  ],
+  "semantic_quality_checks": {
+    "primary_table_activity_records": 78,
+    "final_activity_records": 81,
+    "database_record_audits": 153,
+    "database_status_summary": {
+      "source_conflict": 30,
+      "source_verified": 123
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0,
+    "gates_to_rerun": [
+      "semantic_three_layer_gate.py",
+      "check_three_layer_publication_quality.py"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 re-audited 153 DBAASP linked assay/experiment/literature rows against corrected primary-source Table 1/2 records. Exact source-supported rows are source_verified, including E. coli ML-35 rows whose database subject omits ATCC; hemolysis threshold, Klebsiella label, and sakazakii genus expansion conflicts remain explicit source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-6 final activity output now uses source-reviewed XML Table 1/2 rows with corrected peptide headers and preserves Fig. 2 hemolysis as qualitative toxicity context rather than fabricated thresholds.",
+    "layer_3_mechanism": "Automated pending-review mechanism notes were replaced with bounded source-reviewed claims: PI uptake as direct membrane-permeabilization evidence, CD as structure context, and protease resistance as stability context."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_organism_label_conflict_preserved",
+      "evidence_context": "DBAASP uses Klebsiella pneumoniae ATCC 700603, while the primary table reports Klebsiella influenza (ATCC 700603); rows remain source_conflict instead of being smoothed."
+    },
+    {
+      "caution_code": "database_genus_expansion_conflict_preserved",
+      "evidence_context": "DBAASP uses Cronobacter sakazakii ATCC 29544, while the primary table reports sakazakii (ATCC 29544); rows remain source_conflict with primary locators."
+    },
+    {
+      "caution_code": "hemolysis_threshold_not_source_verified",
+      "evidence_context": "Primary local material supports qualitative Fig. 2 hemolysis context but not the exact DBAASP not-active thresholds, so those database rows remain source_conflict."
+    },
+    {
+      "caution_code": "supplementary_assets_non_data_html",
+      "evidence_context": "The paper-local supplementary .bin files opened as Springer landing/support HTML pages and did not add extractable supplementary tables."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Source-reviewed worker-4/6 rework corrected peptide-column alignment, reconciled DBAASP rows against XML Tables 1/2, preserved unresolved database label/threshold conflicts as cautions, and closed the prior full-source-review ticket without fabricating unsupported values."
+}

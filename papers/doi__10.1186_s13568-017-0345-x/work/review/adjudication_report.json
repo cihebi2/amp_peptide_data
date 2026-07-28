@@ -1,0 +1,112 @@
+{
+  "paper_id": "doi__10.1186_s13568-017-0345-x",
+  "reviewed_at": "2026-05-03T02:09:54Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "All local gate-changing sources from the rework packet were reopened. Supplementary values were recoverable from the local supplement PDF text rather than structured spreadsheet tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s13568-017-0345-x/handoff_context.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/packet_manifest.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/raw/paper.xml",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/raw/paper.pdf",
+    "papers/doi__10.1186_s13568-017-0345-x/source/paper.xml",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/pdf_text/13568_2017_Article_345.txt",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/oa_package/local-APD6-pmc_package/PMC5321639/13568_2017_Article_345.nxml",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/oa_package/local-APD6-pmc_package/PMC5321639/13568_2017_345_MOESM1_ESM.pdf",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/pdf_text/13568_2017_345_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/database/database_source_manifest.json",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-017-0345-x/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_records_source_reviewed": 182,
+    "database_record_audits": 16,
+    "database_status_summary": {
+      "source_verified": 15,
+      "source_conflict": 1
+    },
+    "mechanism_claims": 4,
+    "prior_qc_failure_codes_closed": [
+      "full_source_review_not_completed",
+      "database_conflicts_require_adjudication"
+    ],
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled 11 linked APD6/CAMP experiment rows and 5 APD6 literature rows against primary Table 1/Table 2/supplement evidence. AP04073 remains source_conflict for later database-only claims; all other linked rows are source-supported with cautions where needed.",
+    "layer_2_activity_toxicity": "Worker-6 final review replaced framework scaffold rows with source-located Table 2 MIC, Table 3 PAE, Table 4 FICI, Supplement S3-S6 stability MIC, hemolysis, and time-kill records. Table 3 is no longer mislabeled as MIC.",
+    "layer_3_mechanism": "Mechanism records are limited to pharmacodynamic killing, interaction phenotype, CD structure context, and background plectasin/NZ2114 mechanism; no direct molecular mechanism is overclaimed for H1/H2/H3.",
+    "worker_6_gate": "The prior framework-test-only review is replaced by paper-specific source adjudication; rwk-complete-test-0001 is closed in rework_responses and final rework_targets are empty."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "material_packet_extracted_with_gaps_but_sources_reopened",
+      "severity": "caution",
+      "evidence_context": "The packet retains material_extracted_with_gaps because supplementary assets were not structured as spreadsheet rows, but the local supplementary PDF text was reopened and Tables S1-S6/Fig S1-S2 were source-reviewed for gate-changing values.",
+      "owner_worker": "worker-6"
+    },
+    {
+      "caution_code": "apd6_ap04073_later_claims_preserved_as_source_conflict",
+      "severity": "caution",
+      "evidence_context": "APD6 AP04073 has source-supported 2017 H2 sequence/MIC/stability/hemolysis evidence but also carries later clathrin/animal-model claims not in this DOI; the row remains source_conflict rather than clean source_verified.",
+      "owner_worker": "worker-4 + worker-6",
+      "record_ids": [
+        "APD6:AP04073"
+      ]
+    },
+    {
+      "caution_code": "linked_sequence_records_absent_primary_table_used",
+      "severity": "caution",
+      "evidence_context": "The packet has zero linked_sequence_records; sequence identity was adjudicated from primary Table 1 and merged sequence catalogs instead of a packet sequence snapshot.",
+      "owner_worker": "worker-4"
+    },
+    {
+      "caution_code": "mechanism_scope_guard",
+      "severity": "caution",
+      "evidence_context": "Time-kill, FICI, stability, and CD data are preserved as pharmacodynamic/structure context; no direct molecular mechanism is claimed for H1/H2/H3.",
+      "owner_worker": "worker-6"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "open_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  },
+  "adjudication_summary": "Source-reviewed worker-4/worker-6 re-review repaired the database-record and final-adjudication blockers for recombinant NZ2114 histidine mutants. The paper is accepted_with_cautions: source-supported sequence/activity/stability/toxicity/pharmacodynamic evidence is retained, APD6 AP04073 later claims are preserved as source_conflict, and mechanism claims are scope-guarded rather than promoted to direct molecular mechanism.",
+  "summary": "Source-reviewed rework closed rwk-complete-test-0001 with accepted_with_cautions and no open rework targets."
+}

@@ -1,0 +1,351 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0034947",
+  "generated_at": "2026-05-03T02:29:47Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-2 re-review of source-supported activity/toxicity rows from XML/PDF table/prose plus linked DBAASP rows; figure-only curve points are not digitized or fabricated.",
+  "activity_records": [
+    {
+      "record_id": "act-kn2-7-hiv-pv-ec50",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "EC50",
+      "raw_value": "2.76",
+      "raw_unit": "µg/ml",
+      "safe_normalized_value": "1.65",
+      "safe_normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 PsV CAAN5342",
+        "strain": "CAAN5342"
+      },
+      "assay_conditions": {
+        "assay_type": "TZM-bl luciferase pseudotyped-virus infection assay",
+        "virus_input": "200 TCID50 HIV-1 PV",
+        "peptide_exposure": "serial dilution; 1 h at 37°C before adding TZM-bl cells",
+        "readout": "luciferase activity after 48 h",
+        "replicates": "at least three independent experiments for Table 2 values"
+      },
+      "source_column_context": {
+        "table": "Table 2",
+        "column": "EC50 a(µg/ml)"
+      },
+      "evidence_ladder": "primary_table_and_results_text_in_vitro_assay",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2:row=2:column=EC50;xml:sec=5:Kn2-7 acted sensitively and rapidly against HIV-1 PV"
+      },
+      "linked_database_rows": [
+        "database:linked_assay_records.jsonl:row=1",
+        "database:linked_experiment_records.jsonl:row=1"
+      ],
+      "review_notes": "Primary source reports EC50; linked DBAASP rows preserve the same value but label the endpoint as IC50 I, handled as a database endpoint-label conflict."
+    },
+    {
+      "record_id": "act-kn2-7-tzmbl-cc50",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "CC50",
+      "raw_value": "38.46",
+      "raw_unit": "µg/ml",
+      "normalization_status": "direct",
+      "target": {
+        "class": "cell_line",
+        "species": "TZM-bl cells",
+        "strain": "HeLa-derived TZM-bl"
+      },
+      "assay_conditions": {
+        "assay_type": "MTS cell viability assay",
+        "exposure": "serial peptide dilutions from 5 µg/ml to 100 µg/ml in DMEM for 24 h",
+        "readout": "CellTiter 96 AQueous One Solution absorbance at 490 nm",
+        "replicates": "triplicates; repeated three times"
+      },
+      "source_column_context": {
+        "table": "Table 2",
+        "column": "CC50 a(µg/ml)"
+      },
+      "evidence_ladder": "primary_table_and_methods_cytotoxicity_assay",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2:row=2:column=CC50;xml:sec=15:Cell viability assay"
+      },
+      "linked_database_rows": [
+        "database:linked_assay_records.jsonl:row=2",
+        "database:linked_experiment_records.jsonl:row=2"
+      ],
+      "review_notes": "Primary source reports cytotoxic concentration CC50; linked DBAASP rows label this as IC50, preserved as an endpoint-label conflict."
+    },
+    {
+      "record_id": "act-kn2-7-selectivity-index",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "SI",
+      "raw_value": "13.93",
+      "raw_unit": "ratio",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus_cell_assay",
+        "species": "HIV-1 PsV and TZM-bl cells",
+        "strain": "CAAN5342/TZM-bl"
+      },
+      "assay_conditions": {
+        "assay_type": "selectivity index from Table 2 EC50 and CC50",
+        "calculation": "CC50/EC50"
+      },
+      "source_column_context": {
+        "table": "Table 2",
+        "column": "SI"
+      },
+      "evidence_ladder": "primary_table_calculated_index",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2:row=2:column=SI"
+      }
+    },
+    {
+      "record_id": "act-mucroporin-s1-hiv-pv-inactive",
+      "entity": "mucroporin-S1",
+      "entity_sequence": "SLIGGLVSAFK",
+      "endpoint": "EC50",
+      "raw_value": "inactive",
+      "raw_unit": "not_applicable_inactive",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 PsV CAAN5342",
+        "strain": "CAAN5342"
+      },
+      "assay_conditions": {
+        "assay_type": "TZM-bl luciferase pseudotyped-virus infection assay",
+        "control_context": "negative control peptide in follow-up assays"
+      },
+      "source_column_context": {
+        "table": "Table 2",
+        "column": "EC50 a(µg/ml)",
+        "raw_cell": "I = inactive"
+      },
+      "evidence_ladder": "primary_table_negative_control",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2:row=3:column=EC50;xml:sec=4:screening assay negative-control rationale"
+      },
+      "linked_database_rows": [
+        "database:linked_assay_records.jsonl:row=3",
+        "database:linked_experiment_records.jsonl:row=3"
+      ],
+      "review_notes": "Primary table uses I for inactive; no numeric unit is fabricated."
+    },
+    {
+      "record_id": "act-mucroporin-s1-tzmbl-cc50",
+      "entity": "mucroporin-S1",
+      "entity_sequence": "SLIGGLVSAFK",
+      "endpoint": "CC50",
+      "raw_value": ">100",
+      "raw_unit": "µg/ml",
+      "normalization_status": "direct",
+      "target": {
+        "class": "cell_line",
+        "species": "TZM-bl cells",
+        "strain": "HeLa-derived TZM-bl"
+      },
+      "assay_conditions": {
+        "assay_type": "MTS cell viability assay",
+        "exposure": "serial peptide dilutions from 5 µg/ml to 100 µg/ml in DMEM for 24 h"
+      },
+      "source_column_context": {
+        "table": "Table 2",
+        "column": "CC50 a(µg/ml)"
+      },
+      "evidence_ladder": "primary_table_negative_control_cytotoxicity_assay",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2:row=3:column=CC50;xml:sec=15:Cell viability assay"
+      },
+      "linked_database_rows": [
+        "database:linked_assay_records.jsonl:row=4",
+        "database:linked_experiment_records.jsonl:row=4"
+      ],
+      "review_notes": "Primary source reports CC50 >100 µg/ml; linked DBAASP rows label the endpoint as IC50, preserved as an endpoint-label conflict."
+    },
+    {
+      "record_id": "act-kn2-7-hiv-pv-inhibition-2ugml",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "percent_inhibition",
+      "raw_value": "40.1",
+      "raw_unit": "%",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 PsV CAAN5342",
+        "strain": "CAAN5342"
+      },
+      "assay_conditions": {
+        "assay_type": "dose-dependent TZM-bl pseudotyped-virus assay",
+        "peptide_concentration": "2 µg/ml",
+        "virus_input": "200 TCID50 HIV-1 PV"
+      },
+      "evidence_ladder": "primary_results_text_exact_value",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=5:Kn2-7 acted sensitively and rapidly against HIV-1 PV;xml:fig=2"
+      }
+    },
+    {
+      "record_id": "act-kn2-7-hiv-pv-inhibition-16ugml",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "percent_inhibition",
+      "raw_value": "98.7",
+      "raw_unit": "%",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 PsV CAAN5342",
+        "strain": "CAAN5342"
+      },
+      "assay_conditions": {
+        "assay_type": "dose-dependent TZM-bl pseudotyped-virus assay",
+        "peptide_concentration": "16 µg/ml",
+        "virus_input": "200 TCID50 HIV-1 PV"
+      },
+      "evidence_ladder": "primary_results_text_exact_value",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=5:Kn2-7 acted sensitively and rapidly against HIV-1 PV;xml:fig=2"
+      }
+    },
+    {
+      "record_id": "act-kn2-7-hiv-pv-inhibition-3min",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "percent_inhibition",
+      "raw_value": "42.3",
+      "raw_unit": "%",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 PsV CAAN5342",
+        "strain": "CAAN5342"
+      },
+      "assay_conditions": {
+        "assay_type": "time-dependent TZM-bl pseudotyped-virus assay",
+        "peptide_concentration": "3 µg/ml",
+        "incubation_time": "3 min",
+        "virus_input": "200 TCID50 HIV-1 PV"
+      },
+      "evidence_ladder": "primary_results_text_exact_value",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=5:Kn2-7 acted sensitively and rapidly against HIV-1 PV;xml:fig=2"
+      }
+    },
+    {
+      "record_id": "act-kn2-7-replication-competent-hiv-p24-10ugml",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "p24_suppression",
+      "raw_value": "complete suppression days 7-17",
+      "raw_unit": "qualitative_text",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 subtype B",
+        "strain": "X4-tropic pKS242-derived"
+      },
+      "assay_conditions": {
+        "assay_type": "replication-competent HIV-1 p24 ELISA and TZM-bl infectivity assay",
+        "peptide_concentration": "10 µg/ml",
+        "virus_input": "15 ng p24",
+        "duration": "17 days"
+      },
+      "evidence_ladder": "primary_results_text_qualitative_activity",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=8:Kn2-7 had anti-viral effect against replication-competent HIV-1 virus;xml:fig=6"
+      },
+      "review_notes": "Exact figure curve values were not locally table-extractable; only text-supported complete-suppression claim is retained."
+    },
+    {
+      "record_id": "act-kn2-7-replication-competent-hiv-p24-15ugml",
+      "entity": "Kn2-7",
+      "entity_sequence": "FIKRIARLLRKIF",
+      "endpoint": "p24_suppression",
+      "raw_value": "complete suppression days 7-17",
+      "raw_unit": "qualitative_text",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "virus",
+        "species": "HIV-1 subtype B",
+        "strain": "X4-tropic pKS242-derived"
+      },
+      "assay_conditions": {
+        "assay_type": "replication-competent HIV-1 p24 ELISA and TZM-bl infectivity assay",
+        "peptide_concentration": "15 µg/ml",
+        "virus_input": "15 ng p24",
+        "duration": "17 days"
+      },
+      "evidence_ladder": "primary_results_text_qualitative_activity",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=8:Kn2-7 had anti-viral effect against replication-competent HIV-1 virus;xml:fig=6"
+      },
+      "review_notes": "Text says 15 µg/ml almost completely inhibited viral replication in the TZM-bl infectivity readout; exact figure curve values are not fabricated."
+    }
+  ],
+  "qualitative_activity_findings": [
+    {
+      "finding_id": "qual-broad-spectrum-13-pv",
+      "entity": "Kn2-7",
+      "finding": "Kn2-7 inhibited a 13-strain HIV-1 subtype B pseudotyped-virus panel at 3 µg/ml and 10 µg/ml regardless of CCR5/CXCR4 tropism; exact per-strain figure values were not available as local tables.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=7:Kn2-7 had broad-spectrum of antiviral activity against HIV-1 PV;xml:fig=5"
+      }
+    },
+    {
+      "finding_id": "qual-negative-control-mucroporin-s1",
+      "entity": "mucroporin-S1",
+      "finding": "Mucroporin-S1 served as negative control and showed no inhibitory effect in corresponding assays.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=7:Kn2-7 had broad-spectrum of antiviral activity against HIV-1 PV;xml:fig=5"
+      }
+    }
+  ],
+  "source_paths_checked": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extracted/figure_captions.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/extracted/supplementary_text.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0034947/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0034947/xml/local-DBAASP-PMC3334916.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0034947/pdf/landing-1.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "pdftotext -layout",
+    "file",
+    "python csv/xml structured reads"
+  ],
+  "extraction_issues": [],
+  "parser_quality_control": {
+    "issue_count": 0,
+    "table_2_repaired_by_worker_2": true,
+    "figure_only_values_not_fabricated": true,
+    "database_only_annotations_not_promoted_to_primary_rows": true
+  },
+  "unrecoverable_material_gaps": []
+}

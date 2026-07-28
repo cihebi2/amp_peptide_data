@@ -1,0 +1,122 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics16020190",
+  "reviewed_at": "2026-05-09T17:55:08Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_assets_note": "Opened supplementary ZIP and extracted the embedded PDF with pdftotext; it contains Figure S1/S2 only, not activity/toxicity tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_pharmaceutics16020190/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/locators/locator_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/analysis/adjudication_report.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/pdf_text/pharmaceutics-16-00190.txt",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/oa_package/local-APD6-pmc_package/PMC10892092/pharmaceutics-16-00190-g006.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/oa_package/local-APD6-pmc_package/PMC10892092/pharmaceutics-16-00190-g007.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/oa_package/local-APD6-pmc_package/PMC10892092/pharmaceutics-16-00190-g008.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16020190/extracted/oa_package/local-APD6-pmc_package/PMC10892092/pharmaceutics-16-00190-s001.zip",
+    "papers/doi__10.3390_pharmaceutics16020190/source/paper.xml",
+    "papers/doi__10.3390_pharmaceutics16020190/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 5,
+    "activity_core_fields_present": true,
+    "mic_like_units_present": true,
+    "suspicious_target_strings_checked": true,
+    "database_status_summary": {
+      "source_verified": 7,
+      "source_conflict": 5
+    },
+    "mechanism_claims": 3,
+    "direct_mechanism_claims": 0,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "strict_gate_evidence": {
+      "semantic_returncode": 0,
+      "publication_returncode": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "semantic_report": "reports/doi__10.3390_pharmaceutics16020190.semantic_gate.json",
+      "publication_report": "reports/doi__10.3390_pharmaceutics16020190.publication_quality.json"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains material_extracted_with_gaps; worker-2/4/6 consumed local XML/PDF/OA package/supplement/database surfaces without rerunning bootstrap.",
+    "validator_contract": "Structural material inventory is separated from semantic/publication-grade acceptance; strict gates were rerun after source-reviewed repair.",
+    "activity_toxicity": "Worker-2 recovered source-supported C-20 viability, human erythrocyte hemolysis range, SARS-CoV-2 EC50, and Vero CC50 rows with units, targets, and locators.",
+    "database_record_verification": "Worker-4 source-verified APD6/DBAASP sequence/citation rows and preserved endpoint/graph exactness disagreements as source_conflict cautions.",
+    "mechanism_ontology": "Worker-6 limited mechanism conclusions to phenotypic antiviral activity plus in silico hypothesis; no direct ACE2/spike mechanism is claimed.",
+    "publication_grade_review": "Prior blocking ticket is closed only when strict gates pass; remaining source conflicts are explicit cautions, not open major blockers."
+  },
+  "caution_findings": [
+    {
+      "code": "database_endpoint_and_graph_exactness_conflicts_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "finding": "DBAASP/APD6 rows are source-reviewed; EC50/IC50 label mismatch and graph-derived hemolysis/high-dose cytotoxicity exactness remain explicit source_conflict records."
+    },
+    {
+      "code": "linear_peptide_assayed_structure_unresolved",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "Primary paper reports unsuccessful cysteine oxidation; docking used predicted folded SS-I while in vitro assays most likely used linear SS-I."
+    },
+    {
+      "code": "in_silico_mechanism_not_direct_mechanism",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "Docking/MD ACE2/spike interaction remains hypothesis; final mechanism record does not promote it to direct mechanism."
+    },
+    {
+      "code": "supplement_contains_figures_not_activity_tables",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "Supplement ZIP was opened; the supplementary PDF contains docking/MS figures and no activity/toxicity table that changes worker-2 rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed worker-2/4/6 repair recovered activity/toxicity rows, reconciled APD6/DBAASP records, and preserved mechanism/database cautions without promoting unsupported exact values."
+}

@@ -1,0 +1,260 @@
+{
+  "paper_id": "PMC11531597",
+  "worker": "worker-5",
+  "lane": "mechanism_ontology_extractor",
+  "protocol": "amp_three_layer_v2",
+  "artifact_schema": "mechanism_evidence.worker5.v1",
+  "created_at_utc": "2026-07-08T19:14:00Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "strict_scope": {
+    "paper_id_only": true,
+    "internet_used": false,
+    "checkout_only": true,
+    "source_review_boundary": "packet-local XML, PDF render/pages, figure/table locators, supplementary inventory, and packet database snapshots only"
+  },
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/figure_captions.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/supplementary_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/linked_article_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/linked_assay_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/linked_sequence_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/linked_literature_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/rework/rework_requests.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/rework/rework_responses.jsonl"
+  ],
+  "material_status_snapshot": {
+    "packet_version": "dbaasp_strict_pilot_v1",
+    "material_queue_status": "material_extracted_complete",
+    "xml_section_count": 155,
+    "xml_table_count": 2,
+    "pdf_page_count": 12,
+    "supplementary_file_count": 1,
+    "supplementary_text_count": 1,
+    "extraction_error_count": 0
+  },
+  "database_candidate_boundary": {
+    "dbaasp_machine_rows_are_source_verified": false,
+    "machine_row_count": 27,
+    "machine_endpoint_counts": {
+      "MIC": 23,
+      "hemolysis": 4
+    },
+    "linked_authoritative_row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_sequence_records": 0,
+      "linked_literature_records": 0
+    },
+    "interpretation": "DBAASP Codex fallback rows are retained as candidate machine evidence only; they do not upgrade peptide-level mechanism claims without packet-local primary-source mechanism locators."
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC11531597-W5-MECH-001",
+      "claim_text": "F2 and F3 fractions show bactericidal activity against L. monocytogenes in time-kill testing, but this phenotype alone does not establish a direct molecular mechanism.",
+      "entity_scope": {
+        "entities": [
+          "F2 fraction",
+          "F3 fraction"
+        ],
+        "target": "L. monocytogenes DMST 17303",
+        "scope_note": "fraction-level evidence; not individual peptide-level DBAASP mechanism evidence"
+      },
+      "evidence_class": "phenotype_supported",
+      "source_locator": "xml:sec:5; xml:p:17; xml:p:18; xml:fig:1; pdf:page=3; method:xml:sec:19; method:xml:p:63",
+      "direct_assay_types": [],
+      "limitations": [
+        "time-kill is a growth/viability phenotype and is not classified as direct mechanism evidence",
+        "the result supports antimicrobial activity of fractions only"
+      ]
+    },
+    {
+      "claim_id": "PMC11531597-W5-MECH-002",
+      "claim_text": "F2 and F3 fractions directly compromised L. monocytogenes cell integrity in live/dead fluorescence microscopy, consistent with membrane integrity loss at the fraction level.",
+      "entity_scope": {
+        "entities": [
+          "F2 fraction",
+          "F3 fraction"
+        ],
+        "target": "L. monocytogenes DMST 17303",
+        "scope_note": "fraction-level evidence; F2 is described as the stronger fraction in this assay"
+      },
+      "evidence_class": "direct_mechanism",
+      "source_locator": "xml:sec:6; xml:p:20; xml:p:21; xml:fig:2; pdf:page=3; pdf:page=4; method:xml:sec:20; method:xml:p:64",
+      "direct_assay_types": [
+        "confocal_laser_scanning_microscopy",
+        "propidium_iodide_SYTO9_live_dead_staining",
+        "membrane_integrity_assay"
+      ],
+      "limitations": [
+        "direct for cell integrity/permeability phenotype, not a receptor or enzyme target",
+        "fraction-level assay does not assign the effect to any single synthetic peptide"
+      ]
+    },
+    {
+      "claim_id": "PMC11531597-W5-MECH-003",
+      "claim_text": "F2 and F3 fractions produced visible surface and shape damage in L. monocytogenes by scanning electron microscopy, supporting a cell-envelope disruption mechanism at the fraction level.",
+      "entity_scope": {
+        "entities": [
+          "F2 fraction",
+          "F3 fraction"
+        ],
+        "target": "L. monocytogenes DMST 17303",
+        "scope_note": "fraction-level morphology evidence"
+      },
+      "evidence_class": "direct_mechanism",
+      "source_locator": "xml:sec:7; xml:p:23; xml:p:24; xml:fig:3; pdf:page=4; pdf:page=5; method:xml:sec:21; method:xml:p:65",
+      "direct_assay_types": [
+        "scanning_electron_microscopy",
+        "cell_morphology_assay"
+      ],
+      "limitations": [
+        "SEM shows structural damage but does not by itself identify a molecular binding target",
+        "fraction-level assay does not assign the effect to any single synthetic peptide"
+      ]
+    },
+    {
+      "claim_id": "PMC11531597-W5-MECH-004",
+      "claim_text": "F2 and F3 fractions caused SR-FTIR spectral changes in cellular biomolecule regions, supporting membrane and intracellular component alterations after treatment.",
+      "entity_scope": {
+        "entities": [
+          "F2 fraction",
+          "F3 fraction"
+        ],
+        "target": "L. monocytogenes DMST 17303",
+        "scope_note": "fraction-level spectroscopy evidence"
+      },
+      "evidence_class": "direct_mechanism",
+      "source_locator": "xml:sec:8; xml:p:26; xml:p:27; xml:p:28; xml:p:29; xml:p:30; xml:p:31; xml:fig:4; xml:fig:5; pdf:page=4; method:xml:sec:23; method:xml:p:68",
+      "direct_assay_types": [
+        "synchrotron_fourier_transform_infrared_spectroscopy",
+        "spectral_principal_component_analysis"
+      ],
+      "limitations": [
+        "spectroscopy supports cellular component perturbation but is not target-specific",
+        "fraction-level assay does not assign the effect to any single synthetic peptide"
+      ]
+    },
+    {
+      "claim_id": "PMC11531597-W5-MECH-005",
+      "claim_text": "Synthetic peptides identified from the active fractions have source-local activity and physicochemical context, but MIC, hemolysis, sequence composition, charge, and hydrophobicity are not direct mechanism assays.",
+      "entity_scope": {
+        "entities": [
+          "synthetic peptides identified from F2",
+          "synthetic peptides identified from F3",
+          "DBAASP fallback candidate peptide rows"
+        ],
+        "target": "E. coli O157:H7 DMST 12743; Salmonella enteritidis DMST 15679; L. monocytogenes DMST 17303 where reported",
+        "scope_note": "peptide-level evidence is activity/toxicity or inferred physicochemical evidence, not direct mechanism closure"
+      },
+      "evidence_class": "phenotype_supported",
+      "source_locator": "xml:sec:9; xml:p:32; xml:p:33; xml:table-wrap:2; xml:sec:10; xml:p:54; xml:fig:6; database:dbaasp_machine_extracted_rows.jsonl:lines=1-27",
+      "direct_assay_types": [],
+      "limitations": [
+        "DBAASP fallback rows are candidate machine evidence only",
+        "no linked authoritative DBAASP assay/sequence/literature rows are present in this packet",
+        "activity and toxicity endpoints must not be promoted to direct mechanism"
+      ]
+    },
+    {
+      "claim_id": "PMC11531597-W5-MECH-006",
+      "claim_text": "No packet-local direct mechanism assay was found for individual DBAASP candidate peptide rows; direct mechanism assays in the paper apply to F2/F3 fractions.",
+      "entity_scope": {
+        "entities": [
+          "DBAASP fallback candidate peptide rows"
+        ],
+        "target": "candidate database scope only",
+        "scope_note": "machine-extracted rows require database-layer verification before peptide-level mechanism use"
+      },
+      "evidence_class": "unknown_or_not_tested",
+      "source_locator": "database:dbaasp_machine_extracted_rows.jsonl:lines=1-27; database:linked_article_records.jsonl:lines=0; database:linked_assay_records.jsonl:lines=0; database:linked_sequence_records.jsonl:lines=0; database:linked_literature_records.jsonl:lines=0",
+      "direct_assay_types": [],
+      "limitations": [
+        "machine rows contain candidate MIC/hemolysis fields only",
+        "absence of linked authoritative rows prevents peptide-level source verification in worker-5",
+        "this claim is a boundary statement, not publication-grade database adjudication"
+      ]
+    }
+  ],
+  "evidence_class_counts": {
+    "direct_mechanism": 3,
+    "phenotype_supported": 2,
+    "inferred_mechanism": 0,
+    "computational_only": 0,
+    "unknown_or_not_tested": 1
+  },
+  "source_reviewed_synthesis": {
+    "strongest_supported_mechanism_class": "direct_mechanism",
+    "strongest_supported_scope": "F2/F3 fractions against L. monocytogenes DMST 17303",
+    "not_supported_as_direct": [
+      "MIC rows",
+      "time-kill alone",
+      "hemolysis rows",
+      "peptide charge or hydrophobicity",
+      "DBAASP Codex fallback rows",
+      "individual synthetic peptide mechanisms"
+    ],
+    "computational_mechanism_evidence_found": false,
+    "supplementary_mechanism_evidence_found": false
+  },
+  "rework_state": {
+    "open_rework_tickets_targeting_worker5": 0,
+    "worker5_rework_response_written": false,
+    "targeted_rework_needed": false,
+    "unresolved_blockers": []
+  },
+  "lane_assessment": {
+    "source_reviewed_complete": true,
+    "publication_grade_claimed": false,
+    "publication_grade_blockers": [
+      "worker-6 adjudication and strict publication-quality gate are outside worker-5 lane and still required before publication-grade acceptance"
+    ],
+    "status": "source_reviewed_complete_pending_worker6_adjudication"
+  },
+  "validation": {
+    "json_valid": true,
+    "mechanism_claim_count": 6,
+    "missing_required_claim_fields": 0,
+    "direct_claim_count": 3,
+    "direct_claims_missing_direct_assay_types": 0,
+    "mirrored_packet_artifact_sha256_equal_at_validation": true,
+    "diagnostic_gate_outputs": {
+      "semantic_gate_after_worker5": {
+        "exit_code": 1,
+        "output_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/mechanism_ontology/semantic_gate_after_worker5.json",
+        "issue_codes": {
+          "missing_review_report": 1,
+          "missing_activity_records": 1,
+          "missing_database_record_verification": 1
+        }
+      },
+      "packet_gate_after_worker5": {
+        "exit_code": 2,
+        "output_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/mechanism_ontology/packet_gate_after_worker5.json",
+        "hard_findings": [
+          "missing_final_files"
+        ],
+        "analysis_status_counts": {
+          "analysis_queued": 1
+        },
+        "open_rework_ticket_count": 0
+      },
+      "publication_quality_after_worker5": {
+        "exit_code": 2,
+        "output_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/mechanism_ontology/publication_quality_after_worker5.json",
+        "risk_counts": {
+          "missing_final_file": 4
+        }
+      }
+    },
+    "diagnostic_gate_interpretation": "Gate failures are terminal publication-grade blockers from missing cross-lane final/adjudication artifacts, not missing worker-5 mechanism claim fields."
+  }
+}

@@ -1,0 +1,21 @@
+[1/12] true rework queue doi__10.1002_advs.202401793
+Traceback (most recent call last):
+  File "/root/work/抗菌肽/数据库/batch/4-team/scripts/run_true_rework_queue.py", line 642, in <module>
+    raise SystemExit(main())
+  File "/root/work/抗菌肽/数据库/batch/4-team/scripts/run_true_rework_queue.py", line 609, in main
+    results.append(run_one(repo, paper_id, args))
+  File "/root/work/抗菌肽/数据库/batch/4-team/scripts/run_true_rework_queue.py", line 503, in run_one
+    worker_result = launch_codex_worker(repo, paper_id, str(latest_context.get("prompt") or ""), attempt, args)
+  File "/root/work/抗菌肽/数据库/batch/4-team/scripts/run_true_rework_queue.py", line 287, in launch_codex_worker
+    proc = run(cmd, repo, allow_fail=True, input_text=prompt_path.read_text(encoding="utf-8"), timeout=args.worker_timeout_seconds)
+  File "/root/work/抗菌肽/数据库/batch/4-team/scripts/run_true_rework_queue.py", line 81, in run
+    proc = subprocess.run(
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2022, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.10/subprocess.py", line 1198, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['codex', 'exec', '--skip-git-repo-check', '-C', '/root/work/抗菌肽/数据库/batch/4-team', '-m', 'gpt-5.5', '-o', '/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_advs.202401793.true_rework_queue_attempt_1.codex_last_message.md', '-s', 'danger-full-access', '-c', 'approval_policy="never"', '-']' timed out after 2400 seconds

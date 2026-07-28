@@ -1,0 +1,29 @@
+{
+  "ticket_id": "pilot20-003-true-review-rwk-001",
+  "paper_id": "doi__10.1038_s41598-018-29444-0",
+  "audit_record_id": "doi__10.1038_s41598-018-29444-0:database_audit:61",
+  "target_queue": "analysis",
+  "severity": "major",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "The sampled dbAMP row is source-backed, but the paper-level mechanism final contains claim_id=mech-003 with non-standard evidence_class mechanistic_inference_with_direct_biophysical_support. The allowed ontology is direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+  "requested_outputs": [
+    {
+      "artifact": "papers/doi__10.1038_s41598-018-29444-0/final/mechanism_ontology_record.json",
+      "need": "Revise mechanism_claims[2] so evidence_class uses the standard ontology, preserving locators and limitations."
+    },
+    {
+      "artifact": "paper_packets/doi__10.1038_s41598-018-29444-0/final/mechanism_evidence.json",
+      "need": "Mirror the same mechanism ontology correction in the packet final artifact."
+    },
+    {
+      "artifact": "papers/doi__10.1038_s41598-018-29444-0/final/review_report.json",
+      "need": "Have worker-6 re-adjudicate after the mechanism ontology repair and update review status/provenance if accepted."
+    }
+  ],
+  "blocks": [
+    "layer3_mechanism_review",
+    "paper_level_final_artifact_confirmation",
+    "publication_grade_confirmation"
+  ],
+  "created_at": "2026-06-22T03:51:44Z"
+}

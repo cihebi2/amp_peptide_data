@@ -1,0 +1,249 @@
+{
+  "paper_id": "doi__10.1021_acsomega.2c02778",
+  "pilot_sample_id": "PILOT20-013",
+  "audit_record_id": "doi__10.1021_acsomega.2c02778:database_audit:1",
+  "reviewed_at": "2026-06-22T04:12:18Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "model_provenance": {
+    "requested_review_model": "gpt-5.5",
+    "requested_reasoning_effort": "xhigh",
+    "machine_verification_status": "not_exposed_in_local_session",
+    "limitation": "The shell environment exposes CODEX/OMX session variables but no machine-verifiable current model or reasoning-effort value. Per the prompt, the terminal decision is unverifiable_best_effort even though the scientific source review was completed locally."
+  },
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1021_acsomega.2c02778",
+    "packet_manifest_status": {
+      "material_queue_status": "material_extracted_with_gaps",
+      "analysis_queue_status": "analysis_needs_analysis_rework",
+      "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance"
+    },
+    "later_analysis_status": {
+      "status": "analysis_accepted_with_cautions",
+      "open_rework_ticket_ids": [],
+      "resolved_rework_ticket_ids": [
+        "rwk-complete-test-0001"
+      ],
+      "semantic_gate_ready": true,
+      "publication_quality_ready": true
+    },
+    "surfaces_present": {
+      "raw_paper_xml": "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.xml",
+      "raw_paper_pdf": "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.pdf",
+      "xml_sections": "paper_packets/doi__10.1021_acsomega.2c02778/extracted/xml_sections.json",
+      "pdf_text": "paper_packets/doi__10.1021_acsomega.2c02778/extracted/pdf_text/local-APD6-paper.txt",
+      "figure_captions": "paper_packets/doi__10.1021_acsomega.2c02778/extracted/figure_captions.json",
+      "locator_index": "paper_packets/doi__10.1021_acsomega.2c02778/locators/locator_index.json",
+      "linked_experiment_records": "paper_packets/doi__10.1021_acsomega.2c02778/database/linked_experiment_records.jsonl",
+      "linked_literature_records": "paper_packets/doi__10.1021_acsomega.2c02778/database/linked_literature_records.jsonl"
+    },
+    "surfaces_absent_or_empty": {
+      "raw_oa_package": "absent",
+      "raw_supplementary_original": "absent",
+      "supplementary_text_jsonl": "present_empty",
+      "linked_sequence_records_jsonl": "present_empty",
+      "linked_assay_records_jsonl": "present_empty"
+    },
+    "material_gap_assessment": {
+      "gap_code": "local_supporting_information_pdf_absent",
+      "source_evidence": [
+        "paper.xml links ao2c02778_si_001.pdf and notes PMC has supplement",
+        "material_inventory reports raw/supplementary_original absent and no OA package",
+        "extraction_errors.jsonl says no supplementary assets found in local landed folder or OA package"
+      ],
+      "impact": "Nonblocking for Table 1 MBC values because XML/PDF contain the values and methods; blocking for primary-exact sequence verification, so the sequence caution must be preserved."
+    }
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "APD6:AP03820",
+    "database": "APD6",
+    "status_under_review": "sequence_modified_not_normalized",
+    "status_decision": "justified_preserve_caution",
+    "release_row_vs_sample_final_record": {
+      "consistent_fields": [
+        "audit_record_id",
+        "source_id",
+        "status",
+        "layer1_status",
+        "matched_activity_record_ids"
+      ],
+      "current_release_table_identity_check": "The audit_record_id is present in releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv at current rg line 17172, while the packet release_row.json carries _release_tsv_row_number=16670."
+    },
+    "source_backing": [
+      {
+        "claim": "Paper identity and citation traceability match DOI/PMID/PMCID.",
+        "locator": "raw/paper.xml:article-meta DOI=10.1021/acsomega.2c02778 PMID=36120057 PMCID=PMC9475619 plus database:linked_literature_records:row=1"
+      },
+      {
+        "claim": "The local primary paper identifies the tested truncation as CP1 (1-29) and reports matching Table 1 MBC values.",
+        "locator": "raw/paper.xml xml:table=1:rows=2-4; xml:sec=4.3 Minimum Bactericidal Concentration (MBC)"
+      },
+      {
+        "claim": "APD6 sequence is database-supported but not primary-exact from local material.",
+        "locator": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:APD6:AP03820"
+      }
+    ],
+    "why_not_source_verified": "The local XML/PDF repeatedly support CP1 (1-29) and Table 1 activity, but the exact sequence-bearing supporting-information PDF ao2c02778_si_001.pdf is not locally recoverable. Therefore the row should remain sequence_modified_not_normalized rather than clean source_verified.",
+    "database_row_check": {
+      "linked_experiment_record": "database/linked_experiment_records.jsonl row 1 reports APD6 AP03820 MBC 2.4 uM, 0.05 uM, and 0.2 uM for L. innocua, E. coli BL21, and E. coli ML35.",
+      "merged_sequence_record": "all_sequences.csv line for APD6:AP03820 gives SWLSKTAKKLENSAKKRISEGIAIAIQGG."
+    }
+  },
+  "layer2_activity_toxicity_review": {
+    "sample_relevant_activity_rows_checked": [
+      {
+        "record_id": "doi__10.1021_acsomega.2c02778:table1:cp1_1_29:listeria_innocua:mbc",
+        "endpoint": "MBC",
+        "raw_value": "2.4",
+        "raw_unit": "uM",
+        "target_species": "Listeria innocua",
+        "strain": "not specified",
+        "source_locator": "xml:table=1:row=2"
+      },
+      {
+        "record_id": "doi__10.1021_acsomega.2c02778:table1:cp1_1_29:e_coli_bl21:mbc",
+        "endpoint": "MBC",
+        "raw_value": "0.05",
+        "raw_unit": "uM",
+        "target_species": "Escherichia coli",
+        "strain": "BL21",
+        "source_locator": "xml:table=1:row=3"
+      },
+      {
+        "record_id": "doi__10.1021_acsomega.2c02778:table1:cp1_1_29:e_coli_ml35:mbc",
+        "endpoint": "MBC",
+        "raw_value": "0.2",
+        "raw_unit": "uM",
+        "target_species": "Escherichia coli",
+        "strain": "ML35",
+        "source_locator": "xml:table=1:row=4"
+      }
+    ],
+    "assay_method_locator": "xml:sec=4.3 Minimum Bactericidal Concentration (MBC); pdf_text/local-APD6-paper.txt lines around 707-720",
+    "source_review_result": "The sampled APD6 activity values, units, endpoint, target species/strain fields, and locators are primary-source backed for the three CP1 (1-29) Table 1 MBC rows.",
+    "toxicity_review": "No hemolysis/cytotoxicity endpoint is used for the sampled APD6 row. The final activity artifact reports zero toxicity records; this is acceptable for this row because the APD6 sampled evidence is Table 1 bactericidal activity.",
+    "semantic_core_check": {
+      "activity_records_missing_endpoint_value_unit_target_or_locator": 0,
+      "database_only_rows_treated_as_primary": 0,
+      "sentence_fragment_targets_observed": false
+    }
+  },
+  "layer3_mechanism_review": {
+    "mechanism_claim_count": 3,
+    "source_backing": [
+      {
+        "claim_id": "mech-001",
+        "locator": "xml:sec=7 Comparison of the Activity of CP1 (WT) and CP1 (1-29); xml:table=1",
+        "assessment": "Source-backed phenotype comparison; should map to phenotype_supported under the strict ontology."
+      },
+      {
+        "claim_id": "mech-002",
+        "locator": "xml:sec=5; xml:sec=6; xml:fig=3; xml:fig=4; xml:fig=5",
+        "assessment": "Source-backed NMR/DPC and cross-saturation evidence with model-membrane limitation."
+      },
+      {
+        "claim_id": "mech-003",
+        "locator": "xml:sec=7; xml:fig=6; xml:sec=4.4 DNA-Binding Experiments",
+        "assessment": "Direct DNA electrophoretic mobility shift assay claim has a direct assay type and locator."
+      }
+    ],
+    "direct_mechanism_check": {
+      "direct_claims_missing_direct_assay_type_or_locator": 0,
+      "direct_claims_overpromoted_from_computation_or_discussion": 0
+    },
+    "ontology_vocabulary_check": {
+      "status": "caution",
+      "non_standard_evidence_class_labels": [
+        {
+          "claim_id": "mech-001",
+          "current": "phenotypic_activity_comparison",
+          "recommended_standard_class": "phenotype_supported"
+        },
+        {
+          "claim_id": "mech-002",
+          "current": "structural_membrane_mimetic_evidence",
+          "recommended_standard_class": "direct_mechanism with model-membrane limitation, or inferred_mechanism if the atlas wants direct_mechanism reserved for cell-level mechanism closure"
+        }
+      ],
+      "reason_not_hard_rework_in_this_result": "All three claims have claim_id, claim_text, evidence_class text, source locator, and the direct DNA mechanism has a direct assay type. The vocabulary issue should be preserved as a caution/follow-up because the terminal JSON decision is already constrained by unverifiable model provenance."
+    }
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "best_effort_scientific_assessment": "accepted_with_cautions_confirmed",
+    "scientific_assessment_reason": "The sampled APD6 row is source-backed for CP1 (1-29) Table 1 MBC values and citation traceability, but the exact sequence-bearing supplement is absent locally, so sequence_modified_not_normalized must remain. No hard activity-row defect was found for the sampled row. Mechanism evidence is source-located and not overpromoted, but two mechanism evidence_class labels should be normalized to the standard ontology in a follow-up.",
+    "terminal_decision_reason": "The current session cannot machine-prove the requested gpt-5.5/xhigh runtime. Per the prompt, the written decision is unverifiable_best_effort despite a bounded local source review.",
+    "rework_ticket_written": false
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "scope": "model_provenance",
+      "severity": "caution",
+      "status": "unverifiable_best_effort",
+      "note": "No local environment variable or runtime artifact exposed machine-verifiable proof of gpt-5.5 plus xhigh reasoning."
+    },
+    {
+      "scope": "release_row_locator",
+      "severity": "caution",
+      "status": "locator_drift",
+      "note": "Packet release_row.json reports tsv_row=16670, but current release TSV identity lookup finds the sampled audit_record_id at rg line 17172."
+    },
+    {
+      "scope": "material_packet",
+      "severity": "caution",
+      "status": "material_extracted_with_gaps",
+      "note": "Primary XML/PDF are present and sufficient for Table 1 MBC review, but local supplementary and OA package assets are absent."
+    },
+    {
+      "scope": "database_sequence",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized",
+      "note": "APD6 AP03820 sequence is database-supported; local primary material supports CP1 (1-29) label and MBC values but not the exact sequence figure."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "non_standard_evidence_class_labels",
+      "note": "mech-001 and mech-002 use custom evidence_class labels rather than the strict five-class ontology, although required claim IDs, text, locators, and direct assay types are present where needed."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-013__doi__10.1021_acsomega.2c02778/true_review_result.schema.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.xml",
+    "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.pdf",
+    "paper_packets/doi__10.1021_acsomega.2c02778/extracted/pdf_text/local-APD6-paper.txt",
+    "paper_packets/doi__10.1021_acsomega.2c02778/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02778/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02778/final/database_record_verification.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/final/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.2c02778/final/review_report.json",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv"
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per prompt.",
+    "The local session did not expose machine-verifiable model or reasoning-effort provenance.",
+    "The ACS supporting-information PDF ao2c02778_si_001.pdf is referenced by XML but absent from local packet and landed assets; exact sequence verification therefore remains database-supported rather than primary-exact.",
+    "Figure/image-level visual inspection was not required for the sampled Table 1 activity values; mechanism review used XML/PDF text and figure captions already extracted locally."
+  ]
+}

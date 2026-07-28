@@ -1,0 +1,555 @@
+{
+  "artifact_type": "database_record_audit",
+  "paper_id": "doi__10.3389_fchem.2021.741290",
+  "generated_at": "2026-05-05T20:03:28Z",
+  "source_reviewed": true,
+  "reviewed_by_owner_worker": "worker-4",
+  "audit_scope": "Worker-4 reconciled packet-linked rows plus relevant merged APD6/DBAASP rows against primary XML/PDF Table 1 and article metadata.",
+  "database_row_counts": {
+    "packet_linked_assay_records": 0,
+    "packet_linked_dramp_activity_records": 0,
+    "packet_linked_experiment_records": 1,
+    "packet_linked_literature_records": 1,
+    "packet_linked_sequence_records": 0,
+    "merged_dbaasp_activity_rows_reviewed": 9,
+    "merged_sequence_rows_reviewed": 2,
+    "merged_literature_link_rows_reviewed": 2
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP03282",
+      "sequence_key": "APD6:AP03282",
+      "source_table": "all_sequences.csv;apd6_activity_text_records.csv;linked_experiment_records.jsonl",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Pagoamide A APD6 sequence/catalog entry",
+      "database_measure": "APD6 stores a linear residue string plus free-text chemical-modification warnings for a modified cyclic depsipeptide.",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3",
+          "database_sequence_locator": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:line=3283"
+        },
+        "status": "modified_sequence_not_safely_normalized",
+        "reason": "Primary paper supports the modified cyclic depsipeptide identity, but the APD6 linear sequence representation omits explicit nonstandard residue/cyclization semantics; no normalization was attempted."
+      },
+      "modification_check": {
+        "status": "source_supported_modified_scaffold_not_normalized",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "merged_output:all_sequences.csv:line=3283"
+      },
+      "conflict_context": "APD6 sequence/catalog entry is linked to the prior discovery paper and represents a chemically modified cyclic depsipeptide as a simplified residue string; current paper verifies synthetic Pagoamide A identity and activity but not a safe normalized APD6 sequence conversion.",
+      "conflict_flags": [
+        "modified_sequence_representation",
+        "prior_discovery_citation_context"
+      ],
+      "review_notes": "Preserved as sequence_modified_not_normalized rather than source_verified to avoid smoothing a modified cyclic depsipeptide into a plain linear sequence.",
+      "matched_activity_record_ids": [
+        "doi__10.3389_fchem.2021.741290:table1:row2:pagoamide_a:bacillus_subtilis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row3:pagoamide_a:escherichia_coli:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row4:pagoamide_a:enterococcus_faecalis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row5:pagoamide_a:staphylococcus_aureus:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row6:pagoamide_a:klebsiella_pneumoniae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row7:pagoamide_a:acinetobacter_baumannii:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row8:pagoamide_a:pseudomonas_aeruginosa:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row9:pagoamide_a:enterobacter_cloacae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row10:pagoamide_a:candida_albicans:MIC"
+      ],
+      "verification_level": "primary_structure_context_and_database_sequence_row_reviewed"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_sequences.csv;sequence_literature_links.csv",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "source_entity": "Pagoamide A",
+      "database_subject": "DBAASP Pagoamide A sequence/literature identity",
+      "database_measure": "DBAASP sequence/catalog row for Pagoamide A with current-paper literature link.",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3",
+          "database_sequence_locator": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:line=24637"
+        },
+        "status": "source_verified_with_modified_residue_caution"
+      },
+      "modification_check": {
+        "status": "modified_cyclic_depsipeptide_context_preserved",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "locator": "merged_output:sequence_literature_links.csv:line=6037"
+      },
+      "conflict_context": "",
+      "review_notes": "DBAASP sequence/literature link traces to the current DOI/PMID/PMCID; modified-residue representation remains cautionary, not converted.",
+      "matched_activity_record_ids": [
+        "doi__10.3389_fchem.2021.741290:table1:row2:pagoamide_a:bacillus_subtilis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row3:pagoamide_a:escherichia_coli:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row4:pagoamide_a:enterococcus_faecalis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row5:pagoamide_a:staphylococcus_aureus:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row6:pagoamide_a:klebsiella_pneumoniae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row7:pagoamide_a:acinetobacter_baumannii:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row8:pagoamide_a:pseudomonas_aeruginosa:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row9:pagoamide_a:enterobacter_cloacae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row10:pagoamide_a:candida_albicans:MIC"
+      ],
+      "verification_level": "primary_structure_context_and_literature_link_reviewed",
+      "caution_flags": [
+        "modified_residue_representation_not_converted"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:literature:34595153",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Total Synthesis and Antimicrobial Evaluation of Pagoamide A.",
+      "database_measure": "Literature link only; no assay value in this packet row.",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "status": "literature_link_verified_not_sequence_row"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3389_fchem.2021.741290/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "The packet DBAASP literature row matches the current DOI, PMID, PMCID, and title; it is treated as citation traceability rather than assay evidence.",
+      "matched_activity_record_ids": [],
+      "verification_level": "article_metadata_match"
+    },
+    {
+      "source_id": "APD6:AP03282:entry_text",
+      "sequence_key": "APD6:AP03282",
+      "source_table": "linked_experiment_records.jsonl;apd6_activity_text_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "APD6 free-text activity/comment field",
+      "database_measure": "APD6 free text embeds current-paper antimicrobial activity but the row citation/title point to the prior discovery paper.",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "database_locator": "paper_packets/doi__10.3389_fchem.2021.741290/database/linked_experiment_records.jsonl:row=1"
+        },
+        "status": "activity_fragment_source_verified_sequence_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3389_fchem.2021.741290/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "conflict_context": "The APD6 entry text matches the current paper Table 1 activity pattern, but the APD6 row pubmed/reference fields point to the 2020 discovery paper rather than the 2021 antimicrobial-evaluation paper.",
+      "conflict_flags": [
+        "database_citation_mismatch",
+        "free_text_activity_embeds_current_paper"
+      ],
+      "review_notes": "Activity content was used only as database cross-check; primary activity rows come from source XML/PDF Table 1.",
+      "matched_activity_record_ids": [
+        "doi__10.3389_fchem.2021.741290:table1:row2:pagoamide_a:bacillus_subtilis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row3:pagoamide_a:escherichia_coli:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row4:pagoamide_a:enterococcus_faecalis:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row5:pagoamide_a:staphylococcus_aureus:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row6:pagoamide_a:klebsiella_pneumoniae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row7:pagoamide_a:acinetobacter_baumannii:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row8:pagoamide_a:pseudomonas_aeruginosa:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row9:pagoamide_a:enterobacter_cloacae:MIC",
+        "doi__10.3389_fchem.2021.741290:table1:row10:pagoamide_a:candida_albicans:MIC"
+      ],
+      "verification_level": "primary_activity_values_match_database_text_but_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141928",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Bacillus subtilis BCRC 10614",
+      "database_measure": "MIC 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row2:pagoamide_a:bacillus_subtilis:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160326"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141929",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Escherichia coli DH5α",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row3:pagoamide_a:escherichia_coli:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160327"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141930",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Enterococcus faecalis BCRC 10789",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row4:pagoamide_a:enterococcus_faecalis:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160328"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141931",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Staphylococcus aureus BCRC 11863",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row5:pagoamide_a:staphylococcus_aureus:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160329"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141932",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Klebsiella pneumoniae BCRC 11546",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row6:pagoamide_a:klebsiella_pneumoniae:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160330"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141933",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Acinetobacter baumannii BCRC 10591",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row7:pagoamide_a:acinetobacter_baumannii:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160331"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141934",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Pseudomonas aeruginosa BCRC 11864",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row8:pagoamide_a:pseudomonas_aeruginosa:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160332"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141935",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Enterobacter cloacae BCRC 10401",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row9:pagoamide_a:enterobacter_cloacae:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160333"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    },
+    {
+      "source_id": "DBAASP:DBAASPN_18305:assay:141936",
+      "sequence_key": "DBAASP:DBAASPN_18305",
+      "source_table": "all_experimental_records.csv;dbaasp_assay_records.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "source_entity": "Pagoamide A",
+      "database_subject": "Candida albicans BCRC 21538",
+      "database_measure": "Not active up to 64 μg/mL",
+      "assay_type": "target_activity",
+      "matched_activity_record_id": "doi__10.3389_fchem.2021.741290:table1:row10:pagoamide_a:candida_albicans:MIC",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3:Results;xml:table=1",
+          "identity_locator": "xml:sec=1:Introduction;xml:fig=1:SCHEME 1;xml:fig=3:SCHEME 3"
+        },
+        "status": "activity_value_source_verified_database_citation_conflicted"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta;xml:ref=B7"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "merged_output:all_experimental_records.csv:line=160334"
+      },
+      "conflict_context": "DBAASP assay row value is supported by the current paper Table 1, but merged database assay rows cite PMID 31916778/prior discovery paper instead of the current PMID 34595153.",
+      "conflict_flags": [
+        "database_activity_citation_mismatch"
+      ],
+      "review_notes": "Retained as source_conflict while the primary source-reviewed activity record carries the authoritative value and locator.",
+      "verification_level": "primary_activity_value_verified_database_citation_conflict_preserved"
+    }
+  ],
+  "status_summary": {
+    "sequence_modified_not_normalized": 1,
+    "source_verified": 2,
+    "source_conflict": 10
+  },
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fchem.2021.741290/handoff_context.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/packet_manifest.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.3389_fchem.2021.741290/raw/paper.xml",
+    "paper_packets/doi__10.3389_fchem.2021.741290/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fchem.2021.741290/raw/oa_package/local-DBAASP-PMC8476950.tar.gz",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/pdf_text/fchem-09-741290.txt",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/pdf_text/DataSheet1.txt",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/pdf_text/DataSheet2.txt",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fchem.2021.741290/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2021.741290/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2021.741290/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2021.741290/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "tools_attempted": [
+    "paper-body-table-worker skill review",
+    "paper-database-record-auditor skill review",
+    "paper-adjudicator-review-worker skill review",
+    "ElementTree XML table extraction",
+    "rg over XML/PDF/supplementary text and merged database outputs",
+    "pdftotext-derived packet text review",
+    "tar OA package member inventory",
+    "file(1) supplementary landing asset inspection",
+    "JSON/JSONL packet and database row review"
+  ],
+  "unrecoverable_material_gaps": [],
+  "caution_summary": [
+    "APD6 and DBAASP database activity rows carry current-paper values but cite the prior discovery paper; conflicts are preserved with source locators.",
+    "Modified cyclic depsipeptide sequence representations were not converted to a plain normalized sequence."
+  ]
+}

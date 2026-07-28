@@ -1,0 +1,73 @@
+{
+  "paper_id": "doi__10.1038_s41598-019-39042-3",
+  "generated_at": "2026-05-03T05:44:16Z",
+  "reviewed_at": "2026-05-03T05:44:16Z",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "resolved_qc_failure_reasons": [
+    {
+      "code": "full_source_review_not_completed",
+      "owner_worker": "worker-6",
+      "severity": "resolved",
+      "reason": "Worker-6 source-reviewed XML/PDF/supplement inventory/database snapshots and wrote paper-specific adjudication."
+    },
+    {
+      "code": "database_conflicts_require_adjudication",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "resolved_with_cautions",
+      "reason": "Database rows are linked to source activity rows where supported; modified-sequence/database-only cases are preserved with explicit statuses and context."
+    },
+    {
+      "code": "activity_extraction_requires_worker2_rework",
+      "owner_worker": "worker-2",
+      "severity": "resolved",
+      "reason": "Table 1 and Table 2 were manually parsed into row-level records with endpoint/value/unit/target/source locators."
+    },
+    {
+      "code": "no_supported_activity_rows_extracted",
+      "owner_worker": "worker-2",
+      "severity": "resolved",
+      "reason": "182 supported activity/toxicity records are present."
+    }
+  ],
+  "rework_context_packet_required": false,
+  "open_rework_ticket_ids": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_table_s1_s7_exact_rows_not_locally_available",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-019-39042-3/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-019-39042-3/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-019-39042-3/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-019-39042-3/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-019-39042-3/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-019-39042-3/supplementary/landing-10.bin"
+      ],
+      "tools_attempted": [
+        "file on supplementary assets",
+        "HTML href inspection for supplemental/MOESM/download links",
+        "XML and PDF text search for Table S1/Table S7 values"
+      ],
+      "why_unrecoverable": "Local supplementary assets are publisher HTML article landing pages rather than downloadable supplemental data files; exact Table S1/S7 rows are not present in packet-local structured or PDF/XML text.",
+      "impact": "No database-linked exact Table S7 isolate rows were found; main-text Table 1/Table 2 activity, hemolysis, method, and source-supported range claims were recovered. The gap is preserved as a caution and does not block current publication-grade gate.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "repair_summary": {
+    "accepted": true,
+    "activity_records_after": 182,
+    "database_status_summary_after": {
+      "source_verified": 358,
+      "source_conflict": 70,
+      "sequence_modified_not_normalized": 137
+    },
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "blocking_unrecoverable_gap_count": 0
+  }
+}

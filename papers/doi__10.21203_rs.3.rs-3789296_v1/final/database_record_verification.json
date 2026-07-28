@@ -1,0 +1,485 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-3789296_v1",
+  "generated_at": "2026-05-05T18:28:51Z",
+  "source_reviewed": true,
+  "worker": "worker-4",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "worker-4 source-reviewed DBAASP reconciliation from packet literature links, merged sequence catalog, merged DBAASP assay rows, primary PDF Table 1, and supplementary DOCX sequence tables",
+  "database_row_counts": {
+    "packet_linked_literature_records": 3,
+    "packet_linked_sequence_records": 0,
+    "packet_linked_assay_records": 0,
+    "merged_sequence_records_used": 3,
+    "merged_dbaasp_assay_records_used": 15,
+    "merged_literature_links_used": 3
+  },
+  "source_paths_checked": [
+    "rework_context/doi__10.21203_rs.3.rs-3789296_v1/handoff_context.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/packet_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/locators/locator_index.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_status.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.pdf",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.xml",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-4.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/database_source_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_assay_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "tools_attempted": [
+    "jq artifact inspection",
+    "rg targeted source/database search",
+    "pdftotext-derived packet text inspection",
+    "python OOXML table parser for supplementary DOCX",
+    "python csv.DictReader for merged DBAASP sequence/assay rows",
+    "file/unzip for supplementary asset type checks"
+  ],
+  "record_audits": [
+    {
+      "source_id": "DBAASPS_22030",
+      "sequence_key": "DBAASP:DBAASPS_22030",
+      "source_table": "merged DBAASP sequence and assay CSVs; packet linked_literature_records.jsonl",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:source_id=DBAASPS_22030"
+      },
+      "merged_sequence_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "all_sequences.csv:source_id=DBAASPS_22030"
+      },
+      "merged_literature_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "locator": "sequence_literature_links.csv:line=24097;source_id=DBAASPS_22030"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:title/doi context; DOI 10.21203/rs.3.rs-3789296/v1; Table 1 lines=253-335"
+      },
+      "database_subject": "EME4(6)",
+      "database_measure": "50% Hemolysis; IC50; MIC",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "matched_activity_record_ids": [
+        "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173888",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173887",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173889",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme46-ic50-21010",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme46-hc50-21009"
+      ],
+      "sequence_check": {
+        "source_sequence": "RWWRWI-NH2",
+        "database_sequence_letters": "RWWRWI",
+        "agreement": "sequence_letters_match_primary_source; C-terminal amidation is reported in source sequence table but not represented in merged sequence letters",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+          "locator": "supplementary_docx:table=11:row=EME4(6)"
+        }
+      },
+      "name_check": {
+        "primary_name": "EME4(6)",
+        "database_name": "EME4(6)",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=336-343; leading peptide names and strains; Table 1 lines=253-335"
+        }
+      },
+      "source_organism_check": {
+        "primary_source": "synthetic predicted peptide; peptides with purity >95% were custom synthesized",
+        "database_source": "Synthetic",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=481-485"
+        }
+      },
+      "modification_check": {
+        "primary_modifications": "C-terminal amidation (-NH2) shown in supplementary DOCX sequence tables",
+        "database_modification_fields": "Merged DBAASP sequence catalog stores amino-acid letters without the terminal -NH2 marker",
+        "status": "sequence_modified_not_normalized"
+      },
+      "activity_checks": [
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194513;source_id=DBAASPS_22030;assay_id=173888"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173888",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194512;source_id=DBAASPS_22030;assay_id=173887"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173887",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194514;source_id=DBAASPS_22030;assay_id=173889"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme46-mic-173889",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=498-503; supplementary_fig=3"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194511;source_id=DBAASPS_22030;assay_id=21010"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme46-ic50-21010",
+          "primary_endpoint": "IC50",
+          "database_value": "137.8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=516-519; supplementary_fig=4"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194510;source_id=DBAASPS_22030;assay_id=21009"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme46-hc50-21009",
+          "primary_endpoint": "HC50",
+          "database_value": "643.4",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        }
+      ],
+      "review_notes": "Primary source and merged DBAASP rows agree on names, sequence letters, MIC, IC50, and HC50 values. Retained as sequence_modified_not_normalized because source sequences are amidated but merged sequence letters omit the terminal -NH2 marker.",
+      "conflict_context": "C-terminal amidation is source-supported and not normalized in the merged sequence catalog; this is a retained modification caveat, not a value conflict.",
+      "conflict_flags": [
+        "c_terminal_amidation_not_encoded_in_merged_sequence_catalog"
+      ]
+    },
+    {
+      "source_id": "DBAASPS_22031",
+      "sequence_key": "DBAASP:DBAASPS_22031",
+      "source_table": "merged DBAASP sequence and assay CSVs; packet linked_literature_records.jsonl",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:source_id=DBAASPS_22031"
+      },
+      "merged_sequence_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "all_sequences.csv:source_id=DBAASPS_22031"
+      },
+      "merged_literature_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "locator": "sequence_literature_links.csv:line=24098;source_id=DBAASPS_22031"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:title/doi context; DOI 10.21203/rs.3.rs-3789296/v1; Table 1 lines=253-335"
+      },
+      "database_subject": "EME7(7)",
+      "database_measure": "50% Hemolysis; IC50; MIC",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "matched_activity_record_ids": [
+        "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173891",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173890",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173892",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme77-ic50-21012",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme77-hc50-21011"
+      ],
+      "sequence_check": {
+        "source_sequence": "RRWWRIW-NH2",
+        "database_sequence_letters": "RRWWRIW",
+        "agreement": "sequence_letters_match_primary_source; C-terminal amidation is reported in source sequence table but not represented in merged sequence letters",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+          "locator": "supplementary_docx:table=13:row=EME7(7)"
+        }
+      },
+      "name_check": {
+        "primary_name": "EME7(7)",
+        "database_name": "EME7(7)",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=336-343; leading peptide names and strains; Table 1 lines=253-335"
+        }
+      },
+      "source_organism_check": {
+        "primary_source": "synthetic predicted peptide; peptides with purity >95% were custom synthesized",
+        "database_source": "Synthetic",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=481-485"
+        }
+      },
+      "modification_check": {
+        "primary_modifications": "C-terminal amidation (-NH2) shown in supplementary DOCX sequence tables",
+        "database_modification_fields": "Merged DBAASP sequence catalog stores amino-acid letters without the terminal -NH2 marker",
+        "status": "sequence_modified_not_normalized"
+      },
+      "activity_checks": [
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194518;source_id=DBAASPS_22031;assay_id=173891"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173891",
+          "primary_endpoint": "MIC",
+          "database_value": "8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194517;source_id=DBAASPS_22031;assay_id=173890"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173890",
+          "primary_endpoint": "MIC",
+          "database_value": "8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194519;source_id=DBAASPS_22031;assay_id=173892"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme77-mic-173892",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=498-503; supplementary_fig=3"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194516;source_id=DBAASPS_22031;assay_id=21012"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme77-ic50-21012",
+          "primary_endpoint": "IC50",
+          "database_value": "248.8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=516-519; supplementary_fig=4"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194515;source_id=DBAASPS_22031;assay_id=21011"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme77-hc50-21011",
+          "primary_endpoint": "HC50",
+          "database_value": ">1500",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        }
+      ],
+      "review_notes": "Primary source and merged DBAASP rows agree on names, sequence letters, MIC, IC50, and HC50 values. Retained as sequence_modified_not_normalized because source sequences are amidated but merged sequence letters omit the terminal -NH2 marker.",
+      "conflict_context": "C-terminal amidation is source-supported and not normalized in the merged sequence catalog; this is a retained modification caveat, not a value conflict.",
+      "conflict_flags": [
+        "c_terminal_amidation_not_encoded_in_merged_sequence_catalog"
+      ]
+    },
+    {
+      "source_id": "DBAASPS_22032",
+      "sequence_key": "DBAASP:DBAASPS_22032",
+      "source_table": "merged DBAASP sequence and assay CSVs; packet linked_literature_records.jsonl",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:source_id=DBAASPS_22032"
+      },
+      "merged_sequence_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "all_sequences.csv:source_id=DBAASPS_22032"
+      },
+      "merged_literature_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "locator": "sequence_literature_links.csv:line=24099;source_id=DBAASPS_22032"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:title/doi context; DOI 10.21203/rs.3.rs-3789296/v1; Table 1 lines=253-335"
+      },
+      "database_subject": "EME11(8)",
+      "database_measure": "50% Hemolysis; IC50; MIC",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "matched_activity_record_ids": [
+        "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173894",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173893",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173895",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme118-ic50-21014",
+        "doi__10.21203_rs.3.rs-3789296_v1-eme118-hc50-21013"
+      ],
+      "sequence_check": {
+        "source_sequence": "RRWIRWIT-NH2",
+        "database_sequence_letters": "RRWIRWIT",
+        "agreement": "sequence_letters_match_primary_source; C-terminal amidation is reported in source sequence table but not represented in merged sequence letters",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+          "locator": "supplementary_docx:table=14:row=EME11(8)"
+        }
+      },
+      "name_check": {
+        "primary_name": "EME11(8)",
+        "database_name": "EME11(8)",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=336-343; leading peptide names and strains; Table 1 lines=253-335"
+        }
+      },
+      "source_organism_check": {
+        "primary_source": "synthetic predicted peptide; peptides with purity >95% were custom synthesized",
+        "database_source": "Synthetic",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:lines=481-485"
+        }
+      },
+      "modification_check": {
+        "primary_modifications": "C-terminal amidation (-NH2) shown in supplementary DOCX sequence tables",
+        "database_modification_fields": "Merged DBAASP sequence catalog stores amino-acid letters without the terminal -NH2 marker",
+        "status": "sequence_modified_not_normalized"
+      },
+      "activity_checks": [
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194523;source_id=DBAASPS_22032;assay_id=173894"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173894",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194522;source_id=DBAASPS_22032;assay_id=173893"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173893",
+          "primary_endpoint": "MIC",
+          "database_value": "16",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=492-497"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194524;source_id=DBAASPS_22032;assay_id=173895"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme118-mic-173895",
+          "primary_endpoint": "MIC",
+          "database_value": "8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=498-503; supplementary_fig=3"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194521;source_id=DBAASPS_22032;assay_id=21014"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme118-ic50-21014",
+          "primary_endpoint": "IC50",
+          "database_value": "652.8",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        },
+        {
+          "source_locator": {
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:lines=253-335; table=1; methods=516-519; supplementary_fig=4"
+          },
+          "database_row_locator": {
+            "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "locator": "dbaasp_assay_records.csv:line=194520;source_id=DBAASPS_22032;assay_id=21013"
+          },
+          "primary_record_id": "doi__10.21203_rs.3.rs-3789296_v1-eme118-hc50-21013",
+          "primary_endpoint": "HC50",
+          "database_value": ">1500",
+          "database_unit": "µg/mL",
+          "match_status": "matched_table_1_or_methods"
+        }
+      ],
+      "review_notes": "Primary source and merged DBAASP rows agree on names, sequence letters, MIC, IC50, and HC50 values. Retained as sequence_modified_not_normalized because source sequences are amidated but merged sequence letters omit the terminal -NH2 marker.",
+      "conflict_context": "C-terminal amidation is source-supported and not normalized in the merged sequence catalog; this is a retained modification caveat, not a value conflict.",
+      "conflict_flags": [
+        "c_terminal_amidation_not_encoded_in_merged_sequence_catalog"
+      ]
+    }
+  ],
+  "status_summary": {
+    "sequence_modified_not_normalized": 3
+  },
+  "unrecoverable_material_gaps": []
+}

@@ -1,0 +1,485 @@
+{
+  "paper_id": "PMC12606902",
+  "requests": {
+    "rwk-PMC12606902-campaign-r01-worker2-activity-toxicity-not-source-complete": {
+      "owner_worker": "worker-2",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "created_at": "2026-07-27T12:16:48.857590Z",
+      "reason": "Layer-2 final activity/toxicity evidence is not source-complete or locator-faithful. Table 1 has many source MIC observations, including 14 non-slash Dap values and 17 YZ462 values, but the final keeps only two daptomycin rows and inverts row_label/column_label. The same final omits source-reported toxicity/selectivity values from xml:p:33."
+    },
+    "rwk-PMC12606902-campaign-r01-worker5-mechanism-entity-conflation": {
+      "owner_worker": "worker-5",
+      "target_queue": "mechanism",
+      "severity": "blocking",
+      "created_at": "2026-07-27T12:16:48.861913Z",
+      "reason": "The final mechanism ontology assigns YZ462 source-located mechanism evidence to daptomycin. Direct membrane disruption, membrane-potential, SEM, ITC, ROS, and biofilm locators cited in the final all describe YZ462 treatment in the primary source, not daptomycin mechanism assays."
+    },
+    "rwk-PMC12606902-campaign-r01-worker4-placeholder-sequence-length-mismatch": {
+      "owner_worker": "worker-4",
+      "target_queue": "database",
+      "severity": "blocking",
+      "created_at": "2026-07-27T12:16:48.866414Z",
+      "reason": "Final database verification contains placeholder-like sequence='None' with sequence_length=4 in multiple candidate objects. Independent residue counting does not support length 4 for a plain one-letter peptide sequence, and the primary source provides no source-located daptomycin sequence/modification identity for these fallback rows."
+    },
+    "rwk-PMC12606902-campaign-r01-worker3-supplementary-surface-not-exhausted": {
+      "owner_worker": "worker-3",
+      "target_queue": "material",
+      "severity": "blocking",
+      "created_at": "2026-07-27T12:16:48.870809Z",
+      "reason": "Supplementary extraction is not publication-grade exhausted. The packet records both supplements as inventory-only/empty extracted surfaces, and worker-3 reports an unclassified embedded OLE object in the legacy DOC with possible activity/mechanism impact, but no live rework ticket is open and the final review marks supplementary assets exhausted."
+    },
+    "rwk-PMC12606902-campaign-r01-worker1-final-status-and-mirror-inventory-stale": {
+      "owner_worker": "worker-1",
+      "target_queue": "paper",
+      "severity": "blocking",
+      "created_at": "2026-07-27T12:16:48.875266Z",
+      "reason": "Current final inventory is not internally coherent: papers/final/materials_manifest.json remains a pre-analysis packet handoff artifact with analysis_queue_status='analysis_queued', while analysis_status.json and review_report.json claim source-reviewed acceptance. The paper and packet final directories also have non-identical file sets."
+    }
+  },
+  "responses": {
+    "rwk-PMC12606902-campaign-r01-worker2-activity-toxicity-not-source-complete": [
+      {
+        "response_by": "worker-2",
+        "status": null,
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "publication_grade": null,
+        "review_status": null,
+        "created_at": "2026-07-27T12:28:22.121402Z"
+      }
+    ],
+    "rwk-PMC12606902-campaign-r01-worker5-mechanism-entity-conflation": [
+      {
+        "response_by": "worker-5",
+        "status": null,
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "publication_grade": null,
+        "review_status": null,
+        "created_at": "2026-07-27T12:37:26.985359+00:00"
+      }
+    ],
+    "rwk-PMC12606902-campaign-r01-worker4-placeholder-sequence-length-mismatch": [
+      {
+        "response_by": "worker-4",
+        "status": null,
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "publication_grade": null,
+        "review_status": null,
+        "created_at": "2026-07-27T12:49:27.099690+00:00"
+      }
+    ],
+    "rwk-PMC12606902-campaign-r01-worker3-supplementary-surface-not-exhausted": [
+      {
+        "response_by": "worker-3",
+        "status": null,
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "publication_grade": null,
+        "review_status": null,
+        "created_at": "2026-07-27T13:02:48Z"
+      }
+    ],
+    "rwk-PMC12606902-campaign-r01-worker1-final-status-and-mirror-inventory-stale": [
+      {
+        "response_by": "worker-1",
+        "status": null,
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "publication_grade": null,
+        "review_status": null,
+        "created_at": null
+      }
+    ]
+  },
+  "finals": {
+    "paper/activity_toxicity_evidence.json": {
+      "bytes": 11486,
+      "keys": [
+        "activity_records",
+        "artifact_role",
+        "finalization",
+        "generated_at",
+        "lane_status",
+        "normalization_policy",
+        "paper_id",
+        "publication_grade",
+        "publication_grade_basis",
+        "publication_grade_claim",
+        "quality_checks",
+        "source_review_scope",
+        "summary_counts",
+        "toxicity_records",
+        "verification_artifacts",
+        "worker_id"
+      ],
+      "counts": {
+        "activity_records": 2,
+        "toxicity_records": 0
+      },
+      "status": null
+    },
+    "paper/database_record_verification.json": {
+      "bytes": 37665,
+      "keys": [
+        "adjudication_note",
+        "adjudication_status",
+        "analysis_mirror_of",
+        "artifact",
+        "artifact_paths",
+        "artifact_role",
+        "authoritative_database_linkage",
+        "authoritative_dbaasp_ingest_ready",
+        "candidate_machine_rows_reviewed",
+        "caution_summary",
+        "checked_inputs",
+        "citation_traceability",
+        "contracts_read",
+        "cross_database_conflicts",
+        "database_snapshot_summary",
+        "finalization",
+        "generated_at",
+        "lane_result",
+        "leader_preflight_contracts_reviewed",
+        "leader_preflight_evidence_scaffolds_reviewed"
+      ],
+      "counts": {
+        "record_audits": 1,
+        "rework_targets": 0
+      },
+      "status": null
+    },
+    "paper/materials_manifest.json": {
+      "bytes": 13366,
+      "keys": [
+        "analysis_queue_status",
+        "artifact",
+        "artifact_role",
+        "database_snapshot_inputs",
+        "extraction_error_count",
+        "final_mirror_aliases",
+        "generated_at",
+        "intended_final_file_set",
+        "known_missing_or_blocked_materials",
+        "locator_count",
+        "locator_index_path",
+        "material_queue_status",
+        "metadata",
+        "open_rework_ticket_count",
+        "open_rework_ticket_ids",
+        "packet_root",
+        "packet_version",
+        "paper_id",
+        "paper_root",
+        "source_root"
+      ],
+      "counts": {},
+      "status": "analysis_needs_material_rework"
+    },
+    "paper/mechanism_evidence.json": {
+      "bytes": 21311,
+      "keys": [
+        "adjudication_status",
+        "artifact_role",
+        "checked_inputs",
+        "claim_counts_by_evidence_class",
+        "database_candidate_evidence_separation",
+        "deep_acquisition_evidence",
+        "excluded_or_nonpromoted_evidence",
+        "finalization",
+        "generated_at",
+        "internet_browsing_used",
+        "lane",
+        "lane_assessment",
+        "mechanism_claims",
+        "model_gate",
+        "paper_id",
+        "protocol",
+        "publication_grade",
+        "publication_grade_claim",
+        "quality_checks",
+        "reasoning_effort"
+      ],
+      "counts": {
+        "mechanism_claims": 6
+      },
+      "status": null
+    },
+    "paper/mechanism_ontology_record.json": {
+      "bytes": 21311,
+      "keys": [
+        "adjudication_status",
+        "artifact_role",
+        "checked_inputs",
+        "claim_counts_by_evidence_class",
+        "database_candidate_evidence_separation",
+        "deep_acquisition_evidence",
+        "excluded_or_nonpromoted_evidence",
+        "finalization",
+        "generated_at",
+        "internet_browsing_used",
+        "lane",
+        "lane_assessment",
+        "mechanism_claims",
+        "model_gate",
+        "paper_id",
+        "protocol",
+        "publication_grade",
+        "publication_grade_claim",
+        "quality_checks",
+        "reasoning_effort"
+      ],
+      "counts": {
+        "mechanism_claims": 6
+      },
+      "status": null
+    },
+    "paper/review_report.json": {
+      "bytes": 17532,
+      "keys": [
+        "adjudication_summary",
+        "caution_findings",
+        "checked_inputs",
+        "final_counts",
+        "materials_exhausted",
+        "paper_id",
+        "per_layer_decision_rationale",
+        "post_write_strict_gate_verification",
+        "publication_grade",
+        "publication_grade_limits",
+        "reasoning_effort",
+        "review_model",
+        "review_rework_targets",
+        "review_status",
+        "reviewed_at",
+        "reviewer_notes",
+        "rework_targets",
+        "semantic_quality_checks",
+        "source_review_depth",
+        "source_reviewed"
+      ],
+      "counts": {
+        "rework_targets": 1,
+        "caution_findings": 2
+      },
+      "status": "needs_targeted_rework"
+    },
+    "packet/activity_toxicity_evidence.json": {
+      "bytes": 11486,
+      "keys": [
+        "activity_records",
+        "artifact_role",
+        "finalization",
+        "generated_at",
+        "lane_status",
+        "normalization_policy",
+        "paper_id",
+        "publication_grade",
+        "publication_grade_basis",
+        "publication_grade_claim",
+        "quality_checks",
+        "source_review_scope",
+        "summary_counts",
+        "toxicity_records",
+        "verification_artifacts",
+        "worker_id"
+      ],
+      "counts": {
+        "activity_records": 2,
+        "toxicity_records": 0
+      },
+      "status": null
+    },
+    "packet/database_record_verification.json": {
+      "bytes": 37665,
+      "keys": [
+        "adjudication_note",
+        "adjudication_status",
+        "analysis_mirror_of",
+        "artifact",
+        "artifact_paths",
+        "artifact_role",
+        "authoritative_database_linkage",
+        "authoritative_dbaasp_ingest_ready",
+        "candidate_machine_rows_reviewed",
+        "caution_summary",
+        "checked_inputs",
+        "citation_traceability",
+        "contracts_read",
+        "cross_database_conflicts",
+        "database_snapshot_summary",
+        "finalization",
+        "generated_at",
+        "lane_result",
+        "leader_preflight_contracts_reviewed",
+        "leader_preflight_evidence_scaffolds_reviewed"
+      ],
+      "counts": {
+        "record_audits": 1,
+        "rework_targets": 0
+      },
+      "status": null
+    },
+    "packet/materials_manifest.json": {
+      "bytes": 13366,
+      "keys": [
+        "analysis_queue_status",
+        "artifact",
+        "artifact_role",
+        "database_snapshot_inputs",
+        "extraction_error_count",
+        "final_mirror_aliases",
+        "generated_at",
+        "intended_final_file_set",
+        "known_missing_or_blocked_materials",
+        "locator_count",
+        "locator_index_path",
+        "material_queue_status",
+        "metadata",
+        "open_rework_ticket_count",
+        "open_rework_ticket_ids",
+        "packet_root",
+        "packet_version",
+        "paper_id",
+        "paper_root",
+        "source_root"
+      ],
+      "counts": {},
+      "status": "analysis_needs_material_rework"
+    },
+    "packet/mechanism_evidence.json": {
+      "bytes": 21311,
+      "keys": [
+        "adjudication_status",
+        "artifact_role",
+        "checked_inputs",
+        "claim_counts_by_evidence_class",
+        "database_candidate_evidence_separation",
+        "deep_acquisition_evidence",
+        "excluded_or_nonpromoted_evidence",
+        "finalization",
+        "generated_at",
+        "internet_browsing_used",
+        "lane",
+        "lane_assessment",
+        "mechanism_claims",
+        "model_gate",
+        "paper_id",
+        "protocol",
+        "publication_grade",
+        "publication_grade_claim",
+        "quality_checks",
+        "reasoning_effort"
+      ],
+      "counts": {
+        "mechanism_claims": 6
+      },
+      "status": null
+    },
+    "packet/mechanism_ontology_record.json": {
+      "bytes": 21311,
+      "keys": [
+        "adjudication_status",
+        "artifact_role",
+        "checked_inputs",
+        "claim_counts_by_evidence_class",
+        "database_candidate_evidence_separation",
+        "deep_acquisition_evidence",
+        "excluded_or_nonpromoted_evidence",
+        "finalization",
+        "generated_at",
+        "internet_browsing_used",
+        "lane",
+        "lane_assessment",
+        "mechanism_claims",
+        "model_gate",
+        "paper_id",
+        "protocol",
+        "publication_grade",
+        "publication_grade_claim",
+        "quality_checks",
+        "reasoning_effort"
+      ],
+      "counts": {
+        "mechanism_claims": 6
+      },
+      "status": null
+    },
+    "packet/review_report.json": {
+      "bytes": 17532,
+      "keys": [
+        "adjudication_summary",
+        "caution_findings",
+        "checked_inputs",
+        "final_counts",
+        "materials_exhausted",
+        "paper_id",
+        "per_layer_decision_rationale",
+        "post_write_strict_gate_verification",
+        "publication_grade",
+        "publication_grade_limits",
+        "reasoning_effort",
+        "review_model",
+        "review_rework_targets",
+        "review_status",
+        "reviewed_at",
+        "reviewer_notes",
+        "rework_targets",
+        "semantic_quality_checks",
+        "source_review_depth",
+        "source_reviewed"
+      ],
+      "counts": {
+        "rework_targets": 1,
+        "caution_findings": 2
+      },
+      "status": "needs_targeted_rework"
+    }
+  },
+  "mirrors": {
+    "activity_toxicity_evidence.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 11486,
+      "packet_bytes": 11486
+    },
+    "database_record_verification.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 37665,
+      "packet_bytes": 37665
+    },
+    "materials_manifest.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 13366,
+      "packet_bytes": 13366
+    },
+    "mechanism_evidence.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 21311,
+      "packet_bytes": 21311
+    },
+    "mechanism_ontology_record.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 21311,
+      "packet_bytes": 21311
+    },
+    "review_report.json": {
+      "paper_exists": true,
+      "packet_exists": true,
+      "byte_equal": true,
+      "paper_bytes": 17532,
+      "packet_bytes": 17532
+    }
+  }
+}

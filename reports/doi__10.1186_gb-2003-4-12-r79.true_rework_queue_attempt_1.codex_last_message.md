@@ -1,0 +1,8 @@
+Re-review status: `doi__10.1186_gb-2003-4-12-r79` is repaired into a controlled blocked state, not accepted.
+
+The current artifacts record `review_status=blocked_missing_primary_material` and `publication_grade=false` in [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_gb-2003-4-12-r79/final/review_report.json:8). Activity/toxicity remains intentionally empty with `gap_code=no_local_primary_activity_or_toxicity_assay` in [activity_toxicity_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_gb-2003-4-12-r79/final/activity_toxicity_evidence.json:8). Database adjudication preserves `source_conflict=7`, `database_only_no_primary_source=1`, and `source_verified=1` in [database_record_verification.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_gb-2003-4-12-r79/final/database_record_verification.json:337). The open ticket `rwk-complete-test-0001` remains in [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_gb-2003-4-12-r79/work/review/quality_feedback.json:94).
+
+I reran the gates without rerunning the initial workflow/bootstrap. Semantic gate failed as expected with 3 hard issues: `review_status_not_publication_grade`, `publication_grade_not_true`, and `missing_activity_records` in [semantic_gate.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_gb-2003-4-12-r79.semantic_gate.json:12). Publication gate failed as expected with `open_rework_targets=1` in [publication_quality.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1186_gb-2003-4-12-r79.publication_quality.json:13).
+
+Validation: JSON artifacts parsed cleanly; rework JSONL parsed cleanly. Gate exit codes were nonzero by design because the paper remains blocked, not publication-grade.
+

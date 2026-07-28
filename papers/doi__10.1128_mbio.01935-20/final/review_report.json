@@ -1,0 +1,212 @@
+{
+  "paper_id": "doi__10.1128_mbio.01935-20",
+  "reviewed_at": "2026-06-21T14:46:24Z",
+  "updated_at": "2026-06-21T14:46:24Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "needs_targeted_rework",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": "bounded_best_effort_complete_with_unresolved_exact_graph_value_gap",
+    "merged_database_rows": true,
+    "note": "Local XML/PDF text, OA figures, supplementary HTML zip, database rows, and Fig. S1 TIFF were reopened. Fig. S1 was decoded and visually inspected, but exact cytotoxicity percentages remain graph-only and not table-supported, so affected database rows remain source_conflict.",
+    "owner_worker_rereview_at": "2026-06-21T14:46:24Z"
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1128_mbio.01935-20/handoff_context.json",
+    "papers/doi__10.1128_mbio.01935-20/source/paper.xml",
+    "papers/doi__10.1128_mbio.01935-20/source/paper.pdf",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/pdf_text/mBio.01935-20.txt",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/xml_sections.json",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/figure_captions.json",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original/local-DRAMP-mbio01935-20_Supp_1_seq8.html.zip",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-f0001.jpg",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-f0002.jpg",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-f0003.jpg",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-f0004.jpg",
+    "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-sf001.tif",
+    "paper_packets/doi__10.1128_mbio.01935-20/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1128_mbio.01935-20/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1128_mbio.01935-20/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1128_mbio.01935-20/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "unzip -l/-p on supplementary HTML zip",
+    "rg over source XML, extracted XML/PDF text, supplementary_text.jsonl, and figure captions",
+    "local image visual inspection of Fig. 1D/Fig. 2C/Fig. 3/Fig. 4",
+    "file inventory for figure/TIFF assets",
+    "tesseract availability check",
+    "PaddleOCR import availability check",
+    "ImageMagick/ffmpeg/tiffinfo/tiff2rgba/PIL/tifffile availability checks",
+    "python_zipfile_html_structure_check: table_tags=0; endpoint_term_counts_checked; no_source_text_printed",
+    "python_zipfile_html_numeric_density_check: dense_numeric_line_count=5; no_table_backed_endpoint_rows_recovered",
+    "view_image_tiff_attempt: unsupported_image_tiff",
+    "local_tool_availability_check: imagemagick_unavailable; libtiff_unavailable; tesseract_unavailable; pillow_unavailable",
+    "semantic_three_layer_gate_owner_worker: failed review_status_not_publication_grade; publication_grade_not_true",
+    "publication_quality_owner_worker: failed open_rework_targets=1"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 13,
+    "activity_rows_source_supported": 13,
+    "database_snapshots": {
+      "linked_assay_records": 49,
+      "linked_dramp_activity_records": 12,
+      "linked_experiment_records": 64,
+      "linked_literature_records": 6,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 43,
+      "source_verified": 88
+    },
+    "database_rows_source_verified_after_attempt_2": 88,
+    "database_rows_source_conflict_after_attempt_2": 43,
+    "mechanism_claims": 3,
+    "open_rework_ticket_ids": [
+      "rwk-codex-rereview-20260506-0003"
+    ],
+    "fig_s1_tiff_decoded_for_visual_review": true,
+    "fig_s1_exact_numeric_table_recovered": false,
+    "owner_worker_semantic_gate_rerun_passed": false,
+    "owner_worker_publication_quality_gate_rerun_passed": false,
+    "supplementary_html_table_recovered": false,
+    "database_conflicts_preserved": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 preserved cytotoxicity rows as source_conflict: Fig. S1 is locally viewable after TIFF decoding, but exact cytotoxicity percentages are graph-only and not table-supported.",
+    "layer_2_activity_toxicity": "Existing worker-2 source-supported activity rows were preserved. This owner-limited pass did not broaden worker-2 outputs.",
+    "layer_3_mechanism": "Mechanism artifacts were not broadened; direct fusion-entry inhibition remains source-located and non-overclaimed.",
+    "layer_4_supplementary_material": "Supplementary HTML zip and Fig. S1 TIFF were reopened. Fig. S1 has no machine-readable exact numeric table, so the remaining exact-value gap is recorded as unrecoverable in this runtime."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_and_fusion_activity_repaired_from_figures",
+      "evidence_context": "Fig. 1D and Fig. 2C/Fig. 3 were visually source-reviewed and mapped into database_record_verification.json."
+    },
+    {
+      "caution_code": "fig_s1_tif_cytotoxicity_gap_blocks_publication_grade",
+      "evidence_context": "Exact cytotoxicity percentages in linked database rows remain unsupported until Fig. S1 TIFF is manually/OCR parsed or accepted as unrecoverable by the controller."
+    },
+    "Fig. S1 cytotoxicity database exact values are graph-only and remain source_conflict.",
+    "Open rework ticket blocks publication-grade acceptance."
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-codex-rereview-20260506-0003",
+      "paper_id": "doi__10.1128_mbio.01935-20",
+      "created_at": "2026-05-05T22:19:52Z",
+      "requested_by": "codex_cli_worker_3_4_6_rereview_attempt_2_refined",
+      "worker": "worker-3",
+      "target_queue": "material_extraction",
+      "layer": "supplementary/database",
+      "artifact_path": "papers/doi__10.1128_mbio.01935-20/final/database_record_verification.json",
+      "failing_object": "supplementary_fig_s1_cytotoxicity_database_reconciliation",
+      "failure_code": "supplementary_fig_s1_graph_exact_cytotoxicity_values_not_table_supported",
+      "severity": "blocking",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "reason": "Bounded re-review decoded and inspected Fig. S1, but the local source exposes cytotoxicity only as plotted graph points, not a source table or OCR-readable exact values for every linked database row.",
+      "required_action": "Run a figure-digitization/manual domain review that can source-back exact Fig. S1 cytotoxicity percentages, or explicitly accept this exact-value gap as unrecoverable; do not mark accepted while this ticket remains open.",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-sf001.tif",
+        "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original/local-DRAMP-mbio01935-20_Supp_1_seq8.html.zip",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_experiment_records.jsonl"
+      ],
+      "requested_outputs": [
+        {
+          "asset": "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-sf001.tif",
+          "need": "Figure-digitized or manually source-backed Fig. S1 cytotoxicity values for the linked database rows; if exact values cannot be supported, keep those rows source_conflict.",
+          "required_locators": [
+            "xml:supplementary-material=Fig S1",
+            "supplement:Fig S1 TIFF"
+          ]
+        },
+        {
+          "asset": "paper_packets/doi__10.1128_mbio.01935-20/database/*.jsonl",
+          "need": "Map only source-supported cytotoxicity claims to source_verified; keep unverified exact cytotoxicity rows source_conflict with record IDs.",
+          "required_locators": [
+            "database:linked_assay_records",
+            "database:linked_dramp_activity_records",
+            "database:linked_experiment_records"
+          ]
+        }
+      ],
+      "qc_failure_reasons": [
+        {
+          "code": "supplementary_fig_s1_graph_exact_cytotoxicity_values_not_table_supported",
+          "owner_worker": "worker-3",
+          "severity": "blocking",
+          "reason": "Fig. S1 was decoded locally, but exact cytotoxicity percentages are graph-derived and not supported by a machine-readable local source table."
+        }
+      ],
+      "rework_context_packet_required": true
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_fig_s1_graph_exact_cytotoxicity_values_not_table_supported",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original",
+        "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original/local-DRAMP-mbio01935-20_Supp_1_seq8.html.zip",
+        "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original/mBio.01935-20-sf001.tif",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-sf001.tif",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DRAMP-33082259/PMC7587434/mBio.01935-20-sf001.tif"
+      ],
+      "tools_attempted": [
+        "python_zipfile_html_structure_check: table_tags=0; endpoint_term_counts_checked; no_source_text_printed",
+        "python_zipfile_html_numeric_density_check: dense_numeric_line_count=5; no_table_backed_endpoint_rows_recovered",
+        "view_image_tiff_attempt: unsupported_image_tiff",
+        "local_tool_availability_check: imagemagick_unavailable; libtiff_unavailable; tesseract_unavailable; pillow_unavailable"
+      ],
+      "why_unrecoverable": "local_html_has_no_tables_and_local_tiff_exact_values_not_machine_recovered",
+      "impact": "exact_graph_values_remain_unverified; preserve_database_source_conflicts",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true,
+      "next_action": "external_manual_digitization_or_primary_table_required_before_source_verified_promotion",
+      "updated_at": "2026-06-21T14:46:24Z"
+    }
+  ],
+  "summary": "Second bounded source re-review improved database reconciliation by verifying readable sequence and activity figure evidence, but left the paper non-publication-grade because Fig. S1 cytotoxicity database values remain unparseable from local TIFF material.",
+  "strict_gate": {
+    "required_rework_count": 1,
+    "open_rework_ticket_ids": [
+      "rwk-codex-rereview-20260506-0003"
+    ],
+    "publication_grade_ready": false
+  },
+  "generated_at": "2026-05-05T22:19:52Z",
+  "latest_owner_worker_gate_reports": {
+    "semantic_gate": "reports/doi__10.1128_mbio.01935-20.owner_worker.semantic_gate.json",
+    "publication_quality": "reports/doi__10.1128_mbio.01935-20.owner_worker.publication_quality.json",
+    "manifest": "reports/doi__10.1128_mbio.01935-20.true_rework_queue_manifest.json",
+    "semantic_codes": [
+      "review_status_not_publication_grade",
+      "publication_grade_not_true"
+    ],
+    "publication_risks": [
+      "open_rework_targets"
+    ]
+  }
+}

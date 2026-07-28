@@ -1,0 +1,115 @@
+{
+  "completion_claim": "queue_control_and_rework_execution_report_not_blanket_publication_grade_acceptance",
+  "dry_run": true,
+  "generated_at": "2026-04-30T14:49:31Z",
+  "max_rework_attempts": 2,
+  "ok": true,
+  "paper_ids": [
+    "doi__10.1002_cbic.202100609"
+  ],
+  "quality_control": {
+    "acceptance_requires": [
+      "open_rework_tickets=0",
+      "semantic gate pass",
+      "publication-quality gate pass",
+      "worker-6 source-reviewed acceptance"
+    ],
+    "no_infinite_loop": true,
+    "queue_start_policy": "start once; retries consume rework_context only",
+    "unrecoverable_policy": "record unrecoverable_material_gaps/blocked_after_best_effort and advance to next paper after cap"
+  },
+  "results": [
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1002_cbic.202100609/handoff_context.json",
+            "failure_reason_count": 12,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "1002_cbic.202100609\",\n  \"context\": \"rework_context/doi__10.1002_cbic.202100609/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 12,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "dry_run": true,
+            "launched": false,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md"
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.complete_message_test_report.json",
+        "started": false
+      },
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.complete_message_test_manifest.json",
+      "max_rework_attempts": 2,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609\",\n  \"counts\": {\n    \"chat\": 32,\n    \"state\": 30,\n    \"log\": 6,\n    \"artifact\": 63,\n    \"event\": 89\n  }\n}\n"
+      },
+      "paper_id": "doi__10.1002_cbic.202100609",
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "retry_bootstrap_invocations": 0
+      },
+      "terminal_status": "dry_run_rework_prompt_prepared"
+    }
+  ],
+  "terminal_status_counts": {
+    "dry_run_rework_prompt_prepared": 1
+  },
+  "test_type": "true_rework_queue_start_once_bounded_best_effort"
+}

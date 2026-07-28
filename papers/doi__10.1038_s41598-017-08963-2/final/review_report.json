@@ -1,0 +1,98 @@
+{
+  "adjudication_summary": "Worker-2 recovered four source-located MCF-7 IC50 rows, worker-4 reconciled the linked DRAMP row as sequence-modified-not-normalized with preserved database-only conflicts, and worker-6 accepted the paper with cautions after strict gates passed.",
+  "summary": "Source-reviewed rework closed the prior activity/database/adjudication blocker while preserving database conflicts as cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "dramp_sequence_modification_conflict_preserved",
+      "evidence_context": "Primary Table 1 reports C-terminal amidated L-K6, while the linked DRAMP-derived fields omit or contradict that modification.",
+      "record_ids": [
+        "DRAMP:DRAMP32062"
+      ]
+    },
+    {
+      "caution_code": "database_only_toxicity_annotations_not_promoted",
+      "evidence_context": "DRAMP HUVEC and rabbit RBC annotations were not recovered as exact local primary-source values and remain database/source conflicts rather than final activity rows.",
+      "record_ids": [
+        "DRAMP:DRAMP32062"
+      ]
+    },
+    {
+      "caution_code": "activity_values_are_primary_text_ic50_not_supplement_tables",
+      "evidence_context": "The supplement has figure legends but no structured activity table; the accepted activity rows use primary text IC50 values and Figure 1 context."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-017-08963-2/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/extracted/supplementary_text/local-DRAMP-41598_2017_8963_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-08963-2/database/linked_literature_records.jsonl"
+  ],
+  "doi": "10.1038/s41598-017-08963-2",
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figure_captions": true,
+    "note": "Local obtainable sources were sufficient to recover MCF-7 IC50 rows and adjudicate database conflicts; unsupported database-only toxicity fields were not promoted."
+  },
+  "paper_id": "doi__10.1038_s41598-017-08963-2",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "L-K6 literature identity and MCF-7 IC50 annotations are source-linked; DRAMP sequence/modification and toxicity fields are preserved as explicit conflicts.",
+    "layer_2_activity_toxicity": "4 primary-source MCF-7 IC50 rows were recovered from MTT text with units, target, exposure time, and locators.",
+    "layer_3_mechanism": "3 mechanism claims are source-located to primary figures/text/supplement legends with direct assay types and conservative limitations.",
+    "publication_grade_review": "No blocking/major rework remains; remaining database conflicts are explicit cautions."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T16:59:35Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 4,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 2,
+      "source_verified": 1
+    },
+    "mechanism_claims": 3,
+    "no_sentence_fragment_activity_targets": true,
+    "database_conflicts_preserved": true,
+    "source_tables_present": [
+      "Table 1"
+    ],
+    "supplementary_tables_present": false
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_captions",
+    "pdf_text",
+    "supplementary_text"
+  ],
+  "source_reviewed": true,
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "file",
+    "pdftotext",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

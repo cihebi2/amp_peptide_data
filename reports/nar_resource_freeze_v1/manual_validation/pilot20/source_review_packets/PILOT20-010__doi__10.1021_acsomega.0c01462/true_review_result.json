@@ -1,0 +1,238 @@
+{
+  "paper_id": "doi__10.1021_acsomega.0c01462",
+  "pilot_sample_id": "PILOT20-010",
+  "audit_record_id": "doi__10.1021_acsomega.0c01462:database_audit:31",
+  "reviewed_at": "2026-06-22T04:07:09Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "material_review": {
+    "local_materials_inspected": {
+      "packet_inventory": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/material_inventory.json",
+      "packet_manifest": "paper_packets/doi__10.1021_acsomega.0c01462/packet_manifest.json",
+      "paper_xml": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+      "paper_pdf": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.pdf",
+      "oa_package": "paper_packets/doi__10.1021_acsomega.0c01462/raw/oa_package/local-DBAASP-PMC7658953.tar.gz",
+      "supplementary_original": "absent at paper_packets/doi__10.1021_acsomega.0c01462/raw/supplementary_original",
+      "supplement_from_oa_package": "paper_packets/doi__10.1021_acsomega.0c01462/extracted/pdf_text/ao0c01462_si_001.txt",
+      "database_rows": [
+        "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_literature_records.jsonl"
+      ]
+    },
+    "material_status": "material_extracted_with_gaps",
+    "material_findings": [
+      "XML, PDF, OA package, locator index, activity/final artifacts, and DBAASP linked assay/experiment/literature rows exist locally.",
+      "raw/supplementary_original is absent and supplementary_index.json is empty, but the OA package archive manifest lists ao0c01462_si_001.pdf and its text is parsed under extracted/pdf_text.",
+      "linked_sequence_records.jsonl is empty, so the database sequence/name evidence is inferred from linked DBAASP assay/literature snapshots and final audit fields rather than a separate sequence-row snapshot.",
+      "packet_manifest.test_scope states the packet began as a complete-message workflow test; historical ticket rwk-complete-test-0001 is closed, but the test-scope/material-gap history remains a caution."
+    ],
+    "not_blocked_by_missing_primary_material": true
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "DBAASP:DBAASPS_16976",
+    "sample_release_status": "sequence_modified_not_normalized",
+    "release_row_match": {
+      "release_row": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:tsv_row=16001",
+      "sample_final_record": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/sample_final_record.json",
+      "matched_fields": [
+        "audit_record_id",
+        "source_id",
+        "sequence_key",
+        "status",
+        "layer1_status",
+        "traceability",
+        "sequence_check",
+        "modification_check"
+      ]
+    },
+    "source_evidence": [
+      {
+        "locator": "xml:table=1:row=5",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "Primary Table 1 identifies the assayed analogue as Pal-alpha-MSH(6-13) with palmitoyl-H6-F7-R8-W9-G10-K11-P12-V13-NH2, molecular mass 1263.77 Da, charge +2."
+      },
+      {
+        "locator": "database:linked_literature_records:row=1",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_literature_records.jsonl",
+        "finding": "DBAASP literature row links DBAASPS_16976 to DOI 10.1021/acsomega.0c01462, PMID 33195893, PMCID PMC7658953."
+      },
+      {
+        "locator": "database:linked_assay_records:rows=9-14",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_assay_records.jsonl",
+        "finding": "DBAASP rows for DBAASPS_16976 preserve hemolysis, cytotoxicity, and MIC-like assay rows but use peptide_name Melanotropin alpha (6-13) and sequence key DBAASP:DBAASPS_16976."
+      }
+    ],
+    "decision_rationale": "The sampled status is justified and must not be upgraded to clean source_verified: the paper source supports a palmitoylated C-amidated analogue, while the linked database identity is the unmodified alpha-MSH(6-13) name/sequence snapshot. Citation traceability is source-backed."
+  },
+  "layer2_activity_toxicity_review": {
+    "activity_artifact_checked": "paper_packets/doi__10.1021_acsomega.0c01462/analysis/activity_toxicity_evidence.json",
+    "source_evidence": [
+      {
+        "locator": "xml:table=2:row=3",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "Table 2 reports Pal-alpha-MSH(6-13) MIC values as >45.45 uM for MSSA ATCC 29213 and MRSA ATCC 33591 in both Mueller-Hinton broth and tryptic soy broth."
+      },
+      {
+        "locator": "xml:sec=Determination of Minimum Inhibitory Concentration (MIC) of the Peptides",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "MIC method defines mid-log inoculum, broth context, overnight incubation, and duplicate/day replication context."
+      },
+      {
+        "locator": "xml:fig=5 and surrounding toxicity prose",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "Toxicity prose supports negligible hemolysis for Pal-alpha-MSH(6-13) up to 62.5 uM and no detrimental 3T3 viability effect at 50 uM."
+      }
+    ],
+    "spot_check_results": {
+      "activity_records_total": 14,
+      "table2_mic_rows": 8,
+      "toxicity_rows": 4,
+      "biofilm_rows": 2,
+      "missing_core_field_or_sentence_fragment_targets": 0,
+      "sampled_dbaasp_16976_rows_have_values_units_targets_and_locators": true
+    },
+    "cautions": [
+      "Duplicate DBAASP MIC rows for DBAASPS_16976 do not encode MHB versus TSB; final mapping is by row order against primary Table 2 columns.",
+      "Image-only quantitative curves are not reconstructed beyond values stated in XML/PDF prose."
+    ],
+    "decision_rationale": "No layer-2 hard repair was found for this sampled row. Values, units, endpoints, target species/strain, and primary XML locators are present for the relevant DBAASP:DBAASPS_16976 activity/toxicity rows."
+  },
+  "layer3_mechanism_review": {
+    "mechanism_artifact_checked": "paper_packets/doi__10.1021_acsomega.0c01462/analysis/mechanism_evidence.json",
+    "source_evidence": [
+      {
+        "locator": "xml:fig=6; xml:fig=7; xml:fig=8",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "Direct mechanism support exists for membrane depolarization, PI uptake/permeabilization, and SEM/TEM membrane morphology."
+      },
+      {
+        "locator": "supp:ao0c01462_si_001.txt:Figure S1-S3",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/extracted/pdf_text/ao0c01462_si_001.txt",
+        "finding": "Supplement text supports MSSA PI uptake, microscopy, and biofilm figure captions."
+      },
+      {
+        "locator": "xml:fig=13; xml:sec=In Vitro Resistance Development Study",
+        "path": "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml",
+        "finding": "Resistance-development assay is source-backed as a phenotype observation, not a direct molecular mechanism."
+      }
+    ],
+    "claim_checks": [
+      {
+        "claim_id": "mech-001",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types_present": true,
+        "locator_present": true,
+        "review": "Supported by direct assay types and locators."
+      },
+      {
+        "claim_id": "mech-002",
+        "evidence_class": "phenotypic_antibiofilm_activity",
+        "direct_assay_types_required": false,
+        "locator_present": true,
+        "review": "Source-backed phenotype, but evidence_class is not in the required ontology vocabulary; should be phenotype_supported."
+      },
+      {
+        "claim_id": "mech-003",
+        "evidence_class": "phenotypic_resistance_development_assay",
+        "direct_assay_types_required": false,
+        "locator_present": true,
+        "review": "Source-backed phenotype, but evidence_class is not in the required ontology vocabulary; should be phenotype_supported."
+      }
+    ],
+    "decision_rationale": "The mechanism claims are source-located and the direct claim has direct assay types, but two phenotype claims use non-standard evidence_class labels instead of the required ontology value phenotype_supported. This is repairable analysis rework."
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "terminal_confirmation": false,
+    "adjudication_summary": "Best-effort source review confirms the sampled sequence_modified_not_normalized caution and finds no activity/toxicity hard defect for DBAASP:DBAASPS_16976. However, this reviewer cannot prove the required runtime model/effort, and layer 3 contains repairable ontology evidence_class defects for mech-002 and mech-003. The existing final artifact should not be treated as confirmed publication-grade until provenance is rerun or proven and the mechanism evidence_class vocabulary is repaired.",
+    "model_provenance_limitation": "The execution surface did not expose machine-verifiable proof that this review ran on gpt-5.5 with reasoning_effort=xhigh. Per the prompt, the terminal decision is unverifiable_best_effort even though the schema-required review_model and reasoning_effort fields record the requested provenance values.",
+    "would_require_rework_if_provenance_gate_were_satisfied": true
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "paper_packets/doi__10.1021_acsomega.0c01462/analysis/mechanism_evidence.json",
+      "failing_object": "mechanism_claims[1].evidence_class and mechanism_claims[2].evidence_class",
+      "failure_code": "non_standard_mechanism_evidence_class",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml::xml:fig=9-13",
+        "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml::xml:sec=29",
+        "paper_packets/doi__10.1021_acsomega.0c01462/raw/paper.xml::xml:sec=33",
+        "paper_packets/doi__10.1021_acsomega.0c01462/extracted/pdf_text/ao0c01462_si_001.txt::Figure S3"
+      ],
+      "required_action": "Map both phenotype mechanism claims to the required top-level ontology value phenotype_supported while retaining their claim_text, source locators, and limitations. Keep mech-001 as direct_mechanism with direct assay types.",
+      "acceptance_check": "mechanism_claims evidence_class values are only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; direct_mechanism claims retain direct_assay_types and locators."
+    }
+  ],
+  "caution_findings": [
+    {
+      "code": "model_effort_not_machine_verifiable",
+      "severity": "blocking_for_true_review_confirmation",
+      "finding": "Current runtime did not provide proof of gpt-5.5/xhigh execution; terminal decision is therefore unverifiable_best_effort."
+    },
+    {
+      "code": "sequence_modified_not_normalized_preserved",
+      "severity": "caution",
+      "finding": "DBAASP:DBAASPS_16976 is linked to source-traceable literature/activity rows, but the database identity omits source-supported palmitoyl and C-terminal NH2 modifications."
+    },
+    {
+      "code": "material_packet_history_contains_gaps",
+      "severity": "caution",
+      "finding": "Packet material status remains material_extracted_with_gaps and packet_manifest contains test_scope history; available OA package/SI text was inspected and no primary-material blocker was found for this sample."
+    },
+    {
+      "code": "duplicate_database_mic_rows_medium_unlabeled",
+      "severity": "caution",
+      "finding": "DBAASP duplicate MIC rows preserve values and targets but not whether they came from MHB or TSB source columns."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used; review was limited to local packet, paper, OA package, extracted text, and linked database artifacts.",
+    "The current execution surface did not expose machine-verifiable model/reasoning-effort proof.",
+    "Image-only quantitative curves were not reconstructed beyond extracted XML/PDF/SI text and captions.",
+    "Because decision is unverifiable_best_effort, this JSON should not be used as a terminal publication-grade confirmation."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-010__doi__10.1021_acsomega.0c01462/source_locator_hints.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extraction/extraction_errors.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/pdf_text.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/pdf_text/ao0c01462_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/figure_captions.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c01462/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c01462/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.0c01462/analysis/mechanism_evidence.json",
+    "papers/doi__10.1021_acsomega.0c01462/source/paper.xml",
+    "papers/doi__10.1021_acsomega.0c01462/final/review_report.json",
+    "reports/doi__10.1021_acsomega.0c01462.codex_re_review_20260502T070302Z.semantic_gate.json",
+    "reports/doi__10.1021_acsomega.0c01462.codex_re_review_20260502T070302Z.publication_quality.json"
+  ]
+}

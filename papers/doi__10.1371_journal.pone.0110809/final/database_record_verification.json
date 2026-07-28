@@ -1,0 +1,198 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0110809",
+  "generated_at": "2026-05-05T17:01:17Z",
+  "owner_worker": "worker-4",
+  "audit_scope": "Source-reviewed database audit after bounded local recovery. Statuses preserve the Muscin source/linkage conflict rather than converting database rows to source_verified.",
+  "database_row_counts": {
+    "packet_linked_literature_records": 1,
+    "merged_sequence_records_reviewed": 3,
+    "merged_database_activity_annotation_groups": 3,
+    "primary_source_verified_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "AP02594",
+      "sequence_key": "APD6:AP02594",
+      "source_table": "linked_literature_records.jsonl + merged APD6 rows",
+      "database_subject": "Muscin",
+      "database_measure": "APD6 sequence/activity text",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "reported_sequence": "EWKLPDLIINHITLTRRNCNKYRCG",
+      "reported_source_organism": "Musca demestica",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0110809/database/linked_literature_records.jsonl",
+        "locator": "jsonl:line=1"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "locator": "csv:line=2595"
+        },
+        "primary_source_status": "not_verified_from_local_primary_source"
+      },
+      "citation_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "locator": "csv:line=180"
+      },
+      "conflict_context": "APD6 metadata names a Muscin Acta Entomologica Sinica paper, but the DOI/PMID/PMCID linkage in the local packet resolves to a PLOS ONE GFR bioconversion article with no Muscin sequence or antimicrobial assay.",
+      "conflict_flags": [
+        "wrong_primary_source_linkage",
+        "organism_spelling_conflict_Musca_demestica_vs_Musca_domestica"
+      ],
+      "review_notes": "Do not mark source_verified until the actual Muscin primary article is staged and checked."
+    },
+    {
+      "source_id": "DBAASPR_8351",
+      "sequence_key": "DBAASP:DBAASPR_8351",
+      "source_table": "merged DBAASP sequence and assay rows",
+      "database_subject": "Muscin",
+      "database_measure": "DBAASP MIC and hemolysis rows",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "reported_sequence": "EWKLPDLIINHITLTRRNCFKYRCG",
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "csv:line=14713"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "locator": "csv:line=14713"
+        },
+        "primary_source_status": "not_verified_from_local_primary_source"
+      },
+      "citation_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "locator": "csv:line=4449"
+      },
+      "conflict_context": "DBAASP provides database-only Muscin assay rows and a sequence that differs from APD6/DRAMP at one residue; no local primary Muscin paper is staged for adjudication.",
+      "conflict_flags": [
+        "sequence_conflict_DBAASP_vs_APD6_DRAMP",
+        "database_only_assay_rows"
+      ],
+      "review_notes": "Preserve values as database annotations only; not primary-source verified."
+    },
+    {
+      "source_id": "DRAMP37362",
+      "sequence_key": "DRAMP:DRAMP37362",
+      "source_table": "merged DRAMP sequence/activity rows",
+      "database_subject": "c-Muscin",
+      "database_measure": "DRAMP antimicrobial text",
+      "status": "database_only_no_primary_source",
+      "layer1_status": "database_only_no_primary_source",
+      "reported_sequence": "EWKLPDLIINHITLTRRNCNKYRCG",
+      "reported_source_organism": "Musca domestica",
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "csv:line=67691"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv",
+          "locator": "csv:lines=30975-30976"
+        },
+        "primary_source_status": "not_verified_from_local_primary_source"
+      },
+      "citation_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "locator": "csv:line=8581"
+      },
+      "conflict_context": "DRAMP points to DOI 10.16380/j.kcxb.2015.06.005, while this packet is keyed to 10.1371/journal.pone.0110809. The DRAMP paper is not locally staged.",
+      "conflict_flags": [
+        "different_true_doi_than_packet",
+        "database_only_no_primary_source"
+      ],
+      "review_notes": "Retain as database-only evidence pending correct primary-source acquisition."
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 2,
+    "database_only_no_primary_source": 1,
+    "source_verified": 0
+  },
+  "cross_database_conflicts": [
+    "APD6/DRAMP sequence EWKLPDLIINHITLTRRNCNKYRCG vs DBAASP sequence EWKLPDLIINHITLTRRNCFKYRCG",
+    "APD6 organism spelling Musca demestica vs DRAMP/article-title Musca domestica",
+    "APD6 DOI linkage 10.1371/journal.pone.0110809 vs DRAMP DOI 10.16380/j.kcxb.2015.06.005",
+    "DRAMP Micrococcus luteus MIC text conflicts with APD6/DBAASP values"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "primary_muscin_source_not_locally_recovered",
+      "source_paths_checked": [
+        "rework_context/doi__10.1371_journal.pone.0110809/handoff_context.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/raw/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0110809/raw/paper.pdf",
+        "paper_packets/doi__10.1371_journal.pone.0110809/raw/oa_package/local-APD6-pmc_package.tar.gz",
+        "paper_packets/doi__10.1371_journal.pone.0110809/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/extracted/pdf_text/pone.0110809.txt",
+        "paper_packets/doi__10.1371_journal.pone.0110809/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0110809/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1371_journal.pone.0110809/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/pdf/local-APD6-paper.pdf",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/xml/local-APD6-pone.0110809.nxml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/supplementary/"
+      ],
+      "tools_attempted": [
+        "jq artifact review",
+        "rg over XML/PDF text/HTML/database rows for Muscin, MIC, AP02594, and sequence evidence",
+        "file on landed supplementary assets",
+        "pdfinfo on staged PDFs",
+        "md5sum comparison of landed PDFs",
+        "tar -tzf OA package inventory",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py"
+      ],
+      "why_unrecoverable": "All local DOI/PDF/XML/OA/package/supplementary surfaces resolve to the PLOS ONE gibberellin-fermentation-residue bioconversion article, not the Muscin antimicrobial peptide article named by the APD6/DBAASP/DRAMP database rows. No local primary source contains the Muscin sequence, MIC table, hemolysis assay, or mechanism evidence.",
+      "impact": "Worker-2 cannot promote database-only MIC/hemolysis annotations to primary-source activity rows; worker-4 must preserve source_conflict/database_only statuses; worker-6 must leave publication_grade false.",
+      "owner_worker": "worker-2|worker-4|worker-6",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.1371_journal.pone.0110809/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0110809/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0110809/raw/oa_package/local-APD6-pmc_package.tar.gz",
+    "paper_packets/doi__10.1371_journal.pone.0110809/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/extracted/pdf_text/pone.0110809.txt",
+    "paper_packets/doi__10.1371_journal.pone.0110809/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0110809/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0110809/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/metadata.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/pdf/local-APD6-paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/xml/local-APD6-pone.0110809.nxml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0110809/supplementary/"
+  ],
+  "tools_attempted": [
+    "jq artifact review",
+    "rg over XML/PDF text/HTML/database rows for Muscin, MIC, AP02594, and sequence evidence",
+    "file on landed supplementary assets",
+    "pdfinfo on staged PDFs",
+    "md5sum comparison of landed PDFs",
+    "tar -tzf OA package inventory",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ]
+}

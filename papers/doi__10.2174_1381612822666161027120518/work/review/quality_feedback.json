@@ -1,0 +1,201 @@
+{
+  "paper_id": "doi__10.2174_1381612822666161027120518",
+  "generated_at": "2026-06-22T08:12:01Z",
+  "status": "needs_targeted_rework",
+  "issue_count": 2,
+  "qc_failure_reasons": [
+    {
+      "code": "owner_repair_ready_response_recommendation_only",
+      "owner_worker": "worker-5_mechanism_ontology_extractor",
+      "severity": "major",
+      "reason": "owner_response.json reports action_taken=repair_ready, but each target file is marked dispatch_pass_status=not_edited and remaining_gaps states the canonical mechanism artifact still needs the ontology repair."
+    },
+    {
+      "code": "invalid_mechanism_evidence_class_vocabulary",
+      "owner_worker": "worker-5_mechanism_ontology_extractor",
+      "severity": "blocking_for_publication_grade",
+      "reason": "The packet analysis and final/papers mechanism artifacts still use custom evidence_class labels instead of the required mechanism ontology values.",
+      "invalid_classes_by_file": {
+        "paper_packets/doi__10.2174_1381612822666161027120518/analysis/mechanism_evidence.json": [
+          "immunomodulatory_cell_phenotype",
+          "mechanism_hypothesis_context",
+          "phenotype_activity_context",
+          "toxicity_selectivity_context"
+        ],
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json": [
+          "immunomodulatory_cell_phenotype",
+          "mechanism_hypothesis_context",
+          "phenotype_activity_context",
+          "toxicity_selectivity_context"
+        ],
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json": [
+          "immunomodulatory_cell_phenotype",
+          "mechanism_hypothesis_context",
+          "phenotype_activity_context",
+          "toxicity_selectivity_context"
+        ],
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_ontology_record.json": [
+          "immunomodulatory_cell_phenotype",
+          "mechanism_hypothesis_context",
+          "phenotype_activity_context",
+          "toxicity_selectivity_context"
+        ]
+      }
+    }
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "owner_worker": "worker-5_mechanism_ontology_extractor",
+      "layer": "mechanism",
+      "artifact_path": "paper_packets/doi__10.2174_1381612822666161027120518/analysis/mechanism_evidence.json",
+      "additional_artifacts_to_keep_consistent": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_ontology_record.json"
+      ],
+      "failing_object": "mechanism_claims[*].evidence_class",
+      "failure_code": "invalid_mechanism_evidence_class_vocabulary_owner_repair_not_applied",
+      "observed_invalid_classes": [
+        "immunomodulatory_cell_phenotype",
+        "mechanism_hypothesis_context",
+        "phenotype_activity_context",
+        "toxicity_selectivity_context"
+      ],
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.4",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:table=2",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.5",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:table=3",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.6",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=4"
+      ],
+      "required_action": "Actually edit the packet analysis mechanism artifact so every mechanism_claims[*].evidence_class uses only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; preserve claim_id, claim_text, entity_scope, source_locator, and limitations.",
+      "acceptance_check": "paper_packets analysis/final and papers final mechanism artifacts contain only allowed evidence_class values, no direct_mechanism claim lacks direct_assay_types, and worker-6 re-adjudicates after the repair.",
+      "claim_class_mapping_from_owner_response": [
+        {
+          "claim_id": "mech-001",
+          "current_evidence_class": "phenotype_activity_context",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Antimicrobial activity is supported by radial diffusion MIC phenotype data in xml:sec=3.4 and xml:table=2, not by a direct molecular mechanism assay."
+        },
+        {
+          "claim_id": "mech-002",
+          "current_evidence_class": "toxicity_selectivity_context",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Hemolysis and HD50/MIC selectivity are phenotype/toxicity context in xml:sec=3.5 and xml:table=3, not direct lipid-binding or membrane-disruption closure."
+        },
+        {
+          "claim_id": "mech-003",
+          "current_evidence_class": "immunomodulatory_cell_phenotype",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Chemotaxis is a cell phenotype supported by xml:sec=3.6 and the Fig. 2 caption; exact figure values remain untabulated locally."
+        },
+        {
+          "claim_id": "mech-004",
+          "current_evidence_class": "mechanism_hypothesis_context",
+          "recommended_evidence_class": "inferred_mechanism",
+          "basis": "Discussion language frames cationic clustering, macrocyclization, and electroporation as mechanistic context, while explicitly noting that the data did not permit mechanism-of-killing conclusions."
+        }
+      ]
+    },
+    {
+      "worker": "worker-6",
+      "layer": "adjudication",
+      "artifact_path": "papers/doi__10.2174_1381612822666161027120518/final/review_report.json",
+      "additional_artifacts_to_keep_consistent": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+        "paper_packets/doi__10.2174_1381612822666161027120518/analysis/adjudication_report.json",
+        "papers/doi__10.2174_1381612822666161027120518/work/review/quality_feedback.json"
+      ],
+      "failing_object": "publication_grade confirmation",
+      "failure_code": "accepted_with_invalid_mechanism_class_vocabulary",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/analysis/mechanism_evidence.json",
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+        "papers/doi__10.2174_1381612822666161027120518/final/mechanism_ontology_record.json",
+        "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-005-PILOT20-012-worker-5/owner_response.json",
+        "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-005-PILOT20-012-worker-5/dispatch_packet.json"
+      ],
+      "required_action": "After worker-5 performs the mechanism ontology repair, mirror the corrected analysis artifact into packet final and papers final mechanism artifacts, then refresh worker-6 review provenance and preserve remaining cautions.",
+      "acceptance_check": "review_status is accepted_with_cautions at most, publication_grade is true only after no invalid mechanism classes or hard rework targets remain, and accepted_clean is not used for this pilot."
+    }
+  ],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.2174_1381612822666161027120518/handoff_context.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/packet_manifest.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/locators/locator_index.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extraction/extraction_status.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/xml_sections.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/figure_captions.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/archive_manifest.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/supplementary_index.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.pdf",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/oa_package/local-DBAASP-PMC5470054.tar.gz",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/local-DBAASP-PMC5470054.txt",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131_SD1.txt",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/database_source_manifest.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_literature_records.jsonl",
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-005-PILOT20-012-worker-5/owner_response.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-005-PILOT20-012-worker-5/dispatch_packet.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/true_review_result.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/rework_ticket.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/sample_final_record.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+    "papers/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+    "papers/doi__10.2174_1381612822666161027120518/final/mechanism_ontology_record.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+    "papers/doi__10.2174_1381612822666161027120518/final/review_report.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/analysis/analysis_status.json"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "modified_sequences_not_normalized",
+      "evidence_context": "Cyclic, Abu-substituted, Acm-protected, desulfurized, and disulfide-defined analogs are source-located to Table 1/Table S1 and kept as modified entities rather than collapsed to an unmodified MVIIA sequence."
+    },
+    {
+      "caution_code": "entry_level_database_identity_conflicts_preserved",
+      "evidence_context": "CAMP/dbAMP entry-level rows that collapse multiple analogs or carry generic MVIIA-GS titles remain source_conflict even when their MIC values match Table 2."
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism_assay",
+      "evidence_context": "The paper supports antimicrobial, hemolysis/selectivity, and chemotaxis phenotypes, but local material does not directly assay membrane permeabilization, pore formation, lipid binding, or another molecular target."
+    },
+    {
+      "caution_code": "non_numeric_cells_preserved",
+      "evidence_context": "ND and dash cells from Tables 2/3 are retained as source-reported non-numeric values and are not converted into fabricated assay values."
+    },
+    {
+      "caution_code": "supplement_within_oa_package_checked",
+      "evidence_context": "The OA package contains CPD-23-2131_SD1.pdf; extracted supplementary text was checked for Table S1 sequence/name support and no separate external spreadsheet was present locally."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "notes": "June pilot worker-6 final mirror supersedes the older accepted_with_cautions QC state for this dispatch. Worker-5 response was recommendation-only; mechanism artifacts still contain invalid custom evidence classes.",
+  "latest_gate_results": {
+    "superseded_by_worker6_final_mirror": true,
+    "superseded_at": "2026-06-22T08:12:01Z",
+    "reason": "Older gate artifacts did not account for the pilot20 layer-3 ontology vocabulary defect.",
+    "publication_grade_pass": false
+  },
+  "updated_at": "2026-06-22T08:12:01Z",
+  "open_rework_ticket_ids": [
+    "pilot20-012-rwk-001"
+  ]
+}

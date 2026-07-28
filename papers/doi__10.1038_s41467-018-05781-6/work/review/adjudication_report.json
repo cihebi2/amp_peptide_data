@@ -1,0 +1,96 @@
+{
+  "paper_id": "doi__10.1038_s41467-018-05781-6",
+  "doi": "10.1038/s41467-018-05781-6",
+  "reviewed_at": "2026-05-02T09:27:57Z",
+  "generated_at": "2026-05-02T09:27:57Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, MOESM1 supplementary PDF text, figures/captions, and linked APD6/DBAASP rows were sufficient for worker-2/4/6 repair. No external-source chase is required for this ticket."
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.1038_s41467-018-05781-6/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/pdf_text/41467_2018_Article_5781.txt",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/extracted/pdf_text/41467_2018_5781_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-018-05781-6/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 128,
+    "activity_species_conditions_separated": true,
+    "activity_units_present_for_mic_like_rows": true,
+    "database_status_summary": {
+      "source_conflict": 10,
+      "source_verified": 49,
+      "sequence_modified_not_normalized": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP/APD6 rows were rechecked against primary table/prose/supplement evidence. Supported MIC/IC50/literature rows are source_verified; exact hemolysis precision, mismatched condition notes, omitted additive conditions, and APD6 Orn-to-K representation are preserved as caution/conflict statuses.",
+    "layer_2_activity_toxicity": "Activity records were rebuilt from Table 1 and Supplementary Table 1 with entity names, units, raw values, target species/strain, conditions, and locators. The previous LPS/Mg/serum strings are no longer stored as target species.",
+    "layer_3_mechanism": "Mechanism is accepted with bounded claims for LPS/outer-membrane association, membrane-associated bactericidal phenotypes, and explicit unresolved intracellular targets; automated protein-synthesis context was not promoted.",
+    "worker_6_final_decision": "The original rework ticket is closed after source-reviewed repair. Remaining issues are caution-level conflict-preservation findings, not blocking rework targets."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_hemolysis_precision_not_primary_table",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "DBAASP reports exact 0% hemolysis for both peptides; local source supports no significant erythrocyte lysis up to 128 µg mL−1 but does not expose a table-exact 0% numeric row in text.",
+      "record_ids": [
+        "DBAASP:DBAASPN_18207",
+        "DBAASP:DBAASPN_18208"
+      ]
+    },
+    {
+      "caution_code": "database_condition_text_conflicts_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "Some DBAASP rows omit Mg2+/LPS condition or say human plasma / 10 mg mL−1 LPS, while primary source supports fetal bovine serum and 1.0 mg mL−1 LPS. These rows remain source_conflict, not source_verified."
+    },
+    {
+      "caution_code": "modified_nonribosomal_sequence_not_normalized",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "APD6 collapses three Orn residues to K; primary source supports Orn, D/L stereochemistry, lipid tail, and lactone closure. Status is sequence_modified_not_normalized.",
+      "record_ids": [
+        "APD6:AP03267"
+      ]
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed rework repaired the activity table shape, database row adjudication, and final worker-6 provenance for brevicidine/laterocidine. The paper is publication-grade with cautions because database precision/condition conflicts and APD6 modified-sequence normalization are explicitly preserved.",
+  "adjudication_scope": "worker-6 final adjudication after worker-2/worker-4 repair"
+}

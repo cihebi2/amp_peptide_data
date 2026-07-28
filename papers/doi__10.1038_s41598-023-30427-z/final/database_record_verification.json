@@ -1,0 +1,3259 @@
+{
+  "paper_id": "doi__10.1038_s41598-023-30427-z",
+  "doi": "10.1038/s41598-023-30427-z",
+  "generated_at": "2026-05-05T19:23:25Z",
+  "reviewed_at": "2026-05-05T19:23:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 rechecked all packet-linked DBAASP A11 literature/assay/experiment rows against primary XML/PDF tables and merged sequence/literature rows.",
+  "database_row_counts": {
+    "linked_assay_records": 25,
+    "linked_experiment_records": 25,
+    "linked_literature_records": 1,
+    "linked_dramp_activity_records": 0,
+    "linked_sequence_records": 0
+  },
+  "status_summary": {
+    "source_verified": 51
+  },
+  "cross_database_cautions": [
+    {
+      "caution_code": "database_sequence_catalog_omits_terminal_amidation_field",
+      "severity": "caution",
+      "evidence_context": "DBAASP sequence catalog stores WVKKVARKVVKIGRKVAR as a residue string; primary Table 2 reports A11 as C-terminally amidated, so the final curation preserves -NH2 explicitly."
+    },
+    {
+      "caution_code": "database_condition_compression",
+      "severity": "caution",
+      "evidence_context": "Several DBAASP environmental-condition MIC rows carry the value and target but not the pH/temperature/salt condition; values are source-verified against Table 4 without inventing missing condition labels."
+    }
+  ],
+  "record_audits": [
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "21927",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "10% Hemolysis",
+      "database_concentration": ">250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "hemolytic_cytotoxic",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-a11-human-erythrocytes-mhc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=15:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "MHC threshold for 10% hemolysis is source-supported; Figure 2/prose additionally report low hemolysis at 250 ug/ml."
+      },
+      "matched_activity_record_id": "activity-table1-a11-human-erythrocytes-mhc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "21928",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Mouse fibroblasts L929",
+      "database_measure": "",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "hemolytic_cytotoxic",
+      "database_note": "Not active up to 250 µg/ml",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-fig4-a11-l929-cytotoxicity",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:sec=26:Cytotoxicity of peptide; xml:fig=4:Figure 4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Primary text reports no cytotoxic activity up to 250 ug/ml in L929 cells."
+      },
+      "matched_activity_record_id": "activity-fig4-a11-l929-cytotoxicity",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5175",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "0.5",
+      "database_antibiotic_name": "Nisin",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-atcc13311-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-atcc13311-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=3"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5176",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-001",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "0.516",
+      "database_antibiotic_name": "Nisin",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-h1-001-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=5"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-h1-001-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=4"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5177",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-006",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "0.266",
+      "database_antibiotic_name": "Nisin",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-h1-006-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-h1-006-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=5"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180344",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "within pH 7-9; with 1 mM MgCl2, 150 mM NaCl",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=4:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=6"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180345",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=4:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=7"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180346",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=5:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=8"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180347",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_measure": "MBC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=5:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=9"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180348",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Shigella sonnei ATCC 11060",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=10"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180349",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Shigella sonnei ATCC 11060",
+      "database_measure": "MBC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=11"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180350",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MT strain",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=12"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180351",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MT strain",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=13"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180352",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus aureus ATCC 25923",
+      "database_measure": "MIC",
+      "database_concentration": ">250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-aureus-atcc25923-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=10:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-aureus-atcc25923-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=14"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180353",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=11:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=15"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180354",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=11:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=16"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180355",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Bacillus cereus ATCC 11778",
+      "database_measure": "MIC",
+      "database_concentration": "250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-bacillus-cereus-atcc11778-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=12:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-bacillus-cereus-atcc11778-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=17"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180356",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Listeria monocytogenes 10403s",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=13:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=18"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180357",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Listeria monocytogenes 10403s",
+      "database_measure": "MBC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=13:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=19"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180358",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=20"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180359",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=21"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180360",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=22"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180361",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=23"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180362",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-001",
+      "database_measure": "MIC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MDR clinical isolates H1-001, H1-011, H1-015, H1-100, H2-039",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table3-h1-001-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=3:row=4:column=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC for the named MDR isolate is source-verified."
+      },
+      "matched_activity_record_id": "activity-table3-h1-001-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=24"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180363",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-006",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MDR clinical isolates H1-006, H1-041, H1-062",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table3-h1-006-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=3:row=5:column=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC for the named MDR isolate is source-verified."
+      },
+      "matched_activity_record_id": "activity-table3-h1-006-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=25"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "21927",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "10% Hemolysis",
+      "database_concentration": ">250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "hemolytic_cytotoxic",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-a11-human-erythrocytes-mhc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=15:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "MHC threshold for 10% hemolysis is source-supported; Figure 2/prose additionally report low hemolysis at 250 ug/ml."
+      },
+      "matched_activity_record_id": "activity-table1-a11-human-erythrocytes-mhc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "21928",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Mouse fibroblasts L929",
+      "database_measure": "",
+      "database_concentration": "NA",
+      "database_unit": "",
+      "database_assay_type": "hemolytic_cytotoxic",
+      "database_note": "Not active up to 250 µg/ml",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-fig4-a11-l929-cytotoxicity",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:sec=26:Cytotoxicity of peptide; xml:fig=4:Figure 4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Primary text reports no cytotoxic activity up to 250 ug/ml in L929 cells."
+      },
+      "matched_activity_record_id": "activity-fig4-a11-l929-cytotoxicity",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5175",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-atcc13311-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-atcc13311-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=3"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5176",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-001",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-h1-001-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=5"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-h1-001-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=4"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "5177",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-006",
+      "database_measure": "MIC",
+      "database_concentration": "",
+      "database_unit": "µg/ml",
+      "database_assay_type": "synergy",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table5-h1-006-a11-nisin-synergy",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=5:row=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "Combination-index row source-verified."
+      },
+      "matched_activity_record_id": "activity-table5-h1-006-a11-nisin-synergy",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=5"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180344",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "within pH 7-9; with 1 mM MgCl2, 150 mM NaCl",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=4:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=6"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180345",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=4:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-salmonella-typhimurium-atcc13311-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=7"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180346",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=5:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=8"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180347",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_measure": "MBC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=5:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-pseudomonas-aeruginosa-atcc27853-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=9"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180348",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Shigella sonnei ATCC 11060",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=10"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180349",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Shigella sonnei ATCC 11060",
+      "database_measure": "MBC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=6:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-shigella-sonnei-atcc11060-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=11"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180350",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MT strain",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=12"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180351",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MT strain",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=7:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-acinetobacter-baumannii-mt-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=13"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180352",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus aureus ATCC 25923",
+      "database_measure": "MIC",
+      "database_concentration": ">250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-aureus-atcc25923-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=10:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-aureus-atcc25923-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=14"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180353",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_measure": "MIC",
+      "database_concentration": "15.63",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=11:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=15"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180354",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Staphylococcus epidermidis ATCC 12228",
+      "database_measure": "MBC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=11:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-staphylococcus-epidermidis-atcc12228-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=16"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180355",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Bacillus cereus ATCC 11778",
+      "database_measure": "MIC",
+      "database_concentration": "250",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-bacillus-cereus-atcc11778-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=12:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-bacillus-cereus-atcc11778-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=17"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180356",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Listeria monocytogenes 10403s",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=13:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=18"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180357",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Listeria monocytogenes 10403s",
+      "database_measure": "MBC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mbc",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=1:row=13:column=6"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MBC value source-verified."
+      },
+      "matched_activity_record_id": "activity-table1-listeria-monocytogenes-10403s-a11-mbc",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=19"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180358",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=20"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180359",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=21"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180360",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "31.25",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-31-25-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=22"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180361",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium ATCC 13311",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "Database row omits the environmental condition; the MIC value occurs in the Table 4 condition set."
+      },
+      "matched_activity_record_id": "activity-table4-a11-mic-value-125-context-set",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=23"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180362",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-001",
+      "database_measure": "MIC",
+      "database_concentration": "62.5",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MDR clinical isolates H1-001, H1-011, H1-015, H1-100, H2-039",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table3-h1-001-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=3:row=4:column=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC for the named MDR isolate is source-verified."
+      },
+      "matched_activity_record_id": "activity-table3-h1-001-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=24"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "180363",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Salmonella enterica subsp. enterica serovar Typhimurium H1-006",
+      "database_measure": "MIC",
+      "database_concentration": "125",
+      "database_unit": "µg/ml",
+      "database_assay_type": "target_activity",
+      "database_note": "MDR clinical isolates H1-006, H1-041, H1-062",
+      "database_fici": "",
+      "database_antibiotic_name": "",
+      "peptide_name_check": {
+        "database_name": "A11",
+        "primary_name": "A11",
+        "agreement": "matches_primary_source",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "matched_activity_record_id": "activity-table3-h1-006-a11-mic",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=3:row=5:column=4"
+        },
+        "agreement": "source_verified",
+        "review_note": "A11 MIC for the named MDR isolate is source-verified."
+      },
+      "matched_activity_record_id": "activity-table3-h1-006-a11-mic",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=25"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Linked DBAASP A11 row is source-verified against the primary article; any database condition compression is recorded in activity_value_check rather than treated as a conflict."
+    },
+    {
+      "source_table": "linked_literature_records.jsonl",
+      "source_id": "DBAASPS_22822",
+      "source_record_id": "DBAASPS_22822",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "A novel designed membrane-active peptide for the control of foodborne Salmonella enterica serovar Typhimurium.",
+      "database_measure": "literature_link",
+      "database_concentration": "",
+      "database_unit": "",
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "agreement": "residue_sequence_matches_and_c_terminal_amidation_preserved",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:table=2:row=6",
+          "primary_source_statement": "Table 2 reports A11 as WVKKVARKVVKIGRKVAR-NH2; methods state derivatives were C-terminally amidated."
+        },
+        "modification_check": {
+          "c_terminal_amidation": "present_in_primary_source",
+          "database_sequence_catalog_representation": "residue_string_without_terminal_modification",
+          "curation_action": "do_not_drop_amidation; preserve it in final sequence/modification fields"
+        }
+      },
+      "activity_value_check": {
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "agreement": "source_verified",
+        "review_note": "DOI/PMID/PMCID and title match the primary article metadata."
+      },
+      "matched_activity_record_id": "",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1038/s41598-023-30427-z",
+        "pmid": "36864083",
+        "pmcid": "PMC9981719"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature row matches the source article metadata."
+    }
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.1038_s41598-023-30427-z/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extraction/extraction_quality_report.json",
+    "papers/doi__10.1038_s41598-023-30427-z/source/paper.xml",
+    "papers/doi__10.1038_s41598-023-30427-z/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/raw/oa_package",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/raw/supplementary_original",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-023-30427-z/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ]
+}

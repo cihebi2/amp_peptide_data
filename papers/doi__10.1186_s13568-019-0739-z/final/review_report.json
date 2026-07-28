@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.1186_s13568-019-0739-z",
+  "reviewed_at": "2026-05-03T04:07:05Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-6 re-review recovered source-supported Table 2 MIC rows and text-level hemolysis/anticancer values, reconciled linked database rows with explicit source conflicts, and closed the prior targeted rework without hiding database/source cautions.",
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s13568-019-0739-z/handoff_context.json",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/packet_manifest.json",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/extracted/pdf_text/13568_2019_Article_739.txt",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/extracted/oa_package/local-DBAASP-PMC6353975/PMC6353975/13568_2019_Article_739.nxml",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1186_s13568-019-0739-z/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s13568-019-0739-z/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s13568-019-0739-z/supplementary/*.bin"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 10,
+    "activity_endpoint_counts": {
+      "MIC": 8,
+      "hemolysis_threshold": 1,
+      "percent_inhibition": 1
+    },
+    "database_record_audit_groups": 9,
+    "database_status_summary": {
+      "source_verified_groups": 6,
+      "source_conflict_groups": 3,
+      "source_verified_linked_rows": 17,
+      "source_conflict_linked_rows": 13
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP hybrid MIC and anticancer rows are source verified; DRAMP21453/dbAMP_16316 comparator-column and sequence conflicts are preserved as source_conflict; literature links are source verified.",
+    "layer_2_activity_toxicity": "Primary XML/PDF Table 2 supports four hybrid MIC rows and four melittin comparator rows; result text supports hemolysis threshold and SMMC-7721 percent inhibition.",
+    "layer_3_mechanism": "Only computational/design and assay-scope statements are retained; no direct mechanism assay is promoted."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp21453_no_agp_sequence_and_melittin_column_values",
+      "evidence_context": "DRAMP21453 is retained as source_conflict because source methods support the AGP sequence and Table 2 separates hybrid from melittin comparator values."
+    },
+    {
+      "caution_code": "hemolysis_exact_40uM_database_precision_not_primary",
+      "evidence_context": "Primary source supports a no-hemolysis threshold through 45 µmol/L but not the DBAASP exact 0% at 40 µM row."
+    },
+    {
+      "caution_code": "paper_sequence_wording_ambiguous",
+      "evidence_context": "Introduction contains a no-AGP artificial peptide parenthetical, while methods give the synthesized AGP-containing designed sequence; final identity keeps conflict cautions rather than normalizing silently."
+    },
+    {
+      "caution_code": "supplementary_landing_bins_are_article_html",
+      "evidence_context": "Local landed supplementary landing-*.bin files were checked with file/rg and are HTML landing/article/support/ad assets, not true supplementary data tables; activity blockers were recoverable from XML/PDF."
+    },
+    {
+      "caution_code": "melittin_comparator_rows_retained",
+      "evidence_context": "Table 2 comparator values are retained to explain linked database conflicts but are not treated as hybrid-peptide MIC values."
+    },
+    {
+      "caution_code": "no_direct_mechanism_promoted",
+      "evidence_context": "The paper has MIC/hemolysis/MTT activity evidence and computational structure predictions, but no direct mechanistic assay."
+    }
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened packet/raw XML, PDF text, OA NXML/PDF package members, landed supplementary HTML/bin assets, locator index, and linked database JSONL rows. No true supplementary table was present locally; all gate-changing activity/database values were recoverable from XML/PDF/database snapshots."
+  },
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "closed_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  }
+}

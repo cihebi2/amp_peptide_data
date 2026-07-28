@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.3390_biom9110667",
+  "generated_at": "2026-05-08T16:08:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "semantic_quality_checks": [
+    {
+      "check": "worker_2_activity_rows",
+      "result": "pass_with_cautions",
+      "evidence": "36 activity/toxicity rows written; MIC rows come from XML Table 2 with units/targets/locators, and hemolysis exact values are retained as database rows anchored to Figure 5."
+    },
+    {
+      "check": "worker_4_database_record_adjudication",
+      "result": "pass_with_cautions",
+      "evidence": "54 linked database/literature/assay rows audited; status_summary={'sequence_modified_not_normalized': 10, 'source_verified': 23, 'source_conflict': 21}."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "Comparator rows, APD6 free-text scope, C-terminal amidation gaps, and figure-only hemolysis exact values remain explicit cautions/conflicts."
+    },
+    {
+      "check": "supplementary_exhaustion",
+      "result": "pass",
+      "evidence": "Supplementary ZIP members were listed/opened via xls2csv/OOXML; no additional MIC/toxicity row source was found beyond XML Table 2 and Figure 5."
+    },
+    {
+      "check": "mechanism_strength",
+      "result": "pass_with_scope_guard",
+      "evidence": "Mechanism claims are bounded to phenotype/literature-supported membrane context/predicted structure; no direct molecular mechanism is asserted."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 closed by source-reviewed worker-2/4/6 repair; rework_targets is empty."
+    }
+  ],
+  "caution_findings": [
+    {
+      "code": "figure_only_hemolysis_exact_values",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-4",
+      "finding": "Figure 5 and Methods 2.7 support hemolysis context, while linked DBAASP rows provide exact percentages; exact values are not presented as primary table transcription."
+    },
+    {
+      "code": "database_modification_not_normalized",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "finding": "Primary sequences ending -NH2 are preserved with sequence_modified_not_normalized where local database sequence fields omit terminal amidation."
+    },
+    {
+      "code": "comparator_database_rows_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "finding": "Dermaseptin-B4, Dermaseptin-S1, and Phyloseptin-S1 are Table 2 comparator/external-reference rows; linked database rows are not treated as clean novel-peptide primary records."
+    },
+    {
+      "code": "apd6_free_text_scope_conflict",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "finding": "APD6 free-text records can contain updated or non-primary-scope activity; only values supported by local paper materials are promoted."
+    },
+    {
+      "code": "direct_mechanism_not_established",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "The paper supports activity and predicted membrane-relevant properties, but no direct mechanism assay is present."
+    }
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

@@ -1,0 +1,96 @@
+{
+  "adjudication_summary": "Worker-6 re-review reopened the handoff packet, article XML/PDF text, linked DBAASP rows, packet locators, and the actual local Springer MOESM1/MOESM2 files recovered from the DBAASP PMC shard. Worker-2 activity evidence now contains source-data-backed rows for the lariat lipopeptide growth-inhibition curves. Worker-4 database evidence preserves database-only and source-conflict cases instead of promoting fitted or database-only values to clean primary-source facts. The old rework ticket is closed with cautions, not clean acceptance.",
+  "caution_findings": [
+    {
+      "caution_code": "packet_supplement_landing_copy_not_source_data",
+      "evidence_context": "packet raw supplementary_original contains HTML landing copies; exact local MOESM1/MOESM2 files were found and checked under the DBAASP PMC shard for PMC12768971."
+    },
+    {
+      "caution_code": "database_ic50_source_data_mismatch_preserved",
+      "evidence_context": "DBAASP IC50 values for cyc-30-SL021, cyc-31-SL014, and cyc-31-SL031 do not exactly match the first source-data mean threshold in MOESM2; these remain source_conflict cautions."
+    },
+    {
+      "caution_code": "database_snapshot_omits_primary_source_active_compounds",
+      "evidence_context": "MOESM2 and main text support activity rows for cyc-30-SL042 and cyc-31-SL032, but no linked DBAASP assay row for those compounds exists in the packet snapshot."
+    },
+    {
+      "caution_code": "no_toxicity_rows_reported",
+      "evidence_context": "No hemolysis, cytotoxicity, or host-toxicity assay rows were found in the reopened local article text, source-data XLSX, or relevant supplementary PDF text."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41557-025-01979-6/handoff_context.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/extracted/supplementary_text.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/DBAASP/data/oa_fulltext_pmc_shards/shard_01/supplementary/PMC12768971/41557_2025_1979_MOESM1_ESM.pdf",
+    "/mnt/d/work/抗菌肽/数据库/DBAASP/data/oa_fulltext_pmc_shards/shard_01/supplementary/PMC12768971/41557_2025_1979_MOESM2_ESM.xlsx",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41557-025-01979-6/database/linked_literature_records.jsonl",
+    "papers/doi__10.1038_s41557-025-01979-6/final/mechanism_ontology_record.json"
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Packet-local supplement entries were landing-page copies, but exact local MOESM1 PDF and MOESM2 XLSX were found under the DBAASP PMC shard and checked. No additional paper-local source path was found that changes the remaining caution labels.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1038_s41557-025-01979-6",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Literature links are source-traced to article metadata. Exact assay rows were compared with MOESM2; matching or near-matching rows are source-supported with cautions, while mismatches and database-only inactive rows remain explicitly labeled rather than normalized.",
+    "layer_2_activity_toxicity": "Activity rows are now source-data-backed for M. intracellulare JCM 6384 growth inhibition; no toxicity rows were reported in the reopened local materials.",
+    "layer_3_mechanism": "Existing mechanism claims remain source-located and do not require this worker-2/4/6 repair lane to alter worker-5 output.",
+    "review": "The prior generic framework-test failure is resolved by source-reviewed repair. Residual disagreements are caution-bearing curation facts, not open rework targets."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "re_reviewed_at": "2026-05-05T07:37:08Z",
+  "re_review_note": "Codex CLI re-review reopened source paths from the handoff packet, verified the MOESM2 growth-inhibition source-data sheet by OOXML parsing, checked linked DBAASP rows, and reran strict semantic/publication gates.",
+  "reviewed_at": "2026-05-03T10:20:00Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 10,
+    "database_snapshots": {
+      "linked_assay_records": 32,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 32,
+      "linked_literature_records": 17,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "last_rerun_at": "2026-05-05T07:37:08Z",
+    "publication_quality_pass": true,
+    "required_rework_count": 0,
+    "semantic_issue_count": 0,
+    "status": "closed_with_cautions"
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

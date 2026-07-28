@@ -1,0 +1,263 @@
+{
+  "paper_id": "doi__10.1002_cmdc.201900465",
+  "pilot_sample_id": "PILOT20-002",
+  "audit_record_id": "doi__10.1002_cmdc.201900465:database_audit:305",
+  "reviewed_at": "2026-06-22T03:49:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "best_effort_limits": [
+    "The current Codex runtime does not expose a verifiable proof channel for model=gpt-5.5 and reasoning_effort=xhigh; per packet instruction, terminal decision is therefore unverifiable_best_effort.",
+    "No web access was used; review was bounded to local packet, paper, extracted text, database-row snapshots, and final artifacts.",
+    "The sampled DRAMP activity row could be source-checked from XML and linked database rows, but the paper-level final mechanism artifact contains a repairable ontology defect that prevents confirming the existing publication_grade claim."
+  ],
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1002_cmdc.201900465",
+    "paper_dir": "papers/doi__10.1002_cmdc.201900465",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted",
+    "surfaces_reopened": {
+      "paper_xml": {
+        "exists": true,
+        "paths": [
+          "papers/doi__10.1002_cmdc.201900465/source/paper.xml",
+          "paper_packets/doi__10.1002_cmdc.201900465/raw/paper.xml"
+        ],
+        "review_use": "Primary Table 2 row and article metadata were checked directly."
+      },
+      "paper_pdf": {
+        "exists": true,
+        "paths": [
+          "papers/doi__10.1002_cmdc.201900465/source/paper.pdf",
+          "paper_packets/doi__10.1002_cmdc.201900465/raw/paper.pdf",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/pdf_text.jsonl"
+        ],
+        "review_use": "Parsed PDF text exists; XML table was the authoritative source for the sampled Table 2 row."
+      },
+      "oa_package": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1002_cmdc.201900465/raw/oa_package",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/oa_package/local-DBAASP-PMC6973051",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/oa_package/local-DRAMP-31692278"
+        ]
+      },
+      "supplementary_assets": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1002_cmdc.201900465/raw/supplementary_original",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_tables.json"
+        ],
+        "supplementary_table_count": 0
+      },
+      "database_rows": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1002_cmdc.201900465/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1002_cmdc.201900465/database/linked_dramp_activity_records.jsonl",
+          "paper_packets/doi__10.1002_cmdc.201900465/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1002_cmdc.201900465/database/linked_literature_records.jsonl"
+        ],
+        "matched_rows_checked": [
+          "linked_experiment_records.jsonl:source_id=DRAMP32180",
+          "linked_dramp_activity_records.jsonl:source_id=DRAMP32180"
+        ]
+      }
+    },
+    "known_risks_preserved": [
+      "material_queue_status_contains_gaps",
+      "packet_manifest_has_test_scope_note",
+      "historical rework request present but later responses mark ticket resolved",
+      "paper_quality_feedback_present"
+    ],
+    "missing_primary_material_blocker": false
+  },
+  "layer1_database_record_review": {
+    "sample_status_under_review": "source_verified",
+    "sample_status_assessment": "supported_for_this_activity_audit_row",
+    "database": "DRAMP",
+    "source_id": "DRAMP:DRAMP32180",
+    "release_row_locator": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:tsv_row=1374",
+    "sample_final_record_match": true,
+    "database_row_evidence": {
+      "database_subject": "Tumor cells: MEC-1 (5% Killing=32uM)",
+      "traceability_locator": "database:linked_experiment_records.jsonl:source_id=DRAMP:DRAMP32180",
+      "dramp_activity_locator": "database:linked_dramp_activity_records.jsonl:source_id=DRAMP:DRAMP32180"
+    },
+    "primary_source_evidence": {
+      "table_locator": "xml:table=2:row=21:column=10",
+      "source_path": "papers/doi__10.1002_cmdc.201900465/source/paper.xml",
+      "source_line_window": "paper.xml:493-502",
+      "observed_row_fields": {
+        "peptide_code": "296",
+        "sequence": "RRRRPIRRRPIRPPWYR",
+        "charge": "+9",
+        "mic_value": "16",
+        "cell_viability_value": "95"
+      }
+    },
+    "rationale": "The DRAMP row reports 5% killing at 32 uM for MEC-1. The source-backed activity row for peptide 296 reports 95% MEC-1 cell viability at 32 uM; the final audit explicitly records the match reason as database_killing_equals_100_minus_source_viability. No conflict was found for this sampled activity-value mapping.",
+    "limitations": [
+      "The release row's primary_source_value/unit columns are blank; support is carried through matched_activity_record_id and source locator rather than duplicated scalar fields.",
+      "The source locator points to the Table 2 viability cell; the adjacent XML row fields provide peptide code and sequence context."
+    ]
+  },
+  "layer2_activity_toxicity_review": {
+    "matched_activity_record_id": "doi__10.1002_cmdc.201900465-table2-r21-cell_viability-296",
+    "activity_record_assessment": "source_backed",
+    "activity_record_checked": {
+      "endpoint": "cell_viability",
+      "raw_value": "95",
+      "raw_unit": "%",
+      "normalized_value": "95",
+      "normalized_unit": "%",
+      "target_class": "human_cell_line",
+      "target_species": "Homo sapiens",
+      "target_strain": "MEC-1",
+      "assay": "MTT",
+      "peptide_concentration": "32 uM",
+      "source_locator": "xml:table=2:row=21:column=10"
+    },
+    "source_context_checked": [
+      "paper.xml Table 2 caption: MIC units and MEC-1 viability percent context",
+      "paper.xml body text around Table 2: MTT cytotoxicity assay against MEC-1",
+      "paper.xml lines 493-502: peptide 296 row values",
+      "linked_experiment_records.jsonl source_id=DRAMP32180: database 5% killing row"
+    ],
+    "hard_activity_failures_found_for_sample": [],
+    "rationale": "The sampled row has a concrete endpoint, raw value, raw unit, target species/strain, assay context, concentration, and primary-source locator. The database 5% killing value is reconciled as the inverse of 95% source cell viability, so the activity_value_or_unit category is handled with a source-backed explanation."
+  },
+  "layer3_mechanism_review": {
+    "mechanism_artifact_paths_checked": [
+      "paper_packets/doi__10.1002_cmdc.201900465/analysis/mechanism_evidence.json",
+      "paper_packets/doi__10.1002_cmdc.201900465/final/mechanism_evidence.json",
+      "papers/doi__10.1002_cmdc.201900465/final/mechanism_ontology_record.json"
+    ],
+    "assessment": "needs_rework_if_terminal_model_gate_were_satisfied",
+    "blocking_findings": [
+      {
+        "failure_code": "invalid_mechanism_evidence_class",
+        "objects": [
+          "mechanism_claims[0]",
+          "mechanism_claims[1]",
+          "mechanism_claims[2]"
+        ],
+        "observed_evidence_class": "mechanism_context_pending_review",
+        "allowed_evidence_classes": [
+          "direct_mechanism",
+          "phenotype_supported",
+          "inferred_mechanism",
+          "computational_only",
+          "unknown_or_not_tested"
+        ],
+        "evidence": "Each mechanism claim states it is an automated locator note and not publication-grade mechanism adjudication."
+      }
+    ],
+    "direct_mechanism_check": {
+      "direct_mechanism_claims_present": false,
+      "direct_assay_type_gap": "No claim is classed as direct_mechanism; however, the existing nonstandard evidence class prevents ontology acceptance."
+    },
+    "rationale": "The final mechanism artifact has claim_id, claim_text, entity_scope, and locators, but the evidence_class values are outside the allowed ontology and the limitation text says the claims remain pending review. Worker-6 should not confirm publication-grade final acceptance while this layer remains in placeholder/pending-review form."
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "existing_review_model": "gpt-5.5",
+    "existing_reasoning_effort": "xhigh",
+    "existing_rework_targets_count": 0,
+    "sample_row_scientific_assessment": "The sampled DRAMP activity row is source-backed and can remain source_verified with the existing caution context preserved.",
+    "paper_level_best_effort_assessment": "The existing final artifact cannot be confirmed as publication-grade because layer 3 uses nonstandard pending-review mechanism evidence classes.",
+    "terminal_decision_if_model_effort_were_verifiable": "needs_targeted_rework",
+    "reported_decision_reason": "The required model/effort provenance cannot be independently proven in this runtime, so the result decision is unverifiable_best_effort per packet instruction."
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "paper_packets/doi__10.1002_cmdc.201900465/final/mechanism_evidence.json",
+      "failing_object": "mechanism_claims[*]",
+      "failure_code": "invalid_mechanism_evidence_class",
+      "source_evidence_to_check": [
+        "papers/doi__10.1002_cmdc.201900465/source/paper.xml::sections on transcription/translation and membrane permeabilization",
+        "paper_packets/doi__10.1002_cmdc.201900465/extracted/pdf_text.jsonl",
+        "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_text.jsonl"
+      ],
+      "required_action": "Rebuild mechanism_claims using only allowed evidence_class values; add direct_assay_types for any direct_mechanism claim, or downgrade to phenotype_supported/inferred_mechanism/unknown_or_not_tested as supported by locators.",
+      "acceptance_check": "Worker-6 re-adjudication confirms no mechanism claim uses mechanism_context_pending_review or other non-ontology evidence classes."
+    },
+    {
+      "worker": "worker-6",
+      "layer": "adjudication",
+      "artifact_path": "papers/doi__10.1002_cmdc.201900465/final/review_report.json",
+      "failing_object": "review_status/publication_grade",
+      "failure_code": "accepted_with_invalid_mechanism_ontology",
+      "required_action": "Re-adjudicate after worker-5 mechanism repair and preserve any remaining cautions; do not keep publication_grade=true unless the mechanism ontology gate is clean."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "model_provenance",
+      "severity": "blocking_for_terminal_review",
+      "status": "unverifiable",
+      "note": "Current runtime does not provide independent proof that this review executed with model=gpt-5.5 and reasoning_effort=xhigh."
+    },
+    {
+      "scope": "sampled_dramp_activity_row",
+      "severity": "caution",
+      "status": "source_verified_supported",
+      "note": "Source support is via matched activity row and locator, while release-row scalar primary_source_value/unit fields are blank."
+    },
+    {
+      "scope": "packet_level_cautions",
+      "severity": "caution",
+      "status": "preserve_existing_cautions",
+      "note": "Existing final review preserves Table 1 image transcription and non-sampled DRAMP/CAMP caution contexts; these are not hard blockers for the sampled DRAMP32180 row."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-002__doi__10.1002_cmdc.201900465/true_review_result.schema.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/packet_manifest.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extraction/extraction_status.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/analysis_status.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/locators/locator_index.json",
+    "papers/doi__10.1002_cmdc.201900465/source/paper.xml",
+    "paper_packets/doi__10.1002_cmdc.201900465/extracted/pdf_text.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/adjudication_report.json",
+    "papers/doi__10.1002_cmdc.201900465/final/database_record_verification.json",
+    "papers/doi__10.1002_cmdc.201900465/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1002_cmdc.201900465/final/mechanism_ontology_record.json",
+    "papers/doi__10.1002_cmdc.201900465/final/review_report.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/rework/rework_responses.jsonl"
+  ]
+}

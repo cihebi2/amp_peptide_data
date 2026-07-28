@@ -1,0 +1,203 @@
+{
+  "artifact_type": "database_record_verification",
+  "paper_id": "doi__10.1038_s41598-017-04777-4",
+  "doi": "10.1038/s41598-017-04777-4",
+  "run_id": "codex_cli_re_review_20260503_worker4_6",
+  "worker": "worker-4",
+  "role": "paper-database-record-auditor",
+  "generated_at": "2026-05-03T15:47:48Z",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 re-review of all packet-linked DRAMP rows against reopened XML/PDF/supplement/database snapshots; supported values are verified and unsupported DRAMP metadata is preserved as source_conflict.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "record_id": "DRAMP31535-general_amps-identity-and-metadata",
+      "source_id": "DRAMP31535",
+      "sequence_key": "DRAMP:DRAMP31535",
+      "source_table": "general_amps.txt",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-017-04777-4/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records:row=1"
+      },
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "conflict_flags": [
+        "database_generic_antimicrobial_label_not_primary_source_tested",
+        "database_free_termini_annotations_not_primary_source_stated"
+      ],
+      "conflict_context": "The primary paper verifies the TAT-Kα2 name, exact sequence, synthetic peptide origin, DOI/PMID citation, antiviral target IC50 values, cytotoxicity statement, and envelope-destabilization mechanism. It does not directly test a non-viral antimicrobial panel and does not explicitly state free N- or C-terminal modification status, so those DRAMP metadata fields remain source_conflict/database-only rather than source_verified.",
+      "name_check": {
+        "database_name": "TAT-Kα2",
+        "primary_source_name": "TAT-Kα2",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=1:row=4"
+        }
+      },
+      "sequence_check": {
+        "database_sequence": "RRRQRRKKRGYGFVNLLFLVVE",
+        "primary_source_sequence": "RRRQRRKKRGYGFVNLLFLVVE",
+        "status": "source_verified_after_removing_source_spaces",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=1:row=4"
+        }
+      },
+      "source_origin_check": {
+        "database_source": "Synthetic construct",
+        "primary_source_context": "synthetic Kα2 fused to HIV-1 TAT domain; peptides commercially synthesized",
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:sec=1:Introduction; xml:sec=14:Peptides"
+        }
+      },
+      "modification_check": {
+        "database_fields": {
+          "N-terminal_Modification": "Free",
+          "C-terminal_Modification": "Free",
+          "Stereochemistry": "L"
+        },
+        "status": "database_only_no_primary_source",
+        "reason": "Table 1 gives a plain sequence and the source states commercial synthesis/purity, but no explicit free-terminus statement was found in XML, PDF text, supplement text, or OA package members."
+      },
+      "activity_label_check": {
+        "database_activity": "Antimicrobial, Antiviral",
+        "status": "source_conflict",
+        "reason": "The paper provides antiviral/virucidal evidence; a broader antimicrobial label is not backed by tested bacterial/fungal/parasite activity in local primary material."
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+        "locator": "xml:article-meta:doi+pmid"
+      },
+      "review_notes": "Conflict preserved at metadata level; the source-supported antiviral target rows remain retained in final activity evidence."
+    },
+    {
+      "record_id": "DRAMP31535-target-ic50-values",
+      "source_id": "DRAMP31535",
+      "sequence_key": "DRAMP:DRAMP31535",
+      "source_table": "general_amps.txt",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-017-04777-4/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records:row=1:Target_Organism"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "DRAMP Target_Organism IC50 values for enveloped viruses",
+      "matched_activity_record_ids": [
+        "doi__10.1038_s41598-017-04777-4-table2-r2-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r3-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r4-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r5-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r6-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r7-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r8-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r9-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r10-IC50",
+        "doi__10.1038_s41598-017-04777-4-table2-r11-IC50"
+      ],
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=1:row=4"
+        }
+      },
+      "activity_value_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=2:rows=2-11"
+        },
+        "note": "All 10 DRAMP positive target IC50 values are present in primary-source Table 2; the RSV row is restored in final activity output."
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+        "locator": "xml:article-meta:doi+pmid"
+      },
+      "review_notes": "Positive antiviral activity values source-verified against Table 2."
+    },
+    {
+      "record_id": "DRAMP31535-experiment-mechanism-cytotoxicity",
+      "source_id": "DRAMP31535",
+      "sequence_key": "DRAMP:DRAMP31535",
+      "source_table": "general_amps.txt",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-017-04777-4/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "Mechanism and cytotoxicity comments",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=1:row=4"
+        }
+      },
+      "mechanism_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:sec=6:TAT-Kα2 destabilises the structure of IAV particles; xml:sec=11:Discussion"
+        }
+      },
+      "cytotoxicity_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:sec=16:In vitro cytotoxicity assay; xml:sec=11:Discussion"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+        "locator": "xml:article-meta:doi+pmid"
+      },
+      "review_notes": "DRAMP mechanism/cytotoxicity comments match source-supported envelope destabilization and no-cytotoxicity claims."
+    },
+    {
+      "record_id": "DRAMP31535-literature-link",
+      "source_id": "DRAMP31535",
+      "sequence_key": "DRAMP:DRAMP31535",
+      "source_table": "linked_literature_records.jsonl",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1038_s41598-017-04777-4/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "DOI/PMID/title literature traceability",
+      "sequence_check": {
+        "status": "source_verified",
+        "source_locator": {
+          "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+          "locator": "xml:table=1:row=4"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1038_s41598-017-04777-4/source/paper.xml",
+        "locator": "xml:article-meta:doi+pmid+title"
+      },
+      "review_notes": "Literature link points to the same source article and is source-verified."
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 1,
+    "source_verified": 3
+  },
+  "caution_findings": [
+    {
+      "scope": "DRAMP31535 metadata",
+      "status": "source_conflict_preserved",
+      "note": "Generic antimicrobial label and free-terminus fields are not promoted to source_verified because the primary material does not state them directly."
+    }
+  ]
+}

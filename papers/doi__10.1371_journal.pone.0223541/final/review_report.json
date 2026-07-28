@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0223541",
+  "doi": "10.1371/journal.pone.0223541",
+  "title": "Identification and characterisation of capidermicin, a novel bacteriocin produced by Staphylococcus capitis.",
+  "reviewed_at": "2026-05-05T17:49:55Z",
+  "generated_at": "2026-05-05T17:49:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "XML/PDF Table 2 row-level MIC extraction",
+    "linked APD6/DBAASP/CAMP sequence and assay rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_note": "Landed supplementary assets are HTML/landing pages or figure/table download pages, not scientific XLSX/PDF supplemental datasets; no supplemental activity/toxicity table was recoverable or needed after primary Table 2 repair."
+  },
+  "checked_inputs": [
+    "papers/doi__10.1371_journal.pone.0223541/source/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0223541/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/oa_package/local-APD6-pmc_package/PMC6795431/pone.0223541.nxml",
+    "papers/doi__10.1371_journal.pone.0223541/source/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0223541/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/pdf_text/pone.0223541.txt",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0223541/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0223541/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0223541/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0223541/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0223541/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 7,
+    "activity_core_fields_complete": true,
+    "database_status_summary": {
+      "source_conflict": 3,
+      "source_verified": 17
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay rows for seven Table 2 MIC values now match primary source rows and are source_verified; Staphylococcus epidermidis no-value database annotations are preserved as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Table 2 was reparsed manually into seven MIC records with target organism/strain, raw mass and molar values, units, method conditions, replicate statement, and XML/PDF locators.",
+    "layer_3_mechanism": "Peptide identity/classification and stability are source-supported; proposed membrane permeabilization is retained as homology/structure inference rather than direct mechanism.",
+    "supplementary_materials": "Local landed supplementary assets were opened as HTML/landing/download pages; no true supplementary spreadsheet/PDF activity table was present locally."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_without_primary_mic",
+      "records": [
+        "DBAASP assay row 112318",
+        "DBAASP linked_experiment row 8",
+        "CAMP CAMPSQ23712 activity text tail"
+      ],
+      "evidence_context": "Staphylococcus epidermidis appears as an indicator strain in Table 1 but no Table 2 MIC value or CIT060 inhibited-indicator claim supports a positive MIC row."
+    },
+    {
+      "caution_code": "sequence_in_figure_not_xml_text",
+      "evidence_context": "Exact ORF4 peptide sequence is image-located in Fig 3B and cross-checked against merged sequence catalogs; XML/PDF text provides the 153 bp ORF, MN234131, TTG start, mass, and figure locator rather than machine-readable sequence text."
+    },
+    {
+      "caution_code": "mechanism_inferred_not_direct",
+      "evidence_context": "Discussion uses structural similarity to LnqQ/A53 to infer possible membrane permeabilization; ontology keeps this below direct_mechanism."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "adjudication_summary": "Source-reviewed rework repaired the Table 2 MIC matrix, reconciled linked database rows, and replaced automated mechanism placeholders with bounded ontology claims. The paper is accepted_with_cautions because database rows still contain unsupported Staphylococcus epidermidis activity annotations and the mechanism claim is inferred, not directly assayed.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0,
+    "major_issue_count": 0,
+    "publication_grade_ready": true
+  },
+  "unrecoverable_material_gaps": []
+}

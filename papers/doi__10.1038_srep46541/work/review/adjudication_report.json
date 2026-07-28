@@ -1,0 +1,91 @@
+{
+  "adjudication_summary": "Worker-2/4/6 source re-review replaced the framework-test placeholder with source-supported activity/toxicity rows, conflict-preserving DBAASP/DRAMP database audit, and bounded mechanism adjudication for LS10. The paper is accepted_with_cautions because exact DBAASP LC50 values remain figure/database-derived rather than text-table verified, and the DRAMP Source field conflicts with the Brevibacillus origin stated in the paper.",
+  "caution_findings": [
+    {
+      "caution_code": "database_lc50_exact_values_not_text_labeled",
+      "evidence_context": "DBAASP LC50 exact values for MCF-7, HT1080, H1299, and HeLa are consistent with Figure 2 dose-response and below-10-uM prose, but the local source does not provide a text/table of exact LC50 values."
+    },
+    {
+      "caution_code": "dramp_source_field_conflict",
+      "evidence_context": "DRAMP34408 lists Source as Synthetic; paper source text describes LS10 as extracted from Brevibacillus sp. strain SKDU10."
+    },
+    {
+      "caution_code": "no_xml_or_supplementary_tables",
+      "evidence_context": "Packet extraction found zero XML and supplementary tables; the local supplement contains Figure S1/S2 captions only, so no table values were fabricated."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1038_srep46541/handoff_context.json",
+    "paper_packets/doi__10.1038_srep46541/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep46541/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep46541/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep46541/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_srep46541/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_srep46541/extracted/pdf_text/srep46541.txt",
+    "paper_packets/doi__10.1038_srep46541/extracted/supplementary_text/srep46541-s1.txt",
+    "paper_packets/doi__10.1038_srep46541/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_srep46541/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_srep46541/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f1.jpg",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f2.jpg",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f3.jpg",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f4.jpg",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f5.jpg",
+    "paper_packets/doi__10.1038_srep46541/extracted/oa_package/local-DBAASP-PMC5396196/PMC5396196/srep46541-f6.jpg",
+    "papers/doi__10.1038_srep46541/source/paper.xml",
+    "papers/doi__10.1038_srep46541/source/paper.pdf",
+    "papers/doi__10.1038_srep46541/source/supplementary/srep46541-s1.pdf",
+    "paper_packets/doi__10.1038_srep46541/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep46541/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep46541/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_srep46541/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "materials_exhausted": {
+    "figure_images": true,
+    "merged_database_rows": true,
+    "note": "XML, PDF text, OA package figures, supplementary PDF text, linked DBAASP/DRAMP rows, and merged sequence/literature CSV rows were reopened. Remaining cautions are explicit database/source conflicts rather than material gaps.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1038_srep46541",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP and DRAMP sequences match Figure 1/merged sequence catalog. DBAASP hemolysis and RWPE-1 selectivity are source-supported; exact cancer-cell LC50 database values are preserved as source_conflict because no primary text/table labels those exact values. DRAMP source organism conflict is preserved.",
+    "layer_2_activity_toxicity": "12 source-supported rows were extracted from MTT, hemolysis, LDH, and Annexin V/PI source text/figures; no parser-only or database-only row is promoted as primary-source evidence.",
+    "layer_3_mechanism": "Mechanism claims are limited to direct LDH/SEM membrane disruption and Annexin V/PI apoptosis evidence plus supporting defensin-like structural context.",
+    "publication_grade_review": "No blocking/major issue remains when database-only/exact-value gaps are preserved as cautions and no open rework target remains."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T11:17:45Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_records": 12,
+    "database_status_summary": {
+      "source_conflict": 11,
+      "source_verified": 7
+    },
+    "mechanism_claims": 3,
+    "source_conflicts_preserved": 11,
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_images",
+    "linked_dbaasp_rows",
+    "linked_dramp_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

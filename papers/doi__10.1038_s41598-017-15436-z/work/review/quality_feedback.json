@@ -1,0 +1,187 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T19:54:17Z"
+  },
+  "gate_validation": {
+    "publication_quality_gate": {
+      "path": "reports/doi__10.1038_s41598-017-15436-z.publication_quality.json",
+      "publication_grade_pass": false,
+      "review_status": {
+        "blocked_missing_primary_material": 1
+      },
+      "risk_counts": {
+        "open_rework_targets": 1
+      }
+    },
+    "semantic_gate": {
+      "issue_codes": [
+        "review_status_not_publication_grade",
+        "publication_grade_not_true"
+      ],
+      "issue_count": 2,
+      "path": "reports/doi__10.1038_s41598-017-15436-z.semantic_gate.json",
+      "publication_grade_fail_count": 1,
+      "publication_grade_pass_count": 0
+    },
+    "validated_at": "2026-05-03T19:52:05Z"
+  },
+  "generated_at": "2026-05-03T19:50:54Z",
+  "issue_count": 3,
+  "notes": "The original broad full_source_review_not_completed ticket has been converted to concrete worker-4/6 findings. Do not accept unless new local source material resolves the supplement and sequence gaps.",
+  "paper_id": "doi__10.1038_s41598-017-15436-z",
+  "post_gate_status": "strict_gates_failed_expected_nonaccepted_unrecoverable_gaps",
+  "qc_failure_reasons": [
+    {
+      "code": "supplementary_dataset_1_doc_not_locally_recoverable",
+      "owner_worker": "worker-6",
+      "reason": "The local packet/landed/downloaded assets do not contain the Word supplement named by the primary XML; only article HTML landing pages are present under supplementary.",
+      "severity": "blocking"
+    },
+    {
+      "code": "exact_peptide_sequence_not_in_primary_or_linked_sequence_snapshot",
+      "owner_worker": "worker-4",
+      "reason": "Exact L-Ctl/D-Ctl sequence evidence is absent from the primary XML/PDF and linked_sequence_records.jsonl has zero rows.",
+      "severity": "major"
+    },
+    {
+      "code": "dbamp_aggregate_row_preserved_as_source_conflict",
+      "owner_worker": "worker-4",
+      "reason": "dbAMP_27346 contains off-paper organism/MIC claims mixed with this DOI; only the Table 1 overlap is locally supported.",
+      "severity": "major"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41598-017-15436-z/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-017-15436-z/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T19:50:54Z",
+      "failure_code": "supplementary_dataset_1_doc_not_locally_recoverable",
+      "layer": "review",
+      "omission_code": "missing_local_41598_2017_15436_MOESM1_ESM_doc",
+      "owner_worker": "worker-6",
+      "paper_id": "doi__10.1038_s41598-017-15436-z",
+      "required_action": "Do not accept from current local material; only close if the named supplement file is later recovered locally or the controller explicitly downgrades this gap.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-15436-z/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-017-15436-z/supplementary"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-worker46-20260504-supplement-doc-unrecoverable",
+      "worker": "worker-6"
+    },
+    {
+      "artifact_path": "paper_packets/doi__10.1038_s41598-017-15436-z/analysis/database_record_audit.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T19:50:54Z",
+      "failure_code": "exact_peptide_sequence_not_in_primary_or_linked_sequence_snapshot",
+      "layer": "database",
+      "omission_code": "missing_primary_sequence_locator_for_dbaasp_sequence_ids",
+      "owner_worker": "worker-4",
+      "paper_id": "doi__10.1038_s41598-017-15436-z",
+      "required_action": "Keep exact sequence verification unresolved unless primary or linked database sequence material is supplied.",
+      "severity": "major",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1038_s41598-017-15436-z/database/linked_sequence_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/paper.pdf"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-worker46-20260504-database-sequence-dbamp-conflict",
+      "worker": "worker-4"
+    }
+  ],
+  "status": "blocked_after_bounded_worker4_worker6_re_review",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplementary_dataset_1_doc_not_locally_recoverable",
+      "impact": "Supplementary Dataset 1 / supplementary figure values cannot be source-reviewed or used to alter activity, toxicity, or mechanism conclusions.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-15436-z/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-017-15436-z/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-15436-z/asset_manifest.csv"
+      ],
+      "tools_attempted": [
+        "rg",
+        "find",
+        "file",
+        "jq",
+        "existing pdftotext extraction review"
+      ],
+      "why_unrecoverable": "The primary XML names 41598_2017_15436_MOESM1_ESM.doc, but the local landed/downloaded supplementary files are HTML article landing pages and no DOC/DOCX/PDF/XLSX supplement member exists in the paper-local roots or merged output match set."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "exact_peptide_sequence_not_in_primary_or_linked_sequence_snapshot",
+      "impact": "DBAASP sequence identifiers cannot be promoted to exact primary-source sequence verification; supported assay outcomes are preserved separately.",
+      "owner_worker": "worker-4",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-017-15436-z/database/linked_sequence_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted/xml_sections.json",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted/pdf_text/landing-1.txt"
+      ],
+      "tools_attempted": [
+        "rg exact-sequence search",
+        "jq database row review",
+        "wc -l linked_sequence_records.jsonl"
+      ],
+      "why_unrecoverable": "The local article identifies D-Ctl as the D-amino-acid epimer of L-Ctl and links DBAASP rows by PMID/DOI, but it does not print the exact peptide sequence and linked_sequence_records.jsonl has zero rows."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-15436-z",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/database",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/extracted",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/locators",
+        "paper_packets/doi__10.1038_s41598-017-15436-z/raw",
+        "papers/doi__10.1038_s41598-017-15436-z/final",
+        "papers/doi__10.1038_s41598-017-15436-z/source",
+        "papers/doi__10.1038_s41598-017-15436-z/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

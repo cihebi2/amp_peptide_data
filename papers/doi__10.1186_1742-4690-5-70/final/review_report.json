@@ -1,0 +1,115 @@
+{
+  "paper_id": "doi__10.1186_1742-4690-5-70",
+  "reviewed_at": "2026-05-03T00:49:19Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figure_image_review": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Owner-layer rework consumed local XML/PDF text, OA package NXML/PDF/images, Figure 3/4/6 images, supplementary_original landing/support HTML files, and linked DBAASP/CAMP/dbAMP database rows. No local spreadsheet/office supplementary table was present, and no external source chase was used."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1186_1742-4690-5-70/handoff_context.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/packet_manifest.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/locators/locator_index.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/pdf_text/1742-4690-5-70.txt",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/oa_package/local-DBAASP-PMC2533354/PMC2533354/1742-4690-5-70-3.jpg",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/oa_package/local-DBAASP-PMC2533354/PMC2533354/1742-4690-5-70-4.jpg",
+    "paper_packets/doi__10.1186_1742-4690-5-70/extracted/oa_package/local-DBAASP-PMC2533354/PMC2533354/1742-4690-5-70-6.jpg",
+    "paper_packets/doi__10.1186_1742-4690-5-70/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_1742-4690-5-70/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_1742-4690-5-70/database/linked_literature_records.jsonl",
+    "papers/doi__10.1186_1742-4690-5-70/source/paper.xml",
+    "papers/doi__10.1186_1742-4690-5-70/source/paper.pdf",
+    "papers/doi__10.1186_1742-4690-5-70/work/supplementary_methods/supplementary_evidence.json"
+  ],
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_verified": 13,
+      "source_conflict": 5
+    },
+    "activity_rows_parsed": 11,
+    "activity_rows_have_raw_values_and_units_or_explicit_no_unit_rationale": true,
+    "activity_rows_have_source_locators": true,
+    "ic50_rows_have_units": true,
+    "database_conflicts_preserved": true,
+    "mechanism_claims": 3,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked linked DBAASP assay rows and duplicate experiment-row mirrors against primary prose, Figure 3/6, and Table 1 peptide identities. One-to-one DBAASP assay rows are source_verified; CAMP/dbAMP aggregate rows remain source_conflict with explicit context.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 11 row-level antiviral syncytium evidence records: three IC50 rows, negative-threshold rows, qualitative FLK-cell inhibition, and mutant partial/no-activity rows. No toxicity endpoint is reported locally, so no toxicity values are fabricated.",
+    "layer_3_mechanism": "Worker-6 replaces framework placeholder mechanism notes with bounded source-backed membrane-fusion inhibition, structure-function mutant, and R403A potency claims. The final mechanism does not overclaim direct binding or bacterial antimicrobial mechanism.",
+    "adjudication": "The blocking rework ticket rwk-complete-test-0001 is closed after source-reviewed owner-layer repair; acceptance remains accepted_with_cautions because source values are antiviral fusion assays, some mutant rows are qualitative/threshold-only, and aggregate database rows retain conflict cautions."
+  },
+  "adjudication_summary": "Source-reviewed rework repaired missing activity rows, re-adjudicated linked database records, and replaced framework-test review/mechanism placeholders. The paper is publication-grade accepted_with_cautions with no open rework targets or unrecoverable material gaps after bounded local recovery.",
+  "summary": "Recovered source-backed antiviral syncytium activity rows, source-verified one-to-one DBAASP records, conflict-preserved aggregate database annotations, and bounded membrane-fusion mechanism claims.",
+  "caution_findings": [
+    {
+      "code": "antiviral_fusion_inhibitor_not_bacterial_amp_assay",
+      "severity": "caution",
+      "finding": "The source paper reports retroviral envelope-mediated membrane-fusion inhibition, not antibacterial MIC/hemolysis/cytotoxicity assays. Final activity rows therefore use antiviral syncytium endpoints and do not invent antimicrobial or toxicity values.",
+      "source": "xml:sec=12; xml:sec=16; xml:fig=3"
+    },
+    {
+      "code": "figure_curve_values_not_digitized_beyond_reported_text",
+      "severity": "caution",
+      "finding": "Exact IC50 values are captured only where the primary prose reports them. Inactive or partial mutant rows keep reported thresholds/percentages or qualitative no-detectable-activity language rather than digitizing curves for unreported values.",
+      "source": "xml:fig=3; xml:fig=4; xml:fig=6"
+    },
+    {
+      "code": "aggregate_database_rows_preserved_as_conflict",
+      "severity": "caution",
+      "finding": "CAMP/dbAMP aggregate entry rows partly mirror source-backed antiviral values but compress target/assay/citation details; these are preserved as source_conflict while one-to-one DBAASP assay rows are source_verified.",
+      "source": "paper_packets/doi__10.1186_1742-4690-5-70/database/linked_experiment_records.jsonl"
+    },
+    {
+      "code": "local_supplementary_assets_are_figure_original_or_landing_html",
+      "severity": "caution",
+      "finding": "Local supplementary .bin assets are Springer landing/support HTML pages for authors original figure files; no local spreadsheet, office, or supplementary data table changed activity/toxicity/mechanism curation.",
+      "source": "paper_packets/doi__10.1186_1742-4690-5-70/raw/supplementary_original/"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_expected": "pass_after_repair",
+    "publication_quality_expected": "pass_after_repair"
+  }
+}

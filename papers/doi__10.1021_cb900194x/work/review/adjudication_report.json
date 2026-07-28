@@ -1,0 +1,147 @@
+{
+  "paper_id": "doi__10.1021_cb900194x",
+  "artifact_type": "adjudication_report",
+  "reviewed_at": "2026-05-02T07:59:14Z",
+  "updated_at": "2026-05-02T08:03:12Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded re-review reopened primary XML/PDF, OA package NXML/PDF/supplement PDF, PDF text, locator index, packet database snapshots, and merged sequence/assay/literature rows. Local materials support the Table 1 activity/database rows and direct mechanism claims; remaining identity issues are nonblocking cautions, not missing local material."
+  },
+  "checked_inputs": [
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    "rework_context/doi__10.1021_cb900194x/handoff_context.json",
+    "paper_packets/doi__10.1021_cb900194x/packet_manifest.json",
+    "paper_packets/doi__10.1021_cb900194x/locators/locator_index.json",
+    "paper_packets/doi__10.1021_cb900194x/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_cb900194x/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_cb900194x/analysis/analysis_status.json",
+    "paper_packets/doi__10.1021_cb900194x/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_cb900194x/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_cb900194x/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_cb900194x/analysis/adjudication_report.json",
+    "paper_packets/doi__10.1021_cb900194x/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_cb900194x/rework/rework_responses.jsonl",
+    "papers/doi__10.1021_cb900194x/source/paper.xml",
+    "papers/doi__10.1021_cb900194x/source/paper.pdf",
+    "paper_packets/doi__10.1021_cb900194x/raw/paper.xml",
+    "paper_packets/doi__10.1021_cb900194x/raw/paper.pdf",
+    "paper_packets/doi__10.1021_cb900194x/raw/oa_package/local-DBAASP-PMC2812937.tar.gz",
+    "paper_packets/doi__10.1021_cb900194x/extracted/oa_package/local-DBAASP-PMC2812937/PMC2812937/cb900194x.nxml",
+    "paper_packets/doi__10.1021_cb900194x/extracted/oa_package/local-DBAASP-PMC2812937/PMC2812937/cb900194x.pdf",
+    "paper_packets/doi__10.1021_cb900194x/extracted/oa_package/local-DBAASP-PMC2812937/PMC2812937/cb900194x_si_001.pdf",
+    "paper_packets/doi__10.1021_cb900194x/extracted/pdf_text/cb900194x.txt",
+    "paper_packets/doi__10.1021_cb900194x/extracted/pdf_text/cb900194x_si_001.txt",
+    "paper_packets/doi__10.1021_cb900194x/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_cb900194x/extracted/figure_captions.json",
+    "paper_packets/doi__10.1021_cb900194x/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1021_cb900194x/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_cb900194x/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_cb900194x/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_cb900194x/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_cb900194x/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/unique_literature_sources.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_cb900194x"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 24,
+    "activity_endpoint_counts": {
+      "MIC": 11,
+      "IC50": 11,
+      "agar_diffusion_growth_inhibition": 2
+    },
+    "database_record_audit_count": 51,
+    "database_status_summary": {
+      "source_verified": 47,
+      "source_conflict": 4
+    },
+    "database_activity_reconciliation": "pass_for_linked_haloduracin_table1_rows",
+    "database_identity_sequence_status": "multi_peptide_activity_record_source_verified; chain sequence/synonym caveats preserved",
+    "mechanism_claims": 5,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 48 linked DBAASP assay/experiment rows were rechecked against primary Table 1 and method/supplement locators. Activity values match after nM-to-µM unit interpretation; one E. faecium database note conflict and two database-only chain-sequence literature identities are preserved as cautions.",
+    "layer_2_activity_toxicity": "Final activity evidence now retains 24 Haloduracin rows only: 22 quantitative IC50/MIC rows from Table 1 and two qualitative Gram-negative no-inhibition agar-diffusion rows. Nisin comparator columns were checked but excluded from Haloduracin final AMP rows.",
+    "layer_3_mechanism": "Direct mechanism evidence is limited to 1:1 synergy, sequential Halα/Halβ action, membrane depolarization, and potassium efflux assays. Likely lipid II targeting remains inferred, not direct.",
+    "layer_4_material_packet": "XML/PDF/OA package/supplement PDF and merged rows were reopened. The empty paper/source/supplementary directory is not a blocker because the OA package contains the recoverable supplement PDF used for methods and Table S1 context."
+  },
+  "adjudication_summary": "Worker-4/worker-6 re-review closes the original source-review ticket with source-supported Haloduracin activity/database reconciliation and preserved cautions for database-only chain identity and one database note conflict.",
+  "caution_findings": [
+    {
+      "caution_code": "database_chain_sequence_synonym_context_preserved",
+      "evidence_context": "DBAASPR_19031/19750 sequence-name metadata are recovered from merged DBAASP sequence rows, but local primary materials do not fully normalize those chain sequences or cross-name synonyms; preserved as source_conflict, not source_verified identity.",
+      "affected_layer": "database",
+      "status_counts": {
+        "source_verified": 47,
+        "source_conflict": 4
+      }
+    },
+    {
+      "caution_code": "dbaasp_enterococcus_note_conflict",
+      "evidence_context": "One DBAASP IC50 row note says CRE E. faecium C33105 while primary Table 1 labels the isolate vancomycin-resistant E. faecium; activity value and isolate match, note conflict preserved.",
+      "affected_layer": "database"
+    },
+    {
+      "caution_code": "supplement_pdf_checked_no_extra_activity_table",
+      "evidence_context": "The OA package supplement PDF was checked; it contains growth-condition Table S1, purification/methods, and supplementary figures, not a separate activity table that changes Table 1 Haloduracin activity rows.",
+      "affected_layer": "material_packet"
+    },
+    {
+      "caution_code": "lipid_ii_targeting_not_directly_promoted",
+      "evidence_context": "The paper frames lipid II targeting as likely from structural/mutant context; final mechanism keeps direct claims to synergy, sequential action, membrane depolarization, and potassium efflux assays.",
+      "affected_layer": "mechanism"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0
+  },
+  "unrecoverable_material_gaps": [],
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "status": "resolved_after_bounded_source_recovery",
+    "note": "Owner-layer re-review resolved framework-test and database-conflict blockers without fabricating unsupported source values.",
+    "updated_at": "2026-05-02T07:59:14Z"
+  },
+  "adjudication_status": "accepted_with_cautions",
+  "last_gate_validated_at": "2026-05-02T08:03:12Z",
+  "latest_gate_results": {
+    "validated_at": "2026-05-02T08:03:12Z",
+    "semantic_report": "reports/doi__10.1021_cb900194x.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "publication_report": "reports/doi__10.1021_cb900194x.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_returncode": 0,
+    "gate_decision": "passed_after_source_reviewed_repair"
+  }
+}

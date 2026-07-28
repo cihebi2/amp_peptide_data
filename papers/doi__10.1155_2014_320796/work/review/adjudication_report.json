@@ -1,0 +1,157 @@
+{
+  "artifact_type": "adjudication_report",
+  "paper_id": "doi__10.1155_2014_320796",
+  "doi": "10.1155/2014/320796",
+  "reviewed_at": "2026-05-03T03:37:44Z",
+  "updated_at": "2026-05-03T03:40:21Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker": "worker-6",
+  "role": "paper-adjudicator-review-worker",
+  "protocol": "amp_three_layer_v2_bounded_rework_obtainable_only",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Source-reviewed re-review repaired worker-2 activity rows and worker-4 database adjudication, then worker-6 accepted the paper with cautions and no open targeted rework.",
+  "adjudication_summary": "Source-reviewed re-review repaired worker-2 activity rows and worker-4 database adjudication, then worker-6 accepted the paper with cautions and no open targeted rework.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1155_2014_320796/packet_manifest.json",
+    "paper_packets/doi__10.1155_2014_320796/locators/locator_index.json",
+    "paper_packets/doi__10.1155_2014_320796/extraction/extraction_status.json",
+    "paper_packets/doi__10.1155_2014_320796/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1155_2014_320796/raw/paper.xml",
+    "paper_packets/doi__10.1155_2014_320796/raw/paper.pdf",
+    "paper_packets/doi__10.1155_2014_320796/extracted/pdf_text/BMRI2014-320796.txt",
+    "paper_packets/doi__10.1155_2014_320796/extracted/xml_sections.json",
+    "paper_packets/doi__10.1155_2014_320796/extracted/figure_captions.json",
+    "paper_packets/doi__10.1155_2014_320796/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1155_2014_320796/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1155_2014_320796/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1155_2014_320796/extracted/pdf_text/320796.f1.txt",
+    "paper_packets/doi__10.1155_2014_320796/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1155_2014_320796/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1155_2014_320796/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "paper_packets/doi__10.1155_2014_320796/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1155_2014_320796/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1155_2014_320796/analysis/mechanism_evidence.json"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_note": "Local supplementary material is a single RTCA figure PDF; no supplementary tables/spreadsheets are present in the packet.",
+    "nonblocking_unrecoverable_gaps": [
+      {
+        "gap_code": "figure3_4_exact_bar_values_not_structured",
+        "source_paths_checked": [
+          "paper_packets/doi__10.1155_2014_320796/extracted/pdf_text/BMRI2014-320796.txt",
+          "paper_packets/doi__10.1155_2014_320796/extracted/figure_captions.json",
+          "paper_packets/doi__10.1155_2014_320796/extracted/pdf_text/320796.f1.txt"
+        ],
+        "tools_attempted": [
+          "pdftotext-derived packet text",
+          "XML figure captions",
+          "supplementary PDF text extraction"
+        ],
+        "why_unrecoverable": "The local XML/PDF text gives qualitative and threshold statements for Figure 3/Figure 4 but not exact bar-height numeric values as structured table data.",
+        "impact": "Exact host-cell viability/proliferation bar values remain unavailable; source-supported qualitative toxicity and protection statements are retained as cautions.",
+        "owner_worker": "worker-2",
+        "blocks_publication_grade": false,
+        "next_action": "record_and_continue"
+      }
+    ]
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 56,
+    "activity_core_fields_present": true,
+    "mic_like_units_present": true,
+    "database_record_count": 30,
+    "database_status_summary": {
+      "source_verified": 30
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_blocking_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Packet remains material_extracted_with_gaps because the only supplementary asset is a figure PDF, but XML/PDF/OA/database materials were sufficient for this source-reviewed analysis.",
+    "validator_contract": "Required final artifacts exist and strict semantic fields are populated.",
+    "layer_1_database": "APD6/DBAASP rows are matched to primary Table 1 identities and Table 2/3 assay values; granularity differences are preserved as cautions.",
+    "layer_2_activity_toxicity": "Primary XML Table 2 and Table 3 yielded 56 row-level records with raw values/units/targets/locators; Figure 3/4 exact bar heights remain nonblocking unavailable material.",
+    "layer_3_mechanism": "Direct membrane permeability/localization evidence is source-located; specific intracellular molecular targets are bounded as unverified.",
+    "publication_grade_review": "No blocking or major issue remains after bounded repair; final status is accepted_with_cautions rather than accepted_clean."
+  },
+  "caution_findings": [
+    {
+      "scope": "figure_quantification",
+      "severity": "caution",
+      "status": "nonblocking_unrecoverable_material_gap",
+      "note": "Exact Figure 3/Figure 4 bar-height values are not structured in the local XML/PDF text; qualitative and threshold claims are retained without inventing values.",
+      "gap_code": "figure3_4_exact_bar_values_not_structured"
+    },
+    {
+      "scope": "database_granularity",
+      "severity": "caution",
+      "status": "source_verified_with_granularity_caution",
+      "note": "APD6 and DBAASP linked rows are source matched, but APD6 is entry-text level and DBAASP MFC rows omit timepoint metadata."
+    },
+    {
+      "scope": "mechanism_specificity",
+      "severity": "caution",
+      "status": "bounded_mechanism",
+      "note": "Membrane permeability is directly supported; the paper does not identify a specific intracellular molecular target for the Candida assays."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0,
+    "major_issue_count": 0
+  },
+  "final_layer_outputs_ready": true,
+  "final_outputs": {
+    "activity_toxicity_evidence": "papers/doi__10.1155_2014_320796/final/activity_toxicity_evidence.json",
+    "database_record_verification": "papers/doi__10.1155_2014_320796/final/database_record_verification.json",
+    "mechanism_ontology_record": "papers/doi__10.1155_2014_320796/final/mechanism_ontology_record.json",
+    "review_report": "papers/doi__10.1155_2014_320796/final/review_report.json",
+    "quality_feedback": "papers/doi__10.1155_2014_320796/work/review/quality_feedback.json"
+  },
+  "non_negotiable_rules_applied": [
+    "reopened source artifacts from handoff paths",
+    "did not rerun initial queue bootstrap",
+    "did not fabricate missing figure values",
+    "closed rework only after source-reviewed worker-2/4/6 repair"
+  ],
+  "source": "worker_6_packet_adjudication_after_owner_repair",
+  "gate_results": {
+    "semantic_gate": {
+      "path": "reports/doi__10.1155_2014_320796.codex_rereview_20260503.final.semantic_gate.json",
+      "canonical_path": "reports/doi__10.1155_2014_320796.semantic_gate.json",
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "issue_count": 0,
+      "issues": []
+    },
+    "publication_quality_gate": {
+      "path": "reports/doi__10.1155_2014_320796.codex_rereview_20260503.final.publication_quality.json",
+      "canonical_path": "reports/doi__10.1155_2014_320796.publication_quality.json",
+      "publication_grade_pass": true,
+      "risk_counts": {}
+    }
+  }
+}

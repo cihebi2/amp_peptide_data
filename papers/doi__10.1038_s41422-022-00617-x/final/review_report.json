@@ -1,0 +1,137 @@
+{
+  "paper_id": "doi__10.1038_s41422-022-00617-x",
+  "reviewed_at": "2026-06-20T09:37:33Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "publication_grade",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "article_pdf_text",
+    "local_figure_image",
+    "oa_package",
+    "supplementary_pdf_text",
+    "supplementary_landing_html",
+    "database_snapshots"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "article_pdf_text": true,
+    "local_figure_image": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded source review exhausted the local packet surfaces relevant to worker-2/4/6 rework. No external supplement chase was needed."
+  },
+  "checked_inputs": [
+    {
+      "path": "rework_context/doi__10.1038_s41422-022-00617-x/handoff_context.json",
+      "role": "message packet and failure contract"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/packet_manifest.json",
+      "role": "packet manifest and row counts"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/locators/locator_index.json",
+      "role": "source/database locator inventory"
+    },
+    {
+      "path": "papers/doi__10.1038_s41422-022-00617-x/source/paper.xml",
+      "role": "article XML/figure caption/supplement locator; no table-wraps present"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/pdf_text/41422_2022_Article_617.txt",
+      "role": "primary article PDF text; Omicron IC50 values and HR1-targeting rationale"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/oa_package/local-DRAMP-35087243/PMC8793821/41422_2022_617_Fig1_HTML.jpg",
+      "role": "Fig. 1 image; peptide sequence/modification notation and plotted IC50 values"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_text/local-DRAMP-41422_2022_617_MOESM1_ESM.txt",
+      "role": "supplementary methods and supplementary figure captions"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_tables.json",
+      "role": "structured supplement table check; table_count=0"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/raw/supplementary_original/landing-1.bin..landing-10.bin",
+      "role": "local HTML landing assets checked for supplementary links/no spreadsheet table surface"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_dramp_activity_records.jsonl",
+      "role": "DRAMP activity rows"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_experiment_records.jsonl",
+      "role": "DRAMP experiment rows"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_literature_records.jsonl",
+      "role": "DRAMP literature DOI/PMID linkage rows"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_present": true,
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "database_conflicts_preserved": true,
+    "modified_sequences_preserved_as_cautions": true,
+    "review_report_has_required_provenance": true,
+    "open_rework_targets": 0,
+    "unrecoverable_blocking_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "worker_2_activity_toxicity": "Accepted with cautions. Twelve Omicron IC50 activity rows were source-reviewed from article PDF text/Fig. 1 and supplemented with methods context. No toxicity rows were recoverable locally, and none are asserted.",
+    "worker_4_database_record_audit": "Accepted with cautions. DRAMP activity rows now map to source-supported activity rows. EK1 is source_verified; EK1C4/EKL1C retain sequence_modified_not_normalized because source Fig. 1c includes cholesterol-conjugated notation not fully captured by database plain sequences.",
+    "worker_6_adjudication": "Accepted with cautions. The previous open review ticket is closed by this source-reviewed repair; remaining cautions are nonblocking provenance/normalization limits, not missing primary material.",
+    "mechanism_layer": "Accepted with cautions. Mechanism conclusion is limited to functional fusion/infection inhibition and HR1-targeting rationale; no direct Omicron binding constant or new structure is claimed."
+  },
+  "caution_findings": [
+    {
+      "code": "xml_tables_absent_values_recovered_from_pdf_figure",
+      "severity": "caution",
+      "finding": "The local XML has zero table-wrap elements; the old Table 1/2/3 request is not applicable to this article package. Activity values were recovered from article PDF text and Fig. 1 image/caption instead.",
+      "source_paths": [
+        "papers/doi__10.1038_s41422-022-00617-x/source/paper.xml",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/pdf_text/41422_2022_Article_617.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/oa_package/local-DRAMP-35087243/PMC8793821/41422_2022_617_Fig1_HTML.jpg"
+      ]
+    },
+    {
+      "code": "supplement_has_methods_no_structured_activity_tables",
+      "severity": "caution",
+      "finding": "Supplementary PDF/landing assets were checked; structured supplementary table_count is 0 and the supplement contributes methods/caption context, not additional row-level activity values.",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_text/local-DRAMP-41422_2022_617_MOESM1_ESM.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_tables.json"
+      ]
+    },
+    {
+      "code": "modified_sequences_not_plain_normalized_for_lipopeptides",
+      "severity": "caution",
+      "finding": "EK1C4 and EKL1C activity values are source-supported, but their cholesterol-conjugated/noncanonical Fig. 1c notation is not fully represented by DRAMP plain sequence strings, so database rows retain sequence_modified_not_normalized.",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/oa_package/local-DRAMP-35087243/PMC8793821/41422_2022_617_Fig1_HTML.jpg",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_dramp_activity_records.jsonl"
+      ]
+    },
+    {
+      "code": "no_toxicity_rows_in_local_material",
+      "severity": "caution",
+      "finding": "No hemolysis, cytotoxicity, HC50, CC50, or cell-viability toxicity row was present in the checked local primary/supplement/database materials; no toxicity value was fabricated.",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/pdf_text/41422_2022_Article_617.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_text/local-DRAMP-41422_2022_617_MOESM1_ESM.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_dramp_activity_records.jsonl"
+      ]
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source re-review recovered the paper-specific Omicron activity evidence that the parser missed: 12 IC50 rows for EK1, EK1C4, and EKL1C across Calu-3 fusion, Caco2 fusion, pseudovirus infection, and authentic-virus infection. Database conflicts were narrowed to nonblocking modification-normalization cautions for cholesterol-conjugated lipopeptides. The paper is publication-grade with explicit cautions and no open rework target."
+}

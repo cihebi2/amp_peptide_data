@@ -1,0 +1,437 @@
+{
+  "paper_id": "doi__10.1038_s41551-024-01201-x",
+  "reviewed_at": "2026-05-05T07:12:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": false,
+  "review_status": "blocked_missing_primary_material",
+  "adjudication_summary": "Second bounded source re-review preserved all locally obtainable activity, toxicity summary, database, and mechanism-context evidence, but publication-grade acceptance remains blocked because the declared supplementary PDF/XLSX payloads are absent from local material.",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41551-024-01201-x/handoff_context.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "source_review_depth": {
+    "paper_xml": "reopened raw/source paper XML and confirmed declared MOESM payload filenames plus figure/method context",
+    "paper_pdf": "reopened packet PDF text extraction and checked activity, cytotoxicity, animal-model and methods context",
+    "oa_package": "checked packet raw/oa_package status and landed metadata; no local OA package members are present beyond PDF/XML",
+    "supplementary_assets": "reopened packet and landed supplementary directories; all local supplementary entries are HTML landing captures, not the declared PDF/XLSX payload files",
+    "merged_database_rows": "reopened linked DBAASP assay/experiment/literature rows and merged sequence catalog references used for retained rows"
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": "exhausted_local_assets_with_blocking_payload_gap_after_second_attempt",
+    "merged_database_rows": true
+  },
+  "semantic_quality_checks": {
+    "activity_rows_recovered": 66,
+    "toxicity_summary_rows_recovered": 1,
+    "database_status_summary": {
+      "source_verified": 17,
+      "database_only_no_primary_source": 33,
+      "source_conflict": 28
+    },
+    "mechanism_claims_existing": 3,
+    "declared_supplementary_payloads": 6,
+    "local_supplementary_payloads_recovered": 0,
+    "unrecoverable_material_gap_count": 5,
+    "open_rework_target_count": 1,
+    "fresh_semantic_gate_issue_count": 2,
+    "fresh_publication_quality_open_rework_targets": 1,
+    "publication_grade_ready": false
+  },
+  "per_layer_decision_rationale": {
+    "worker_2_activity_toxicity": "Retained 66 linked assay records and one summary toxicity record with units/targets/locators where locally supported; did not fabricate missing Dataset 2 or Table 17 exact values.",
+    "worker_3_supplementary": "Declared MOESM PDF/XLSX assets are absent locally; landing HTML links external payload URLs but no local payload bytes exist for parsing.",
+    "worker_4_database": "Preserved source_verified only where local Fig. 4/PDF/database evidence supports it; retained source_conflict and database_only_no_primary_source for rows requiring missing Dataset 2.",
+    "worker_6_adjudication": "Strict gates rerun after second bounded attempt; paper remains blocked_missing_primary_material with an open targeted ticket and publication_grade=false."
+  },
+  "caution_findings": [
+    "Local XML/PDF support sequence identities, selected lead A. baumannii MICs, and methods context, but not the full Supplementary Dataset 2 activity matrix.",
+    "Local main text supports only summary-level cytotoxicity; exact Supplementary Table 17 toxicity values are not recoverable without the Supplementary Information PDF.",
+    "Database-only assay rows are retained as provenance and conflicts, not promoted to primary-source verified rows."
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "local_supplementary_payloads_absent_after_second_bounded_attempt",
+      "owner_worker": "worker-3 + worker-6",
+      "severity": "blocking",
+      "reason": "XML and landing HTML declare Supplementary Information and Dataset PDF/XLSX payloads, but local supplementary files are HTML landing-page captures and no declared MOESM payload file exists in the local packet, landed paper folder, or merged corpus search."
+    },
+    {
+      "code": "activity_matrix_database_provenance_only_for_nonlead_rows",
+      "owner_worker": "worker-2 + worker-6",
+      "severity": "major",
+      "reason": "Sixty-six linked assay rows are retained with units, targets and source locators, but the full Supplementary Dataset 2 activity matrix is absent locally, so nonlead exact values cannot be promoted to primary-source verified rows."
+    },
+    {
+      "code": "supplementary_table_17_toxicity_values_unrecoverable_locally",
+      "owner_worker": "worker-2 + worker-6",
+      "severity": "major",
+      "reason": "Main text supports only a summary-level HEK293T cytotoxicity conclusion; exact Supplementary Table 17 peptide-level toxicity values require the absent Supplementary Information PDF."
+    },
+    {
+      "code": "database_rows_partly_database_only_after_source_recheck",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "major",
+      "reason": "Sequence identities and selected lead A. baumannii MICs remain source-supported, but linked DBAASP assay rows requiring absent Supplementary Dataset 2 remain source_conflict or database_only_no_primary_source."
+    },
+    {
+      "code": "bounded_rework_cap_reached_nonaccepted",
+      "owner_worker": "worker-6",
+      "severity": "blocking",
+      "reason": "Attempt 2 of 2 exhausted local obtainable materials; the paper must remain blocked_missing_primary_material until real supplementary payload files are staged."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "missing_declared_supplementary_payload_files",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "wc -c",
+        "rg declared MOESM payloads and landing-page hrefs",
+        "find -L local supplementary directories",
+        "find merged_amp_corpus -name 41551_2024_1201_MOESM*",
+        "sha256sum",
+        "jq asset manifest and metadata review"
+      ],
+      "why_unrecoverable": "The XML and landing HTML declare six Springer/Nature supplementary payload filenames, but no local PDF/XLSX payload file exists under the packet, landed paper folder, or merged corpus. The staged supplementary files are HTML article landing captures, not the declared payload bytes.",
+      "impact": "Worker-3 cannot parse Supplementary Information, Supplementary Dataset 2, Supplementary Dataset 3, or Source Data Fig. 6 from local material; downstream worker-2 and worker-4 exact activity/toxicity/database reconciliation remains blocked for publication-grade acceptance.",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true
+    },
+    {
+      "gap_code": "missing_supplementary_dataset_2_activity_matrix",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "rg",
+        "find -L",
+        "jq",
+        "sha256sum"
+      ],
+      "why_unrecoverable": "XML declares Supplementary Dataset 2 as 41551_2024_1201_MOESM4_ESM.xlsx, and the local landing HTML links an external static-content XLSX URL, but the XLSX payload is absent locally.",
+      "impact": "Exact full activity matrix values cannot be primary-source reviewed; the 66 recoverable linked assay rows remain retained with database provenance and primary figure/method context rather than promoted to fully source-verified primary table rows.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true
+    },
+    {
+      "gap_code": "missing_supplementary_table_17_toxicity_values",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "rg",
+        "find -L",
+        "jq"
+      ],
+      "why_unrecoverable": "The paper points exact cytotoxicity values to Supplementary Table 17 in the Supplementary Information PDF, but 41551_2024_1201_MOESM1_ESM.pdf is not locally staged.",
+      "impact": "Only the main-text cytotoxicity summary can be retained; peptide-level toxicity table rows remain unavailable and block publication-grade completion.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true
+    },
+    {
+      "gap_code": "missing_primary_supplementary_dataset_2_for_full_database_assay_reconciliation",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41551-024-01201-x/source/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*"
+      ],
+      "tools_attempted": [
+        "rg",
+        "jq",
+        "file -L",
+        "find -L",
+        "find merged corpus filename search"
+      ],
+      "why_unrecoverable": "Sequence identities and selected lead A. baumannii MICs are supported by local XML/PDF context, but the primary Supplementary Dataset 2 XLSX needed for full linked DBAASP assay reconciliation is not locally present.",
+      "impact": "Linked database rows that require Supplementary Dataset 2 remain source_conflict or database_only_no_primary_source rather than source_verified.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": true
+    },
+    {
+      "gap_code": "obtainable_only_source_gap_documented_second_attempt",
+      "source_paths_checked": [
+        "rework_context/doi__10.1038_s41551-024-01201-x/handoff_context.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/packet_manifest.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/locators/locator_index.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_status.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/xml_sections.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/figure_captions.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.pdf",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "file -L on paper PDF/XML and supplementary .bin files",
+        "wc -c on local supplementary .bin files",
+        "rg over XML, PDF text extraction, and HTML landing captures",
+        "rg extraction of declared MOESM payload names and landing-page static-content links",
+        "find -L over packet and landed supplementary directories",
+        "find merged_amp_corpus -name 41551_2024_1201_MOESM*",
+        "sha256sum over local supplementary .bin files",
+        "jq over packet/final/database/gate artifacts",
+        "semantic_three_layer_gate.py --paper-id doi__10.1038_s41551-024-01201-x --json",
+        "check_three_layer_publication_quality.py --manifest reports/doi__10.1038_s41551-024-01201-x.complete_message_test_manifest.json"
+      ],
+      "why_unrecoverable": "Second bounded re-review found no additional local source payloads beyond XML/PDF text, HTML landing captures, and linked database snapshots. Strict gates now fail only because publication-grade acceptance remains blocked by the open supplementary payload gap.",
+      "impact": "Paper remains non-accepted and blocked_missing_primary_material; controller should not retry without newly staged local supplement payloads.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": true
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-s41551-local-supplement-gap-0002",
+      "paper_id": "doi__10.1038_s41551-024-01201-x",
+      "created_at": "2026-05-03T09:16:38Z",
+      "refreshed_at": "2026-05-05T07:12:28Z",
+      "requested_by": "codex_cli_re_review_worker",
+      "worker": "worker-3",
+      "owner_workers": [
+        "worker-3",
+        "worker-2",
+        "worker-4",
+        "worker-6"
+      ],
+      "target_queue": "material_extraction",
+      "layer": "supplementary_material_and_review",
+      "failure_code": "local_supplementary_payloads_absent_after_second_bounded_attempt",
+      "omission_code": "missing_supplementary_information_dataset_2_dataset_3_payloads",
+      "severity": "blocking",
+      "artifact_path": "papers/doi__10.1038_s41551-024-01201-x/final/review_report.json",
+      "failing_object": "publication_grade_ready",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl"
+      ],
+      "required_action": "Stage or provide the actual local 41551_2024_1201_MOESM1_ESM.pdf, MOESM4_ESM.xlsx, and MOESM5_ESM.xlsx payload files before further source review; without those local files, keep the paper blocked and do not accept from database rows alone.",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "qc_failure_reasons": [
+        {
+          "code": "local_supplementary_payloads_absent_after_second_bounded_attempt",
+          "owner_worker": "worker-3 + worker-6",
+          "severity": "blocking",
+          "reason": "XML and landing HTML declare Supplementary Information and Dataset PDF/XLSX payloads, but local supplementary files are HTML landing-page captures and no declared MOESM payload file exists in the local packet, landed paper folder, or merged corpus search."
+        },
+        {
+          "code": "activity_matrix_database_provenance_only_for_nonlead_rows",
+          "owner_worker": "worker-2 + worker-6",
+          "severity": "major",
+          "reason": "Sixty-six linked assay rows are retained with units, targets and source locators, but the full Supplementary Dataset 2 activity matrix is absent locally, so nonlead exact values cannot be promoted to primary-source verified rows."
+        },
+        {
+          "code": "supplementary_table_17_toxicity_values_unrecoverable_locally",
+          "owner_worker": "worker-2 + worker-6",
+          "severity": "major",
+          "reason": "Main text supports only a summary-level HEK293T cytotoxicity conclusion; exact Supplementary Table 17 peptide-level toxicity values require the absent Supplementary Information PDF."
+        },
+        {
+          "code": "database_rows_partly_database_only_after_source_recheck",
+          "owner_worker": "worker-4 + worker-6",
+          "severity": "major",
+          "reason": "Sequence identities and selected lead A. baumannii MICs remain source-supported, but linked DBAASP assay rows requiring absent Supplementary Dataset 2 remain source_conflict or database_only_no_primary_source."
+        },
+        {
+          "code": "bounded_rework_cap_reached_nonaccepted",
+          "owner_worker": "worker-6",
+          "severity": "blocking",
+          "reason": "Attempt 2 of 2 exhausted local obtainable materials; the paper must remain blocked_missing_primary_material until real supplementary payload files are staged."
+        }
+      ],
+      "unrecoverable_material_gaps": [
+        {
+          "gap_code": "missing_declared_supplementary_payload_files",
+          "source_paths_checked": [
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*"
+          ],
+          "tools_attempted": [
+            "file -L",
+            "wc -c",
+            "rg declared MOESM payloads and landing-page hrefs",
+            "find -L local supplementary directories",
+            "find merged_amp_corpus -name 41551_2024_1201_MOESM*",
+            "sha256sum",
+            "jq asset manifest and metadata review"
+          ],
+          "why_unrecoverable": "The XML and landing HTML declare six Springer/Nature supplementary payload filenames, but no local PDF/XLSX payload file exists under the packet, landed paper folder, or merged corpus. The staged supplementary files are HTML article landing captures, not the declared payload bytes.",
+          "impact": "Worker-3 cannot parse Supplementary Information, Supplementary Dataset 2, Supplementary Dataset 3, or Source Data Fig. 6 from local material; downstream worker-2 and worker-4 exact activity/toxicity/database reconciliation remains blocked for publication-grade acceptance.",
+          "owner_worker": "worker-3",
+          "blocks_publication_grade": true
+        },
+        {
+          "gap_code": "missing_supplementary_dataset_2_activity_matrix",
+          "source_paths_checked": [
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl"
+          ],
+          "tools_attempted": [
+            "file -L",
+            "rg",
+            "find -L",
+            "jq",
+            "sha256sum"
+          ],
+          "why_unrecoverable": "XML declares Supplementary Dataset 2 as 41551_2024_1201_MOESM4_ESM.xlsx, and the local landing HTML links an external static-content XLSX URL, but the XLSX payload is absent locally.",
+          "impact": "Exact full activity matrix values cannot be primary-source reviewed; the 66 recoverable linked assay rows remain retained with database provenance and primary figure/method context rather than promoted to fully source-verified primary table rows.",
+          "owner_worker": "worker-2",
+          "blocks_publication_grade": true
+        },
+        {
+          "gap_code": "missing_supplementary_table_17_toxicity_values",
+          "source_paths_checked": [
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin"
+          ],
+          "tools_attempted": [
+            "file -L",
+            "rg",
+            "find -L",
+            "jq"
+          ],
+          "why_unrecoverable": "The paper points exact cytotoxicity values to Supplementary Table 17 in the Supplementary Information PDF, but 41551_2024_1201_MOESM1_ESM.pdf is not locally staged.",
+          "impact": "Only the main-text cytotoxicity summary can be retained; peptide-level toxicity table rows remain unavailable and block publication-grade completion.",
+          "owner_worker": "worker-2",
+          "blocks_publication_grade": true
+        },
+        {
+          "gap_code": "missing_primary_supplementary_dataset_2_for_full_database_assay_reconciliation",
+          "source_paths_checked": [
+            "papers/doi__10.1038_s41551-024-01201-x/source/paper.xml",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*"
+          ],
+          "tools_attempted": [
+            "rg",
+            "jq",
+            "file -L",
+            "find -L",
+            "find merged corpus filename search"
+          ],
+          "why_unrecoverable": "Sequence identities and selected lead A. baumannii MICs are supported by local XML/PDF context, but the primary Supplementary Dataset 2 XLSX needed for full linked DBAASP assay reconciliation is not locally present.",
+          "impact": "Linked database rows that require Supplementary Dataset 2 remain source_conflict or database_only_no_primary_source rather than source_verified.",
+          "owner_worker": "worker-4",
+          "blocks_publication_grade": true
+        },
+        {
+          "gap_code": "obtainable_only_source_gap_documented_second_attempt",
+          "source_paths_checked": [
+            "rework_context/doi__10.1038_s41551-024-01201-x/handoff_context.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/packet_manifest.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/locators/locator_index.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_status.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extraction/extraction_quality_report.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/xml_sections.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/figure_captions.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/pdf_text/landing-1.txt",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_index.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_text.jsonl",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/extracted/supplementary_tables.json",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.pdf",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_assay_records.jsonl",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_experiment_records.jsonl",
+            "paper_packets/doi__10.1038_s41551-024-01201-x/database/linked_literature_records.jsonl",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+          ],
+          "tools_attempted": [
+            "file -L on paper PDF/XML and supplementary .bin files",
+            "wc -c on local supplementary .bin files",
+            "rg over XML, PDF text extraction, and HTML landing captures",
+            "rg extraction of declared MOESM payload names and landing-page static-content links",
+            "find -L over packet and landed supplementary directories",
+            "find merged_amp_corpus -name 41551_2024_1201_MOESM*",
+            "sha256sum over local supplementary .bin files",
+            "jq over packet/final/database/gate artifacts",
+            "semantic_three_layer_gate.py --paper-id doi__10.1038_s41551-024-01201-x --json",
+            "check_three_layer_publication_quality.py --manifest reports/doi__10.1038_s41551-024-01201-x.complete_message_test_manifest.json"
+          ],
+          "why_unrecoverable": "Second bounded re-review found no additional local source payloads beyond XML/PDF text, HTML landing captures, and linked database snapshots. Strict gates now fail only because publication-grade acceptance remains blocked by the open supplementary payload gap.",
+          "impact": "Paper remains non-accepted and blocked_missing_primary_material; controller should not retry without newly staged local supplement payloads.",
+          "owner_worker": "worker-6",
+          "blocks_publication_grade": true
+        }
+      ],
+      "rework_context_packet_required": true,
+      "status": "open_kept_after_second_bounded_attempt"
+    }
+  ]
+}

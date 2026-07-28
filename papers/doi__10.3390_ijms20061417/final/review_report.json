@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.3390_ijms20061417",
+  "reviewed_at": "2026-05-08T12:36:45Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No supplementary files are present in the local packet, OA archive manifest, or landed asset manifest; XML/PDF/OA figures and linked database rows were exhausted for this bounded repair."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms20061417/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms20061417/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms20061417/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms20061417/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms20061417/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms20061417/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms20061417/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms20061417/raw/oa_package/local-DBAASP-PMC6470953.tar.gz",
+    "paper_packets/doi__10.3390_ijms20061417/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_ijms20061417/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms20061417/extracted/pdf_text/ijms-20-01417.txt",
+    "paper_packets/doi__10.3390_ijms20061417/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms20061417/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms20061417/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms20061417/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms20061417/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms20061417/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms20061417",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 68,
+    "derived_metrics": 12,
+    "mechanism_claims": 4,
+    "database_status_summary": {
+      "source_verified": 108,
+      "source_conflict": 45
+    },
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled linked DBAASP/DRAMP/CAMP/dbAMP rows against Table 1 sequence identities, Table 2 activity/MHC rows, Section 2.4 cytotoxicity text, and article metadata; database-only exact figure percentages and category overlabels are preserved as cautions.",
+    "layer_2_activity_toxicity": "Worker-6 retained source-supported MIC and MHC records with raw units/locators and moved GM/TI values to derived metrics rather than MIC rows.",
+    "layer_3_mechanism": "Worker-6 replaced automated pending mechanism notes with direct-mechanism claims grounded in Sections 2.5-2.7, methods, and Figures 3-6 while avoiding figure-value overclaiming.",
+    "publication_grade_decision": "The original full_source_review_not_completed ticket is closed; remaining uncertainties are caution-level source/database conflicts, not blocking gaps."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_figure_values_not_promoted",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "Some DRAMP/database rows contain exact hemolysis percentages or broad MammalianCells/Anticancer labels that are not directly supported as exact claims by extracted local text; they remain source_conflict cautions instead of being converted to source_verified."
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "The packet, OA archive, and landed paper directory contain XML/PDF/images but no supplementary PDF/XLSX/DOCX assets; no supplement-derived value was fabricated."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "Mechanism figure claims are qualitative source-reviewed claims; exact plot values were not required for the final gate and were not digitized."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review repaired database conflict adjudication, replaced pending mechanism notes, corrected final activity row semantics, and closed the blocking framework-test rework ticket with caution-preserving publication-grade acceptance.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "gate_rerun_at": "2026-05-08T12:36:45Z",
+  "gate_results": {
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "semantic_report": "reports/doi__10.3390_ijms20061417.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_ijms20061417.publication_quality.json"
+  }
+}

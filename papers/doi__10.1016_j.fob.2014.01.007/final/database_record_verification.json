@@ -1,0 +1,465 @@
+{
+  "audit_scope": "Worker-4 Codex re-review of every packet-linked DRAMP row against reopened XML/PDF/OA package and database JSONL rows. Sequence/name/modification evidence is separated from unsupported database activity labels.",
+  "bounded_source_paths_checked": [
+    "rework_context/doi__10.1016_j.fob.2014.01.007/handoff_context.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.pdf",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/database_source_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_assay_records.jsonl"
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 2,
+    "linked_experiment_records": 2,
+    "linked_literature_records": 2,
+    "linked_sequence_records": 0
+  },
+  "generated_at": "2026-05-02T01:58:21Z",
+  "paper_id": "doi__10.1016_j.fob.2014.01.007",
+  "record_audits": [
+    {
+      "activity_check": {
+        "agreement": "source_conflict",
+        "conflict_reason": "The primary paper supports WT1-pTj as an anticancer/antimelanoma peptide, but this linked row assigns the modified biotin probe both Antimicrobial and Anticancer activity without a source row for antimicrobial activity or a separate b-WT1-pTj activity assay.",
+        "database_activity": "Antimicrobial, Anticancer",
+        "matched_activity_record_ids": [],
+        "source_locator": [
+          {
+            "kind": "primary_xml_table",
+            "locator": "xml:table=2",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "WT1-pTj antiproliferative EC50 matrix for tumor and nontumor cell lines"
+            ]
+          },
+          {
+            "kind": "primary_xml_figure_caption",
+            "locator": "xml:fig=1:Fig. 1",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "WT1-pTj in vivo antimelanoma activity"
+            ]
+          },
+          {
+            "kind": "primary_xml_section",
+            "locator": "xml:sec=8:Confocal microscopy; xml:sec=11:Chemiluminescence ELISA",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "b-WT1-pTj used as a labeled localization/binding probe, not as a separate antimicrobial assay subject"
+            ]
+          }
+        ]
+      },
+      "adjudication_decision": "preserve_as_source_conflict_with_primary_identity_supported",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140",
+          "PMCID PMC3907745"
+        ]
+      },
+      "conflict_context": "Primary Table 1 verifies b-WT1-pTj identity and modifications, but local primary material does not support the DRAMP antimicrobial label or a separate anticancer activity result for the biotinylated probe.",
+      "conflict_flags": [
+        "database_antimicrobial_activity_not_source_supported",
+        "database_activity_label_not_specific_to_modified_probe"
+      ],
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Anticancer",
+      "database_subject": "Not available",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "name_or_synonym": "source_verified",
+        "sequence_or_variant_identity": "source_verified",
+        "source_organism_or_origin": "source_verified_protein_derived_WT1_context",
+        "terminal_or_noncanonical_modifications": "source_verified_biotinylated_and_c_terminal_amidated"
+      },
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "modification_check": {
+        "agreement": "Primary Table 1 states biotin-CGGKDCERRFSRSDQLKRHQRRHTGVKPFQ-NH2, matching DRAMP N-terminal biotinylation and C-terminal amidation.",
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        }
+      },
+      "name_check": {
+        "agreement": "DRAMP name b-WT1-pTj matches the primary Table 1 peptide name.",
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        }
+      },
+      "peptide_name_database": "b-WT1-pTj",
+      "review_notes": "Do not promote this row to source_verified as a biological activity record: identity is source-backed, while DRAMP activity scope is overbroad and includes unsupported antimicrobial activity.",
+      "sequence_check": {
+        "agreement": "Primary Table 1 supports the database core sequence with explicit biotin and C-terminal amide modifications.",
+        "database_sequence": "CGGKDCERRFSRSDQLKRHQRRHTGVKPFQ",
+        "primary_source_sequence": "biotin-CGGKDCERRFSRSDQLKRHQRRHTGVKPFQ-NH2",
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "primary_source_identity_supported"
+      },
+      "sequence_key": "DRAMP:DRAMP35189",
+      "source_id": "DRAMP:DRAMP35189",
+      "source_table": "linked_dramp_activity_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "activity_check": {
+        "agreement": "source_conflict",
+        "conflict_reason": "The primary paper supports FITC-WT1-pTj as a labeled cell-penetration probe; it does not provide a separate FITC-WT1-pTj antimicrobial activity result, and the database title has p54 instead of p53.",
+        "database_activity": "Antimicrobial, Anticancer",
+        "matched_activity_record_ids": [],
+        "source_locator": [
+          {
+            "kind": "primary_xml_table",
+            "locator": "xml:table=1:row=4",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "FITC-WT1-pTj sequence and FITC-labeled identity"
+            ]
+          },
+          {
+            "kind": "primary_xml_section",
+            "locator": "xml:sec=8:Confocal microscopy",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "FITC-labeled WT1-pTj used for cell-penetration imaging"
+            ]
+          },
+          {
+            "kind": "primary_xml_figure_caption",
+            "locator": "xml:fig=2:Fig. 2",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "FITC-WT1-pTj localization, not antimicrobial activity"
+            ]
+          }
+        ]
+      },
+      "adjudication_decision": "preserve_as_source_conflict_with_primary_identity_supported_and_database_modification_conflict",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140",
+          "PMCID PMC3907745"
+        ]
+      },
+      "conflict_context": "Primary Table 1 verifies FITC-WT1-pTj identity, but DRAMP omits the FITC terminal label in its modification fields, uses a p54 title typo, and assigns unsupported antimicrobial activity.",
+      "conflict_flags": [
+        "database_antimicrobial_activity_not_source_supported",
+        "database_title_typo_p54",
+        "database_terminal_modification_conflicts_with_primary_fitc_label"
+      ],
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Anticancer",
+      "database_subject": "Not available",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "name_or_synonym": "source_verified",
+        "sequence_or_variant_identity": "source_verified_with_label_conflict",
+        "source_organism_or_origin": "source_verified_protein_derived_WT1_context",
+        "terminal_or_noncanonical_modifications": "source_conflict_database_lists_free_terminal_while_primary_table_shows_FITC_label"
+      },
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "modification_check": {
+        "agreement": "Primary Table 1 states KDCERRFSRSDQLKRHQRRHTGVKPFQK-FITC, while DRAMP raw modification fields list N-terminal Free, C-terminal Free, and no other modification.",
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        }
+      },
+      "name_check": {
+        "agreement": "DRAMP name FITC-WT1-pTj matches the primary Table 1 peptide name.",
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        }
+      },
+      "peptide_name_database": "FITC-WT1-pTj",
+      "review_notes": "Keep as source_conflict: the peptide identity is source-backed, but database modification/title/activity fields are not publication-grade clean.",
+      "sequence_check": {
+        "agreement": "Primary Table 1 supports the same core sequence plus a terminal FITC-labeled lysine; database sequence alone omits the explicit FITC label.",
+        "database_sequence": "KDCERRFSRSDQLKRHQRRHTGVKPFQK",
+        "primary_source_sequence": "KDCERRFSRSDQLKRHQRRHTGVKPFQK-FITC",
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "primary_source_identity_supported_with_database_modification_conflict"
+      },
+      "sequence_key": "DRAMP:DRAMP35190",
+      "source_id": "DRAMP:DRAMP35190",
+      "source_table": "linked_dramp_activity_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "activity_check": {
+        "agreement": "source_conflict",
+        "conflict_reason": "The experiment row duplicates the DRAMP general_amps activity text without assay, concentration, target organism, measure value, or primary-source antimicrobial evidence.",
+        "database_activity": "Antimicrobial, Anticancer",
+        "matched_activity_record_ids": [],
+        "source_locator": [
+          {
+            "kind": "primary_xml_table",
+            "locator": "xml:table=1:row=3",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "b-WT1-pTj identity"
+            ]
+          },
+          {
+            "kind": "primary_xml_table",
+            "locator": "xml:table=2",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "unlabeled WT1-pTj antiproliferative EC50 matrix"
+            ]
+          }
+        ]
+      },
+      "adjudication_decision": "preserve_as_source_conflict_duplicate_database_activity_row",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140"
+        ]
+      },
+      "conflict_context": "Experiment snapshot row is database-only activity text for DRAMP35189; primary material verifies identity but not the row's antimicrobial activity label or a separate b-WT1-pTj assay.",
+      "conflict_flags": [
+        "database_only_activity_text",
+        "missing_assay_measure_target",
+        "database_antimicrobial_activity_not_source_supported"
+      ],
+      "database": "DRAMP",
+      "database_measure": "Not available",
+      "database_subject": "Not available",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "sequence_or_variant_identity": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_biotinylated_and_c_terminal_amidated"
+      },
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "review_notes": "Retained for traceability to linked_experiment_records.jsonl; it does not add a source-verified activity result.",
+      "sequence_check": {
+        "agreement": "Primary Table 1 supports b-WT1-pTj identity.",
+        "database_sequence": "",
+        "primary_source_sequence": "biotin-CGGKDCERRFSRSDQLKRHQRRHTGVKPFQ-NH2",
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "primary_source_identity_supported"
+      },
+      "sequence_key": "DRAMP:DRAMP35189",
+      "source_id": "DRAMP:DRAMP35189",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "activity_check": {
+        "agreement": "source_conflict",
+        "conflict_reason": "The experiment row duplicates DRAMP activity text without assay, target, measure value, concentration, or primary evidence for antimicrobial activity; the linked title also carries the p54 typo.",
+        "database_activity": "Antimicrobial, Anticancer",
+        "matched_activity_record_ids": [],
+        "source_locator": [
+          {
+            "kind": "primary_xml_table",
+            "locator": "xml:table=1:row=4",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "FITC-WT1-pTj identity and terminal FITC label"
+            ]
+          },
+          {
+            "kind": "primary_xml_figure_caption",
+            "locator": "xml:fig=2:Fig. 2",
+            "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+            "supports": [
+              "FITC-WT1-pTj localization use"
+            ]
+          }
+        ]
+      },
+      "adjudication_decision": "preserve_as_source_conflict_duplicate_database_activity_row",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140"
+        ]
+      },
+      "conflict_context": "Experiment snapshot row is database-only activity text for DRAMP35190; primary material verifies the FITC-labeled probe but not antimicrobial activity, and database title/modification metadata conflict with the source.",
+      "conflict_flags": [
+        "database_only_activity_text",
+        "missing_assay_measure_target",
+        "database_antimicrobial_activity_not_source_supported",
+        "database_title_typo_p54",
+        "database_terminal_modification_conflicts_with_primary_fitc_label"
+      ],
+      "database": "DRAMP",
+      "database_measure": "Not available",
+      "database_subject": "Not available",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "sequence_or_variant_identity": "source_verified_with_label_conflict",
+        "terminal_or_noncanonical_modifications": "source_conflict_database_lists_free_terminal_while_primary_table_shows_FITC_label"
+      },
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "review_notes": "Retained for traceability; it does not add a source-verified activity result.",
+      "sequence_check": {
+        "agreement": "Primary Table 1 supports the FITC-labeled sequence, while the database activity snapshot does not encode the FITC label in modification fields.",
+        "database_sequence": "",
+        "primary_source_sequence": "KDCERRFSRSDQLKRHQRRHTGVKPFQK-FITC",
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "primary_source_identity_supported_with_database_modification_conflict"
+      },
+      "sequence_key": "DRAMP:DRAMP35190",
+      "source_id": "DRAMP:DRAMP35190",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "adjudication_decision": "source_verified_literature_link_only",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140",
+          "PMCID PMC3907745",
+          "article title matches DRAMP literature row"
+        ]
+      },
+      "conflict_context": "",
+      "conflict_flags": [],
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_subject": "A novel cell-penetrating peptide derived from WT1 enhances p53 activity, induces cell senescence and displays antimelanoma activity in xeno- and syngeneic systems.",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "literature_link": "source_verified",
+        "sequence_or_variant_identity": "not_asserted_by_literature_row"
+      },
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "review_notes": "Literature row is source-verified only for DOI/PMID/title linkage; biological activity and sequence conflicts remain represented in the activity/experiment rows.",
+      "sequence_check": {
+        "agreement": "Literature row does not contain a primary sequence assertion; source verification is limited to citation linkage.",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "literature_link_only"
+      },
+      "sequence_key": "DRAMP:DRAMP35189",
+      "source_id": "DRAMP:DRAMP35189",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "adjudication_decision": "source_verified_literature_link_only",
+      "citation_traceability": {
+        "kind": "article_metadata",
+        "locator": "xml:article-meta",
+        "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+        "supports": [
+          "DOI 10.1016/j.fob.2014.01.007",
+          "PMID 24490140",
+          "PMCID PMC3907745",
+          "article title matches DRAMP literature row"
+        ]
+      },
+      "conflict_context": "",
+      "conflict_flags": [],
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_subject": "A novel cell-penetrating peptide derived from WT1 enhances p53 activity, induces cell senescence and displays antimelanoma activity in xeno- and syngeneic systems.",
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "literature_link": "source_verified",
+        "sequence_or_variant_identity": "not_asserted_by_literature_row"
+      },
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "review_notes": "Literature row is source-verified only for DOI/PMID/title linkage; biological activity and sequence conflicts remain represented in the activity/experiment rows.",
+      "sequence_check": {
+        "agreement": "Literature row does not contain a primary sequence assertion; source verification is limited to citation linkage.",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "path": "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml"
+        },
+        "status": "literature_link_only"
+      },
+      "sequence_key": "DRAMP:DRAMP35190",
+      "source_id": "DRAMP:DRAMP35190",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_literature_records.jsonl"
+      }
+    }
+  ],
+  "source_reviewed": true,
+  "status_summary": {
+    "source_conflict": 4,
+    "source_verified": 2
+  },
+  "unrecoverable_material_gaps": []
+}

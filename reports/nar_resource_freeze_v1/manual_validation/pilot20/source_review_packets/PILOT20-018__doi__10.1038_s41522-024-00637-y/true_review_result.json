@@ -1,0 +1,276 @@
+{
+  "paper_id": "doi__10.1038_s41522-024-00637-y",
+  "pilot_sample_id": "PILOT20-018",
+  "audit_record_id": "doi__10.1038_s41522-024-00637-y:database_audit:1",
+  "reviewed_at": "2026-06-22T04:24:04Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "model_provenance": {
+    "recorded_review_model": "gpt-5.5",
+    "recorded_reasoning_effort": "xhigh",
+    "proof_status": "not_machine_attested",
+    "evidence_checked": [
+      "CODEX_THREAD_ID session metadata",
+      "omx hud",
+      "local Codex rollout session_meta"
+    ],
+    "limitation": "The local runtime/session metadata did not expose a machine-verifiable current model or reasoning-effort value. Per packet instruction, the terminal decision is unverifiable_best_effort even though the source evidence supports blocked_missing_primary_material."
+  },
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1038_s41522-024-00637-y",
+    "actual_surfaces_found": {
+      "paper_xml": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/raw/paper.xml",
+          "papers/doi__10.1038_s41522-024-00637-y/source/paper.xml"
+        ],
+        "reviewed_surfaces": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/xml_sections.json"
+        ]
+      },
+      "paper_pdf": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/raw/paper.pdf",
+          "papers/doi__10.1038_s41522-024-00637-y/source/paper.pdf"
+        ],
+        "reviewed_surfaces": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/pdf_text/landing-1.txt"
+        ]
+      },
+      "oa_package": {
+        "exists": false,
+        "evidence": "packet_manifest.raw_files.oa_package path is absent; landed metadata records remote_package request failure."
+      },
+      "supplementary_original": {
+        "exists": true,
+        "file_count": 10,
+        "classification": "all ten packet supplementary_original landing-*.bin symlink targets are HTML landing pages under file -L, not recovered supplementary data files",
+        "reviewed_surfaces": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_tables.json"
+        ]
+      },
+      "structured_supplementary_tables": {
+        "exists": false,
+        "table_count": 0,
+        "evidence": "extracted/supplementary_tables.json reports table_count 0"
+      },
+      "database_rows": {
+        "linked_assay_records": 27,
+        "linked_experiment_records": 27,
+        "linked_literature_records": 3,
+        "linked_sequence_records": 0
+      }
+    },
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_blocked_unrecoverable_material_gaps",
+    "blocking_material_gaps_confirmed": [
+      {
+        "gap_code": "supplementary_table_and_figures_not_locally_recoverable",
+        "evidence": "supplementary assets are HTML landing pages; supplementary_text.jsonl is indexed_only and supplementary_tables.json has no structured table",
+        "impact": "Supplementary Table 1 daptomycin/DJK-5 MIC/FICI rows and Supplementary Figs. 1-13 exact values cannot be source-reviewed from local material."
+      },
+      {
+        "gap_code": "database_sequence_records_absent_primary_sequence_not_embedded",
+        "evidence": "linked_sequence_records.jsonl has zero rows; XML/PDF text names DJK-5 and D-enantiomeric context but does not embed exact sequence/modification evidence",
+        "impact": "DBAASP:DBAASPS_11338 cannot be promoted to source_verified for sequence/modification identity."
+      }
+    ]
+  },
+  "layer1_database_record_review": {
+    "sampled_source_id": "DBAASP:DBAASPS_11338",
+    "release_row_locator": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv::tsv_row=24689",
+    "release_row_matches_sample_final_record": true,
+    "sample_final_record_path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/sample_final_record.json",
+    "final_record_path": "papers/doi__10.1038_s41522-024-00637-y/final/database_record_verification.json",
+    "status_under_review": "unresolved_record",
+    "status_assessment": "justified_under_best_effort_source_review",
+    "traceability_checked": [
+      "database:linked_assay_records:row=1",
+      "xml:article-meta",
+      "xml:sec=3:Introduction",
+      "xml:sec=16:Antimicrobial activity of colistin and DJK-5",
+      "xml:table=1"
+    ],
+    "evidence_summary": "The database row is traceable to DBAASP assay row 5263 for DJK-5 with P. aeruginosa LESB58 and fici=0.5. Primary Table 1 supports a colistin/DJK-5 FICI 0.5 value for P. aeruginosa LESB58 in MHB, but the local DBAASP row does not by itself identify the partner drug and exact DJK-5 sequence/modification evidence is absent locally.",
+    "conflict_preservation": "Unresolved_record should be preserved; do not convert to source_verified because primary sequence/modification evidence and some supplement-dependent values are missing.",
+    "source_verified_allowed": false
+  },
+  "layer2_activity_toxicity_review": {
+    "sampled_activity_relevance": "The sampled database_measure is MIC; fici=0.5 for Pseudomonas aeruginosa LESB58.",
+    "source_backed_elements": [
+      {
+        "element": "P. aeruginosa LESB58 colistin/DJK-5 FICI in MHB",
+        "raw_value": "0.5",
+        "raw_unit": "unitless",
+        "endpoint": "FICI",
+        "target": "Pseudomonas aeruginosa LESB58",
+        "locator": "xml:table=1:row=4:column=5",
+        "paths_checked": [
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/xml_sections.json",
+          "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/pdf_text/landing-1.txt"
+        ]
+      },
+      {
+        "element": "DJK-5 MIC against P. aeruginosa LESB58",
+        "raw_values": [
+          "50 ug/mL in MHB",
+          "100 ug/mL in DFG"
+        ],
+        "locators": [
+          "xml:table=1:row=4:column=3",
+          "xml:table=1:row=4:column=4"
+        ]
+      }
+    ],
+    "row_quality_spot_check": {
+      "activity_record_count": 12,
+      "generic_endpoint_or_sentence_fragment_target_found": false,
+      "mic_like_missing_raw_value_or_unit_found": false,
+      "locator_gaps_for_table1_rows_found": false
+    },
+    "unsupported_elements": [
+      "Supplementary Table 1 daptomycin/DJK-5 planktonic MIC/FICI values cannot be verified from local material.",
+      "Supplementary figure exact values cannot be source-reviewed because true supplementary files are absent."
+    ],
+    "assessment": "Local Table 1 activity rows relevant to the sampled value are source-backed; supplement-dependent rows remain blocked and must not be fabricated or promoted."
+  },
+  "layer3_mechanism_review": {
+    "mechanism_claim_count": 5,
+    "direct_mechanism_claims_checked": [
+      {
+        "claim_id": "mech-003",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types": [
+          "scanning electron microscopy"
+        ],
+        "locator": "xml:sec=10:Colistin combined with DJK-5 caused cell deforma; xml:fig=6:Fig. 6",
+        "assessment": "Has direct assay type and locator; limitation avoids pore-model overclaim."
+      },
+      {
+        "claim_id": "mech-004",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types": [
+          "LacZ membrane leakage assay"
+        ],
+        "locator": "xml:sec=11:Membrane leakage in co-biofilms indicated the sy; xml:sec=20:Membrane leakage assay",
+        "assessment": "Has direct assay type and locator; limitation notes missing supplementary figure prevents exact point review."
+      }
+    ],
+    "non_direct_claims_checked": [
+      {
+        "claim_id": "mech-001",
+        "recorded_evidence_class": "background_mechanism_context",
+        "assessment": "Kept as background/prior-work context, not promoted to direct mechanism."
+      },
+      {
+        "claim_id": "mech-002",
+        "recorded_evidence_class": "indirect_mechanism_context",
+        "assessment": "Correctly treated as indirect perturbation context, not as sole molecular target proof."
+      },
+      {
+        "claim_id": "mech-005",
+        "recorded_evidence_class": "phenotypic_synergy_context",
+        "assessment": "Correctly treated as phenotypic synergy context with supplement limitations."
+      }
+    ],
+    "ontology_caution": "Non-direct claims use local context labels rather than the canonical ontology strings phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. This should be normalized in a future cleanup but does not overpromote indirect evidence to direct mechanism in this blocked sample.",
+    "assessment": "Mechanism claims have claim_id, claim_text, source locators, and direct assay types for direct claims; missing supplementary figures remain a material limitation."
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "blocked_missing_primary_material",
+    "existing_publication_grade": false,
+    "existing_source_reviewed": true,
+    "existing_rework_target_count": 2,
+    "best_effort_scientific_assessment": "blocked_missing_primary_material",
+    "scientific_assessment_reason": "The sampled unresolved_record is justified and should not be converted to source_verified. Table 1 supports the visible FICI/MIC values relevant to the sampled row, but exact DJK-5 sequence/modification evidence and true supplementary materials are missing from local XML/PDF/OA/supplement/database surfaces.",
+    "terminal_decision_reason": "The local runtime did not expose machine-verifiable model or reasoning-effort proof, so the top-level decision follows the prompt's unverifiable_best_effort rule.",
+    "existing_final_artifact_confirmed_as_non_publication_grade": true,
+    "rework_ticket_written": true,
+    "rework_ticket_path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/rework_ticket.json"
+  },
+  "rework_targets": [
+    {
+      "ticket_id": "pilot20-018-true-review-rwk-001",
+      "target_queue": "material_extraction",
+      "severity": "blocking",
+      "failure_code": "missing_primary_supplement_and_sequence_material",
+      "required_action": "Supply or recover true supplementary Table 1/Figs. 1-13 and exact DJK-5 sequence/modification evidence, or preserve the paper as blocked_missing_primary_material."
+    },
+    {
+      "ticket_id": "rwk-worker46-20260503-local-supplement-gap",
+      "target_queue": "material_extraction",
+      "severity": "blocking",
+      "failure_code": "supplementary_table_and_figures_not_locally_recoverable",
+      "source": "existing packet rework ticket"
+    },
+    {
+      "ticket_id": "rwk-worker46-20260503-database-sequence-gap",
+      "target_queue": "analysis",
+      "severity": "major",
+      "failure_code": "database_sequence_records_absent_primary_sequence_not_embedded",
+      "source": "existing packet rework ticket"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "runtime_model_effort_not_machine_attested",
+      "evidence_context": "Current session metadata did not expose model or reasoning_effort values."
+    },
+    {
+      "caution_code": "database_sequence_not_primary_sourced",
+      "evidence_context": "DJK-5 name and D-enantiomeric context are in XML/PDF, but exact sequence/modification evidence is absent and linked_sequence_records.jsonl has zero rows."
+    },
+    {
+      "caution_code": "supplementary_assets_are_article_landing_html",
+      "evidence_context": "All ten local supplementary landing-*.bin symlink targets classify as HTML landing pages; supplementary_text is indexed_only and supplementary_tables has zero tables."
+    },
+    {
+      "caution_code": "database_row_partner_ambiguity",
+      "evidence_context": "DBAASP sampled synergy row has fici=0.5 and P. aeruginosa LESB58, but the local row does not identify the partner drug; source Table 1 supports colistin/DJK-5 FICI 0.5."
+    },
+    {
+      "caution_code": "noncanonical_non_direct_mechanism_labels",
+      "evidence_context": "Non-direct mechanism claims use context labels, but direct claims retain direct assay types and locators and no indirect claim is promoted to direct_mechanism."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per prompt.",
+    "Runtime model and reasoning-effort provenance could not be machine-attested from local session metadata.",
+    "Review was bounded to local packet, paper, landed-asset metadata, extracted text/table/figure surfaces, database JSONL snapshots, final artifacts, and existing rework records.",
+    "No new external supplement or OA package recovery was possible; local supplementary assets were inspected and found to be article HTML landing pages.",
+    "Layer 3 figure-level exact values from missing supplementary figures were not reconstructed."
+  ],
+  "checked_inputs": [
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-018__doi__10.1038_s41522-024-00637-y/source_locator_hints.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/final/database_record_verification.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/final/mechanism_evidence.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/final/review_report.json",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1038_s41522-024-00637-y/raw/supplementary_original/landing-1.bin",
+    "landed_assets paper metadata.json and asset_manifest.csv referenced by material_inventory.json"
+  ]
+}

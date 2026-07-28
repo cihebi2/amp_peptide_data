@@ -1,0 +1,84 @@
+{
+  "paper_id": "doi__10.3390_insects14100794",
+  "reviewed_at": "2026-05-09T09:14:48Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML/PDF/OA/package/database rows were reopened. The supplementary ZIP contains Figure S1 plus Table S1/Table S2 reference/transcriptome workbooks; no additional activity/toxicity rows were found there."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_insects14100794/packet_manifest.json",
+    "paper_packets/doi__10.3390_insects14100794/locators/locator_index.json",
+    "paper_packets/doi__10.3390_insects14100794/raw/paper.xml",
+    "paper_packets/doi__10.3390_insects14100794/raw/paper.pdf",
+    "paper_packets/doi__10.3390_insects14100794/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_insects14100794/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_insects14100794/raw/supplementary_original/local-APD6-insects-14-00794-s001.zip",
+    "paper_packets/doi__10.3390_insects14100794/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_insects14100794/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_insects14100794/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "paper_packets/doi__10.3390_insects14100794/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_insects14100794/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_insects14100794/analysis/mechanism_evidence.json"
+  ],
+  "adjudication_summary": "Re-review recovered the missing primary-source activity matrix from XML Tables 2-4, matched all linked DBAASP assay rows back to Table 2/Table 4 records, and converted the prior framework-test placeholder review into source-reviewed worker-6 adjudication. The paper is accepted with cautions because Hcec-cecB is a reference control and Tpen-cec lacks the direct PI-permeabilization figure evidence available for Peyn-cec/Pvul-cec/Hcec-cecB.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "APD6/DBAASP literature links and DBAASP assay rows are source-verified against article metadata, Figure 2 sequence evidence, and primary XML Table 2/Table 4 activity/toxicity values; prior source_conflict placeholders are resolved.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 48 source-located rows: 16 MIC values, 16 agar-diffusion outcomes, and 16 hemolysis values with units, targets, conditions, statistics, and locators.",
+    "layer_3_mechanism": "Worker-6 preserved only source-supported mechanism strength: CD/structure as supporting context and PI staining as direct E. coli membrane-permeabilization evidence for the peptides shown in Figure 6.",
+    "supplementary_materials": "Supplementary ZIP was inspected; XLSX assets are reference/transcriptome metadata and do not add activity/toxicity values or database sequence conflicts."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 48,
+    "activity_table_counts": {
+      "Table 2 MIC": 16,
+      "Table 3 agar_diffusion_zone": 16,
+      "Table 4 hemolysis": 16
+    },
+    "database_status_summary": {
+      "source_verified": 36
+    },
+    "mechanism_claims": 2,
+    "open_rework_ticket_ids": [],
+    "resolved_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "caution_findings": [
+    {
+      "caution_code": "positive_control_not_novel_peptide",
+      "evidence_context": "Hcec-cecB activity/toxicity values are retained as source-supported positive-control/reference cecropin rows, not as a novel peptide database record for this paper."
+    },
+    {
+      "caution_code": "limited_direct_mechanism_scope",
+      "evidence_context": "Direct PI membrane-permeabilization evidence is source-supported for Peyn-cec, Pvul-cec, and Hcec-cecB; Tpen-cec remains supported by activity and structural context but not by the Figure 6 direct PI assay."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "tools_attempted": [
+    "python ElementTree XML table extraction for Tables 2-4",
+    "rg source/database row matching",
+    "zipfile OOXML workbook inspection for supplementary XLSX assets",
+    "PaddleOCR PP-OCRv5 local OCR on Figure 2 sequence image"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.3390_microorganisms8040582",
+  "doi": "10.3390/microorganisms8040582",
+  "generated_at": "2026-05-09T11:26:27Z",
+  "worker": "worker-6_final_adjudication",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 bounded mechanism adjudication from primary XML/PDF figures, captions, semithin/TEM results, and conclusions; not a worker-5 expansion beyond local evidence.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "R9F2 and (KFF)3K against Candida albicans CEMTC 34",
+      "claim_text": "Both peptides suppressed C. albicans hyphal growth and produced antifungal MIC/MFC activity; this is direct antifungal activity, not proof of a molecular target by itself.",
+      "evidence_class": "direct_activity_assay",
+      "direct_assay_types": [
+        "serial dilution MIC/MFC assay",
+        "hyphal-growth microscopy assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=3.1 and supp:Table S1",
+        "source_path": "paper_packets/doi__10.3390_microorganisms8040582/extracted/xml_sections.json",
+        "supports": "Results text and Supplementary Table S1 support antifungal and hyphal-growth activity."
+      },
+      "limitations": "Activity endpoints do not identify a molecular target."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "(KFF)3K-treated Candida albicans",
+      "claim_text": "(KFF)3K produced earlier and more destructive plasma-membrane-associated ultrastructural changes, with vacuole and cell-wall changes appearing in the TEM/semithin time course.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "semithin light microscopy",
+        "transmission electron microscopy ultrathin sections"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=3.2-3.6; xml:fig=4-8; xml:sec=4:Conclusions",
+        "source_path": "paper_packets/doi__10.3390_microorganisms8040582/extracted/xml_sections.json",
+        "supports": "Primary figure captions/results/conclusions localize peptide-associated morphology to plasma membrane, vacuole, and cell wall structures."
+      },
+      "limitations": "TEM morphology localizes structural damage but cannot resolve the chemical molecular target."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "R9F2-treated Candida albicans",
+      "claim_text": "R9F2 also affected the plasma membrane but with later and different ultrastructural manifestations than (KFF)3K; normal-looking cells persisted at early time points.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "semithin light microscopy",
+        "transmission electron microscopy ultrathin sections"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=3.2-3.6; xml:fig=7 and fig=9; xml:sec=4:Conclusions",
+        "source_path": "paper_packets/doi__10.3390_microorganisms8040582/extracted/xml_sections.json",
+        "supports": "Primary results and conclusions compare R9F2 timing and morphology against (KFF)3K."
+      },
+      "limitations": "Evidence supports morphological sequence and location, not a specific biochemical target or pathway."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "molecular_target_not_directly_resolved",
+      "severity": "nonblocking",
+      "evidence_context": "The paper explicitly frames TEM as morphology/dynamics evidence and notes molecular interactions are not directly observed by these methods."
+    },
+    {
+      "caution_code": "figure_quantification_not_overextracted",
+      "severity": "nonblocking",
+      "evidence_context": "Figure panels support qualitative ultrastructural localization; exact panel-level percentages were not invented."
+    }
+  ],
+  "source_checked": [
+    "papers/doi__10.3390_microorganisms8040582/source/paper.xml",
+    "papers/doi__10.3390_microorganisms8040582/source/paper.pdf",
+    "paper_packets/doi__10.3390_microorganisms8040582/raw/paper.xml",
+    "paper_packets/doi__10.3390_microorganisms8040582/raw/paper.pdf",
+    "paper_packets/doi__10.3390_microorganisms8040582/packet_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms8040582/locators/locator_index.json",
+    "paper_packets/doi__10.3390_microorganisms8040582/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_microorganisms8040582/extracted/pdf_text/microorganisms-08-00582.txt",
+    "paper_packets/doi__10.3390_microorganisms8040582/extracted/supplementary_text/microorganisms-08-00582-s001.txt",
+    "paper_packets/doi__10.3390_microorganisms8040582/extracted/oa_package/local-DBAASP-PMC7232200/PMC7232200/microorganisms-08-00582-s001.pdf",
+    "paper_packets/doi__10.3390_microorganisms8040582/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_microorganisms8040582/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms8040582/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms8040582/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms8040582/database/linked_experiment_records.jsonl",
+    "rework_context/doi__10.3390_microorganisms8040582/handoff_context.json"
+  ],
+  "tools_attempted": [
+    "jq over handoff, packet, final, quality, report JSON",
+    "rg over XML, extracted PDF text, supplementary text, and database rows",
+    "xml.etree.ElementTree table/supplement scan of paper.xml",
+    "pdftotext -layout for primary PDF and supplementary PDF",
+    "pdfinfo for supplementary PDF inventory",
+    "manual source review of Supplementary Table S1 and XML/PDF Sections 2.1-3.1/4",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ]
+}

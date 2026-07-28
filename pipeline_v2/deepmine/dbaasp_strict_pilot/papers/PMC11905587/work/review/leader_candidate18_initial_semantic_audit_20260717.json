@@ -1,0 +1,123 @@
+{
+  "paper_id": "PMC11905587",
+  "generated_at": "2026-07-16T16:25:55.060989Z",
+  "auditor": "leader_field_level_semantic_audit",
+  "verdict": "FAIL_TARGETED_REWORK",
+  "freeze_eligible": false,
+  "gate_state_observed": {
+    "packet_gate": 0,
+    "semantic_gate": 0,
+    "publication_gate": 0,
+    "note": "deterministic gates passed before field-level source comparison; this audit overrides terminal acceptance until tickets close"
+  },
+  "source_contract": {
+    "peptide_name": "QsLEAP2 mature peptide",
+    "sequence": "MTPFWRAVGNKPVGAYCQQGLECTTKVCRRRHCSFLQHNWS",
+    "sequence_length": 41,
+    "synthesis_purity": ">95%",
+    "table_caption_locator": "xml:table-wrap:1 / Table 1 caption",
+    "method_locator": "xml:p:44",
+    "assay_inoculum": "1.0 × 10^5 CFU/mL",
+    "incubation_time": "24 h",
+    "readout": "OD600",
+    "replication": "triplicates with independent biological repeats",
+    "positive_mic_rows": 5,
+    "explicit_no_activity_rows": 6,
+    "method_reported_dilution_range": "1000 to 31.25 µg/mL",
+    "table_values_below_reported_minimum": [
+      "3.125 µg/mL",
+      "6.25 µg/mL"
+    ]
+  },
+  "findings": [
+    {
+      "finding_id": "F1_ACTIVITY_ENTITY_IDENTITY_PLACEHOLDER",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/final/activity_toxicity_evidence.json",
+      "failing_objects": [
+        "activity_records[0:5].sample",
+        "activity_records[0:5].treatment",
+        "activity_records[0:5].entity"
+      ],
+      "observed": "generic source-reported AMP/peptide placeholder; exact paper-local name and sequence omitted",
+      "source_evidence": [
+        "xml:table-wrap:1 caption",
+        "xml:p:44"
+      ],
+      "required_repair": "bind every MIC row to QsLEAP2 mature peptide and the exact 41-aa primary-source sequence; preserve synthesis purity and do not treat the machine row as the source"
+    },
+    {
+      "finding_id": "F2_REPORTED_ASSAY_CONTEXT_DROPPED",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "failing_objects": [
+        "activity_records[0:5].assay_conditions.inoculum",
+        "activity_records[0:5].statistics"
+      ],
+      "observed": "inoculum null and statistics.reported=false",
+      "source_evidence": [
+        "xml:p:44"
+      ],
+      "required_repair": "preserve 1.0×10^5 CFU/mL, OD600 readout, 24 h, triplicates and independent biological repeats; leave only truly unreported fields null"
+    },
+    {
+      "finding_id": "F3_NEGATIVE_TABLE_ROWS_NOT_ACCOUNTED",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "failing_objects": [
+        "excluded_non_activity_table_entries",
+        "candidate_or_rejected_rows"
+      ],
+      "observed": "six Table 1 no-activity rows are absent from explicit coverage; a machine candidate infers >1000 for Proteus although the table cell is -",
+      "source_evidence": [
+        "xml:table-wrap:1 body rows 6-9 and 13-14",
+        "xml:p:16"
+      ],
+      "required_repair": "preserve all six no-activity rows as explicit reviewed/excluded or censored source observations with raw table value -, exact locators, and no fabricated >1000 primary value"
+    },
+    {
+      "finding_id": "F4_INTRAPAPER_DILUTION_RANGE_CONFLICT_MISSING",
+      "severity": "blocking",
+      "owner_worker": "worker-2",
+      "observed": "method says 1000 to 31.25 µg/mL while Table 1 reports MIC 3.125 and 6.25 µg/mL; final has no caution",
+      "source_evidence": [
+        "xml:p:44",
+        "xml:table-wrap:1"
+      ],
+      "required_repair": "preserve table values as reported and add an explicit source-conflict caution without silently resolving the discrepancy"
+    },
+    {
+      "finding_id": "F5_WORKER3_MODEL_PROVENANCE_FALSE",
+      "severity": "blocking",
+      "owner_worker": "worker-3",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11905587/analysis/supplementary_evidence.worker3.json",
+      "observed": {
+        "review_model": "gpt-5.6-sol",
+        "reasoning_effort": "high"
+      },
+      "runtime_proof": "pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC11905587/worker-3.run_report.json",
+      "required_repair": "set both worker-3 mirror artifacts to review_model gpt-5.5 and reasoning_effort xhigh, remove the false runtime-uncontrollable note, and retain material findings unchanged unless fresh source review identifies another issue"
+    }
+  ],
+  "required_rerun_order": [
+    "worker-2",
+    "worker-3",
+    "worker-6"
+  ],
+  "acceptance_checks": {
+    "activity_records": 5,
+    "toxicity_records": 0,
+    "all_activity_rows_named_QsLEAP2": true,
+    "all_activity_rows_sequence_length": 41,
+    "all_activity_rows_inoculum_present": true,
+    "all_activity_rows_replication_present": true,
+    "explicit_no_activity_rows": 6,
+    "machine_gt1000_promoted_as_primary_count": 0,
+    "dilution_range_conflict_caution_present": true,
+    "worker3_model_metadata": "gpt-5.5/xhigh",
+    "worker6_after_latest_upstream": true,
+    "paper_packet_mirrors_byte_identical": true,
+    "strict_gates_all_zero_after_ticket_closure": true
+  }
+}

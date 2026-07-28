@@ -1,0 +1,108 @@
+{
+  "paper_id": "doi__10.1111_j.1582-4934.2008.00341.x",
+  "generated_at": "2026-05-03T19:30:46Z",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "status": "resolved_by_worker4_worker6_source_review",
+  "source_review_summary": "Prior full_source_review_not_completed and database_conflicts_require_adjudication blockers were resolved by source-reviewed worker-4 database audit and worker-6 adjudication. Remaining issues are nonblocking cautions preserved in final review_report.json.",
+  "caution_findings": [
+    {
+      "caution_code": "database_blank_dbaasp_assay_rows_preserved",
+      "severity": "caution",
+      "layer": "database",
+      "status": "database_only_no_primary_source",
+      "evidence_context": "DBAASP assay/experiment row 43692 has P. aeruginosa but blank endpoint/unit and NA concentration; primary Table 1 supports AG-30 MIC 5.00 μg/mL instead. The placeholder is retained as database_only_no_primary_source, not source_verified."
+    },
+    {
+      "caution_code": "camp_entry_extra_no_value_target_preserved",
+      "severity": "caution",
+      "layer": "database",
+      "status": "source_conflict",
+      "evidence_context": "CAMP entry text contains the three Table 1 MIC values plus a trailing P. aeruginosa mention without a value; final audit preserves the conflict context."
+    },
+    {
+      "caution_code": "supplementary_assets_absent_after_local_recovery",
+      "severity": "caution",
+      "layer": "material_packet",
+      "status": "nonblocking_no_supplement_declared_or_present",
+      "evidence_context": "Local landed folder, OA package manifest, supplementary_index, supplementary_tables, and supplementary_text contain no supplementary files for this paper."
+    },
+    {
+      "caution_code": "figure_only_exact_values_not_fabricated",
+      "severity": "caution",
+      "layer": "mechanism",
+      "status": "bounded_qualitative_or_table_based_claims",
+      "evidence_context": "Figure-only angiogenesis/mechanism plots are not converted into exact numeric rows; final mechanism claims use source captions/prose and Table 2 where tabulated."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_assets_absent_after_local_inventory",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/archive_manifest.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1111_j.1582-4934.2008.00341.x"
+      ],
+      "tools_attempted": [
+        "find local source roots",
+        "OA package archive manifest review",
+        "supplementary_index/table/text JSON review"
+      ],
+      "why_unrecoverable": "No supplementary files were present in the landed folder or OA package; the package contains NXML/PDF/figure assets only.",
+      "impact": "No supplementary-only sequence/activity/toxicity/mechanism values can be added; primary XML/PDF/Table 1 evidence is sufficient for the worker-4/6 blockers.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "figure_only_exact_quantification_not_digitized",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/figure_captions.json",
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/oa_package/local-DBAASP-PMC3822513/PMC3822513/*.jpg",
+        "paper_packets/doi__10.1111_j.1582-4934.2008.00341.x/extracted/pdf_text/jcmm0013-0535.txt"
+      ],
+      "tools_attempted": [
+        "XML figure caption extraction",
+        "PDF text review",
+        "OA figure image inventory"
+      ],
+      "why_unrecoverable": "Several angiogenesis/mechanism quantities are plotted in figures without source tables; exact plotted numbers were not recoverable as reliable local text/table values in this bounded owner-layer repair.",
+      "impact": "Final mechanism/angiogenesis claims remain qualitative or use Table 2 fold-change values where tabulated; no fabricated exact graph values are introduced.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "updated_at": "2026-05-03T19:32:43Z",
+  "latest_gate_results": {
+    "semantic_gate": {
+      "report": "reports/doi__10.1111_j.1582-4934.2008.00341.x.semantic_gate.json",
+      "passed": true,
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "report": "reports/doi__10.1111_j.1582-4934.2008.00341.x.publication_quality.json",
+      "passed": true,
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 9,
+        "mechanism_claims": 3
+      }
+    }
+  }
+}

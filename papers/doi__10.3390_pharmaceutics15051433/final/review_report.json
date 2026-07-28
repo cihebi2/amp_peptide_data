@@ -1,0 +1,149 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics15051433",
+  "reviewed_at": "2026-05-09T16:05:00Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text_tables_methods_results",
+      "path": "papers/doi__10.3390_pharmaceutics15051433/source/paper.xml",
+      "coverage": "article metadata, Methods 2.1/2.5/2.6/2.7, Table 1, Table 2, Results 3.3-3.6, Figures 7-9 captions"
+    },
+    "paper_pdf": {
+      "status": "reviewed_text_extraction",
+      "path": "papers/doi__10.3390_pharmaceutics15051433/source/paper.pdf",
+      "coverage": "PDF text Table 2 block and activity/toxicity prose"
+    },
+    "oa_package": {
+      "status": "reviewed_archive_members",
+      "path": "paper_packets/doi__10.3390_pharmaceutics15051433/raw/oa_package/local-DBAASP-PMC10220883.tar.gz",
+      "coverage": "NXML/PDF/figures and supplementary ZIP member"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_recovered_oa_supplement_pdf",
+      "path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/oa_package/local-DBAASP-PMC10220883/PMC10220883/pharmaceutics-15-01433-s001.zip",
+      "coverage": "supplementary PDF Figure S1-S12 and Tables S1-S2; no new exact antimicrobial/toxicity rows beyond Table 2"
+    },
+    "merged_database_rows": {
+      "status": "reviewed_linked_dbaasp_packet_rows",
+      "path": "paper_packets/doi__10.3390_pharmaceutics15051433/database/*.jsonl",
+      "coverage": "20 linked_assay rows, 20 linked_experiment rows, 7 linked_literature rows, zero linked_sequence rows"
+    }
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, recovered supplementary ZIP PDF, figures, packet database snapshots, and existing extraction reports were checked for the worker-4/6 blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_pharmaceutics15051433/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/locators/locator_index.json",
+    "papers/doi__10.3390_pharmaceutics15051433/source/paper.xml",
+    "papers/doi__10.3390_pharmaceutics15051433/source/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/raw/paper.xml",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/raw/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/pdf_text/pharmaceutics-15-01433.txt",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/pdf_text/local-DBAASP-PMC10220883.txt",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/oa_package/local-DBAASP-PMC10220883/PMC10220883/pharmaceutics-15-01433-s001.zip",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/rework/rework_requests.jsonl"
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "worker_4_database_record_adjudication",
+      "result": "pass_with_cautions",
+      "evidence": "47 linked rows reviewed; status_summary={'source_conflict': 40, 'source_verified': 7}. Assay/experiment conflicts are explicit unit conflicts, not generic unmatched rows."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "The table-footnote mM versus source-prose/database µM inconsistency is preserved on every linked DBAASP assay/experiment row."
+    },
+    {
+      "check": "worker_6_activity_finalization",
+      "result": "pass_with_cautions",
+      "evidence": "All 42 Table 2 values were retained in final activity/toxicity evidence, including n.d. entries and source locators."
+    },
+    {
+      "check": "supplementary_exhaustion",
+      "result": "pass",
+      "evidence": "OA supplementary ZIP was opened with unzip/pdftotext; it contains a supplementary PDF with MD/biophysical figures/tables and no additional exact activity/toxicity rows needed for the blocker."
+    },
+    {
+      "check": "mechanism_strength",
+      "result": "pass_with_scope_guard",
+      "evidence": "Mechanism claims are bounded to MD/CD/SPR membrane-interaction context and phenotype evidence; no single molecular target or pore model is overclaimed."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 closed by this worker-4/6 source-reviewed repair; rework_targets is empty."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay/experiment rows now map to primary Table 1/2 identities and values; unit inconsistency is preserved as source_conflict rather than hidden. Literature rows are source_verified to DOI/PMID/PMCID and Table 1 identity.",
+    "layer_2_activity_toxicity": "Final worker-6 adjudication records all source-supported Table 2 MIC/MBC/HC50/IC50 values with targets, locators, and unit caution; no unsupported values were invented.",
+    "layer_3_mechanism": "Mechanism evidence is bounded to computational/biophysical membrane-interaction context and activity/toxicity phenotypes; claims avoid unsupported direct molecular-target assertions.",
+    "publication_grade_review": "The prior blocking issue was lack of real source-reviewed worker-6 adjudication. This pass reopened the source paths, recovered the OA supplementary PDF, reconciled database rows, and closed the ticket with cautions."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_units",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "Primary Table 2 values match linked DBAASP rows, but local Table 2 footnote says mM while results/methods/database context supports µM; rows remain source_conflict with explicit context."
+    },
+    {
+      "scope": "database_sequence_snapshot",
+      "severity": "caution",
+      "status": "linked_sequence_records_absent",
+      "note": "Packet has zero linked_sequence_records; sequence identity is verified from primary Table 1 and linked DBAASP names/literature IDs, not from a separate sequence snapshot."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "recovered_oa_supplement_checked",
+      "note": "The supplement existed inside the OA package ZIP and was opened; it supplies qualitative MD/biophysical figures/tables, not new exact antimicrobial/toxicity values."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "bounded_membrane_context",
+      "note": "MD/CD/SPR support membrane-interaction context but not a single direct molecular target."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 source-reviewed rework reconciled linked DBAASP rows against primary Table 1/2, recovered the OA supplementary PDF, completed final activity and mechanism adjudication with explicit unit and mechanism-scope cautions, and closed the prior targeted rework ticket without fabricating unsupported values.",
+  "summary": "Source-reviewed worker-4/6 repair completed with caution-preserving publication-grade acceptance.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "last_worker6_re_reviewed_at": "2026-05-09T16:05:00Z",
+    "latest_re_review_status": "source_supported_accepted_with_cautions"
+  }
+}

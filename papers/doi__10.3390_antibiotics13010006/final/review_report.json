@@ -1,0 +1,93 @@
+{
+  "paper_id": "doi__10.3390_antibiotics13010006",
+  "reviewed_at": "2026-05-07T18:22:07Z",
+  "updated_at": "2026-05-07T18:22:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded source review reopened XML/PDF/OA package locators, the supplementary zip PDF via pdftotext, and linked APD6/DBAASP packet rows."
+  },
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "adjudication_summary": "Worker-2/4/6 source re-review repaired Table 3 MDR-isolate activity rows, replaced the row-span-broken Table 2 parser output, reconciled APD6/DBAASP rows, and preserves remaining database discrepancies as cautions.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics13010006/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/pdf_text/antibiotics-13-00006.txt",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/pdf_text/local-DBAASP-PMC10812672.txt",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics13010006/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics13010006/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics13010006/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_antibiotics13010006/source/paper.xml",
+    "papers/doi__10.3390_antibiotics13010006/source/paper.pdf",
+    "papers/doi__10.3390_antibiotics13010006/work/supplementary_methods/supplementary_evidence.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics13010006/supplementary/local-APD6-antibiotics-13-00006-s001.zip"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 108,
+    "toxicity_records": 2,
+    "table_3_mdr_rows_recovered": true,
+    "database_status_summary": {
+      "source_conflict": 77,
+      "source_verified": 160
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP/APD6 rows were checked against XML Tables 1-4 and Supplementary Tables S2/S3. Exact source-supported assay rows are source_verified; DBAASP 23215 name conflict and toxicity rounding conflicts remain explicit cautions.",
+    "layer_2_activity_toxicity": "Activity evidence was regenerated from source tables with rowspans expanded. Table 3 PvAMP66/gentamicin/comparator MIC and IC50 values are now source-located against the MDR clinical isolate; human toxicity values are separated into toxicity_records.",
+    "layer_3_mechanism": "Mechanism output preserves SEM membrane-disruption evidence and additive FICI interaction without upgrading suggested carpet-model language to a fully resolved direct mechanism.",
+    "adjudication": "No blocking material gap remains after bounded local recovery; remaining discrepancies are preserved as caution findings rather than hidden or normalized."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_name_sequence_conflict_preserved",
+      "source_id": "DBAASP:DBAASPS_23215",
+      "evidence_context": "Database name conflicts with source sequence/name mapping; final database audit marks it source_conflict."
+    },
+    {
+      "caution_code": "database_toxicity_values_not_primary",
+      "source_id": "DBAASP:DBAASPS_23221; APD6:AP04056",
+      "evidence_context": "Database/APD6 toxicity summaries differ from Table 4; final toxicity evidence uses the primary table values."
+    },
+    {
+      "caution_code": "mechanism_not_fully_elucidated",
+      "evidence_context": "SEM supports a suggested carpet-model mechanism, but the paper states further studies are required."
+    },
+    {
+      "caution_code": "supplement_pdf_no_extra_activity_table_extracted",
+      "evidence_context": "Supplementary PDF was opened with pdftotext and used for sequence/LC-MS context; no additional structured activity/toxicity table changed final activity rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

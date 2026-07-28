@@ -1,0 +1,119 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0197742",
+  "reviewed_at": "2026-05-05T20:55:42Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1371_journal.pone.0197742/raw/paper.xml",
+      "tables": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "paper_pdf": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1371_journal.pone.0197742/extracted/pdf_text/pone.0197742.txt",
+      "purpose": "methods, captions, sequence/context cross-check"
+    },
+    "oa_package": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1371_journal.pone.0197742/extracted/oa_package",
+      "purpose": "NXML/PDF/table image/source package confirmation"
+    },
+    "supplementary_assets": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1371_journal.pone.0197742/raw/supplementary_original/local-DRAMP-pone.0197742.s002.docx",
+      "purpose": "S1 peptide sequence/purity table parsed from OOXML"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1371_journal.pone.0197742/database/*.jsonl",
+      "row_count": 451
+    }
+  },
+  "materials_exhausted": {
+    "paper_xml": "XML tables 2-8 reopened; row-level extractable MIC/hemolysis values were captured.",
+    "paper_pdf": "Extracted PDF text reopened for methods, replicate notes, figure/table captions, and sequence context.",
+    "oa_package": "OA package NXML/PDF/DOCX members existed and were cross-checked against packet/raw copies.",
+    "supplementary_assets": "S1 DOCX was parsed with OOXML; no XLSX supplement exists locally for this paper.",
+    "merged_database_rows": "Linked DBAASP/DRAMP JSONL snapshots were reopened from packet/database."
+  },
+  "checked_inputs": [
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    "rework_context/doi__10.1371_journal.pone.0197742/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0197742/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0197742/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0197742/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0197742/extracted/pdf_text/pone.0197742.txt",
+    "paper_packets/doi__10.1371_journal.pone.0197742/raw/supplementary_original/local-DRAMP-pone.0197742.s002.docx",
+    "paper_packets/doi__10.1371_journal.pone.0197742/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0197742/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0197742/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0197742/database/linked_dramp_activity_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_table_shape_repaired": true,
+    "table3_aggregate_not_cast_as_mic_rows": true,
+    "activity_record_count": 551,
+    "database_record_count": 451,
+    "database_source_conflict_count": 10,
+    "database_only_no_primary_source_count": 16,
+    "mechanism_claim_count": 1,
+    "open_rework_target_count": 0,
+    "strict_gate_evidence": {
+      "semantic_returncode": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_codes": [],
+      "semantic_report": "reports/doi__10.1371_journal.pone.0197742.semantic_gate.json",
+      "publication_returncode": 0,
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "publication_report": "reports/doi__10.1371_journal.pone.0197742.publication_quality.json"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material extraction remains complete-with-gaps as a material layer; no material packet bootstrap was rerun.",
+    "validator_contract": "Structural artifacts exist and are refreshed in worker-owned analysis/final paths; validator readiness is not treated as sufficient by itself.",
+    "activity_toxicity": "Worker-2 repair replaced parser-miscast rows with source-located MIC/hemolysis rows from XML tables and kept aggregate-only Table 3 separate.",
+    "database_record": "Worker-4 repair reconciled linked DBAASP assay rows against source tables and preserved unmatched/cross-paper rows as source_conflict or database_only_no_primary_source.",
+    "mechanism": "Worker-6 keeps mechanism bounded to structure-activity inference, not direct membrane mechanism.",
+    "publication_grade_review": "No blocking/major owner-layer issue remains; conflicts are explicit cautions and rework ticket is closed."
+  },
+  "caution_findings": [
+    {
+      "code": "source_conflicts_preserved",
+      "severity": "caution",
+      "count": 10,
+      "reason": "Some database rows are unmatched, cross-paper aggregate, or have source/database value-group conflict; they are preserved rather than normalized."
+    },
+    {
+      "code": "database_only_literature_rows_preserved",
+      "severity": "caution",
+      "count": 16,
+      "reason": "Some literature-link rows lack row-level peptide sequence/activity payloads in the packet and are not promoted to source_verified."
+    },
+    {
+      "code": "table5_question_mark_preserved",
+      "severity": "caution",
+      "reason": "The source question-mark MIC cell is retained as ambiguous source-reported evidence rather than fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 source review closed rwk-complete-test-0001. XML tables 2/4/5/6/7/8 now carry source-located activity/toxicity rows, Table 3 aggregate counts are no longer miscast as MIC values, and database conflicts are preserved as cautions."
+}

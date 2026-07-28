@@ -1,0 +1,127 @@
+{
+  "paper_id": "PMC12019989",
+  "worker": "worker-2",
+  "worker2_lane_status": "repair_ready_for_adjudication_with_cross_lane_limitations",
+  "source_reviewed_complete_claim": false,
+  "publication_grade_claim": false,
+  "required_outputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/activity_records.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/analysis/activity_toxicity_evidence.worker2.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/rework/rework_responses.jsonl"
+  ],
+  "worker2_validation": {
+    "passed": true,
+    "issue_count": 0,
+    "counts": {
+      "activity_records": 279,
+      "toxicity_records": 0,
+      "figure2_rows": 240,
+      "figure2_numeric_rows": 240,
+      "figure2_rows_matching_worker3_values": 240,
+      "figure2_missing_provenance_rows": 0,
+      "unique_source_locators": 23,
+      "source_conflicts_preserved": 10
+    },
+    "worker3_input_metrics": {
+      "figure2_observations": 240,
+      "figure2_unique_values": 1,
+      "figure2_curve_count_panel_dose": 30
+    }
+  },
+  "response_contract": {
+    "total_rows": 8,
+    "latest_two": [
+      {
+        "line": 7,
+        "ticket_id": "rwk-PMC12019989-true-figure2-digitization-and-integration-002",
+        "response_status": "repair_ready_for_adjudication",
+        "response_by": "worker-2",
+        "analysis_can_resume": true,
+        "nonempty_support_fields": [
+          "evidence",
+          "evidence_paths",
+          "repaired_artifacts",
+          "artifacts_written",
+          "validation_artifacts",
+          "reason",
+          "notes"
+        ]
+      },
+      {
+        "line": 8,
+        "ticket_id": "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+        "response_status": "repair_ready_for_adjudication",
+        "response_by": "worker-2",
+        "analysis_can_resume": true,
+        "nonempty_support_fields": [
+          "evidence",
+          "evidence_paths",
+          "repaired_artifacts",
+          "artifacts_written",
+          "validation_artifacts",
+          "reason",
+          "notes"
+        ]
+      }
+    ],
+    "violations": [],
+    "assigned_response_counts": {
+      "rwk-PMC12019989-true-figure2-digitization-and-integration-002": 1,
+      "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003": 1
+    }
+  },
+  "gate_results": {
+    "check_two_queue_packets_single_paper": {
+      "returncode": 0,
+      "paper_count": 1,
+      "hard_finding_count": 0,
+      "open_rework_ticket_count": 2,
+      "analysis_status_counts": {
+        "analysis_needs_analysis_rework": 1
+      },
+      "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/check_two_queue_packets.worker2.after_repair.single_paper.json"
+    },
+    "semantic_three_layer_gate": {
+      "returncode": 0,
+      "paper_count": 1,
+      "publication_grade_pass_count": 1,
+      "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/semantic_three_layer_gate.worker2.after_repair.json"
+    },
+    "check_three_layer_publication_quality": {
+      "returncode": 0,
+      "paper_count": 1,
+      "publication_grade_pass": true,
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/check_three_layer_publication_quality.worker2.after_repair.json"
+    },
+    "leader_candidate17_validator": {
+      "returncode": 1,
+      "passed": false,
+      "issue_count": 303,
+      "issue_types": {
+        "owner_artifact_runtime_metadata_mismatch": 1,
+        "worker3_figure2_degenerate_values": 1,
+        "worker3_curve_is_constant_or_placeholder": 30,
+        "worker3_visual_spot_check_failed": 11,
+        "final_figure2_raw_value_not_numeric": 240,
+        "pending_worker3_placeholder_survives": 1,
+        "stale_pre_digitization_note_survives": 1,
+        "final_layer_adjudication_metadata": 10,
+        "final_layer_worker6_adjudication": 3,
+        "final_layer_reviewed_at_not_shared": 1,
+        "paper_local_identity_contract": 1,
+        "terminal_modification_boundary": 1,
+        "fallback_record_status_category": 1,
+        "review_missing_no_toxicity_caution": 1
+      },
+      "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/leader_candidate17_validator.worker2.after_repair.result.json"
+    }
+  },
+  "remaining_blockers": [
+    "Worker-3 Figure 2 observations used by worker-2 remain degenerate under the leader validator: only one unique Figure 2 value and 30 constant/placeholder curve findings.",
+    "Paper/packet final activity layer still contains Figure 2 placeholders; worker-6 final rebuild is required after owner-lane adjudication.",
+    "Worker-4 identity/status and worker-6 final metadata/caution issues remain in the leader validator and are outside worker-2 lane."
+  ]
+}

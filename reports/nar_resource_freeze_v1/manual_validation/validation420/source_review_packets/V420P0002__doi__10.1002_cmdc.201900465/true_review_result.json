@@ -1,0 +1,142 @@
+{
+  "paper_id": "doi__10.1002_cmdc.201900465",
+  "review_sample_id": "V420P0002",
+  "reviewed_at": "2026-06-25T00:38:47Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "accepted_with_cautions",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0088",
+      "audit_record_id": "doi__10.1002_cmdc.201900465:database_audit:305",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled DRAMP row DRAMP32180 encodes Tumor cells: MEC-1 (5% Killing=32uM). Local primary source Table 2 for peptide code 296 reports sequence RRRRPIRRRPIRPPWYR, MIC 16 uM, and MEC-1 Viab% 95 after 32 uM peptide exposure. The final activity row doi__10.1002_cmdc.201900465-table2-r21-cell_viability-296 preserves this as endpoint cell_viability, raw_value 95, raw_unit %, target MEC-1, source_locator source/paper.xml xml:table=2:row=21:column=10. The final database audit marks DRAMP:DRAMP32180 source_verified by matching the database killing statement to the primary-source viability row using the explicit complement rule database_killing_equals_100_minus_source_viability. This is source-backed but not clean because the source reports viability while the database row reports the complement as killing and leaves value/unit fields empty.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/validation_samples.json:VAL0088",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/release_rows.json:doi__10.1002_cmdc.201900465:database_audit:305",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/sample_final_records.json:VAL0088",
+        "papers/doi__10.1002_cmdc.201900465/source/paper.xml:article-meta",
+        "papers/doi__10.1002_cmdc.201900465/source/paper.xml:table=2:code=296",
+        "papers/doi__10.1002_cmdc.201900465/final/activity_toxicity_evidence.json:record_id=doi__10.1002_cmdc.201900465-table2-r21-cell_viability-296",
+        "papers/doi__10.1002_cmdc.201900465/final/database_record_verification.json:record_audits[source_id=DRAMP:DRAMP32180]",
+        "paper_packets/doi__10.1002_cmdc.201900465/database/linked_experiment_records.jsonl:source_id=DRAMP32180",
+        "paper_packets/doi__10.1002_cmdc.201900465/database/linked_dramp_activity_records.jsonl:source_id=DRAMP32180",
+        "papers/doi__10.1002_cmdc.201900465/final/review_report.json"
+      ],
+      "cautions": [
+        "DRAMP reports 5% killing, while the primary source reports the complementary 95% cell viability; the complement mapping is preserved rather than rewritten as an identical value/unit match.",
+        "The DRAMP source-table row stores the activity in Target_Organism text and has empty database_value/database_unit fields in the release row.",
+        "Paper-level final status remains accepted_with_cautions because nonblocking database/source and mechanism cautions are preserved in final/review_report.json."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_inventory_path": "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/material_inventory.json",
+    "packet_dir": "paper_packets/doi__10.1002_cmdc.201900465",
+    "paper_dir": "papers/doi__10.1002_cmdc.201900465",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "source_review_depth": [
+      "paper_xml",
+      "paper_pdf",
+      "oa_package",
+      "supplementary_assets",
+      "merged_database_rows"
+    ],
+    "materials_exhausted": {
+      "paper_xml": true,
+      "paper_pdf": true,
+      "oa_package": true,
+      "supplementary_assets": true,
+      "merged_database_rows": true,
+      "source_review_gap_remaining": false
+    },
+    "nonblocking_cautions": [
+      "material_queue_status is material_extracted_with_gaps, but packet manifest and final review report list no missing or blocked materials and no open rework tickets.",
+      "The historical packet rework request rwk-complete-test-0001 is present in rework_requests.jsonl but resolved in rework_responses.jsonl and reflected as closed in packet/final review status."
+    ]
+  },
+  "worker6_adjudication": {
+    "role": "worker-6",
+    "source_reviewed": true,
+    "publication_grade": true,
+    "validator_contract_passed": true,
+    "review_status_from_final": "accepted_with_cautions",
+    "sample_layer_checks": {
+      "layer_1_database_identity_status": "confirmed_with_caution",
+      "layer_2_activity_toxicity_evidence": "confirmed_with_caution",
+      "layer_3_mechanism_ontology": "not directly implicated by sampled activity row; final mechanism ontology uses allowed evidence classes with direct assay types for direct_mechanism claims, and post-mirror semantic/publication gates passed"
+    },
+    "semantic_quality_evidence": {
+      "activity_records": 323,
+      "database_record_audits": 453,
+      "database_status_summary": {
+        "source_verified": 447,
+        "source_conflict": 6
+      },
+      "mechanism_claims": 4,
+      "open_rework_ticket_count": 0,
+      "post_mirror_semantic_gate_pass": true,
+      "post_mirror_publication_quality_pass": true
+    },
+    "decision_rationale": "The sampled row has a concrete DRAMP database snapshot, article metadata traceability, primary-source Table 2 locator, and final activity row with endpoint/value/unit/target/source locator. The only sampled-row discrepancy is an explicitly documented representation difference: database killing is the complement of primary-source cell viability. That requires a caution but not targeted rework.",
+    "durable_rework_required": false
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "scope": "sample_row_VAL0088",
+      "severity": "caution",
+      "status": "source_backed_representation_difference",
+      "note": "DRAMP32180 reports MEC-1 5% killing at 32 uM; source Table 2 reports 95% MEC-1 viability for peptide 296 at 32 uM. The final audit preserves the complement mapping."
+    },
+    {
+      "scope": "paper_level_review",
+      "severity": "caution",
+      "status": "accepted_with_cautions",
+      "note": "Final review report preserves nonblocking cautions for Table 1 image transcription, database record annotation/compact entries, mechanism source consistency, and supplementary mechanism content."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0002__doi__10.1002_cmdc.201900465/true_review_result.schema.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/packet_manifest.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extraction/extraction_status.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/analysis/analysis_status.json",
+    "paper_packets/doi__10.1002_cmdc.201900465/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1002_cmdc.201900465/database/linked_assay_records.jsonl",
+    "papers/doi__10.1002_cmdc.201900465/source/paper.xml",
+    "papers/doi__10.1002_cmdc.201900465/source/paper.pdf",
+    "papers/doi__10.1002_cmdc.201900465/final/database_record_verification.json",
+    "papers/doi__10.1002_cmdc.201900465/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1002_cmdc.201900465/final/mechanism_ontology_record.json",
+    "papers/doi__10.1002_cmdc.201900465/final/review_report.json",
+    "papers/doi__10.1002_cmdc.201900465/work/review/quality_feedback.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/worker6_final_mirror/dispatch-001-PILOT20-002-worker-5/semantic_gate.post_mirror.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/worker6_final_mirror/dispatch-001-PILOT20-002-worker-5/publication_quality.post_mirror.json"
+  ]
+}

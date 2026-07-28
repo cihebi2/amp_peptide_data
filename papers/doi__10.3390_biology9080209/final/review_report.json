@@ -1,0 +1,129 @@
+{
+  "paper_id": "doi__10.3390_biology9080209",
+  "doi": "10.3390/biology9080209",
+  "pmcid": "PMC7464788",
+  "pmid": "32781587",
+  "title": "Modification and Targeted Design of N-Terminal Truncates Derived from Brevinin with Improved Therapeutic Efficacy.",
+  "reviewed_at": "2026-05-07T18:57:00Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF, OA package supplement PDF/text, figure captions, linked DBAASP/CAMP rows, and prior final/work artifacts were reopened for the worker-2/4/6 blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_biology9080209/handoff_context.json",
+    "paper_packets/doi__10.3390_biology9080209/packet_manifest.json",
+    "paper_packets/doi__10.3390_biology9080209/locators/locator_index.json",
+    "paper_packets/doi__10.3390_biology9080209/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_biology9080209/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_biology9080209/raw/paper.xml",
+    "paper_packets/doi__10.3390_biology9080209/raw/paper.pdf",
+    "papers/doi__10.3390_biology9080209/source/paper.xml",
+    "papers/doi__10.3390_biology9080209/source/paper.pdf",
+    "paper_packets/doi__10.3390_biology9080209/extracted/pdf_text/biology-09-00209.txt",
+    "paper_packets/doi__10.3390_biology9080209/extracted/pdf_text/local-DBAASP-PMC7464788.txt",
+    "paper_packets/doi__10.3390_biology9080209/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_biology9080209/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_biology9080209/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_biology9080209/extracted/supplementary_text/biology-09-00209-s001.txt",
+    "paper_packets/doi__10.3390_biology9080209/extracted/oa_package/local-DBAASP-PMC7464788/PMC7464788/biology-09-00209-s001.pdf",
+    "paper_packets/doi__10.3390_biology9080209/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_biology9080209/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_biology9080209/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_biology9080209/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_biology9080209/database/linked_sequence_records.jsonl",
+    "papers/doi__10.3390_biology9080209/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_biology9080209/final/database_record_verification.json",
+    "papers/doi__10.3390_biology9080209/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_biology9080209/final/review_report.json",
+    "papers/doi__10.3390_biology9080209/work/review/quality_feedback.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 135,
+    "activity_extraction_issues": 0,
+    "database_record_count": 288,
+    "database_status_summary": {
+      "source_verified": 279,
+      "source_conflict": 9
+    },
+    "mechanism_claims": 3,
+    "open_rework_ticket_ids": [],
+    "strict_gate_evidence": {
+      "semantic_gate": {
+        "returncode": 0,
+        "stderr": "",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_biology9080209.semantic_gate.json",
+        "publication_grade_pass_count": 1,
+        "publication_grade_fail_count": 0,
+        "issue_count": 0,
+        "issues": [],
+        "failed_papers": []
+      },
+      "publication_quality": {
+        "returncode": 0,
+        "stderr": "",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_biology9080209.publication_quality.json",
+        "publication_grade_pass": true,
+        "risk_counts": {},
+        "risk_examples": {},
+        "review_status": {
+          "accepted_with_cautions": 1
+        },
+        "counts": {
+          "activity_records": 135,
+          "mechanism_claims": 3
+        }
+      }
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay/literature rows are source-verified against Table 1/Table 3/article metadata; CAMP aggregate rows remain nonblocking source_conflict because name/sequence fields are not fully primary-source resolvable in the packet.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt Table 3 into 126 MIC/MBC rows and 9 HC10 rows with units, targets, strains, conditions, and source locators.",
+    "layer_3_mechanism": "Worker-6 limited mechanism conclusions to source-supported membrane permeabilization and structure-activity context, without inventing figure-only numeric values or direct intracellular targets.",
+    "publication_grade_review": "Open ticket rwk-complete-test-0001 is closed only if strict semantic and publication gates pass after this source-reviewed repair."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "camp_aggregate_name_or_sequence_gap",
+      "evidence_context": "Nine CAMP aggregate rows match Table 3 values but lack linked CAMP sequence rows and use generic title/name fields; preserved as source_conflict rather than hidden.",
+      "severity": "nonblocking",
+      "record_count": 9
+    },
+    {
+      "caution_code": "figure_curve_values_not_digitized",
+      "evidence_context": "Figure 5/6 mechanism curves support membrane permeabilization claims qualitatively; exact plot point values were not required for the repaired activity/toxicity rows.",
+      "severity": "nonblocking"
+    },
+    {
+      "caution_code": "ti_is_derived_not_assay_endpoint",
+      "evidence_context": "Table 3 therapeutic index values are retained under derived_indices and not promoted to independent assay rows.",
+      "severity": "nonblocking"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_report": "reports/doi__10.3390_biology9080209.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_biology9080209.publication_quality.json"
+  },
+  "summary": "Source-reviewed worker-2/4/6 rework repaired Table 3 activity extraction, matched database rows to primary source locators, and completed final adjudication with nonblocking cautions."
+}

@@ -1,0 +1,931 @@
+You are worker-6 for an AMP three-layer DBAASP strict pilot.
+
+Hard constraints:
+- Use this checkout only; do not browse the internet.
+- Work only on paper_id PMC12125351.
+- Read and obey your worker skill: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-adjudicator-review-worker/SKILL.md
+- Read and obey these strict references:
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/SKILL.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md
+- Use source-reviewed, paper-local evidence from this packet. Treat DBAASP Codex fallback rows as candidate machine evidence only.
+- Keep human/source-reviewed claims separate from machine extraction.
+- Read and obey every listed leader preflight contract before reviewing the
+  source. Contracts define required coverage/conflict preservation but do not
+  replace source evidence.
+- Use and independently verify leader evidence scaffolds; preserve approximate,
+  unresolved, and candidate status rather than promoting scaffold values to
+  exact source facts.
+- Do not claim publication-grade unless the required strict gates can pass.
+- Write the requested files directly; keep JSON valid and paper-specific.
+- Keep terminal output compact. Do not print XML/PDF/supplement excerpts,
+  table text, assay-method prose, source sentences, or biomedical passages to
+  stdout/stderr/final messages. Do not run shell commands that print source text
+  to the terminal; write derived JSON/TSV/MD artifacts to your work directory and
+  report only file paths, counts, statuses, short locator IDs, and field names.
+- This is literature/database curation only. Do not provide wet-lab protocols,
+  optimization advice, or actionable biological experimentation guidance.
+
+Current inputs:
+- Paper root: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351
+- Packet root: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351
+- Packet manifest: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json
+- XML sections: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/xml_sections.json
+- PDF text: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/pdf_text.jsonl
+- Supplement index/text: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_index.json and /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_text.jsonl
+- Database snapshot: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/database_source_manifest.json
+- DBAASP candidate rows: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/dbaasp_machine_extracted_rows.jsonl
+- Safe worker-2 activity handoff: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/activity_safe_candidate_handoff.json
+- Leader preflight contracts: []
+- Leader preflight evidence scaffolds: []
+- Authoritative DBAASP/merged match report: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/authoritative_match_report.json
+- Linked authoritative rows, if any: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_article_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_assay_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_sequence_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_literature_records.jsonl
+- Codex session audit: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/codex_session_audit.jsonl
+- Packet gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py
+- Semantic gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py
+- Publication gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py
+- Rework requests/responses: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl and /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl
+- Runtime-open ticket IDs assigned to worker-6: ["rwk-PMC12125351-campaign-r01-BF-PMC12125351-W1-FINAL-TICKET-METADATA-STALE", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W2-ACTIVITY-TOXICITY-UNDEREXTRACTED", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W2-SD10-STRAIN-CONFLICT-METADATA", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W3-SUPP-XLSX-PACKET-INCOMPLETE", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W4-DATABASE-ENTITY-CONFLATION", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W4-FALLBACK-ROW-SUBCHECK-STATUS-CONFLATION", "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W5-MECHANISM-PI-SOURCE-DATA-OMITTED", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W1-FINAL-COUNT-STATE-MISMATCH", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W1-LIVE-REWORK-STATE-NONTERMINAL", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W2-ACTIVITY-HARD-FINDING-NOT-RECONCILED", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W2-ACTIVITY-TOXICITY-SOURCE-FIELD-CONFLICTS", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W4-DATABASE-ARTICLE-ID-LOCATORS-NOT-PACKET-RE", "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W5-MECHANISM-RECURSIVE-SOURCE-LOCATOR", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W1-FINAL-MATERIALS-MANIFEST-STALE", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W1-PACKET-FINAL-STATE-METADATA-INCONSISTENT", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W2-ACTIVITY-SUMMARY-METADATA-PLACEHOLDER", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W2-ACTIVITY-TOXICITY-FIELD-CONFLICTS", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W4-DATABASE-RECURSIVE-AND-STALE-FIELDS", "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W5-MECHANISM-PHENOTYPE-LOCATOR-AND-TICKET-STA"]
+- Runtime-open ticket contracts assigned to worker-6: [
+  {
+    "acceptance_checks": [
+      "A script over locator_index reports nonzero xlsx sheet/row/cell locators for Supplementary Data 3, 4, 9, 10, 11, and 12.",
+      "supplementary_tables.json or successor packet table artifact contains row/cell entries for the workbook sheets, not an empty tables array.",
+      "Final records cite only packet-resolvable workbook locators."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T19:42:22.563120Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T193205570164Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_tables.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extraction/extraction_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/supplementary_methods/supplementary_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-3",
+    "paper_id": "PMC12125351",
+    "reason": "The material packet marks supplementary extraction complete, but the critical workbook is only inventory_only_xlsx, supplementary_tables.json is empty, and locator_index has no workbook row/cell locators. This leaves final workbook citations outside the canonical packet locator system and prevents publication-grade supplementary exhaustion.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Extract all 12 workbook sheets into the packet with stable row/cell locators and mirror them into supplementary_tables.json or an equivalent packet-level table artifact.",
+      "Update locator_index so every workbook locator cited by final records resolves from the packet.",
+      "Do not mark material_extracted_complete until workbook extraction and locator indexing are packet-visible."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 9",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 11",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 12"
+    ],
+    "target_queue": "material",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W3-SUPP-XLSX-PACKET-INCOMPLETE"
+  },
+  {
+    "acceptance_checks": [
+      "Activity final count and row identities reconcile to all source MIC observations selected for curation, with explicit exclusion reasons for controls or N values if excluded.",
+      "Every MIC-like row has raw value, raw unit, target species/strain, assay conditions, and a packet-resolvable source locator.",
+      "A targeted check confirms p17 P. aeruginosa has 35.15625 μg/mL and 9.96722061992234 μM, and p20 P. aeruginosa has 70.3125 μg/mL and 18.5789934940427 μM, with the XML p24 conflict recorded."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T19:42:22.567354Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T193205570164Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/activity_evidence/activity_records.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM1_ESM.pdf",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "The final activity/toxicity evidence is a narrow subset of the primary data. It contains 4 activity and 42 toxicity rows, while source sheets contain 76 initial MIC observations, 36 additional MIC observations, 18 CC50/HC50 observations, 18 MIC-log selectivity observations, 54 hemolysis dose rows, and 54 cell-viability dose rows. It also records AMP-17/AMP-20 P. aeruginosa as >25 μM instead of preserving the exact Supplementary Data 4 μM values and the prose/table unit conflict.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Rebuild row-level activity evidence from Supplementary Data 3 and Supplementary Data 4, including exact raw values, raw units, target species/strain, N/not-detected handling, and methods from XML p83.",
+      "Rebuild toxicity/selectivity evidence from Supplementary Data 10, 11, and 12 for all nine top-performing AMPs, not only AMP-15, AMP-17, and AMP-20.",
+      "For AMP-17 and AMP-20 against P. aeruginosa, preserve the source conflict between XML prose and Supplementary Data 4 instead of normalizing to >25 μM."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:23",
+      "xml:p:24",
+      "xml:p:83",
+      "xml:p:84",
+      "xml:p:85",
+      "xml:p:86",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:rows=5-48",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:rows=4-15",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:rows=3-11",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 11:rows=3-56",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 12:rows=3-56"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W2-ACTIVITY-TOXICITY-UNDEREXTRACTED"
+  },
+  {
+    "acceptance_checks": [
+      "No final identity candidate for AMP-15/AMP-17/AMP-20 uses the Supplementary Data 8 benchmark sequences MEAFKK..., MWIWKK..., or MGRPP... as same-surface validated-candidate sequence evidence.",
+      "For every object containing a plain sequence and sequence_length, independent residue counts exactly match; p15/p17/p20 counts are 26/29/32.",
+      "authoritative_dbaasp_ingest_ready remains false until stable authoritative database rows exist."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T19:42:22.572814Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T193205570164Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/database_record_verification.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/database_record_audit/record_identity_audit.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/dbaasp_machine_extracted_rows.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-4",
+    "paper_id": "PMC12125351",
+    "reason": "The database identity audit keeps fallback rows unresolved, but its primary identity evidence maps AMP-15/AMP-17/AMP-20 to benchmark Supplementary Data 8 rows AMP15/AMP17/AMP20 instead of validated candidate rows p15/p17/p20. The final therefore records unrelated source sequence candidates while claiming name/sequence surface evidence.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Rebuild entity linkage so AMP-15/p15, AMP-17/p17, and AMP-20/p20 point to the validated candidate sequences RIKRVWPVVIRTVVAGINLYRAIKRK, LVQRGRFGRFLSRIRRIRPRINFNIKGSI, and LIQRGRFGRFLGKLRHFRPRIKFKGKAGWTVG with lengths 26, 29, and 32.",
+      "Classify Supplementary Data 8 AMP15/AMP17/AMP20 as benchmark/comparator rows unless source evidence proves identity with the validated AMPGen candidates.",
+      "Keep DBAASP fallback rows unresolved and non-authoritative unless authoritative linked database rows are present."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=19",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=21",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=24",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:rows=5-7",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 8:rows=97,99,102"
+    ],
+    "target_queue": "database",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W4-DATABASE-ENTITY-CONFLATION"
+  },
+  {
+    "acceptance_checks": [
+      "The direct PI claim has direct_assay_types, claim_text, evidence_class=direct_mechanism, and packet-resolvable Supplementary Data 9 locators for rows 3-12.",
+      "A mechanism audit confirms no computational, physicochemical, MIC-only, or phenotype-only claim is promoted to direct_mechanism."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T19:42:22.577222Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T193205570164Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/mechanism_ontology_record.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/mechanism_ontology/mechanism_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-5",
+    "paper_id": "PMC12125351",
+    "reason": "The direct mechanism claim is correctly limited to PI membrane-permeability evidence, but it omits the primary quantitative source data behind Fig. 4a. Supplementary Data 9 contains fluorescence intensity rows for NC and AMP-treated E. coli K88, while the final mechanism record cites only XML caption/method locators.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Add Supplementary Data 9 row-level fluorescence-intensity support to the direct_mechanism PI claim, or explicitly preserve it as an omitted source-data limitation pending worker-3 packet locator repair.",
+      "Keep AlphaFold, charge/hydrophobicity, MIC, and phenotype evidence outside direct_mechanism unless direct assays support them."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:25",
+      "xml:p:26",
+      "xml:p:88",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 9:rows=3-12"
+    ],
+    "target_queue": "mechanism",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W5-MECHANISM-PI-SOURCE-DATA-OMITTED"
+  },
+  {
+    "acceptance_checks": [
+      "A script over final activity_toxicity_evidence.json reports zero Supplementary Data 3 E. coli K88 records with target_strain_or_isolate='not reported'.",
+      "A script over final toxicity_records reports zero Supplementary Data 10 rows with raw_unit in {'μM','log2'} when raw_endpoint_label starts with log10.",
+      "A script over final toxicity_records reports zero Supplementary Data 10 rows with endpoint='selectivity index' unless the source locator points to an actual selectivity-index source value or a documented calculation field.",
+      "A script over final toxicity_records reports zero Homo sapiens target_species values for Supplementary Data 10-12 unless directly source-supported.",
+      "A locator-resolution script reports zero final source_locator values missing from packet locator_index, excluding documented database-only provenance."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:02:26.251342Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T205037407387Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/activity_evidence/worker2_rebuild_validation.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/activity_evidence/worker2_rebuild_locator_checks.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "The current final activity_toxicity_evidence.json cannot support publication-grade acceptance. Independent workbook/XML checks found 38 E. coli K88 MIC records with the strain omitted as 'not reported'; 36 Supplementary Data 10 rows whose source headers are log10 concentration values in μg/mL but final raw_unit/normalized_unit are μM or log2; 18 Supplementary Data 10 MIC log columns mislabeled as selectivity index; 144 toxicity rows with Homo sapiens as target_species although source methods say IEC-6 intestinal epithelial cells for cytotoxicity and rat erythrocytes for hemolysis; and four exclusion objects citing blank cell locators absent from packet locator_index.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Rebuild activity records so every Supplementary Data 3 E. coli K88 MIC row carries K88 in target_strain_or_isolate and retains the exact source value/unit.",
+      "Rebuild toxicity records so Supplementary Data 10 B/C are log10(CC50[μg/mL]) and log10(HC50[μg/mL]) without μM conversion, and D/E are not labeled selectivity index unless an explicit source-backed calculation is added.",
+      "Replace unsupported Homo sapiens toxicity targets with source-faithful IEC-6 intestinal epithelial cells and rat erythrocytes fields; do not infer human species from generic mammalian wording.",
+      "Remove or convert blank-cell exclusion locators to packet-resolvable row locators or explicit non-locator exclusion notes."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:82",
+      "xml:p:84",
+      "xml:p:85",
+      "xml:p:86",
+      "xml:caption:4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=2:cell=L2",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=5:cell=L5",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=2:cell=B2-E2",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 11:row=2:cell=A2-E2",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 12:row=2:cell=A2-E2",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=9:cell=L9-O9",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=22:cell=L22-O22"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W2-ACTIVITY-TOXICITY-SOURCE-FIELD-CONFLICTS"
+  },
+  {
+    "acceptance_checks": [
+      "A script over final mechanism_ontology_record.json reports zero strings in source_locator or supporting_source_locators containing '/analysis/', '/work/', '/final/', 'papers/', 'packets/', or absolute workspace paths.",
+      "A locator-resolution script confirms every mechanism source locator resolves in packet locator_index or is an explicitly documented database-only locator.",
+      "Mechanism claim counts remain one direct_mechanism PI claim, one computational_only claim, one inferred_mechanism claim, and one phenotype_supported claim."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:02:26.255633Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T205037407387Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/mechanism_ontology_record.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/mechanism_ontology_record.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/mechanism_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-5",
+    "paper_id": "PMC12125351",
+    "reason": "The current mechanism final keeps evidence-strength classes mostly correct, but claim PMC12125351-MECH-004 places packets/PMC12125351/analysis/activity_toxicity_evidence.worker2.json inside supporting_source_locators. That is a worker artifact, not a primary source or packet source locator, so recursive authority is not false for the final mechanism record.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Move worker artifact references out of supporting_source_locators into checked_inputs or provenance-only fields.",
+      "Replace the non-source supporting locator with primary XML/PDF/supplement locators for the phenotype claim, or explicitly mark activity artifact references as secondary analysis provenance outside source-locator fields.",
+      "Preserve the current direct PI boundary while ensuring every source_locator and supporting_source_locators entry is a source-resolvable xml, pdf, supp, or database locator."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "mechanism_ontology_record.mechanism_claims[3].supporting_source_locators[3]",
+      "xml:p:21",
+      "xml:p:25",
+      "xml:caption:4"
+    ],
+    "target_queue": "mechanism",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W5-MECHANISM-RECURSIVE-SOURCE-LOCATOR"
+  },
+  {
+    "acceptance_checks": [
+      "Python check: paper final materials_manifest analysis_queue_status equals packet_manifest analysis_queue_status and analysis_status.status.",
+      "Python check: materials_manifest locator_count equals packet_manifest locator_count and extraction_status workbook locator counts are represented.",
+      "Mirror check: every current authoritative final JSON has a defined paper/packet mirror policy and byte-identical mirror where required."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:51:34.929581Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T213811765564Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/materials_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extraction/extraction_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/analysis_status.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-1",
+    "paper_id": "PMC12125351",
+    "reason": "Current paper final materials_manifest.json is not synchronized with live packet state: it still reports analysis_queue_status=analysis_queued and locator_count=205, while packet_manifest.json reports analysis_source_reviewed_accepted, locator_count=16655, workbook extraction metadata, and open_rework_ticket_ids=[]; packet final also has no materials_manifest mirror.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Rebuild or refresh the final materials manifest from the current packet manifest, extraction status, supplementary index, and analysis status.",
+      "Either mirror materials_manifest.json into packet final or explicitly remove it from the authoritative final-record set with a documented non-final role."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:article-title:1",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 1",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 12"
+    ],
+    "target_queue": "paper",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W1-FINAL-MATERIALS-MANIFEST-STALE"
+  },
+  {
+    "acceptance_checks": [
+      "Script check: every endpoint in {HC50, percent hemolysis} has assay_conditions.incubation_time == '1 h'.",
+      "Script check: Supplementary Data 10 column E values are reconciled against Data 3 column N and Data 4 column G, with a conflict/caution field when source label and value provenance diverge.",
+      "Script check: all 130 activity and 126 toxicity rows still match workbook source cells exactly after repair."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:51:34.933745Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T213811765564Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/xml_sections.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "The current activity/toxicity final has source-field defects: 63 HC50/percent hemolysis records report 24 h incubation despite the hemolysis method source stating 1 h, and 9 Supplementary Data 10 S. aureus log10 MIC records are assigned ATCC 25923 even though their values match the Data 3/Fig. 4 ATCC 29213 series rather than Data 4 ATCC 25923 values; the strain conflict is not preserved.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Correct HC50 and percent hemolysis assay_conditions to the hemolysis method, including 1 h incubation and xml:p:86 as the method basis.",
+      "For Supplementary Data 10 S. aureus log10 MIC rows, either assign ATCC 29213 with conflict rationale or preserve an explicit source conflict between the workbook header and Fig. 4/Data 3 value provenance.",
+      "Regenerate activity_toxicity_evidence.json and both mirrors from corrected row-level records."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:86",
+      "xml:p:25",
+      "xml:caption:4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=3:cell=E3",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=8:cell=N8",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=4:cell=G4"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W2-ACTIVITY-TOXICITY-FIELD-CONFLICTS"
+  },
+  {
+    "acceptance_checks": [
+      "Script check: no source_locator or source_locator_paths field in database_record_verification.json starts with pipeline_v2/, packets/, papers/, work/, or analysis/.",
+      "Script check: accepted/adjudicated database finals contain no worker6_terminal_adjudication_pending blocker and no open_worker4_rework_tickets when live packet open ticket count is 0.",
+      "Script check: fallback machine rows remain unresolved_record and are not emitted to RC2/portal/authoritative ingest."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:51:34.938303Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T213811765564Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/database_record_verification.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC12125351/run_sequence_latest.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-4",
+    "paper_id": "PMC12125351",
+    "reason": "The database final keeps fallback rows unresolved, which is correct, but it is not publication-grade clean: citation_traceability/source_locator_paths cite packet_manifest.json and database_source_manifest.json instead of primary XML article-id evidence, and stale fields still claim model_gate_limitation, worker6_terminal_adjudication_pending, and an open worker-4 rework ticket despite live rework state being closed.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Replace recursive citation source_locator_paths with primary XML article-id locators or a non-source checked_inputs field.",
+      "Reconcile stale unresolved_blockers, model_gate_limitation, and open_worker4_rework_tickets against current run_sequence_latest.json and closed rework_responses.jsonl.",
+      "Keep authoritative_dbaasp_ingest_ready=false and fallback_rows_promoted_to_source_verified=false unless real authoritative linked rows are added."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "paper.xml article-id pub-id-type=doi 10.1038/s42003-025-08282-7",
+      "paper.xml article-id pub-id-type=pmid 40447738",
+      "paper.xml article-id pub-id-type=pmcid PMC12125351",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=19"
+    ],
+    "target_queue": "database",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W4-DATABASE-RECURSIVE-AND-STALE-FIELDS"
+  },
+  {
+    "acceptance_checks": [
+      "Script check: every mechanism_claim.source_locator semantically supports the claim_text, with PMC12125351-MECH-004 no longer pointing primarily to xml:p:27 unless its claim text changes.",
+      "Script check: no open_worker5_rework_tickets remain when live packet open ticket count is 0.",
+      "Script check: direct_mechanism claims retain non-empty direct_assay_types and computational/inferred/phenotype claims retain empty direct_assay_types."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-26T21:51:34.942729Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260726T213811765564Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/mechanism_ontology_record.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/xml_sections.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-5",
+    "paper_id": "PMC12125351",
+    "reason": "Mechanism evidence classes are mostly separated, but claim PMC12125351-MECH-004 uses xml:p:27 as the primary source_locator for MIC/antimicrobial phenotype; xml:p:27 discusses predicted conformations and sequence similarity, while the phenotype evidence is in xml:p:23, xml:p:24, xml:p:25, and xml:caption:4. The same final still carries stale open_worker5_rework_tickets and repair_ready_for_adjudication metadata after worker-6 closure.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Move PMC12125351-MECH-004 primary source_locator to a source surface that actually states antimicrobial/MIC phenotype, and retain xml:p:27 only if the claim text is revised to conformation/similarity evidence.",
+      "Refresh mechanism ticket-state fields so final metadata agrees with live closed ticket state.",
+      "Preserve the direct mechanism class only for PI/permeability evidence and keep computational/physicochemical/MIC evidence non-direct."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:27",
+      "xml:p:23",
+      "xml:p:24",
+      "xml:p:25",
+      "xml:caption:4"
+    ],
+    "target_queue": "mechanism",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W5-MECHANISM-PHENOTYPE-LOCATOR-AND-TICKET-STA"
+  },
+  {
+    "acceptance_checks": [
+      "Python check over final activity_toxicity_evidence.json: every source_locator containing Supplementary Data 10:row=3..11:cell=E has raw_endpoint_label containing ATCC 25923 and conflict metadata containing both ATCC 25923 and ATCC 29213 when target_strain_or_isolate is ATCC 29213.",
+      "Python locator check: every source_label_locator and supporting_source_locators value in the nine affected rows resolves in packets/PMC12125351/locators/locator_index.json or to an explicitly indexed XML/PDF/database locator; no supp:...:column=E unresolved locator remains.",
+      "Python source-cell check: final activity count remains 130, toxicity count remains 126, all affected raw_value entries exactly equal the workbook cells in Supplementary Data 10 column E, and paper/packet final mirrors are byte-identical after repair.",
+      "Rerun the strict semantic and publication gates without allow flags and confirm no activity/source-conflict issue remains for PMC12125351."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T02:46:58.922332Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T023611700820Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_tables.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "Nine final activity records for Supplementary Data 10 column E are not field-level source-reviewable as currently represented. The source workbook header/raw_endpoint_label says log10(MIC against S. aureus ATCC 25923[μg/mL]), while the final target_strain_or_isolate is ATCC 29213. A conflict could be acceptable if explicitly preserved, but the final source_conflicts.source_label_value and source_reported_target_strain_or_isolate both say ATCC 29213, omitting the actual source header value ATCC 25923. The same conflict metadata uses supp:...:column=E, which is not a packet locator in locator_index. This is a material target/strain and locator-integrity defect despite row-count and value-cell coverage.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Repair all nine Supplementary Data 10 column E MIC activity records so the actual workbook header/source label ATCC 25923 is explicitly preserved in source_reported_target_strain_or_isolate or source_conflicts.source_label_value, while any ATCC 29213 assignment remains clearly marked as value-provenance interpretation with source basis.",
+      "Replace non-indexed source_label_locator values such as supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:column=E with resolvable packet locators, preferably the header cell supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=2:cell=E2, or add and validate column-level locators in locator_index.",
+      "Regenerate paper and packet activity_toxicity_evidence.json mirrors and have worker-6 re-adjudicate the repaired conflict rather than accepting the existing conflict metadata."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=2:cell=E2",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=3:cell=E3",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=4:cell=E4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=8:cell=N8",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=4:cell=G4",
+      "xml:p:25",
+      "xml:caption:4"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W2-SD10-STRAIN-CONFLICT-METADATA"
+  },
+  {
+    "acceptance_checks": [
+      "python .codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py --packet-root pipeline_v2/deepmine/dbaasp_strict_pilot/packets --manifest pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC12125351_acceptance_manifest.json reports open_rework_ticket_count 0 or otherwise all blocking requests durably closed by contract.",
+      "python .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot --manifest /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC12125351_acceptance_manifest.json --json returns publication_grade_pass true for PMC12125351."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T03:29:59.534804Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T031900126057Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/analysis_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/materials_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12125351_strict_acceptance_audit_latest.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-1",
+    "paper_id": "PMC12125351",
+    "reason": "Live packet state is still nonterminal: analysis_status.json says analysis_needs_analysis_rework with 11 open ticket IDs, packet_manifest.json and materials_manifest.json preserve the same open count, and the current strict acceptance audit reports acceptance_ready_for_paper_level_source_review=false. The final review_report has publication_grade=false, one rework target, and no reconciled open_rework_ticket_count proving equality with the live packet state. This is a terminal-state blocker independent of source readability.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Reconcile packet_manifest.json, analysis_status.json, final materials_manifest.json, and final review_report.json against the live rework request/response ledger.",
+      "Ensure any final review_report open_rework_ticket_count field is present if used and equals the live packet ticket state.",
+      "Do not mark analysis accepted until strict gates pass without allow flags and no open blocking ticket remains."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:23",
+      "xml:p:24",
+      "xml:p:25",
+      "xml:p:83",
+      "xml:p:84",
+      "xml:p:85",
+      "xml:p:86",
+      "xml:p:88",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 9",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 11",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 12"
+    ],
+    "target_queue": "paper",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W1-LIVE-REWORK-STATE-NONTERMINAL"
+  },
+  {
+    "acceptance_checks": [
+      "Field-level script asserts that records PMC12125351-SD4-R006-C05-MIC and PMC12125351-SD4-R007-C05-MIC contain preserved_source_conflict, source_reported_parallel_values with uM cells F6/F7, and no stale unresolved blocker for p17_p20_paeruginosa_um_and_xml_p24_conflict_not_preserved.",
+      "semantic_three_layer_gate.py reports no hard review issue for PMC12125351 after worker-2 and final review metadata are synchronized."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T03:29:59.539164Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T031900126057Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12125351_strict_acceptance_audit_latest.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "The p17/p20 P. aeruginosa source rows now contain the needed workbook values and conflict metadata, but the current worker-2 final still reports source_review_status=needs_targeted_rework, publication_grade_claim=false, and unresolved_blockers with code p17_p20_paeruginosa_um_and_xml_p24_conflict_not_preserved. The final review_report repeats that rework target, so the current strict acceptance artifact cannot be passed around even though the source cells themselves are repairable and readable.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Rebuild or update worker-2 final activity_toxicity_evidence.json so terminal metadata matches the source-reviewed row state.",
+      "Keep p17 raw values as 35.15625 and 70.3125 ug/mL, preserve paired uM values 9.96722061992234 and 18.5789934940427, and preserve the XML p24 prose/table conflict explicitly.",
+      "Remove the stale unresolved_blockers entry only after the row-level assertions pass and then return the paper for adjudication."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:p:24",
+      "xml:p:83",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=6:cell=E6",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=6:cell=F6",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=7:cell=E7",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 4:row=7:cell=F7"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W2-ACTIVITY-HARD-FINDING-NOT-RECONCILED"
+  },
+  {
+    "acceptance_checks": [
+      "A recursive locator audit over database_record_verification.json finds zero xml:article-id:* source locators absent from packets/PMC12125351/locators/locator_index.json.",
+      "database_record_verification.json keeps fallback_rows_promoted_to_source_verified=false and authoritative_dbaasp_ingest_ready=false unless linked authoritative row files become nonempty and source-reviewed."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T03:29:59.543556Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T031900126057Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/database_record_verification.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/authoritative_match_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_article_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_assay_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_sequence_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_literature_records.jsonl"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-4",
+    "paper_id": "PMC12125351",
+    "reason": "Layer-1 database citation traceability uses source_locator_paths such as xml:article-id:pub-id-type=doi, xml:article-id:pub-id-type=pmid, and xml:article-id:pub-id-type=pmcid, but those strings are not present in packet locator_index.json. Primary XML does contain the DOI, PMID, and PMCID, so the issue is not missing source material; it is a final locator/provenance defect. With zero authoritative linked rows and four fallback rows unresolved, database_record_verification.json must not claim publication-grade locator completeness until this is fixed.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Replace or supplement database citation source_locator_paths with packet-resolvable locator_index entries, or add explicit article-id locators to the locator index under the material contract.",
+      "Keep all four DBAASP fallback rows as unresolved_record/database-only candidate evidence until authoritative linked rows exist.",
+      "Set publication-grade/database completeness claims consistently with zero authoritative linked database rows and source-resolvable citation locators."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "paper.xml article-meta article-id pub-id-type=doi 10.1038/s42003-025-08282-7",
+      "paper.xml article-meta article-id pub-id-type=pmid 40447738",
+      "paper.xml article-meta article-id pub-id-type=pmcid PMC12125351",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=19",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=21",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=24"
+    ],
+    "target_queue": "database",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W4-DATABASE-ARTICLE-ID-LOCATORS-NOT-PACKET-RE"
+  },
+  {
+    "acceptance_checks": [
+      "Run a read-only Python check that asserts packet_manifest.open_rework_ticket_count == len(packet_manifest.open_rework_ticket_ids) == analysis_status.open_rework_ticket_count == review_report.open_rework_ticket_count == live_open_rework_ticket_count derived from rework_requests.jsonl and rework_responses.jsonl.",
+      "Run a read-only mirror check that asserts paper-final and packet-final current JSON file-name sets are identical and every paired JSON hash matches, or that any alias is excluded by an explicit manifest field and not counted as current final.",
+      "Run a read-only material check that asserts materials_manifest.supplementary_inventory_summary.supplementary_file_count == len(supplementary_index.files) == extraction_status.supplementary_file_count == 4, and that OA-package fields all use one consistent status."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T05:00:40.325641Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T044634985635Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/analysis_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/materials_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/mechanism_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/paper_meta.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extraction/extraction_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/review/worker6_mirror_validation.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-1",
+    "paper_id": "PMC12125351",
+    "reason": "Current packet/material/final state is not publication-grade consistent. Packet manifest says open_rework_ticket_count=14 while open_rework_ticket_ids=[], analysis_status and review_report say 0, and review_report.metadata_sync incorrectly reports packet_manifest_open_rework_ticket_count=0. The final mirrors also have unequal JSON file counts because packet final has mechanism_evidence.json in addition to the five paper-final JSON files. Supplementary inventory metadata is contradictory: four staged supplements are present and extracted, but materials_manifest.supplementary_inventory_summary.supplementary_file_count=0; OA package absence is documented in source metadata/materials_manifest, yet review_report marks oa_package exhausted=true.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Refresh packet_manifest.json, materials_manifest.json, and review_report.json from the live rework ledger and current source inventory so all open ticket counts and open IDs agree.",
+      "Make the paper-final and packet-final current JSON file sets/counts agree, or explicitly mark mechanism_evidence.json as a non-authoritative alias outside the current final count contract.",
+      "Synchronize supplementary_inventory_summary with supplementary_index/extraction_status and make OA-package absence/exhaustion fields consistent with paper_meta.package_source=null and known_missing_or_blocked_materials."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "packet_manifest.json: open_rework_ticket_count=14, open_rework_ticket_ids=[], worker1_live_rework_state_repair.live_open_rework_ticket_count_after_owner_responses=14",
+      "analysis_status.json: status=analysis_source_reviewed_accepted, open_rework_ticket_count=0",
+      "review_report.json: open_rework_ticket_count=0 and metadata_sync.packet_manifest_open_rework_ticket_count=0",
+      "paper final JSON count=5; packet final JSON count=6 due to mechanism_evidence.json",
+      "source/supplementary inventory: four staged supplements MOESM1 PDF, MOESM2 XLSX, MOESM3 PDF, MOESM4 PDF",
+      "supplementary_index.json: files[0..3] list the same four supplements; extraction_status.supplementary_file_count=4",
+      "materials_manifest.json: supplementary_inventory_summary.supplementary_file_count=0",
+      "paper_meta.json: package_source=null and staged_files.pmc_oa_package=null; materials_manifest known_missing_or_blocked_materials records oa_package_directory not_staged_in_local_packet; review_report.materials_exhausted.oa_package=true"
+    ],
+    "target_queue": "paper",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W1-PACKET-FINAL-STATE-METADATA-INCONSISTENT"
+  },
+  {
+    "acceptance_checks": [
+      "Run a read-only enumeration over activity_records and toxicity_records and assert counts by source sheet equal Supplementary Data 3 MIC=76, Supplementary Data 4 MIC=36, Supplementary Data 10 MIC=18, Supplementary Data 10 CC50/HC50=18, Supplementary Data 11 hemolysis=54, and Supplementary Data 12 cell viability=54.",
+      "Assert summary_counts.source_tables_checked is nonzero and equals the unique accepted source-sheet/table set used by the current records, and accepted_activity_locators is not empty or is replaced by a truthful non-placeholder field.",
+      "Assert every activity/toxicity source_locator and supporting_source_locator resolves in locator_index and each record raw_value matches its source workbook cell or documented source row series."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T05:00:40.330772Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T044634985635Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/supplementary_tables.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/locators/locator_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/extracted/xml_sections.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC12125351",
+    "reason": "The row-level activity/toxicity records are source-reviewable, but the current final activity_toxicity_evidence.json still contains placeholder-like activity summary metadata that contradicts the reviewed records. It reports summary_counts.source_tables_checked=0, activity_tables_accepted=0, and accepted_activity_locators={} despite independently verified coverage of Supplementary Data 3, 4, 10, 11, and 12 with 130 activity and 126 toxicity records. This is a final field-level defect even though the individual row source locators and raw values match the workbook cells.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Recompute activity_toxicity_evidence.json summary_counts from the accepted current records and source sheets; remove zero/empty placeholder summary fields.",
+      "Record the accepted activity/toxicity source-table set and locator counts in the summary so they agree with the row-level records and qa_summary.",
+      "Keep exact source values, raw units, normalization_status values, target strains, and preserved conflict/caution metadata unchanged unless a fresh source comparison requires a row-level repair."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "activity_toxicity_evidence.json: summary_counts.source_tables_checked=0, activity_tables_accepted=0, accepted_activity_locators={}",
+      "activity_toxicity_evidence.json: qa_summary.source_role_counts lists Supplementary Data 3=76, Supplementary Data 4=36, Supplementary Data 10 MIC=18, Supplementary Data 10 CC50/HC50=18, Supplementary Data 11=54, Supplementary Data 12=54",
+      "Supplementary Data 3 rows 5-48, Supplementary Data 4 rows 4-12, Supplementary Data 10 rows 3-11, Supplementary Data 11 rows 3-56, Supplementary Data 12 rows 3-56",
+      "xml:p:82-87 assay methods and replicate statements"
+    ],
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC12125351-campaign-r03-BF-PMC12125351-W2-ACTIVITY-SUMMARY-METADATA-PLACEHOLDER"
+  },
+  {
+    "acceptance_checks": [
+      "A recursive read-only script over every current paper-final and packet-final JSON reports no field named open_rework_ticket_count with a current/live meaning different from the live rework ticket count of 0.",
+      "review_report.open_rework_ticket_count, packet_manifest.open_rework_ticket_count, analysis_status.open_rework_ticket_count, and materials_manifest top-level and live-state open counts all equal 0.",
+      "The five current paper-final JSON files are byte-identical to the five current packet-final JSON mirrors, with packet mechanism_evidence.json kept only as the declared nonauthoritative alias."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T06:08:25.311124Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T055332913113Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/materials_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/analysis_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-1",
+    "paper_id": "PMC12125351",
+    "reason": "Current materials_manifest.json contains stale live-ticket metadata: $.worker1_live_state_sync.open_rework_ticket_count is 16 with 16 IDs and updated_at 2026-07-27T05:13:35Z, while a live scan of packet rework_requests/rework_responses shows zero open tickets and review_report, analysis_status, packet_manifest, and top-level materials_manifest open counts are zero. PASS requires current mechanical/runtime/ticket evidence across current final records, not only the review_report field.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Refresh the worker-1 materials manifest ticket-state block after the terminal rework responses, or move the stale 16-ticket snapshot under an explicitly historical/non-current namespace that cannot be interpreted as live state.",
+      "Synchronize paper-final and packet-final mirrors after that metadata repair.",
+      "Rerun the strict packet, semantic, and publication gates without allow-risk/allow-findings and preserve the new gate artifacts."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "materials_manifest.json $.worker1_live_state_sync.open_rework_ticket_count=16",
+      "materials_manifest.json $.open_rework_ticket_count=0",
+      "review_report.json $.open_rework_ticket_count=0",
+      "packet rework live last-status scan open_count=0",
+      "xml:article-title:1"
+    ],
+    "target_queue": "paper",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W1-FINAL-TICKET-METADATA-STALE"
+  },
+  {
+    "acceptance_checks": [
+      "A script over database_record_verification.json confirms all four fallback rows remain top-level unresolved_record and authoritative_dbaasp_ingest_ready remains false.",
+      "No database-row agreement or terminal-modification subcheck under fallback rows is source_verified unless it carries a concrete primary-source locator and does not imply an authoritative database row match.",
+      "The same script independently counts p15, p17, and p20 source-local sequences as 26, 29, and 32 residues while keeping fallback database sequence evidence absent/unresolved."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T06:08:25.316013Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T055332913113Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/database_record_verification.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/dbaasp_machine_extracted_rows.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/authoritative_match_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_sequence_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_assay_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_literature_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/database/linked_article_records.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/source/supplementary/42003_2025_8282_MOESM2_ESM.xlsx"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-4",
+    "paper_id": "PMC12125351",
+    "reason": "The current database final correctly keeps the four fallback DBAASP machine rows as top-level unresolved_record and not ingest-ready, but the duplicated fallback-row audit objects still mark database sequence/name/modification subchecks as source_verified. This is unsupported for database-record verification because dbaasp_machine_extracted_rows.jsonl has sequence \"None\" for the fallback rows and the authoritative linked sequence/assay/literature/article snapshots are empty. The source workbook verifies source-local candidate identities for p15, p17, and p20; it does not verify the absent database row sequence/modification fields.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Separate source-local candidate identity verification from database-row verification in database_record_verification.json.",
+      "For each fallback row with no authoritative linked database row and sequence \"None\", set database sequence/name/modification agreement subchecks to unresolved_record or database_only_no_primary_source, or add explicit source-located rationale limited to source-local identity only.",
+      "Normalize machine sequence \"None\" as absent/null evidence rather than machine_sequence_present=true with length 4.",
+      "Apply the correction consistently to database_record_audits, record_audits, and record_identity_audit duplicate/current arrays."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "database_record_verification.json $.database_record_audits[*].status=unresolved_record",
+      "database_record_verification.json $.database_record_audits[*].sequence_agreement_with_primary.status=source_verified",
+      "database_record_verification.json $.database_record_audits[*].amidation_check.status=source_verified",
+      "database_record_verification.json $.record_audits[*].sequence_agreement_with_primary.status=source_verified",
+      "database_record_verification.json $.record_identity_audit[*].sequence_agreement_with_primary.status=source_verified",
+      "database:DBAASP:fallback-machine-row=1",
+      "database:DBAASP:fallback-machine-row=2",
+      "database:DBAASP:fallback-machine-row=3",
+      "database:DBAASP:fallback-machine-row=4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=19",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=21",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 3:row=24"
+    ],
+    "target_queue": "database",
+    "ticket_id": "rwk-PMC12125351-campaign-r01-BF-PMC12125351-W4-FALLBACK-ROW-SUBCHECK-STATUS-CONFLATION"
+  },
+  {
+    "acceptance_checks": [
+      "python - <<'PY'\nimport json\nfrom pathlib import Path\np=Path('pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json')\nr=json.loads(p.read_text())\nassert r['final_counts']['review_rework_targets'] == len(r.get('rework_targets', []))\nassert r.get('open_rework_ticket_count') == len(r.get('open_rework_ticket_ids', []))\nPY",
+      "python .codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py --packet-root pipeline_v2/deepmine/dbaasp_strict_pilot/packets --manifest pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC12125351_acceptance_manifest.json",
+      "python .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot --manifest /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC12125351_acceptance_manifest.json --json"
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T06:59:03.639163Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12125351/20260727T064849267342Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/review_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/analysis/analysis_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/packet_manifest.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/rework/rework_responses.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12125351_strict_acceptance_audit_latest.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-1",
+    "paper_id": "PMC12125351",
+    "reason": "The current final review report is not count-consistent: review_report.final_counts.review_rework_targets declares 1, but review_report.rework_targets has length 0 and the live packet ticket state derived from rework_requests.jsonl plus rework_responses.jsonl has 0 open tickets. Because PASS requires mirrors and counts to agree, the paper cannot be publication-grade ready until this final-state metadata is reconciled and strict gates are rerun over the corrected current finals.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Recompute review_report.final_counts from the live final arrays and set review_rework_targets to len(review_report.rework_targets).",
+      "Ensure review_report.open_rework_ticket_count, packet_manifest.open_rework_ticket_count, analysis_status.open_rework_ticket_count, and the live request/response ledger all remain equal after the metadata repair.",
+      "Keep paper-final and packet-final review_report.json byte-identical after repair."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "paper.xml article-id pub-id-type=doi 10.1038/s42003-025-08282-7",
+      "xml:caption:4",
+      "supp:42003_2025_8282_MOESM2_ESM.xlsx:sheet=Supplementary Data 10:row=3"
+    ],
+    "target_queue": "paper",
+    "ticket_id": "rwk-PMC12125351-campaign-r02-BF-PMC12125351-W1-FINAL-COUNT-STATE-MISMATCH"
+  }
+]
+
+For every currently open rework ticket, independently verify the repaired owner-lane artifact against the ticket contract, rebuild the final and packet-final mirrors, and run the packet, semantic, and publication gates without allow flags. The Runtime-open ticket IDs assigned to worker-6 list is authoritative: if a ticket is listed there, any earlier closed/repaired response is an invalid or superseded candidate under the current runtime contract and you must append a new complete terminal response after verification; never skip a listed ticket merely because rework_responses.jsonl already contains a closed-looking string. An owner-lane ticket must already have a nonterminal, evidence-bearing, analysis_can_resume response from every named owner worker; adjudication-owned tickets are exempt from that owner-response prerequisite. Only when the ticket contract is fully satisfied, all three strict gates pass, review_status is accepted_clean or accepted_with_cautions, publication_grade is true, and no hard rework target remains, append exactly one new valid terminal adjudication response to rework_responses.jsonl. The runtime closure schema is mandatory: status and response_status must both be exactly closed_repaired; response_by must be worker-6; analysis_can_resume and publication_grade must be true; review_status must be accepted_clean or accepted_with_cautions; created_at and final_counts must be present; final_counts must exactly include activity_records, toxicity_records, database_record_audits, mechanism_claims, and review_rework_targets; ticket_contract_evidence.overall_contract_pass must be true; gate_return_codes must contain packet, semantic, and publication values all equal to 0; gate_artifact_paths must identify fresh post-response reports with the formal pass schema for those three strict gates and the correct single-paper manifest; and verified_artifact_paths must contain both paper and packet final paths for activity_toxicity_evidence, database_record_verification, review_report, and the aligned mechanism final. The paper/packet final mirror pairs must be byte-identical. The packet gate may initially report only the exact ticket IDs being closed; after appending all terminal responses, rerun all three gates so the same artifact paths are newer than the response and the packet report has zero unrelated open tickets. This adjudication response may close a repaired owner-lane ticket; it does not replace the owner's nonterminal repair response. If any owner response, contract item, source proof, final rebuild, mirror, manifest binding, count, or strict gate is incomplete, leave the ticket open and write a concrete rework target instead. Never append another terminal response only when the runtime-open list confirms that ticket is already closed.
+
+Required outputs for this worker:
+
+Write final adjudication outputs:
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/review/adjudication_report.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/work/review/quality_feedback.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/database_record_verification.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/activity_toxicity_evidence.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/mechanism_ontology_record.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12125351/final/review_report.json
+Also copy/align final mechanism to:
+- pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12125351/final/mechanism_evidence.json
+and mirror all final files under the packet final/ directory.
+When a newer worker-2 artifact repairs an open activity/toxicity ticket, first rebuild the adjudication candidate and both final mirrors from that current worker artifact, then run strict gates on the rebuilt final. Do not gate the stale pre-repair final and reopen an already repaired ticket merely because the old final still fails.
+If hard gates fail, use review_status=needs_targeted_rework or blocked_missing_primary_material, publication_grade=false, and concrete rework_targets plus packet rework tickets.
+Before accepting, reject any activity row whose cited table is formulation/composition, FTIR/spectroscopy, TGA/thermal, wettability, or mechanical data, and reject endpoint/unit values not supported by that table's own caption/header. Never repair such rows by guessing or changing units.
+For every rework ticket with expected_shape, expected_observation_counts, require_cell_locators, or expected_cell_observations, independently compare the final unique row count, exact row/cell locators, and cell-bound fields against that contract. A base-table citation, a closed response, unique-but-misassigned coordinates, or validator success does not prove cell-level completeness. Reject duplicated observations mirrored across activity_records and toxicity_records, and reject unrelated rows that merely gained the requested table locator.
+For a blocking quantitative-figure ticket, reject closure when a requested visible bar/point remains absent from the final arrays or has null raw_value/raw_unit despite a calibratable staged image. Require approximate/exact status, calibration evidence, uncertainty, and treatment/control role for digitized values; preserve approximation rather than promoting it to an exact table value.
+Reject a row/cell-level table locator when that table's own caption/header does not support the row endpoint, even if another PDF/figure locator supports the measurement. Remove the false table-cell locator rather than deleting a valid source-supported endpoint. Independently verify normalization_status and normalized value/unit consistency under the same canonical contract required of worker-2.
+Quantitative activity or toxicity evidence may be supported by an exact XML paragraph, figure/caption, or PDF-page locator. Lack of a source table is not a reason to discard it when treatment, endpoint, target, value, unit, and assay context are source-supported; reject a no-evidence claim that merely excludes such figure/text records.
+Reject final records whose top-level concentration/concentration_unit contradict any redundant assay_conditions peptide/sample concentration copy; stale nested scaffold metadata must be repaired before acceptance.
+If the only remaining blocker is missing authoritative DBAASP linked rows, and
+the packet contains durable no-match evidence plus a nonterminal owner-repair
+response with analysis_can_resume=true, do not keep an infinite hard rework
+target solely for zero linked rows. Preserve this as accepted_with_cautions only
+when fallback rows remain unresolved/database-only and are not promoted to
+source_verified or authoritative DBAASP ingest-ready. Authoritative ingest must
+remain false until real linked article/assay/sequence/literature rows exist. The
+ticket still requires the same strict worker-6 closed_repaired terminal schema.
+
+
+Return a concise final message listing files written, unresolved blockers, and whether your lane is source-reviewed complete or needs targeted rework.

@@ -1,0 +1,23 @@
+{
+  "ticket_id": "rwk-PMC13031788-semantic-002",
+  "owner_worker": "worker-2",
+  "target_queue": "analysis",
+  "severity": "blocking",
+  "blocks": [
+    "activity_toxicity_evidence",
+    "review_report",
+    "publication_grade_acceptance"
+  ],
+  "acceptance_check": "semantic and publication gates have no missing_activity_table_coverage for xml:table-wrap:5",
+  "requested_outputs": [
+    {
+      "asset": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/activity_evidence/activity_records.json",
+      "need": "Add Table 5 row-level Log CFU/mL observations with sample, target, timepoint, raw value, unit, statistics/qualifier, and locator.",
+      "required_locators": [
+        "xml:table-wrap:5"
+      ],
+      "expected_shape": "4 sample rows x 6 timepoints = 24 observations unless source inspection documents a narrower justified representation"
+    }
+  ],
+  "reason": "Table 5 is a source-located quantitative activity table (Log CFU/mL of L. monocytogenes across 0-120 h) but has no row-level records."
+}

@@ -1,0 +1,58 @@
+{
+  "paper_id": "doi__10.1038_s41598-022-23613-y",
+  "generated_at": "2026-05-03T02:35:21Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "resolved_previous_qc_failure_reasons": [
+    "full_source_review_not_completed",
+    "database_conflicts_require_adjudication",
+    "no_supported_activity_rows_extracted"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "supplementary_payload_not_local",
+      "evidence_context": "Local supplementary .bin files are Nature HTML landing pages that link to an external DOCX; exact supplement-only tables S1-S7 were not locally recovered."
+    },
+    {
+      "caution_code": "figure1_zone_diameters_not_tabulated",
+      "evidence_context": "Figure 1 supports qualitative cut-well activity across five targets; exact diameters are not stated in local main text and were not invented."
+    },
+    {
+      "caution_code": "database_molarity_context_not_primary_raw_unit",
+      "evidence_context": "APD6 reports 14 uM for AP03483; final activity preserves the primary raw MIC 0.04 ug/uL and mass-concentration conversion only."
+    },
+    {
+      "caution_code": "mechanism_not_molecular_target_resolved",
+      "evidence_context": "SEM/no-leakage evidence supports morphology/cell-penetration context but not a precise molecular target."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_docx_not_locally_recovered",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-022-23613-y/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-022-23613-y/supplementary/landing-*.bin",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over local landing HTML",
+        "HTML href extraction",
+        "supplementary_index/supplementary_tables review"
+      ],
+      "why_unrecoverable": "The ten local supplementary .bin files resolve to duplicate Nature article HTML landing pages. They link to an external Springer DOCX, but the DOCX payload is not present in the local packet or landed paper assets; obtainable-only mode did not chase external downloads.",
+      "impact": "Nonblocking for worker-2/4/6 closure because primary XML/PDF text and merged APD6 rows support the peptide identity, MIC, qualitative spectrum, AU value, stability range, and mechanism claims used in the repaired artifacts. Supplement-only exact tables S1-S7 are not fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "status": "qc_passed_with_cautions_after_worker_2_4_6_repair"
+}

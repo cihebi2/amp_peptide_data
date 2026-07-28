@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.3390_md20030167",
+  "generated_at": "2026-05-09T12:01:55Z",
+  "reviewed_at": "2026-05-09T12:01:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": {
+    "owner_worker": "worker-6 final adjudication",
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_md20030167/handoff_context.json",
+      "paper_packets/doi__10.3390_md20030167/packet_manifest.json",
+      "paper_packets/doi__10.3390_md20030167/locators/locator_index.json",
+      "papers/doi__10.3390_md20030167/source/paper.xml",
+      "papers/doi__10.3390_md20030167/source/paper.pdf",
+      "paper_packets/doi__10.3390_md20030167/extracted/pdf_text/marinedrugs-20-00167.txt",
+      "paper_packets/doi__10.3390_md20030167/raw/supplementary_original/local-APD6-marinedrugs-20-00167-s001.zip",
+      "paper_packets/doi__10.3390_md20030167/extracted/oa_package/local-APD6-pmc_package/PMC8953592/marinedrugs-20-00167-g001.jpg",
+      "paper_packets/doi__10.3390_md20030167/extracted/oa_package/local-APD6-pmc_package/PMC8953592/marinedrugs-20-00167-g002.jpg",
+      "paper_packets/doi__10.3390_md20030167/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_md20030167/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_md20030167/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+    ],
+    "tools_attempted": [
+      "jq",
+      "rg",
+      "xml.etree.ElementTree",
+      "unzip -l",
+      "pdftotext",
+      "view_image",
+      "semantic_three_layer_gate.py",
+      "check_three_layer_publication_quality.py"
+    ],
+    "scope_note": "Mechanism claims are bounded to directly supported source findings; figure-only exact numeric biofilm values were not invented."
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Capitellacin shows modest/slow membrane permeabilization and electrophysiology consistent with a detergent-like membranotropic mechanism rather than a single specific intracellular target.",
+      "entity_scope": "capitellacin and capitellacin analog evidence in this paper",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "planar lipid bilayer conductance",
+        "ONPG/nitrocefin membrane permeability assays"
+      ],
+      "source_locator": {
+        "locator": "xml:abstract; xml:sec=9:2.5; xml:sec=10:2.6; figures=4-5",
+        "source_path": "papers/doi__10.3390_md20030167/source/paper.xml"
+      },
+      "limitations": "The paper frames this as detergent-like membranotropic action; no single molecular target is claimed."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "CT7 and tachyplesin-1 show stronger rapid membrane permeabilization/hemolysis than most capitellacin analogs, supporting beta-turn contribution to membranotropic and cytotoxic behavior.",
+      "entity_scope": "CT7 compared with capitellacin analogs and Tach-1",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "hemolysis assay",
+        "ONPG inner membrane permeabilization assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=7:2.3; figure=2A-B",
+        "source_path": "papers/doi__10.3390_md20030167/source/paper.xml",
+        "figure_path": "paper_packets/doi__10.3390_md20030167/extracted/oa_package/local-APD6-pmc_package/PMC8953592/marinedrugs-20-00167-g002.jpg"
+      },
+      "limitations": "Figure-derived hemolysis is recorded qualitatively for database reconciliation; exact curve digitization was not required for final database rows."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "A 21-day serial passage experiment did not select capitellacin-resistant E. coli, which is treated as indirect support for a membranotropic action profile.",
+      "entity_scope": "capitellacin",
+      "evidence_class": "indirect_mechanism_support",
+      "direct_assay_types": [],
+      "source_locator": {
+        "locator": "xml:sec=8:2.4; figure=3",
+        "source_path": "papers/doi__10.3390_md20030167/source/paper.xml"
+      },
+      "limitations": "Resistance selection is not a direct molecular target assay."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "Capitellacin can inhibit biofilm formation and affect established E. coli biofilms; source support is qualitative in main text plus supplementary Figure S3 captions for additional strains.",
+      "entity_scope": "capitellacin antibiofilm activity",
+      "evidence_class": "phenotypic_activity_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "locator": "xml:sec=11:2.7; supp:marinedrugs-1601085-supplementary.pdf:Figure S3",
+        "source_path": "papers/doi__10.3390_md20030167/source/paper.xml",
+        "supplementary_source_path": "paper_packets/doi__10.3390_md20030167/raw/supplementary_original/local-APD6-marinedrugs-20-00167-s001.zip"
+      },
+      "limitations": "No exact Figure S3 data points are asserted because the local supplement provides image/caption evidence, not structured tables."
+    }
+  ]
+}

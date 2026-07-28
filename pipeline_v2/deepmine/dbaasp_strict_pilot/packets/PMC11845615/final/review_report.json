@@ -1,0 +1,238 @@
+{
+  "adjudication_summary": "Worker-6 rebuilt the current final mirrors from the latest source-reviewed owner artifacts. Database, Table 1/Table 2 activity coverage, producer identity, source-locator hygiene, and mechanism evidence-strength checks pass. Terminal publication-grade closure is blocked because the open MIC locator ticket requires locator IDs that do not resolve to the MIC result/method in the packet source locator layer.",
+  "analysis_can_resume": false,
+  "artifact_role": "final_review_report_worker6_nonterminal_targeted_rework",
+  "caution_findings": [
+    {
+      "caution_id": "PMC11845615-W6-CAUTION-DBAASP-ZERO-LINKED-AUTHORITATIVE-ROWS",
+      "layer": "database",
+      "resolution": "Fallback DBAASP rows remain database-only candidates; authoritative_dbaasp_ingest_ready is false.",
+      "severity": "caution",
+      "source_locators": [
+        "database:dbaasp_machine_extracted_rows.jsonl:rows=1-5",
+        "xml:abstract:1",
+        "xml:p:18",
+        "xml:p:40"
+      ]
+    },
+    {
+      "caution_id": "PMC11845615-W6-CAUTION-MECHANISM-NO-DIRECT-ASSAY",
+      "layer": "mechanism",
+      "resolution": "Phenotype and inferred mechanism evidence are preserved without direct_mechanism promotion.",
+      "severity": "caution",
+      "source_locators": [
+        "xml:sec:2",
+        "xml:p:30",
+        "xml:p:35",
+        "xml:p:38",
+        "xml:p:40"
+      ]
+    },
+    {
+      "caution_id": "PMC11845615-W6-CAUTION-MIC-LOCATOR-CONTRACT-MISMATCH",
+      "layer": "activity",
+      "resolution": "Runtime ticket locator IDs remain unresolved against packet source locator evidence.",
+      "severity": "blocking",
+      "source_locators": [
+        "xml:p:17",
+        "xml:p:36",
+        "xml:p:41",
+        "xml:p:50"
+      ]
+    }
+  ],
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/analysis/activity_toxicity_evidence.worker2.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/analysis/database_record_audit.worker4.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/analysis/mechanism_evidence.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/work/review/worker6_contract_validation.pre_rebuild.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/work/review/worker6_mic_locator_resolution_check.extracted_sections.json"
+  ],
+  "final_counts": {
+    "activity_records": 45,
+    "database_record_audits": 5,
+    "mechanism_claims": 3,
+    "review_rework_targets": 1,
+    "toxicity_records": 0
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/work/review/worker6_post_rebuild_packet_gate.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/work/review/worker6_post_rebuild_publication_gate.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/work/review/worker6_post_rebuild_semantic_gate.json"
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "publication": 2,
+    "semantic": 1
+  },
+  "gate_summaries": {
+    "packet": {
+      "hard_finding_count": 0,
+      "open_rework_ticket_count": 10,
+      "paper_count": 1,
+      "return_code": 0
+    },
+    "publication": {
+      "paper_count": 1,
+      "publication_grade_pass": false,
+      "return_code": 2,
+      "review_status": {
+        "needs_targeted_rework": 1
+      },
+      "risk_counts": {
+        "open_rework_targets": 1
+      }
+    },
+    "semantic": {
+      "fail_count": 1,
+      "issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "issue_count": 2,
+      "paper_count": 1,
+      "pass_count": 0,
+      "return_code": 1
+    }
+  },
+  "materials_exhausted": {
+    "merged_database_rows": {
+      "exhausted": true,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/database/database_source_manifest.json"
+    },
+    "oa_package": {
+      "exhausted": true,
+      "inspected": true,
+      "status": "packet_archive_manifest_checked"
+    },
+    "paper_pdf": {
+      "exhausted": true,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/paper.pdf"
+    },
+    "paper_xml": {
+      "exhausted": true,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/paper.xml"
+    },
+    "supplementary_assets": {
+      "exhausted": true,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/supplementary/41598_2025_89450_MOESM1_ESM.docx"
+    }
+  },
+  "open_rework_ticket_count": 10,
+  "open_rework_ticket_ids": [
+    "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W1-MATERIALS-MANIFEST-MIRROR-STATUS-STALE",
+    "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W2-ACTIVITY-TARGET-LOCATOR-CONFLICT",
+    "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W2-MIC-CONDITIONS-LOCATORS",
+    "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W5-CURRENT-FINAL-MECHANISM-MIRROR-NONTERMINAL",
+    "rwk-PMC11845615-campaign-r01-PMC11845615-BLOCKER-W2-ACTIVITY-TABLE-COVERAGE",
+    "rwk-PMC11845615-campaign-r01-PMC11845615-BLOCKER-W4-DATABASE-SEQUENCE-PLACEHOLDER",
+    "rwk-PMC11845615-campaign-r01-PMC11845615-BLOCKER-W5-MECHANISM-DIRECT-CLAIM-UNSUPPORTED",
+    "rwk-PMC11845615-campaign-r02-BF-PMC11845615-W4-001-recursive-database-source-locators",
+    "rwk-PMC11845615-campaign-r02-BF-PMC11845615-W5-001-mechanism-non-source-and-stale-ticket-",
+    "rwk-PMC11845615-campaign-r03-PMC11845615-BF-W2-ENTITY-PRODUCER-GENUS-AND-SEQUENCE-PLACEHO"
+  ],
+  "paper_id": "PMC11845615",
+  "per_layer_decision_rationale": {
+    "activity": "Layer-2 row-level coverage is source-reviewed from current W2 output, but the MIC locator contract remains unresolved against packet locator IDs.",
+    "database": "Layer-1 is source-reviewed with zero linked authoritative DBAASP rows preserved as a caution and no fallback rows promoted to authoritative ingest.",
+    "materials": "Material packet is present and extraction state is complete; paper-level analysis remains open because one analysis ticket is unresolved.",
+    "mechanism": "Layer-3 is source-reviewed with direct_mechanism count 0 and no direct target-binding claim promoted."
+  },
+  "publication_grade": false,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "needs_targeted_rework",
+  "reviewed_at": "2026-07-28T01:26:18Z",
+  "rework_targets": [
+    {
+      "acceptance_check": "Provide an owner repair response with source-resolved MIC result and method locators whose IDs satisfy the runtime contract without marking unsupported locators as accepted source evidence.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/final/activity_toxicity_evidence.json",
+      "failing_object": "activity_records[26]",
+      "failure_code": "mic_locator_contract_not_source_supported",
+      "layer": "activity",
+      "required_action": "Resolve the MIC locator contract against packet XML locator IDs. The rebuilt final uses source-supported packet locators, but the runtime acceptance check requires locator IDs that do not resolve to the MIC result/method in extracted XML sections.",
+      "source_evidence_to_check": [
+        "xml:p:17",
+        "xml:p:36",
+        "xml:p:41",
+        "xml:p:50",
+        "pdf:page=7",
+        "pdf:page=12"
+      ],
+      "ticket_id": "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W2-MIC-CONDITIONS-LOCATORS",
+      "worker": "worker-2"
+    }
+  ],
+  "semantic_quality_checks": {
+    "failed_ticket_ids": [
+      "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W2-MIC-CONDITIONS-LOCATORS"
+    ],
+    "owner_response_prerequisites_satisfied": true,
+    "runtime_open_ticket_count": 10,
+    "source_scaffold_promoted_without_support": false,
+    "ticket_contracts_checked": 10,
+    "ticket_contracts_failed": 1,
+    "ticket_contracts_passed": 9
+  },
+  "source_review_depth": {
+    "merged_database_rows": {
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/database/database_source_manifest.json"
+    },
+    "oa_package": {
+      "inspected": true,
+      "status": "packet_archive_manifest_checked"
+    },
+    "paper_pdf": {
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/paper.pdf"
+    },
+    "paper_xml": {
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/paper.xml"
+    },
+    "supplementary_assets": {
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/source/supplementary/41598_2025_89450_MOESM1_ESM.docx"
+    }
+  },
+  "source_reviewed": true,
+  "strict_gate": {
+    "blocking_ticket_ids": [
+      "rwk-PMC11845615-campaign-r01-BF-PMC11845615-W2-MIC-CONDITIONS-LOCATORS"
+    ],
+    "required_rework_count": 1
+  },
+  "validator_contract_passed": false,
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/final/activity_toxicity_evidence.json",
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/final/database_record_verification.json",
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/final/database_record_verification.json"
+    },
+    "mechanism_ontology_record": {
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/final/mechanism_ontology_record.json",
+      "packet_final_alias": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/final/mechanism_evidence.json",
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/final/mechanism_ontology_record.json"
+    },
+    "review_report": {
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11845615/final/review_report.json",
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11845615/final/review_report.json"
+    }
+  }
+}

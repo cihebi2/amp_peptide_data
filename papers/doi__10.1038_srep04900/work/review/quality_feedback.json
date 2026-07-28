@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-03T17:18:35Z",
+  "issue_count": 0,
+  "paper_id": "doi__10.1038_srep04900",
+  "qc_failure_reasons": [],
+  "remaining_cautions": [
+    {
+      "caution_code": "dramp_activity_category_overclaims_primary_paper",
+      "evidence_context": "DRAMP rows list antimicrobial/anticancer activity for 21 Xentry variants, but XML/PDF/supplement material supports cell penetration, MMP-9 activatable uptake, and non-toxicity/viability rather than antimicrobial MIC/MBC or anticancer killing endpoints.",
+      "affected_records": 42
+    },
+    {
+      "caution_code": "qualitative_activity_scores_not_potency_values",
+      "evidence_context": "Table 1 uses visual uptake scores (-,+,++,+++) and NT cells; these are preserved as qualitative uptake rows and not normalized to concentration-response potency."
+    },
+    {
+      "caution_code": "figure_exact_bar_values_not_tabulated",
+      "evidence_context": "Figures 4/5/8 are local images, but exact bar heights are not tabulated; source text and Table 1 provide gate-relevant qualitative/approximate values."
+    }
+  ],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "source_reviewed_repair_summary": "Worker-2 activity rows, worker-4 database conflict adjudication, and worker-6 final review were repaired from local source paths and gates were rerun.",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_exact_bar_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_srep04900/extracted/oa_package/local-DRAMP-24811205/PMC4014984/srep04900-f4.jpg",
+        "paper_packets/doi__10.1038_srep04900/extracted/oa_package/local-DRAMP-24811205/PMC4014984/srep04900-f5.jpg",
+        "paper_packets/doi__10.1038_srep04900/extracted/oa_package/local-DRAMP-24811205/PMC4014984/srep04900-f8.jpg",
+        "paper_packets/doi__10.1038_srep04900/extracted/figure_captions.json",
+        "paper_packets/doi__10.1038_srep04900/extracted/pdf_text/srep04900.txt"
+      ],
+      "tools_attempted": [
+        "rg",
+        "jq",
+        "file",
+        "existing pdftotext output review"
+      ],
+      "why_unrecoverable": "Local XML/PDF/supplement text provide qualitative scores, approximate toxicity text, and figure captions, but no source-data table for exact plotted bar heights. The bounded repair preserved source-supported qualitative/approximate values instead of digitizing image-only bars.",
+      "impact": "Exact fluorescence or viability bar heights from Figures 4/5/8 remain non-tabulated; Table 1 visual scores and text-supported WST-1 values cover the gate-relevant activity/toxicity facts.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

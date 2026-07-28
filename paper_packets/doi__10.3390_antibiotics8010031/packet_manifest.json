@@ -1,0 +1,88 @@
+{
+  "analysis_queue_status": "analysis_blocked_unrecoverable_material_gap",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 0,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.3390/antibiotics8010031",
+  "journal": "",
+  "known_missing_or_blocked_materials": [
+    {
+      "gap_code": "activity_toxicity_rows_not_locally_supported",
+      "source_paths_checked": [
+        "rework_context/doi__10.3390_antibiotics8010031/handoff_context.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/packet_manifest.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/locators/locator_index.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extraction/extraction_status.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics8010031/raw/paper.pdf",
+        "paper_packets/doi__10.3390_antibiotics8010031/raw/oa_package/local-DRAMP-30909507.tar.gz",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/oa_package/local-DRAMP-30909507/PMC6466567/antibiotics-08-00031.nxml",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/oa_package/local-DRAMP-30909507/PMC6466567/antibiotics-08-00031.pdf",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/oa_package/local-DRAMP-30909507/PMC6466567/antibiotics-08-00031-g001.jpg",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/xml_sections.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/pdf_text/local-DRAMP-30909507.txt",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/pdf_text/antibiotics-08-00031.txt",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/pdf_tables.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/database_source_manifest.json",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/linked_sequence_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics8010031/database/linked_dramp_activity_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+      ],
+      "tools_attempted": [
+        "ElementTree XML table and figure inspection",
+        "pdftotext -layout over paper.pdf",
+        "rg over XML/PDF text for MIC, MBC, toxicity, hemolysis, mechanism, and database IDs",
+        "tar -tzf OA package member listing",
+        "file over OA figure/PDF/XML/package assets",
+        "merged database CSV/JSONL filtering for DOI, PMID, and DRAMP29328"
+      ],
+      "why_unrecoverable": "The local XML, PDF text, OA package, figure, supplementary indexes, and linked database snapshots show this article is a clinical pharmacokinetics review. It contains qualitative antimicrobial and toxicity context plus PK/PD target discussion, but no primary row-level MIC, MBC, HC50, CC50, hemolysis, cytotoxicity, or organism/value matrix that can be promoted to an activity/toxicity record.",
+      "impact": "Worker-2 cannot create parser-supported activity/toxicity rows without fabricating values. The strict semantic gate is expected to keep failing missing_activity_records, and the paper must remain non-publication-grade.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "mark_blocked_unrecoverable_and_advance"
+    }
+  ],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.3390_antibiotics8010031",
+  "pmcid": "",
+  "pmid": "30909507",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics8010031/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics8010031",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "A Review of the Clinical Pharmacokinetics of Polymyxin B",
+  "updated_at": "2026-05-07T15:01:40Z",
+  "year": "2019",
+  "source_reviewed_worker_2_4_6": true,
+  "publication_grade_ready": false
+}

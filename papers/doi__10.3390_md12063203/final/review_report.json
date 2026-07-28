@@ -1,0 +1,133 @@
+{
+  "paper_id": "doi__10.3390_md12063203",
+  "reviewed_at": "2026-05-09T12:08:52Z",
+  "updated_at": "2026-05-09T12:10:01Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Worker-2/4/6 re-review recovered primary-source activity and toxicity evidence from XML/PDF text plus local figures, preserved DBAASP percent-killing mismatches as source_conflict, and completed source-reviewed adjudication with explicit cautions.",
+  "adjudication_summary": "The previous framework-test blocker is closed: activity rows are no longer empty, database rows are reconciled at row level, and no blocking owner-layer rework target remains.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md12063203/handoff_context.json",
+    "paper_packets/doi__10.3390_md12063203/packet_manifest.json",
+    "paper_packets/doi__10.3390_md12063203/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md12063203/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_md12063203/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_md12063203/source/paper.xml",
+    "papers/doi__10.3390_md12063203/source/paper.pdf",
+    "paper_packets/doi__10.3390_md12063203/raw/paper.xml",
+    "paper_packets/doi__10.3390_md12063203/raw/paper.pdf",
+    "paper_packets/doi__10.3390_md12063203/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md12063203/extracted/pdf_text/marinedrugs-12-03203.txt",
+    "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203.nxml",
+    "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203-g002.jpg",
+    "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203-g003.jpg",
+    "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203-g004.jpg",
+    "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203-g005.jpg",
+    "paper_packets/doi__10.3390_md12063203/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_md12063203/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_md12063203/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_md12063203/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md12063203/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md12063203/database/linked_literature_records.jsonl"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened packet manifest, locator index, raw XML/PDF, extracted XML/PDF text, OA package member list, local figure images, supplementary indexes, and linked DBAASP database JSONL rows. No supplementary files/tables were present in this local packet."
+  },
+  "semantic_quality_checks": {
+    "activity_records_source_reviewed": 7,
+    "database_record_audits": 13,
+    "database_record_status_summary": {
+      "source_conflict": 12,
+      "source_verified": 1
+    },
+    "mechanism_claims_source_reviewed": 2,
+    "unrecoverable_material_gap_count": 1,
+    "unrecoverable_material_gap_blocks_publication_grade": false,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "open_rework_targets": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "semantic_gate_issue_count": 0,
+    "publication_quality_risk_counts": {},
+    "gate_reports": {
+      "semantic_gate": "reports/doi__10.3390_md12063203.semantic_gate.json",
+      "publication_quality": "reports/doi__10.3390_md12063203.publication_quality.json"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled 12 duplicated DBAASP assay/experiment rows and one literature row. The literature trace is source_verified; assay percent-killing values remain source_conflict where primary text supports different percent-reduction or qualitative toxicity evidence.",
+    "layer_2_activity_toxicity": "Worker-2 recovered five source-supported 72 h cancer-cell viability-reduction rows, one MGC-803 IC50 range, and one qualitative hFB toxicity comparator from primary text/figures. Figure-only exact hFB percent is not fabricated.",
+    "layer_3_mechanism": "Worker-6 bounds the mechanism layer to cell-cycle assay and expression-marker evidence; no direct molecular target or binding mechanism is overclaimed.",
+    "supplementary_material": "No supplementary assets/tables are present in the packet or source inventory; this absence does not block the owner-layer repair after XML/PDF/OA/database review.",
+    "publication_grade_review": "Prior blocking rework targets are closed because recoverable source evidence is captured and unrecoverable exact figure/database value gaps are nonblocking cautions rather than fabricated values."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_percent_killing_sign_conflict_preserved",
+      "evidence_context": "DBAASP reports percent Killing values that do not match the primary text percent reductions for cancer cell lines; rows remain source_conflict and linked to primary activity records."
+    },
+    {
+      "caution_code": "hfb_exact_database_percent_not_locally_source_verified",
+      "evidence_context": "The hFB database 10% Killing value is not present as an exact local primary-source table value; final activity records keep the paper-supported qualitative toxicity statement."
+    },
+    {
+      "caution_code": "no_supplementary_assets_present",
+      "evidence_context": "Packet and source inventories list no supplementary files or tables for this paper; XML/PDF/OA figures are the available local source surface."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "hfb_database_exact_10_percent_killing_not_in_local_primary_text_table",
+      "source_paths_checked": [
+        "papers/doi__10.3390_md12063203/source/paper.xml",
+        "papers/doi__10.3390_md12063203/source/paper.pdf",
+        "paper_packets/doi__10.3390_md12063203/extracted/xml_sections.json",
+        "paper_packets/doi__10.3390_md12063203/extracted/pdf_text/marinedrugs-12-03203.txt",
+        "paper_packets/doi__10.3390_md12063203/extracted/oa_package/local-DBAASP-PMC4071572/PMC4071572/marinedrugs-12-03203-g003.jpg",
+        "paper_packets/doi__10.3390_md12063203/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_md12063203/database/linked_experiment_records.jsonl"
+      ],
+      "tools_attempted": [
+        "jq JSON artifact review",
+        "rg over paper XML, extracted XML sections, PDF text, and linked database JSONL",
+        "tar -tzf OA package member check",
+        "view_image local Figure 2 cancer-cell dose curves",
+        "view_image local Figure 3 hFB/cancer toxicity curves",
+        "view_image local Figure 4 G1/S cell-cycle plot",
+        "existing pdftotext outputs reviewed for publisher and OA PDFs"
+      ],
+      "why_unrecoverable": "The local primary text and Figure 3 support qualitative hFB low-toxicity context and a 72 h decrease at high concentration, but no local numeric table states the exact DBAASP 10% Killing value.",
+      "impact": "The hFB database row remains source_conflict; the final activity layer keeps the source-supported qualitative toxicity comparator instead of fabricating an exact percent.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_ids": [],
+    "publication_grade_ready": true,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true
+  }
+}

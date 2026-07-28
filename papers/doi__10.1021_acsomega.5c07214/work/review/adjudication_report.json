@@ -1,0 +1,112 @@
+{
+  "paper_id": "doi__10.1021_acsomega.5c07214",
+  "generated_at": "2026-05-02T12:07:31Z",
+  "updated_at": "2026-05-02T12:09:20Z",
+  "reviewed_at": "2026-05-02T12:07:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "adjudication_summary": "Source re-review resolved the activity parser failure by extracting all Table 1 MIC and cell-expression rows, reconciled APD6/DBAASP database records against the primary table, preserved the DBAASP MIC-target strain conflict, and replaced generic mechanism notes with source-located DMS/docking/conservation claims.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1021_acsomega.5c07214/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.5c07214/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/pdf_text/ao5c07214.txt",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/pdf_text/ao5c07214_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/oa_package/local-APD6-pmc_package/PMC12529121/ao5c07214_si_002.xlsx",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/figure_captions.json",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/supplementary_index.json"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded source recovery reopened packet XML, extracted article PDF text, OA package member list, SI PDF text, SI XLSX workbook contents, figure captions, linked APD6/DBAASP JSONL rows, and merged sequence/assay CSV rows. No additional local activity/toxicity tables beyond primary Table 1 were found; SI XLSX is 23S rRNA MSA conservation data."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 19,
+    "activity_endpoint_counts": {
+      "MIC": 7,
+      "OD600_stationary_phase_growth_induced": 6,
+      "OD600_stationary_phase_growth_uninduced": 6
+    },
+    "database_record_audit_count": 24,
+    "database_status_summary": {
+      "source_verified": 16,
+      "source_conflict": 8
+    },
+    "database_activity_reconciliation": "primary_table_mic_values_recovered; dbaasp_target_strain_conflict_preserved",
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "APD6 rows are source-verified for Table 1 sequence/MIC/citation; DBAASP rows are retained as source_conflict because MIC values/sequences match but DBAASP labels DH5alpha whereas the paper MIC method specifies MRE600.",
+    "layer_2_activity_toxicity": "Worker-2 extracted 19 source-supported activity/growth rows from Table 1 and methods. No hemolysis/cytotoxicity rows are reported in local material, so toxicity remains an empty nonblocking category rather than fabricated evidence.",
+    "layer_3_mechanism": "Worker-6 accepts DMS probing as direct ribosome/rRNA interaction evidence and docking/MSA as supporting mechanism context; no membrane-disruption mechanism is promoted.",
+    "material_packet": "Material packet remains complete-with-gaps structurally, but the owner-layer source review exhausted the relevant OA package SI PDF/XLSX and found no activity-blocking unrecoverable gap."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_target_strain_conflict_preserved",
+      "affected_layer": "database",
+      "evidence_context": "DBAASP linked assay rows record Escherichia coli DH5alpha; primary broth microdilution methods use Escherichia coli MRE600. Values and sequences are retained but full-row source_verified status is not used for those records."
+    },
+    {
+      "caution_code": "no_toxicity_rows_reported",
+      "affected_layer": "activity_toxicity",
+      "evidence_context": "No local XML/PDF/SI/database material reports hemolysis or cytotoxicity assays for these 2025 Onc variants; final toxicity_records is intentionally empty."
+    },
+    {
+      "caution_code": "supplementary_assets_do_not_add_activity_rows",
+      "affected_layer": "material_packet",
+      "evidence_context": "SI PDF contains peptide characterization/synthesis and supporting figures/tables; XLSX contains bacterial 23S rRNA MSA conservation scores, not MIC/toxicity values."
+    },
+    {
+      "caution_code": "propargyl_activity_database_context",
+      "affected_layer": "database",
+      "evidence_context": "Onc14-propargyl MIC is primary-source supported in Table 1 and SI synthesis evidence, while APD6 embeds it as SAR text under AP05806 rather than a separate sequence record."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0
+  },
+  "latest_gate_results": {
+    "validated_at": "2026-05-02T12:09:20Z",
+    "semantic_gate": {
+      "report": "reports/doi__10.1021_acsomega.5c07214.semantic_gate.json",
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "issue_count": 0,
+      "passed": true
+    },
+    "publication_quality": {
+      "report": "reports/doi__10.1021_acsomega.5c07214.publication_quality.json",
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      }
+    }
+  },
+  "last_gate_validated_at": "2026-05-02T12:09:20Z"
+}

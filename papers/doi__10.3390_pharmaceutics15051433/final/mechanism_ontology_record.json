@@ -1,0 +1,119 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics15051433",
+  "generated_at": "2026-05-09T16:05:00Z",
+  "source_reviewed": true,
+  "worker": "worker-6_adjudicated_worker-5_scope",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 bounded mechanism adjudication from primary MD/CD/SPR/biological-activity sections, figure captions, and recovered OA supplementary PDF; claims are scoped to membrane-interaction/phenotype evidence and do not assert a single molecular target.",
+  "source_paths_checked": [
+    "rework_context/doi__10.3390_pharmaceutics15051433/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/locators/locator_index.json",
+    "papers/doi__10.3390_pharmaceutics15051433/source/paper.xml",
+    "papers/doi__10.3390_pharmaceutics15051433/source/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/raw/paper.xml",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/raw/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/pdf_text/pharmaceutics-15-01433.txt",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/pdf_text/local-DBAASP-PMC10220883.txt",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/oa_package/local-DBAASP-PMC10220883/PMC10220883/pharmaceutics-15-01433-s001.zip",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics15051433/database/linked_sequence_records.jsonl"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-md-membrane-positioning-context",
+      "claim_text": "MD simulations support peptide-dependent differences in early interaction/positioning with neutral DLPC and anionic POPE:POPG membrane models, providing mechanistic context for membrane interaction rather than direct killing proof.",
+      "entity_scope": "diPGLa-H and kiadin-1 through kiadin-6",
+      "evidence_class": "computational_membrane_interaction_context",
+      "direct_assay_types": [
+        "molecular_dynamics_simulation"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=2.2; xml:fig=3-6"
+      },
+      "source_locators": [
+        {
+          "source_path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/figure_captions.json",
+          "locator": "figures=3-6"
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/oa_package/local-DBAASP-PMC10220883/PMC10220883/pharmaceutics-15-01433-s001.zip",
+          "locator": "supplementary_pdf:Figures S5-S12; Table S1"
+        }
+      ],
+      "limitations": "Computational membrane positioning is supportive context and is not treated as a standalone direct antimicrobial mechanism."
+    },
+    {
+      "claim_id": "mech-cd-spr-neutral-anionic-luv-binding",
+      "claim_text": "CD and SPR evidence supports differential structuring and binding of kiadin peptides with model liposomes, including neutral-membrane binding, aggregation or LUV disruption patterns for selected peptides.",
+      "entity_scope": "diPGLa-H and kiadin-1 through kiadin-6 interacting with DOPC/DPPG or DOPC LUVs",
+      "evidence_class": "biophysical_membrane_interaction",
+      "direct_assay_types": [
+        "circular_dichroism",
+        "surface_plasmon_resonance"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.3-3.4; xml:fig=7-8"
+      },
+      "source_locators": [
+        {
+          "source_path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/figure_captions.json",
+          "locator": "figures=7-8"
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/oa_package/local-DBAASP-PMC10220883/PMC10220883/pharmaceutics-15-01433-s001.zip",
+          "locator": "supplementary_pdf:Table S2"
+        }
+      ],
+      "limitations": "Model-liposome binding/structuring is mechanism context; it does not prove a single molecular target or exact pore model."
+    },
+    {
+      "claim_id": "mech-antibacterial-activity-phenotype",
+      "claim_text": "Table 2 supports peptide-specific antibacterial potency differences against E. coli and S. aureus, discussed as depending on glycine position and sequence context.",
+      "entity_scope": "diPGLa-H and kiadin-1 through kiadin-6 against E. coli ATCC 25922 and S. aureus ATCC 25923",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [
+        "broth_microdilution_mic",
+        "mbc_plating"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2; xml:sec=3.5"
+      },
+      "limitations": "MIC/MBC phenotypes support potency differences but do not alone establish the molecular lesion."
+    },
+    {
+      "claim_id": "mech-cytotoxicity-neutral-membrane-context",
+      "claim_text": "HC50/IC50 values and Figure 9 support peptide-specific host-cell toxicity patterns, which the authors relate cautiously to neutral liposome binding and MD insertion context.",
+      "entity_scope": "human erythrocytes and MEC-1 cells exposed to diPGLa-H/kiadin peptides",
+      "evidence_class": "toxicity_phenotype_with_biophysical_context",
+      "direct_assay_types": [
+        "hemolysis_assay",
+        "mtt_cell_viability_assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2; xml:fig=9; xml:sec=3.6"
+      },
+      "source_locators": [
+        {
+          "source_path": "paper_packets/doi__10.3390_pharmaceutics15051433/extracted/figure_captions.json",
+          "locator": "figure=9"
+        }
+      ],
+      "limitations": "Toxicity correlations are cautious; no direct molecular target in host cells is assigned."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

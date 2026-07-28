@@ -1,0 +1,110 @@
+{
+  "paper_id": "doi__10.3390_ijms21031140",
+  "doi": "10.3390/ijms21031140",
+  "pmid": "32046328",
+  "pmcid": "PMC7037546",
+  "title": "High Cell Selectivity and Bactericidal Mechanism of Symmetric Peptides Centered on d-Pro-Gly Pairs.",
+  "reviewed_at": "2026-05-08T16:04:03Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Relevant local materials were opened for the worker-2/4/6 blockers. The supplement is a PDF with MALDI/HPLC/wheel/HEK293T figure material and no structured supplementary activity table."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms21031140/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms21031140/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms21031140/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms21031140/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms21031140/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms21031140/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_ijms21031140/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_ijms21031140/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_ijms21031140/analysis/adjudication_report.json",
+    "papers/doi__10.3390_ijms21031140/source/paper.xml",
+    "papers/doi__10.3390_ijms21031140/source/paper.pdf",
+    "papers/doi__10.3390_ijms21031140/source/supplementary/ijms-21-01140-s001.pdf",
+    "paper_packets/doi__10.3390_ijms21031140/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms21031140/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms21031140/raw/oa_package/local-DBAASP-PMC7037546.tar.gz",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/pdf_text/ijms-21-01140.txt",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/pdf_text/local-DBAASP-PMC7037546.txt",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms21031140/extracted/supplementary_text/ijms-21-01140-s001.txt",
+    "paper_packets/doi__10.3390_ijms21031140/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms21031140/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21031140/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21031140/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "tools_attempted": [
+    "xml.etree.ElementTree table, caption, and footnote parser",
+    "jq/manual review of handoff, packet, final, quality, and gate JSON",
+    "rg over extracted PDF text, supplementary PDF text, and packet database snapshots",
+    "csv.DictReader over merged DBAASP sequence catalog rows",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 250,
+    "activity_extraction_issue_count": 0,
+    "database_audit_status_summary": {
+      "source_conflict": 8,
+      "source_verified": 212
+    },
+    "mechanism_claims": 6,
+    "table6_decision": "abbreviation_glossary_not_activity_table",
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP sequence/literature/assay/experiment rows were rechecked against Table 1, Tables 2-5, source text, and merged sequence catalog rows. Exact matches are source_verified; broader database-only wording remains source_conflict with locators.",
+    "layer_2_activity_toxicity": "The activity artifact now uses peptide entities, target rows, raw values, units, conditions, and locators from Tables 2-5 plus source-text viability values. Table 6 is excluded as an abbreviation glossary.",
+    "layer_3_mechanism": "Placeholder mechanism notes were replaced with source-located direct assay claims and limitations for figure-level curve values.",
+    "worker_6_adjudication": "The prior rework ticket is closed because owner-layer blockers were resolved without fabricating unsupported values."
+  },
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review repaired peptide activity rows, preserved database conflicts, replaced placeholder mechanism notes, and closes the single rework ticket as accepted_with_cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "source_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "8 linked DBAASP assay/experiment rows retain source_conflict where database wording is broader or less exact than primary-source table/prose evidence."
+    },
+    {
+      "caution_code": "modified_sequences_not_normalized",
+      "severity": "caution",
+      "evidence_context": "IRpG, FRpG, LRpG, and LRα preserve lowercase-p D-Pro notation plus C-terminal amidation from Table 1 instead of silently normalizing sequences."
+    },
+    {
+      "caution_code": "figure_curves_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Mechanism figure curves are source-located and qualitative/prose values are recorded; pixel-level curve extraction was not required to close the owner-layer blocker."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

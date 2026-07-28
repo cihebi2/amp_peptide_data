@@ -1,0 +1,200 @@
+{
+  "artifact_type": "database_record_verification",
+  "stage_id": "worker-4-source-reviewed-repair",
+  "worker": "worker-4",
+  "paper_id": "doi__10.1007_s00262-014-1540-0",
+  "doi": "10.1007/s00262-014-1540-0",
+  "generated_at": "2026-05-01T03:31:46Z",
+  "updated_at": "2026-05-01T03:31:46Z",
+  "reviewed_at": "2026-05-01T03:31:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "audit_scope": "Linked DRAMP activity, merged experiment, and literature rows were reconciled against primary PDF/XML and source-supported activity rows.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "source_paths_checked": [
+    "paper_packets/doi__10.1007_s00262-014-1540-0/raw/paper.xml",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/figure_captions.json",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1007_s00262-014-1540-0/database/database_source_manifest.json"
+  ],
+  "record_audits": [
+    {
+      "source_id": "DRAMP:DRAMP31842",
+      "sequence_key": "DRAMP:DRAMP31842",
+      "source_table": "general_amps.txt",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_peptide_name": "LTX-328",
+      "database_sequence": "KAQXQKQAW",
+      "database_measure": "Antimicrobial, Anticancer",
+      "database_subject": "Tumor cells: FEMX-I (IC50>350 µM)",
+      "database_assay_note": "DRAMP general_amps row; assay field blank",
+      "matched_activity_record_ids": [
+        "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50"
+      ],
+      "matched_activity_record_id": "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50",
+      "sequence_check": {
+        "status": "source_verified_with_modified_residue_caution",
+        "database_sequence": "KAQXQKQAW with X=Dip in DRAMP metadata",
+        "primary_source_sequence": "K-A-Q-Dip-Q-K-Q-A-W-NH2",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents",
+          "primary_source_statement": "Primary source names LTX-328 and gives the Dip-containing nonapeptide sequence; database X maps to Dip and C-terminal amidation is also recorded in DRAMP metadata."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "database_name": "LTX-328",
+        "primary_source_name": "LTX-328",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents"
+        }
+      },
+      "modification_check": {
+        "status": "source_verified_with_caution",
+        "database_modification": "X=Dip=diphenylalanine; C-terminal amidation",
+        "primary_source_modification": "Dip residue and C-terminal NH2 are embedded in the primary sequence notation",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents"
+        }
+      },
+      "activity_target_check": {
+        "status": "source_conflict",
+        "database_target": "FEMX-I tumor cells",
+        "primary_source_target": "B16F1 melanoma cells for LTX-328 Figure 1a testing",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:183-190,367-369,431-456; figure:Fig1a"
+        }
+      },
+      "citation_traceability": {
+        "status": "source_verified",
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/raw/paper.xml",
+        "locator": "xml:article-meta doi=10.1007/s00262-014-1540-0 pmid=24676901 pmcid=PMC4024132"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records:row=1"
+      },
+      "conflict_context": "Primary source supports LTX-328 sequence/name and an IC50 >350 µM B16F1 row, but does not support the DRAMP FEMX-I target assignment for LTX-328 in this paper.",
+      "review_notes": "Preserve as source_conflict instead of source_verified because the database target organism/cell-line differs from the primary Figure 1a LTX-328 row."
+    },
+    {
+      "source_id": "DRAMP:DRAMP31842",
+      "sequence_key": "DRAMP:DRAMP31842",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_peptide_name": "LTX-328",
+      "database_sequence": "KAQXQKQAW",
+      "database_measure": "Not available",
+      "database_subject": "Tumor cells: FEMX-I (IC50>350 µM)",
+      "database_assay_note": "Merged experiment row generated from DRAMP general_amps source table",
+      "matched_activity_record_ids": [
+        "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50"
+      ],
+      "matched_activity_record_id": "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50",
+      "sequence_check": {
+        "status": "source_verified_with_modified_residue_caution",
+        "database_sequence": "KAQXQKQAW with X=Dip in DRAMP metadata",
+        "primary_source_sequence": "K-A-Q-Dip-Q-K-Q-A-W-NH2",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents"
+        }
+      },
+      "activity_target_check": {
+        "status": "source_conflict",
+        "database_target": "FEMX-I tumor cells",
+        "primary_source_target": "B16F1 melanoma cells for LTX-328 Figure 1a testing",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:183-190,367-369,431-456; figure:Fig1a"
+        }
+      },
+      "citation_traceability": {
+        "status": "source_verified",
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/raw/paper.xml",
+        "locator": "xml:article-meta doi=10.1007/s00262-014-1540-0 pmid=24676901 pmcid=PMC4024132"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "conflict_context": "The merged experiment row repeats the DRAMP FEMX-I target value; local source review found LTX-328 tested against B16F1 only in Figure 1a.",
+      "review_notes": "Preserve source_conflict for the database-derived target label while retaining the source-supported B16F1 >350 µM activity row separately."
+    },
+    {
+      "source_id": "DRAMP:DRAMP31842",
+      "sequence_key": "DRAMP:DRAMP31842",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_peptide_name": "LTX-328",
+      "database_measure": "",
+      "database_subject": "Complete regression and systemic protective immune responses obtained in B16 melanomas after treatment with LTX-315",
+      "matched_activity_record_ids": [
+        "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50"
+      ],
+      "matched_activity_record_id": "doi__10.1007_s00262-014-1540-0:fig1a:ltx328:b16f1:ic50",
+      "sequence_check": {
+        "status": "source_verified_with_modified_residue_caution",
+        "database_sequence": "KAQXQKQAW with X=Dip in DRAMP metadata",
+        "primary_source_sequence": "K-A-Q-Dip-Q-K-Q-A-W-NH2",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents"
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "database_name": "LTX-328",
+        "primary_source_name": "LTX-328",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:153-158; raw_xml:Sec5:Reagents"
+        }
+      },
+      "citation_traceability": {
+        "status": "source_verified",
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/raw/paper.xml",
+        "locator": "xml:article-meta doi=10.1007/s00262-014-1540-0 pmid=24676901 pmcid=PMC4024132"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1007_s00262-014-1540-0/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "The linked literature row correctly points to this DOI/PMID; activity target conflict is carried by the DRAMP activity and experiment rows, not by the citation link itself."
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 2,
+    "source_verified": 1
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_ltx328_target_source_conflict",
+      "evidence_context": "DRAMP-derived rows say FEMX-I IC50 >350 µM, while primary Figure 1a supports LTX-328 B16F1 IC50 >350 µM only."
+    },
+    {
+      "caution_code": "modified_sequence_notation",
+      "evidence_context": "Primary source writes Dip explicitly; DRAMP sequence encodes Dip as X. This is source-supported but not silently normalized."
+    }
+  ]
+}

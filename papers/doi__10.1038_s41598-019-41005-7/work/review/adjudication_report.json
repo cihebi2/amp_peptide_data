@@ -1,0 +1,139 @@
+{
+  "adjudication_summary": "Worker-4/6 source re-review replaced the framework-test stop state with source-reviewed final adjudication: Table 1 MIC values were rebuilt by peptide/nanoconjugate entity, linked database rows were reconciled or preserved as explicit source_conflict cautions, mechanism claims were bounded to direct assay and computational evidence classes, and the original rework ticket was closed with no open publication-blocking target.",
+  "caution_findings": [
+    {
+      "caution_code": "hemolysis_exact_values_database_or_figure_only",
+      "evidence_context": "Database rows carry exact hemolysis percentages, while local primary XML/PDF expose the hemolysis assay and Figure 1D but no machine-readable numeric hemolysis table. These rows remain source_conflict rather than source_verified.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "xml:fig=1:Figure 1D; xml:sec=Hemolysis assay",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "database_salmonella_taxon_label_conflict",
+      "evidence_context": "Linked database rows use a Typhimurium ATCC label in places where the primary source labels the Table 1 organism as S. typhi. Activity values are preserved with source locators and the naming conflict remains explicit.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "xml:table=1:row=4; xml:sec=Bacterial Strains",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "camp_name_value_cross_mapping_conflict",
+      "evidence_context": "Two CAMP rows have title/name labels that do not align with the Table 1 MIC pattern; they are retained as source_conflict instead of being silently normalized.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "xml:table=1:headers=AY1C,CAY1",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "salmonella_label_preserved_as_article_label",
+      "evidence_context": "The article table labels the organism as S. typhi while linked database rows use a Typhimurium ATCC label. Final activity rows preserve the article label and database audit records the conflict context.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "xml:table=1:row=4; xml:sec=Bacterial Strains",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "figure_kinetics_not_digitized",
+      "evidence_context": "Figure 2 supports membrane leakage and in-cell NMR context, but exact plotted time-course/leakage values are not available as source tables in local material.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "xml:fig=2",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "supplementary_assets_landing_pages_only",
+      "evidence_context": "The packet has 10 supplementary .bin assets, but local file typing and supplementary_text indexing show HTML landing pages rather than recoverable XLSX/PDF supplementary tables. XML/PDF Table 1 and figure captions were sufficient for the owner-layer repair.",
+      "severity": "caution",
+      "source_locator": {
+        "locator": "supp:landing-1.bin..landing-10.bin",
+        "source_path": "paper_packets/doi__10.1038_s41598-019-41005-7/raw/supplementary_original"
+      }
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-019-41005-7/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/raw/supplementary_original/landing-10.bin",
+    "papers/doi__10.1038_s41598-019-41005-7/source/paper.xml",
+    "papers/doi__10.1038_s41598-019-41005-7/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-019-41005-7/database/linked_sequence_records.jsonl",
+    "papers/doi__10.1038_s41598-019-41005-7/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41598-019-41005-7/final/database_record_verification.json",
+    "papers/doi__10.1038_s41598-019-41005-7/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41598-019-41005-7/work/review/quality_feedback.json"
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Bounded worker-4/6 re-review opened primary XML/PDF, packet-extracted PDF text/figure captions, supplementary index/text entries, HTML landing-page supplementary assets, and all linked database JSONL rows. Remaining limitations are source-conflict cautions, not open rework blockers.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1038_s41598-019-41005-7",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Primary XML methods verify AY1, AY1C, and CAY1 sequences plus AgNP conjugation context; Table 1 supports the MIC matrix. Hemolysis exact percentages, Salmonella taxon-label differences, and two CAMP name/value mismatches remain explicit source_conflict cautions rather than hidden normalization.",
+    "layer_2_activity_toxicity": "Final activity rows now preserve all Table 1 peptide/nanoconjugate MIC cells with entity names, raw values, units, targets, and locators. NA cells are represented as not_active_up_to_100 based on the MIC method range.",
+    "layer_3_mechanism": "Direct mechanism evidence is limited to in-cell NMR, fluorescence dye-leakage, and SEM cell-disruption assays, with MD pore formation recorded separately as computational support.",
+    "worker_6_final_gate": "The previous framework-test-only blocker is resolved because the owner layers were source-reviewed from local material; remaining source conflicts are caution findings and no open rework target remains."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T07:13:40Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_missing_core_fields": 0,
+    "activity_records": 24,
+    "database_records_reviewed": 82,
+    "database_source_conflicts_preserved": 47,
+    "database_status_summary": {
+      "source_conflict": 47,
+      "source_verified": 35
+    },
+    "direct_mechanism_claims": 1,
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "source_review_gap_remaining": false,
+    "supplementary_tables_found": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

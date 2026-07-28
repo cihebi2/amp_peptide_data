@@ -1,0 +1,92 @@
+{
+  "caution_findings": [
+    {
+      "caution_code": "u251_ic50_database_source_conflict_preserved",
+      "evidence_context": "DBAASP states U251 IC50=10 μM, while local primary text supports U251 dose-dependent RT-qPCR inhibition but not that exact IC50 value.",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "WL-1 residue sequence is source-supported, but primary text also reports C-terminal amidation; database sequence strings do not normalize the terminal modification.",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "exact_figure_values_not_fabricated",
+      "evidence_context": "Figure-only exact bar heights are not converted into numeric rows; final activity rows retain only source text/locator-supported values and qualitative trends.",
+      "owner_worker": "worker-2 + worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "supplementary_landing_pages_nonblocking",
+      "evidence_context": "Local supplementary assets are HTML landing/article pages with no structured supplementary data table; primary XML/PDF evidence is sufficient for the repaired layers.",
+      "owner_worker": "worker-6",
+      "severity": "caution"
+    }
+  ],
+  "gate_evidence": {
+    "packet_hard_finding_count": 0,
+    "packet_report": "reports/doi__10.3389_fmicb.2023.1201505.packet_check.json",
+    "publication_quality_pass": true,
+    "publication_report": "reports/doi__10.3389_fmicb.2023.1201505.publication_quality.json",
+    "publication_returncode": 0,
+    "publication_risk_counts": {},
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_report": "reports/doi__10.3389_fmicb.2023.1201505.semantic_gate.json",
+    "semantic_returncode": 0
+  },
+  "generated_at": "2026-05-06T22:49:48Z",
+  "issue_count": 0,
+  "paper_id": "doi__10.3389_fmicb.2023.1201505",
+  "qc_failure_reasons": [],
+  "review_status": "accepted_with_cautions",
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "exact_figure_panel_values_not_locally_digitized",
+      "impact": "Exact graph-derived scalar values are not fabricated; source-supported primary rows remain publication-grade with caution.",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0001.jpg",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/oa_package/local-APD6-pmc_package/PMC10277505/fmicb-14-1201505-g0002.jpg",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt"
+      ],
+      "tools_attempted": [
+        "pdftotext text review",
+        "XML/figure-caption review",
+        "local figure-image availability check"
+      ],
+      "why_unrecoverable": "Exact bar heights for all figure concentrations are image-only and not present as machine-readable local tables; source text supplies the decisive 50 μM cytotoxicity threshold and Vero plaque 10 μM 50% antiviral point."
+    },
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "supplementary_assets_are_html_landing_pages_no_structured_tables",
+      "impact": "No source-supported activity/toxicity/mechanism values are lost; primary XML/PDF and figure captions provide the needed review evidence.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-3.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-4.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-5.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-6.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-7.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-8.bin",
+        "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/landing-10.bin"
+      ],
+      "tools_attempted": [
+        "file type identification",
+        "HTML title/text extraction",
+        "rg targeted term search",
+        "supplementary_tables.json inspection"
+      ],
+      "why_unrecoverable": "The staged supplementary .bin assets are HTML landing/article/reference pages, and no structured XLSX/CSV/PDF supplementary data table is locally present."
+    }
+  ]
+}

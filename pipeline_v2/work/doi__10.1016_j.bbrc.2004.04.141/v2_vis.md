@@ -1,0 +1,1 @@
+[{"assertion_index":0,"db_claimed":{"organism":"SARS-CoV CPE inhibition in Vero E6 cells","endpoint":"IC50","value":"","peptide":""},"verification_outcome":"cannot_determine","normalization_note":"none","is_database_error":false,"evidence":null,"short_reason":"DB assertion lacks a specific value and peptide identity, so provided cells cannot support a deterministic comparison."}]

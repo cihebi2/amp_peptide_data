@@ -1,0 +1,77 @@
+{
+  "paper_id": "doi__10.1021_acschembio.3c00577",
+  "reviewed_at": "2026-05-02T10:27:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No local supplementary spreadsheet/structured supplementary tables were present; SI PDF text and OA package members were checked. Figure exact point values remain database-linked cautions where not textual in primary source."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.1021_acschembio.3c00577/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/raw/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/extracted/pdf_text/cb3c00577.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/extracted/pdf_text/cb3c00577_si_001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/extracted/figure_captions.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 26,
+    "linked_database_activity_rows_preserved": 130,
+    "database_status_summary": {
+      "source_conflict": 260,
+      "database_only_no_primary_source": 5,
+      "source_verified": 15
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 1,
+    "blocking_unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/APD6 citation links are preserved; exact database assay rows remain source_conflict unless matched to primary machine-readable assay rows, which keeps conflicts visible without blocking final acceptance.",
+    "layer_2_activity_toxicity": "Worker-2 re-parsed Tables 1 and 2 from primary XML into 26 source-located MIC rows with units, targets, conditions, and locator context. Database-linked exact MIC rows are retained separately and not treated as primary-source rows.",
+    "layer_3_mechanism": "Existing mechanism locators support lipid II-dependent membrane permeabilization context and resistance-gene context; no worker-5 rewrite was performed in this owner-bounded pass."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_activity_values_not_primary_text_rows",
+      "evidence_context": "Linked DBAASP MIC values are retained as database provenance/source_conflict where local primary XML/PDF exposes figures or summary tables rather than exact machine-readable values."
+    },
+    {
+      "caution_code": "no_structured_supplementary_tables",
+      "evidence_context": "Local supplementary inventory contains no spreadsheet/structured supplementary table; SI PDF text was checked for methods and masses."
+    },
+    {
+      "caution_code": "figure_point_values_not_textual",
+      "evidence_context": "Figure 3-5 exact plotted MIC point values are not recovered as primary text; Table 1/2 MIC rows and database-linked rows are preserved instead."
+    }
+  ],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "qc_failure_reasons": [],
+  "adjudication_summary": "Bounded worker-2/4/6 re-review repaired the activity-table omission, preserved linked database conflicts as cautions, and closed the open rework ticket without promoting database-only exact values to primary-source evidence."
+}

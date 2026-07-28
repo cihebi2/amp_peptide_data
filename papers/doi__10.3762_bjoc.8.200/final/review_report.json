@@ -1,0 +1,114 @@
+{
+  "paper_id": "doi__10.3762_bjoc.8.200",
+  "reviewed_at": "2026-05-10T17:06:02Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "packet_oa_nxml",
+    "database_jsonl"
+  ],
+  "materials_exhausted": {
+    "paper_xml": "paper-local source/paper.xml opened; symlink target is BJOC RSS landing XML, not article body",
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": "local supplementary_original bin/html files opened/typed/searched; no source-changing supplementary table recovered",
+    "merged_database_rows": true
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3762_bjoc.8.200/packet_manifest.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/locators/locator_index.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/extraction/extraction_status.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/database/database_source_manifest.json",
+    "papers/doi__10.3762_bjoc.8.200/source/paper.xml",
+    "paper_packets/doi__10.3762_bjoc.8.200/extracted/oa_package/local-APD6-pmc_package/PMC3511009/Beilstein_J_Org_Chem-08-1753.nxml",
+    "paper_packets/doi__10.3762_bjoc.8.200/extracted/pdf_text/Beilstein_J_Org_Chem-08-1753.txt",
+    "paper_packets/doi__10.3762_bjoc.8.200/extracted/oa_package/local-APD6-pmc_package/PMC3511009/Beilstein_J_Org_Chem-08-1753.pdf",
+    "paper_packets/doi__10.3762_bjoc.8.200/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3762_bjoc.8.200/raw/supplementary_original",
+    "paper_packets/doi__10.3762_bjoc.8.200/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3762_bjoc.8.200/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3762_bjoc.8.200/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3762_bjoc.8.200/database/linked_dramp_activity_records.jsonl"
+  ],
+  "adjudication_summary": "Source-reviewed rework closed rwk-complete-test-0001 for worker-2/4/6: primary Tables 2-5 now populate activity/toxicity rows, database conflicts are adjudicated rather than hidden, and final review is accepted_with_cautions because remaining conflicts are explicit and nonblocking.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 88,
+    "activity_endpoint_counts": {
+      "MIC": 78,
+      "percent hemolysis": 4,
+      "IC50": 6
+    },
+    "mechanistic_context_records": 2,
+    "database_record_audits": 185,
+    "database_status_summary": {
+      "source_verified": 134,
+      "source_conflict": 50,
+      "database_only_no_primary_source": 1
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "table_2_repaired": true,
+    "table_3_repaired": true,
+    "table_4_repaired": true,
+    "table_5_repaired": true,
+    "database_conflicts_preserved_as_cautions": true,
+    "paper_source_xml_symlink_is_rss": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/DRAMP/APD6 rows were reconciled against primary Table 1 identity and Tables 2-5 activity/toxicity evidence. Matching primary rows are source_verified; unit/database-only mismatches are preserved as source_conflict or database_only_no_primary_source.",
+    "layer_2_activity_toxicity": "Worker-2 repair extracted 88 primary rows from Tables 2-5 and retained dash/not-tested entries separately without fabricating values.",
+    "layer_3_mechanism": "Mechanism is accepted only as indirect functional and SAR evidence from killing/growth kinetics and MIC comparisons; no direct molecular mechanism is overclaimed.",
+    "final_gate": "No blocking/major issue remains after bounded local source recovery; open rework targets are cleared with cautions preserved."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "paper_xml_symlink_is_rss",
+      "evidence_context": "The paper-local source/paper.xml symlink resolves to landed xml/landing-1.xml RSS; DOI-matching OA NXML/PDF was used for primary-source evidence."
+    },
+    {
+      "caution_code": "database_unit_conflicts_preserved",
+      "evidence_context": "Some DBAASP database rows corresponding to Table 3 report µM while the primary table reports µg/mL; these remain source_conflict."
+    },
+    {
+      "caution_code": "apd6_activity_database_only",
+      "evidence_context": "APD6 AP04276 activity narrative remains database_only_no_primary_source, not promoted to source_verified."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Figure 2/3 curves support mechanism context but exact datapoints were not extracted from images."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_ids": [],
+    "resolved_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "gate_results": {
+    "semantic_gate_ready": true,
+    "publication_grade_ready": true,
+    "validator_contract_ready": true,
+    "structural_ready": true
+  }
+}

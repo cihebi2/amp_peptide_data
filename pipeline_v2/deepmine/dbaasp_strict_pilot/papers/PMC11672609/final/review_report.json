@@ -1,0 +1,242 @@
+{
+  "paper_id": "PMC11672609",
+  "worker_id": "worker-6",
+  "reviewed_at": "2026-07-28T02:38:19.023033+00:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "needs_targeted_rework",
+  "publication_grade": false,
+  "validator_contract_passed": false,
+  "source_review_depth": {
+    "paper_xml": {
+      "inspected": true,
+      "locators_checked": [
+        "xml:p:17",
+        "xml:p:19",
+        "xml:p:20",
+        "xml:p:44",
+        "xml:table-wrap:2"
+      ]
+    },
+    "paper_pdf": {
+      "inspected": true,
+      "packet_text_index_present": true
+    },
+    "oa_package": {
+      "inspected": true,
+      "packet_manifest_binding_present": true
+    },
+    "supplementary_assets": {
+      "inspected": true,
+      "supplementary_text_index_present": true
+    },
+    "merged_database_rows": {
+      "inspected": true,
+      "candidate_machine_rows_are_machine_evidence_only": true
+    }
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "known_missing_or_blocked_materials": [],
+    "unavailable_sources": []
+  },
+  "checked_inputs": [
+    "packets/PMC11672609/packet_manifest.json",
+    "packets/PMC11672609/extracted/xml_sections.json",
+    "packets/PMC11672609/extracted/pdf_text.jsonl",
+    "packets/PMC11672609/extracted/supplementary_index.json",
+    "packets/PMC11672609/extracted/supplementary_text.jsonl",
+    "packets/PMC11672609/database/database_source_manifest.json",
+    "packets/PMC11672609/database/authoritative_match_report.json",
+    "packets/PMC11672609/database/dbaasp_machine_extracted_rows.jsonl",
+    "packets/PMC11672609/database/linked_article_records.jsonl",
+    "packets/PMC11672609/database/linked_assay_records.jsonl",
+    "packets/PMC11672609/database/linked_sequence_records.jsonl",
+    "packets/PMC11672609/database/linked_literature_records.jsonl",
+    "packets/PMC11672609/analysis/activity_toxicity_evidence.worker2.json",
+    "papers/PMC11672609/source/paper.xml",
+    "papers/PMC11672609/final/activity_toxicity_evidence.json",
+    "papers/PMC11672609/final/database_record_verification.json",
+    "papers/PMC11672609/final/mechanism_ontology_record.json",
+    "packets/PMC11672609/final/activity_toxicity_evidence.json",
+    "packets/PMC11672609/final/mechanism_evidence.json",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_contract_validation.json"
+  ],
+  "semantic_quality_checks": {
+    "runtime_open_ticket_ids_verified": [
+      "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION"
+    ],
+    "owner_nonterminal_response_present": true,
+    "owner_contract_passed": false,
+    "final_contract_passed": false,
+    "table2_endpoint_records_checked": 12,
+    "hacat_toxicity_record_checked": 1,
+    "source_text_printed_to_terminal": false,
+    "database_fallback_rows_not_promoted": true,
+    "authoritative_dbaasp_ingest_ready_false": true,
+    "mechanism_ontology_contract_compared": true
+  },
+  "per_layer_decision_rationale": {
+    "database_record_verification": "Layer 1 remains accepted with cautions: no linked authoritative DBAASP rows are present, so fallback rows remain unresolved machine evidence and are not ingest-ready.",
+    "activity_toxicity_evidence": "Layer 2 remains blocked because the current owner-lane activity artifact still has MIC condition-normalization failures for the listed record ids.",
+    "mechanism_ontology_record": "Layer 3 remains accepted with cautions and is mirrored to the packet mechanism final alias."
+  },
+  "caution_findings": [
+    {
+      "finding_id": "database_no_authoritative_linked_rows",
+      "layer": "database_record_verification",
+      "status": "accepted_with_cautions_not_ingest_ready"
+    },
+    {
+      "finding_id": "runtime_open_activity_condition_normalization_ticket",
+      "layer": "activity_toxicity",
+      "status": "blocking_rework_target",
+      "ticket_id": "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION"
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION",
+      "worker": "worker-2",
+      "layer": "activity_toxicity",
+      "artifact_path": "packets/PMC11672609/analysis/activity_toxicity_evidence.worker2.json",
+      "failing_object": [
+        "PMC11672609-W2-ACT-013",
+        "PMC11672609-W2-ACT-015"
+      ],
+      "failure_code": "mic_unqualified_16h_without_condition_conflict",
+      "source_evidence_to_check": [
+        "xml:p:17",
+        "xml:p:44",
+        "supp:table=S1"
+      ],
+      "required_action": "Revise the listed MIC records so the incubation-time field is not an unqualified method-only value; preserve endpoint values and add explicit condition-conflict or qualified method-condition status with locators.",
+      "acceptance_check": "Worker-6 validation over owner and final activity_toxicity_evidence artifacts reports zero mic_unqualified_16h_without_condition_conflict failures.",
+      "validation_artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_contract_validation.json"
+    }
+  ],
+  "final_counts": {
+    "activity_records": 44,
+    "toxicity_records": 3,
+    "database_record_audits": 13,
+    "mechanism_claims": 6,
+    "review_rework_targets": 1
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "semantic": 1,
+    "publication": 2
+  },
+  "gate_artifact_paths": {
+    "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_final_packet_gate.PMC11672609.json",
+    "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_final_semantic_gate.PMC11672609.json",
+    "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_final_publication_quality.PMC11672609.json",
+    "single_paper_manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/worker6_single_paper_manifest.json"
+  },
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/database_record_verification.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/database_record_verification.json"
+    },
+    "review_report": {
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/review_report.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/review_report.json"
+    },
+    "mechanism_ontology_record": {
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/mechanism_ontology_record.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/mechanism_ontology_record.json"
+    },
+    "aligned_mechanism_final": {
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/mechanism_ontology_record.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/mechanism_evidence.json"
+    }
+  },
+  "runtime_open_ticket_ids_assigned_to_worker6": [
+    "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION"
+  ],
+  "open_rework_ticket_count": 1,
+  "open_rework_ticket_ids": [
+    "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION"
+  ],
+  "closed_repaired_ticket_ids": [
+    "rwk-PMC11672609-campaign-r01-BF-PMC11672609-W1-REVIEW-TICKET-COUNT-FIELD-OMITTED",
+    "rwk-PMC11672609-campaign-r01-BF-PMC11672609-W2-ACTIVITY-CONDITION-CONFLATION",
+    "rwk-PMC11672609-campaign-r01-BF-PMC11672609-W2-ACTIVITY-CONDITION-LOCATOR-CONFLATION",
+    "rwk-PMC11672609-campaign-r01-BF-PMC11672609-W4-DATABASE-STALE-SUPPLEMENT-CAUTION",
+    "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W4-DB-CANDIDATE-LOCATOR-DOUBLE-PREFIX",
+    "rwk-PMC11672609-campaign-r02-BF-W2-ACTIVITY-TOXICITY-FIELD-INTEGRITY",
+    "rwk-PMC11672609-campaign-r02-BF-W4-DATABASE-FINAL-MATERIAL-OBSERVATION-STALE",
+    "rwk-PMC11672609-campaign-r02-BF-W5-MECHANISM-FINAL-SUPPLEMENT-CAUTION-STALE",
+    "rwk-PMC11672609-campaign-r03-BF-PMC11672609-W2-ANTI-BIOFILM-TIMEKILL-ACTIVITY-OMISSION",
+    "rwk-PMC11672609-campaign-r03-BF-PMC11672609-W2-TARGET-CLASS-CELL-LINE-OMITTED"
+  ],
+  "terminal_response_appended": false,
+  "terminal_response_ticket_ids": [],
+  "terminal_rework_response_status": "not_appended_contract_failed",
+  "worker2_nonterminal_repair": {
+    "ticket_id": "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION",
+    "request_present": true,
+    "owner_response_count": 1,
+    "owner_nonterminal_response_present": true,
+    "owner_responses": [
+      {
+        "line_number": 29,
+        "response_by": "worker-2",
+        "response_status": "repair_ready_for_adjudication",
+        "analysis_can_resume": true,
+        "has_evidence_paths": true
+      }
+    ],
+    "existing_worker6_terminal_response_count": 0,
+    "existing_worker6_terminal_response_lines": [],
+    "pass": true
+  },
+  "worker6_ticket_contract_validation": {
+    "ticket_id": "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION",
+    "overall_contract_pass": false,
+    "validation_artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/review/validation/worker6_r02_condition_normalization_contract_validation.json",
+    "owner_activity_contract_pass": false,
+    "final_activity_contract_pass": false,
+    "failure_codes": [
+      "mic_unqualified_16h_without_condition_conflict"
+    ]
+  },
+  "strict_gate": {
+    "required_rework_count": 1,
+    "review_rework_targets": 1,
+    "latest_gate_summary": {
+      "stage": "final",
+      "packet": {
+        "paper_count": 1,
+        "hard_finding_count": 0,
+        "open_rework_ticket_count": 1,
+        "open_rework_ticket_ids": [
+          "rwk-PMC11672609-campaign-r02-BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION"
+        ]
+      },
+      "semantic": {
+        "paper_count": 1,
+        "publication_grade_pass_count": 0,
+        "publication_grade_fail_count": 1,
+        "issue_count": 2
+      },
+      "publication": {
+        "paper_count": 1,
+        "publication_grade_pass": false,
+        "risk_counts": {
+          "open_rework_targets": 1
+        }
+      }
+    }
+  },
+  "adjudication_summary": "Worker-6 rechecked the current worker-2 activity artifact and rebuilt the final mirror state, but did not close the runtime ticket because the owner-lane contract still fails for two MIC condition records."
+}

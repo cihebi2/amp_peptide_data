@@ -1,0 +1,127 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1186_s13568-019-0843-0",
+  "doi": "10.1186/s13568-019-0843-0",
+  "run_id": "codex_cli_rereview_20260503_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "codex_cli_worker6_mechanism_adjudication_after_rework",
+  "generated_at": "2026-05-03T04:34:55Z",
+  "reviewed_at": "2026-05-03T04:34:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from XML/PDF/OA figures; automated placeholders were replaced.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "P5 and the truncated peptides disrupt bacterial membranes, supported by PI uptake in P. aeruginosa ATCC 27853 and S. aureus ATCC 25923 and NPN uptake in P. aeruginosa.",
+      "entity_scope": "P5 and P5 truncation peptides",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide uptake assay",
+        "NPN outer-membrane permeability assay"
+      ],
+      "targets": [
+        "P. aeruginosa ATCC 27853",
+        "S. aureus ATCC 25923"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1186_s13568-019-0843-0/raw/paper.xml",
+        "locator": "xml:sec=23:Outer membrane disruption and permeabilization;xml:fig=5"
+      },
+      "limitations": "Fig. 5 supports qualitative/relative permeability changes; exact curve values are not text-tabulated and are not fabricated."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "The peptides induce cytoplasmic membrane depolarization, with P. aeruginosa showing fluorescence increases over time and S. aureus depolarization except weaker P5-CT2/P5-CT3 behavior.",
+      "entity_scope": "P5 and P5 truncation peptides",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "DisC3-5 membrane depolarization assay"
+      ],
+      "targets": [
+        "P. aeruginosa ATCC 27853",
+        "S. aureus ATCC 25923"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1186_s13568-019-0843-0/raw/paper.xml",
+        "locator": "xml:sec=24:Cytoplasmic membrane depolarization;xml:fig=6"
+      },
+      "limitations": "Depolarization is retained as direct membrane-mechanism evidence; exact per-curve fluorescence values are not tabulated."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "FACS PI-positive cell percentages after 2x MIC treatment support membrane integrity loss, with stronger effects for P5, P5-CT1, and P5-NT1 than for shorter truncations.",
+      "entity_scope": "P5 and P5 truncation peptides",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "flow cytometry PI staining"
+      ],
+      "targets": [
+        "P. aeruginosa ATCC 27853",
+        "S. aureus ATCC 25923"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1186_s13568-019-0843-0/raw/paper.xml",
+        "locator": "xml:sec=25:Flow cytometry analysis;xml:fig=7"
+      },
+      "supporting_values": {
+        "P_aeruginosa_PI_positive_percent": {
+          "control": "2",
+          "P5": "85.7",
+          "P5-CT1": "86.1",
+          "P5-CT2": "9.1",
+          "P5-CT3": "1.2",
+          "P5-NT1": "87.9",
+          "P5-NT2": "46.7",
+          "P5-NT3": "28.5"
+        },
+        "S_aureus_PI_positive_percent": {
+          "control": "0.9",
+          "P5": "56.0",
+          "P5-CT1": "38.9",
+          "P5-CT2": "17.6",
+          "P5-CT3": "17.1",
+          "P5-NT1": "55.0",
+          "P5-NT2": "49.0",
+          "P5-NT3": "42.4"
+        }
+      },
+      "limitations": "The source text contains selected PI-positive percentages; this does not by itself quantify all membrane assays."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "CD spectra in membrane-mimic environments and in LTA/LPS support amphipathic helical interaction context, but this is supporting structure/interaction evidence rather than a standalone killing mechanism.",
+      "entity_scope": "P5 and P5 truncation peptides",
+      "evidence_class": "supporting_mechanism_context",
+      "direct_assay_types": [],
+      "targets": [
+        "LTA",
+        "LPS",
+        "SDS",
+        "TFE"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1186_s13568-019-0843-0/raw/paper.xml",
+        "locator": "xml:sec=19:Structure of Peptides in Various Environments;xml:fig=1"
+      },
+      "limitations": "CD/LTA/LPS data are not promoted to direct killing mechanism without permeability/depolarization assays."
+    }
+  ],
+  "quality_controls": {
+    "placeholder_claims_remaining": 0,
+    "direct_mechanism_claims_with_assay_types": 3,
+    "mechanism_locator_gap_count": 0,
+    "overclaim_guard": "CD/LTA/LPS and biofilm context are not promoted beyond supporting evidence."
+  },
+  "caution_findings": [
+    {
+      "scope": "figure_quantification",
+      "severity": "caution",
+      "status": "selected_text_values_only",
+      "note": "Source text provides selected FACS percentages and qualitative trends; unreported graph values are not fabricated."
+    }
+  ]
+}

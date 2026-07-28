@@ -1,0 +1,85 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1021_acsinfecdis.6b00045",
+  "doi": "10.1021/acsinfecdis.6b00045",
+  "run_id": "codex_cli_rereview_20260502_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "codex_cli_worker6_mechanism_adjudication",
+  "generated_at": "2026-05-02T13:54:19Z",
+  "reviewed_at": "2026-05-02T13:54:19Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Arenicin-3, tachyplesin-1, polyphemusin-1, gomesin, and protegrin-1 showed direct E. coli ATCC 25922 inner membrane permeabilization in the SYTOX Green flow-cytometry assay at lethal concentrations.",
+      "entity_scope": [
+        "arenicin-3",
+        "tachyplesin-1",
+        "polyphemusin-1",
+        "gomesin",
+        "protegrin-1"
+      ],
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SYTOX Green inner membrane permeability flow cytometry"
+      ],
+      "target_context": {
+        "species": "Escherichia coli",
+        "strain": "ATCC 25922"
+      },
+      "source_locator": {
+        "kind": "supplementary_pdf_text",
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.6b00045/extracted/pdf_text/id6b00045_si_001.txt",
+        "locator": "supp:id6b00045_si_001.pdf:Figure S3 and Inner membrane permeability method",
+        "method_locator": "paper_packets/doi__10.1021_acsinfecdis.6b00045/extracted/pdf_text/id6b00045_si_001.txt:lines 292-317",
+        "result_locator": "paper_packets/doi__10.1021_acsinfecdis.6b00045/extracted/pdf_text/id6b00045_si_001.txt:lines 316-324"
+      },
+      "limitations": "Figure S3 exact per-peptide dose-response values were not text-tabulated; claim is qualitative/direct for permeability and keeps lethal-concentration range as reported in text."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Thanatin did not permeabilize E. coli cells at lethal concentrations in the same SYTOX Green assay, so this paper does not support assigning thanatin killing to cytoplasmic membrane permeabilization.",
+      "entity_scope": [
+        "thanatin"
+      ],
+      "evidence_class": "direct_mechanism_negative",
+      "direct_assay_types": [
+        "SYTOX Green inner membrane permeability flow cytometry"
+      ],
+      "target_context": {
+        "species": "Escherichia coli",
+        "strain": "ATCC 25922"
+      },
+      "source_locator": {
+        "kind": "supplementary_pdf_text",
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.6b00045/extracted/pdf_text/id6b00045_si_001.txt",
+        "locator": "supp:id6b00045_si_001.pdf:Figure S3 result text",
+        "result_locator": "paper_packets/doi__10.1021_acsinfecdis.6b00045/extracted/pdf_text/id6b00045_si_001.txt:lines 319-333"
+      },
+      "limitations": "The paper cites prior literature for thanatin agglutination; that literature-derived mechanism is not promoted to a direct mechanism of this paper."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The paper correlates amphipathicity, hydrophobicity, antimicrobial potency, and toxicity across beta-hairpin peptides, but those correlations are physicochemical context rather than standalone direct mechanism assays.",
+      "entity_scope": "beta-hairpin peptide panel",
+      "evidence_class": "mechanism_context_inferred",
+      "direct_assay_types": [],
+      "source_locator": {
+        "kind": "primary_xml_sections_and_figures",
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.6b00045/raw/paper.xml",
+        "locator": "xml:sec=3:Physicochemical Analysis; xml:fig=1; xml:fig=3"
+      },
+      "limitations": "Correlation figures are not overclaimed as direct membrane-disruption proof."
+    }
+  ],
+  "quality_controls": {
+    "direct_mechanism_claims_with_assay_types": 2,
+    "context_claims_not_overpromoted": true,
+    "all_claims_have_source_locators": true
+  },
+  "adjudication_note": "Worker-6 replaced automated mechanism placeholder text with source-reviewed direct/context claims while preserving limits on graph-only exact values and literature-derived thanatin mechanism."
+}

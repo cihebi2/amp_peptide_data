@@ -1,0 +1,79 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-571433_v1",
+  "generated_at": "2026-05-05T18:50:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_cautions": [
+    {
+      "caution_code": "primary_sequence_conflict_preserved",
+      "severity": "caution",
+      "evidence_context": "Primary source reports two different 36-aa Cc-AFP1 sequences: Edman/abstract sequence RVCFRPVATYLGVCGVSGACRDHCVKLGSCVYKGPG and Table 2 sequence RVCFRPVATYLGVCGVSGACRDRCVKLGSCVYKGPG. No linked sequence database row is locally available to resolve this.",
+      "source_locators": [
+        "pdf_text:landing-1.txt:29-30",
+        "pdf_text:landing-1.txt:242-259"
+      ]
+    },
+    {
+      "caution_code": "xml_extraction_not_primary_for_tables",
+      "severity": "caution",
+      "evidence_context": "XML-derived sections did not expose usable focused article sections/tables, so activity and mechanism repair used the local PDF text plus Research Square article HTML.",
+      "source_locators": [
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/xml_sections.json",
+        "pdf_text:landing-1.txt:192-238"
+      ]
+    },
+    {
+      "caution_code": "supplementary_assets_no_extra_tables",
+      "severity": "caution",
+      "evidence_context": "Packet supplementary .bin assets are HTML/support/privacy pages or article HTML, not recoverable spreadsheet/office/PDF supplementary tables.",
+      "source_locators": [
+        "supp:landing-1.bin",
+        "supp:landing-3.bin",
+        "supp:landing-4.bin"
+      ]
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "nonblocking_source_limitations": [
+    {
+      "code": "xml_sections_not_article_focused",
+      "severity": "caution",
+      "source_paths_checked": [
+        "papers/doi__10.21203_rs.3.rs-571433_v1/source/paper.xml",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/xml_sections.json"
+      ],
+      "finding": "The XML/derived xml_sections artifact is not a reliable focused article-section source for this DOI; the source-reviewed values were therefore taken from the paper PDF text and Research Square article HTML.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "supplementary_assets_are_html_not_tables",
+      "severity": "caution",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-4.bin",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/supplementary_text.jsonl"
+      ],
+      "finding": "The three packet supplementary .bin assets are HTML pages, not local XLSX/DOCX/PDF supplementary data tables; no additional activity or toxicity tables were recoverable from them.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "linked_database_rows_literature_only",
+      "severity": "caution",
+      "source_paths_checked": [
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/database/database_source_manifest.json",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/database/linked_literature_records.jsonl"
+      ],
+      "finding": "The packet contains one DBAASP linked literature row and zero linked sequence, assay, experiment, or DRAMP activity rows; database curation is therefore limited to DOI/title traceability plus primary-source peptide evidence.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "gate_expectation": "strict semantic and publication gates should pass after worker-2/4/6 repair; acceptance remains accepted_with_cautions, not clean."
+}

@@ -1,0 +1,70 @@
+{
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from local XML/PDF. The paper supports phenotypic antifungal efficacy and recombinant expression context, not a direct molecular mechanism assay.",
+  "generated_at": "2026-05-03T03:43:53Z",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-phenotypic-antifungal-001",
+      "claim_text": "Recombinant thanatin has source-supported phenotypic antifungal activity against five fungal plant pathogens in MIC/MFC testing.",
+      "direct_assay_types": [],
+      "entity_scope": "recombinant thanatin",
+      "evidence_class": "phenotypic_activity_evidence",
+      "limitations": "MIC/MFC and growth-inhibition evidence do not identify a direct molecular target or membrane mechanism in this paper.",
+      "source_locator": {
+        "locator": "xml:table=2:row=6",
+        "method_locator": "xml:sec=9:Determination of MIC and MFC",
+        "results_locator": "xml:sec=18:MIC and MFC results",
+        "source_path": "source/paper.xml"
+      }
+    },
+    {
+      "claim_id": "mech-expression-confirmation-002",
+      "claim_text": "The paper verifies recombinant thanatin expression and secretion by SDS-PAGE size comparison, but this is expression identity evidence rather than antimicrobial mechanism evidence.",
+      "direct_assay_types": [],
+      "entity_scope": "recombinant thanatin produced in HEK293 medium",
+      "evidence_class": "identity_expression_context",
+      "limitations": "The exact sequence evidence is assigned to Additional file 1, which is not locally available; this claim is not used for source-verified database sequence acceptance.",
+      "source_locator": {
+        "locator": "xml:fig=1:Fig. 1",
+        "method_locator": "xml:sec=7:SDS-PAGE analysis",
+        "source_path": "source/paper.xml"
+      }
+    }
+  ],
+  "paper_id": "doi__10.1186_s13568-018-0710-4",
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-05-03T03:43:53Z",
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "primary_thanatin_sequence_supplement_unavailable_locally",
+      "impact": "Thanatin MIC/MFC values and article citation are source-supported, but the linked DBAASP peptide sequence identity cannot be marked source_verified from local primary material. Publication-grade acceptance remains blocked under obtainable-only mode.",
+      "owner_worker": "worker-4 + worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1186_s13568-018-0710-4/raw/paper.xml",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/raw/paper.pdf",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/raw/supplementary_original/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s13568-018-0710-4/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1186_s13568-018-0710-4/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets_current/papers/doi__10.1186_s13568-018-0710-4/",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1186_s13568-018-0710-4/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "xml table parse of raw/paper.xml",
+        "pdf text review of extracted landing-1.txt",
+        "rg scan of local supplementary landing HTML for MOESM/DOCX links",
+        "file/find inventory of paper-local supplementary folders",
+        "linked DBAASP assay/experiment/literature JSONL review",
+        "merged all_sequences.csv lookup for DBAASP sequence value as database-only evidence",
+        "file type check of local supplementary .bin assets",
+        "targeted merged-corpus find for 13568_2018_710_MOESM1/PMC6214488 DOCX assets"
+      ],
+      "why_unrecoverable": "The paper XML and local Springer landing HTML identify Additional file 1 as the thanatin nucleotide/amino-acid sequence DOCX, but no DOCX or PMC OA package member exists in the paper-local packet, downloaded_assets, landed_assets, or landed_assets_current folders. The linked DBAASP sequence catalog gives a database sequence, but that is not a primary-source sequence locator. Fresh bounded re-review at 2026-05-05T23:05:31Z confirmed the local supplementary .bin assets are HTML landing pages and targeted local corpus search did not find the required DOCX asset."
+    }
+  ]
+}

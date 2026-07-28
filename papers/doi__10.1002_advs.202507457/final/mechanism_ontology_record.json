@@ -1,0 +1,54 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1002_advs.202507457",
+  "doi": "10.1002/advs.202507457",
+  "worker": "worker-6",
+  "role": "adjudicated mechanism scope guard",
+  "protocol": "amp_three_layer_v2_re_review",
+  "generated_at": "2026-05-01T00:59:50Z",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism scope; no direct antimicrobial mechanism assay is asserted.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-kppepgen-computational-generation",
+      "claim_text": "KPPepGen uses knowledge-aware pathogen prompts with diffusion generation to design pathogen-specific candidate antimicrobial peptides.",
+      "entity_scope": "KPPepGen generated peptide candidates Pep1-Pep10",
+      "evidence_class": "computational_model_design",
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202507457/source/paper.xml",
+        "locator": "xml:abstract; xml:sec=2.1; xml:fig=1"
+      },
+      "limitations": "This is a computational design/generation mechanism, not a direct biological antimicrobial mechanism assay."
+    },
+    {
+      "claim_id": "mech-002-docking-md-screening-computational",
+      "claim_text": "Candidate prioritization used pathogen-specific classifiers, docking, MD simulation, MM-PBSA binding free-energy estimates, and RMSF stability analyses before wet-lab testing.",
+      "entity_scope": "Pep1-Pep10 candidate selection workflow",
+      "evidence_class": "computational_only",
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202507457/source/paper.xml",
+        "locator": "xml:sec=2.6; xml:fig=6a; supplementary:S2.2"
+      },
+      "limitations": "Docking and MD are screening evidence only and are not promoted to direct mechanism in bacterial cells."
+    },
+    {
+      "claim_id": "mech-003-wet-lab-phenotype-no-direct-mechanism",
+      "claim_text": "Wet-lab MIC and CCK-8 assays support antimicrobial phenotype and low cytotoxicity for generated peptides, but the paper does not provide direct membrane disruption, uptake, target-binding, or resistance mechanism assays for Pep1-Pep10.",
+      "entity_scope": "Pep1-Pep10 wet-lab evaluation",
+      "evidence_class": "phenotype_supported_no_direct_mechanism",
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202507457/source/paper.xml",
+        "locator": "xml:sec=2.6; xml:fig=6b-c"
+      },
+      "limitations": "Mechanism remains bounded to phenotype plus computational screening; no direct mechanism assay type is assigned."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "mechanism_scope",
+      "severity": "caution",
+      "status": "no_direct_antimicrobial_mechanism_assay",
+      "note": "MIC/CCK-8 establish activity and cytotoxicity, while docking/MD are computational screens only."
+    }
+  ]
+}

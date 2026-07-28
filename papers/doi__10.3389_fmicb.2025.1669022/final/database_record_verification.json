@@ -1,0 +1,160 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2025.1669022",
+  "generated_at": "2026-05-07T16:55:24Z",
+  "review_layer": "worker-4_source_reviewed_database_record_audit",
+  "audit_scope": "APD6 linked rows were rechecked against paper XML/PDF text, OA package figures, packet database snapshots, and merged APD6 sequence/activity/literature tables. Conflicts are preserved instead of normalized away.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 2,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP05958",
+      "sequence_key": "APD6:AP05958",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "Structure-activity relationship study of anoplin.",
+      "database_measure": "APD6 linked experiment row describes Ano-5K/anoplin activity against S. aureus and E. coli, not RapTB activity in this paper.",
+      "sequence_check": {
+        "database_sequence": "GLLKKIKTLL",
+        "primary_source_sequence": "not present in doi__10.3389_fmicb.2025.1669022 local XML/PDF",
+        "agreement": "conflict",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records:row=1"
+        }
+      },
+      "citation_traceability": {
+        "database_reference": "J Pept Sci. 2005 Feb;11(2):113-21. doi: 10.1002/psc.598",
+        "paper_article_meta": "10.3389/fmicb.2025.1669022; PMID 41209728; PMCID PMC12592065",
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "conflict_flags": [
+        "wrong_paper_linkage",
+        "sequence_not_in_primary_source",
+        "activity_target_not_raptb_or_mtb"
+      ],
+      "conflict_context": "The APD6 AP05958 row is an anoplin/Ano-5K database record linked into this packet through a PMID/reference mismatch. It is not supported as a RapTB record by this paper and must not be merged into RapTB activity conclusions.",
+      "review_notes": "Preserved as source_conflict so downstream adjudication does not treat its MIC values as primary-source RapTB assay rows."
+    },
+    {
+      "source_id": "APD6:AP05999",
+      "sequence_key": "APD6:AP05999",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "RapTB: a lung-derived hemoglobin fragment with activity against Mycobacterium tuberculosis.",
+      "database_measure": "APD6 comment reports M. tuberculosis activity with maximum 53% inhibition at 50 uM and 13% macrophage cytotoxicity at 50 uM.",
+      "name_check": {
+        "database_name": "RapTB",
+        "primary_source_name": "RapTB; HBB(112-147)",
+        "agreement": "matches"
+      },
+      "sequence_check": {
+        "database_sequence": "VCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "primary_source_sequence": "VCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "agreement": "matches",
+        "source_locator": {
+          "source_path": "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml",
+          "locator": "xml:sec=8:Peptide origin and synthesis; xml:sec=17:Results; xml:supplementary-material=SM1",
+          "merged_database_sequence_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:6000"
+        }
+      },
+      "source_organism_check": {
+        "database_source": "lung; Homo sapiens",
+        "primary_source": "human lung lysate; Homo sapiens",
+        "agreement": "matches"
+      },
+      "modification_check": {
+        "primary_source": "natural extracted fragment and synthetic peptide; mass-spectrometry text indicates dimer/intermolecular disulfide in active fraction and carbamidomethylated MS/MS sequence; no database-normalized modification field is available in linked APD6 row",
+        "status": "sequence_supported_with_modification_context"
+      },
+      "activity_match": {
+        "matched_activity_record_ids": [
+          "act-raptb-extracellular-mtb-50um",
+          "tox-raptb-macrophage-50um"
+        ],
+        "activity_evidence_path": "papers/doi__10.3389_fmicb.2025.1669022/final/activity_toxicity_evidence.json"
+      },
+      "citation_traceability": {
+        "database_reference": "Front Microbiol. 2025 Oct 24;16:1669022. doi: 10.3389/fmicb.2025.1669022",
+        "database_pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30176261",
+        "paper_article_meta": "PMID 41209728; PMCID PMC12592065; DOI 10.3389/fmicb.2025.1669022",
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=2"
+      },
+      "conflict_flags": [
+        "apd6_raw_pubmed_url_conflicts_with_article_meta"
+      ],
+      "conflict_context": "The APD6 AP05999 sequence/name/activity/source organism are supported by local primary material, but the linked APD6 experiment row carries raw PMID 30176261 while the article XML and packet literature canonical PMID are 41209728. The row is therefore retained as source_conflict rather than silently normalized to source_verified.",
+      "review_notes": "Use the primary-source activity rows for RapTB conclusions; preserve the APD6 PMID conflict as a database curation caution."
+    },
+    {
+      "source_id": "APD6:AP05999",
+      "sequence_key": "APD6:AP05999",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "RapTB: a lung-derived hemoglobin fragment with activity against Mycobacterium tuberculosis.",
+      "database_measure": "Literature link to selected paper DOI/PMID/PMCID.",
+      "name_check": {
+        "database_title": "RapTB: a lung-derived hemoglobin fragment with activity against Mycobacterium tuberculosis.",
+        "primary_source_title": "RapTB: a lung-derived hemoglobin fragment with activity against Mycobacterium tuberculosis",
+        "agreement": "matches"
+      },
+      "sequence_check": {
+        "database_sequence": "VCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "primary_source_sequence": "VCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+        "agreement": "matches",
+        "source_locator": {
+          "source_path": "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml",
+          "locator": "xml:sec=8:Peptide origin and synthesis; xml:sec=17:Results; xml:supplementary-material=SM1",
+          "merged_database_sequence_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:6000"
+        }
+      },
+      "citation_traceability": {
+        "canonical_doi": "10.3389/fmicb.2025.1669022",
+        "canonical_pmid": "41209728",
+        "canonical_pmcid": "PMC12592065",
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "The packet literature row matches the selected DOI/PMID/PMCID and sequence identity is supported by the primary source plus merged APD6 sequence catalog."
+    }
+  ],
+  "status_summary": {
+    "source_verified": 1,
+    "source_conflict": 2,
+    "database_only_no_primary_source": 0,
+    "sequence_modified_not_normalized": 0,
+    "unresolved_record": 0
+  },
+  "source_paths_checked": [
+    "papers/doi__10.3389_fmicb.2025.1669022/source/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2025.1669022/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2025.1669022/database/database_source_manifest.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+  ],
+  "unrecoverable_material_gaps": []
+}

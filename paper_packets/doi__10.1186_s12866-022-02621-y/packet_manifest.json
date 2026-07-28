@@ -1,0 +1,68 @@
+{
+  "analysis_queue_status": "analysis_blocked_missing_primary_material",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 10,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 10,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.1186/s12866-022-02621-y",
+  "journal": "BMC Microbiol",
+  "known_missing_or_blocked_materials": [
+    {
+      "gap_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "source_paths_checked": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over XML/PDF text/HTML wrappers/database JSONL",
+        "find targeted DOI-local landed/downloaded assets",
+        "PDF text extraction already present in packet",
+        "XML associated-data media-reference inspection"
+      ],
+      "why_unrecoverable": "Local packet and landed/downloaded DOI folders contain article XML/PDF and HTML .bin wrappers. The XML/HTML identify MOESM1/2 TIF and MOESM3 DOCX payload names, but those TIF/DOCX payload files are not present in the local packet, landed assets, or downloaded assets checked in this bounded pass.",
+      "impact": "Exact supplemental Fig. S1/S2 dose-curve values and Table S1 MIC values for non-E. coli microorganisms cannot be source-verified locally; database rows for those Table S1 values are preserved as database_only_no_primary_source and the paper remains non-publication-grade.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [
+    "rwk-local-source-gap-ll1-supplement-20260503"
+  ],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.1186_s12866-022-02621-y",
+  "pmcid": "PMC9484052",
+  "pmid": "36117157",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12866-022-02621-y/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "The antimicrobial effect of a novel peptide LL-1 on Escherichia coli by increasing membrane permeability.",
+  "updated_at": "2026-05-03T09:12:22Z",
+  "year": "2022"
+}

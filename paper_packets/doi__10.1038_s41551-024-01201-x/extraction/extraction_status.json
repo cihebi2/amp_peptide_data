@@ -1,0 +1,39 @@
+{
+  "error_count": 0,
+  "gap_assessment": "Primary XML/PDF/database material is obtainable; declared Supplementary Information/Dataset payload bytes are absent locally and block publication-grade activity/toxicity/database reconciliation.",
+  "generated_at": "2026-05-05T07:12:28Z",
+  "paper_id": "doi__10.1038_s41551-024-01201-x",
+  "source_inventory": {
+    "package_files": 0,
+    "pdf_files": 3,
+    "supplementary_files": 10,
+    "xml_files": 2
+  },
+  "status": "material_extracted_with_blocking_gaps",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "missing_declared_supplementary_payload_files",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41551-024-01201-x/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/supplementary/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41551-024-01201-x/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus searched for 41551_2024_1201_MOESM*"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "wc -c",
+        "rg declared MOESM payloads and landing-page hrefs",
+        "find -L local supplementary directories",
+        "find merged_amp_corpus -name 41551_2024_1201_MOESM*",
+        "sha256sum",
+        "jq asset manifest and metadata review"
+      ],
+      "why_unrecoverable": "The XML and landing HTML declare six Springer/Nature supplementary payload filenames, but no local PDF/XLSX payload file exists under the packet, landed paper folder, or merged corpus. The staged supplementary files are HTML article landing captures, not the declared payload bytes.",
+      "impact": "Worker-3 cannot parse Supplementary Information, Supplementary Dataset 2, Supplementary Dataset 3, or Source Data Fig. 6 from local material; downstream worker-2 and worker-4 exact activity/toxicity/database reconciliation remains blocked for publication-grade acceptance.",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true
+    }
+  ]
+}

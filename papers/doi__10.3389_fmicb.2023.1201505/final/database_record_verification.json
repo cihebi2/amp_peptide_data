@@ -1,0 +1,676 @@
+{
+  "audit_scope": "Worker-4 row-level source review over linked DBAASP/APD6 rows, primary XML/PDF evidence, and merged sequence/experiment/literature CSV rows. Conflicts are preserved rather than smoothed.",
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "Primary paper reports WL-1 as C-terminally amidated; local APD6/DBAASP sequence rows preserve the residue string without normalizing the terminal modification.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "u251_exact_ic50_source_conflict_preserved",
+      "evidence_context": "Local source supports U251 dose-dependent RT-qPCR inhibition but not the exact DBAASP U251 IC50=10 μM value.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "apd6_database_analysis_not_primary_claim",
+      "evidence_context": "APD6 sequence-analysis percentages are database-only annotations; primary paper supports WL-1 design, sequence, HSV-1 activity, and animal-model phenotypes.",
+      "severity": "caution"
+    }
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 4,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 5,
+    "linked_literature_records": 2,
+    "linked_sequence_records": 0
+  },
+  "generated_at": "2026-05-06T22:46:07Z",
+  "owner_worker": "worker-4",
+  "paper_id": "doi__10.3389_fmicb.2023.1201505",
+  "reasoning_effort": "xhigh",
+  "record_audits": [
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "<10% Cytotoxicity",
+      "database_subject": "Vero cells",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-cytotox-vero-50um",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "LL-37 (16-31)[E1G,F2W,V6K,F12K]",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_assay_records:row=1",
+      "review_notes": "DBAASP Vero cytotoxicity threshold is supported by primary Results 3.1 and Figure 1; C-terminal amidation is preserved as a sequence-modification caution.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records:row=1",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "<10% Cytotoxicity",
+      "database_subject": "Human glioblastoma U251-MG",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-cytotox-u251-50um",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "LL-37 (16-31)[E1G,F2W,V6K,F12K]",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_assay_records:row=2",
+      "review_notes": "DBAASP U251 cytotoxicity threshold is supported by primary Results 3.1 and Figure 1; database assay_type label is preserved as a caution because the row is cytotoxicity, not antiviral efficacy.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records:row=2",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_subject": "HSV-1",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-antiviral-plaque-ic50-vero",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "LL-37 (16-31)[E1G,F2W,V6K,F12K]",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_assay_records:row=3",
+      "review_notes": "DBAASP Vero IC50-like 10 μM row is supported by primary plaque-assay text reporting 50% antiviral activity at 10 μM; exact graph-derived additional values are not fabricated.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records:row=3",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "caution": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_subject": "HSV-1",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-antiviral-rtqpcr-u251",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "LL-37 (16-31)[E1G,F2W,V6K,F12K]",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_assay_records:row=4",
+      "review_notes": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records:row=4",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "<10% Cytotoxicity",
+      "database_subject": "Vero cells",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-cytotox-vero-50um",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_experiment_records:row=1",
+      "review_notes": "DBAASP Vero cytotoxicity threshold is supported by primary Results 3.1 and Figure 1; C-terminal amidation is preserved as a sequence-modification caution.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records:row=1",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "<10% Cytotoxicity",
+      "database_subject": "Human glioblastoma U251-MG",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-cytotox-u251-50um",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_experiment_records:row=2",
+      "review_notes": "DBAASP U251 cytotoxicity threshold is supported by primary Results 3.1 and Figure 1; database assay_type label is preserved as a caution because the row is cytotoxicity, not antiviral efficacy.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records:row=2",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_subject": "HSV-1",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-antiviral-plaque-ic50-vero",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_experiment_records:row=3",
+      "review_notes": "DBAASP Vero IC50-like 10 μM row is supported by primary plaque-assay text reporting 50% antiviral activity at 10 μM; exact graph-derived additional values are not fabricated.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records:row=3",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "caution": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_subject": "HSV-1",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-antiviral-rtqpcr-u251",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_experiment_records:row=4",
+      "review_notes": "source_conflict: primary text supports dose-dependent U251 HSV-1 inhibition by RT-qPCR, but the local XML/PDF text does not state an exact U251 IC50 of 10 μM; keep the database value as unresolved exact-quantification caution.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records:row=4",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "caution": "source_conflict: APD6 entry-level activity and animal-model summary are broadly supported by primary text, but APD-specific sequence-analysis percentages are database-only and not asserted as primary-paper values.",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "source_conflict: APD6 entry-level activity and animal-model summary are broadly supported by primary text, but APD-specific sequence-analysis percentages are database-only and not asserted as primary-paper values.",
+      "database": "APD6",
+      "database_measure": "Antiviral",
+      "database_subject": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.3389_fmicb.2023.1201505-act-invivo-survival-ocular-5mgkg; doi__10.3389_fmicb.2023.1201505-act-facial-palsy-protection-ear-5mgkg",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_experiment_records:row=5",
+      "review_notes": "source_conflict: APD6 entry-level activity and animal-model summary are broadly supported by primary text, but APD-specific sequence-analysis percentages are database-only and not asserted as primary-paper values.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "APD6:AP04774",
+      "source_id": "APD6:AP04774",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records:row=5",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "APD6",
+      "database_measure": "",
+      "database_subject": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "article_metadata",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_literature_records:row=1",
+      "review_notes": "Literature link matches this paper DOI/PMID/PMCID in primary article metadata and merged literature rows.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "APD6:AP04774",
+      "source_id": "APD6:AP04774",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=1",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "caution": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "",
+      "database_subject": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "article_metadata",
+      "modification_check": {
+        "primary_source_modification": "C-terminal amidation (-NH2)",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        },
+        "status": "sequence_modified_not_normalized_preserved"
+      },
+      "name_check": {
+        "database_name": "Cathelicidin-derived antiviral peptide inhibits herpes simplex virus 1 infection.",
+        "primary_source_name": "WL-1",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "record_id": "linked_literature_records:row=2",
+      "review_notes": "Literature link matches this paper DOI/PMID/PMCID in primary article metadata and merged literature rows.",
+      "sequence_check": {
+        "database_sequence": "GWKRIKQRIKDKLRNL",
+        "modification_note": "Primary source states C-terminal amidation; database sequence strings do not normalize this modification.",
+        "primary_source_sequence": "GWKRIKQRIKDKLRNL",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_23241",
+      "source_id": "DBAASP:DBAASPS_23241",
+      "source_organism_check": {
+        "primary_source": "human cathelicidin LL-37/GF-17-derived synthetic analog",
+        "source_locator": {
+          "locator": "xml:sec=6:2.2. Cells, viruses, and peptides",
+          "source_path": "source/paper.xml"
+        }
+      },
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=2",
+        "source_path": "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_literature_records.jsonl"
+      }
+    }
+  ],
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-05-06T22:46:07Z",
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fmicb.2023.1201505/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/analysis/adjudication_report.json",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2023.1201505/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/pdf_text/fmicb-14-1201505.txt",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/raw/supplementary_original/*.bin",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2023.1201505/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "source_reviewed": true,
+  "status_summary": {
+    "source_conflict": 3,
+    "source_verified": 8
+  },
+  "unrecoverable_material_gaps": []
+}

@@ -1,0 +1,164 @@
+{
+  "paper_id": "doi__10.1021_acs.jnatprod.2c00674",
+  "review_sample_id": "V420P0019",
+  "reviewed_at": "2026-06-25T09:33:47+08:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "final_decision": "needs_targeted_rework",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0040",
+      "audit_record_id": "doi__10.1021_acs.jnatprod.2c00674:database_audit:44",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled database-audit row is source-backed for the DBAASP literature link. The release row, final database record, linked_literature_records.jsonl row 4, and article XML metadata all resolve to DBAASP:DBAASPR_24220 with DOI 10.1021/acs.jnatprod.2c00674, PMID 36525646, PMCID PMC9887600, and the matching paper title. The row's sequence_check locator resolves to primary paper identity context in NMR/Table 1 and supplementary Figure S2/Table S2/Data S1, and related DBAASP assay rows for gere 4 are source-located to primary Table 2. The row remains caution-preserving because the packet has no linked sequence snapshot and retains nonblocking material/scope cautions.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/sample_final_records.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/source_locator_hints.json",
+        "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_literature_records.jsonl:row=4",
+        "papers/doi__10.1021_acs.jnatprod.2c00674/source/paper.xml:article-meta",
+        "papers/doi__10.1021_acs.jnatprod.2c00674/final/database_record_verification.json:record_audits[source_table=linked_literature_records.jsonl,sequence_key=DBAASP:DBAASPR_24220]",
+        "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/oa_package/local-DBAASP-PMC9887600/PMC9887600/np2c00674_0009.jpg",
+        "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/pdf_text/np2c00674_si_001.txt:Figure S2/Table S2/Data S1",
+        "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_assay_records.jsonl:rows=16-20",
+        "papers/doi__10.1021_acs.jnatprod.2c00674/final/activity_toxicity_evidence.json:gere 4 activity rows"
+      ],
+      "cautions": [
+        "linked_sequence_records.jsonl is empty, so the database sequence snapshot itself is unavailable; the final record uses primary paper sequence/identity locators instead of inventing sequence normalization.",
+        "material_queue_status remains material_extracted_with_gaps, but final review and rework responses mark the gaps nonblocking for the sampled literature-link/database row.",
+        "The paper-level accepted outputs still need targeted mechanism-ontology repair because mechanism evidence classes are non-standard."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "primary_material_available": true,
+    "material_status": "material_extracted_with_gaps_nonblocking_for_sampled_database_row",
+    "materials_checked": [
+      "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/material_inventory.json",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/packet_manifest.json",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/raw/paper.xml",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/raw/paper.pdf",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/oa_package/local-DBAASP-PMC9887600/PMC9887600",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/pdf_text/np2c00674_si_001.txt",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/rework/rework_requests.jsonl",
+      "paper_packets/doi__10.1021_acs.jnatprod.2c00674/rework/rework_responses.jsonl"
+    ],
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "blocking_missing_materials": []
+  },
+  "worker6_adjudication": {
+    "row_level_conclusion": "The sampled source_verified DBAASP literature-link row is supported by local source/database locators and should remain included with cautions.",
+    "paper_level_conclusion": "Targeted rework is required before this paper can be accepted under the Validation420 prompt because the accepted mechanism ontology uses non-standard evidence_class values.",
+    "layer_1_database": {
+      "decision": "pass_with_cautions",
+      "rationale": "DBAASP:DBAASPR_24220 row 4 in linked_literature_records.jsonl matches article metadata in paper.xml and the final source_verified audit record includes traceability and sequence/source identity locators. Empty linked_sequence_records.jsonl is preserved as a caution."
+    },
+    "layer_2_activity_toxicity": {
+      "decision": "pass_with_cautions",
+      "rationale": "Related DBAASP:DBAASPR_24220 assay rows 16-20 map to gere 4 Table 2 source-located MIC/IC50 rows with endpoints, raw values, units, targets, strains, methods, and database locators."
+    },
+    "layer_3_mechanism": {
+      "decision": "needs_targeted_rework",
+      "rationale": "final/mechanism_ontology_record.json contains evidence_class values indirect_membrane_permeabilization_assay, phenotypic_cytotoxicity_assay, and interpretive_host_defense_context. The current source-review contract permits only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested in accepted outputs."
+    },
+    "hard_failures": [
+      {
+        "failure_code": "non_standard_mechanism_evidence_classes",
+        "artifact_path": "papers/doi__10.1021_acs.jnatprod.2c00674/final/mechanism_ontology_record.json",
+        "observed_values": [
+          "indirect_membrane_permeabilization_assay",
+          "phenotypic_cytotoxicity_assay",
+          "interpretive_host_defense_context"
+        ],
+        "required_action": "Map mechanism claims to the standard ontology while preserving limitations, then rerun worker-6 adjudication and strict gates."
+      }
+    ],
+    "semantic_quality_evidence": {
+      "prior_semantic_gate": "reports/doi__10.1021_acs.jnatprod.2c00674.true_rework_queue_attempt_1.after_worker.semantic_gate.json reported publication_grade_pass=true with issue_count=0.",
+      "manual_validation_override": "The current Validation420 prompt explicitly treats non-standard mechanism evidence classes in accepted outputs as a hard targeted-rework failure."
+    }
+  },
+  "rework_targets": [
+    {
+      "target_id": "V420P0019-rwk-001",
+      "ticket_id": "V420P0019-rwk-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5/mechanism_ontology_worker",
+      "severity": "major",
+      "reason": "Accepted mechanism ontology uses non-standard evidence_class values, which is a hard Validation420 failure for accepted outputs.",
+      "requested_outputs": [
+        {
+          "artifact": "papers/doi__10.1021_acs.jnatprod.2c00674/final/mechanism_ontology_record.json",
+          "need": "Replace evidence_class values with the standard ontology: direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. Preserve source locators, direct_assay_types, and limitation notes."
+        },
+        {
+          "artifact": "papers/doi__10.1021_acs.jnatprod.2c00674/final/review_report.json",
+          "need": "After mechanism repair, worker-6 must re-adjudicate the paper and rerun strict semantic/publication-quality gates."
+        }
+      ],
+      "blocks": [
+        "mechanism_ontology_record",
+        "final_review_report",
+        "publication_grade_acceptance_under_validation420"
+      ],
+      "created_at": "2026-06-25T09:33:47+08:00"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_snapshot_has_no_linked_sequence_rows",
+      "evidence_context": "packet_manifest.json and final review report show linked_sequence_records.jsonl has zero rows; the sampled source_verified literature-link row is backed by article metadata and primary sequence/identity locators instead."
+    },
+    {
+      "caution_code": "material_packet_gaps_nonblocking_for_sampled_row",
+      "evidence_context": "packet_manifest.json reports material_extracted_with_gaps, but known_missing_or_blocked_materials and open_rework_ticket_ids are empty, and rework responses close rwk-complete-test-0001."
+    },
+    {
+      "caution_code": "mechanism_ontology_requires_targeted_rework",
+      "evidence_context": "Mechanism claims are bounded and source-located, but their evidence_class values do not use the required standard ontology."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0019__doi__10.1021_acs.jnatprod.2c00674/true_review_result.schema.json",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/packet_manifest.json",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/pdf_text/np2c00674.txt",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/extracted/pdf_text/np2c00674_si_001.txt",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_acs.jnatprod.2c00674/rework/rework_responses.jsonl",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/source/paper.xml",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/final/database_record_verification.json",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/final/mechanism_ontology_record.json",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/final/review_report.json",
+    "papers/doi__10.1021_acs.jnatprod.2c00674/work/review/quality_feedback.json",
+    "reports/doi__10.1021_acs.jnatprod.2c00674.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1021_acs.jnatprod.2c00674.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ]
+}

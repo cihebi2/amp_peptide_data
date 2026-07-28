@@ -1,0 +1,131 @@
+{
+  "paper_id": "doi__10.3390_v14102103",
+  "generated_at": "2026-05-10T19:11:02Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism ontology from local XML/PDF, figure captions/images, BLI section, and supplementary docking/BLI figures.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "TLH and VFI act at an early extracellular/entry-stage step for SARS-CoV-2 because co-treatment and virus pre-treatment inhibit infection while cell pre-treatment and post-treatment are not significant.",
+      "entity_scope": "TLH and VFI",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "plaque reduction assay with treatment-timing design"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=13:3.3. Antiviral Activity",
+        "figure_locator": "xml:fig=2:Figure 2"
+      },
+      "limitations": "Treatment-timing assays localize activity to virus/entry-stage conditions but do not prove a single molecular blocking event by themselves."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "VFI, but not TLH, shows source-supported HCoV-OC43 antiviral activity in co-treatment and virus pre-treatment; the paper connects this selectivity to VFI docking at an exposed HCoV-OC43 spike site.",
+      "entity_scope": "VFI versus TLH",
+      "evidence_class": "direct_mechanism_with_computational_support",
+      "direct_assay_types": [
+        "plaque reduction assay with treatment-timing design"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=13:3.3. Antiviral Activity",
+        "figure_locator": "xml:fig=3:Figure 3"
+      },
+      "supporting_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=15:3.4. Molecular Docking",
+        "figure_locator": "xml:fig=4:Figure 4"
+      },
+      "limitations": "Docking is supporting model evidence; final conclusion remains bounded to source-observed antiviral timing/selectivity."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "BLI directly supports interaction of both peptides with SARS-CoV-2 RBD, with apparent micromolar affinity values reported for VFI and TLH.",
+      "entity_scope": "TLH and VFI with SARS-CoV-2 RBD",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "biolayer interferometry"
+      ],
+      "quantitative_values": [
+        {
+          "entity": "VFI",
+          "endpoint": "KD",
+          "raw_value": "28.4 ± 4.4",
+          "raw_unit": "µM"
+        },
+        {
+          "entity": "TLH",
+          "endpoint": "KD",
+          "raw_value": "22.8 ± 0.1",
+          "raw_unit": "µM"
+        }
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=17:3.6. Direct Binding Assays between Tripeptides and SARS-CoV-2 Spike Protein",
+        "figure_locator": "xml:fig=7:Figure 7"
+      },
+      "limitations": "BLI uses isolated RBD and does not alone establish whole-virus efficacy; it corroborates the source-authored RBD-binding mechanism."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "Molecular docking predicts TLH and VFI can occupy SARS-CoV-2 spike RBD/S2 regions and HCoV-OC43 spike regions, but these predictions are not promoted above computational support.",
+      "entity_scope": "TLH and VFI",
+      "evidence_class": "computational_support",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=15:3.4. Molecular Docking",
+        "figure_locator": "xml:fig=4:Figure 4"
+      },
+      "supporting_locators": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=5:Figure 5"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=6:Figure 6"
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_v14102103/extracted/oa_package/local-DBAASP-PMC9612326/PMC9612326/viruses-14-02103-s001.zip",
+          "locator": "supplementary_pdf:pages=2-4:Figures S3-S4"
+        }
+      ],
+      "limitations": "Docking scores and modeled contacts are recorded as computational mechanism context, not direct mechanism proof."
+    },
+    {
+      "claim_id": "mech-005",
+      "claim_text": "Serum stability is source-supported: TLH half-life is 4.36 h and VFI preserves 50% integrity after 12.44 h in 50% human serum.",
+      "entity_scope": "TLH and VFI",
+      "evidence_class": "stability_context",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=18:3.7. Stability of Tripeptides in Human Serum",
+        "figure_locator": "xml:fig=8:Figure 8"
+      },
+      "quantitative_values": [
+        {
+          "entity": "TLH",
+          "endpoint": "serum_half_life",
+          "raw_value": "4.36",
+          "raw_unit": "h"
+        },
+        {
+          "entity": "VFI",
+          "endpoint": "50_percent_integrity_time",
+          "raw_value": "12.44",
+          "raw_unit": "h"
+        }
+      ],
+      "limitations": "Serum stability supports developability context and is not an antimicrobial/antiviral potency endpoint."
+    }
+  ],
+  "mechanism_quality_control": {
+    "direct_mechanism_claims_have_assay_types": true,
+    "computational_docking_not_overpromoted": true,
+    "serum_stability_kept_as_context": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review recovered primary supplemental EC50 rows, reconciled linked DBAASP rows, preserved the one numeric database/source conflict, and closes the prior rework ticket as accepted_with_cautions rather than accepted_clean.",
+  "caution_findings": [
+    {
+      "caution_code": "database_value_conflict_preserved",
+      "evidence_context": "DBAASP rows for SP3 against Staphylococcus aureus report 16.6 µg/mL while the primary supplemental Table S3 reports 16.5 µg/mL; database rows remain source_conflict."
+    },
+    {
+      "caution_code": "no_direct_mechanism_claim",
+      "evidence_context": "The paper supports EC50 antimicrobial phenotype and computational design rationale, not a direct molecular mechanism assay."
+    },
+    {
+      "caution_code": "material_packet_layer_unchanged",
+      "evidence_context": "Material packet extraction status still records complete-with-gaps; worker re-review directly reopened OA package supplements for the owner-layer repair without rewriting worker-3 material outputs."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1021_acsomega.0c00442/handoff_context.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/analysis/adjudication_report.json",
+    "papers/doi__10.1021_acsomega.0c00442/source/paper.xml",
+    "papers/doi__10.1021_acsomega.0c00442/source/paper.pdf",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/oa_package/local-DBAASP-PMC7450509/PMC7450509/ao0c00442.nxml",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/oa_package/local-DBAASP-PMC7450509/PMC7450509/ao0c00442.pdf",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/oa_package/local-DBAASP-PMC7450509/PMC7450509/ao0c00442_si_001.pdf",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/oa_package/local-DBAASP-PMC7450509/PMC7450509/ao0c00442_si_002.xlsx",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/oa_package/local-DBAASP-PMC7450509/PMC7450509/ao0c00442_si_003.xlsx",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/pdf_text/ao0c00442.txt",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/pdf_text/ao0c00442_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.0c00442/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c00442/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.0c00442/database/linked_literature_records.jsonl"
+  ],
+  "gate_results": {
+    "gate_decision": "passed_after_source_reviewed_worker_2_4_6_repair",
+    "publication_counts": {
+      "activity_records": 42,
+      "mechanism_claims": 3
+    },
+    "publication_quality_pass": true,
+    "publication_quality_report": "reports/doi__10.1021_acsomega.0c00442.publication_quality.json",
+    "publication_review_status": {
+      "accepted_with_cautions": 1
+    },
+    "publication_risk_counts": {},
+    "reviewed_at": "2026-05-02T06:10:59Z",
+    "semantic_issue_codes": [],
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_report": "reports/doi__10.1021_acsomega.0c00442.semantic_gate.json"
+  },
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Material packet remains material_extracted_with_gaps, but the owner re-review opened the recoverable OA package supplemental PDF/XLSX files needed for the worker-2/4/6 blocker.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1021_acsomega.0c00442",
+  "per_layer_decision_rationale": {
+    "adjudication": "The prior open rework was an owner-layer source-review gap. After bounded recovery, no blocking/major owner-layer issue remains; accepted_with_cautions is appropriate because a database/source numeric discrepancy is preserved.",
+    "layer_1_database": "DBAASP assay/experiment/literature rows were reconciled to primary Table 1 and supplemental EC50 Tables S3/S4. All rows are source_verified except the preserved SP3/Staphylococcus aureus value conflict.",
+    "layer_2_activity_toxicity": "Supplemental EC50 Tables S3/S4 support 42 activity rows across 14 peptides/series entries and three bacterial targets; values are retained in µg/mL with >400 preserved as inactive/not calculable at tested concentrations.",
+    "layer_3_mechanism": "Final mechanism record is bounded to phenotypic activity and computational design context; no direct mechanism of action is asserted."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-02T06:10:59Z",
+  "rework_targets": [],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "evidence": "42 EC50 rows have peptide identity, target species/strain, raw value, unit, assay context, and source locator.",
+      "result": "pass"
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "evidence": "98 linked database rows reviewed; status_summary={'source_verified': 96, 'source_conflict': 2}.",
+      "result": "pass_with_cautions"
+    },
+    {
+      "check": "database_conflict_preservation",
+      "evidence": "The SP3/Staphylococcus aureus DBAASP 16.6 vs primary 16.5 µg/mL discrepancy is preserved as source_conflict, not smoothed.",
+      "result": "pass_with_cautions"
+    },
+    {
+      "check": "mechanism_scope",
+      "evidence": "No direct_mechanism claim is made; EC50 assays are phenotypic activity evidence and VAE/hydrophobic-moment text is design context.",
+      "result": "pass_with_scope_guard"
+    },
+    {
+      "check": "supplementary_source_recovery",
+      "evidence": "OA package supplemental PDF and XLSX files were opened; EC50 Tables S3/S4 were recovered from the supplemental PDF.",
+      "result": "pass"
+    },
+    {
+      "check": "open_rework_targets",
+      "evidence": "Owner-layer blocker rwk-complete-test-0001 is resolved by worker-2/4/6 artifacts; final review has no rework_targets.",
+      "result": "pass"
+    }
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

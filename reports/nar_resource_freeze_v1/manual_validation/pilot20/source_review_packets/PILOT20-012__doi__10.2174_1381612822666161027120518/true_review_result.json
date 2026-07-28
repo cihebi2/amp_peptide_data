@@ -1,0 +1,294 @@
+{
+  "paper_id": "doi__10.2174_1381612822666161027120518",
+  "pilot_sample_id": "PILOT20-012",
+  "audit_record_id": "doi__10.2174_1381612822666161027120518:database_audit:138",
+  "reviewed_at": "2026-06-22T04:11:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "needs_targeted_rework",
+  "confidence": "high",
+  "material_review": {
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted_with_cautions",
+    "surfaces_verified": {
+      "paper_xml": {
+        "exists": true,
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml",
+        "checked_locators": [
+          "xml:article-meta:doi-pmid-pmcid",
+          "xml:sec=2.10:Antimicrobial Assay",
+          "xml:table=2:row=5",
+          "xml:table=3:row=4"
+        ]
+      },
+      "paper_pdf_text": {
+        "exists": true,
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131.txt",
+        "checked_ranges": [
+          "Table 1 text around cM1B/13a",
+          "Table 2 MIC matrix around cM1B",
+          "Sections 2.10, 3.5, 3.6"
+        ]
+      },
+      "oa_package": {
+        "exists": true,
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/raw/oa_package/local-DBAASP-PMC5470054.tar.gz",
+        "members_checked": [
+          "PMC5470054/CPD-23-2131.nxml",
+          "PMC5470054/CPD-23-2131.pdf",
+          "PMC5470054/CPD-23-2131_SD1.pdf",
+          "figure/table image members"
+        ]
+      },
+      "supplementary_original_dir": {
+        "exists": false,
+        "impact": "Nonblocking for this sampled row because CPD-23-2131_SD1.pdf is present in the OA package and extracted text resolves compound 13a/cM1B."
+      },
+      "supplementary_extracted_text": {
+        "exists": true,
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131_SD1.txt",
+        "checked_locator": "supplementary:CPD-23-2131_SD1.pdf:Table S1:compound=13a"
+      },
+      "database_jsonl_rows": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_literature_records.jsonl"
+        ],
+        "checked_rows": [
+          "dbAMP_18779",
+          "DBAASP assay rows 105418-105422"
+        ]
+      }
+    },
+    "material_conclusion": "Primary XML/PDF/OA/database surfaces needed for the sampled row are present and readable. The remaining material-gap signal is a caution for packet provenance, not a missing-primary-material blocker for this row."
+  },
+  "layer1_database_record_review": {
+    "source_id": "dbAMP:dbAMP_18779",
+    "sampled_status": "sequence_modified_not_normalized",
+    "status_decision": "justified_with_caution",
+    "release_row_checked": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/release_row.json",
+    "sample_final_record_checked": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/sample_final_record.json",
+    "final_artifact_record_checked": "paper_packets/doi__10.2174_1381612822666161027120518/final/database_record_verification.json::record_audits[source_id=dbAMP:dbAMP_18779]",
+    "evidence": [
+      {
+        "locator": "supplementary:CPD-23-2131_SD1.pdf:Table S1:compound=13a",
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131_SD1.txt",
+        "supports": "compound 13a maps to Cyclo-BKGKGSKCDRLMYDCBTGSCRSGKCGS (2SS), cM1B"
+      },
+      {
+        "locator": "xml:table=1:entity=cM1B",
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131.txt",
+        "supports": "article Table 1 names cM1B as compound 13a in the MVIIA analog series"
+      },
+      {
+        "locator": "database:data/dbamp3_detail_basic.csv:row=74",
+        "path": "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_experiment_records.jsonl",
+        "supports": "dbAMP entry-level row carries the same five MIC text values but no normalized sequence/value fields"
+      }
+    ],
+    "rationale": "The source supports cM1B as a cyclic, modified analog with Abu/disulfide notation. Keeping sequence_modified_not_normalized is correct; converting the row to clean source_verified would erase the modification caveat."
+  },
+  "layer2_activity_toxicity_review": {
+    "status_decision": "source_backed_for_sampled_activity_values",
+    "matched_activity_record_ids": [
+      "doi__10.2174_1381612822666161027120518-table2-cM1B-EC-MIC",
+      "doi__10.2174_1381612822666161027120518-table2-cM1B-PA-MIC",
+      "doi__10.2174_1381612822666161027120518-table2-cM1B-SA-MIC",
+      "doi__10.2174_1381612822666161027120518-table2-cM1B-CA-MIC",
+      "doi__10.2174_1381612822666161027120518-table2-cM1B-CT-MIC"
+    ],
+    "primary_table_locator": "xml:table=2:row=5",
+    "activity_values_checked": [
+      {
+        "target": "Escherichia coli",
+        "endpoint": "MIC",
+        "raw_value": "8.9",
+        "raw_unit": "uM",
+        "locator": "xml:table=2:row=5:column=EC"
+      },
+      {
+        "target": "Pseudomonas aeruginosa",
+        "endpoint": "MIC",
+        "raw_value": "78.4",
+        "raw_unit": "uM",
+        "locator": "xml:table=2:row=5:column=PA"
+      },
+      {
+        "target": "Staphylococcus aureus",
+        "endpoint": "MIC",
+        "raw_value": "7.9",
+        "raw_unit": "uM",
+        "locator": "xml:table=2:row=5:column=SA"
+      },
+      {
+        "target": "Candida kefyr",
+        "endpoint": "MIC",
+        "raw_value": "2.3",
+        "raw_unit": "uM",
+        "locator": "xml:table=2:row=5:column=CA"
+      },
+      {
+        "target": "Candida tropicalis",
+        "endpoint": "MIC",
+        "raw_value": "11.2",
+        "raw_unit": "uM",
+        "locator": "xml:table=2:row=5:column=CT"
+      }
+    ],
+    "assay_support": {
+      "locator": "xml:sec=2.10:Antimicrobial Assay",
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml",
+      "summary": "Lehrer two-stage radial diffusion assay; triplicate experiments reported; target species abbreviations resolved from Table 2."
+    },
+    "toxicity_spot_check": {
+      "locator": "xml:table=3:row=4",
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml",
+      "summary": "cM1B HD50 and HD50/MIC ratio rows are present for toxicity/selectivity context but are not the sampled release-row defect."
+    },
+    "defects_found": []
+  },
+  "layer3_mechanism_review": {
+    "status_decision": "needs_analysis_rework",
+    "mechanism_artifact_checked": "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+    "positive_findings": [
+      "All four mechanism claims have claim_id, claim_text, source_locator, and limitation text.",
+      "No claim is labeled direct_mechanism, so no direct assay type is required for the current claims.",
+      "The source locators support phenotype, hemolysis/selectivity, chemotaxis, and discussion-context evidence without direct molecular mechanism overclaim."
+    ],
+    "defects_found": [
+      {
+        "failure_code": "invalid_mechanism_evidence_class_vocabulary",
+        "details": "The artifact uses custom evidence_class values instead of the required ontology values direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+        "affected_claims": [
+          {
+            "claim_id": "mech-001",
+            "current_evidence_class": "phenotype_activity_context",
+            "suggested_evidence_class": "phenotype_supported"
+          },
+          {
+            "claim_id": "mech-002",
+            "current_evidence_class": "toxicity_selectivity_context",
+            "suggested_evidence_class": "phenotype_supported"
+          },
+          {
+            "claim_id": "mech-003",
+            "current_evidence_class": "immunomodulatory_cell_phenotype",
+            "suggested_evidence_class": "phenotype_supported"
+          },
+          {
+            "claim_id": "mech-004",
+            "current_evidence_class": "mechanism_hypothesis_context",
+            "suggested_evidence_class": "inferred_mechanism"
+          }
+        ]
+      }
+    ]
+  },
+  "worker6_adjudication": {
+    "existing_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "source_review_result": "Cannot confirm publication-grade acceptance until layer-3 evidence_class vocabulary is repaired and re-adjudicated. Layer 1 and layer 2 pass source spot-check for this sampled row with preserved modification/database cautions.",
+    "model_provenance_verified": true,
+    "model_provenance_evidence": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/codex_exec.stderr.log reports model: gpt-5.5 and reasoning effort: xhigh.",
+    "requires_rework_ticket": true,
+    "blocked_missing_primary_material": false
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+      "failing_object": "mechanism_claims[*].evidence_class",
+      "failure_code": "invalid_mechanism_evidence_class_vocabulary",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.4",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:table=2",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.5",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:table=3",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=3.6",
+        "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml::xml:sec=4"
+      ],
+      "required_action": "Rewrite mechanism evidence_class values using the standard ontology while preserving existing source locators and limitations; keep no direct_mechanism claim unless a direct mechanism assay is located.",
+      "acceptance_check": "mechanism_claims use only standard ontology evidence_class values, direct_mechanism claims if any include direct_assay_types, and worker-6 re-adjudicates the final review."
+    },
+    {
+      "worker": "worker-6",
+      "layer": "adjudication",
+      "artifact_path": "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+      "failing_object": "publication_grade confirmation",
+      "failure_code": "accepted_with_invalid_mechanism_class_vocabulary",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+        "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json"
+      ],
+      "required_action": "After worker-5 repairs the mechanism classes, re-run/re-record the worker-6 adjudication and preserve remaining cautions.",
+      "acceptance_check": "No open rework targets remain and final review_status/publication_grade reflect the repaired layer-3 artifact."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized_preserved",
+      "evidence_context": "dbAMP:dbAMP_18779 maps to cM1B/compound 13a, a cyclic modified analog with 2SS/Abu-style notation; this must not be flattened into clean source_verified."
+    },
+    {
+      "caution_code": "entry_level_database_text_row",
+      "evidence_context": "The dbAMP release row stores the five MIC values as entry-level text with blank database_value/database_unit fields; the final artifact correctly links the values to five primary Table 2 rows."
+    },
+    {
+      "caution_code": "material_extracted_with_gaps",
+      "evidence_context": "raw/supplementary_original is absent and extraction_errors records no separate supplementary assets, but the OA package contains CPD-23-2131_SD1.pdf and extracted text resolves Table S1 for this sample."
+    },
+    {
+      "caution_code": "packet_manifest_test_scope_note",
+      "evidence_context": "packet_manifest.json still contains a test_scope warning even though analysis_status/review_report report the prior rework ticket closed; preserve this as packet provenance."
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism_assay",
+      "evidence_context": "Mechanism evidence is phenotype/selectivity/chemotaxis/discussion context; no direct membrane permeabilization, target-binding, or molecular mechanism assay was located."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used.",
+    "xmllint was unavailable; raw XML was checked with Python ElementTree and existing extracted XML/PDF text surfaces.",
+    "No new OCR or image-table extraction was attempted because the sampled row's sequence/activity locators resolved in existing local XML/PDF/OA/database materials."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/true_review_result.schema.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/codex_exec.stderr.log",
+    "paper_packets/doi__10.2174_1381612822666161027120518/packet_manifest.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extraction/extraction_status.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extraction/extraction_errors.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/locators/locator_index.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.xml",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/paper.pdf",
+    "paper_packets/doi__10.2174_1381612822666161027120518/raw/oa_package/local-DBAASP-PMC5470054.tar.gz",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131.txt",
+    "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131_SD1.txt",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/database_record_verification.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.2174_1381612822666161027120518/rework/rework_responses.jsonl"
+  ]
+}

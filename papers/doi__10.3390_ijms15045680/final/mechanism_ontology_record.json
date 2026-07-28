@@ -1,0 +1,107 @@
+{
+  "paper_id": "doi__10.3390_ijms15045680",
+  "generated_at": "2026-05-08T15:24:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker_owner": "worker-6 final adjudication of existing mechanism evidence",
+  "source_reviewed": true,
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms15045680/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms15045680/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms15045680/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms15045680/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms15045680/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/pdf_text/ijms-15-05680.txt",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/pdf_text/local-DRAMP-24705462.txt",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680.nxml",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f1.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f3.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/oa_package/local-DRAMP-24705462/PMC4013589/ijms-15-05680f4.jpg",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms15045680/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms15045680/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms15045680/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_ijms15045680/source/paper.xml",
+    "papers/doi__10.3390_ijms15045680/source/paper.pdf",
+    "papers/doi__10.3390_ijms15045680/source/supplementary/"
+  ],
+  "extraction_scope": "Source-reviewed final mechanism ontology record from XML/PDF figures and methods. The direct mechanism is apoptosis by annexin V/7-AAD; speculative intracellular target discussion is bounded as hypothesis.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-uptake-localization-mcf7-confocal",
+      "claim_text": "CPP-conjugated SRC-1 peptides, including TP10-SRC1LXXLL, enter MCF-7 cells and are detected in cytoplasm and nucleus after 1 h exposure.",
+      "entity_scope": "TP10-SRC1LXXLL and comparator SRC1 bioportides",
+      "evidence_class": "direct_cellular_localization",
+      "direct_assay_types": [
+        "live-cell confocal microscopy with FITC-labeled peptides"
+      ],
+      "assay_conditions": {
+        "peptide_concentration": "5 μM",
+        "exposure_time": "1 h",
+        "cell_line": "MCF-7"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_ijms15045680/source/paper.xml",
+        "locator": "xml:sec=2.1.2;xml:fig=2"
+      },
+      "limitations": "Localization supports uptake/nuclear presence but does not identify the lethal intracellular binding target."
+    },
+    {
+      "claim_id": "mech-apoptosis-mcf7-annexinv-7aad",
+      "claim_text": "TP10-SRC1LXXLL-treated MCF-7 cells show annexin V-positive populations at 24 h, supporting apoptosis as the main observed cell-death mode over necrosis.",
+      "entity_scope": "TP10-SRC1LXXLL in MCF-7 cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "PE-annexin-V and 7-AAD flow cytometry"
+      ],
+      "assay_conditions": {
+        "peptide_concentration": "5 μM",
+        "exposure_time": "24 h",
+        "medium": "1% serum without insulin"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_ijms15045680/source/paper.xml",
+        "locator": "xml:sec=2.1.4;xml:fig=4;xml:sec=3.7"
+      },
+      "limitations": "The exact molecular target upstream of apoptosis is not resolved by the local source material."
+    },
+    {
+      "claim_id": "mech-er-transcription-negative-evidence",
+      "claim_text": "The cytotoxic effect is not supported as a direct ER-mediated transcription inhibition mechanism because pS2 was not downregulated and other ER-responsive transcript changes were not specific to TP10-SRC1LXXLL.",
+      "entity_scope": "TP10-SRC1LXXLL in MCF-7 and MDA-MB-231 breast cancer cells",
+      "evidence_class": "negative_mechanism_evidence",
+      "direct_assay_types": [
+        "quantitative RT-PCR for ER-responsive genes"
+      ],
+      "assay_conditions": {
+        "peptide_concentration": "5 μM",
+        "analysis_day": "day 2 of treatment"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_ijms15045680/source/paper.xml",
+        "locator": "xml:sec=2.1.3;xml:fig=3:panel=C;xml:sec=3.5"
+      },
+      "limitations": "This rules against the tested ER transcription readout but does not rule out all intracellular targets of the LXXLL motif."
+    },
+    {
+      "claim_id": "mech-intracellular-targets-speculative-bounded",
+      "claim_text": "The paper discusses possible non-ER intracellular protein-protein interaction targets for the LXXLL motif, but these remain mechanistic hypotheses rather than directly proven targets in the local data.",
+      "entity_scope": "TP10-SRC1LXXLL",
+      "evidence_class": "inferred_hypothesis_not_direct_mechanism",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_ijms15045680/source/paper.xml",
+        "locator": "xml:sec=2.2:Discussion"
+      },
+      "limitations": "Do not promote mediator, HLH, ERα pocket occupancy, or other discussed targets to direct mechanism without additional primary assay evidence."
+    }
+  ],
+  "unresolved_or_bounded_claims": [
+    "The local paper does not identify a precise upstream molecular target for TP10-SRC1LXXLL-induced apoptosis.",
+    "ER-mediated transcription disruption is not supported as the direct cause of cell death by the reported pS2/CTSD/BCL2 readouts."
+  ]
+}

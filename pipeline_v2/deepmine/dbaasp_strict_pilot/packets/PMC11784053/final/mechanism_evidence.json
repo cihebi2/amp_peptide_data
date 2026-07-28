@@ -1,0 +1,402 @@
+{
+  "artifact": "mechanism_ontology_record",
+  "authoritative_dbaasp_ingest_ready": false,
+  "authoritative_ingest_ready": false,
+  "caution_findings": [
+    {
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "evidence": {
+        "authoritative_match_report_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/authoritative_match_report.json",
+        "linked_counts": {
+          "linked_article_records.jsonl": 0,
+          "linked_assay_records.jsonl": 0,
+          "linked_literature_records.jsonl": 0,
+          "linked_sequence_records.jsonl": 0
+        }
+      },
+      "impact": "Publication-grade curation may proceed with cautions; authoritative DBAASP ingest remains false until linked rows exist.",
+      "severity": "caution"
+    },
+    {
+      "code": "dbaasp_codex_fallback_rows_candidate_only",
+      "evidence": {
+        "candidate_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/dbaasp_machine_extracted_rows.jsonl",
+        "candidate_row_count": 77
+      },
+      "impact": "Machine-extracted fallback rows are not promoted to source_verified or ingest-ready authoritative rows.",
+      "severity": "caution"
+    },
+    {
+      "code": "cross_database_conflicts_preserved",
+      "evidence": {
+        "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/database_record_audit.worker4.json",
+        "conflict_count": 2
+      },
+      "impact": "Conflicts are retained as cautions rather than smoothed into source_verified records.",
+      "severity": "caution"
+    },
+    {
+      "authoritative_dbaasp_ingest_ready": false,
+      "caution_id": "authoritative_dbaasp_no_linked_rows_preserved",
+      "fallback_rows_promoted_to_authoritative": false,
+      "scope": "database_snapshot",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/packet_manifest.json",
+      "role": "packet manifest",
+      "status": "inspected"
+    },
+    {
+      "count": 104,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/xml_sections.json",
+      "role": "paper XML extracted sections",
+      "status": "inspected"
+    },
+    {
+      "count": 6,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/pdf_text.jsonl",
+      "role": "paper PDF extracted text",
+      "status": "inspected"
+    },
+    {
+      "count": 0,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/supplementary_index.json",
+      "role": "supplementary inventory",
+      "status": "inspected"
+    },
+    {
+      "count": 6,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/supplementary_text.jsonl",
+      "role": "supplementary extracted text/OCR",
+      "status": "inspected"
+    },
+    {
+      "count": 116,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/locators/locator_index.json",
+      "role": "locator index",
+      "status": "inspected"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/database_source_manifest.json",
+      "role": "database source manifest",
+      "status": "inspected"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/authoritative_match_report.json",
+      "role": "authoritative DBAASP match report",
+      "status": "inspected"
+    },
+    {
+      "count": 77,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/dbaasp_machine_extracted_rows.jsonl",
+      "role": "DBAASP Codex fallback candidate rows",
+      "status": "candidate_machine_evidence_only"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/activity_toxicity_evidence.worker2.json",
+      "role": "worker-2 current repaired activity/toxicity artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/database_record_audit.worker4.json",
+      "role": "worker-4 database audit artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/mechanism_evidence.worker5.json",
+      "role": "worker-5 mechanism artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_ticket_contract_audit_current_20260715.json",
+      "role": "worker-6 independent open-ticket contract audit",
+      "status": "passed"
+    }
+  ],
+  "created_at_utc": "2026-07-08T15:55:21.671678Z",
+  "final_counts": {
+    "activity_records": 28,
+    "database_record_audits": 3,
+    "mechanism_claims": 3,
+    "review_rework_targets": 0,
+    "toxicity_records": 24
+  },
+  "gate_artifact_paths": {
+    "manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/worker6_single_paper_manifest.rebuilt.20260715T094131Z.json",
+    "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/two_queue_packet_gate.worker6.rebuilt.20260715T094131Z.json",
+    "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/publication_quality_gate.worker6.rebuilt.20260715T094131Z.json",
+    "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/semantic_three_layer_gate.worker6.rebuilt.20260715T094131Z.json"
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "publication": 0,
+    "semantic": 0
+  },
+  "lane_final_assessment": "source_reviewed_complete_for_worker5_mechanism_lane; await worker6 adjudication for publication-grade status",
+  "layer_adjudication_status": "source_reviewed_accepted_with_cautions",
+  "machine_candidate_boundary": {
+    "authoritative_linked_row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    },
+    "boundary_note": "DBAASP Codex fallback rows are retained as candidate machine evidence only and are not used to source-verify mechanism claims.",
+    "dbaasp_machine_extracted_rows_reviewed_as_candidates": 77,
+    "machine_rows_used_as_primary_source": false
+  },
+  "material_status_summary": {
+    "extraction_error_count": 0,
+    "extraction_status": "material_extracted_complete",
+    "open_rework_ticket_ids": [],
+    "packet_analysis_queue_status": "analysis_queued",
+    "packet_material_queue_status": "material_extracted_complete",
+    "pdf_page_count": 6,
+    "supplementary_file_count": 1,
+    "supplementary_text_count": 6,
+    "xml_section_count": 104
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC11784053-MECH-001",
+      "claim_text": "Packet-local source surfaces support a direct membrane-perturbation mechanism claim limited to the assayed membrane potential/depolarization and permeability evidence; this claim is not expanded to all activity rows or to database-only candidates.",
+      "direct_assay_types": [
+        "membrane potential/depolarization assay",
+        "membrane permeability assay"
+      ],
+      "entity_scope": {
+        "database_record_scope": "not_authoritatively_linked",
+        "note": "Linked authoritative DBAASP rows are absent; machine extracted rows are candidate context only.",
+        "paper_id": "PMC11784053",
+        "scope_type": "paper_level_entities"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitation_notes": [
+        "Direct classification is restricted to the assayed membrane endpoints found in packet locators.",
+        "No linked authoritative DBAASP article/assay/sequence rows were available for record-specific attribution."
+      ],
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:article-title:10",
+        "xml:article-title:11",
+        "xml:article-title:23",
+        "xml:article-title:29",
+        "xml:p:13",
+        "xml:p:27",
+        "xml:p:28",
+        "xml:p:29",
+        "xml:p:30",
+        "xml:p:31",
+        "xml:p:33",
+        "xml:p:34",
+        "xml:p:4"
+      ]
+    },
+    {
+      "claim_id": "PMC11784053-MECH-002",
+      "claim_text": "Packet-local source surfaces contain ROS, biofilm, growth-inhibition, and related activity signals; these are retained as phenotype-supported evidence and are not promoted to direct mechanism closure.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "database_record_scope": "not_authoritatively_linked",
+        "paper_id": "PMC11784053",
+        "scope_type": "paper_level_phenotype"
+      },
+      "evidence_class": "phenotype_supported",
+      "limitation_notes": [
+        "Phenotype evidence supports biological effect but does not by itself establish a closed molecular mechanism.",
+        "MIC/growth/biofilm/ROS-like signals are kept separate from direct membrane assay evidence."
+      ],
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:article-title:1",
+        "xml:article-title:10",
+        "xml:article-title:11",
+        "xml:article-title:12",
+        "xml:article-title:13",
+        "xml:article-title:14",
+        "xml:article-title:15",
+        "xml:article-title:16",
+        "xml:article-title:18",
+        "xml:article-title:19",
+        "xml:article-title:2",
+        "xml:article-title:20",
+        "xml:article-title:21",
+        "xml:article-title:22",
+        "xml:article-title:24"
+      ]
+    },
+    {
+      "claim_id": "PMC11784053-MECH-003",
+      "claim_text": "Packet-local source surfaces include physicochemical or structure/family-style explanatory signals; these are classified as inferred mechanism context only.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "database_record_scope": "not_authoritatively_linked",
+        "paper_id": "PMC11784053",
+        "scope_type": "paper_level_inference"
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitation_notes": [
+        "Charge, hydrophobicity, secondary-structure, family, or discussion-style rationale is not treated as direct mechanism evidence."
+      ],
+      "source_locator": [
+        "xml:article-title:27",
+        "xml:p:15",
+        "xml:p:17",
+        "xml:p:6",
+        "xml:sec:14",
+        "xml:sec:15",
+        "xml:sec:5",
+        "pdf:page=1",
+        "pdf:page=3",
+        "supp:3.pdf:page=1",
+        "supp:3.pdf:page=3"
+      ]
+    }
+  ],
+  "mechanism_class_summary": {
+    "direct_mechanism": 1,
+    "inferred_mechanism": 1,
+    "phenotype_supported": 1
+  },
+  "paper_id": "PMC11784053",
+  "publication_grade": true,
+  "publication_grade_basis": "Mechanism claims preserve evidence-strength classes from worker-5 and do not promote inferred or computational evidence to direct mechanism.",
+  "publication_grade_claim": "Not claimed by worker-5; publication-grade acceptance requires worker-6 adjudication plus strict semantic/publication gates.",
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T09:46:48.858951+00:00",
+  "rework_targets": [],
+  "semantic_qa": {
+    "independent_ticket_contract_audit_passed": true,
+    "no_hard_rework_targets_remaining": true,
+    "packet_gate_strict": true,
+    "packet_rework_open_ticket_count_after_compaction": 0,
+    "paper_packet_final_mirrors_required": true,
+    "publication_gate_strict": true,
+    "semantic_gate_strict": true,
+    "worker2_current_artifact_rebuilt_into_final": true
+  },
+  "semantic_quality_checks": {
+    "independent_ticket_contract_audit_passed": true,
+    "no_hard_rework_targets_remaining": true,
+    "packet_gate_strict": true,
+    "packet_rework_open_ticket_count_after_compaction": 0,
+    "paper_packet_final_mirrors_required": true,
+    "publication_gate_strict": true,
+    "semantic_gate_strict": true,
+    "worker2_current_artifact_rebuilt_into_final": true
+  },
+  "source_review_scope": {
+    "category_counts": {
+      "biofilm": 4,
+      "depolarization": 39,
+      "inference": 13,
+      "permeability": 5,
+      "ros": 11,
+      "time_kill_growth": 76
+    },
+    "checked_inputs": [
+      "packets/PMC11784053/packet_manifest.json",
+      "packets/PMC11784053/extracted/xml_sections.json",
+      "packets/PMC11784053/extracted/pdf_text.jsonl",
+      "packets/PMC11784053/extracted/figure_captions.json",
+      "packets/PMC11784053/extracted/pdf_tables.json",
+      "packets/PMC11784053/extracted/supplementary_index.json",
+      "packets/PMC11784053/extracted/supplementary_text.jsonl",
+      "packets/PMC11784053/extracted/ocr/3.pdf_text.jsonl",
+      "packets/PMC11784053/database/database_source_manifest.json",
+      "packets/PMC11784053/database/dbaasp_machine_extracted_rows.jsonl",
+      "packets/PMC11784053/database/authoritative_match_report.json"
+    ],
+    "derived_audit_artifact": "papers/PMC11784053/work/mechanism_ontology/mechanism_source_audit.worker5.json",
+    "source_text_omitted_from_artifacts": true
+  },
+  "source_reviewed": true,
+  "source_reviewed_complete": true,
+  "source_text_emitted": false,
+  "strict_gate": {
+    "gate_artifact_paths": {
+      "manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/worker6_single_paper_manifest.rebuilt.20260715T094131Z.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/two_queue_packet_gate.worker6.rebuilt.20260715T094131Z.json",
+      "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/publication_quality_gate.worker6.rebuilt.20260715T094131Z.json",
+      "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/semantic_three_layer_gate.worker6.rebuilt.20260715T094131Z.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    }
+  },
+  "strict_scope": "single_paper_packet_only",
+  "terminal_rework_closure": {
+    "all_ticket_ids": [
+      "rwk-PMC11784053-assay-condition-concentration-005",
+      "rwk-PMC11784053-authoritative-dbaasp-no-match-001",
+      "rwk-PMC11784053-semantic-coverage-001",
+      "rwk-PMC11784053-semantic-coverage-002",
+      "rwk-PMC11784053-semantic-coverage-003",
+      "rwk-PMC11784053-semantic-coverage-004",
+      "rwk-PMC11784053-source-proof-clarification-007",
+      "rwk-PMC11784053-table-context-source-proof-008",
+      "rwk-PMC11784053-table1-table2-cell-dedup-006",
+      "rwk-PMC11784053-worker6-row-shape-003"
+    ],
+    "closed_ticket_ids_with_current_terminal_response": [
+      "rwk-PMC11784053-assay-condition-concentration-005",
+      "rwk-PMC11784053-authoritative-dbaasp-no-match-001",
+      "rwk-PMC11784053-semantic-coverage-001",
+      "rwk-PMC11784053-semantic-coverage-002",
+      "rwk-PMC11784053-semantic-coverage-003",
+      "rwk-PMC11784053-semantic-coverage-004",
+      "rwk-PMC11784053-source-proof-clarification-007",
+      "rwk-PMC11784053-table-context-source-proof-008",
+      "rwk-PMC11784053-table1-table2-cell-dedup-006",
+      "rwk-PMC11784053-worker6-row-shape-003"
+    ],
+    "duplicate_terminal_response_ticket_ids_after_compaction": [],
+    "open_ticket_ids": [],
+    "response_append_decision": "active_ledger_contains_exactly_one_worker6_terminal_response_per_ticket",
+    "response_ledger_compacted_this_turn": true,
+    "terminal_response_count_after_compaction": 10
+  },
+  "ticket_contract_evidence": {
+    "activity_toxicity_cross_array_duplicate_count": 0,
+    "audit_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_independent_contract_audit.json",
+    "concentration_consistency_issue_count": 0,
+    "normalization_issue_count": 0,
+    "overall_contract_pass": true,
+    "owner_response_prerequisites_pass": true,
+    "table_support_overall_pass": true,
+    "ticket_contracts_pass": true
+  },
+  "unresolved_blockers": [],
+  "validator_contract_passed": true,
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/activity_toxicity_evidence.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/database_record_verification.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/database_record_verification.json"
+    },
+    "mechanism_ontology_record": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/mechanism_ontology_record.json",
+      "packet_aligned_mechanism_evidence": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/mechanism_evidence.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/mechanism_ontology_record.json"
+    },
+    "review_report": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/review_report.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/review_report.json"
+    }
+  },
+  "worker": "worker-5",
+  "worker6_adjudication": {
+    "independent_contract_audit_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_independent_contract_audit.json",
+    "rebuilt_or_refreshed_by_worker6": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.3390_md17030159",
+  "reviewed_at": "2026-05-09T08:55:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "packet_database_snapshots"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Supplementary PDF was opened and contains structure/RMSD figure captions, not additional activity tables; no unrecoverable material blocker remains for worker-4/6 adjudication."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md17030159/handoff_context.json",
+    "paper_packets/doi__10.3390_md17030159/packet_manifest.json",
+    "paper_packets/doi__10.3390_md17030159/locators/locator_index.json",
+    "papers/doi__10.3390_md17030159/source/paper.xml",
+    "papers/doi__10.3390_md17030159/source/paper.pdf",
+    "papers/doi__10.3390_md17030159/source/supplementary/marinedrugs-17-00159-s001.pdf",
+    "paper_packets/doi__10.3390_md17030159/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md17030159/extracted/pdf_text/local-DBAASP-PMC6471310.txt",
+    "paper_packets/doi__10.3390_md17030159/extracted/supplementary_text/marinedrugs-17-00159-s001.txt",
+    "paper_packets/doi__10.3390_md17030159/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md17030159/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md17030159/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "adjudication_summary": "Worker-4/6 source re-review reconciled the DBAASP rows to XML Tables 1, 3, and 4, repaired the final MIC matrix, preserved CAMP row conflicts as cautions, and closed the prior framework-test rework blocker.",
+  "semantic_quality_checks": {
+    "activity_rows_reviewed": 42,
+    "database_record_audits": 66,
+    "database_status_summary": {
+      "source_verified": 63,
+      "source_conflict": 3
+    },
+    "mechanism_claims_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "prior_parser_scaffold_superseded": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP sequence/activity/literature rows are source verified against XML Tables 1/3/4 and merged sequence/assay rows. CAMP rows are retained as source_conflict cautions where their flattened activity text disagrees with row-exact XML values.",
+    "layer_2_activity_toxicity": "Final activity output now contains the complete 42-cell MIC matrix from Tables 3/4 with mg/mL units and strain locators. Toxicity is marked not reported, not fabricated.",
+    "layer_3_mechanism": "Mechanism output separates computational amphipathicity/MD context and phenotypic antibiofilm inhibition from direct membrane-mechanism evidence; no direct membrane assay is overclaimed.",
+    "worker_6_gate": "The previous full_source_review_not_completed ticket is closed because source paths were reopened and row-level evidence was repaired in final artifacts."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "camp_activity_text_source_conflict",
+      "severity": "caution",
+      "evidence_context": "Three CAMP linked experiment rows flatten or omit row-exact MIC values; XML Tables 3/4 and DBAASP assay rows preserve the source-supported values.",
+      "record_ids": [
+        "linked_experiment_records.jsonl:row=31",
+        "linked_experiment_records.jsonl:row=32",
+        "linked_experiment_records.jsonl:row=33"
+      ]
+    },
+    {
+      "caution_code": "dbaasp_tag_name_blank",
+      "severity": "caution",
+      "evidence_context": "DBAASP rows for DBAASPS_12802 have blank peptide_name in the snapshot; sequence key and XML Table 1 resolve this as Tag.",
+      "record_ids": [
+        "DBAASP:DBAASPS_12802"
+      ]
+    },
+    {
+      "caution_code": "mechanism_not_direct_membrane_assay",
+      "severity": "caution",
+      "evidence_context": "H2d membrane interaction is discussed from amphipathicity/MD context; no direct membrane permeabilization assay was recovered locally."
+    },
+    {
+      "caution_code": "toxicity_not_reported",
+      "severity": "caution",
+      "evidence_context": "Opened XML/PDF/supplement text contains no hemolysis or mammalian cytotoxicity endpoint for these peptides."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

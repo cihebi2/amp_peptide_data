@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.3390_ijms22115540",
+  "reviewed_at": "2026-05-08T13:24:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Supplementary indexes and OA package were checked; this article has no local supplementary assets beyond the OA article package figures/PDF/NXML."
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "locally_absent_supplementary_assets": true
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms22115540/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms22115540/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms22115540/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms22115540/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms22115540/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms22115540/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms22115540/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms22115540/raw/oa_package/local-DBAASP-PMC8197367.tar.gz",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/pdf_text/local-DBAASP-PMC8197367.txt",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms22115540/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms22115540/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms22115540/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms22115540/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/oa_package/local-DBAASP-PMC8197367/PMC8197367/ijms-22-05540.nxml",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/oa_package/local-DBAASP-PMC8197367/PMC8197367/ijms-22-05540-g003.jpg",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/oa_package/local-DBAASP-PMC8197367/PMC8197367/ijms-22-05540-g010.jpg",
+    "paper_packets/doi__10.3390_ijms22115540/extracted/oa_package/local-DBAASP-PMC8197367/PMC8197367/ijms-22-05540-g011.jpg"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 184,
+    "database_record_audits": 209,
+    "database_status_summary": {
+      "source_verified": 180,
+      "source_conflict": 29
+    },
+    "mechanism_claims": 5,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 source review matched primary Table 1 sequence/amidation evidence, Table 2/Table 3 MIC rows, salt-stability prose, toxicity prose, and linked DBAASP/CAMP/dbAMP database rows. Remaining source_conflict rows are explicit cautions for transformed HaCaT killing labels, figure-only toxicity values, or cross-database text mismatches.",
+    "layer_2_activity_toxicity": "Worker-6 rebuilt final activity rows from source-supported MIC, toxicity, salt-stability, and biofilm prose values; generic parser entity labels were not retained in final.",
+    "layer_3_mechanism": "Worker-6 replaced pending placeholders with source-located mechanism claims and kept biofilm/EPS as phenotypic antibiofilm evidence rather than molecular mechanism overclaim.",
+    "layer_4_publication_grade": "The original rework ticket is closed because the owner-layer source review is complete, no blocking qc_failure_reasons remain, and any database conflicts are preserved as cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "severity": "caution",
+      "count": 29,
+      "evidence_context": "Conflicts are row-level in final/database_record_verification.json and include database record identifiers plus primary-source locators."
+    },
+    {
+      "caution_code": "figure_only_toxicity_values_not_promoted",
+      "severity": "caution",
+      "evidence_context": "Exact toxicity values not present in XML/PDF prose are preserved as source_conflict rather than converted to source_verified."
+    },
+    {
+      "caution_code": "supplementary_assets_absent",
+      "severity": "caution",
+      "evidence_context": "Packet supplementary indexes and OA package were checked; no supplementary files/tables are present for this article."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review rebuilt the final activity, database, and mechanism layers from local primary XML/PDF/OA package and linked database rows. The paper is accepted_with_cautions because database conflicts are preserved but no blocking owner-layer issue remains."
+}

@@ -1,0 +1,67 @@
+{
+  "paper_id": "doi__10.1016_j.ultsonch.2021.105676",
+  "generated_at": "2026-05-02T02:12:41Z",
+  "reviewed_at": "2026-05-02T02:12:41Z",
+  "status": "qc_passed_after_source_reviewed_rework",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_blockers": [],
+  "remaining_cautions": [
+    {
+      "code": "camp_dbamp_entry_text_compresses_two_conditions",
+      "severity": "caution",
+      "finding": "CAMP and dbAMP store the E. coli ultrasound/control MIC values in one entry-text field; final curation preserves two separate primary-source Table 2 activity rows and treats the entry-text rows as source-verified but compressed.",
+      "affected_records": [
+        "CAMP:CAMPSQ14120",
+        "dbAMP:dbAMP_33851"
+      ]
+    },
+    {
+      "code": "no_local_supplementary_assets",
+      "severity": "caution",
+      "finding": "The rework ticket requested supplementary PDF/XLSX extraction, but the local landed folder and OA package contain main XML/PDF plus figures only; supplementary_index is empty and extraction_errors records no supplementary assets. This is source exhaustion, not an unresolved missing value.",
+      "source": "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/supplementary_index.json; paper_packets/doi__10.1016_j.ultsonch.2021.105676/extraction/extraction_errors.jsonl"
+    },
+    {
+      "code": "no_xml_table_3_present",
+      "severity": "caution",
+      "finding": "The ticket referenced Table 3, but primary XML/PDF contains two tables. Table 1 supports peptide-screening sequence context and Table 2 supports MIC values; mechanism evidence is in sections/figures rather than a third table.",
+      "source": "paper_packets/doi__10.1016_j.ultsonch.2021.105676/locators/locator_index.json; paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/xml_sections.json"
+    },
+    {
+      "code": "figure_values_not_digitized",
+      "severity": "caution",
+      "finding": "Mechanism figures support trends and assays from captions/source text, but exact plotted conductivity/OD/time-kill numeric series were not digitized into activity records because no gate-relevant database/activity value depends on them.",
+      "source": "xml:fig=2-6; extracted/pdf_text/main.txt"
+    },
+    {
+      "code": "packet_linked_sequence_records_empty",
+      "severity": "caution",
+      "finding": "The packet has zero linked_sequence_records; sequence identity was verified from source XML and merged database sequence catalogs instead.",
+      "affected_records": [
+        "DBAASP:DBAASPS_19460"
+      ]
+    }
+  ],
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_verified": 11
+    },
+    "activity_rows_parsed": 6,
+    "activity_rows_have_raw_values_and_units": true,
+    "activity_rows_have_source_locators": true,
+    "mechanism_claims": 4,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "unrecoverable_material_gaps": []
+}

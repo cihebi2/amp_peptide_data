@@ -1,0 +1,763 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1002_advs.202205301",
+  "run_id": "full8_smoke_20260428_doi_10_1002_advs_202205301",
+  "stage_id": "adjudication",
+  "worker": "worker-6",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "reviewed_at": "2026-04-29T08:21:50Z",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source": {
+    "work_mechanism_evidence": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/work/mechanism_ontology/mechanism_evidence.json",
+    "work_body_evidence": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/work/body_evidence/evidence.json",
+    "work_supplementary_evidence": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/work/supplementary_methods/supplementary_evidence.json"
+  },
+  "overall_mechanism_evidence_class": "direct_mechanism",
+  "mechanism_class_values": [
+    "direct_mechanism",
+    "phenotype_supported",
+    "inferred_mechanism",
+    "computational_only",
+    "unknown_or_not_tested"
+  ],
+  "direct_mechanism_claim_ids": [
+    "mech-001-envelope-damage-and-permeabilization",
+    "mech-002-lps-outer-leaflet-interaction",
+    "mech-004-pgn-targeting-and-biosynthesis-perturbation"
+  ],
+  "quality_gate": {
+    "required_claim_fields_present": true,
+    "all_claims_have_claim_id": true,
+    "all_claims_have_claim_text": true,
+    "all_claims_have_entity_scope": true,
+    "all_claims_have_evidence_class": true,
+    "all_claims_have_source_locator": true,
+    "direct_claims_have_direct_assay_types": true,
+    "activity_not_promoted_to_direct_mechanism": true,
+    "charge_hydrophobicity_family_not_promoted_to_direct_mechanism": true,
+    "discussion_only_language_not_promoted_to_direct_mechanism": true,
+    "uncertainty_and_conflicts_preserved": true,
+    "blocked": false,
+    "adjudication_missing_field_counts": {
+      "claim_id": 0,
+      "claim_text": 0,
+      "evidence_class": 0,
+      "source_locator": 0,
+      "direct_mechanism_without_direct_assay_types": 0
+    },
+    "adjudication_claim_contract_passed": true,
+    "activity_or_omics_not_promoted_alone": true,
+    "semantic_gate_locator_anchor_compatibility": true
+  },
+  "source_review_summary": {
+    "packet_status": "packet_manifest reports material_extracted_complete, analysis_artifacts_present, no known missing or blocked materials, and no open rework ticket ids",
+    "source_basis": "mechanism calls were rechecked against packet XML sections, main and supplementary figure captions, supplementary evidence summaries, and body/table evidence",
+    "strongest_supported_class": "direct_mechanism",
+    "direct_mechanism_summary": "The paper supports direct mechanism evidence for bacterial envelope disruption/permeabilization, LPS outer-leaflet interaction, and PGN integrity/biosynthesis perturbation. Exact residue-level or enzyme-level binding targets remain unmapped.",
+    "non_promoted_summary": "MIC/MBC/time-kill, in vivo burden reduction, food-surface decontamination, charge/hydrophobicity/helix arguments, omics signatures, and schematic/discussion language were not promoted beyond their supported classes."
+  },
+  "non_promoted_evidence": [
+    {
+      "evidence_type": "MIC_MBC_time_kill_in_vivo_food_surface_activity",
+      "assigned_class": "phenotype_supported",
+      "reason": "Activity and efficacy endpoints demonstrate antibacterial effect but not the direct mechanism of killing.",
+      "locators": [
+        "work/body_evidence/evidence.json",
+        "work/table_evidence/evidence.json"
+      ]
+    },
+    {
+      "evidence_type": "charge_hydrophobicity_sequence_length_family_membership",
+      "assigned_class": "inferred_mechanism",
+      "reason": "Physicochemical design arguments can rationalize activity but are not direct assays.",
+      "locators": [
+        "extracted/xml_sections.json#xml:p:56",
+        "extracted/xml_sections.json#xml:p:64"
+      ]
+    },
+    {
+      "evidence_type": "omics_response_signatures",
+      "assigned_class": "phenotype_supported",
+      "reason": "Transcriptomics, RT-qPCR, and metabolomics are response signatures unless paired with direct interaction or target assays.",
+      "locators": [
+        "extracted/xml_sections.json#xml:p:36",
+        "extracted/xml_sections.json#xml:p:38",
+        "work/supplementary_methods/supplementary_evidence.json#xlsx-kegg-enrichment-table-s5"
+      ]
+    },
+    {
+      "evidence_type": "schematic_and_discussion_language",
+      "assigned_class": "inferred_mechanism",
+      "reason": "Scheme 1 and discussion synthesis are interpretive; they are used only after checking the underlying assays.",
+      "locators": [
+        "extracted/xml_sections.json#xml:fig:2",
+        "extracted/xml_sections.json#xml:p:57",
+        "extracted/xml_sections.json#xml:p:58",
+        "extracted/xml_sections.json#xml:p:60"
+      ]
+    },
+    {
+      "evidence_type": "computed_or_predicted_structure",
+      "assigned_class": "computational_only",
+      "reason": "Helical-wheel predictions and calculated structure components are not direct mechanism evidence.",
+      "locators": [
+        "extracted/xml_sections.json#xml:p:98",
+        "extracted/xml_sections.json#xml:p:64"
+      ]
+    }
+  ],
+  "adjudication_note": "Direct mechanism is accepted only for direct membrane/envelope, LPS, and PGN assay groups with locators and direct assay types; phenotype, omics, design, and computational evidence remain lower-strength support. Source locator anchor fields were normalized for the local semantic gate while preserving the richer packet/paper/work locator arrays.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-envelope-damage-and-permeabilization",
+      "claim_text": "KTA and KTR directly damage and permeabilize bacterial cell envelopes, with supplementary support extending selected membrane assays to RI and RT. The direct evidence includes SEM/TEM/CLSM morphology, nucleic-acid/protein leakage, NPN outer-membrane permeability, ONPG beta-galactosidase inner-membrane release, cFDA/PI flow cytometry, Rhodamine 123 membrane-potential measurement, potassium leakage, and FTIR cell-envelope spectroscopy.",
+      "entity_scope": {
+        "primary_peptides": [
+          "KTA",
+          "KTR"
+        ],
+        "supplementary_supported_peptides": [
+          "RI",
+          "RT"
+        ],
+        "target_scope": "Primarily Escherichia coli O157:H7; the flow-cytometry method text contains an ATCC8739 strain label while the Figure 5 caption labels the plotted target as E. coli O157:H7.",
+        "scope_note": "KTA/KTR are the primary mechanism entities in main Figures 4-5. RI/RT are retained only where supplementary Figures S8-S15 explicitly show them."
+      },
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SEM_morphology",
+        "TEM_ultrastructure",
+        "CLSM_FM4-64_DAPI_morphology",
+        "nucleic_acid_and_protein_leakage",
+        "NPN_outer_membrane_permeability",
+        "ONPG_beta_galactosidase_inner_membrane_permeability",
+        "cFDA_PI_flow_cytometry",
+        "Rhodamine_123_membrane_potential",
+        "potassium_leakage_atomic_absorption",
+        "FTIR_cell_envelope_spectroscopy"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:31",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:31",
+          "extracted/xml_sections.json#xml:fig:5",
+          "extracted/xml_sections.json#xml:p:33",
+          "extracted/xml_sections.json#xml:p:34",
+          "extracted/xml_sections.json#xml:fig:6",
+          "extracted/xml_sections.json#xml:p:42",
+          "extracted/xml_sections.json#xml:p:43",
+          "extracted/xml_sections.json#xml:p:44",
+          "extracted/xml_sections.json#xml:p:45",
+          "extracted/xml_sections.json#xml:p:82",
+          "extracted/xml_sections.json#xml:p:83",
+          "extracted/xml_sections.json#xml:p:84",
+          "extracted/xml_sections.json#xml:p:85",
+          "extracted/xml_sections.json#xml:p:89",
+          "extracted/xml_sections.json#xml:p:90",
+          "extracted/xml_sections.json#xml:p:91",
+          "extracted/xml_sections.json#xml:p:92",
+          "extracted/pdf_text.jsonl#pdf:page=15",
+          "extracted/pdf_text.jsonl#pdf:page=16",
+          "extracted/pdf_text.jsonl#pdf:page=20",
+          "extracted/pdf_text.jsonl#pdf:page=21",
+          "extracted/pdf_text.jsonl#pdf:page=22"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 4",
+          "paper.xml:Figure 5",
+          "paper.xml:methods SEM/TEM, fluorescence microscopy, leakage, flow cytometry, membrane properties, K+ out-diffusion, FTIR",
+          "ADVS-10-2205301-s001.pdf:Figure S8",
+          "ADVS-10-2205301-s001.pdf:Figure S9",
+          "ADVS-10-2205301-s001.pdf:Figure S13",
+          "ADVS-10-2205301-s001.pdf:Figure S14",
+          "ADVS-10-2205301-s001.pdf:Figure S15"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      },
+      "limitations": [
+        "The first-hour PI/cFDA result is time-dependent: PI-positive cells are limited at 1 h and increase by 6 h.",
+        "The flow-cytometry method locator names E. coli ATCC8739, while the main figure caption and mechanism narrative name E. coli O157:H7; this strain-label conflict is preserved.",
+        "Morphology and FTIR demonstrate envelope damage but do not identify a residue-level binding site or a single protein/enzyme target."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:31",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:31",
+          "extracted/xml_sections.json#xml:fig:5",
+          "extracted/xml_sections.json#xml:p:33",
+          "extracted/xml_sections.json#xml:p:34",
+          "extracted/xml_sections.json#xml:fig:6",
+          "extracted/xml_sections.json#xml:p:42",
+          "extracted/xml_sections.json#xml:p:43",
+          "extracted/xml_sections.json#xml:p:44",
+          "extracted/xml_sections.json#xml:p:45",
+          "extracted/xml_sections.json#xml:p:82",
+          "extracted/xml_sections.json#xml:p:83",
+          "extracted/xml_sections.json#xml:p:84",
+          "extracted/xml_sections.json#xml:p:85",
+          "extracted/xml_sections.json#xml:p:89",
+          "extracted/xml_sections.json#xml:p:90",
+          "extracted/xml_sections.json#xml:p:91",
+          "extracted/xml_sections.json#xml:p:92",
+          "extracted/pdf_text.jsonl#pdf:page=15",
+          "extracted/pdf_text.jsonl#pdf:page=16",
+          "extracted/pdf_text.jsonl#pdf:page=20",
+          "extracted/pdf_text.jsonl#pdf:page=21",
+          "extracted/pdf_text.jsonl#pdf:page=22"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 4",
+          "paper.xml:Figure 5",
+          "paper.xml:methods SEM/TEM, fluorescence microscopy, leakage, flow cytometry, membrane properties, K+ out-diffusion, FTIR",
+          "ADVS-10-2205301-s001.pdf:Figure S8",
+          "ADVS-10-2205301-s001.pdf:Figure S9",
+          "ADVS-10-2205301-s001.pdf:Figure S13",
+          "ADVS-10-2205301-s001.pdf:Figure S14",
+          "ADVS-10-2205301-s001.pdf:Figure S15"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-002-lps-outer-leaflet-interaction",
+      "claim_text": "KTA and KTR interact with the Gram-negative LPS outer leaflet. The strongest support is the combination of exogenous LPS antagonism, divalent-cation suppression consistent with competition at negative LPS domains, and CD spectra showing LPS-induced peptide conformational transitions.",
+      "entity_scope": {
+        "primary_peptides": [
+          "KTA",
+          "KTR"
+        ],
+        "supplementary_supported_peptides": [
+          "RI",
+          "RT"
+        ],
+        "target_scope": "E. coli O157:H7 antibacterial assay with purified E. coli O55:B5 LPS as the exogenous LPS reagent",
+        "scope_note": "Main Figure 7 supports KTA/KTR. Supplementary Figure S16 extends analogous LPS and CD observations to RI/RT, but RI/RT are not promoted beyond the panels that explicitly test them."
+      },
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "exogenous_LPS_competitive_antagonism_MIC_assay",
+        "divalent_cation_antagonism_assay",
+        "CD_spectroscopy_with_purified_LPS"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:46",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:46",
+          "extracted/xml_sections.json#xml:fig:8",
+          "extracted/xml_sections.json#xml:p:47",
+          "extracted/xml_sections.json#xml:p:48",
+          "extracted/xml_sections.json#xml:p:57",
+          "extracted/xml_sections.json#xml:p:58",
+          "extracted/xml_sections.json#xml:p:66",
+          "extracted/xml_sections.json#xml:p:93",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 7a-e,i-j,m",
+          "paper.xml:CD interaction methods",
+          "paper.xml:LPS/cation binding assay methods",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      },
+      "limitations": [
+        "The purified LPS reagent is E. coli O55:B5, while the antibacterial target is E. coli O157:H7.",
+        "Cation antagonism and MIC rescue are supportive functional assays; CD supports physical interaction but does not map residue-level geometry or affinity constants.",
+        "The exact interaction mode remains a limitation in the paper and should not be reported as structurally solved."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:46",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:46",
+          "extracted/xml_sections.json#xml:fig:8",
+          "extracted/xml_sections.json#xml:p:47",
+          "extracted/xml_sections.json#xml:p:48",
+          "extracted/xml_sections.json#xml:p:57",
+          "extracted/xml_sections.json#xml:p:58",
+          "extracted/xml_sections.json#xml:p:66",
+          "extracted/xml_sections.json#xml:p:93",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 7a-e,i-j,m",
+          "paper.xml:CD interaction methods",
+          "paper.xml:LPS/cation binding assay methods",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-003-phospholipid-leaflet-support",
+      "claim_text": "Exogenous phosphatidylethanolamine and phosphatidylglycerol suppress KTA/KTR antibacterial activity in a dose-dependent manner, supporting involvement of phospholipid leaflets after LPS destabilization. This is retained as phenotype-supported because it is based on MIC-format competition rather than a standalone direct binding or structural assay.",
+      "entity_scope": {
+        "primary_peptides": [
+          "KTA",
+          "KTR"
+        ],
+        "supplementary_supported_peptides": [
+          "RI",
+          "RT"
+        ],
+        "target_scope": "E. coli O157:H7 antibacterial activity in the presence of purified PE or PG",
+        "scope_note": "PE/PG competition helps interpret the membrane pathway, but it is not sufficient by itself to establish direct physical binding kinetics."
+      },
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:49",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:49",
+          "extracted/xml_sections.json#xml:p:59",
+          "extracted/xml_sections.json#xml:fig:8",
+          "extracted/xml_sections.json#xml:p:94",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 7f-g",
+          "paper.xml:phospholipid binding assay methods",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ]
+      },
+      "limitations": [
+        "Assigned phenotype_supported because PE/PG evidence is activity suppression, not SPR, ITC, direct fluorescence binding, or solved peptide-phospholipid structure.",
+        "Do not use this claim alone to state a direct phospholipid target."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:49",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:49",
+          "extracted/xml_sections.json#xml:p:59",
+          "extracted/xml_sections.json#xml:fig:8",
+          "extracted/xml_sections.json#xml:p:94",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 7f-g",
+          "paper.xml:phospholipid binding assay methods",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-004-pgn-targeting-and-biosynthesis-perturbation",
+      "claim_text": "KTA and KTR directly perturb peptidoglycan integrity and biosynthesis. Evidence includes PGN competition, CD spectroscopy with PGN, lysozyme susceptibility, HADA labeling of PGN morphology, cell-length changes, and LC-MS/LC-MS/MS tracking of PGN biosynthetic precursors including UDP-MurNAc-pentapeptide.",
+      "entity_scope": {
+        "primary_peptides": [
+          "KTA",
+          "KTR"
+        ],
+        "target_scope": "E. coli O157:H7 PGN integrity and biosynthesis at sub-MIC KTA/KTR conditions for Figure 8 assays",
+        "controls": [
+          "untreated cells",
+          "ampicillin positive control"
+        ],
+        "scope_note": "The PGN claim applies directly to KTA and KTR; RI/RT supplementary evidence supports broader cell-envelope effects but does not carry the Figure 8 PGN-biosynthesis blockade claim."
+      },
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "PGN_competition_MIC_assay",
+        "CD_spectroscopy_with_PGN",
+        "lysozyme_susceptibility_PGN_integrity_assay",
+        "HADA_PGN_labeling_CLSM",
+        "cell_length_morphometry",
+        "LC_MS_PGN_precursor_quantification",
+        "LC_MS_MS_UDP_MurNAc_pentapeptide_confirmation"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:50",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:50",
+          "extracted/xml_sections.json#xml:p:51",
+          "extracted/xml_sections.json#xml:fig:9",
+          "extracted/xml_sections.json#xml:p:52",
+          "extracted/xml_sections.json#xml:p:53",
+          "extracted/xml_sections.json#xml:p:54",
+          "extracted/xml_sections.json#xml:p:60",
+          "extracted/xml_sections.json#xml:p:66",
+          "extracted/xml_sections.json#xml:p:95",
+          "extracted/xml_sections.json#xml:p:96",
+          "extracted/xml_sections.json#xml:p:97",
+          "extracted/pdf_text.jsonl#pdf:page=24"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 8",
+          "paper.xml:CD interaction methods",
+          "paper.xml:LPS/cation/peptidoglycan binding assay methods",
+          "paper.xml:PGN integrity assay methods",
+          "paper.xml:HADA labeling methods",
+          "paper.xml:PGN intermediates analysis methods",
+          "ADVS-10-2205301-s001.pdf:Figure S17"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      },
+      "limitations": [
+        "The exact enzyme target and peptide binding geometry are not mapped.",
+        "The paper supports PGN integrity and biosynthetic-precursor perturbation, not a named direct inhibition of a specific PBP, Mur enzyme, or transglycosylase.",
+        "The strongest PGN-biosynthesis experiments are KTA/KTR-specific."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:50",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:50",
+          "extracted/xml_sections.json#xml:p:51",
+          "extracted/xml_sections.json#xml:fig:9",
+          "extracted/xml_sections.json#xml:p:52",
+          "extracted/xml_sections.json#xml:p:53",
+          "extracted/xml_sections.json#xml:p:54",
+          "extracted/xml_sections.json#xml:p:60",
+          "extracted/xml_sections.json#xml:p:66",
+          "extracted/xml_sections.json#xml:p:95",
+          "extracted/xml_sections.json#xml:p:96",
+          "extracted/xml_sections.json#xml:p:97",
+          "extracted/pdf_text.jsonl#pdf:page=24"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 8",
+          "paper.xml:CD interaction methods",
+          "paper.xml:LPS/cation/peptidoglycan binding assay methods",
+          "paper.xml:PGN integrity assay methods",
+          "paper.xml:HADA labeling methods",
+          "paper.xml:PGN intermediates analysis methods",
+          "ADVS-10-2205301-s001.pdf:Figure S17"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#toxicity-and-mechanism-figures-s1-s17",
+          "work/supplementary_methods/supplementary_evidence.json#supplement-linked-method-conditions"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-005-omics-response-pathways",
+      "claim_text": "RNA-seq, RT-qPCR, and untargeted metabolomics show pathway responses involving fatty-acid, phospholipid, LPS, PGN, amino-sugar/nucleotide-sugar, central carbon, and energy metabolism after FCLAP exposure. These molecular response data support the membrane/PGN model but are not direct physical target proof by themselves.",
+      "entity_scope": {
+        "primary_peptides": [
+          "KTA",
+          "KTR"
+        ],
+        "supplementary_supported_peptides": [
+          "RI",
+          "RT"
+        ],
+        "target_scope": "E. coli O157:H7 treated at 4x MIC in transcriptomics/metabolomics and RT-qPCR workflows"
+      },
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:36",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:36",
+          "extracted/xml_sections.json#xml:fig:7",
+          "extracted/xml_sections.json#xml:p:37",
+          "extracted/xml_sections.json#xml:p:38",
+          "extracted/xml_sections.json#xml:p:39",
+          "extracted/xml_sections.json#xml:p:40",
+          "extracted/xml_sections.json#xml:p:41",
+          "extracted/xml_sections.json#xml:p:86",
+          "extracted/xml_sections.json#xml:p:87",
+          "extracted/xml_sections.json#xml:p:88",
+          "extracted/pdf_text.jsonl#pdf:page=17",
+          "extracted/pdf_text.jsonl#pdf:page=18",
+          "extracted/pdf_text.jsonl#pdf:page=19"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 6",
+          "paper.xml:transcriptomics and RT-qPCR methods",
+          "paper.xml:metabolomics methods",
+          "ADVS-10-2205301-s001.pdf:Figure S10",
+          "ADVS-10-2205301-s001.pdf:Figure S11",
+          "ADVS-10-2205301-s001.pdf:Figure S12",
+          "ADVS-10-2205301-s002.xlsx:Table S5 workbook"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#rt-qpcr-primer-table-s4",
+          "work/supplementary_methods/supplementary_evidence.json#xlsx-kegg-enrichment-table-s5"
+        ]
+      },
+      "limitations": [
+        "Assigned phenotype_supported because omics signatures are downstream cellular responses and pathway enrichments.",
+        "RT-qPCR validates selected expression changes, but expression changes do not by themselves demonstrate direct peptide-target binding."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:36",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:36",
+          "extracted/xml_sections.json#xml:fig:7",
+          "extracted/xml_sections.json#xml:p:37",
+          "extracted/xml_sections.json#xml:p:38",
+          "extracted/xml_sections.json#xml:p:39",
+          "extracted/xml_sections.json#xml:p:40",
+          "extracted/xml_sections.json#xml:p:41",
+          "extracted/xml_sections.json#xml:p:86",
+          "extracted/xml_sections.json#xml:p:87",
+          "extracted/xml_sections.json#xml:p:88",
+          "extracted/pdf_text.jsonl#pdf:page=17",
+          "extracted/pdf_text.jsonl#pdf:page=18",
+          "extracted/pdf_text.jsonl#pdf:page=19"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 6",
+          "paper.xml:transcriptomics and RT-qPCR methods",
+          "paper.xml:metabolomics methods",
+          "ADVS-10-2205301-s001.pdf:Figure S10",
+          "ADVS-10-2205301-s001.pdf:Figure S11",
+          "ADVS-10-2205301-s001.pdf:Figure S12",
+          "ADVS-10-2205301-s002.xlsx:Table S5 workbook"
+        ],
+        "work_evidence_locators": [
+          "work/supplementary_methods/supplementary_evidence.json#rt-qpcr-primer-table-s4",
+          "work/supplementary_methods/supplementary_evidence.json#xlsx-kegg-enrichment-table-s5"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-006-structure-activity-inference",
+      "claim_text": "The paper links activity to net charge, hydrophobicity, sequence length, tryptophan/arginine content, amphipathic alpha-helical propensity, and CD behavior in membrane-mimetic or LPS/PGN-containing conditions. These features provide structure-activity interpretation but are not a standalone direct mechanism.",
+      "entity_scope": {
+        "peptides": [
+          "Leg2",
+          "KTA",
+          "KTR",
+          "RI",
+          "RT"
+        ],
+        "target_scope": "design rationale and structure-activity discussion for FCLAPs"
+      },
+      "evidence_class": "inferred_mechanism",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:58",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:58",
+          "extracted/xml_sections.json#xml:p:63",
+          "extracted/xml_sections.json#xml:p:98",
+          "extracted/xml_sections.json#xml:p:56",
+          "extracted/xml_sections.json#xml:p:65",
+          "extracted/pdf_text.jsonl#pdf:page=9",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 1",
+          "paper.xml:Design and Characterization section",
+          "paper.xml:Discussion",
+          "ADVS-10-2205301-s001.pdf:Figure S2",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ]
+      },
+      "limitations": [
+        "Charge, hydrophobicity, family membership, sequence shortening, or alpha-helix propensity must not be promoted to direct mechanism without the direct assays captured in other claims.",
+        "The structural interpretation explains why KTA/KTR may perform better, not an independently verified killing target."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:58",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:58",
+          "extracted/xml_sections.json#xml:p:63",
+          "extracted/xml_sections.json#xml:p:98",
+          "extracted/xml_sections.json#xml:p:56",
+          "extracted/xml_sections.json#xml:p:65",
+          "extracted/pdf_text.jsonl#pdf:page=9",
+          "extracted/pdf_text.jsonl#pdf:page=23"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 1",
+          "paper.xml:Design and Characterization section",
+          "paper.xml:Discussion",
+          "ADVS-10-2205301-s001.pdf:Figure S2",
+          "ADVS-10-2205301-s001.pdf:Figure S16"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-007-computational-and-calculated-structure-context",
+      "claim_text": "Helical-wheel predictions and calculated secondary-structure components are supporting computational context. They are useful for design rationale but do not independently prove membrane damage, LPS interaction, or PGN targeting.",
+      "entity_scope": {
+        "peptides": [
+          "Leg2",
+          "KTA",
+          "KTR",
+          "RI",
+          "RT"
+        ],
+        "target_scope": "peptide design and predicted amphipathic structure"
+      },
+      "evidence_class": "computational_only",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:98",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:98",
+          "extracted/xml_sections.json#xml:p:56",
+          "extracted/xml_sections.json#xml:p:64",
+          "extracted/pdf_text.jsonl#pdf:page=9"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 1",
+          "paper.xml:peptide theoretical MW/net charge/hydrophobic ratio methods",
+          "ADVS-10-2205301-s001.pdf:Figure S2"
+        ]
+      },
+      "limitations": [
+        "Computational or calculated structure context remains computational_only unless tied to direct experimental evidence."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:98",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:98",
+          "extracted/xml_sections.json#xml:p:56",
+          "extracted/xml_sections.json#xml:p:64",
+          "extracted/pdf_text.jsonl#pdf:page=9"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Figure 1",
+          "paper.xml:peptide theoretical MW/net charge/hydrophobic ratio methods",
+          "ADVS-10-2205301-s001.pdf:Figure S2"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-008-activity-and-efficacy-phenotypes-not-mechanism",
+      "claim_text": "MIC/MBC activity, protease-conditioned MIC/MBC, time-kill, low mammalian toxicity, hemolysis, mouse gut colonization reduction, and food-surface decontamination establish antimicrobial phenotype and translational performance, but they do not identify a mechanism by themselves.",
+      "entity_scope": {
+        "peptides": [
+          "KTA",
+          "KTR",
+          "RI",
+          "RT",
+          "Leg2"
+        ],
+        "target_scope": "multi-strain antibacterial activity, E. coli O157:H7 killing, toxicity, in vivo colonization, and food-surface decontamination"
+      },
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+        "locator": "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+        "packet_locators": [
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+          "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt#Table_S1",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_2",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1",
+          "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt#Table_S1",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_2",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Table 1",
+          "ADVS-10-2205301-s001.pdf:Table S1",
+          "paper.xml:Figure 2",
+          "paper.xml:Figure 3"
+        ]
+      },
+      "limitations": [
+        "No MIC, MBC, time-kill, toxicity, in vivo burden, or food-surface result is promoted to direct_mechanism.",
+        "Protease-resistance and low toxicity inform developability, not bacterial target identity."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+        "locator": "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+        "packet_locators": [
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1_and_Figure_2_3",
+          "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt#Table_S1",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_2",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Table_1",
+          "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt#Table_S1",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_2",
+          "papers/doi__10.1002_advs.202205301/source/paper.xml#Figure_3"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Table 1",
+          "ADVS-10-2205301-s001.pdf:Table S1",
+          "paper.xml:Figure 2",
+          "paper.xml:Figure 3"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-009-untested-scope-limitations",
+      "claim_text": "The paper does not resolve the mechanism against Gram-positive bacteria, commensal selectivity under normal gut microbiota, exact molecular interaction modes, residue-level binding geometry, or a specific PGN/LPS enzyme target.",
+      "entity_scope": {
+        "unsupported_scopes": [
+          "Gram-positive mechanism",
+          "commensal selectivity in normal gut microbiota",
+          "residue-level peptide-target geometry",
+          "specific enzyme target for PGN biosynthesis blockade"
+        ]
+      },
+      "evidence_class": "unknown_or_not_tested",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:61",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:61",
+          "extracted/xml_sections.json#xml:p:62"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Discussion limitations",
+          "paper.xml:Summary"
+        ]
+      },
+      "limitations": [
+        "Preserve these as explicit unknown_or_not_tested scopes; do not smooth them into accepted mechanism coverage."
+      ],
+      "source_reviewed": true,
+      "source_locators": {
+        "source_path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "locator": "extracted/xml_sections.json#xml:p:61",
+        "packet_locators": [
+          "extracted/xml_sections.json#xml:p:61",
+          "extracted/xml_sections.json#xml:p:62"
+        ],
+        "paper_source_locators": [
+          "paper.xml:Discussion limitations",
+          "paper.xml:Summary"
+        ]
+      }
+    }
+  ]
+}

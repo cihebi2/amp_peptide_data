@@ -1,0 +1,95 @@
+{
+  "paper_id": "doi__10.3389_fcimb.2024.1389020",
+  "reviewed_at": "2026-05-05T18:01:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Bounded source review reopened the handoff packet, XML, PDF text, locator index, figure captions, HTML landing supplementary assets, and linked DBAASP rows. No separate local supplement table exists beyond HTML article copies."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fcimb.2024.1389020/handoff_context.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/packet_manifest.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fcimb.2024.1389020/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 27,
+    "activity_rows_parsed": 27,
+    "database_records": 23,
+    "database_status_summary": {
+      "source_conflict": 8,
+      "source_verified": 15
+    },
+    "mechanism_claims": 3,
+    "source_conflicts_preserved": 8,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP sequence and MIC/FIC/ECV rows that match XML/PDF evidence are source_verified; biofilm MBIC90/MBEC90 label normalization and the C. auris ECV note count mismatch are preserved as cautions/source_conflict.",
+    "layer_2_activity_toxicity": "Worker-2 recovered source-supported MIC distribution, reference-strain MIC, synergy-table, biofilm, and growth rows with units, targets, and locators.",
+    "layer_3_mechanism": "Worker-6 replaced placeholder mechanism notes with bounded TEM, molecular-dynamics, and permeabilization claims using direct_mechanism only for wet-lab assays.",
+    "publication_grade_review": "The previous blocking ticket is closed because source review recovered activity rows, adjudicated linked DBAASP rows, and left only nonblocking caution findings."
+  },
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review recovered C14R activity rows from XML/PDF results and Table 1, matched source-supported DBAASP rows to primary locators, preserved database endpoint/count mismatches as cautions, and bounded the mechanism record to TEM, simulation, and permeabilization evidence.",
+  "caution_findings": [
+    {
+      "caution_code": "biofilm_database_endpoint_normalization",
+      "severity": "caution",
+      "evidence_context": "Biofilm DBAASP MBIC90/MBEC90 endpoint labels are retained as source_conflict while the source-supported concentrations and percent killing are captured in activity rows.",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "database_isolate_count_note_mismatch",
+      "severity": "caution",
+      "evidence_context": "The DBAASP C. auris ECV note reports 101 clinical isolates; the primary source reports 105 clinical isolates plus the reference strain.",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "supplementary_assets_are_html_landing_copies",
+      "severity": "caution",
+      "evidence_context": "Eight local supplementary .bin files were opened with file/rg and are HTML article landing copies, not independent spreadsheet/PDF supplements; no gate-changing supplementary table was locally recoverable.",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "pore_size_mechanism_boundary",
+      "severity": "caution",
+      "evidence_context": "Pore-forming is source-supported by permeabilization assays, but exact molecular size cutoff remains bounded by the paper's stated uncertainty.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "rework_response": {
+    "ticket_id": "rwk-complete-test-0001",
+    "status": "closed_after_worker2_worker4_worker6_repair",
+    "closed_at": "2026-05-05T18:01:29Z",
+    "remaining_blocking_issues": 0
+  }
+}

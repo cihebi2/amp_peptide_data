@@ -1,0 +1,655 @@
+{
+  "artifact_paths": {
+    "paper_work_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/mechanism_ontology/mechanism_evidence.json",
+    "packet_analysis_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/analysis/mechanism_evidence.worker5.json",
+    "redacted_source_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/mechanism_ontology/mechanism_source_audit.worker5.json"
+  },
+  "artifact_role": "worker5_source_reviewed_mechanism_evidence",
+  "checked_inputs": {
+    "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/authoritative_match_report.json",
+    "database_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/database_source_manifest.json",
+    "dbaasp_candidate_rows": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/dbaasp_machine_extracted_rows.jsonl",
+    "figure_captions": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/figure_captions.json",
+    "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/packet_manifest.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/pdf_text.jsonl",
+    "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_index.json",
+    "supplementary_ocr_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/ocr/ANIE-64-e202501299-s002.pdf_text.jsonl",
+    "supplementary_tables": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_tables.json",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_text.jsonl",
+    "worker2_activity_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/analysis/activity_toxicity_evidence.worker2.json",
+    "worker3_supplementary_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/analysis/supplementary_evidence.worker3.json",
+    "worker4_database_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/analysis/database_record_audit.worker4.json",
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/xml_sections.json"
+  },
+  "contracts_read": [
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md"
+  ],
+  "database_boundary": {
+    "authoritative_linked_article_rows": {
+      "bad_json": 0,
+      "exists": true,
+      "rows": 0
+    },
+    "authoritative_linked_assay_rows": {
+      "bad_json": 0,
+      "exists": true,
+      "rows": 0
+    },
+    "authoritative_linked_literature_rows": {
+      "bad_json": 0,
+      "exists": true,
+      "rows": 0
+    },
+    "authoritative_linked_sequence_rows": {
+      "bad_json": 0,
+      "exists": true,
+      "rows": 0
+    },
+    "authoritative_match_row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    },
+    "database_source_manifest_row_counts": {
+      "codex_exec_sessions": 0,
+      "dbaasp_empty_done_rows": 0,
+      "dbaasp_machine_extracted_rows": 37,
+      "dbaasp_review_queue_rows": 0,
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    },
+    "dbaasp_codex_fallback_rows": {
+      "bad_json": 0,
+      "exists": true,
+      "rows": 37
+    },
+    "strict_interpretation": "Linked authoritative DBAASP rows are absent in this packet; Codex fallback rows are candidate machine evidence only and are not treated as source-reviewed direct mechanism evidence."
+  },
+  "direct_mechanism_assay_assessment": {
+    "direct_claim_count": 4,
+    "direct_assay_required_fields_present": true,
+    "direct_assay_types": [
+      "DsPMB/Dansyl-polymyxin displacement assay",
+      "electron_microscopy_or_surface_morphology_assay",
+      "fluorescence displacement binding assay",
+      "liposome_or_vesicle_membrane_assay",
+      "membrane_permeability_assay",
+      "membrane_potential_assay",
+      "model_membrane_assay"
+    ],
+    "nonpromoted_categories": [
+      "activity_or_growth_phenotype",
+      "physicochemical_or_design_inference",
+      "direct_binding_keyword_candidates",
+      "computational_only",
+      "dbaasp_codex_fallback_rows"
+    ],
+    "ticket_repair_claim_id": "PMC12124432-MECH-006"
+  },
+  "evidence_class_counts": {
+    "direct_mechanism": 4,
+    "inferred_mechanism": 1,
+    "phenotype_supported": 1
+  },
+  "excluded_or_nonpromoted_evidence": [
+    {
+      "category": "activity_or_growth_phenotype",
+      "evidence_class_if_retained": "phenotype_supported",
+      "reason": "Activity/toxicity endpoints are phenotype or safety evidence, not direct mechanism closure.",
+      "source_locator": [
+        "xml:table-wrap:1",
+        "xml:fig:1",
+        "xml:caption:1"
+      ]
+    },
+    {
+      "category": "physicochemical_or_design_inference",
+      "evidence_class_if_retained": "inferred_mechanism",
+      "reason": "Charge, hydrophobicity, and design language are inference unless paired with direct mechanism assays.",
+      "source_locator": [
+        "xml:p:8",
+        "xml:p:9",
+        "xml:p:10",
+        "xml:p:11",
+        "xml:p:12",
+        "xml:p:18"
+      ]
+    },
+    {
+      "category": "direct_binding_keyword_candidates",
+      "evidence_class_if_retained": "not_promoted",
+      "reason": "Keyword hits were retained as candidate/nonpromoted surfaces; worker-5 did not identify a source-reviewed biological target-binding mechanism claim from them.",
+      "source_locator": [
+        "supp:ANIE-64-e202501299-s002.pdf:page=8",
+        "supp:ANIE-64-e202501299-s002.pdf:page=10",
+        "supp:ANIE-64-e202501299-s002.pdf:page=15",
+        "supp:ANIE-64-e202501299-s002.pdf:page=46"
+      ],
+      "ticket_boundary_note": "LPS/DsPMB displacement surfaces with direct assay support are promoted separately as PMC12124432-MECH-006; this exclusion remains limited to keyword-only binding/target mentions without source-reviewed direct assay closure."
+    },
+    {
+      "category": "computational_only",
+      "evidence_class_if_retained": "computational_only",
+      "reason": "Redacted packet audit found no computational-only mechanism category hits to promote into a claim.",
+      "source_locator": []
+    },
+    {
+      "category": "dbaasp_codex_fallback_rows",
+      "evidence_class_if_retained": "candidate_machine_evidence_only",
+      "reason": "Fallback rows are separated from human/source-reviewed mechanism evidence by assignment constraint.",
+      "source_locator": []
+    }
+  ],
+  "generated_at_utc": "2026-07-27T21:08:26.847443Z",
+  "internet_used": false,
+  "lane": "mechanism_ontology",
+  "lane_status": "source_reviewed_worker5_repair_ready_for_worker6_adjudication",
+  "material_status_observed": {
+    "extraction_status": "material_extracted_complete",
+    "known_missing_or_blocked_materials": [],
+    "packet_analysis_queue_status": "analysis_queued",
+    "packet_material_queue_status": "material_extracted_complete",
+    "pdf_page_count": 6,
+    "supplementary_file_count": 2,
+    "supplementary_table_count": 0,
+    "supplementary_text_count": 134,
+    "xml_section_count": 56,
+    "xml_table_count": 1
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC12124432-MECH-001",
+      "claim_text": "Paper-local direct membrane assays support membrane permeabilization and membrane-potential disturbance for the evaluated antimicrobial peptide/peptidomimetic entities.",
+      "direct_assay_types": [
+        "membrane_permeability_assay",
+        "membrane_potential_assay"
+      ],
+      "entity_scope": {
+        "scope_note": "Applies to entities assayed in the primary paper packet; authoritative DBAASP linked rows are absent, so worker-5 does not promote this to a per-database-record mechanism assignment.",
+        "scope_type": "paper_level_evaluated_antimicrobial_entities"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "paper-level rather than DBAASP-record-level assignment because linked authoritative rows are empty",
+        "direct membrane assay evidence is not treated as a universal mechanism for every machine candidate row without source-row linkage"
+      ],
+      "machine_extraction_boundary": "DBAASP Codex fallback rows were not used to establish this direct mechanism claim.",
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:p:3",
+        "xml:fig:2",
+        "xml:caption:3",
+        "xml:p:17",
+        "xml:p:18",
+        "supp:ANIE-64-e202501299-s002.pdf:page=35",
+        "supp:ANIE-64-e202501299-s002.pdf:page=36",
+        "supp:ANIE-64-e202501299-s002.pdf:page=37"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_surfaces",
+      "supporting_source_locators": [
+        "pdf:page=1",
+        "pdf:page=3",
+        "pdf:page=4"
+      ]
+    },
+    {
+      "claim_id": "PMC12124432-MECH-002",
+      "claim_text": "Model-membrane evidence supports interaction with or disruption of membrane-mimic systems, with the mechanism claim limited to model-membrane assay context.",
+      "direct_assay_types": [
+        "model_membrane_assay",
+        "liposome_or_vesicle_membrane_assay"
+      ],
+      "entity_scope": {
+        "scope_note": "Restricted to source-reviewed model-membrane surfaces in the packet.",
+        "scope_type": "paper_level_model_membrane_assayed_entities"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "model-membrane-only evidence does not by itself identify a single in-cell molecular target",
+        "kept separate from MIC/growth phenotype rows"
+      ],
+      "machine_extraction_boundary": "Machine candidate rows are not promoted to model-membrane evidence.",
+      "source_locator": [
+        "xml:p:13",
+        "xml:fig:2",
+        "xml:caption:3",
+        "xml:p:17",
+        "xml:p:19",
+        "supp:ANIE-64-e202501299-s002.pdf:page=29",
+        "supp:ANIE-64-e202501299-s002.pdf:page=30",
+        "supp:ANIE-64-e202501299-s002.pdf:page=32"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_surfaces",
+      "supporting_source_locators": [
+        "pdf:page=3",
+        "pdf:page=4"
+      ]
+    },
+    {
+      "claim_id": "PMC12124432-MECH-003",
+      "claim_text": "Microscopy/morphology evidence directly supports cell-surface or envelope damage morphology, but it remains visual mechanism support rather than proof of a single molecular target.",
+      "direct_assay_types": [
+        "electron_microscopy_or_surface_morphology_assay"
+      ],
+      "entity_scope": {
+        "scope_note": "Restricted to entities and conditions represented in the source-reviewed microscopy locators.",
+        "scope_type": "paper_level_microscopy_assayed_entities"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "morphology evidence is direct visual support but not standalone target identification",
+        "classification does not convert morphology or growth phenotypes into a broader untested molecular mechanism"
+      ],
+      "machine_extraction_boundary": "Not derived from DBAASP fallback rows.",
+      "source_locator": [
+        "xml:fig:2",
+        "xml:caption:3",
+        "xml:p:17",
+        "xml:p:19",
+        "supp:ANIE-64-e202501299-s002.pdf:page=39",
+        "supp:ANIE-64-e202501299-s002.pdf:page=40",
+        "supp:ANIE-64-e202501299-s002.pdf:page=41"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_surfaces",
+      "supporting_source_locators": [
+        "pdf:page=3",
+        "pdf:page=4"
+      ]
+    },
+    {
+      "claim_id": "PMC12124432-MECH-004",
+      "claim_text": "MIC/activity evidence supports antimicrobial phenotype only and is not promoted to a direct mechanism claim.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "scope_type": "paper_level_activity_table_entities",
+        "source_activity_records": 56,
+        "source_activity_table_locators": {
+          "xml:table-wrap:1": 56
+        }
+      },
+      "evidence_class": "phenotype_supported",
+      "limitations": [
+        "MIC/growth-inhibition phenotype is kept below direct_mechanism in the ontology",
+        "database fallback activity rows remain candidate machine evidence unless matched to primary source rows"
+      ],
+      "machine_extraction_boundary": "Machine rows were reviewed only as candidate evidence and not used as primary mechanism evidence.",
+      "source_locator": [
+        "xml:table-wrap:1",
+        "xml:fig:1",
+        "xml:caption:1",
+        "xml:p:15"
+      ],
+      "source_review_status": "source_reviewed_using_worker2_activity_handoff_plus_packet_locators",
+      "supporting_source_locators": [
+        "pdf:page=1",
+        "pdf:page=2",
+        "pdf:page=3",
+        "supp:ANIE-64-e202501299-s002.pdf:page=19",
+        "supp:ANIE-64-e202501299-s002.pdf:page=20",
+        "supp:ANIE-64-e202501299-s002.pdf:page=21",
+        "supp:ANIE-64-e202501299-s002.pdf:page=22",
+        "supp:ANIE-64-e202501299-s002.pdf:page=23"
+      ]
+    },
+    {
+      "claim_id": "PMC12124432-MECH-005",
+      "claim_text": "Physicochemical design or structure rationale is preserved as inferred mechanism context only and is not promoted to direct mechanism evidence.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "scope_note": "Applies to source-reviewed design/physicochemical discussion surfaces rather than direct assay outcomes.",
+        "scope_type": "paper_level_design_and_structure_discussion"
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitations": [
+        "charge/hydrophobicity/design rationale is inference, not a direct mechanism assay",
+        "kept separate from direct membrane assays and phenotype rows"
+      ],
+      "machine_extraction_boundary": "Not derived from machine candidate rows.",
+      "source_locator": [
+        "xml:p:8",
+        "xml:fig:1",
+        "xml:caption:1",
+        "xml:p:9",
+        "xml:p:10",
+        "xml:p:11",
+        "xml:p:12",
+        "xml:p:18"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_surfaces",
+      "supporting_source_locators": [
+        "pdf:page=1",
+        "pdf:page=2",
+        "pdf:page=3",
+        "supp:ANIE-64-e202501299-s002.pdf:page=17",
+        "supp:ANIE-64-e202501299-s002.pdf:page=18",
+        "supp:ANIE-64-e202501299-s002.pdf:page=19",
+        "supp:ANIE-64-e202501299-s002.pdf:page=33",
+        "supp:ANIE-64-e202501299-s002.pdf:page=34"
+      ]
+    },
+    {
+      "claim_id": "PMC12124432-MECH-006",
+      "claim_text": "Paper-level source evidence supports LPS binding measured by a DsPMB/Dansyl-polymyxin displacement fluorescence assay; the claim is not promoted to database-record-specific linkage.",
+      "entity_scope": "paper_level_mechanism_surface_not_database_record_specific",
+      "evidence_class": "direct_mechanism",
+      "source_locator": [
+        "xml:p:18",
+        "xml:fig:2",
+        "xml:caption:3",
+        "supp:ANIE-64-e202501299-s002.pdf:page=37",
+        "supp:ANIE-64-e202501299-s002.pdf:page=38",
+        "supp:ANIE-64-e202501299-s002.pdf:page=39"
+      ],
+      "direct_assay_types": [
+        "DsPMB/Dansyl-polymyxin displacement assay",
+        "fluorescence displacement binding assay"
+      ],
+      "supporting_source_locators": [
+        "xml:p:18",
+        "xml:fig:2",
+        "xml:caption:3",
+        "supp:ANIE-64-e202501299-s002.pdf:page=37",
+        "supp:ANIE-64-e202501299-s002.pdf:page=38",
+        "supp:ANIE-64-e202501299-s002.pdf:page=39",
+        "supp:ANIE-64-e202501299-s002.pdf:page=39:Figure S9"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_and_supplementary_surfaces",
+      "machine_extraction_boundary": "not_taken_from_dbaasp_codex_fallback_rows; fallback rows remain candidate machine evidence only",
+      "limitations": [
+        "paper_level_scope_only; no linked authoritative DBAASP assay or sequence row is promoted from this mechanism claim",
+        "supports direct binding/displacement evidence surface; activity/toxicity values and quantitative assay rows remain worker-2/database-lane responsibilities",
+        "leader-reported xml:p:115 did not resolve in this packet, so the claim uses independently verified resolvable XML and supplementary locators"
+      ],
+      "ticket_repair": {
+        "ticket_id": "rwk-PMC12124432-campaign-r02-PMC12124432-BLOCK-004",
+        "repair_action": "added_direct_lps_dspmb_displacement_claim",
+        "verified_locator_hit_terms": {
+          "xml:fig:2": {
+            "surface": "xml_sections",
+            "hit_terms": [
+              "lps",
+              "dspmb",
+              "binding",
+              "fluorescence"
+            ],
+            "char_len": 2069,
+            "text_sha256_16": "dc621ceb49aafb77"
+          },
+          "xml:caption:3": {
+            "surface": "xml_sections",
+            "hit_terms": [
+              "lps",
+              "dspmb",
+              "binding",
+              "fluorescence"
+            ],
+            "char_len": 2060,
+            "text_sha256_16": "0b2eacc76a83f233"
+          },
+          "xml:p:18": {
+            "surface": "xml_sections",
+            "hit_terms": [
+              "lps",
+              "dspmb",
+              "binding",
+              "fluorescence",
+              "figure_2g"
+            ],
+            "char_len": 1296,
+            "text_sha256_16": "c09f022d756a414b"
+          },
+          "supp:ANIE-64-e202501299-s002.pdf:page=37": {
+            "surface": "supplementary_text",
+            "page": 37,
+            "hit_terms": [
+              "lps",
+              "dspmb",
+              "binding",
+              "fluorescence"
+            ],
+            "char_len": 2339,
+            "text_sha256_16": "b83b843bdcd95e52"
+          },
+          "supp:ANIE-64-e202501299-s002.pdf:page=38": {
+            "surface": "supplementary_text",
+            "page": 38,
+            "hit_terms": [
+              "lps",
+              "dspmb",
+              "binding",
+              "fluorescence"
+            ],
+            "char_len": 1895,
+            "text_sha256_16": "9e086d28fb315b3b"
+          },
+          "supp:ANIE-64-e202501299-s002.pdf:page=39": {
+            "surface": "supplementary_text",
+            "page": 39,
+            "hit_terms": [
+              "dspmb",
+              "fluorescence",
+              "figure_s9"
+            ],
+            "char_len": 2536,
+            "text_sha256_16": "ea21494adcf8175c"
+          }
+        },
+        "unresolved_reported_locator": {
+          "reported_locator": "xml:p:115",
+          "resolution_status": "unresolved_in_packet_locator_index_and_raw_xml_paragraph_count",
+          "raw_xml_p_count_observed": 30,
+          "mapped_resolvable_primary_locators_used": [
+            "xml:p:18",
+            "xml:fig:2",
+            "xml:caption:3"
+          ],
+          "impact": "does_not_block_worker5_claim_because_ticket_required_primary_figure/text_surface_is_present_under_resolvable_packet_locators"
+        }
+      }
+    }
+  ],
+  "needs_targeted_worker5_rework": false,
+  "paper_id": "PMC12124432",
+  "protocol": "amp_three_layer_v2",
+  "publication_grade_claim": false,
+  "publication_grade_note": "Worker-5 mechanism lane is source-reviewed repair-ready only; terminal publication-grade status requires fresh worker-6 adjudication and strict gates.",
+  "quality_checks": {
+    "claim_ids_present": true,
+    "claim_text_present": true,
+    "entity_scope_present": true,
+    "evidence_class_present": true,
+    "source_locator_present": true,
+    "direct_assay_types_present_for_direct_claims": true,
+    "machine_and_source_reviewed_claims_separated": true,
+    "source_locator_values_are_primary_style": true,
+    "ticket_lps_dspmb_claim_present": true,
+    "ticket_lps_dspmb_claim_has_primary_and_supplementary_locators": true,
+    "publication_grade_claim": false
+  },
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-07-27T21:08:26.847443Z",
+  "runtime_open_ticket_ids_assigned_to_worker5": [
+    "rwk-PMC12124432-campaign-r02-PMC12124432-BLOCK-004"
+  ],
+  "runtime_ticket_response_written": true,
+  "source_locator_resolution_issues": [
+    {
+      "reported_locator": "xml:p:115",
+      "resolution_status": "unresolved_in_packet_locator_index_and_raw_xml_paragraph_count",
+      "raw_xml_p_count_observed": 30,
+      "mapped_resolvable_primary_locators_used": [
+        "xml:p:18",
+        "xml:fig:2",
+        "xml:caption:3"
+      ],
+      "impact": "does_not_block_worker5_claim_because_ticket_required_primary_figure/text_surface_is_present_under_resolvable_packet_locators"
+    }
+  ],
+  "source_review_depth": {
+    "database_candidate_rows_reopened": true,
+    "figure_captions_reopened": true,
+    "linked_authoritative_database_rows_reopened": true,
+    "mechanism_category_hit_counts": {
+      "direct_binding_or_target": 8,
+      "direct_membrane_permeability": 15,
+      "direct_membrane_potential": 15,
+      "direct_microscopy": 14,
+      "inferred_physchem": 27,
+      "model_membrane": 15,
+      "phenotype_activity": 37
+    },
+    "paper_pdf_text_reopened": true,
+    "paper_xml_reopened": true,
+    "redacted_source_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/mechanism_ontology/mechanism_source_audit.worker5.json",
+    "source_surface_counts": {
+      "figure_caption": 9,
+      "pdf_page": 6,
+      "supp_text": 267,
+      "xml_section": 56
+    },
+    "supplementary_index_reopened": true,
+    "supplementary_ocr_reopened": true,
+    "supplementary_text_reopened": true,
+    "ticket_repair_lps_dspmb_surfaces_reopened": true,
+    "ticket_repair_primary_xml_figure_text_locators": [
+      "xml:p:18",
+      "xml:fig:2",
+      "xml:caption:3"
+    ],
+    "ticket_repair_supplementary_method_result_locators": [
+      "supp:ANIE-64-e202501299-s002.pdf:page=37",
+      "supp:ANIE-64-e202501299-s002.pdf:page=38",
+      "supp:ANIE-64-e202501299-s002.pdf:page=39"
+    ],
+    "ticket_repair_verified_locator_hit_terms": {
+      "xml:fig:2": {
+        "surface": "xml_sections",
+        "hit_terms": [
+          "lps",
+          "dspmb",
+          "binding",
+          "fluorescence"
+        ],
+        "char_len": 2069,
+        "text_sha256_16": "dc621ceb49aafb77"
+      },
+      "xml:caption:3": {
+        "surface": "xml_sections",
+        "hit_terms": [
+          "lps",
+          "dspmb",
+          "binding",
+          "fluorescence"
+        ],
+        "char_len": 2060,
+        "text_sha256_16": "0b2eacc76a83f233"
+      },
+      "xml:p:18": {
+        "surface": "xml_sections",
+        "hit_terms": [
+          "lps",
+          "dspmb",
+          "binding",
+          "fluorescence",
+          "figure_2g"
+        ],
+        "char_len": 1296,
+        "text_sha256_16": "c09f022d756a414b"
+      },
+      "supp:ANIE-64-e202501299-s002.pdf:page=37": {
+        "surface": "supplementary_text",
+        "page": 37,
+        "hit_terms": [
+          "lps",
+          "dspmb",
+          "binding",
+          "fluorescence"
+        ],
+        "char_len": 2339,
+        "text_sha256_16": "b83b843bdcd95e52"
+      },
+      "supp:ANIE-64-e202501299-s002.pdf:page=38": {
+        "surface": "supplementary_text",
+        "page": 38,
+        "hit_terms": [
+          "lps",
+          "dspmb",
+          "binding",
+          "fluorescence"
+        ],
+        "char_len": 1895,
+        "text_sha256_16": "9e086d28fb315b3b"
+      },
+      "supp:ANIE-64-e202501299-s002.pdf:page=39": {
+        "surface": "supplementary_text",
+        "page": 39,
+        "hit_terms": [
+          "dspmb",
+          "fluorescence",
+          "figure_s9"
+        ],
+        "char_len": 2536,
+        "text_sha256_16": "ea21494adcf8175c"
+      }
+    },
+    "reported_leader_locator_resolution": {
+      "reported_locator": "xml:p:115",
+      "resolution_status": "unresolved_in_packet_locator_index_and_raw_xml_paragraph_count",
+      "raw_xml_p_count_observed": 30,
+      "mapped_resolvable_primary_locators_used": [
+        "xml:p:18",
+        "xml:fig:2",
+        "xml:caption:3"
+      ],
+      "impact": "does_not_block_worker5_claim_because_ticket_required_primary_figure/text_surface_is_present_under_resolvable_packet_locators"
+    }
+  },
+  "source_reviewed_complete_for_available_packet": true,
+  "strict_scope": {
+    "biomedical_source_passages_printed": false,
+    "checkout_only": true,
+    "leader_preflight_contracts": [],
+    "leader_preflight_evidence_scaffolds": [],
+    "paper_id_only": "PMC12124432",
+    "source_text_excerpts_included": false
+  },
+  "unresolved_blockers": [
+    {
+      "blocker_id": "worker6_terminal_adjudication_required_after_worker5_ticket_repair",
+      "severity": "nonterminal_for_worker5",
+      "owner_worker": "worker-6",
+      "target_queue": "adjudication",
+      "impact_on_worker5": "worker5 artifacts are repair-ready; final publication-grade closure must be performed by a fresh worker-6 adjudication pass"
+    }
+  ],
+  "worker": "worker-5",
+  "worker2_activity_boundary": {
+    "activity_lane_status": "source_reviewed_worker2_complete_for_activity_toxicity_artifacts",
+    "summary_counts": {
+      "accepted_activity_locators": {
+        "xml:table-wrap:1": 56
+      },
+      "activity_records": 56,
+      "activity_tables_accepted": 1,
+      "machine_activity_rows_matched_to_source_rows": 20,
+      "machine_candidate_rows_seen": 37,
+      "source_activity_rows_not_in_machine_candidates": 36,
+      "toxicity_records": 16,
+      "toxicity_surfaces_accepted": 2
+    },
+    "use_in_mechanism_lane": "MIC/activity rows support phenotype_supported evidence only."
+  },
+  "worker_id": "worker-5",
+  "runtime_ticket_response_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/rework_responses.jsonl",
+  "runtime_ticket_response_ticket_id": "rwk-PMC12124432-campaign-r02-PMC12124432-BLOCK-004",
+  "updated_after_rework_response_at_utc": "2026-07-27T21:10:22.200742Z"
+}

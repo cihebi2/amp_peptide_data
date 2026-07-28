@@ -1,0 +1,115 @@
+{
+  "paper_id": "doi__10.3390_biology11091263",
+  "reviewed_at": "2026-05-07T17:55:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "summary": "Targeted worker-2/5/6 re-review recovered the missing Table 4/5 activity rows, replaced mechanism placeholders with source-reviewed ontology claims, and keeps database strain/sequence cautions visible.",
+  "adjudication_summary": "The paper is publication-grade with cautions after bounded local re-review. Activity/toxicity rows now cover MIC/MBC, MBIC/MBEC, and HC50 source tables; mechanism claims are limited to direct SYTOX Green membrane permeabilization plus phenotype/inference layers; database conflicts remain preserved.",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "activity_rework": "Table 4 MIC/MBC and Table 5 MBIC/MBEC values were recovered from local XML and checked against PDF text and database audit rows.",
+    "mechanism_rework": "Mechanism classification was rebuilt from Sections 2.6, 3.6, Figure 3, time-kill context, biofilm activity, and Discussion limitations.",
+    "supplementary_detail": "Local supplementary zip/PDF was already opened by worker-4/6; supplementary table parser reports no structured activity/mechanism tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_biology11091263/handoff_context.json",
+    "paper_packets/doi__10.3390_biology11091263/packet_manifest.json",
+    "paper_packets/doi__10.3390_biology11091263/locators/locator_index.json",
+    "papers/doi__10.3390_biology11091263/source/paper.xml",
+    "papers/doi__10.3390_biology11091263/source/paper.pdf",
+    "paper_packets/doi__10.3390_biology11091263/extracted/pdf_text/biology-11-01263.txt",
+    "paper_packets/doi__10.3390_biology11091263/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_biology11091263/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_biology11091263/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_biology11091263/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_biology11091263/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_biology11091263/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_biology11091263/analysis/database_record_audit.json",
+    "papers/doi__10.3390_biology11091263/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_biology11091263/final/database_record_verification.json",
+    "papers/doi__10.3390_biology11091263/final/mechanism_ontology_record.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_current_final": 147,
+    "table4_mic_mbc_records": 70,
+    "table5_mbic_mbec_records": 72,
+    "table6_hc50_records": 5,
+    "database_record_audits": 239,
+    "database_status_summary": {
+      "source_conflict": 62,
+      "source_verified": 177
+    },
+    "mechanism_claims_current_final": 4,
+    "direct_mechanism_claims_with_assay_types": 1,
+    "quality_feedback_open_issue_count": 0,
+    "open_targeted_rework_count": 0,
+    "unrecoverable_material_gap_count": 0,
+    "latest_semantic_issue_count": 0,
+    "latest_publication_risk_counts": {}
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 source-reviewed database audit is retained: source_verified and source_conflict rows remain separated, C-terminal amidation caveats are preserved, and S. aureus/MRSA strain-label conflicts are not hidden.",
+    "layer_2_activity_toxicity": "Worker-2 repair rebuilt primary-source activity records for Table 4 MIC/MBC and Table 5 MBIC/MBEC, including target mapping, raw inequalities/ND values, units, source locators, and Table 5 VM/E. faecalis delimiter caution. Existing HC50 Table 6 rows were retained with corrected horse erythrocyte target labels.",
+    "layer_3_mechanism": "Worker-5 repair replaced placeholder framework notes with source-reviewed ontology claims: direct SYTOX Green membrane permeabilization is direct_mechanism; time-kill and biofilm outputs are phenotype_supported; intracellular dysfunction/carpet/pore model language remains inferred_mechanism.",
+    "worker_6_final_gate": "The two targeted worker-2 and worker-5 tickets are closed by this re-review; publication-grade acceptance is with explicit cautions and no open rework targets."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_backbone_omits_primary_c_terminal_amidation",
+      "evidence_context": "Primary Table 1 gives -NH2 amidated peptides while APD6/DBAASP sequence catalog rows store backbone sequences; final database audit preserves this modification caveat."
+    },
+    {
+      "caution_code": "database_strain_label_conflicts_preserved",
+      "evidence_context": "Some DBAASP rows conflict with primary methods strain mapping for S. aureus/MRSA; they remain source_conflict rather than being normalized away."
+    },
+    {
+      "caution_code": "table5_vm_efaecalis_compact_cell_preserved",
+      "evidence_context": "The local XML/PDF cell for VM versus E. faecalis in Table 5 is 16>512 without a slash; final activity keeps raw_cell and records MBIC 16 / MBEC >512 under the paired-table caption and database-audit support."
+    },
+    {
+      "caution_code": "intracellular_dysfunction_inferred_not_direct",
+      "evidence_context": "SYTOX Green membrane permeabilization is direct; discussion-level intracellular dysfunction and carpet/pore models are kept as inferred mechanism context."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001",
+    "rwk-20260508-worker2-table4-table5-activity",
+    "rwk-20260508-worker5-mechanism-ontology"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "publication_grade_ready": true,
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "semantic_gate_report": "reports/doi__10.3390_biology11091263.codex_worker256_rereview.final.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_biology11091263.codex_worker256_rereview.final.publication_quality.json"
+  },
+  "latest_gate_results": {
+    "checked_at": "2026-05-07T17:58:28Z",
+    "semantic_gate_report": "reports/doi__10.3390_biology11091263.codex_worker256_rereview.final.semantic_gate.json",
+    "semantic_publication_grade_pass": true,
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "publication_quality_report": "reports/doi__10.3390_biology11091263.codex_worker256_rereview.final.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "stop_condition": "strict_semantic_and_publication_gates_passed"
+  }
+}

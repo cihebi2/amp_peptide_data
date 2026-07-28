@@ -1,0 +1,112 @@
+You are worker-3 for an AMP three-layer DBAASP strict pilot.
+
+Hard constraints:
+- Use this checkout only; do not browse the internet.
+- Work only on paper_id PMC12153049.
+- Read and obey your worker skill: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-supp-evidence-worker/SKILL.md
+- Read and obey these strict references:
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/SKILL.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md
+- /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md
+- Use source-reviewed, paper-local evidence from this packet. Treat DBAASP Codex fallback rows as candidate machine evidence only.
+- Keep human/source-reviewed claims separate from machine extraction.
+- Read and obey every listed leader preflight contract before reviewing the
+  source. Contracts define required coverage/conflict preservation but do not
+  replace source evidence.
+- Use and independently verify leader evidence scaffolds; preserve approximate,
+  unresolved, and candidate status rather than promoting scaffold values to
+  exact source facts.
+- Do not claim publication-grade unless the required strict gates can pass.
+- Write the requested files directly; keep JSON valid and paper-specific.
+- Keep terminal output compact. Do not print XML/PDF/supplement excerpts,
+  table text, assay-method prose, source sentences, or biomedical passages to
+  stdout/stderr/final messages. Do not run shell commands that print source text
+  to the terminal; write derived JSON/TSV/MD artifacts to your work directory and
+  report only file paths, counts, statuses, short locator IDs, and field names.
+- This is literature/database curation only. Do not provide wet-lab protocols,
+  optimization advice, or actionable biological experimentation guidance.
+
+Current inputs:
+- Paper root: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049
+- Packet root: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049
+- Packet manifest: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/packet_manifest.json
+- XML sections: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/xml_sections.json
+- PDF text: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/pdf_text.jsonl
+- Supplement index/text: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_index.json and /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_text.jsonl
+- Database snapshot: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/database_source_manifest.json
+- DBAASP candidate rows: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/dbaasp_machine_extracted_rows.jsonl
+- Safe worker-2 activity handoff: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/activity_safe_candidate_handoff.json
+- Leader preflight contracts: []
+- Leader preflight evidence scaffolds: []
+- Authoritative DBAASP/merged match report: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/authoritative_match_report.json
+- Linked authoritative rows, if any: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_article_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_assay_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_sequence_records.jsonl, /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_literature_records.jsonl
+- Codex session audit: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/codex_session_audit.jsonl
+- Packet gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py
+- Semantic gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py
+- Publication gate script: /home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py
+- Rework requests/responses: /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/rework/rework_requests.jsonl and /home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/rework/rework_responses.jsonl
+- Runtime-open ticket IDs assigned to worker-3: ["rwk-PMC12153049-campaign-r02-BF-PMC12153049-W3-SUPPLEMENTARY-EXTRACTION-STATUS-COUNT-STAL"]
+- Runtime-open ticket contracts assigned to worker-3: [
+  {
+    "acceptance_checks": [
+      "A script asserts extraction_status.json supplementary table/surface counts agree with supplementary_tables.json table and figure surface counts or with an explicitly named policy field.",
+      "A script asserts Table S1 and Figures S14-S17 have resolvable supp: locators in supplementary_tables.json and locator_index.json.",
+      "check_two_queue_packets and the strict acceptance audit report zero material-exhaustion hard findings after the refreshed status file is in place."
+    ],
+    "blocks": [
+      "publication_grade_acceptance",
+      "leader_semantic_pass",
+      "independent_verifier_pass",
+      "remaining_200_batch_progress"
+    ],
+    "created_at": "2026-07-27T17:12:27.761152Z",
+    "evidence_paths": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/remaining_200_campaign/PMC12153049/20260727T170006113459Z.leader_semantic_auditor.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/source/supplementary/RA-015-D5RA02932E-s001.pdf",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_text.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_tables.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extraction/extraction_status.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/supplementary_evidence.worker3.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/supplementary_methods/supplementary_evidence.json"
+    ],
+    "owner_response_contract": "Append one evidence-bearing repair_ready_for_adjudication response; only a later fresh worker-6 may close this ticket.",
+    "owner_worker": "worker-3",
+    "paper_id": "PMC12153049",
+    "reason": "The staged supplementary PDF was extracted and current supplementary_tables.json contains one structured Table S1 plus five figure surfaces, but extraction_status.json still reports supplementary_table_count=0. Because extraction_status.json is the material-exhaustion status surface and was updated after the repair cycle, this stale count makes the packet's supplementary exhaustion evidence internally inconsistent.",
+    "requested_by": "structured_leader_field_level_semantic_audit",
+    "required_actions": [
+      "Refresh extraction_status.json so supplementary_table_count and any figure/surface counts reflect supplementary_tables.json and worker-3 supplementary_evidence outputs.",
+      "If extraction_status intentionally counts only automatic pre-repair table extraction, add a separate current structured_supplementary_surface_count field and explicit rationale so material exhaustion remains auditable.",
+      "Keep Table S1 and Figure S14-S17 source locators in the packet locator/material inventory after refresh."
+    ],
+    "severity": "blocking",
+    "source_locators": [
+      "xml:supplementary-material=RA-015-D5RA02932E-s001",
+      "packets/PMC12153049/extraction/extraction_status.json $.supplementary_table_count=0",
+      "packets/PMC12153049/extracted/supplementary_tables.json $.tables[0].table_id=Table S1",
+      "supp:RA-015-D5RA02932E-s001.pdf:page=13:table=S1",
+      "supp:RA-015-D5RA02932E-s001.pdf:page=16:figure=S14",
+      "supp:RA-015-D5RA02932E-s001.pdf:page=17:figure=S15",
+      "supp:RA-015-D5RA02932E-s001.pdf:page=17:figure=S16",
+      "supp:RA-015-D5RA02932E-s001.pdf:page=18:figure=S17"
+    ],
+    "target_queue": "material",
+    "ticket_id": "rwk-PMC12153049-campaign-r02-BF-PMC12153049-W3-SUPPLEMENTARY-EXTRACTION-STATUS-COUNT-STAL"
+  }
+]
+
+The Runtime-open ticket IDs assigned to your worker list is authoritative. For every listed ticket, append one fresh owner-repair response row to rework_responses.jsonl after verifying or repairing the current artifact, even when the artifact itself needs no further change and even when an older response exists. Every owner response is nonterminal and must contain these top-level fields exactly: ticket_id set to the listed ticket; response_status repair_ready_for_adjudication; response_by set to your worker ID; analysis_can_resume true; and at least one non-empty evidence, evidence_paths, repaired_artifacts, artifacts_written, added_files, validation_artifacts, reason, or notes field. Do not put analysis_can_resume only inside a nested summary. Never use closed*, resolved*, repaired_*_complete, needs_followup, or blocked_* as the response status for a repair-ready ticket. Only worker-6 may append terminal closed_repaired after final rebuild and strict adjudication. Do not respond to a ticket not assigned to your worker.
+
+Required outputs for this worker:
+
+Write:
+- pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/supplementary_methods/supplementary_evidence.json
+- pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/supplementary_evidence.worker3.json
+Inventory every staged or referenced supplement; record exact missing/unparsed material and impact.
+When a blocking ticket requires quantitative figure observations, inspect the staged figure asset and recover every requested visible bar/point with axis calibration, approximate raw value, raw unit, uncertainty, image coordinates or equivalent calibration evidence, exact-vs-approximate status, and treatment/control role. A null raw_value or raw_unit is not a completed digitization when the plotted mark and axis can be calibrated. If the asset or scale is genuinely insufficient, leave the ticket open and record the exact material gap instead of emitting null placeholders as a repaired result.
+
+
+Return a concise final message listing files written, unresolved blockers, and whether your lane is source-reviewed complete or needs targeted rework.

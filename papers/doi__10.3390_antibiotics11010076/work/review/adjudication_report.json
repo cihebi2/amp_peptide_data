@@ -1,0 +1,117 @@
+{
+  "paper_id": "doi__10.3390_antibiotics11010076",
+  "reviewed_at": "2026-05-07T15:10:59Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_assets_note": "Opened OA package ZIP, OOXML workbook, and survival CSV members; no absent external supplement was chased."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics11010076/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/analysis/adjudication_report.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11010076/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11010076/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/pdf_text/antibiotics-11-00076.txt",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/oa_package/local-DBAASP-PMC8773371/PMC8773371/antibiotics-11-00076.nxml",
+    "paper_packets/doi__10.3390_antibiotics11010076/extracted/oa_package/local-DBAASP-PMC8773371/PMC8773371/antibiotics-11-00076-s001.zip",
+    "papers/doi__10.3390_antibiotics11010076/source/paper.xml",
+    "papers/doi__10.3390_antibiotics11010076/source/paper.pdf",
+    "papers/doi__10.3390_antibiotics11010076/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_antibiotics11010076/final/database_record_verification.json",
+    "papers/doi__10.3390_antibiotics11010076/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_antibiotics11010076/final/review_report.json",
+    "papers/doi__10.3390_antibiotics11010076/work/review/quality_feedback.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 299,
+    "mic_like_units_present": true,
+    "suspicious_target_strings_checked": true,
+    "database_status_summary": {
+      "source_conflict": 56,
+      "database_only_no_primary_source": 18,
+      "source_verified": 2
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "strict_gate_evidence": {
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "publication_quality_pass": true
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains a source inventory layer; owner-layer repair consumed XML/PDF/OA/supplement/database sources without rerunning bootstrap.",
+    "validator_contract": "Structural validator readiness is separate from publication-grade acceptance; strict semantic/publication gates were rerun after repair.",
+    "activity_toxicity": "Worker-2 recovered XML Tables 2-6 into isolate-level MIC/FICI rows and parsed supplementary survival CSV values; no database-only activity row is promoted as primary evidence.",
+    "database_record_verification": "Worker-4 preserved database-only and source-conflict rows with primary-source context instead of forcing one-to-one reconciliation.",
+    "mechanism_ontology": "Worker-6 keeps direct mechanism unproven and limits mechanism language to phenotypic activity/in vivo efficacy plus cautionary mechanism context.",
+    "publication_grade_review": "No blocking or major owner-layer issue remains; prior ticket is closed with source conflicts preserved as cautions."
+  },
+  "caution_findings": [
+    {
+      "code": "database_species_level_rows_do_not_equal_primary_isolate_rows",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "count": 56,
+      "finding": "Linked database rows often summarize species-level/range-style activity while the primary paper reports isolate-level MIC/FICI tables."
+    },
+    {
+      "code": "database_only_rows_retained_as_provenance",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "count": 18,
+      "finding": "Rows without record-level activity values remain provenance rows and are not treated as primary-source assay rows."
+    },
+    {
+      "code": "direct_molecular_mechanism_not_established",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "The paper supports phenotypic antibacterial/in vivo efficacy but does not run direct molecular mechanism assays for the studied isolates."
+    },
+    {
+      "code": "no_paper_local_toxicity_assay_table",
+      "severity": "caution",
+      "owner_worker": "worker-2",
+      "finding": "No direct toxicity/hemolysis assay table for this paper was found in XML/PDF/OA ZIP; this is not promoted into fabricated toxicity values."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 re-review recovered source-located MIC/FICI and survival evidence, source-reviewed linked database conflicts, and closed the prior framework-only rework ticket with cautions."
+}

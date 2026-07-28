@@ -1,0 +1,273 @@
+{
+  "paper_id": "doi__10.1002_pro.5088",
+  "pilot_sample_id": "PILOT20-004",
+  "audit_record_id": "doi__10.1002_pro.5088:database_audit:416",
+  "reviewed_at": "2026-06-22T03:51:04Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "model_provenance": {
+    "requested_review_model": "gpt-5.5",
+    "requested_reasoning_effort": "xhigh",
+    "provenance_status": "not_machine_verifiable_from_current_session",
+    "impact": "Per the packet prompt, the terminal decision is unverifiable_best_effort even though the local source evidence supports the sampled row as source-backed with preserved cautions."
+  },
+  "material_review": {
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted",
+    "surfaces_reopened": {
+      "paper_xml": {
+        "exists": true,
+        "paths": [
+          "papers/doi__10.1002_pro.5088/source/paper.xml",
+          "paper_packets/doi__10.1002_pro.5088/raw/paper.xml"
+        ],
+        "evidence": "Article metadata, XML section text, methods sections, and Table 2 locator index were inspected."
+      },
+      "paper_pdf": {
+        "exists": true,
+        "paths": [
+          "papers/doi__10.1002_pro.5088/source/paper.pdf",
+          "paper_packets/doi__10.1002_pro.5088/extracted/pdf_text/PRO-33-e5088.txt"
+        ],
+        "evidence": "PDF text confirms DeNo1010/sequence presence and Table S1/methods references."
+      },
+      "oa_package": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1002_pro.5088/raw/oa_package",
+          "paper_packets/doi__10.1002_pro.5088/extracted/oa_package"
+        ],
+        "evidence": "Two local OA/package archives are present; locator index records supplementary PDF assets from both APD6 and DBAASP package extracts."
+      },
+      "supplementary_assets": {
+        "exists": true,
+        "raw_supplementary_original_dir_exists": false,
+        "paths": [
+          "papers/doi__10.1002_pro.5088/source/supplementary/PRO-33-e5088-s001.pdf",
+          "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_text/PRO-33-e5088-s001.txt",
+          "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_tables.json"
+        ],
+        "evidence": "Supplementary PDF is available through package extraction/source symlink; no structured spreadsheet table was present, but text extraction contains Table S1."
+      },
+      "database_rows": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1002_pro.5088/database/linked_literature_records.jsonl",
+          "paper_packets/doi__10.1002_pro.5088/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1002_pro.5088/database/linked_experiment_records.jsonl",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        ],
+        "note": "The last path is the checked merged-corpus sequence table for APD6 AP04748."
+      }
+    },
+    "material_gap_assessment": "No missing primary material blocked this sample. The packet still carries a material_extracted_with_gaps/test-scope label, but XML, PDF text, OA package, supplementary PDF text, locator index, and linked database rows needed for AP04748/DeNo1010 were locally readable."
+  },
+  "layer1_database_record_review": {
+    "sampled_record": {
+      "database": "APD6",
+      "source_id": "AP04748",
+      "sequence_key": "APD6:AP04748",
+      "peptide_name": "DeNo1010",
+      "database_sequence": "VLGGLLKKLLKKLLKKL",
+      "final_status": "source_verified"
+    },
+    "source_verified_assessment": "justified_for_this_sample_best_effort",
+    "primary_source_support": [
+      {
+        "claim": "DeNo1010 sequence matches the APD6 sequence.",
+        "source": "papers/doi__10.1002_pro.5088/source/paper.xml",
+        "locator": "xml:table=2:row=11",
+        "observed": "Locator index preview and XML/PDF text show DeNo1010 with VLGGLLKKLLKKLLKKL."
+      },
+      {
+        "claim": "Article DOI/PMID/PMCID trace to the paper.",
+        "source": "papers/doi__10.1002_pro.5088/source/paper.xml",
+        "locator": "xml:article-meta",
+        "observed": "Article metadata contains DOI 10.1002/pro.5088, PMID 38988311, and PMCID PMC11237553."
+      },
+      {
+        "claim": "APD6 literature link points to this article.",
+        "source": "paper_packets/doi__10.1002_pro.5088/database/linked_literature_records.jsonl",
+        "locator": "row=16",
+        "observed": "Linked row has database APD6, source_id AP04748, DOI 10.1002/pro.5088, PMID 38988311, PMCID PMC11237553."
+      }
+    ],
+    "release_row_check": {
+      "release_row_json_matches_final_record": true,
+      "release_table_identity_match": true,
+      "release_table_identity_locator": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:2674",
+      "packet_locator_caution": "release_row.json/validation_sample.json report tsv_row=2655, but locating by audit_record_id/source_id finds database_audit:416 at physical TSV line 2674 in the current checkout."
+    },
+    "conflict_assessment": {
+      "sample_conflict_flags": [],
+      "sample_conflict_status": "no_conflict_found_for_AP04748",
+      "paper_level_conflicts_preserved": "Final database review preserves 18 DBAASP source_conflict rows; these are paper-level cautions, not conflicts in the sampled APD6 literature-link row."
+    }
+  },
+  "layer2_activity_toxicity_review": {
+    "sample_context": "The sampled APD6 row is a literature-link/database identity row, but the same DeNo1010 sequence has source-backed activity/toxicity evidence in the primary supplement and linked DBAASP assay/experiment rows.",
+    "spot_checked_primary_rows": [
+      {
+        "record_id": "deno1010-ecoli_mic",
+        "endpoint": "MIC",
+        "target": "Escherichia coli ATCC 25922",
+        "raw_value": "4",
+        "raw_unit": "ug/mL",
+        "locator": "supp:PRO-33-e5088-s001.pdf:table=S1:row=DeNo1010:column=E_coli_MIC"
+      },
+      {
+        "record_id": "deno1010-ecoli_mbc",
+        "endpoint": "MBC",
+        "target": "Escherichia coli ATCC 25922",
+        "raw_value": "4-8",
+        "raw_unit": "ug/mL",
+        "locator": "supp:PRO-33-e5088-s001.pdf:table=S1:row=DeNo1010:column=E_coli_MBC"
+      },
+      {
+        "record_id": "deno1010-saureus_mic",
+        "endpoint": "MIC",
+        "target": "Staphylococcus aureus ATCC 29213",
+        "raw_value": "32-64",
+        "raw_unit": "ug/mL",
+        "locator": "supp:PRO-33-e5088-s001.pdf:table=S1:row=DeNo1010:column=S_aureus_MIC"
+      },
+      {
+        "record_id": "deno1010-saureus_mbc",
+        "endpoint": "MBC",
+        "target": "Staphylococcus aureus ATCC 29213",
+        "raw_value": "32-128",
+        "raw_unit": "ug/mL",
+        "locator": "supp:PRO-33-e5088-s001.pdf:table=S1:row=DeNo1010:column=S_aureus_MBC"
+      },
+      {
+        "record_id": "deno1010-porcine_rbc_hc50",
+        "endpoint": "HC50",
+        "target": "porcine red blood cells",
+        "raw_value": "64-128",
+        "raw_unit": "ug/mL",
+        "locator": "supp:PRO-33-e5088-s001.pdf:table=S1:row=DeNo1010:column=porcine_RBC_HC50"
+      }
+    ],
+    "method_support": [
+      "xml:sec=12:Antimicrobial susceptibility testing",
+      "xml:sec=13:Hemolysis assay",
+      "paper_packets/doi__10.1002_pro.5088/extracted/pdf_text/PRO-33-e5088.txt"
+    ],
+    "database_row_cross_check": {
+      "linked_assay_rows": "paper_packets/doi__10.1002_pro.5088/database/linked_assay_records.jsonl:46-50",
+      "linked_experiment_rows": "paper_packets/doi__10.1002_pro.5088/database/linked_experiment_records.jsonl:46-50",
+      "apd6_activity_text_row": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv:4749",
+      "assessment": "Spot-checked rows have concrete endpoints, raw values, units, targets, and locators; no sentence-fragment target or generic endpoint was found for DeNo1010."
+    }
+  },
+  "layer3_mechanism_review": {
+    "final_artifact": "papers/doi__10.1002_pro.5088/final/mechanism_ontology_record.json",
+    "mechanism_claim_count": 2,
+    "direct_mechanism_claim_count": 0,
+    "assessment": "The final artifact does not promote DeNo1010 or the generated peptides to direct mechanism evidence. It frames the paper as phenotype/activity/toxicity evidence plus AMP background rationale.",
+    "source_support": [
+      "xml:sec=5:In vitro validation results",
+      "xml:sec=12:Antimicrobial susceptibility testing",
+      "xml:sec=13:Hemolysis assay",
+      "xml:sec=1:INTRODUCTION",
+      "xml:sec=6:DISCUSSION"
+    ],
+    "caution": "The two mechanism claims use non-standard evidence_class strings, negative_direct_mechanism_evidence and background_context_not_direct_mechanism, rather than the strict ontology labels loaded from the worker-5 instructions. This preserves the no-direct-mechanism conclusion but should be normalized in any follow-up proven-model adjudication."
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "best_effort_scientific_assessment": "accepted_with_cautions_confirmed_for_sampled_APD6_row",
+    "terminal_decision_reason": "The sampled APD6 source_verified status is locally supported by primary XML Table 2 and article metadata plus linked APD6 literature row evidence. Relevant DeNo1010 activity/toxicity rows are source-backed in Supplementary Table S1 and XML methods. The paper-level final should remain cautioned for database conflicts, packet test-scope/material-gap labels, release locator drift, and mechanism ontology vocabulary. The chat/session cannot prove requested model/effort provenance, so the JSON decision is unverifiable_best_effort.",
+    "rework_ticket_written": false
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "scope": "model_provenance",
+      "severity": "caution",
+      "status": "unverifiable_best_effort",
+      "note": "Current session does not expose machine-verifiable proof of gpt-5.5 plus xhigh reasoning despite required output fields."
+    },
+    {
+      "scope": "release_row_locator",
+      "severity": "caution",
+      "status": "locator_drift",
+      "note": "Packet reports tsv_row=2655; current release TSV identity lookup finds audit_record_id doi__10.1002_pro.5088:database_audit:416 at line 2674."
+    },
+    {
+      "scope": "material_packet_status_label",
+      "severity": "caution",
+      "status": "nonblocking_for_sample",
+      "note": "Packet/material status still says material_extracted_with_gaps and packet test_scope says not publication-grade acceptance, but later quality_feedback/rework responses and strict gate files show the named rework was resolved."
+    },
+    {
+      "scope": "paper_level_database_conflicts",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "Final database review preserves 18 DBAASP source_conflict rows; the sampled APD6 literature-link row itself has no conflict flags."
+    },
+    {
+      "scope": "database_snapshot_scope",
+      "severity": "caution",
+      "status": "nonblocking_database_subset",
+      "note": "Linked DBAASP assay snapshot covers 41 of 58 peptide names while final primary-source activity evidence covers all 58 from Supplementary Table S1."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "phenotype_only_no_direct_mechanism",
+      "note": "No direct mechanism assay is claimed, but evidence_class vocabulary should be normalized to the strict ontology in a follow-up adjudication."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used; review is limited to local packet, paper, release, and merged-corpus materials.",
+    "The current session cannot provide machine-verifiable model/effort proof, so the terminal decision follows the prompt's unverifiable_best_effort rule.",
+    "Layer 2 was spot-checked for the DeNo1010/AP04748 sequence and companion linked database rows, not re-reviewed exhaustively across all 290 activity/toxicity rows."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-004__doi__10.1002_pro.5088/packet_manifest.json",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+    "papers/doi__10.1002_pro.5088/source/paper.xml",
+    "papers/doi__10.1002_pro.5088/source/paper.pdf",
+    "papers/doi__10.1002_pro.5088/source/supplementary/PRO-33-e5088-s001.pdf",
+    "paper_packets/doi__10.1002_pro.5088/extracted/xml_sections.json",
+    "paper_packets/doi__10.1002_pro.5088/extracted/pdf_text/PRO-33-e5088.txt",
+    "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1002_pro.5088/extracted/supplementary_text/PRO-33-e5088-s001.txt",
+    "paper_packets/doi__10.1002_pro.5088/locators/locator_index.json",
+    "paper_packets/doi__10.1002_pro.5088/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1002_pro.5088/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1002_pro.5088/database/linked_experiment_records.jsonl",
+    "papers/doi__10.1002_pro.5088/final/database_record_verification.json",
+    "papers/doi__10.1002_pro.5088/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1002_pro.5088/final/mechanism_ontology_record.json",
+    "papers/doi__10.1002_pro.5088/final/review_report.json",
+    "papers/doi__10.1002_pro.5088/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1002_pro.5088/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1002_pro.5088/rework/rework_responses.jsonl",
+    "reports/doi__10.1002_pro.5088.codex_recheck_20260501.semantic_gate.json",
+    "reports/doi__10.1002_pro.5088.codex_recheck_20260501.publication_quality.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ]
+}

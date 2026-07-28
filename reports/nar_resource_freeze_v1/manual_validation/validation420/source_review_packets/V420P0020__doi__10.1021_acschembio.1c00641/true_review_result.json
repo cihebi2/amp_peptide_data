@@ -1,0 +1,168 @@
+{
+  "paper_id": "doi__10.1021_acschembio.1c00641",
+  "review_sample_id": "V420P0020",
+  "reviewed_at": "2026-06-25T09:36:44+08:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "decision_summary": "The two sampled database-audit rows were reopened against packet database snapshots, final artifacts, article metadata, source text, supplementary text, and gate/rework artifacts. VAL0104 is correctly preserved as a source_conflict for a broad DRAMP pNP-43d activity/anticancer annotation with source-located MIC evidence, but the same pNP-43d scope exposes a repairable layer-3 defect: the accepted mechanism ontology contains a non-standard evidence_class. VAL0108 is confirmed as a literature-link citation row. Because non-standard mechanism evidence classes in accepted outputs are hard rework under the review prompt, the paper-level decision is needs_targeted_rework.",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0104",
+      "audit_record_id": "doi__10.1021_acschembio.1c00641:database_audit:190",
+      "row_decision": "needs_targeted_rework",
+      "evidence_summary": "Layer 1 database status is caution-preserving: DRAMP35799 row 4 states broad Antimicrobial/Anticancer activity for pNP-43d with no assay, target, value, or unit, and the final database record preserves this as source_conflict rather than source_verified. Article metadata confirms the paper DOI/PMID/PMCID. Layer 2 support exists for the matched pNP-43d MIC row: figs7_pnp_43d_ecoli_wt_mic reports MIC 32 ug/mL against Escherichia coli ATCC 25922 with a Figure S7 locator and unit context. The sampled row becomes repairable because the pNP-43d-related mechanism ontology also contains accepted claim mech-002 with non-standard evidence_class mechanism_context_inferred_from_resistance_and_sar; the allowed ontology requires a standard class such as inferred_mechanism while preserving the source-bounded limitation.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/sample_final_records.json",
+        "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_dramp_activity_records.jsonl:row=4",
+        "papers/doi__10.1021_acschembio.1c00641/final/database_record_verification.json:source_id=DRAMP35799",
+        "papers/doi__10.1021_acschembio.1c00641/final/activity_toxicity_evidence.json:record_id=figs7_pnp_43d_ecoli_wt_mic",
+        "papers/doi__10.1021_acschembio.1c00641/source/paper.xml:article-meta",
+        "paper_packets/doi__10.1021_acschembio.1c00641/extracted/figure_captions.json:Figure S7",
+        "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641_si_001.txt:Figure S7",
+        "papers/doi__10.1021_acschembio.1c00641/final/mechanism_ontology_record.json:claim_id=mech-002"
+      ],
+      "cautions": [
+        "DRAMP broad Antimicrobial/Anticancer labels are not promoted to primary-source verified assay evidence.",
+        "DRAMP compact sequence/modification notation for pNP-43d remains a preserved source_conflict.",
+        "A549 primary source context supports toxicity/non-toxicity reporting rather than clean anticancer efficacy.",
+        "The pNP-43d activity row is source-located, but the pNP-43d mechanism ontology needs evidence_class vocabulary repair."
+      ],
+      "rework_target_ids": [
+        "rwk-v420p0020-mech-001"
+      ]
+    },
+    {
+      "sample_id": "VAL0108",
+      "audit_record_id": "doi__10.1021_acschembio.1c00641:database_audit:430",
+      "row_decision": "confirmed",
+      "evidence_summary": "DRAMP35800 literature-link row 27 matches canonical DOI 10.1021/acschembio.1c00641, PMID 34699170, year 2021, and title Synthetic Natural Product Inspired Cyclic Peptides. The final database record correctly limits this row to citation linkage with source_verified status and notes that peptide sequence/activity verification belongs to separate assay and DRAMP audit rows. No layer-2 or layer-3 assertion is attached to this literature-link sample.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/sample_final_records.json",
+        "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_literature_records.jsonl:row=27",
+        "papers/doi__10.1021_acschembio.1c00641/final/database_record_verification.json:source_id=DRAMP35800;source_table=linked_literature_records.jsonl",
+        "papers/doi__10.1021_acschembio.1c00641/source/paper.xml:article-meta"
+      ],
+      "cautions": [],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_inventory_reopened": true,
+    "packet_dir": "paper_packets/doi__10.1021_acschembio.1c00641",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted",
+    "materials_checked": [
+      "paper_packets/doi__10.1021_acschembio.1c00641/packet_manifest.json",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extraction/extraction_status.json",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.1021_acschembio.1c00641/locators/locator_index.json",
+      "paper_packets/doi__10.1021_acschembio.1c00641/raw/paper.xml",
+      "paper_packets/doi__10.1021_acschembio.1c00641/raw/paper.pdf",
+      "paper_packets/doi__10.1021_acschembio.1c00641/raw/oa_package/local-DBAASP-PMC8610019.tar.gz",
+      "paper_packets/doi__10.1021_acschembio.1c00641/raw/supplementary_original/landing-6.xlsx",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extracted/oa_package/local-DBAASP-PMC8610019/PMC8610019/cb1c00641_si_001.pdf",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extracted/oa_package/local-DBAASP-PMC8610019/PMC8610019/cb1c00641_si_002.xlsx",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641.txt",
+      "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641_si_001.txt",
+      "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_dramp_activity_records.jsonl",
+      "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_literature_records.jsonl"
+    ],
+    "material_cautions": [
+      "Packet manifest retains a test_scope warning even though later rework responses and strict gate reports indicate closure.",
+      "Material queue status is material_extracted_with_gaps.",
+      "The landed supplementary landing-6.xlsx path is not a valid workbook; the OA package workbook cb1c00641_si_002.xlsx is valid and was inventoried."
+    ],
+    "blocked_missing_primary_material": false
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "layer_1_database_identity_status": "sampled_rows_reopened; one source_conflict preserved, one citation-link source_verified",
+    "layer_2_activity_toxicity_status": "pNP-43d matched MIC row has endpoint, value, unit, target species/strain, assay context, and Figure S7 source locator",
+    "layer_3_mechanism_status": "needs_targeted_rework for non-standard evidence_class on claim mech-002 in accepted mechanism ontology output",
+    "semantic_gate_evidence": [
+      "reports/doi__10.1021_acschembio.1c00641.true_rework_queue_attempt_1.after_worker.semantic_gate.json: publication_grade_pass=true, issue_count=0",
+      "reports/doi__10.1021_acschembio.1c00641.true_rework_queue_attempt_1.after_worker.publication_quality.json: publication_grade_pass=true, risk_counts={}"
+    ],
+    "adjudication_note": "The deterministic gates did not catch the non-standard mechanism class; the validation prompt's hard-failure list controls this manual review decision."
+  },
+  "rework_targets": [
+    {
+      "target_id": "rwk-v420p0020-mech-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1021_acschembio.1c00641/final/mechanism_ontology_record.json",
+      "mirror_artifact_path": "paper_packets/doi__10.1021_acschembio.1c00641/final/mechanism_evidence.json",
+      "failing_object": "mechanism_claims[claim_id=mech-002].evidence_class",
+      "failure_code": "non_standard_mechanism_evidence_class",
+      "reason": "Accepted mechanism ontology output uses evidence_class mechanism_context_inferred_from_resistance_and_sar, which is outside the required ontology values direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, and unknown_or_not_tested.",
+      "source_evidence_to_check": [
+        "papers/doi__10.1021_acschembio.1c00641/source/paper.xml:Derivative Development and Mechanism of Action Studies",
+        "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641.txt:colistin-like pNP-43d mechanism context",
+        "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641_si_001.txt:Table S4"
+      ],
+      "required_action": "Reclassify claim mech-002 using the standard mechanism ontology, likely inferred_mechanism if the source remains resistance/SAR/colistin-context only, while preserving limitations and source locators. Re-run strict semantic/publication checks or document the corrected manual validation.",
+      "acceptance_check": "No mechanism_claims item in accepted outputs has an evidence_class outside the five standard ontology values."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "dramp_broad_activity_labels_preserved_as_conflict",
+      "severity": "caution",
+      "sample_id": "VAL0104",
+      "evidence_context": "DRAMP35799 has broad Antimicrobial/Anticancer labels but no assay values, units, or targets; source-located MIC/toxicity evidence is more specific and does not support clean anticancer efficacy."
+    },
+    {
+      "caution_code": "packet_manifest_test_scope_warning",
+      "severity": "caution",
+      "sample_id": "paper",
+      "evidence_context": "packet_manifest.json still says the complete-message workflow test terminal status is needs_targeted_rework, while later rework responses and gate artifacts report resolved/pass."
+    },
+    {
+      "caution_code": "landed_xlsx_invalid_but_oa_workbook_present",
+      "severity": "caution",
+      "sample_id": "VAL0104",
+      "evidence_context": "The landed supplementary xlsx is not a valid workbook, but the OA package contains valid cb1c00641_si_002.xlsx; this supports keeping material status cautioned rather than blocked."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0020__doi__10.1021_acschembio.1c00641/true_review_result.schema.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/packet_manifest.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1021_acschembio.1c00641/database/linked_literature_records.jsonl",
+    "papers/doi__10.1021_acschembio.1c00641/source/paper.xml",
+    "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641.txt",
+    "paper_packets/doi__10.1021_acschembio.1c00641/extracted/pdf_text/cb1c00641_si_001.txt",
+    "papers/doi__10.1021_acschembio.1c00641/final/database_record_verification.json",
+    "papers/doi__10.1021_acschembio.1c00641/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_acschembio.1c00641/final/mechanism_ontology_record.json",
+    "papers/doi__10.1021_acschembio.1c00641/final/review_report.json",
+    "paper_packets/doi__10.1021_acschembio.1c00641/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_acschembio.1c00641/rework/rework_responses.jsonl",
+    "reports/doi__10.1021_acschembio.1c00641.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1021_acschembio.1c00641.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ]
+}

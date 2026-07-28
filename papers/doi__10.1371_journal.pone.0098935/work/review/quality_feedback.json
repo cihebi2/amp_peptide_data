@@ -1,0 +1,185 @@
+{
+  "artifact_type": "worker6_quality_feedback",
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 5,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-06T00:10:38Z"
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1371_journal.pone.0098935/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935/asset_manifest.csv",
+    "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-009.jpg",
+    "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-010.jpg",
+    "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-011.jpg",
+    "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-012.jpg"
+  ],
+  "gate_evidence": {
+    "gates_ready": false,
+    "publication_quality_pass": false,
+    "publication_report": "reports/doi__10.1371_journal.pone.0098935.publication_quality.json",
+    "publication_risk_counts": {
+      "open_rework_targets": 1
+    },
+    "rerun_at": "2026-05-06T00:08:40Z",
+    "semantic_gate_pass": false,
+    "semantic_issue_codes": [
+      "review_status_not_publication_grade",
+      "publication_grade_not_true"
+    ],
+    "semantic_issue_count": 2,
+    "semantic_publication_grade_fail_count": 1,
+    "semantic_publication_grade_pass_count": 0,
+    "semantic_report": "reports/doi__10.1371_journal.pone.0098935.semantic_gate.json"
+  },
+  "generated_at": "2026-05-06T00:05:05Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.1371_journal.pone.0098935",
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "figure_only_antibiofilm_database_values_unrecoverable",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "Exact DBAASP anti-biofilm percent-inhibition rows cannot be source-verified from local XML/PDF text, extracted tables, local HTML-labelled supplementary assets, or locally available OCR tooling; P. aeruginosa ATCC27583 also conflicts with the paper strain ATCC27853.",
+      "severity": "blocking"
+    },
+    {
+      "code": "paper_left_non_publication_grade_by_obtainable_only_contract",
+      "owner_worker": "worker-6",
+      "reason": "The supported sequence/MIC/MHC/mechanism evidence was retained, but the unresolved database-value material gap blocks publication-grade acceptance and keeps the rework ticket open.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1371_journal.pone.0098935/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-05-06T00:05:05Z",
+  "rework_context_packet_required": false,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1371_journal.pone.0098935/final/database_record_verification.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-06T00:05:05Z",
+      "failing_object": "DBAASP anti-biofilm percent-inhibition rows",
+      "failure_code": "figure_only_antibiofilm_database_values_unrecoverable",
+      "layer": "database_record_adjudication_and_final_review",
+      "omission_code": "figure_only_antibiofilm_database_values_unrecoverable",
+      "owner_worker": "worker-4 + worker-6",
+      "paper_id": "doi__10.1371_journal.pone.0098935",
+      "required_action": "Do not accept unless a local, source-backed table/OCR/digitized figure value can verify the exact DBAASP anti-biofilm percentages and resolve the ATCC27583 versus ATCC27853 strain conflict.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1371_journal.pone.0098935/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_status.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935/asset_manifest.csv",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-009.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-010.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-011.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-012.jpg"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001",
+      "worker": "worker-4 + worker-6"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "affected_records": [
+        "DBAASP:DBAASPS_9961 assay rows 916-919",
+        "DBAASP:DBAASPS_10047 assay rows 910-915"
+      ],
+      "blocks_publication_grade": true,
+      "description": "DBAASP anti-biofilm rows contain exact percent-inhibition values for FV7/R-FV-I16, but the local XML/PDF text provides only qualitative Fig. 11/12 descriptions and no source table with those exact percentages.",
+      "gap_code": "figure_only_antibiofilm_percentages_not_locally_extractable",
+      "impact": "Exact DBAASP anti-biofilm percentage annotations remain source_conflict/database-only with preserved context; the paper must remain non-publication-grade under obtainable-only mode.",
+      "owner_worker": "worker-4 + worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1371_journal.pone.0098935/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_status.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935/asset_manifest.csv",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-009.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-010.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-011.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-012.jpg"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF extracted text for Table 1/2/3/4, biofilm, inhibition, cytotoxicity, membrane terms",
+        "file on landed supplementary assets: all nine supplementary-labeled files are HTML landing/metadata pages",
+        "pdfinfo and pdfimages -list on paper.pdf",
+        "pdfimages -j to extract local PDF figure images into /tmp/doi__10.1371_journal.pone.0098935_pdfimages",
+        "tesseract probe: binary unavailable in PATH",
+        "/root/software/PaddleOCR/.venv/bin/python import paddleocr probe: module not installed"
+      ],
+      "why_unrecoverable": "The local XML/PDF text and extracted tables do not contain the exact anti-biofilm percentages; local supplementary-labeled files are publisher/metadata HTML pages rather than data supplements; figure images are present in the PDF, but local OCR tooling is unavailable and the prompt forbids fabricating exact graph-derived values."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted",
+        "paper_packets/doi__10.1371_journal.pone.0098935/locators",
+        "paper_packets/doi__10.1371_journal.pone.0098935/raw",
+        "papers/doi__10.1371_journal.pone.0098935/final",
+        "papers/doi__10.1371_journal.pone.0098935/source",
+        "papers/doi__10.1371_journal.pone.0098935/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ],
+  "updated_at": "2026-05-06T00:08:40Z"
+}

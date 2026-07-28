@@ -1,0 +1,859 @@
+{
+  "paper_id": "doi__10.1038_s41598-020-80596-4",
+  "generated_at": "2026-05-03T18:09:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-2 source-reviewed activity/toxicity repair from XML/PDF prose, figure captions/images, and linked DBAASP/APD6 rows; database-only annotations are not promoted without primary-source locators.",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-020-80596-4/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/pdf_text/41598_2020_Article_80596.txt",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig1_HTML.jpg",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig2_HTML.jpg",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig3_HTML.jpg",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig7_HTML.jpg",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-80596-4/supplementary/landing-1.bin"
+  ],
+  "activity_records": [
+    {
+      "record_id": "act-yodha-zikv-prvabc59-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "IC50",
+      "raw_value": "20",
+      "raw_unit": "µM",
+      "normalized_value": "20",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Zika virus PRVABC59"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {
+          "virus_input": "100 FFU/well",
+          "virus_peptide_preincubation": "2 h at 37 C",
+          "infection_readout": "FFA at 72 h post infection"
+        },
+        "statistics": {
+          "replicates": "at least three independent experiments",
+          "figure_statistics": "mean ± SEM"
+        }
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1D",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=5",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=5",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Text gives dose escalation from 2.5 to 160 µM and reports Yodha IC50 against ZIKV as 20 µM."
+    },
+    {
+      "record_id": "act-yodha-zikv-prvabc59-dose-response",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "dose_response_reduction_series",
+      "raw_value": "35;50;65;80;90",
+      "raw_unit": "percent reduction",
+      "normalized_value": "35;50;65;80;90",
+      "normalized_unit": "percent reduction",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Zika virus PRVABC59"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {
+          "dose_series_µM": [
+            10,
+            20,
+            40,
+            80,
+            160
+          ],
+          "readout": "% reduction in FFU/well versus control"
+        },
+        "statistics": {
+          "replicates": "at least three independent experiments",
+          "figure_statistics": "mean ± SEM"
+        }
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1D",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary text reports reductions of 35, 50, 65, 80, and 90 percent at 10, 20, 40, 80, and 160 µM."
+    },
+    {
+      "record_id": "act-yodha-human-rbc-no-hemolysis-1000",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "hemolysis_no_effect_limit",
+      "raw_value": "0",
+      "raw_unit": "% hemolysis",
+      "normalized_value": "0",
+      "normalized_unit": "% hemolysis",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Human erythrocytes"
+      },
+      "assay": {
+        "assay_type": "RBC hemolysis assay",
+        "host_cell_line": "",
+        "conditions": {
+          "range_tested": "31.25 to 2000 µM",
+          "incubation": "1 h at 37 C"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1E",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=4",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=4",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary prose states Yodha was nontoxic at 1000 µM and toxic only at 2000 µM; Fig. 1E places the 1000 µM Yodha point at baseline hemolysis, matching the DBAASP 0% row.",
+      "concentration": {
+        "value": "1000",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-human-rbc-toxicity-2000",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "hemolysis_toxicity_observed",
+      "raw_value": "2000",
+      "raw_unit": "µM",
+      "normalized_value": "2000",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Human erythrocytes"
+      },
+      "assay": {
+        "assay_type": "RBC hemolysis assay",
+        "host_cell_line": "",
+        "conditions": {
+          "range_tested": "31.25 to 2000 µM"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1E",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary text states toxicity was observed only at 2000 µM in the high-concentration RBC test."
+    },
+    {
+      "record_id": "act-yodha-vero-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Vero cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=1",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=1",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-hek293t-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Human embryonic kidney HEK293T cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=2",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=2",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-mdck-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Madin-Darby canine kidney cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=3",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=3",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-jurkat-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Jurkat cancer cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=10",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=10",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-j558l-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Mouse B myeloma J558L cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=11",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=11",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-mm1s-ldh-no-tox-160",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "LDH_cytotoxicity_no_effect_limit",
+      "raw_value": "160",
+      "raw_unit": "µM",
+      "normalized_value": "160",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "mammalian_cell",
+        "species": "Human multiple myeloma MM.1S cells"
+      },
+      "assay": {
+        "assay_type": "LDH cytotoxicity assay",
+        "host_cell_line": "",
+        "conditions": {
+          "exposure": "5 h at 37 C",
+          "readout": "LDH release"
+        },
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=5:A novel peptide from Indosylvirana aurantiaca exhibits anti-Zika virus activity in vitro; fig=1F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=12",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=12",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text states Yodha was nontoxic at 160 µM in all listed cell lines; Fig. 1F provides the LDH locator.",
+      "concentration": {
+        "value": "160",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-denv1-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "IC50",
+      "raw_value": "25",
+      "raw_unit": "µM",
+      "normalized_value": "25",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Dengue virus serotype 1 (DENV-1)"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {},
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=11:Yodha is effective against all dengue virus serotypes; fig=7C",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=6",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=6",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text reports Yodha IC50 for DENV-1 as 25 µM."
+    },
+    {
+      "record_id": "act-yodha-denv2-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "IC50",
+      "raw_value": "2",
+      "raw_unit": "µM",
+      "normalized_value": "2",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Dengue virus serotype 2 (DENV-2)"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {},
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=11:Yodha is effective against all dengue virus serotypes; fig=7C",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=7",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=7",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text reports Yodha IC50 for DENV-2 as 2 µM."
+    },
+    {
+      "record_id": "act-yodha-denv3-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "IC50",
+      "raw_value": "70",
+      "raw_unit": "µM",
+      "normalized_value": "70",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Dengue virus serotype 3 (DENV-3)"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {},
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=11:Yodha is effective against all dengue virus serotypes; fig=7C",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=8",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=8",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text reports Yodha IC50 for DENV-3 as 70 µM."
+    },
+    {
+      "record_id": "act-yodha-denv4-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "IC50",
+      "raw_value": "30",
+      "raw_unit": "µM",
+      "normalized_value": "30",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Dengue virus serotype 4 (DENV-4)"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {},
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=11:Yodha is effective against all dengue virus serotypes; fig=7C",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [
+        {
+          "locator": "database:linked_assay_records:row=9",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_assay_records.jsonl"
+        },
+        {
+          "locator": "database:linked_experiment_records:row=9",
+          "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/database/linked_experiment_records.jsonl"
+        }
+      ],
+      "review_notes": "Primary text reports Yodha IC50 for DENV-4 as 30 µM."
+    },
+    {
+      "record_id": "act-yodha-var12-denv3-ic50",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "truncated Yodha variant 12",
+        "sequence": "",
+        "sequence_basis": "primary paper variant description"
+      },
+      "endpoint": "IC50",
+      "raw_value": "30",
+      "raw_unit": "µM",
+      "normalized_value": "30",
+      "normalized_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Dengue virus serotype 3 (DENV-3)"
+      },
+      "assay": {
+        "assay_type": "focus-forming assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {},
+        "statistics": {}
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=11:Yodha is effective against all dengue virus serotypes; fig=7D",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary text reports truncated Yodha variant 12 IC50 for DENV3 as 30 µM compared with 70 µM for full-length Yodha."
+    },
+    {
+      "record_id": "act-yodha-zikv-entry-rna-200um",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "intracellular_ZIKV_RNA_relative",
+      "raw_value": "20",
+      "raw_unit": "% of OVA/virus-only controls",
+      "normalized_value": "20",
+      "normalized_unit": "% of OVA/virus-only controls",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Zika virus PRVABC59"
+      },
+      "assay": {
+        "assay_type": "qRT-PCR entry assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {
+          "virus_peptide_exposure": "30 min before infection",
+          "MOI": "0.5",
+          "entry_window": "30 min"
+        },
+        "statistics": {
+          "test": "two-tailed t-test",
+          "p_value": "0.0028"
+        }
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=6:Yodha peptide can reduce viral titers and limit the spread of ZIKV in vitro; fig=2B",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary source reports Yodha-preincubated ZIKV yielded about 20% intracellular ZIKV RNA relative to OVA and virus-only controls.",
+      "concentration": {
+        "value": "200",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-yodha-zikv-production-reduction-40um",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "infectious_virus_production_reduction",
+      "raw_value": "60-70",
+      "raw_unit": "% reduction",
+      "normalized_value": "60-70",
+      "normalized_unit": "% reduction",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Zika virus PRVABC59"
+      },
+      "assay": {
+        "assay_type": "post-entry FFU production assay",
+        "host_cell_line": "Vero cells",
+        "conditions": {
+          "treatment_times": "1, 24, 48, and 72 h post infection",
+          "measured_times": "3, 24, 48, and 72 h post infection"
+        },
+        "statistics": {
+          "technical_replicates": "four",
+          "test": "two-way ANOVA"
+        }
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=6:Yodha peptide can reduce viral titers and limit the spread of ZIKV in vitro; fig=2F",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary text reports 60-70% reduced ZIKV production at 48 and 72 h post infection after Yodha treatment.",
+      "concentration": {
+        "value": "40",
+        "unit": "µM"
+      }
+    },
+    {
+      "record_id": "act-d-yodha-zikv-in-vivo-viral-load",
+      "paper_id": "doi__10.1038_s41598-020-80596-4",
+      "entity": {
+        "name": "D-Yodha",
+        "sequence": "SMLLLFFLGTISLSLCQDDQERC",
+        "sequence_basis": "primary paper prose plus APD6/DBAASP sequence catalog"
+      },
+      "endpoint": "in_vivo_ZIKV_RNA_reduction",
+      "raw_value": "reduced",
+      "raw_unit": "qualitative_significant",
+      "normalized_value": "reduced",
+      "normalized_unit": "qualitative_significant",
+      "normalization_status": "direct",
+      "target": {
+        "class": "virus",
+        "species": "Zika virus PRVABC59 in C57BL/6 mice"
+      },
+      "assay": {
+        "assay_type": "mouse qRT-PCR viral load assay",
+        "host_cell_line": "",
+        "conditions": {
+          "route": "intraperitoneal peptide dosing",
+          "infection": "1e5 FFU total PRVABC ZIKV footpad inoculum",
+          "dosing": "5 h before infection and daily for 3 days"
+        },
+        "statistics": {
+          "reported_significance": "serum p<0.0001 and p=0.0125; eye p<0.0001; spleen p=0.0088"
+        }
+      },
+      "evidence_ladder": "primary_source_text_and_figure_locator",
+      "source_locator": {
+        "locator": "xml:sec=10:Yodha reduces ZIKV viremia and viral load in vivo; fig=6A-C",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/xml_sections.json"
+      },
+      "database_cross_refs": [],
+      "review_notes": "Primary source reports reduced serum/tissue viral RNA, but exact plotted viral-load values are figure-only and not tabulated.",
+      "concentration": {
+        "value": "0.1",
+        "unit": "mg/mouse"
+      }
+    }
+  ],
+  "extraction_issues": [
+    {
+      "issue_id": "activity-fig-only-exact-bars-nonblocking",
+      "severity": "caution",
+      "owner_worker": "worker-2",
+      "gap_code": "figure_only_exact_bar_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig1_HTML.jpg",
+        "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig2_HTML.jpg",
+        "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/oa_package/local-APD6-pmc_package/PMC7804942/41598_2020_80596_Fig7_HTML.jpg"
+      ],
+      "tools_attempted": [
+        "pdftotext-derived packet text",
+        "JATS XML section review",
+        "local figure image inspection",
+        "linked DBAASP/APD6 row review"
+      ],
+      "why_unrecoverable": "Several bar-chart heights for alanine-scan, natural variants, and some kinetic panels are only plotted in local figure images without tabulated numeric values; exact chart digitization was not needed to resolve linked database rows or strict gate blockers.",
+      "impact": "Narrative and database-linked values are captured; exact per-mutant/per-variant bar heights remain caution-only.",
+      "blocks_publication_grade": false
+    },
+    {
+      "issue_id": "supplementary-landing-pages-no-data-tables",
+      "severity": "caution",
+      "owner_worker": "worker-2",
+      "gap_code": "supplementary_assets_are_landing_html_not_data_tables",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-020-80596-4/extracted/supplementary_index.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-80596-4/supplementary/landing-1.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over local HTML landing asset",
+        "supplementary_text.jsonl review"
+      ],
+      "why_unrecoverable": "The ten local .bin supplementary assets resolve as duplicated article HTML landing pages, not spreadsheet/office/PDF supplementary data tables.",
+      "impact": "No source-supported activity/toxicity table is missing from local supplement assets.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "parser_quality_control": {
+    "issue_count": 0,
+    "rejects_database_only_rows_as_primary": true,
+    "requires_endpoint_value_unit_target_locator": true,
+    "suspicious_target_string_reviewed": true
+  }
+}

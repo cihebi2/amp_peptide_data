@@ -1,0 +1,117 @@
+{
+  "adjudication_summary": "Worker-4/6 re-review resolved the original framework-test blocker by source-matching DBAASP records to Table 1, supplementary peptide sequences, and merged database rows. Final acceptance is with cautions because the paper supports Mpro enzyme inhibition and binding evidence, not cellular antiviral or toxicity claims.",
+  "caution_findings": [
+    {
+      "caution_code": "coarse_database_target_label",
+      "evidence_context": "DBAASP uses SARS-CoV-2 as subject, while the primary evidence is an Mpro enzymatic inhibition assay; final artifacts preserve the enzyme target and do not promote this to cellular antiviral activity.",
+      "record_ids": [
+        "DBAASP:DBAASPS_22844",
+        "DBAASP:DBAASPS_22845",
+        "DBAASP:DBAASPS_22846",
+        "DBAASP:DBAASPS_22847"
+      ]
+    },
+    {
+      "caution_code": "blank_database_peptide_names",
+      "evidence_context": "DBAASP peptide_name fields are blank in linked assay rows; identity is resolved by DBAASP sequence catalog plus source peptide labels and Table 1 values.",
+      "record_ids": [
+        "DBAASP:DBAASPS_22844",
+        "DBAASP:DBAASPS_22845",
+        "DBAASP:DBAASPS_22846",
+        "DBAASP:DBAASPS_22847"
+      ]
+    },
+    {
+      "caution_code": "no_cellular_antiviral_activity",
+      "evidence_context": "Local source material supports Mpro enzyme inhibition, binding/modelling, and peptide turnover observations; it does not report cellular antiviral EC50/CC50/toxicity outcomes for these peptides."
+    },
+    {
+      "caution_code": "p15_p16_binding_signal_not_resolved",
+      "evidence_context": "Non-denaturing MS text reports no resolved p15/p16 binding signal because of noise in the relevant m/z region."
+    },
+    {
+      "caution_code": "hill_slope_not_activity_record",
+      "evidence_context": "Table 1 Hill slope values are preserved only as curve-fit parameters in activity_records.assay_conditions and excluded from endpoint rows."
+    },
+    {
+      "caution_code": "material_layer_complete_with_gaps_nonblocking",
+      "evidence_context": "The packet material layer remains material_extracted_with_gaps because no structured spreadsheet supplementary tables are present; the relevant local PDF/XML/supplement/database sources were checked for this re-review."
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.1039_d1sc03628a/packet_manifest.json",
+    "paper_packets/doi__10.1039_d1sc03628a/locators/locator_index.json",
+    "papers/doi__10.1039_d1sc03628a/source/paper.xml",
+    "papers/doi__10.1039_d1sc03628a/source/paper.pdf",
+    "papers/doi__10.1039_d1sc03628a/source/supplementary/SC-012-D1SC03628A-s001.pdf",
+    "paper_packets/doi__10.1039_d1sc03628a/extracted/pdf_text/SC-012-D1SC03628A.txt",
+    "paper_packets/doi__10.1039_d1sc03628a/extracted/supplementary_text/SC-012-D1SC03628A-s001.txt",
+    "paper_packets/doi__10.1039_d1sc03628a/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1039_d1sc03628a/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1039_d1sc03628a/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "All local materials relevant to the worker-4/6 blocker were reopened. The remaining material status is complete-with-gaps at the packet layer but no blocking gap remains for the adjudicated final claims.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1039_d1sc03628a",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All four linked DBAASP IDs are source-verified by sequence catalog, primary supplement sequence labels, Table 1 IC50 values, and citation metadata. Database target wording is preserved as a caution because it is coarser than the enzyme assay target.",
+    "layer_2_activity_toxicity": "The final layer keeps four IC50 rows for SARS-CoV-2 Mpro enzyme inhibition and excludes four Hill slope values as fit parameters. No toxicity or cellular antiviral activity is claimed.",
+    "layer_3_mechanism": "Mechanism is bounded to direct Mpro inhibition/competition and MS-supported binding/turnover evidence; modelling context is not promoted beyond source-supported claims.",
+    "material_packet": "XML, PDF text, OA archive, supplement PDF text, locator index, and database snapshots are present; supplementary structured tables are absent because the source supplement is a PDF/text surface, not a spreadsheet. This is nonblocking for the final claims.",
+    "review_layer": "The original rework ticket is closed because worker-4 database conflicts and worker-6 source-reviewed adjudication are now resolved with explicit cautions and no blocking/major issue remains."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T16:55:20Z",
+  "rework_response": {
+    "resolved_at": "2026-05-03T16:55:20Z",
+    "resolved_by": "worker-4 + worker-6 source-reviewed re-review",
+    "status": "resolved",
+    "ticket_id": "rwk-complete-test-0001"
+  },
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_records_final": 4,
+    "analysis_status": "analysis_adjudicated_with_cautions",
+    "database_record_status_summary": {
+      "database_only_no_primary_source": 0,
+      "sequence_modified_not_normalized": 0,
+      "source_conflict": 0,
+      "source_verified": 12,
+      "unresolved_record": 0
+    },
+    "excluded_non_activity_table_values": 4,
+    "mechanism_claims_final": 3,
+    "open_rework_target_count": 0,
+    "packet_material_status": "material_extracted_with_gaps",
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "accepted_with_cautions": true,
+    "blocking_issue_count": 0,
+    "major_issue_count": 0,
+    "required_rework_count": 0
+  },
+  "summary": "Source-reviewed final adjudication accepts the paper with cautions: four designed peptide IC50 records and four DBAASP sequence/value mappings are supported locally, while broader antiviral/toxicity claims remain unsupported and are not promoted.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

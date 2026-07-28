@@ -1,0 +1,88 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1007_s00018-020-03755-w",
+  "doi": "10.1007/s00018-020-03755-w",
+  "protocol": "amp_three_layer_v2",
+  "worker": "worker-5",
+  "generated_at": "2026-05-01T01:49:13Z",
+  "reviewed_at": "2026-05-01T01:49:13Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": {
+    "checked_inputs": [
+      "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+      "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt",
+      "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/figure_captions.json",
+      "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/mechanism_evidence.json",
+      "papers/doi__10.1007_s00018-020-03755-w/final/mechanism_ontology_record.json"
+    ],
+    "source_sections": [
+      "xml:sec=6",
+      "xml:sec=7",
+      "xml:sec=10",
+      "xml:sec=15"
+    ],
+    "source_tables": [
+      "xml:table=3"
+    ],
+    "source_figures": [
+      "xml:fig=3",
+      "xml:fig=4"
+    ]
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-table3-antimicrobial-phenotype",
+      "claim_text": "DAAO-derived peptides IWK and GLT, selected derivatives, and defined peptide combinations have source-supported antimicrobial phenotype evidence from MIC/MBC testing against Gram-negative and Gram-positive bacteria; the source does not identify a single cellular molecular target for killing.",
+      "entity_scope": "IWK, GLT, LKN, TIH, EAA, IWK+GLT, and TIH+LKN in Table 3 bacterial assays",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+        "locator": "xml:sec=6:DAAO-derived CAMPs show antimicrobial activity; xml:table=3",
+        "pdf_text_locator": "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt:lines 552-609; lines 686-948"
+      },
+      "limitations": "MIC/MBC and bactericidal/bacteriostatic classifications support antimicrobial phenotype but do not directly prove membrane disruption or another molecular target."
+    },
+    {
+      "claim_id": "mech-002-membrane-mimetic-secondary-structure",
+      "claim_text": "IWK and GLT are reported to assume ordered helical conformation in membrane-mimicking conditions and in LPS-containing assays, supporting membrane-interaction plausibility but not direct cellular membrane disruption.",
+      "entity_scope": "IWK and GLT DAAO-derived peptides in far-UV CD/membrane-mimetic experiments",
+      "evidence_class": "inferred_mechanism",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+        "locator": "xml:sec=6:DAAO-derived CAMPs show antimicrobial activity; supplementary Fig. 7 referenced but DOCX not locally recovered",
+        "pdf_text_locator": "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt:lines 568-582"
+      },
+      "limitations": "The local packet lacks the true supplementary DOCX containing Supplementary Fig. 7; therefore this remains bounded as an inference from main-text reporting rather than a directly adjudicated supplementary figure claim."
+    },
+    {
+      "claim_id": "mech-003-h2o2-mechanism-excluded",
+      "claim_text": "The paper reports biochemical/tissue evidence excluding active gut DAAO-derived H2O2 production as the microbial-selection mechanism and instead proposes proteolytically generated antimicrobial peptides.",
+      "entity_scope": "DAAO catalytic H2O2 hypothesis versus DAAO-derived peptide mechanism in mouse gut",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "native_PAGE",
+        "DAAO_activity_assay",
+        "MS_MS_peptide_identification"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+        "locator": "xml:sec=7:Discussion; xml:sec=15:DAAO activity of intestinal samples; xml:fig=3; xml:fig=4",
+        "pdf_text_locator": "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt:lines 986-1032; figure captions Fig. 3-Fig. 4"
+      },
+      "limitations": "This is direct negative/alternative-mechanism evidence for DAAO catalytic activity in gut samples; it should not be rephrased as direct proof of a precise peptide killing target."
+    }
+  ],
+  "quality_checks": {
+    "issue_count": 0,
+    "pending_review_claims_removed": true,
+    "valid_evidence_classes": true,
+    "direct_mechanism_claims_have_direct_assay_types": true,
+    "overclaim_guard": "No MIC/growth phenotype or membrane-mimetic CD observation is promoted to direct peptide killing mechanism.",
+    "supplementary_gap_handling": "Supplementary Fig. 7 details remain unavailable locally; main-text mechanism classification is bounded accordingly."
+  },
+  "unrecoverable_material_gaps": []
+}

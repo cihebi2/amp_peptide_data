@@ -1,0 +1,177 @@
+{
+  "paper_id": "doi__10.1038_s41522-017-0042-1",
+  "review_sample_id": "V420P0036",
+  "reviewed_at": "2026-06-25T02:29:24Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0030",
+      "audit_record_id": "doi__10.1038_s41522-017-0042-1:database_audit:77",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled release/database audit row is source-backed with the advertised caution preserved. Linked DBAASP assay row 77 records Lynronne-3, MIC 16, unit \\u00b5g/ml, and Acinetobacter baumannii Q12-0809. Primary XML article-meta confirms DOI 10.1038/s41522-017-0042-1, PMID 29214045, and PMCID PMC5711939. Primary XML Identification of AMPs states Lynronne-3 as NRFTARFRRTPWRLCLQFRQ-NH2; the merged DBAASP sequence row stores the core NRFTARFRRTPWRLCLQFRQ only. Primary XML Table 1 row 23 has Q12-0809 / A. baumanii with L-3 value 16 under the peptides-and-comparator-antibiotics (\\u00b5g/ml) header. Therefore the MIC value, unit, citation, and target are source-backed, while terminal amidation remains a real sequence/modification caution rather than clean source_verified.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/sample_final_records.json",
+        "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:line=24884",
+        "reports/nar_resource_freeze_v1/manual_validation/validation_manifest_latest.csv:line=49",
+        "paper_packets/doi__10.1038_s41522-017-0042-1/database/linked_assay_records.jsonl:line=77",
+        "papers/doi__10.1038_s41522-017-0042-1/source/paper.xml::article-meta",
+        "papers/doi__10.1038_s41522-017-0042-1/source/paper.xml::Identification of AMPs",
+        "papers/doi__10.1038_s41522-017-0042-1/source/paper.xml::Table 1 row 23 column L-3",
+        "/mnt/d/work/\\u6297\\u83cc\\u80bd/\\u6570\\u636e\\u5e93/merged_amp_corpus/output/sequences/all_sequences.csv:line=17223",
+        "papers/doi__10.1038_s41522-017-0042-1/final/database_record_verification.json",
+        "papers/doi__10.1038_s41522-017-0042-1/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1038_s41522-017-0042-1/final/mechanism_ontology_record.json",
+        "papers/doi__10.1038_s41522-017-0042-1/final/review_report.json"
+      ],
+      "cautions": [
+        "C-terminal amidation is present in the primary XML sequence but not normalized in the linked DBAASP sequence core; keep status sequence_modified_not_normalized.",
+        "The source table uses the spelling A. baumanii; the release row normalizes the target to Acinetobacter baumannii Q12-0809 while preserving the source row locator.",
+        "The final activity_toxicity_evidence artifact contains a source-located MIC 16 row for table1-r23-c6-MIC, but its generated target class/species normalization is lossy; the sampled database-audit release row itself preserves the correct source target through source_activity_evidence."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1038_s41522-017-0042-1",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_adjudicated_with_cautions",
+    "open_rework_ticket_ids": [],
+    "resolved_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "blocking_material_gap_for_sampled_row": false,
+    "materials_checked": [
+      "paper_packets/doi__10.1038_s41522-017-0042-1/raw/paper.xml",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/raw/paper.pdf",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/raw/oa_package",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/raw/supplementary_original",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/extracted/xml_sections.json",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/locators/locator_index.json",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1038_s41522-017-0042-1/database/linked_literature_records.jsonl",
+      "/mnt/d/work/\\u6297\\u83cc\\u80bd/\\u6570\\u636e\\u5e93/merged_amp_corpus/output/sequences/all_sequences.csv"
+    ],
+    "material_limits": [
+      "Packet material status remains extracted_with_gaps, but the known gaps concern figure-only exact toxicity values and do not block the sampled MIC/sequence/citation row.",
+      "The packet manifest carries a stale test-scope note; later review report, quality feedback, and rework responses show the historical ticket was resolved with cautions."
+    ]
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "sampled_row_source_review_depth": [
+      "article metadata",
+      "primary XML sequence paragraph",
+      "primary XML Table 1 row/cell",
+      "linked DBAASP assay JSONL row",
+      "merged sequence CSV row",
+      "release TSV row",
+      "final database audit record",
+      "related activity evidence artifact",
+      "mechanism ontology artifact"
+    ],
+    "layer_1_database": {
+      "decision": "confirmed_with_caution",
+      "rationale": "Database identity, citation, target, MIC value, and unit are source-backed; terminal amidation is intentionally preserved as sequence_modified_not_normalized."
+    },
+    "layer_2_activity_toxicity": {
+      "decision": "confirmed_with_caution",
+      "rationale": "The sampled MIC row is source-backed by XML Table 1 and the database audit source_activity_evidence. The broader activity artifact has lossy target normalization for the matching Table 1 cell, so this is preserved as a caution rather than hidden."
+    },
+    "layer_3_mechanism": {
+      "decision": "needs_targeted_rework",
+      "rationale": "The accepted mechanism artifact contains evidence_class values phenotypic_resistance_context and phenotypic_activity_context. The publication-grade ontology allows direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, and unknown_or_not_tested; non-standard mechanism evidence classes in accepted outputs are a hard rework trigger."
+    },
+    "semantic_gate_note": "Existing gate JSON reports zero issues, but manual source review found the non-standard mechanism evidence class defect; deterministic gate pass is not treated as terminal acceptance."
+  },
+  "rework_targets": [
+    {
+      "target_id": "V420P0036-rwk-001",
+      "ticket_id": "V420P0036-rwk-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5",
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1038_s41522-017-0042-1/final/mechanism_ontology_record.json",
+      "reason": "Accepted mechanism ontology output uses non-standard evidence_class values: phenotypic_resistance_context and phenotypic_activity_context.",
+      "requested_outputs": [
+        {
+          "artifact": "papers/doi__10.1038_s41522-017-0042-1/final/mechanism_ontology_record.json",
+          "need": "Rewrite mechanism_claims evidence_class values using only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. Preserve claim text, source locators, and limitations; keep direct assay types only where evidence_class remains direct_mechanism."
+        },
+        {
+          "artifact": "reports/doi__10.1038_s41522-017-0042-1.semantic_gate.json",
+          "need": "Rerun or update strict semantic gate evidence so non-standard mechanism classes are rejected before publication-grade acceptance."
+        }
+      ],
+      "blocks": [
+        "publication_grade_acceptance",
+        "mechanism_ontology_record"
+      ],
+      "created_at": "2026-06-25T02:29:24Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "c_terminal_amidation_not_normalized",
+      "severity": "major_preserved_as_caution",
+      "evidence_context": "Primary XML reports Lynronne-3 as NRFTARFRRTPWRLCLQFRQ-NH2; linked DBAASP sequence row stores NRFTARFRRTPWRLCLQFRQ."
+    },
+    {
+      "caution_code": "source_target_spelling_and_normalization",
+      "severity": "minor",
+      "evidence_context": "Primary XML Table 1 uses A. baumanii Q12-0809; release row uses Acinetobacter baumannii Q12-0809 and is matched by strain plus Table 1 row locator."
+    },
+    {
+      "caution_code": "activity_artifact_target_normalization_lossy",
+      "severity": "minor",
+      "evidence_context": "Related activity row table1-r23-c6-MIC retains MIC 16 and source locator but labels target class as cell_line and species/strain as Q12-0809; sampled database-audit row preserves the correct source target separately."
+    },
+    {
+      "caution_code": "packet_material_extracted_with_gaps",
+      "severity": "minor",
+      "evidence_context": "Known material gaps concern exact figure-only toxicity values, not the sampled MIC/sequence/citation row."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0036__doi__10.1038_s41522-017-0042-1/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation_manifest_latest.csv",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41522-017-0042-1/database/linked_assay_records.jsonl",
+    "papers/doi__10.1038_s41522-017-0042-1/source/paper.xml",
+    "papers/doi__10.1038_s41522-017-0042-1/final/database_record_verification.json",
+    "papers/doi__10.1038_s41522-017-0042-1/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41522-017-0042-1/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41522-017-0042-1/final/review_report.json",
+    "papers/doi__10.1038_s41522-017-0042-1/work/review/quality_feedback.json",
+    "/mnt/d/work/\\u6297\\u83cc\\u80bd/\\u6570\\u636e\\u5e93/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "reports/doi__10.1038_s41522-017-0042-1.semantic_gate.json",
+    "reports/doi__10.1038_s41522-017-0042-1.publication_quality.json",
+    "reports/doi__10.1038_s41522-017-0042-1.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1038_s41522-017-0042-1.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ]
+}

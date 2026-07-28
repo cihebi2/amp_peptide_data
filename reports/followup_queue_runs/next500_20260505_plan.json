@@ -1,0 +1,144 @@
+{
+  "completion_claim": "followup_queue_runner_report_not_publication_grade_completion",
+  "execute": false,
+  "generated_at": "2026-05-05T05:00:26Z",
+  "paper_count_total": 118,
+  "plans": [
+    {
+      "command": [],
+      "execution_kind": "accepted_sample_audit_task_manifest",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": false,
+      "generated_manifest": "reports/followup_queue_runs/next500_20260505_plan_accepted_sample_audit/next500_20260505_plan_accepted_sample_audit_qa_tasks.json",
+      "paper_count": 43,
+      "queue_name": "accepted_sample_audit",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_accepted_sample_audit.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "scripts/run_true_rework_queue.py",
+        "--manifest",
+        "reports/followup_queue_runs/next500_20260505_plan_infra_recovery/next500_20260505_plan_infra_recovery_manifest.json",
+        "--run-label",
+        "next500_20260505_plan_infra_recovery",
+        "--max-rework",
+        "3",
+        "--obtainable-only",
+        "--worker-timeout-seconds",
+        "1800",
+        "--worker-infra-retries",
+        "5",
+        "--paper-runtime-retries",
+        "5"
+      ],
+      "execution_kind": "codex_rework_queue",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": true,
+      "generated_manifest": "reports/followup_queue_runs/next500_20260505_plan_infra_recovery/next500_20260505_plan_infra_recovery_manifest.json",
+      "paper_count": 11,
+      "queue_name": "infra_recovery",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_infra_recovery.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "scripts/run_true_rework_queue.py",
+        "--manifest",
+        "reports/followup_queue_runs/next500_20260505_plan_owner_context_rework_needed/next500_20260505_plan_owner_context_rework_needed_manifest.json",
+        "--run-label",
+        "next500_20260505_plan_owner_context_rework_needed",
+        "--max-rework",
+        "2",
+        "--obtainable-only",
+        "--worker-timeout-seconds",
+        "2400",
+        "--worker-infra-retries",
+        "5",
+        "--paper-runtime-retries",
+        "5"
+      ],
+      "execution_kind": "codex_rework_queue_targeted_context",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": true,
+      "generated_manifest": "reports/followup_queue_runs/next500_20260505_plan_owner_context_rework_needed/next500_20260505_plan_owner_context_rework_needed_manifest.json",
+      "paper_count": 2,
+      "queue_name": "owner_context_rework_needed",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_owner_context_rework_needed.json"
+    },
+    {
+      "command": [],
+      "execution_kind": "manual_extraction_task_manifest",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": false,
+      "generated_manifest": "reports/followup_queue_runs/next500_20260505_plan_parser_manual_extraction_needed/next500_20260505_plan_parser_manual_extraction_needed_manual_extraction_tasks.json",
+      "paper_count": 3,
+      "queue_name": "parser_manual_extraction_needed",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_parser_manual_extraction_needed.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "scripts/source_staging_preflight.py",
+        "--manifest",
+        "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_source_staging_needed.json",
+        "--run-label",
+        "next500_20260505_plan_source_staging_needed"
+      ],
+      "execution_kind": "source_staging_preflight",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": true,
+      "generated_manifest": "",
+      "paper_count": 39,
+      "queue_name": "source_staging_needed",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_source_staging_needed.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "scripts/run_true_rework_queue.py",
+        "--manifest",
+        "reports/followup_queue_runs/next500_20260505_plan_watchdog_retry/next500_20260505_plan_watchdog_retry_manifest.json",
+        "--run-label",
+        "next500_20260505_plan_watchdog_retry",
+        "--max-rework",
+        "2",
+        "--obtainable-only",
+        "--worker-timeout-seconds",
+        "3600",
+        "--worker-infra-retries",
+        "5",
+        "--retry-worker-timeouts",
+        "--paper-runtime-retries",
+        "5"
+      ],
+      "execution_kind": "codex_rework_queue_long_watchdog",
+      "execution_result": {
+        "executed": false,
+        "reason": "dry_run_plan_only"
+      },
+      "execution_supported": true,
+      "generated_manifest": "reports/followup_queue_runs/next500_20260505_plan_watchdog_retry/next500_20260505_plan_watchdog_retry_manifest.json",
+      "paper_count": 20,
+      "queue_name": "watchdog_retry",
+      "source_manifest": "reports/followup_queues/true_rework_queue_next500_obtainable_20260505_watchdog_retry.json"
+    }
+  ],
+  "queue_count": 6,
+  "run_label": "next500_20260505_plan"
+}

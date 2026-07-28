@@ -1,0 +1,126 @@
+{
+  "paper_id": "doi__10.3390_md13052602",
+  "reviewed_at": "2026-05-09T09:43:15Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md13052602/handoff_context.json",
+    "paper_packets/doi__10.3390_md13052602/packet_manifest.json",
+    "paper_packets/doi__10.3390_md13052602/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md13052602/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_md13052602/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_md13052602/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_md13052602/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_md13052602/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_md13052602/analysis/adjudication_report.json",
+    "paper_packets/doi__10.3390_md13052602/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_md13052602/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md13052602/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md13052602/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_md13052602/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_md13052602/extracted/pdf_text/marinedrugs-13-02602.txt",
+    "paper_packets/doi__10.3390_md13052602/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md13052602/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_md13052602/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_md13052602/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_md13052602/extracted/oa_package/local-DBAASP-PMC4446596/PMC4446596/marinedrugs-13-02602.nxml",
+    "paper_packets/doi__10.3390_md13052602/extracted/oa_package/local-DBAASP-PMC4446596/PMC4446596/marinedrugs-13-02602.pdf",
+    "papers/doi__10.3390_md13052602/source/paper.xml",
+    "papers/doi__10.3390_md13052602/source/paper.pdf",
+    "papers/doi__10.3390_md13052602/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_md13052602/final/database_record_verification.json",
+    "papers/doi__10.3390_md13052602/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_md13052602/final/review_report.json",
+    "papers/doi__10.3390_md13052602/work/review/quality_feedback.json"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_assets_note": "supplementary_index.json has zero supplementary assets; archive_manifest lists article XML/PDF plus figure images only, so no absent external supplement is chased."
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "adjudication_summary": "Worker-4/6 re-review source-verified the Table 1 MIC matrix and Table 3 peptide identity/modification evidence, preserved three entry-text database conflicts as cautions, removed framework-test final blockers, and closes the prior rework ticket as accepted_with_cautions rather than accepted_clean.",
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains the source inventory layer: XML/PDF/OA package/database snapshots are present, supplementary assets are absent by manifest, and no bootstrap reset was run.",
+    "validator_contract": "Structural readiness is separate from publication-grade review; final acceptance is based on source-reviewed worker-4/6 repair plus fresh semantic/publication gates.",
+    "activity_toxicity": "Worker-6 final artifact rebuilds Table 1 into 28 source-located MIC records for LBD1-LBD7 and removes duplicate/framework label errors; no toxicity values are fabricated because none are in local paper material.",
+    "database_record_verification": "Worker-4 rechecked all 72 linked rows. DBAASP assay/literature rows and matching entry-text rows are source_verified; three corrupted or mixed-PMID entry-text rows remain source_conflict with primary-source anchors.",
+    "mechanism_ontology": "Mechanism language is bounded to phenotype and structure-activity evidence; direct molecular targets are not claimed.",
+    "publication_grade_review": "The blocking ticket rwk-complete-test-0001 is closed after source review; remaining issues are explicit cautions, not open rework targets."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 28,
+    "activity_duplicate_record_ids": 0,
+    "mic_like_units_present": true,
+    "database_status_summary": {
+      "source_verified": 69,
+      "source_conflict": 3
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "source_conflicts_preserved_as_cautions": 3,
+    "strict_gate_evidence": {
+      "semantic_report": "reports/doi__10.3390_md13052602.semantic_gate.json",
+      "publication_report": "reports/doi__10.3390_md13052602.publication_quality.json",
+      "semantic_returncode": 0,
+      "publication_returncode": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_grade_pass": true,
+      "publication_risk_counts": {},
+      "publication_review_status": {
+        "accepted_with_cautions": 1
+      }
+    }
+  },
+  "caution_findings": [
+    {
+      "code": "database_entry_text_conflicts_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "count": 3,
+      "finding": "CAMP/dbAMP entry-text rows with date/leading-zero corruption or mixed-PMID non-primary values remain source_conflict; Table 1-supported DBAASP assay rows are source_verified."
+    },
+    {
+      "code": "linked_sequence_records_absent_but_primary_table3_present",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "finding": "No linked_sequence_records snapshot exists; peptide sequence/modification identity is anchored to primary Table 3 and database peptide names/IDs."
+    },
+    {
+      "code": "direct_molecular_target_not_established",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "Antibacterial and antiviral phenotypes are source-supported, but no direct viral/host molecular target mechanism is established."
+    },
+    {
+      "code": "no_paper_local_toxicity_assay_table",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "No local XML/PDF/OA package toxicity or hemolysis assay table was found; no toxicity values are inferred."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

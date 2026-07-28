@@ -1,0 +1,69 @@
+{
+  "paper_id": "doi__10.1093_bib_bbag115",
+  "generated_at": "2026-05-03T08:05:08Z",
+  "reviewed_by": "worker-6 source-reviewed adjudication",
+  "extraction_scope": "Bounded mechanism ontology: computational design rationale and phenotype-level antimicrobial/safety validation only; no direct molecular killing mechanism is asserted by this paper.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-computational-design-framework",
+      "claim_text": "The paper supports a CVAE-BIO computational discovery framework using biochemical constraints and an RF classifier to prioritize generated AMP candidates.",
+      "entity_scope": "CVAE-BIO generated peptide candidates",
+      "evidence_class": "computational_design_context",
+      "source_locator": {
+        "locator": "xml:sec=Biochemical-knowledge-driven antimicrobial peptides generator",
+        "source_path": "paper_packets/doi__10.1093_bib_bbag115/extracted/xml_sections.json",
+        "figure_locator": "xml:fig=2:Figure 1"
+      },
+      "limitations": "This is a design/prioritization mechanism, not a direct molecular antimicrobial mechanism."
+    },
+    {
+      "claim_id": "mech-002-phenotype-antibacterial-validation",
+      "claim_text": "Wet-lab validation supports phenotype-level antibacterial activity for selected CVAE-BIO peptides, especially against E. coli, with exact MIC values available for the Table 1 subset.",
+      "entity_scope": "selected CVAE-BIO peptides and comparator controls",
+      "evidence_class": "phenotypic_activity",
+      "source_locator": {
+        "locator": "xml:sec=Antimicrobial profile of the selected peptides",
+        "source_path": "paper_packets/doi__10.1093_bib_bbag115/extracted/xml_sections.json",
+        "figure_locator": "xml:fig=5:Figure 4; xml:fig=6:Figure 5",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1093_bib_bbag115/extracted/oa_package/local-APD6-pmc_package/PMC12998437/supplementary_table_3_bbag115.pdf"
+        ]
+      },
+      "limitations": "No direct membrane disruption, binding, omics, or target-engagement assay is reported for the final peptides in this paper."
+    },
+    {
+      "claim_id": "mech-003-safety-selection-context",
+      "claim_text": "The paper uses human erythrocyte hemolysis thresholds at 50 µg/mL as a safety screen when identifying non-toxic active AMP candidates.",
+      "entity_scope": "54 CVAE-BIO-generated peptide set",
+      "evidence_class": "safety_screen_context",
+      "source_locator": {
+        "locator": "xml:sec=Antimicrobial profile of the selected peptides:hemolytic toxicity paragraph",
+        "source_path": "paper_packets/doi__10.1093_bib_bbag115/extracted/xml_sections.json",
+        "figure_locator": "xml:fig=5:Figure 4"
+      },
+      "limitations": "Aggregate threshold counts are text-supported; per-peptide hemolysis percentages were not text-extractable and are not inferred."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure4_5_exact_bar_or_block_values_not_text_recoverable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1093_bib_bbag115/extracted/figure_captions.json",
+        "paper_packets/doi__10.1093_bib_bbag115/extracted/pdf_text/local-APD6-paper.txt",
+        "paper_packets/doi__10.1093_bib_bbag115/extracted/pdf_text/supplementary_table_3_bbag115.txt",
+        "paper_packets/doi__10.1093_bib_bbag115/extracted/oa_package/local-APD6-pmc_package/PMC12998437/bbag115f4.jpg",
+        "paper_packets/doi__10.1093_bib_bbag115/extracted/oa_package/local-APD6-pmc_package/PMC12998437/bbag115f5.jpg"
+      ],
+      "tools_attempted": [
+        "rg",
+        "pdftotext -layout",
+        "existing figure-caption extraction review"
+      ],
+      "why_unrecoverable": "Local text/supplement tables support binary E. coli screening markers, exact Table 1 MIC values, and aggregate hemolysis thresholds, but not exact per-peptide growth-ratio or hemolysis percentages from figure images without unsupported image quantification.",
+      "impact": "Final activity layer uses source-supported binary/threshold and MIC values only; exact image-derived percentages are not invented.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

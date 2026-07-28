@@ -1,0 +1,124 @@
+{
+  "paper_id": "doi__10.3390_md20070451",
+  "reviewed_at": "2026-05-09T12:21:39Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, supplementary ZIP members, and packet database rows were reopened. Supplementary PDF/XLSX support structure/DP4 evidence and do not add activity/database rows."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_md20070451/packet_manifest.json",
+    "paper_packets/doi__10.3390_md20070451/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md20070451/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_md20070451/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_md20070451/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md20070451/extracted/pdf_text/local-DBAASP-PMC9319533.txt",
+    "paper_packets/doi__10.3390_md20070451/extracted/pdf_text/marinedrugs-20-00451.txt",
+    "paper_packets/doi__10.3390_md20070451/extracted/oa_package/local-DBAASP-PMC9319533/PMC9319533/marinedrugs-20-00451-s001.zip",
+    "paper_packets/doi__10.3390_md20070451/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md20070451/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md20070451/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_md20070451/source/paper.xml",
+    "papers/doi__10.3390_md20070451/source/paper.pdf"
+  ],
+  "adjudication_summary": "Worker-4 resolved the linked DBAASP database rows against source tables; worker-6 refreshed final activity, mechanism, database, and review artifacts from local evidence. The paper is publication-grade with cautions about upstream scaffold artifacts and absent linear sequence snapshots.",
+  "semantic_quality_checks": {
+    "activity_rows_final": 36,
+    "database_status_summary": {
+      "source_verified": 26
+    },
+    "mechanism_claims_final": 3,
+    "open_rework_targets": 0,
+    "packet_activity_parser_used_as_scaffold_only": true,
+    "supplementary_zip_members_checked": [
+      "Asperopiperazines Aand B_Marine Drugs_2022_Supporting_R.pdf",
+      "Table S1. DP4 calculations for the siomers of 2.xlsx"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 12 linked assay rows, 12 linked experiment rows, and 2 literature rows match primary-source table/article evidence after row-level review; linked_sequence_records is empty, so identity is tied to compound names/structures rather than fabricated sequence strings.",
+    "layer_2_activity_toxicity": "Final activity rows repair the scaffold parser error by separating inhibition-zone and MIC columns in Table 3 and restoring cell-line headers in Table 4; raw values and units are preserved.",
+    "layer_3_mechanism": "The paper supports structure/phenotypic activity claims but no direct mechanism of action; final mechanism ontology therefore avoids host immune, nucleic-acid, membrane, or target-binding overclaims.",
+    "review": "Open ticket rwk-complete-test-0001 is closed by this source-reviewed worker-4/6 pass; no remaining targeted rework is required by strict gates."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "upstream_packet_activity_parser_scaffold_mismatch",
+      "evidence_context": "paper_packets analysis/activity_toxicity_evidence.json previously mixed Table 3 inhibition-zone columns into MIC rows and gave Table 4 generic cell-line targets; final worker-6 artifact is the source-reviewed projection."
+    },
+    {
+      "caution_code": "no_linked_linear_sequence_snapshot",
+      "evidence_context": "DBAASP linked_sequence_records.jsonl has zero rows; asperopiperazine identities are verified from source compound names, structures, stereochemistry, and activity rows."
+    },
+    {
+      "caution_code": "no_direct_mechanism_of_action",
+      "evidence_context": "The paper reports MIC/disk-diffusion and MTT phenotypes but no direct antimicrobial or cytotoxic mechanism assay."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "gate_evidence": {
+    "publication_grade_ready": true,
+    "semantic_returncode": 0,
+    "semantic_stderr": "",
+    "semantic_report": "reports/doi__10.3390_md20070451.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_returncode": 0,
+    "publication_stderr": "",
+    "publication_report": "reports/doi__10.3390_md20070451.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "semantic": {
+      "paper_count": 1,
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "failed_papers": [],
+      "results": [
+        {
+          "paper_id": "doi__10.3390_md20070451",
+          "publication_grade_pass": true,
+          "issue_count": 0,
+          "issues": []
+        }
+      ]
+    },
+    "publication": {
+      "generated_at_utc": "2026-05-09T12:21:39.413830+00:00",
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_md20070451.complete_message_test_manifest.json",
+      "paper_count": 1,
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 36,
+        "mechanism_claims": 3
+      },
+      "issue_log_counts": {},
+      "risk_counts": {},
+      "risk_examples": {},
+      "publication_grade_pass": true
+    }
+  }
+}

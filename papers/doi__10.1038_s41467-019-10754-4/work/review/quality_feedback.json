@@ -1,0 +1,137 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 5,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-06-20T09:30:48Z"
+  },
+  "generated_at": "2026-06-20T00:00:00Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.1038_s41467-019-10754-4",
+  "qc_failure_reasons": [
+    {
+      "code": "missing_local_moesm_supplementary_assets",
+      "owner_worker": "worker-6",
+      "reason": "The primary XML/HTML identify Supplementary Information PDF, Reporting Summary PDF, and Source Data XLSX, but only article landing HTML files are present in the local supplementary packet; supplement/source-data review cannot be completed in obtainable-only mode.",
+      "severity": "blocking"
+    },
+    {
+      "code": "publication_grade_blocked_by_unrecoverable_material_gap",
+      "owner_worker": "worker-6",
+      "reason": "Activity rows and matching DBAASP assay rows were repaired from local PDF Table 1, but missing local MOESM assets prevent publication-grade final acceptance.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41467-019-10754-4/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41467-019-10754-4/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-06-20T00:00:00Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "missing_local_moesm_supplementary_assets",
+      "layer": "review",
+      "omission_code": "missing_local_moesm_supplementary_assets",
+      "owner_worker": "worker-6",
+      "paper_id": "doi__10.1038_s41467-019-10754-4",
+      "qc_failure_reasons": [
+        {
+          "code": "missing_local_moesm_supplementary_assets",
+          "owner_worker": "worker-6",
+          "reason": "The primary XML/HTML identify Supplementary Information PDF, Reporting Summary PDF, and Source Data XLSX, but only article landing HTML files are present in the local supplementary packet; supplement/source-data review cannot be completed in obtainable-only mode.",
+          "severity": "blocking"
+        },
+        {
+          "code": "publication_grade_blocked_by_unrecoverable_material_gap",
+          "owner_worker": "worker-6",
+          "reason": "Activity rows and matching DBAASP assay rows were repaired from local PDF Table 1, but missing local MOESM assets prevent publication-grade final acceptance.",
+          "severity": "blocking"
+        }
+      ],
+      "reason": "Local PDF Table 1 supports activity/database repair, but local supplementary materials are landing HTML duplicates and do not include the actual MOESM1 Supplementary Information PDF, MOESM2 Reporting Summary PDF, or MOESM3 Source Data XLSX linked by the article.",
+      "requested_by": "owner_worker_re_review",
+      "requested_outputs": [
+        {
+          "asset": "41467_2019_10754_MOESM1_ESM.pdf",
+          "need": "Recover true Supplementary Information PDF or preserve explicit unavailable-source gap."
+        },
+        {
+          "asset": "41467_2019_10754_MOESM3_ESM.xlsx",
+          "need": "Recover Source Data workbook for final source-data cross-check or preserve explicit unavailable-source gap."
+        }
+      ],
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41467-019-10754-4/source/supplementary",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-019-10754-4/supplementary",
+        "papers/doi__10.1038_s41467-019-10754-4/source/paper.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-019-10754-4/supplementary/landing-1.bin"
+      ],
+      "status": "open",
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-owner-20260620-missing-supp-assets",
+      "worker": "worker-6"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "missing_local_moesm_supplementary_assets",
+      "impact": "Table 1 activity rows are recovered, but supplement/source-data adjudication remains non-publication-grade.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41467-019-10754-4/source/supplementary",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-019-10754-4/supplementary",
+        "papers/doi__10.1038_s41467-019-10754-4/source/paper.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-019-10754-4/supplementary/landing-1.bin"
+      ],
+      "tools_attempted": [
+        "xml media-link extraction",
+        "file type identification for landing*.bin",
+        "HTML supplementary-link extraction",
+        "bounded PDF text Table 1 extraction"
+      ],
+      "why_unrecoverable": "The local packet contains Nature article landing HTML duplicates/symlinks for supplementary assets; the actual MOESM1 PDF, MOESM2 PDF, and MOESM3 XLSX linked by XML/HTML are not present locally, and obtainable-only mode forbids external download or fabricated supplement values."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-019-10754-4",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/database",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/extracted",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/locators",
+        "paper_packets/doi__10.1038_s41467-019-10754-4/raw",
+        "papers/doi__10.1038_s41467-019-10754-4/final",
+        "papers/doi__10.1038_s41467-019-10754-4/source",
+        "papers/doi__10.1038_s41467-019-10754-4/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

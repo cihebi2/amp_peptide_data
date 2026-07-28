@@ -1,0 +1,106 @@
+{
+  "paper_id": "doi__10.1038_s41598-018-32981-3",
+  "reviewed_at": "2026-05-03T01:56:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_images",
+    "linked_database_snapshots"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figure_images": true,
+    "note": "All local paths needed for worker-2/4/6 gate repair were opened; exact toxicity bar heights without source tables are retained as approximate/qualitative rather than fabricated."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-018-32981-3/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extracted/pdf_text/41598_2018_Article_32981.txt",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extracted/pdf_text/41598_2018_32981_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/database/linked_literature_records.jsonl",
+    "papers/doi__10.1038_s41598-018-32981-3/source/paper.xml",
+    "papers/doi__10.1038_s41598-018-32981-3/source/paper.pdf",
+    "papers/doi__10.1038_s41598-018-32981-3/source/oa_package",
+    "paper_packets/doi__10.1038_s41598-018-32981-3/extracted/oa_package/local-APD6-pmc_package/PMC6168480/41598_2018_32981_Fig3_HTML.jpg",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "summary": "Source-reviewed repair recovered the Supplementary Table S2 MBC matrix, Figure 3 toxicity evidence, and row-level database adjudication for the SRP peptide paper; the paper is publication-grade with explicit cautions for database prose conflicts and figure-derived toxicity precision.",
+  "adjudication_summary": "The original no-activity blocker is closed by 26 repaired activity/toxicity rows. DBAASP current-paper assay rows are reconciled to primary source rows, while APD6/CAMP/dbAMP wording conflicts remain preserved as cautions instead of being promoted to clean source verification.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Table 1 verifies peptide identity for S1/SRP-1/SRP-2/SRP-3. DBAASP assay rows matching the repaired source rows are source_verified except for the HepG2 range/text mismatch; APD6/CAMP/dbAMP prose conflicts are preserved as source_conflict with traceability.",
+    "layer_2_activity_toxicity": "Supplementary Table S2 supplies MBC50/MBC90 values and units; Figure 3/text support hemolysis/HMEC/HepG2 toxicity rows without inventing unavailable exact bar-height values.",
+    "layer_3_mechanism": "Final mechanism is limited to membrane disruption/permeability plus biophysical/LPS/in-vivo context; no single molecular target is overclaimed."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 26,
+    "activity_rows_with_source_locators": 26,
+    "database_record_audits": 67,
+    "database_status_summary": {
+      "source_verified": 55,
+      "source_conflict": 12
+    },
+    "mechanism_claims": 3,
+    "open_rework_ticket_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "obtained_only_mode": true
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_prose_endpoint_conflicts_preserved",
+      "evidence_context": "APD6 text uses MIC and SPR-style naming while the primary paper uses SRP names and MBC50/MBC90 values. CAMP/dbAMP rows lack full packet sequence fields or include extra historical text; these are retained as source_conflict rows."
+    },
+    {
+      "caution_code": "figure_only_toxicity_precision",
+      "evidence_context": "Figure 3 supports toxicity direction and approximate values, but exact numeric bars are not available as a local source table; qualitative/approximate rows are used where appropriate."
+    },
+    {
+      "caution_code": "not_clean_acceptance",
+      "evidence_context": "Publication-grade result is accepted_with_cautions, not accepted_clean, because database conflict rows remain part of the final curation record."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "decision": "ready_for_publication_grade_with_cautions_after_worker_2_4_6_repair"
+  },
+  "gate_rerun_evidence": {
+    "rerun_at": "2026-05-03T01:58:32Z",
+    "semantic_gate_report": "reports/doi__10.1038_s41598-018-32981-3.codex_worker246_rereview_20260503.semantic_gate.json",
+    "semantic_publication_grade_pass": true,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.1038_s41598-018-32981-3.codex_worker246_rereview_20260503.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  },
+  "updated_at": "2026-05-03T01:58:32Z"
+}

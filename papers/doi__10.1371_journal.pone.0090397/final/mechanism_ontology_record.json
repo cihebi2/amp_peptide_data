@@ -1,0 +1,100 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1371_journal.pone.0090397",
+  "run_id": "codex_worker46_re_review_20260506",
+  "stage_id": "final_mechanism_adjudication",
+  "worker": "worker-6",
+  "reviewed_at": "2026-05-05T20:20:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-plasma-membrane-damage",
+      "claim_text": "Peptoid 1 and related cationic amphipathic peptoids kill MCF-7 cells primarily through plasma-membrane damage at cytotoxic concentrations.",
+      "entity_scope": "peptoid 1 and related cationic amphipathic peptoids evaluated in Figure 4",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Guava Viacount membrane-integrity assay",
+        "LDH leakage assay",
+        "MTS viability comparison"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=Primary cytotoxicity of anticancer peptoids in cancer cells involves plasma membrane damage"
+      },
+      "source_locators": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        },
+        {
+          "source_path": "paper_packets/doi__10.1371_journal.pone.0090397/extracted/figure_captions.json",
+          "locator": "xml:fig=4:Figure 4"
+        }
+      ],
+      "limitations": "The paper keeps open possible intracellular targets at lower concentrations; do not promote a single exclusive mechanism."
+    },
+    {
+      "claim_id": "mech-002-cell-penetration-context",
+      "claim_text": "CF-peptoid 1 can enter MCF-7 cells and show cytoplasmic distribution in live-cell confocal imaging without necessarily causing immediate cytotoxicity at the imaging concentration.",
+      "entity_scope": "CF-peptoid 1",
+      "evidence_class": "direct_cellular_localization",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=Confocal imaging"
+      },
+      "source_locators": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        }
+      ],
+      "limitations": "Localization supports cell interaction/translocation context; it is not by itself a direct intracellular target claim."
+    },
+    {
+      "claim_id": "mech-003-apoptotic-ladder-negative",
+      "claim_text": "The local supplementary caption reports no typical apoptotic DNA ladder after 24 h peptoid 1 treatment, supporting a non-apoptotic primary cytotoxicity interpretation.",
+      "entity_scope": "peptoid 1 in MCF-7 cells",
+      "evidence_class": "negative_mechanism_evidence",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:supplementary-material=pone.0090397.s002"
+      },
+      "source_locators": [
+        {
+          "source_path": "paper_packets/doi__10.1371_journal.pone.0090397/extracted/oa_package/local-DBAASP-PMC3938723/PMC3938723/pone.0090397.s002.tif",
+          "locator": "supplementary_figure_s2_image"
+        }
+      ],
+      "limitations": "TIF panel was not image-quantified; only caption-level support and article text were used."
+    },
+    {
+      "claim_id": "mech-004-xenograft-phenotype",
+      "claim_text": "Peptoid 1 reduced tumor growth in the local breast-cancer xenograft experiment, but this is phenotype efficacy evidence rather than a molecular mechanism assay.",
+      "entity_scope": "peptoid 1",
+      "evidence_class": "phenotype_supporting_not_direct_mechanism",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:fig=5:Figure 5"
+      },
+      "source_locators": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=Peptoid 1 inhibits tumor growth in a clinically relevant orthotopic xenotransplantation model"
+        }
+      ],
+      "limitations": "Do not use the xenograft result to infer a separate molecular target."
+    }
+  ],
+  "overall_mechanism_evidence_class": "direct_mechanism_with_scope_guard",
+  "quality_controls": {
+    "missing_claim_id": 0,
+    "missing_claim_text": 0,
+    "missing_source_locator": 0,
+    "direct_mechanism_without_assay": 0
+  },
+  "adjudication_note": "Removed automated nucleic-acid-context overclaim; mechanism is limited to source-located membrane damage, cell penetration context, negative apoptosis evidence, and in vivo phenotype support."
+}

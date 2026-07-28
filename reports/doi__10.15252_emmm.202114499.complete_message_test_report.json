@@ -1,0 +1,169 @@
+{
+  "analysis": {
+    "activity_records": 44,
+    "database_row_counts": {
+      "linked_assay_records": 35,
+      "linked_dramp_activity_records": 1,
+      "linked_experiment_records": 37,
+      "linked_literature_records": 3,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 3,
+    "review_status": "accepted_with_cautions"
+  },
+  "completion_claim": "source_reviewed_accepted_with_cautions_after_fresh_worker2_worker4_worker6_re_review",
+  "current_state": "final_approval",
+  "doi": "10.15252/emmm.202114499",
+  "final_approval_status": "accepted_with_cautions",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "packet_structural_open_request_line_count": 1,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_pass": true,
+    "publication_quality_risk_counts": {}
+  },
+  "gate_summary": {
+    "structural_ready": true,
+    "validator_contract_ready": true,
+    "semantic_gate_ready": true,
+    "publication_grade_ready": true
+  },
+  "generated_at": "2026-05-05T21:11:14Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.15252_emmm.202114499.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": 126,
+    "figures": 11,
+    "locators": 149,
+    "sections": 45,
+    "supplementary_assets": 90,
+    "supplementary_tables": 79,
+    "tables": 2
+  },
+  "message_counts": {
+    "artifacts": 25,
+    "chat_messages": 19,
+    "events": 44,
+    "rework_requests": 1,
+    "rework_responses": 2,
+    "state_executions": 17
+  },
+  "not_publication_grade_reason": null,
+  "open_rework_ticket_count": 0,
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.15252_emmm.202114499",
+  "paper_id": "doi__10.15252_emmm.202114499",
+  "pmcid": "PMC8819291",
+  "publication_quality_gate": "passed",
+  "queue_status": {
+    "analysis": "analysis_source_reviewed_accepted_with_cautions",
+    "material": "material_extracted_with_gaps"
+  },
+  "rework_requests": [],
+  "rework_ticket_ids": [],
+  "semantic_gate": "passed",
+  "state_count_expected": 17,
+  "terminal_status": "accepted_with_cautions",
+  "test_type": "complete_real_paper_message_transfer_test",
+  "title": "Adaptively evolved human oral actinomyces-sourced defensins show therapeutic potential.",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.15252_emmm.202114499",
+  "workflow_test_ok": true,
+  "updated_at": "2026-05-05T21:11:14Z",
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "approval_rationale": "Fresh bounded worker-2/4/6 source review retained supported activity/toxicity rows, preserved database conflicts, replaced placeholder mechanism notes with source-reviewed ontology records, closed rwk-complete-test-0001, and reran strict semantic/publication gates with pass results.",
+  "remaining_cautions": [
+    {
+      "caution_code": "database_sequence_not_primary_sequence_verified",
+      "severity": "caution",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "image_only_fic_and_hek293_exact_values_not_promoted",
+      "severity": "caution",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "lipid_ii_targeting_inferred_from_ump_surrogate",
+      "severity": "caution",
+      "blocks_publication_grade": false
+    }
+  ],
+  "historical_rework_requests": [
+    {
+      "artifact_path": "papers/doi__10.15252_emmm.202114499/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-05T20:20:07Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "full_source_review_not_completed",
+      "layer": "review",
+      "omission_context": [],
+      "paper_id": "doi__10.15252_emmm.202114499",
+      "qc_failure_reasons": [
+        {
+          "code": "full_source_review_not_completed",
+          "owner_worker": "worker-6",
+          "reason": "The framework test inventories real material but does not complete worker-6 source-reviewed adjudication.",
+          "severity": "blocking"
+        },
+        {
+          "code": "database_conflicts_require_adjudication",
+          "owner_worker": "worker-4 + worker-6",
+          "reason": "Linked database rows include source_conflict/database-only cases that must be preserved or resolved by source review.",
+          "severity": "major"
+        },
+        {
+          "code": "no_supported_activity_rows_extracted",
+          "owner_worker": "worker-2",
+          "reason": "No parser-supported activity/toxicity rows were extracted; worker must inspect XML/PDF/prose/figures/supplements before acceptance.",
+          "severity": "major"
+        }
+      ],
+      "reason": "The framework test parsed real XML/package/database evidence, but did not complete human-level row-by-row database reconciliation, supported/unsupported activity-table repair, supplement table extraction, or figure-level mechanism quantification.",
+      "requested_by": "complete_message_test_adjudicator",
+      "requested_outputs": [
+        {
+          "asset": "source/paper.xml",
+          "need": "Complete Table 1/2/3 row reconciliation against database records.",
+          "required_locators": [
+            "xml:table=1",
+            "xml:table=2",
+            "xml:table=3"
+          ]
+        },
+        {
+          "asset": "source/supplementary/",
+          "need": "Complete supplement PDF/XLSX extraction and decide whether it changes activity/toxicity/mechanism evidence.",
+          "required_locators": [
+            "supp:*"
+          ]
+        }
+      ],
+      "required_action": "Assign a real worker-4/5/6 source-reviewed pass; rerun semantic and publication-quality gates after rework.",
+      "rework_context_expected_fields": [
+        "historical_artifacts",
+        "omission_codes",
+        "owner_worker_skill_paths",
+        "gate_failures",
+        "previous_outputs"
+      ],
+      "rework_context_packet_required": true,
+      "severity": "blocking",
+      "source_evidence_to_check": [
+        "source/paper.xml",
+        "source/supplementary/",
+        "packet/database/*.jsonl"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001",
+      "worker": "worker-6"
+    }
+  ],
+  "rework_responses_count": 3,
+  "open_rework_requests": [],
+  "historical_rework_request_count": 1
+}

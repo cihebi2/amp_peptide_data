@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.3390_biom14060659",
+  "reviewed_at": "2026-05-08T16:05:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, supplementary ZIP PDF, figure captions/images, packet database snapshots, and targeted merged sequence/experiment CSV rows were opened. No owner-layer missing value remains after bounded local recovery."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_biom14060659/handoff_context.json",
+    "paper_packets/doi__10.3390_biom14060659/packet_manifest.json",
+    "paper_packets/doi__10.3390_biom14060659/locators/locator_index.json",
+    "paper_packets/doi__10.3390_biom14060659/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_biom14060659/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_biom14060659/source/paper.xml",
+    "papers/doi__10.3390_biom14060659/source/paper.pdf",
+    "paper_packets/doi__10.3390_biom14060659/raw/paper.xml",
+    "paper_packets/doi__10.3390_biom14060659/raw/paper.pdf",
+    "paper_packets/doi__10.3390_biom14060659/raw/supplementary_original/local-APD6-biomolecules-14-00659-s001.zip",
+    "paper_packets/doi__10.3390_biom14060659/extracted/pdf_text/biomolecules-14-00659.txt",
+    "paper_packets/doi__10.3390_biom14060659/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_biom14060659/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_biom14060659/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_biom14060659/extracted/oa_package/local-APD6-pmc_package/PMC11201828/biomolecules-14-00659-g001.jpg",
+    "paper_packets/doi__10.3390_biom14060659/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_biom14060659/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_biom14060659/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_biom14060659/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 49,
+    "activity_core_fields_checked": true,
+    "database_snapshots": {
+      "linked_assay_records": 44,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 49,
+      "linked_literature_records": 14,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_verified": 106,
+      "source_conflict": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay rows and APD6 activity summaries were rechecked against primary Table 1/Table 2, Figure 1, and article metadata. One APD6 F4 activity-summary mismatch remains as source_conflict; all other linked value/citation rows are source_verified or citation-verified.",
+    "layer_2_activity_toxicity": "Primary XML tables support 46 MIC rows across rattusin fragments/analogs and bacterial targets; Results/Figure 6 support three qualitative F2 toxicity rows without digitizing exact graph percentages.",
+    "layer_3_mechanism": "Final mechanism ontology now uses source-reviewed DNA-binding, membrane-assay, and dimerization evidence. Quantitative DNA-binding values are limited to supplementary Table S2; no unsupported Kd or graph-derived values were fabricated."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_f4_activity_summary_conflict",
+      "severity": "caution",
+      "evidence_context": "APD6 AP05012 collapses F4 activity into F2-like MIC values; primary Table 1 has F4 at 32 ug/mL for E. coli and 64 ug/mL for S. aureus. Preserved as source_conflict.",
+      "affected_records": [
+        "APD6:AP05012"
+      ]
+    },
+    {
+      "caution_code": "toxicity_graph_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Figure 6 and text support negligible F2 hemolysis/cytotoxicity up to 512 ug/mL, but exact graph percentages were not extracted or fabricated."
+    },
+    {
+      "caution_code": "dbaasp_multimer_sequence_blank",
+      "severity": "caution",
+      "evidence_context": "DBAASP multimer entry DBAASPS_23027 lacks a linear sequence in the merged sequence catalog; primary Figure 1 supports the F2 RRVCRNT fragment and dimeric construct identity.",
+      "affected_records": [
+        "DBAASP:DBAASPS_23027"
+      ]
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "adjudication_summary": "Source-reviewed worker-2/4/6 rework recovered primary MIC/toxicity rows, re-adjudicated APD6/DBAASP conflicts, and closed the prior targeted rework as accepted_with_cautions with no blocking owner-layer issue remaining.",
+  "unrecoverable_material_gaps": []
+}

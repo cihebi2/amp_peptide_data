@@ -1,0 +1,142 @@
+{
+  "paper_id": "pmid__34681184",
+  "reviewed_at": "2026-05-10T17:47:52Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded worker-2/4/6 re-review reopened XML, PDF text, OA package manifest, supplementary ZIP/PDF text, figure captions, and linked database JSONL rows. Missing exact values were not fabricated; no blocking source gap remains for the owner layers."
+  },
+  "checked_inputs": [
+    {
+      "path": "paper_packets/pmid__34681184/packet_manifest.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/locators/locator_index.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/extraction/extraction_status.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/extraction/extraction_quality_report.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "papers/pmid__34681184/source/paper.xml",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/raw/paper.xml",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "papers/pmid__34681184/source/paper.pdf",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/raw/paper.pdf",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/extracted/pdf_text/pharmaceuticals-14-00959.txt",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/raw/supplementary_original/local-DRAMP-pharmaceuticals-14-00959-s001.zip",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/extracted/supplementary_text.jsonl",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/extracted/figure_captions.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/database/database_source_manifest.json",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/database/linked_dramp_activity_records.jsonl",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/database/linked_experiment_records.jsonl",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    },
+    {
+      "path": "paper_packets/pmid__34681184/database/linked_literature_records.jsonl",
+      "purpose": "worker-2/4/6 bounded source re-review"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 71,
+    "activity_table_1_recovered": true,
+    "activity_table_2_recovered": true,
+    "supplementary_pdf_checked": true,
+    "database_status_summary": {
+      "source_conflict": 4,
+      "source_verified": 7
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "The material packet remains a separate source inventory layer; material extraction status is complete-with-gaps, but the relevant local XML/PDF/supplement/database materials were sufficient for worker-2/4/6 owner-layer repair.",
+    "validator_contract": "Structural packet/final artifacts are present and were not treated as publication-grade proof without source re-review.",
+    "activity_toxicity": "Worker-2 re-parsed Tables 1 and 2 into source-located KD, HI/IC50, EC50, SI, and CC50 rows; no parser-fabricated rows remain.",
+    "database_record_verification": "Worker-4 matched SAHS/CAMP/dbAMP rows to primary source support and preserved DRAMP reference-peptide mixed provenance as source_conflict cautions.",
+    "mechanism_ontology": "Worker-6 replaced generic mechanism notes with source-located HA-binding, phenotypic antiviral, computational docking, and scope-caution claims.",
+    "publication_grade_review": "No blocking or major owner-layer issue remains after source review; remaining issues are explicit nonblocking cautions and the rework ticket is closed."
+  },
+  "caution_findings": [
+    {
+      "code": "dramp_reference_peptide_mixed_provenance",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "count": 4,
+      "finding": "DRAMP rows for SKHS/SLDC mix the current paper with PMID 28878220; current Tables 1/2 support the reproduced sequences and values, but the database provenance/name context remains source_conflict."
+    },
+    {
+      "code": "supplementary_pdf_no_extra_activity_matrix",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "The supplementary ZIP was opened and its PDF text checked; it contains analytical data, sensorgrams, modeling tables/figures, and docking figures, but no additional activity/toxicity target/entity/value matrix."
+    },
+    {
+      "code": "mechanism_scope_limited_to_ha_binding_and_antiviral_phenotype",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "MST/SPR support HA binding and Table 1/2 support antiviral phenotype; docking remains computational support, not a standalone direct mechanism."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 re-review recovered the blocked activity matrices from Tables 1/2, adjudicated linked database rows against source locators, replaced generic mechanism notes with source-scoped claims, and closed rwk-complete-test-0001 with cautions preserved."
+}

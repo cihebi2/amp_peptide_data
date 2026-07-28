@@ -1,0 +1,70 @@
+{
+  "paper_id": "doi__10.3390_ph17020171",
+  "generated_at": "2026-05-09T16:28:02Z",
+  "reviewed_at": "2026-05-09T16:28:02Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "extraction_scope": "worker-6 source-reviewed final mechanism adjudication from XML/PDF sections and figure captions; no unsupported molecular target is promoted.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "K4S4(1-16) against Acinetobacter baumannii",
+      "claim_text": "AFM is direct paper evidence for bacterial surface morphology changes after K4S4(1-16) treatment, but it does not define a specific molecular target.",
+      "evidence_class": "direct_cell_surface_morphology_assay",
+      "direct_assay_types": [
+        "atomic force microscopy"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:fig=2:Figure 2;xml:sec=17:3.7. Atomic Force Microscopy (AFM)"
+      },
+      "limitations": "Record as morphology/cell-envelope phenotype, not as proven pore formation or a named molecular target."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "dermaseptin S4/B2 derivatives",
+      "claim_text": "Table 1 and Table 2 support a source-level structure-activity association: lysine substitutions/truncation alter charge/hydrophobicity and the observed MIC/MBC/CC50 values.",
+      "evidence_class": "source_supported_structure_activity_association",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1;xml:table=2;xml:sec=6:2.2. Structural and Physicochemical Properties of Peptides"
+      },
+      "limitations": "Association is not treated as a direct biochemical mechanism assay."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "dermaseptin membrane mechanism context",
+      "claim_text": "The paper discusses membrane-active AMP models and A. baumannii membrane interaction as context; final curation keeps these as literature/background mechanism context unless supported by this paper's AFM phenotype.",
+      "evidence_class": "literature_background_context_not_direct_mechanism",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=8:2.4. Antibacterial Activity of Dermaseptin Derivatives against Acinetobacter baumannii;xml:sec=3:1. Introduction"
+      },
+      "limitations": "Do not promote barrel-stave, carpet, cytoplasmic leakage, or membrane potential effects to direct mechanisms for this paper alone."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "no_local_supplementary_assets_present",
+      "source_paths_checked": [
+        "papers/doi__10.3390_ph17020171/source/supplementary",
+        "paper_packets/doi__10.3390_ph17020171/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_ph17020171/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_ph17020171/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "find over paper-local supplementary directory",
+        "jq over supplementary_index.json and supplementary_tables.json",
+        "jq over archive_manifest.json for OA package members"
+      ],
+      "why_unrecoverable": "The local paper package contains article XML, PDF, and figure assets but no supplementary files or supplementary tables. Table 2 in the primary XML/PDF carries the recoverable activity/toxicity values needed for worker-2 repair.",
+      "impact": "No additional supplement-derived activity, toxicity, or mechanism values can be recovered locally; this is a nonblocking material limitation after Table 2 and figure/method locators were checked.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

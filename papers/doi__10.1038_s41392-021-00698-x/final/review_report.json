@@ -1,0 +1,102 @@
+{
+  "paper_id": "doi__10.1038_s41392-021-00698-x",
+  "reviewed_at": "2026-06-20T09:12:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "publisher_pdf_text",
+    "Fig. 1g image table",
+    "supplementary DOCX text",
+    "supplementary DOCX embedded figures S1-S6",
+    "linked DRAMP activity/experiment/literature JSONL rows",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "paper_pdf"
+  ],
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade_decision": "accepted_with_cautions",
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "supplementary_docx_media_extracted": true,
+    "merged_database_rows": true,
+    "note": "All local material relevant to the original owner-worker blockers was opened. Remaining uncertainties are preserved as cautions, not fabricated values."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41392-021-00698-x/handoff_context.json",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/locators/locator_index.json",
+    "papers/doi__10.1038_s41392-021-00698-x/source/paper.xml",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/pdf_text/41392_2021_Article_698.txt",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/oa_package/local-DRAMP-34344868/PMC8330190/41392_2021_698_Fig1_HTML.jpg",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image1.jpeg",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image2.png",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image3.jpeg",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image4.png",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image5.jpeg",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/extracted/supplementary_docx_media/image6.jpeg",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/raw/supplementary_original/local-DRAMP-41392_2021_698_MOESM1_ESM.docx",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41392-021-00698-x/database/linked_literature_records.jsonl"
+  ],
+  "adjudication_summary": "Worker-2/4/6 re-review recovered the local source-supported antiviral IC50 matrix from Fig. 1g and Supplementary Figs. S1-S5, added qualitative cytotoxicity evidence from Supplementary Fig. S4, preserved DRAMP sequence/modification/name conflicts in the database layer, and replaced the generic mechanism placeholder with source-backed antiviral fusion-inhibition mechanism evidence. The paper is publication-grade only with cautions; it is not an antibacterial MIC/MBC source.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Citation links are source_verified for DOI/PMID/title traceability. Activity/experiment rows are matched to local figure-supported values but remain sequence_modified_not_normalized because DRAMP normalized sequences do not carry source-declared linker/lipid modifications and IPB02V names conflict with DRAMP IBP02V spellings.",
+    "layer_2_activity_toxicity": "110 source-supported rows were extracted from local figures and captions. Antiviral IC50 rows use nM direct normalization; cytotoxicity is recorded qualitatively because exact S4 bar heights are not tabulated.",
+    "layer_3_mechanism": "Mechanism is adjudicated as antiviral coronavirus fusion inhibition supported by DSP fusion/PV assays and HR1P biophysical interaction data. No antibacterial AMP mechanism is inferred."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 110,
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "database_status_vocabulary_valid": true,
+    "database_snapshots": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 36,
+      "linked_experiment_records": 36,
+      "linked_literature_records": 9,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 72,
+      "source_verified": 9
+    },
+    "database_conflicts_preserved": true,
+    "mechanism_overclaim_check": "passed_no_antibacterial_mechanism_inferred",
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps_blocking_publication_grade": 0,
+    "validator_contract_passed": true,
+    "review_status_vocab": "accepted_with_cautions"
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_identity_not_exact_source_verified",
+      "severity": "caution",
+      "evidence_context": "72 linked DRAMP activity/experiment rows have source-supported activity values but remain sequence_modified_not_normalized because database sequences omit source linker/lipid modifications and linked_sequence_records are absent.",
+      "record_status_counts": {
+        "sequence_modified_not_normalized": 72,
+        "source_verified": 9
+      }
+    },
+    {
+      "caution_code": "dramp_name_spelling_conflict",
+      "severity": "caution",
+      "evidence_context": "Primary figures use IPB02V1-IPB02V5; DRAMP rows spell these as IBP02V1-IBP02V5. Conflict preserved in database audit."
+    },
+    {
+      "caution_code": "cytotoxicity_exact_values_not_tabulated",
+      "severity": "caution",
+      "evidence_context": "Supplementary Fig. S4 supports no obvious cytotoxicity at 10 uM for IPB02 derivatives in 293T/ACE2 and Huh-7 cells, but exact bar heights were not locally tabulated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": []
+}

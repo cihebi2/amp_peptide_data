@@ -1,0 +1,3173 @@
+{
+  "artifact_type": "worker4_database_record_audit",
+  "paper_id": "doi__10.1371_journal.pcbi.1003212",
+  "doi": "10.1371/journal.pcbi.1003212",
+  "generated_at": "2026-05-03T12:28:51Z",
+  "reviewed_at": "2026-05-03T12:28:51Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 source-reviewed database reconciliation from packet database JSONL rows against primary XML Table 4, article metadata, and local supplementary Table S4.",
+  "database_row_counts": {
+    "linked_assay_records": 14,
+    "linked_experiment_records": 28,
+    "linked_literature_records": 7,
+    "linked_dramp_activity_records": 0,
+    "linked_sequence_records": 0
+  },
+  "status_summary": {
+    "source_verified": 45,
+    "sequence_modified_not_normalized": 4
+  },
+  "source_review_inputs": [
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/pdf_text/pcbi.1003212.txt",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/oa_package/local-DBAASP-PMC3764005/PMC3764005/pcbi.1003212.s009.doc"
+  ],
+  "caution_findings": [
+    {
+      "scope": "database_sequence_snapshot",
+      "severity": "caution",
+      "status": "sequence_snapshot_absent_but_primary_table_sequence_located",
+      "note": "Packet database contains assay/experiment/literature rows but no linked_sequence_records rows; exact source sequences are therefore preserved from primary Table 4 rather than invented from database snapshots."
+    },
+    {
+      "scope": "modified_residue_notation",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized_preserved",
+      "records": [
+        "DBAASPS_8955",
+        "DBAASPS_8955",
+        "CAMPSQ22627",
+        "dbAMP_24926"
+      ],
+      "note": "GMG_05Z is source-supported with Z defined as norleucine; database rows that spell this as GMG_05X remain caution-bearing."
+    }
+  ],
+  "record_audits": [
+    {
+      "source_id": "DBAASPS_8949",
+      "sequence_key": "DBAASP:DBAASPS_8949",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64105",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01",
+      "primary_source_name": "GMG_01",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "GMG_01",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8949",
+      "sequence_key": "DBAASP:DBAASPS_8949",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64106",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01",
+      "primary_source_name": "GMG_01",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "GMG_01",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=2"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8950",
+      "sequence_key": "DBAASP:DBAASPS_8950",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64107",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_02",
+      "primary_source_name": "GMG_02",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "GMG_02",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=3"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8950",
+      "sequence_key": "DBAASP:DBAASPS_8950",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64108",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_02",
+      "primary_source_name": "GMG_02",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "GMG_02",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=4"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8951",
+      "sequence_key": "DBAASP:DBAASPS_8951",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64109",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01_SCR",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "GMG_01_SCR",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=5"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8951",
+      "sequence_key": "DBAASP:DBAASPS_8951",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64110",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01_SCR",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "GMG_01_SCR",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=6"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8952",
+      "sequence_key": "DBAASP:DBAASPS_8952",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64111",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_03",
+      "primary_source_name": "GMG_03",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "GMG_03",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=7"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8952",
+      "sequence_key": "DBAASP:DBAASPS_8952",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64112",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_03",
+      "primary_source_name": "GMG_03",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "GMG_03",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=8"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8953",
+      "sequence_key": "DBAASP:DBAASPS_8953",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64113",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+      "primary_source_name": "CM18",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=9"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8953",
+      "sequence_key": "DBAASP:DBAASPS_8953",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64114",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+      "primary_source_name": "CM18",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=10"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8954",
+      "sequence_key": "DBAASP:DBAASPS_8954",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64115",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "CM12",
+      "primary_source_name": "CM12",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "CM12",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=11"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8954",
+      "sequence_key": "DBAASP:DBAASPS_8954",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64116",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "CM12",
+      "primary_source_name": "CM12",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "CM12",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=12"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8955",
+      "sequence_key": "DBAASP:DBAASPS_8955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64117",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_reported_name": "GMG_05X",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.125 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "GMG_05X",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "modified_residue_notation_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=13"
+      },
+      "conflict_context": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized.",
+      "review_notes": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized."
+    },
+    {
+      "source_id": "DBAASPS_8955",
+      "sequence_key": "DBAASP:DBAASPS_8955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "64118",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_reported_name": "GMG_05X",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "0.25 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "GMG_05X",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "modified_residue_notation_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=14"
+      },
+      "conflict_context": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized.",
+      "review_notes": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized."
+    },
+    {
+      "source_id": "DBAASPS_8949",
+      "sequence_key": "DBAASP:DBAASPS_8949",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64105",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_01",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8949",
+      "sequence_key": "DBAASP:DBAASPS_8949",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64106",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_01",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=2"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8950",
+      "sequence_key": "DBAASP:DBAASPS_8950",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64107",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_02",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=3"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8950",
+      "sequence_key": "DBAASP:DBAASPS_8950",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64108",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_02",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=4"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8951",
+      "sequence_key": "DBAASP:DBAASPS_8951",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64109",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=5"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8951",
+      "sequence_key": "DBAASP:DBAASPS_8951",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64110",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=6"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8952",
+      "sequence_key": "DBAASP:DBAASPS_8952",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64111",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_03",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=7"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8952",
+      "sequence_key": "DBAASP:DBAASPS_8952",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64112",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_03",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=8"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8953",
+      "sequence_key": "DBAASP:DBAASPS_8953",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64113",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "CM18",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=9"
+      },
+      "conflict_context": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12).",
+      "review_notes": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12)."
+    },
+    {
+      "source_id": "DBAASPS_8953",
+      "sequence_key": "DBAASP:DBAASPS_8953",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64114",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "CM18",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=10"
+      },
+      "conflict_context": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12).",
+      "review_notes": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12)."
+    },
+    {
+      "source_id": "DBAASPS_8954",
+      "sequence_key": "DBAASP:DBAASPS_8954",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64115",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "CM12",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=11"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8954",
+      "sequence_key": "DBAASP:DBAASPS_8954",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64116",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "CM12",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=12"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8955",
+      "sequence_key": "DBAASP:DBAASPS_8955",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64117",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus ATCC 33591",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591",
+        "database_values": {
+          "Staphylococcus aureus ATCC 33591": "0.125 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=13"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8955",
+      "sequence_key": "DBAASP:DBAASPS_8955",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "64118",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "MBC",
+      "database_subject": "Pseudomonas aeruginosa ATCC 27853",
+      "database_reported_activity": {
+        "database_text": "Pseudomonas aeruginosa ATCC 27853",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "0.25 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=14"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22622",
+      "sequence_key": "CAMP:CAMPSQ22622",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22622",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_02",
+      "primary_source_name": "GMG_02",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 2 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 2 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "GMG_02",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=15"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22623",
+      "sequence_key": "CAMP:CAMPSQ22623",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22623",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01_SCR",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 16 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 16 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 16 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 16 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "16 µM",
+          "Staphylococcus aureus ATCC 33591": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "GMG_01_SCR",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=16"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22621",
+      "sequence_key": "CAMP:CAMPSQ22621",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22621",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01",
+      "primary_source_name": "GMG_01",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 1 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 1 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 1 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 1 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "1 µM",
+          "Staphylococcus aureus ATCC 33591": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "GMG_01",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=17"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22624",
+      "sequence_key": "CAMP:CAMPSQ22624",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22624",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_03",
+      "primary_source_name": "GMG_03",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC >50 microM], Pseudomonas aeruginosa ATCC 27853[MBC >50 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC >50 microM], Pseudomonas aeruginosa ATCC 27853[MBC >50 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": ">50 µM",
+          "Staphylococcus aureus ATCC 33591": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "GMG_03",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=18"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22626",
+      "sequence_key": "CAMP:CAMPSQ22626",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22626",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "CM12",
+      "primary_source_name": "CM12",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 0.5 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 0.5 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "CM12",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=19"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "CAMPSQ22627",
+      "sequence_key": "CAMP:CAMPSQ22627",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22627",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_reported_name": "GMG_05X",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 0.125 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 0.25 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 0.125 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 0.25 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "0.25 µM",
+          "Staphylococcus aureus ATCC 33591": "0.125 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "GMG_05X",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "modified_residue_notation_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=20"
+      },
+      "conflict_context": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized.",
+      "review_notes": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized."
+    },
+    {
+      "source_id": "CAMPSQ22625",
+      "sequence_key": "CAMP:CAMPSQ22625",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "CAMPSQ22625",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Cecropin",
+      "primary_source_name": "CM18",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591[MBC = 0.5 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591[MBC = 0.5 microM], Pseudomonas aeruginosa ATCC 27853[MBC = 2 microM]",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Cecropin",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=21"
+      },
+      "conflict_context": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12).",
+      "review_notes": "Database row uses a Cecropin synonym; primary source text identifies CM18 as Cecropin(1-7)-Melittin(2-12)."
+    },
+    {
+      "source_id": "dbAMP_24920",
+      "sequence_key": "dbAMP:dbAMP_24920",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24920",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01",
+      "primary_source_name": "GMG_01",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=1μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=1μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=1μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=1μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "1 µM",
+          "Staphylococcus aureus ATCC 33591": "1 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01",
+        "database_name": "GMG_01",
+        "aliases_considered": [
+          "GMG_01"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=22"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "dbAMP_24921",
+      "sequence_key": "dbAMP:dbAMP_24921",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24921",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_02",
+      "primary_source_name": "GMG_02",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=2μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=2μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "2 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_02",
+        "database_name": "GMG_02",
+        "aliases_considered": [
+          "GMG_02"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-02-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=23"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "dbAMP_24926",
+      "sequence_key": "dbAMP:dbAMP_24926",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24926",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "database_reported_name": "GMG_05X",
+      "primary_source_name": "GMG_05Z",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=0.125μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=0.25μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=0.125μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=0.25μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "0.25 µM",
+          "Staphylococcus aureus ATCC 33591": "0.125 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_05Z",
+        "database_name": "GMG_05X",
+        "aliases_considered": [
+          "GMG_05Z",
+          "GMG_05X"
+        ],
+        "status": "name_conflict_preserved"
+      },
+      "modification_check": {
+        "modifications": [
+          {
+            "symbol": "Z",
+            "meaning": "Norleucine",
+            "locator": "xml:table=4:footnote"
+          }
+        ],
+        "status": "modified_residue_notation_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-05z-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-05z-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=24"
+      },
+      "conflict_context": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized.",
+      "review_notes": "Database row uses GMG_05X, while the primary source reports GMG_05Z and defines Z as norleucine; activity values match Table 4, but the modified residue notation is not normalized."
+    },
+    {
+      "source_id": "dbAMP_24922",
+      "sequence_key": "dbAMP:dbAMP_24922",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24922",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_01_SCR",
+      "primary_source_name": "GMG_01_SCR",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=16μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=16μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=16μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=16μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "16 µM",
+          "Staphylococcus aureus ATCC 33591": "16 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_01_SCR",
+        "database_name": "GMG_01_SCR",
+        "aliases_considered": [
+          "GMG_01_SCR"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-01-scr-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=25"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "dbAMP_24925",
+      "sequence_key": "dbAMP:dbAMP_24925",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24925",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "CM12",
+      "primary_source_name": "CM12",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=0.5μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=0.5μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM12",
+        "database_name": "CM12",
+        "aliases_considered": [
+          "CM12"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-cm12-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=26"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "dbAMP_24923",
+      "sequence_key": "dbAMP:dbAMP_24923",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24923",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "GMG_03",
+      "primary_source_name": "GMG_03",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=>50μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=>50μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=>50μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=>50μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": ">50 µM",
+          "Staphylococcus aureus ATCC 33591": ">50 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "GMG_03",
+        "database_name": "GMG_03",
+        "aliases_considered": [
+          "GMG_03"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-gmg-03-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-tables4-gmg-03-atto633-s-aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=27"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "dbAMP_24924",
+      "sequence_key": "dbAMP:dbAMP_24924",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "dbAMP_24924",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_reported_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+      "primary_source_name": "CM18",
+      "database_measure": "text",
+      "database_subject": "Staphylococcus aureus ATCC 33591 (MBC=0.5μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+      "database_reported_activity": {
+        "database_text": "Staphylococcus aureus ATCC 33591 (MBC=0.5μM)\nPseudomonas aeruginosa ATCC 27853 (MBC=2μM)",
+        "database_values": {
+          "Pseudomonas aeruginosa ATCC 27853": "2 µM",
+          "Staphylococcus aureus ATCC 33591": "0.5 µM"
+        }
+      },
+      "matched_activity_record_id": [
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc",
+        "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+      ],
+      "sequence_check": {
+        "database_sequence_snapshot_available": false,
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located",
+        "note": "No linked_sequence_records rows were present in the packet; sequence curation is therefore anchored to the primary Table 4 sequence and database name/activity linkage."
+      },
+      "name_check": {
+        "primary_source_name": "CM18",
+        "database_name": "Cecropin (1-7)+Melittin (2-12), CM18",
+        "aliases_considered": [
+          "CM18",
+          "Cecropin (1-7)+Melittin (2-12), CM18",
+          "Cecropin"
+        ],
+        "status": "name_supported_by_primary_source"
+      },
+      "modification_check": {
+        "modifications": [],
+        "status": "no_unresolved_modification_conflict"
+      },
+      "activity_check": {
+        "source_table": "Table 4",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-p_aeruginosa-mbc",
+          "doi__10.1371_journal.pcbi.1003212-table4-cm18-s_aureus-mbc"
+        ],
+        "status": "activity_values_match_primary_table4"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=28"
+      },
+      "conflict_context": "",
+      "review_notes": "Database name/activity/literature linkage is source-supported by primary article metadata and Table 4."
+    },
+    {
+      "source_id": "DBAASPS_8949",
+      "sequence_key": "DBAASP:DBAASPS_8949",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "GMG_01",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "VKSWIRKLVHR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=3:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8950",
+      "sequence_key": "DBAASP:DBAASPS_8950",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "GMG_02",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "WLKGLIKFIR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=4:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=2"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8951",
+      "sequence_key": "DBAASP:DBAASPS_8951",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "GMG_01_SCR",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "KRRKWHSVVLI",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=5:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=3"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8952",
+      "sequence_key": "DBAASP:DBAASPS_8952",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "GMG_03",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "EHMDRILAQLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=6:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=4"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8953",
+      "sequence_key": "DBAASP:DBAASPS_8953",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "CM18",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "KWKLFKKIGAVLKVLTTG",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=7:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=5"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8954",
+      "sequence_key": "DBAASP:DBAASPS_8954",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "CM12",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "WKLFLKAVKKLL",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=8:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=6"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    },
+    {
+      "source_id": "DBAASPS_8955",
+      "sequence_key": "DBAASP:DBAASPS_8955",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "primary_source_name": "GMG_05Z",
+      "database_subject": "Antimicrobial peptides design by evolutionary multiobjective optimization.",
+      "sequence_check": {
+        "primary_source_sequence": "HZMRILAQLZKR",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=4:row=9:column=2"
+        },
+        "status": "primary_source_sequence_located"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "doi": "10.1371/journal.pcbi.1003212",
+        "pmid": "24039565",
+        "pmcid": "PMC3764005"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=7"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature linkage matches the primary article DOI/PMID/PMCID and is source-verified against article metadata."
+    }
+  ]
+}

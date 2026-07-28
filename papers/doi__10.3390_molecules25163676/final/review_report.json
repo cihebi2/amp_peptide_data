@@ -1,0 +1,95 @@
+{
+  "paper_id": "doi__10.3390_molecules25163676",
+  "reviewed_at": "2026-05-09T17:01:57Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA/supplement/database materials were sufficient for owner-layer repair; supplementary PDF contains enzyme-property figures and no additional activity-value table."
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Worker-2/4/6 re-review rebuilt 304 source-located activity rows from XML Tables 4-8, adjudicated 424 linked database rows, and preserved 9 database/source conflicts as cautions.",
+  "adjudication_summary": "Primary XML tables support the activity rows and methods sections support assay conditions. Database mismatches remain explicit cautions; no open blocking/major rework target remains.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules25163676/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules25163676/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules25163676/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules25163676/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules25163676/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules25163676/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules25163676/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules25163676/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules25163676/extracted/pdf_text/molecules-25-03676.txt",
+    "paper_packets/doi__10.3390_molecules25163676/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules25163676/extracted/supplementary_text/molecules-25-03676-s001.txt",
+    "paper_packets/doi__10.3390_molecules25163676/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules25163676/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules25163676/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25163676/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25163676/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25163676/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 304,
+    "activity_endpoint_counts": {
+      "IC50": 56,
+      "MIC": 248
+    },
+    "database_status_summary": {
+      "source_verified": 415,
+      "source_conflict": 9
+    },
+    "mechanism_claims": 3,
+    "semantic_gate_report": "reports/doi__10.3390_molecules25163676.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_molecules25163676.publication_quality.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_pass": true
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Packet material extraction remains a separate upstream layer; this repair consumed its local XML/PDF/OA/supplement/database outputs and did not rerun initial bootstrap.",
+    "validator_contract": "Structural contract files are present; validator success alone was not used as acceptance evidence.",
+    "layer_1_database": "DBAASP assay/experiment rows are source_verified only when they match XML activity rows; DRAMP qualitative/structure/reference conflicts are preserved as source_conflict.",
+    "layer_2_activity_toxicity": "Tables 4-8 were parsed into row-level IC50/MIC records with raw units, target species/strain/cell-line context, conditions, and locators.",
+    "layer_3_mechanism": "Unsupported host immune/membrane claims were removed; final mechanism claims are limited to source-supported SAR and 7-DMATS enzymatic production evidence.",
+    "publication_grade_review": "Accepted_with_cautions only if strict semantic and publication gates pass with no open rework target."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "count": 9,
+      "evidence_context": "Some linked database rows remain source_conflict because their target/value/structure/reference details do not exactly match local primary evidence.",
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "direct_antimicrobial_mechanism_not_assayed",
+      "evidence_context": "Local source supports activity/SAR and enzymatic production, not a direct antimicrobial killing mechanism assay.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_report": "reports/doi__10.3390_molecules25163676.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_molecules25163676.publication_quality.json"
+  },
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ]
+}

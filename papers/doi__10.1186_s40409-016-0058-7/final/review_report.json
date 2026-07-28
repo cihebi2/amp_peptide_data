@@ -1,0 +1,85 @@
+{
+  "paper_id": "doi__10.1186_s40409-016-0058-7",
+  "doi": "10.1186/s40409-016-0058-7",
+  "reviewed_at": "2026-05-03T08:27:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML/NXML, PDF text, OA package members/figures, linked database JSONL rows, and the local supplementary landing HTML asset were checked. Source-supported activity/database/mechanism claims are captured; no blocking local material gap remains."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s40409-016-0058-7/handoff_context.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/packet_manifest.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/extracted/pdf_text/local-DBAASP-PMC4730610.txt",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s40409-016-0058-7/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40409-016-0058-7/supplementary/landing-1.bin"
+  ],
+  "adjudication_summary": "Worker-2 recovered source-supported Table 1 MIC/ND and hemolysis rows, worker-4 matched linked database assay rows while preserving one APD6 database-derived conflict, and worker-6 closes the previous rework ticket as accepted_with_cautions.",
+  "summary": "Source-reviewed worker-2/4/6 repair closed rwk-complete-test-0001 with Table 1 activity rows, database reconciliation, and caution-bearing mechanism adjudication.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay/experiment rows now match Table 1 or Bioactivities text; literature rows match article metadata; the APD6 free-text computational summary remains a preserved source_conflict caution.",
+    "layer_2_activity_toxicity": "Table 1 supports twelve Es-termicin MIC rows, including ND rows as no detectable activity up to 400 ug/mL, and the Bioactivities text supports the qualitative hemolysis row.",
+    "layer_3_mechanism": "Mechanism output is limited to phenotype/structure/purification context because the local paper does not report direct target-pathway assays."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 13,
+    "database_record_status_summary": {
+      "source_conflict": 1,
+      "source_verified": 28
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "nd_values_preserved_as_non_numeric",
+      "evidence_context": "Primary Table 1 uses ND for no detectable activity up to 400 ug/mL; ND rows are retained as source values and not converted into exact numeric MICs."
+    },
+    {
+      "caution_code": "database_summary_row_not_primary_assay",
+      "evidence_context": "APD6 AP02652 free text includes database-derived similarity/MW/GRAVY commentary; the primary sequence and matching Candida row are captured, while the database-derived commentary remains source_conflict."
+    },
+    {
+      "caution_code": "supplementary_asset_is_article_landing_html",
+      "evidence_context": "The only local supplementary asset is an HTML article landing page; no XLSX/DOCX/PDF supplement table was locally present to alter activity/toxicity or mechanism conclusions."
+    },
+    {
+      "caution_code": "mechanism_not_direct_target_assay",
+      "evidence_context": "Mechanism claims are restricted to phenotype, purification, and structure context; no direct molecular target or pathway assay is promoted."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  },
+  "unrecoverable_material_gaps": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ]
+}

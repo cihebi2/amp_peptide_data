@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-07-08T23:32:07.270467+00:00",
+  "paper_id": "PMC12022103",
+  "scope": "material response for hemolysis/toxicity numeric recovery tickets",
+  "decision": "closed_no_match",
+  "analysis_can_resume": true,
+  "source_text_included": false,
+  "reviewed_packet_surfaces": {
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12022103/extracted/xml_sections.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12022103/extracted/pdf_text.jsonl",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12022103/extracted/supplementary_text.jsonl",
+    "supplementary_tables": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12022103/extracted/supplementary_tables.json",
+    "worker2_activity": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12022103/work/activity_evidence/activity_records.json",
+    "worker3_supplement": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12022103/work/supplementary_methods/supplementary_evidence.json"
+  },
+  "checked_locators": [
+    {
+      "locator": "xml:p:44",
+      "finding": "hemolysis context mentions high concentrations but no row-level hemolysis percentages"
+    },
+    {
+      "locator": "xml:p:45",
+      "finding": "figure caption/legend only; no embedded numeric bar values"
+    },
+    {
+      "locator": "xml:fig:6",
+      "finding": "figure object/caption only; no source table or raw numeric bar values"
+    },
+    {
+      "locator": "xml:caption:8",
+      "finding": "caption only; no row-level numeric bar values"
+    },
+    {
+      "locator": "xml:p:46",
+      "finding": "caption duplicate/context only; no row-level numeric bar values"
+    },
+    {
+      "locator": "xml:sec:16",
+      "finding": "hemolysis method/formula and conditions present; no measured row-level results"
+    },
+    {
+      "locator": "xml:p:61",
+      "finding": "hemolysis method/formula and conditions present; no measured row-level results"
+    },
+    {
+      "locator": "pdf:page=8",
+      "finding": "Fig. 6 rendered as plot; exact raw percentages are not text/table recoverable"
+    },
+    {
+      "locator": "pdf:page=11",
+      "finding": "method conditions present; no measured row-level hemolysis results"
+    },
+    {
+      "locator": "supplementary_text",
+      "finding": "single supplement reviewed; no hemolysis table/value hits"
+    },
+    {
+      "locator": "supplementary_tables.json",
+      "finding": "no structured supplementary tables extracted for hemolysis values"
+    }
+  ],
+  "recovered_numeric_toxicity_rows": [],
+  "durable_gap_evidence": {
+    "hemolysis_assay_present": true,
+    "concentration_conditions_present": [
+      "50 uM",
+      "100 uM"
+    ],
+    "target_present": "purified human erythrocytes / erythrocyte suspension",
+    "method_conditions_present": true,
+    "exact_row_level_hemolysis_percentages_text_or_table_present": false,
+    "only_plot_image_values_available": true,
+    "visual_plot_digitization_used": false,
+    "visual_plot_digitization_rejected_reason": "would create approximate values rather than source-reported exact raw values; strict dataset should not ingest approximated toxicity rows",
+    "supplement_contains_hemolysis_values": false,
+    "local_oa_package_available": false
+  },
+  "closure_rationale": "The local XML/PDF/supplement surfaces prove a hemolysis assay and qualitative/substantial toxicity caution, but exact row-level numeric hemolysis values are not available as text or table. The correct strict action is to preserve toxicity as unresolved/caution and not manufacture numeric rows from a plot.",
+  "tickets_closed": [
+    "rwk-PMC12022103-worker2-hemolysis-figure-values",
+    "rwk-PMC12022103-worker6-toxicity-material-closure"
+  ],
+  "required_downstream_action": "rerun worker-2 and worker-6 so final activity/review artifacts decide from this closed gap evidence rather than open tickets"
+}

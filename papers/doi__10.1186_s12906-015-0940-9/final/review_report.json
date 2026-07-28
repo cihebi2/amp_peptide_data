@@ -1,0 +1,113 @@
+{
+  "paper_id": "doi__10.1186_s12906-015-0940-9",
+  "reviewed_at": "2026-05-03T12:49:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": "checked; local landing-bin files are not true primary supplementary data, and OA package/XML metadata list no supplementary data tables",
+    "merged_database_rows": true
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/figure_captions.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/pdf_text/12906_2015_Article_940.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/archive_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/extracted/supplementary_text.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/database/linked_dramp_activity_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12906-015-0940-9/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/xml/local-DRAMP-26593407.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/package/local-DRAMP-26593407.tar.gz",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/supplementary/landing-*.bin"
+  ],
+  "adjudication_summary": "Worker-2 recovered source-supported CTLEW activity/toxicity IC50 rows from Table 2 and results text; worker-4 matched DRAMP anticancer/cytotoxicity values while preserving the unsupported antimicrobial database label as source_conflict; worker-6 completed source-reviewed adjudication and closes the prior rework ticket as accepted_with_cautions.",
+  "summary": "Source-reviewed worker-2/4/6 rework resolved the missing activity-row and framework-only adjudication blockers; remaining issues are nonblocking cautions, not open rework targets.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 5,
+    "activity_records_have_raw_values_units_targets_locators": true,
+    "database_status_summary": {
+      "source_conflict": 2,
+      "source_verified": 1
+    },
+    "database_conflicts_preserved": true,
+    "mechanism_claims": 3,
+    "mechanism_claims_have_direct_assays_and_locators": true,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "CTLEW sequence/name/source/citation are supported by primary XML and DRAMP rows. DRAMP anticancer/cytotoxicity values match Table 2; the broad antimicrobial label lacks a primary assay in this paper and remains source_conflict.",
+    "layer_2_activity_toxicity": "Table 2 yields parser-safe IC50 rows for HeLa, Caco-2, IEC-6, and spleen lymphocytes with mg/mL units, target species/classes, 48 h MTT context, and XML/PDF locators. Results text also supports the MCF-7 fraction C/CTLEW activity value with explicit entity caution.",
+    "layer_3_mechanism": "Apoptosis, autophagy, and immunomodulatory claims are supported by named primary assays and figure/method/result locators; no antimicrobial mechanism is inferred.",
+    "final_decision": "Publication-grade accepted_with_cautions because the prior blocking/major issues are repaired or preserved as cautions and no open rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_antimicrobial_label_source_conflict",
+      "severity": "caution",
+      "evidence_context": "DRAMP labels CTLEW as Antimicrobial, Anticancer, but this paper source-reviews only anticancer/cytotoxicity and immunomodulatory assays; antimicrobial activity is preserved as database-only conflict."
+    },
+    {
+      "caution_code": "supplementary_landing_assets_non_evidence",
+      "severity": "caution",
+      "evidence_context": "Local supplementary/*.bin assets are article/support/landing HTML rather than primary supplementary tables; XML metadata and OA package do not expose true supplementary data tables for this article."
+    },
+    {
+      "caution_code": "figure_exact_values_not_fabricated",
+      "severity": "caution",
+      "evidence_context": "Figure captions support mechanism and dose-response contexts, but exact figure-only plotted values were not fabricated into table rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "nonblocking_source_limits": [
+    {
+      "code": "figure_only_dose_response_values_not_digitized",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1186_s12906-015-0940-9/extracted/figure_captions.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/package/local-DRAMP-26593407.tar.gz"
+      ],
+      "impact": "Exact plotted dose-response/bar-chart values from figures were not converted into numeric rows because Table 2 and text provide the gate-relevant row-level IC50 evidence.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "table1_hydrolysis_optimization_not_imported_as_final_peptide_activity",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12906-015-0940-9/xml/local-DRAMP-26593407.xml",
+        "paper_packets/doi__10.1186_s12906-015-0940-9/extracted/pdf_text/12906_2015_Article_940.txt"
+      ],
+      "impact": "Table 1 reports hydrolysis optimization inhibition rates for hydrolysate preparation, not final CTLEW target/entity activity rows.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "figure_exact_quantification_not_digitized",
+      "impact": "Figures support direction/significance and assay class, but exact plotted bar/fluorescence values not present in source text are not fabricated.",
+      "blocks_publication_grade": false
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "artifact_type": "worker6_source_reviewed_mechanism_ontology_record",
+  "paper_id": "doi__10.18632_oncotarget.18124",
+  "doi": "10.18632/oncotarget.18124",
+  "generated_at": "2026-05-05T22:21:14Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-direct-antibacterial-and-synergy",
+      "claim_text": "CLP-19 has direct antibacterial activity in MIC assays against E. coli, S. aureus, and A. baumannii and shows synergistic or partially synergistic FICI values with selected conventional antibiotics.",
+      "entity_scope": "CLP-19 alone and CLP-19-antibiotic combinations",
+      "evidence_class": "direct_activity_and_synergy_assay",
+      "direct_assay_types": [
+        "broth microdilution MIC",
+        "checkerboard FICI"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:table=3",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=16:Antibacterial activity assay",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=19:Combination assay",
+          "source_path": "source/paper.xml"
+        }
+      ],
+      "limitations": "FICI values are absent where source MICs exceeded test concentrations; those combinations are not inferred."
+    },
+    {
+      "claim_id": "mech-002-oxidative-stress-context",
+      "claim_text": "The paper associates CLP-19 and CLP-19-based combinations with hydroxyl radical formation and transient NAD+/NADH changes, supporting an oxidative-stress-associated mechanism context.",
+      "entity_scope": "CLP-19 alone and CLP-19-antibiotic combinations",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "HPF hydroxyl radical fluorescence assay",
+        "NAD+/NADH cycling assay"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:fig=2:Figure 2",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:fig=3:Figure 3",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=20:Hydroxyl radical formation assay",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=23:NAD+, NADH extraction",
+          "source_path": "source/paper.xml"
+        }
+      ],
+      "limitations": "Exact figure-level numeric values are not tabulated in local XML/PDF text; final curation preserves direction and assay class rather than inventing coordinates."
+    },
+    {
+      "claim_id": "mech-003-lps-release-reduction",
+      "claim_text": "CLP-19 reduced ceftazidime-associated LPS endotoxin release in the paper's LAL assay context; the direct LPS-neutralization interpretation is tied to this paper plus cited prior CLP-19 work.",
+      "entity_scope": "CLP-19 with ceftazidime in Gram-negative bacterial cultures",
+      "evidence_class": "mechanism_supported_with_prior_context",
+      "direct_assay_types": [
+        "LAL kinetic turbidity endotoxin release assay"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:fig=4:Figure 4",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=24:Endotoxin release studies",
+          "source_path": "source/paper.xml"
+        },
+        {
+          "locator": "xml:sec=3:INTRODUCTION",
+          "source_path": "source/paper.xml"
+        }
+      ],
+      "limitations": "This paper supports reduced LPS release; molecular binding/neutralization is not re-quantified here and remains grounded in cited prior work."
+    }
+  ],
+  "nonblocking_material_limitations": [
+    {
+      "code": "figure_numeric_values_not_tabulated",
+      "impact": "Mechanism claims use source-located direction and assay class only; no figure-only exact values were fabricated.",
+      "blocks_publication_grade": false
+    }
+  ]
+}

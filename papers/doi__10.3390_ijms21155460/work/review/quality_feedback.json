@@ -1,0 +1,98 @@
+{
+  "paper_id": "doi__10.3390_ijms21155460",
+  "generated_at": "2026-05-08T13:06:42Z",
+  "updated_at": "2026-05-08T13:06:42Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "mixed_reference_database_rows_preserved_as_conflict",
+      "evidence_context": "DRAMP and CAMP Turgencin A rows combine current-paper MICs with activity/cytotoxicity information from a second 2019 source; these rows remain source_conflict and are not smoothed into current-paper source_verified claims.",
+      "record_scope": "DRAMP:DRAMP29094 and CAMP:CAMPSQ23742 linked rows"
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_empty",
+      "evidence_context": "No linked_sequence_records rows were available locally; StAMP identities are verified from XML Table 2, while Turgencin A sequence/connectivity is figure/section-located.",
+      "record_scope": "database/linked_sequence_records.jsonl row_count=0"
+    },
+    {
+      "caution_code": "figure_values_qualitative_only",
+      "evidence_context": "Figure and supplementary image materials support qualitative bactericidal/membrane/viability claims but not exact machine-readable CFU/RLU numeric curves."
+    },
+    {
+      "caution_code": "supplementary_pdf_non_gate_changing_tables",
+      "evidence_context": "Supplementary PDF text includes StAMP prediction and purity tables but no additional activity/toxicity target-value matrix beyond Table 3."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_exact_numeric_values_not_machine_readable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_ijms21155460/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/supplementary_text/ijms-21-05460-s001.txt",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/oa_package/local-DBAASP-PMC7432809/PMC7432809/ijms-21-05460-g002.jpg",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/oa_package/local-DBAASP-PMC7432809/PMC7432809/ijms-21-05460-g003.jpg",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/oa_package/local-DBAASP-PMC7432809/PMC7432809/ijms-21-05460-g004.jpg",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/oa_package/local-DBAASP-PMC7432809/PMC7432809/ijms-21-05460-g005.jpg",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/oa_package/local-DBAASP-PMC7432809/PMC7432809/ijms-21-05460-g006.jpg"
+      ],
+      "tools_attempted": [
+        "XML figure caption review",
+        "PDF text extraction review",
+        "supplementary PDF text review",
+        "OA package image inventory review"
+      ],
+      "why_unrecoverable": "The local materials provide figure images/captions and text statements but no machine-readable source-data table for exact CFU/RLU curve values.",
+      "impact": "Final mechanism and bactericidal claims are limited to qualitative/threshold source statements; exact image-derived numeric values are not needed for the repaired publication-grade gate.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "no_additional_supplementary_activity_table",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_ijms21155460/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/supplementary_text/ijms-21-05460-s001.txt",
+        "paper_packets/doi__10.3390_ijms21155460/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "supplementary index review",
+        "supplementary table manifest review",
+        "supplementary PDF text review",
+        "archive manifest review"
+      ],
+      "why_unrecoverable": "The supplementary PDF text contains figure captions plus prediction/purity Tables S1/S2, but no additional activity/toxicity table with extractable endpoint/value/target rows beyond the primary XML Table 3 and prose toxicity statements.",
+      "impact": "No extra supplement-derived activity/toxicity values were added; all gate-changing MIC and toxicity claims are captured from primary XML/prose.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "semantic_quality_checks": {
+    "table1_prediction_rows_reviewed": 27,
+    "table2_peptide_identity_rows_reviewed": 11,
+    "table3_mic_records": 140,
+    "toxicity_or_safety_records": 44,
+    "bactericidal_records": 2,
+    "activity_records_total": 186,
+    "not_tested_table_entries": 10,
+    "mechanism_claims": 4,
+    "database_record_audits": 336,
+    "database_status_summary": {
+      "source_conflict": 13,
+      "source_verified": 323
+    },
+    "open_rework_ticket_ids_after_repair": []
+  },
+  "quality_gate_results": null
+}

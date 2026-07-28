@@ -1,0 +1,83 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1016_j.jsps.2023.04.001",
+  "doi": "10.1016/j.jsps.2023.04.001",
+  "run_id": "codex_rereview_20260501_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "codex_rereview_mechanism_adjudication",
+  "generated_at": "2026-05-01T14:51:30Z",
+  "reviewed_at": "2026-05-01T14:51:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "The paper supports anticancer activity at the 25% methanol peptide-fraction level against MCF-7 cells, with selectivity assessed against Vero cells; it does not directly assay each identified peptide as a separate anticancer agent.",
+      "entity_scope": "25% methanol peptide fraction from Naja kaouthia venom protein hydrolysate",
+      "evidence_class": "phenotype_level_activity_context",
+      "direct_assay_types": [
+        "MTT_cell_viability_IC50"
+      ],
+      "source_locator": {
+        "kind": "primary_xml_table_and_sections",
+        "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+        "locators": [
+          "xml:table=3:row=7",
+          "xml:table=3:row=8",
+          "xml:sec=17:Anticancer activity",
+          "xml:sec=20:Conclusion"
+        ]
+      },
+      "limitations": "This is activity evidence, not a molecular mechanism; individual peptide IC50 values are not reported."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Docking analysis supports EGFR as a computational target hypothesis for the identified peptides, with WWSDHR and IWDTIEK having the strongest reported binding affinities among the peptide set.",
+      "entity_scope": "Table 4 peptides, especially WWSDHR and IWDTIEK",
+      "evidence_class": "computational_docking_support",
+      "direct_assay_types": [],
+      "source_locator": {
+        "kind": "primary_xml_table_and_section",
+        "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+        "locators": [
+          "xml:table=5",
+          "xml:sec=19:Docking study of the peptide to EGFR protein"
+        ]
+      },
+      "limitations": "Docking is in silico support only; it is not a direct EGFR inhibition assay or cellular mechanism assay."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The paper discusses membrane interaction, pore-forming, cell-penetrating, and tumor-targeting peptide mechanisms as background ACP biology, but does not experimentally demonstrate those mechanisms for the Naja kaouthia peptides in this study.",
+      "entity_scope": "background anticancer peptide mechanism discussion",
+      "evidence_class": "literature_background_not_primary_mechanism",
+      "direct_assay_types": [],
+      "source_locator": {
+        "kind": "primary_xml_section",
+        "source_path": "paper_packets/doi__10.1016_j.jsps.2023.04.001/raw/paper.xml",
+        "locator": "xml:sec=1:Introduction"
+      },
+      "limitations": "Kept as context only; not promoted to a direct mechanism claim."
+    }
+  ],
+  "quality_controls": [
+    {
+      "check": "claim_ids",
+      "result": "pass",
+      "count": 3
+    },
+    {
+      "check": "source_locators",
+      "result": "pass"
+    },
+    {
+      "check": "direct_mechanism_assay_types",
+      "result": "pass",
+      "note": "No computational/literature-background claim was promoted to direct_mechanism."
+    }
+  ],
+  "adjudication_note": "Automated placeholder mechanism notes were replaced with source-reviewed activity context, computational docking support, and explicit limitations."
+}

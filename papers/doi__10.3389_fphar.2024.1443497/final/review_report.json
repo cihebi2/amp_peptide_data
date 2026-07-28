@@ -1,0 +1,141 @@
+{
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review repaired Tables 3 and 5, recovered Supplementary Table S1, reconciled linked DBAASP rows while preserving modification/component cautions, and closes the blocking framework-test rework ticket as accepted_with_cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "database_modified_residue_notation_preserved",
+      "evidence_context": "DBAASPS_23281/23282/23283 use X-style database sequence notation for Orn/Dab/Dap substitutions; Tables 1-2 contain explicit modified-residue primary evidence.",
+      "owner_worker": "worker-4",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "database_component_only_records_preserved",
+      "evidence_context": "DBAASPS_23284 and DBAASPS_23285 trace to reversed-melittin/K-melittin components of the antiparallel dimer rather than independent assay rows; preserved as source_conflict cautions.",
+      "owner_worker": "worker-4",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "supplement_target_typo_preserved",
+      "evidence_context": "Supplementary Table S1 footnote prints E. coli 8729; main methods/Table 3/database rows identify E. coli ATCC 8739, so final target uses ATCC 8739 and records the footnote context.",
+      "owner_worker": "worker-6",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "figure_exact_bar_values_not_tabulated",
+      "evidence_context": "PI-uptake mechanism is directly supported, but exact per-bar values in figures are not all recoverable as a table from local text; no unsupported numeric figure values were fabricated.",
+      "owner_worker": "worker-6",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fphar.2024.1443497/handoff_context.json",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/packet_manifest.json",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/locators/locator_index.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/xml/local-DBAASP-PMC11492869.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/pdf/local-DBAASP-PMC11492869.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/package/local-DBAASP-PMC11492869.tar.gz",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/extracted/pdf_text/fphar-15-1443497.txt",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/extracted/pdf_text/DataSheet1.txt",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_dramp_activity_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "materials_exhausted": {
+    "extraction_blockers": [],
+    "merged_database_rows": {
+      "paths": [
+        "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3389_fphar.2024.1443497/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+      ],
+      "status": "all linked DBAASP rows reconciled or preserved as cautions"
+    },
+    "oa_package": {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/package/local-DBAASP-PMC11492869.tar.gz",
+      "status": "OA archive manifest checked; DataSheet1.PDF extracted via tar and pdftotext -layout"
+    },
+    "paper_pdf": {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/pdf/local-DBAASP-PMC11492869.pdf",
+      "status": "pdftotext cross-check of activity, toxicity, and mechanism text"
+    },
+    "paper_xml": {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/xml/local-DBAASP-PMC11492869.xml",
+      "status": "inspected_directly; Tables 1-5 parsed row-by-row"
+    },
+    "supplementary_assets": {
+      "paths": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3389_fphar.2024.1443497/extracted/pdf_text/DataSheet1.txt",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fphar.2024.1443497/supplementary"
+      ],
+      "status": "Supplementary Table S1 recovered from DataSheet1.PDF; landing-*.bin files are duplicate HTML landing pages and not structured data"
+    },
+    "unavailable_materials": []
+  },
+  "paper_id": "doi__10.3389_fphar.2024.1443497",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled 77 linked DBAASP rows. Assay rows match primary Table 3/4 values where present; modified-residue normalization and component-only records are preserved as cautions.",
+    "layer_2_activity_toxicity": "Worker-2 replaced the scaffold Table 4-only extraction with 118 row-level records covering Table 3 antimicrobial endpoints, Table 4 LD50/IC50/HC50, Table 5 S. aureus therapeutic indices, and Supplementary Table S1 E. coli therapeutic indices.",
+    "layer_3_mechanism": "Worker-6 records direct PI-uptake membrane-disruption evidence and keeps structural/conformational interpretation as contextual rather than overclaiming.",
+    "material_packet": "Material packet remains a source inventory with complete XML/PDF/OA/database surfaces for this repair; no material-layer mutation was needed.",
+    "validator_contract": "Required final artifacts are present and JSON-parseable; validator readiness remains separate from the source-reviewed publication-grade decision.",
+    "worker_6_publication_grade": "The blocking rework ticket is closed because owner-layer artifacts are source-reviewed and strict gates pass with cautions, not because the initial framework test was sufficient."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-07T17:42:24Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_endpoint_counts": {
+      "HC50": 6,
+      "IC50": 12,
+      "LD50": 12,
+      "MBC": 14,
+      "MIC": 14,
+      "TI_cell_lysis": 24,
+      "TI_cell_proliferation": 24,
+      "TI_hemolysis": 12
+    },
+    "activity_rows_parsed": 118,
+    "database_conflicts_preserved_as_cautions": true,
+    "database_record_audits": 77,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 45,
+      "source_conflict": 2,
+      "source_verified": 30
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "supplement_table_s1_checked": true,
+    "table_3_repaired": true,
+    "table_4_endpoint_targets_corrected": true,
+    "table_5_repaired": true,
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_targets": 0,
+    "required_rework_count": 0
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

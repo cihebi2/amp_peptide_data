@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "verdict",
+    "independently_reviewed_primary_source",
+    "independently_reviewed_current_finals",
+    "leader_audit_is_supported",
+    "six_worker_runtime_is_valid",
+    "worker6_is_fresh",
+    "zero_open_tickets",
+    "mechanical_acceptance_passes",
+    "recursive_authority_boundary_false",
+    "fallback_release_boundary_preserved",
+    "checks",
+    "blocking_reasons"
+  ],
+  "properties": {
+    "paper_id": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "independently_reviewed_primary_source": {"type": "boolean"},
+    "independently_reviewed_current_finals": {"type": "boolean"},
+    "leader_audit_is_supported": {"type": "boolean"},
+    "six_worker_runtime_is_valid": {"type": "boolean"},
+    "worker6_is_fresh": {"type": "boolean"},
+    "zero_open_tickets": {"type": "boolean"},
+    "mechanical_acceptance_passes": {"type": "boolean"},
+    "recursive_authority_boundary_false": {"type": "boolean"},
+    "fallback_release_boundary_preserved": {"type": "boolean"},
+    "checks": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "status", "summary", "evidence_paths"],
+        "properties": {
+          "check_id": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "enum": ["PASS", "FAIL", "CAUTION"]},
+          "summary": {"type": "string", "minLength": 1},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

@@ -1,0 +1,987 @@
+{
+  "paper_id": "doi__10.7150_thno.75444",
+  "generated_at": "2026-05-10T16:19:23Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": {
+    "source_paths_checked": [
+      "rework_context/doi__10.7150_thno.75444/handoff_context.json",
+      "paper_packets/doi__10.7150_thno.75444/packet_manifest.json",
+      "paper_packets/doi__10.7150_thno.75444/locators/locator_index.json",
+      "paper_packets/doi__10.7150_thno.75444/extraction/extraction_status.json",
+      "paper_packets/doi__10.7150_thno.75444/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/xml_sections.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/figure_captions.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/pdf_text/thnov12p6665.txt",
+      "paper_packets/doi__10.7150_thno.75444/extracted/pdf_text/thnov12p6665s1.txt",
+      "paper_packets/doi__10.7150_thno.75444/extracted/supplementary_text/local-DRAMP-thnov12p6665s1.txt",
+      "paper_packets/doi__10.7150_thno.75444/extracted/supplementary_index.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/supplementary_tables.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/archive_manifest.json",
+      "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+      "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g002.jpg",
+      "paper_packets/doi__10.7150_thno.75444/database/database_source_manifest.json",
+      "paper_packets/doi__10.7150_thno.75444/database/linked_dramp_activity_records.jsonl",
+      "paper_packets/doi__10.7150_thno.75444/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.7150_thno.75444/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.7150_thno.75444/database/linked_sequence_records.jsonl",
+      "papers/doi__10.7150_thno.75444/source/paper.xml",
+      "papers/doi__10.7150_thno.75444/source/paper.pdf",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.7150_thno.75444/supplementary",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.7150_thno.75444/package/local-DRAMP-36185610.tar.gz"
+    ],
+    "tools_attempted": [
+      "jq",
+      "rg",
+      "sed over extracted pdftotext output",
+      "file",
+      "tar -tzf",
+      "view_image for source figure panels",
+      "database JSONL row review",
+      "semantic_three_layer_gate.py",
+      "check_three_layer_publication_quality.py"
+    ],
+    "primary_evidence_surfaces": [
+      "Figure 1B source table",
+      "XML section 22 antitumor activity prose",
+      "Cell viability assay methods",
+      "Figure 2 and Figure S2 captions/plots"
+    ],
+    "activity_record_count": 23
+  },
+  "activity_records": [
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row01-ic50",
+      "entity": "PMI-HIF1-1",
+      "peptide": {
+        "name": "PMI-HIF1-1",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row01-ic50",
+      "entity": "PMI-HIF1-1",
+      "peptide": {
+        "name": "PMI-HIF1-1",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row02-ic50",
+      "entity": "PMI-HIF1-2",
+      "peptide": {
+        "name": "PMI-HIF1-2",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG2-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row02-ic50",
+      "entity": "PMI-HIF1-2",
+      "peptide": {
+        "name": "PMI-HIF1-2",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG2-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row03-ic50",
+      "entity": "PMI-HIF1-3",
+      "peptide": {
+        "name": "PMI-HIF1-3",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG3-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row03-ic50",
+      "entity": "PMI-HIF1-3",
+      "peptide": {
+        "name": "PMI-HIF1-3",
+        "sequence_display": "Ac-TSFAEYWALLS-PEG3-LA-Hyp-Y-Hle-P-NH2",
+        "modification": "linear PMI-HIF peptide with PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row04-ic50",
+      "entity": "SPMI-HIF1-1",
+      "peptide": {
+        "name": "SPMI-HIF1-1",
+        "sequence_display": "Figure 1B SPMI-HIF1-1 stapled sequence, PEG linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "82.1",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row04-ic50",
+      "entity": "SPMI-HIF1-1",
+      "peptide": {
+        "name": "SPMI-HIF1-1",
+        "sequence_display": "Figure 1B SPMI-HIF1-1 stapled sequence, PEG linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row05-ic50",
+      "entity": "SPMI-HIF1-2",
+      "peptide": {
+        "name": "SPMI-HIF1-2",
+        "sequence_display": "Figure 1B SPMI-HIF1-2 stapled sequence, PEG2 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "85.1",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row05-ic50",
+      "entity": "SPMI-HIF1-2",
+      "peptide": {
+        "name": "SPMI-HIF1-2",
+        "sequence_display": "Figure 1B SPMI-HIF1-2 stapled sequence, PEG2 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row06-ic50",
+      "entity": "SPMI-HIF1-3",
+      "peptide": {
+        "name": "SPMI-HIF1-3",
+        "sequence_display": "Figure 1B SPMI-HIF1-3 stapled sequence, PEG3 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "57.7",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row06-ic50",
+      "entity": "SPMI-HIF1-3",
+      "peptide": {
+        "name": "SPMI-HIF1-3",
+        "sequence_display": "Figure 1B SPMI-HIF1-3 stapled sequence, PEG3 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+4 hydrocarbon stapled PMI-HIF peptide, PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row07-ic50",
+      "entity": "SPMI-HIF2-1",
+      "peptide": {
+        "name": "SPMI-HIF2-1",
+        "sequence_display": "Figure 1B SPMI-HIF2-1 stapled sequence, PEG linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "6.7",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row07-ic50",
+      "entity": "SPMI-HIF2-1",
+      "peptide": {
+        "name": "SPMI-HIF2-1",
+        "sequence_display": "Figure 1B SPMI-HIF2-1 stapled sequence, PEG linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row08-ic50",
+      "entity": "SPMI-HIF2-2",
+      "peptide": {
+        "name": "SPMI-HIF2-2",
+        "sequence_display": "Figure 1B SPMI-HIF2-2 stapled sequence, PEG2 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "10.8",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row08-ic50",
+      "entity": "SPMI-HIF2-2",
+      "peptide": {
+        "name": "SPMI-HIF2-2",
+        "sequence_display": "Figure 1B SPMI-HIF2-2 stapled sequence, PEG2 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG2 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row09-ic50",
+      "entity": "SPMI-HIF2-3",
+      "peptide": {
+        "name": "SPMI-HIF2-3",
+        "sequence_display": "Figure 1B SPMI-HIF2-3 stapled sequence, PEG3 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "15.2",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row09-ic50",
+      "entity": "SPMI-HIF2-3",
+      "peptide": {
+        "name": "SPMI-HIF2-3",
+        "sequence_display": "Figure 1B SPMI-HIF2-3 stapled sequence, PEG3 linker, LA-Hyp-Y-Hle-P VHL motif",
+        "modification": "i,i+7 hydrocarbon stapled PMI-HIF peptide, PEG3 linker, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row10-ic50",
+      "entity": "SPMI1",
+      "peptide": {
+        "name": "SPMI1",
+        "sequence_display": "Figure 1B SPMI1 i,i+4 stapled PMI peptide",
+        "modification": "i,i+4 hydrocarbon stapled PMI peptide, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row10-ic50",
+      "entity": "SPMI1",
+      "peptide": {
+        "name": "SPMI1",
+        "sequence_display": "Figure 1B SPMI1 i,i+4 stapled PMI peptide",
+        "modification": "i,i+4 hydrocarbon stapled PMI peptide, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-row11-ic50",
+      "entity": "SPMI2",
+      "peptide": {
+        "name": "SPMI2",
+        "sequence_display": "Figure 1B SPMI2 i,i+7 stapled PMI peptide",
+        "modification": "i,i+7 hydrocarbon stapled PMI peptide, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "28.4",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:sec=22:Functional characterization of SP-PROTACs in vitro",
+        "note": "Figure 1B table provides the row-level IC50 value; XML section 22 narratively confirms the values."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53neg-row11-ic50",
+      "entity": "SPMI2",
+      "peptide": {
+        "name": "SPMI2",
+        "sequence_display": "Figure 1B SPMI2 i,i+7 stapled PMI peptide",
+        "modification": "i,i+7 hydrocarbon stapled PMI peptide, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": ">100",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53-/-",
+        "strain": "HCT116 p53-/-",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+        "locator": "xml:fig=1:Figure 1B; xml:fig=2:Figure 2",
+        "note": "Figure 1B table gives >100 µM for HCT116 p53-/-; Figure 2A illustrates selectivity for representative peptides."
+      }
+    },
+    {
+      "record_id": "doi__10.7150_thno.75444-hct116-p53pos-spmi-hif2-1s-ic50",
+      "entity": "SPMI-HIF2-1S",
+      "peptide": {
+        "name": "SPMI-HIF2-1S",
+        "sequence_display": "SPMI-HIF2-1 (S)-configuration diastereoisomer described in XML section 22",
+        "modification": "(S)-configuration Hyp diastereoisomer control, N-acetylation, C-amidation",
+        "sequence_locator": {
+          "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/oa_package/local-DRAMP-36185610/PMC9516243/thnov12p6665g001.jpg",
+          "locator": "xml:fig=1:Figure 1B",
+          "note": "Figure 1B is the source table for peptide sequences, mass, helicity, and IC50 values."
+        }
+      },
+      "endpoint": "IC50",
+      "raw_value": "13.4",
+      "raw_unit": "µM",
+      "target": {
+        "class": "tumor cell line",
+        "species": "Homo sapiens",
+        "cell_line": "HCT116 p53+/+",
+        "strain": "HCT116 p53+/+",
+        "disease_context": "human colon carcinoma"
+      },
+      "assay_conditions": {
+        "assay": "Cell Counting Kit-8 (CCK-8) cell viability assay",
+        "cells_per_well": "5 x 10^3 cells/well",
+        "treatment_duration": "72 h compound exposure followed by 1 h CCK-8 incubation",
+        "readout": "absorbance at 450 nm",
+        "vehicle_control": "0.1% DMSO",
+        "statistical_context": "Figure 2 reports mean ± SEM of three independent experiments for representative peptides.",
+        "method_locator": "xml:sec=7:Cell viability assay"
+      },
+      "evidence_ladder": "primary_source_cell_viability_ic50",
+      "normalization_status": "raw_source_value_preserved",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.7150_thno.75444/extracted/xml_sections.json",
+        "locator": "xml:sec=22:Functional characterization of SP-PROTACs in vitro; supp:Figure S2",
+        "note": "XML section 22 reports the SPMI-HIF2-1S diastereoisomer IC50 and points to Figure S2."
+      }
+    }
+  ],
+  "toxicity_records": [],
+  "extraction_issues": [],
+  "unrecoverable_material_gaps": [],
+  "parser_quality_control": {
+    "prior_issue_codes_resolved": [
+      "missing_activity_records",
+      "no_supported_activity_rows_extracted"
+    ],
+    "rejects_database_only_rows_as_primary": true,
+    "raw_values_preserved": true,
+    "raw_units_preserved": true
+  }
+}

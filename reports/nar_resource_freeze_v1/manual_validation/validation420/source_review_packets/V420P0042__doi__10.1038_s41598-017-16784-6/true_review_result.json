@@ -1,0 +1,575 @@
+{
+  "paper_id": "doi__10.1038_s41598-017-16784-6",
+  "review_sample_id": "V420P0042",
+  "reviewed_at": "2026-06-25T02:45:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "blocked_missing_primary_material",
+  "material_review": {
+    "sampled_validation_rows": 21,
+    "source_reviewed": true,
+    "local_only": true,
+    "materials_checked_summary": "Re-opened packet manifest, material inventory, validation samples, release rows, sample final records, source locator hints, paper XML/PDF-derived extracted sections, supplementary index/text/table inventories, linked DBAASP assay/experiment JSONL rows, final database/activity/mechanism/review artifacts, quality feedback, and existing packet rework requests/responses.",
+    "available_primary_material": [
+      "paper_packets/doi__10.1038_s41598-017-16784-6/raw/paper.xml",
+      "paper_packets/doi__10.1038_s41598-017-16784-6/raw/paper.pdf",
+      "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/xml_sections.json",
+      "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/pdf_text.jsonl",
+      "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_experiment_records.jsonl"
+    ],
+    "supplementary_material_status": {
+      "xml_declares_supplement": true,
+      "declared_missing_asset": "41598_2017_16784_MOESM1_ESM.pdf",
+      "local_supplementary_original_status": "Ten landing-*.bin symlinks resolve as HTML article landing pages, not PDF/XLSX/archive source files.",
+      "supplementary_tables_json_table_count": 0,
+      "supplementary_text_status": "indexed_only landing artifacts; no Tables S1/S2 row matrix",
+      "oa_package_status": "absent in packet"
+    },
+    "blocking_gap": {
+      "gap_code": "local_moesm1_supplement_pdf_absent",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true,
+      "impact": "The sampled DBAASP MIC/FICI synergy rows require source verification from supplement Tables S1/S2. Local XML section 13 points the combination data to Tables S1/S2, but the actual MOESM1 PDF is absent locally, so the sampled rows cannot be confirmed from primary material."
+    }
+  },
+  "worker6_adjudication": {
+    "layer_1_database": {
+      "decision": "blocked_missing_primary_material",
+      "rationale": "All 21 sampled rows are DBAASP Macropin synergy MIC/FICI records already preserved as unresolved_record with conflict flags missing_local_supplement and supplement_only_fici. The final database audit correctly avoids converting these database rows to source_verified because no local primary-source table contains the row-level S1/S2 checkerboard matrix."
+    },
+    "layer_2_activity_toxicity": {
+      "decision": "blocked_missing_primary_material",
+      "rationale": "Main-text activity and toxicity rows from Tables 2-5 are locally source-supported, but the sampled validation rows are supplement-only synergy records with blank database MIC values/concentrations and FICI values. XML section 13 provides prose and selected examples only; it does not provide the complete row-level table needed for the sampled DBAASP rows."
+    },
+    "layer_3_mechanism": {
+      "decision": "confirmed_with_caution",
+      "rationale": "Mechanism ontology artifacts use source-located direct mechanism evidence from CD, binding, NPN uptake, membrane depolarization, PI flow cytometry, and SEM sections. The missing MOESM1 supplement blocks the sampled database activity rows, not the current mechanism classification."
+    },
+    "final_rationale": "The safe publication-grade decision is blocked_missing_primary_material. This is not a repairable analysis-only defect from the current local packet; it requires the real MOESM1 supplementary PDF or an explicitly authorized external/source-acquisition lane."
+  },
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0013",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:17",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 505, linked_assay_records.jsonl row 17, is a Macropin 1 plus piperacillin synergy row for Pseudomonas aeruginosa 3320 with FICI 0.52 and blank MIC value/concentration. XML section 13 says combination activity is in Tables S1/S2; those supplement tables are absent locally. Final status unresolved_record is appropriate.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=17",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Database row is not primary-source verified.",
+        "Supplement-only FICI row remains unresolved because MOESM1 Tables S1/S2 are missing locally."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0146",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:42",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 495, linked_experiment_records.jsonl row 7, maps to a Macropin 1 synergy MIC row for Staphylococcus aureus 547582. The matching assay record is gentamicin with FICI 1.02 and blank MIC value/concentration. XML section 13 routes row-level combination data to Tables S1/S2, but the local MOESM1 PDF is absent.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=7",
+        "database:linked_assay_records.jsonl:row=7",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Main text supports the synergy method and selected conclusions, not this full row-level source record.",
+        "Preserve unresolved_record."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0151",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:45",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 498, linked_experiment_records.jsonl row 10, maps to Macropin 1 plus oxacillin against Staphylococcus aureus 547582 with FICI 0.52 in the assay snapshot and no MIC value/concentration. Local XML does not include the S1/S2 row matrix needed to confirm this database row.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=10",
+        "database:linked_assay_records.jsonl:row=10",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "FICI value is database-snapshot evidence only until MOESM1 is available.",
+        "Do not promote to source_verified."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0161",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:7",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 495, linked_assay_records.jsonl row 7, is Macropin 1 plus gentamicin against Staphylococcus aureus 547582 with FICI 1.02 and blank MIC value/concentration. The paper XML points combination values to Tables S1/S2; local supplementary extraction has no table body.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=7",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Supplement-only row.",
+        "Local supplement assets are HTML landing pages, not MOESM1 PDF."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0166",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:13",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 501, linked_assay_records.jsonl row 13, is Macropin 1 plus gentamicin against Pseudomonas aeruginosa 3320 with FICI 0.53 and blank MIC value/concentration. The selected organism appears in XML section 13 prose, but full row-level confirmation requires missing Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=13",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Prose-level support is insufficient for row-level source verification.",
+        "FICI row remains blocked by missing MOESM1."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0176",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:11",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 499, linked_assay_records.jsonl row 11, is Macropin 1 plus piperacillin against Staphylococcus aureus 547582 with FICI 0.53 and no MIC value/concentration. The required primary-source table is absent locally.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=11",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Database FICI retained as unresolved.",
+        "MOESM1 not locally recoverable from current packet."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0181",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:48",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 501, linked_experiment_records.jsonl row 13, maps to Macropin 1 plus gentamicin against Pseudomonas aeruginosa 3320. The corresponding assay snapshot has FICI 0.53 and no MIC value/concentration. This supplement-only row cannot be source-verified without MOESM1 Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=13",
+        "database:linked_assay_records.jsonl:row=13",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Duplicate assay/experiment provenance remains unresolved.",
+        "No primary supplement table available locally."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0191",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:53",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 506, linked_experiment_records.jsonl row 18, maps to Macropin 1 plus levofloxacin against Pseudomonas aeruginosa 3320 with FICI 1.01 in the assay snapshot. The source table required for row-level verification is not present in local materials.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=18",
+        "database:linked_assay_records.jsonl:row=18",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Database row is supplement-dependent.",
+        "No S1/S2 local row matrix was available."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0201",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:52",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 505, linked_experiment_records.jsonl row 17, maps to Macropin 1 plus piperacillin against Pseudomonas aeruginosa 3320 with FICI 0.52 in the assay snapshot. XML section 13 mentions piperacillin/Macropin in P. aeruginosa 3320 as an example, but full row verification still requires absent Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=17",
+        "database:linked_assay_records.jsonl:row=17",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Selected prose support does not replace source-table verification.",
+        "Preserve blocked unresolved status."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0226",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:12",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 500, linked_assay_records.jsonl row 12, is Macropin 1 plus levofloxacin against Staphylococcus aureus 547582 with FICI 1.13 and blank MIC value/concentration. The row is supplement-only and cannot be confirmed from local XML/PDF alone.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=12",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Supplement-only FICI evidence.",
+        "No local MOESM1 table available."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0251",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:15",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 503, linked_assay_records.jsonl row 15, is Macropin 1 plus ciprofloxacin against Pseudomonas aeruginosa 3320 with FICI 1.01 and no MIC value/concentration. Primary row-level source verification is blocked by absent supplement Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=15",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Blank database MIC value/concentration cannot be repaired from main text.",
+        "FICI source table missing."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0261",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:18",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 506, linked_assay_records.jsonl row 18, is Macropin 1 plus levofloxacin against Pseudomonas aeruginosa 3320 with FICI 1.01 and no MIC value/concentration. The local supplement inventory lacks the needed MOESM1 PDF.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=18",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Row remains database-snapshot-only for FICI.",
+        "No source locator beyond missing supplement can confirm it."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0271",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:49",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 502, linked_experiment_records.jsonl row 14, maps to Macropin 1 plus tobramycin against Pseudomonas aeruginosa 3320 with FICI 0.52 in the assay snapshot. XML section 13 provides summary prose only; the primary table is missing locally.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=14",
+        "database:linked_assay_records.jsonl:row=14",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Supplement-dependent row.",
+        "No local MOESM1 PDF or parsed S1/S2 table."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0281",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:10",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 498, linked_assay_records.jsonl row 10, is Macropin 1 plus oxacillin against Staphylococcus aureus 547582 with FICI 0.52 and blank MIC value/concentration. The sampled row is not directly present in main-text tables and remains blocked by missing Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=10",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Database FICI row is unresolved, not source_verified.",
+        "Current local materials cannot repair the row."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0296",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:8",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 496, linked_assay_records.jsonl row 8, is Macropin 1 plus tobramycin against Staphylococcus aureus 547582 with FICI 1.06 and no MIC value/concentration. Source verification requires the missing supplement table.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=8",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Supplement-only row with database FICI.",
+        "Primary supplement absent locally."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0316",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:14",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 502, linked_assay_records.jsonl row 14, is Macropin 1 plus tobramycin against Pseudomonas aeruginosa 3320 with FICI 0.52 and blank MIC value/concentration. The local packet has no parsed S1/S2 table for confirmation.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=14",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "No row-level primary source locator available.",
+        "Keep unresolved_record until MOESM1 is supplied."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0321",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:9",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP assay record 497, linked_assay_records.jsonl row 9, is Macropin 1 plus ciprofloxacin against Staphylococcus aureus 547582 with FICI 1.13 and no MIC value/concentration. It is supplement-only and blocked by missing Tables S1/S2.",
+      "locators_checked": [
+        "database:linked_assay_records.jsonl:row=9",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original"
+      ],
+      "cautions": [
+        "Database row remains unresolved.",
+        "Main XML/PDF do not contain the needed row-level table."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0341",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:51",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 504, linked_experiment_records.jsonl row 16, maps to Macropin 1 plus oxacillin against Pseudomonas aeruginosa 3320 with FICI 0.52 in the assay snapshot. This supplement-dependent row cannot be confirmed locally.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=16",
+        "database:linked_assay_records.jsonl:row=16",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Source table absent.",
+        "Database value should remain unresolved rather than source_verified."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0351",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:43",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 496, linked_experiment_records.jsonl row 8, maps to Macropin 1 plus tobramycin against Staphylococcus aureus 547582 with FICI 1.06 in the assay snapshot. The sampled row remains supplement-only and lacks a local primary table locator.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=8",
+        "database:linked_assay_records.jsonl:row=8",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Duplicate experiment/assay provenance does not add primary-source support.",
+        "MOESM1 missing locally."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0361",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:46",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 499, linked_experiment_records.jsonl row 11, maps to Macropin 1 plus piperacillin against Staphylococcus aureus 547582 with FICI 0.53 in the assay snapshot. No local supplement table exists to source-verify it.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=11",
+        "database:linked_assay_records.jsonl:row=11",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:sec=33:Synergy activity",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Row-level primary evidence unavailable.",
+        "Keep unresolved_record status."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    },
+    {
+      "sample_id": "VAL0381",
+      "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:47",
+      "row_decision": "blocked_missing_primary_material",
+      "evidence_summary": "DBAASP experiment record 500, linked_experiment_records.jsonl row 12, maps to Macropin 1 plus levofloxacin against Staphylococcus aureus 547582 with FICI 1.13 in the assay snapshot. It cannot be source-verified because supplement Tables S1/S2 are missing from local materials.",
+      "locators_checked": [
+        "database:linked_experiment_records.jsonl:row=12",
+        "database:linked_assay_records.jsonl:row=12",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json"
+      ],
+      "cautions": [
+        "Database-snapshot FICI is not sufficient for publication-grade confirmation.",
+        "Missing local primary supplement blocks row."
+      ],
+      "rework_target_ids": [
+        "rwk-validation420-v420p0042-missing-moesm1"
+      ]
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-validation420-v420p0042-missing-moesm1",
+      "paper_id": "doi__10.1038_s41598-017-16784-6",
+      "target_queue": "material_extraction",
+      "severity": "blocking",
+      "worker": "worker-3",
+      "owner_worker": "worker-3",
+      "layer": "material_and_analysis",
+      "reason": "All sampled validation rows are supplement-only DBAASP MIC/FICI synergy records. Local XML section 13 routes the row-level combination values to Tables S1/S2, but local materials contain only HTML landing pages and no 41598_2017_16784_MOESM1_ESM.pdf, parsed S1/S2 tables, spreadsheet, or archive.",
+      "requested_outputs": [
+        {
+          "asset": "41598_2017_16784_MOESM1_ESM.pdf",
+          "need": "Acquire or stage the real local MOESM1 supplementary PDF, then parse Tables S1/S2 into row-level Macropin-antibiotic checkerboard records with FICI/MIC values, targets, units, and stable source locators.",
+          "required_locators": [
+            "supp:MOESM1:Table S1",
+            "supp:MOESM1:Table S2",
+            "xml:sec=13",
+            "xml:sec=33"
+          ]
+        }
+      ],
+      "blocks": [
+        "VAL0013",
+        "VAL0146",
+        "VAL0151",
+        "VAL0161",
+        "VAL0166",
+        "VAL0176",
+        "VAL0181",
+        "VAL0191",
+        "VAL0201",
+        "VAL0226",
+        "VAL0251",
+        "VAL0261",
+        "VAL0271",
+        "VAL0281",
+        "VAL0296",
+        "VAL0316",
+        "VAL0321",
+        "VAL0341",
+        "VAL0351",
+        "VAL0361",
+        "VAL0381",
+        "database_record_verification_publication_grade",
+        "activity_toxicity_evidence_publication_grade",
+        "publication_grade_ready"
+      ],
+      "created_at": "2026-06-25T02:45:31Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "supplement_absent_locally",
+      "evidence_context": "XML and local HTML landing content identify MOESM1 as a supplementary PDF, but local supplementary_original files resolve as HTML landing pages and supplementary_tables.json has table_count 0."
+    },
+    {
+      "caution_code": "database_only_synergy_rows_preserved_as_unresolved",
+      "evidence_context": "The sampled DBAASP rows carry FICI/synergy database values with blank MIC value/concentration fields; without Tables S1/S2 they must remain unresolved_record."
+    },
+    {
+      "caution_code": "main_text_partial_support_not_row_verification",
+      "evidence_context": "XML section 13 gives method/prose and selected FICI examples, but it is not a complete row-level source table for all sampled records."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0042__doi__10.1038_s41598-017-16784-6/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0042__doi__10.1038_s41598-017-16784-6/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0042__doi__10.1038_s41598-017-16784-6/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0042__doi__10.1038_s41598-017-16784-6/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0042__doi__10.1038_s41598-017-16784-6/material_inventory.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/pdf_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/final/database_record_verification.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/final/mechanism_evidence.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/final/review_report.json",
+    "papers/doi__10.1038_s41598-017-16784-6/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-16784-6/rework/rework_responses.jsonl"
+  ]
+}

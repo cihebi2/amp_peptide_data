@@ -1,0 +1,91 @@
+{
+  "paper_id": "doi__10.1126_sciadv.adp7171",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "reviewed_at": "2026-05-03T01:28:17Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "checked_paths": [
+      "papers/doi__10.1126_sciadv.adp7171/source/paper.xml",
+      "papers/doi__10.1126_sciadv.adp7171/source/paper.pdf",
+      "paper_packets/doi__10.1126_sciadv.adp7171/raw/oa_package/local-DBAASP-PMC11797553.tar.gz",
+      "paper_packets/doi__10.1126_sciadv.adp7171/extracted/oa_package/local-DBAASP-PMC11797553/PMC11797553/sciadv.adp7171_sm.pdf",
+      "paper_packets/doi__10.1126_sciadv.adp7171/extracted/pdf_text/sciadv.adp7171_sm.txt",
+      "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_literature_records.jsonl"
+    ]
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1126_sciadv.adp7171/handoff_context.json",
+    "paper_packets/doi__10.1126_sciadv.adp7171/packet_manifest.json",
+    "paper_packets/doi__10.1126_sciadv.adp7171/locators/locator_index.json",
+    "paper_packets/doi__10.1126_sciadv.adp7171/extraction/extraction_status.json",
+    "paper_packets/doi__10.1126_sciadv.adp7171/extraction/extraction_quality_report.json",
+    "papers/doi__10.1126_sciadv.adp7171/source/paper.xml",
+    "papers/doi__10.1126_sciadv.adp7171/source/paper.pdf",
+    "paper_packets/doi__10.1126_sciadv.adp7171/extracted/oa_package/local-DBAASP-PMC11797553/PMC11797553/sciadv.adp7171_sm.pdf",
+    "paper_packets/doi__10.1126_sciadv.adp7171/extracted/pdf_text/sciadv.adp7171_sm.txt",
+    "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1126_sciadv.adp7171/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 428,
+    "activity_extraction_issue_count": 10,
+    "database_status_counts": {
+      "source_verified": 320,
+      "source_conflict": 40
+    },
+    "database_records_reviewed": 360,
+    "mechanism_claims": 4,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay/experiment/literature rows were reopened. Table-supported MIC/IC50 rows are source_verified with Supplementary Tables S5-S12 locators and generated-peptide sequence locators from Tables S18-S19. Exact hemolysis database percentages and unmatched broad summaries remain source_conflict cautions rather than hidden blockers.",
+    "layer_2_activity_toxicity": "Worker-2 repaired the empty activity artifact with 428 source-located records from main Table 1 cross-checks and Supplementary Tables S5-S12. Non-detected \"/\" cells and controls were not promoted as AMP activity rows.",
+    "layer_3_mechanism": "Mechanism evidence is limited but source-located: MD simulation is computational, while PI permeability and TEM morphology are direct membrane-damage assays. No single molecular target is overclaimed.",
+    "worker_6_adjudication": "The rework ticket rwk-complete-test-0001 is closed after source-reviewed owner-layer repair; remaining conflicts are caution-bearing, not blocking/major open rework."
+  },
+  "summary": "Source-reviewed worker-2/4/6 re-review completed for this paper. The empty activity parser output was replaced with source-located MIC/IC50 records, database rows were reconciled against paper-local supplementary tables while preserving figure-only hemolysis conflicts, and final status is accepted_with_cautions.",
+  "adjudication_summary": "Fresh worker-6 adjudication reopened handoff, packet manifest, locator index, XML/PDF, OA package supplementary PDF/text, and linked DBAASP rows. Supported activity and database evidence now clears the strict gates with caution-preserved source conflicts and no open rework targets.",
+  "caution_findings": [
+    {
+      "caution_code": "figure_only_hemolysis_database_values_preserved_as_source_conflict",
+      "severity": "caution",
+      "evidence_context": "DBAASP carries exact hemolysis percentage rows. Local paper text, Fig. 3A caption, and methods support hemolysis assays and qualitative safety conclusions, but no table-text exact percentage values were present. These rows are not hidden or source_verified."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "severity": "caution",
+      "evidence_context": "Packet linked_sequence_records.jsonl has zero rows; worker-4 used primary Supplementary Tables S18-S19 as the source sequence locator for generated peptides."
+    },
+    {
+      "caution_code": "mechanism_scope_limited_to_membrane_damage_context",
+      "severity": "caution",
+      "evidence_context": "PI and TEM support membrane/cell-envelope damage for AMP-24/AMP-29; MD support is computational and no single molecular target is assigned."
+    }
+  ],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  },
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": []
+}

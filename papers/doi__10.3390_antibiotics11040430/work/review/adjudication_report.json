@@ -1,0 +1,140 @@
+{
+  "paper_id": "doi__10.3390_antibiotics11040430",
+  "reviewed_at": "2026-05-07T16:24:29Z",
+  "generated_at": "2026-05-07T16:24:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Source-reviewed rework repaired the table-axis activity interpretation, reconciled all linked DBAASP rows against Table 1/2/3 and article metadata, preserved Rosetta-vs-DBAASP strain-label conflicts as cautions, and replaced automated mechanism placeholders with bounded ribosome/translation/uptake claims. The paper is publication-grade as accepted_with_cautions, not accepted_clean.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics11040430/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/pdf_text/antibiotics-11-00430.txt",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/pdf_text/local-DBAASP-PMC9025336.txt",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/oa_package/local-DBAASP-PMC9025336/PMC9025336/antibiotics-11-00430.nxml",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/oa_package/local-DBAASP-PMC9025336/PMC9025336/antibiotics-11-00430.pdf",
+    "paper_packets/doi__10.3390_antibiotics11040430/extracted/oa_package/local-DBAASP-PMC9025336/PMC9025336/antibiotics-11-00430-s001.zip",
+    "paper_packets/doi__10.3390_antibiotics11040430/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11040430/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11040430/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11040430/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_antibiotics11040430/source/paper.xml",
+    "papers/doi__10.3390_antibiotics11040430/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics11040430/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics11040430/xml/local-DBAASP-PMC9025336.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics11040430/pdf/local-DBAASP-PMC9025336.pdf"
+  ],
+  "tools_attempted": [
+    "jq JSON artifact review",
+    "rg targeted XML/PDF/supplement/database row search",
+    "JATS XML table extraction with ElementTree",
+    "unzip supplementary ZIP inventory",
+    "pdfinfo supplementary PDF review",
+    "pdftotext -layout supplementary PDF review",
+    "linked DBAASP JSONL row review"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened the handoff packet, XML/NXML, PDF text, OA package, supplementary ZIP/PDF via pdftotext, locator index, and linked DBAASP rows. No blocking locally recoverable source gap remains; exact supplementary figure curve series are not tabulated and are not promoted."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 40,
+    "toxicity_records": 0,
+    "database_record_audits": 70,
+    "database_status_summary": {
+      "source_verified": 58,
+      "source_conflict": 12
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps_blocking": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Table 1 supports peptide identities and Table 2/3 support linked MIC values. DBAASP rows naming Rosetta DE3 pLysS as BL21(DE3) plysS are retained as source_conflict with matching MIC values; all other linked assay/experiment/literature rows are source_verified.",
+    "layer_2_activity_toxicity": "Final activity rows now preserve peptide as entity, E. coli strain as target, MIC value/unit, medium, and source locator. No local toxicity endpoint was found, so toxicity remains an explicit absence rather than a fabricated record.",
+    "layer_3_mechanism": "Mechanism is limited to ribosome binding/translation inhibition plus uptake/SbmA context. The source does not resolve a single Api805 binding site, so that uncertainty is preserved.",
+    "supplementary_materials": "The local supplementary ZIP contains one PDF. It supports methods, p-value tables, and figure captions but not raw curve tables; exact figure-series values are not promoted."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_strain_label_source_conflict",
+      "evidence_context": "Twelve linked DBAASP assay/experiment rows match Table 2 MIC values but label the Rosetta DE3 pLysS source column as BL21(DE3) plysS. These rows remain source_conflict instead of being silently normalized.",
+      "record_identifiers": [
+        "DBAASP:DBAASPR_564",
+        "DBAASP:DBAASPS_2936",
+        "DBAASP:DBAASPS_2951",
+        "DBAASP:DBAASPS_7909",
+        "DBAASP:DBAASPS_19214",
+        "DBAASP:DBAASPS_19215"
+      ]
+    },
+    {
+      "caution_code": "api805_binding_site_unresolved",
+      "evidence_context": "The paper supports ribosome-associated translation inhibition but states the known PrAMP binding sites do not explain Api805; final mechanism avoids single-site assignment."
+    },
+    {
+      "caution_code": "supplementary_raw_curve_values_not_tabulated",
+      "evidence_context": "Supplementary PDF was recovered and checked; no tabulated raw figure curve values were available locally, and none are promoted."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_figure_raw_curve_values_not_tabulated_nonblocking",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics11040430/extracted/oa_package/local-DBAASP-PMC9025336/PMC9025336/antibiotics-11-00430-s001.zip",
+        "paper_packets/doi__10.3390_antibiotics11040430/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics11040430/extracted/figure_captions.json"
+      ],
+      "tools_attempted": [
+        "unzip -l",
+        "pdfinfo",
+        "pdftotext -layout",
+        "supplementary_tables.json review"
+      ],
+      "why_unrecoverable": "The recovered supplementary file is a PDF with text, p-value tables, and embedded figures, but no tabulated raw fluorescence-polarization, translation, uptake, or degradation curve series.",
+      "impact": "Final mechanism records use qualitative source-supported conclusions and do not promote exact figure curve values.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "last_gate_results": {
+    "checked_at": "2026-05-07T16:25:24Z",
+    "semantic_gate_report": "reports/doi__10.3390_antibiotics11040430.semantic_gate.json",
+    "semantic_attempt_report": "reports/doi__10.3390_antibiotics11040430.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "publication_quality_report": "reports/doi__10.3390_antibiotics11040430.publication_quality.json",
+    "publication_attempt_report": "reports/doi__10.3390_antibiotics11040430.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_open_rework_targets": 0
+  },
+  "updated_at": "2026-05-07T16:25:24Z"
+}

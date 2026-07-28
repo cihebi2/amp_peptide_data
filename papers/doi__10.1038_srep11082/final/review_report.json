@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.1038_srep11082",
+  "reviewed_at": "2026-05-03T20:24:49Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF text, OA package, supplement PDF/text, supplementary HTML landing assets, figure captions/images, and linked database JSONL rows were checked. No blocking obtainable-only source gap remains."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_srep11082/handoff_context.json",
+    "paper_packets/doi__10.1038_srep11082/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep11082/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep11082/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep11082/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/pdf_text/srep11082.txt",
+    "paper_packets/doi__10.1038_srep11082/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/supplementary_text/srep11082-s1.txt",
+    "paper_packets/doi__10.1038_srep11082/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1038_srep11082/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep11082/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_srep11082/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep11082/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep11082/database/linked_literature_records.jsonl",
+    "papers/doi__10.1038_srep11082/source/paper.xml",
+    "papers/doi__10.1038_srep11082/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_srep11082/xml/local-DBAASP-PMC4508531.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_srep11082/pdf/local-DBAASP-PMC4508531.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_srep11082/package/local-DBAASP-PMC4508531.tar.gz",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_srep11082/supplementary"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 23,
+    "table1_mic_rows_source_reviewed": 19,
+    "toxicity_rows_source_reviewed": 4,
+    "database_record_status_summary": {
+      "source_verified": 29,
+      "source_conflict": 7
+    },
+    "mechanism_claims_source_reviewed": 5,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled all linked assay/experiment/literature rows against primary Table 1, body toxicity text, peptide/source locators, and article metadata. Database/source organism mismatches are preserved as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 19 primary MIC rows and 4 toxicity rows from local XML/PDF text with endpoint, value, unit, target, conditions, and locators.",
+    "layer_3_mechanism": "Worker-6 replaced framework placeholder notes with source-reviewed membrane-permeabilization, immunomodulation, signaling, docking, and structural-context claims, keeping computational and figure-only limitations explicit.",
+    "supplementary_material": "Supplementary s1 PDF/text was checked for sequence/evolution context; supplementary landing HTML did not add activity/toxicity rows.",
+    "publication_grade_review": "The original rework ticket is closed because the activity-table blocker and database-adjudication blocker were repaired from local material; remaining conflicts are nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_name_conflicts_preserved",
+      "evidence_context": "Linked database organism labels disagree with or normalize several primary Table 1 labels; affected records remain source_conflict rather than silently source_verified."
+    },
+    {
+      "caution_code": "database_row_collapses_multiple_source_rows",
+      "evidence_context": "Some linked database notes summarize multiple same-value primary source isolates in a single row; worker-2 keeps every primary Table 1 row separately."
+    },
+    {
+      "caution_code": "database_hemolysis_rounding_preserved",
+      "evidence_context": "Linked database hemolysis row rounds the primary-source percent value; final activity evidence preserves the exact local-source value."
+    },
+    {
+      "caution_code": "supplementary_landing_assets_do_not_change_activity_rows",
+      "evidence_context": "Local supplementary .bin assets are article/landing HTML; the recoverable s1 PDF/text supports sequence/evolution context but no separate activity/toxicity table."
+    },
+    {
+      "caution_code": "figure_only_exact_values_not_fabricated",
+      "evidence_context": "Mechanism figures were opened via packet locators and text/captions; only body-text numeric values were recorded, not inferred bar heights or image-only quantities."
+    }
+  ],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  },
+  "summary": "Worker-2/4/6 source re-review recovered the missing activity/toxicity rows, adjudicated linked database rows with preserved conflicts, and completed worker-6 final review as publication-grade accepted_with_cautions.",
+  "adjudication_summary": "The prior framework-test blocker is resolved by paper-local source review. Supported values are extracted, database/source conflicts are explicit cautions, and no blocking/major rework target remains open."
+}

@@ -1,0 +1,131 @@
+{
+  "paper_id": "doi__10.3390_nano12203691",
+  "reviewed_at": "2026-05-09T17:01:03Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No local supplementary assets were present; packet XML/PDF/OA package/database snapshots were sufficient for the owned worker-2/4/6 re-review. Figure-only exact database values were preserved as source_conflict cautions rather than fabricated."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_nano12203691/packet_manifest.json",
+    "paper_packets/doi__10.3390_nano12203691/locators/locator_index.json",
+    "paper_packets/doi__10.3390_nano12203691/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_nano12203691/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_nano12203691/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_nano12203691/extracted/pdf_text/nanomaterials-12-03691.txt",
+    "paper_packets/doi__10.3390_nano12203691/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_nano12203691/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_nano12203691/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_nano12203691/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_nano12203691/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_nano12203691/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_nano12203691/source/paper.xml",
+    "papers/doi__10.3390_nano12203691/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "adjudication_summary": "Source-reviewed re-review repaired the worker-2 table extraction gap, adjudicated DBAASP linked rows with modification/conflict cautions, and replaced framework-test review language with paper-specific worker-6 adjudication. The paper is publication-grade accepted_with_cautions, not clean accepted, because database rows retain source_conflict and sequence-modification caveats.",
+  "summary": "Worker-2 parsed the XML MIC/stability/hemolysis tables into row-level evidence; worker-4 preserved DBAASP modification and figure-only value conflicts; worker-6 accepted the paper with cautions after checking XML, PDF text, OA package inventory, packet locators, and merged database rows.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature links are source_verified. Activity rows that match XML tables remain usable with sequence_modified_not_normalized caveats because RWR letters match but LA/PEA/crosslink state is not normalized in the local sequence snapshot. Figure-only/condition-collapsed rows remain source_conflict.",
+    "layer_2_activity_toxicity": "Table 1 MIC, Table 2 E. coli stability MIC, and Table 3 rabbit erythrocyte hemolysis matrices were manually parsed into source-located rows. Explicit result-prose biofilm/time-kill/cytotoxicity values were retained; exact values not present in local text/table were not fabricated.",
+    "layer_3_mechanism": "Direct mechanism evidence is limited to membrane depolarization/permeability assays and SEM morphology; biofilm/time-kill findings are phenotype-supported and no molecular binding target is claimed.",
+    "material_packet": "Packet structural material is complete_with_targeted_analysis_rework from the previous run; the targeted owner-layer analysis rework has now been completed without requiring new material extraction."
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "worker_2_activity_rows",
+      "result": "pass",
+      "evidence": "97 source-located activity/toxicity records from XML Tables 1-3 and explicit result prose; MIC-like rows have units and target locators."
+    },
+    {
+      "check": "worker_4_database_record_adjudication",
+      "result": "pass_with_cautions",
+      "evidence": "50 linked DBAASP/literature rows reviewed; status_summary={'source_conflict': 32, 'sequence_modified_not_normalized': 16, 'source_verified': 2}."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "Figure-only exact antibiofilm/cytotoxicity values, condition-collapsed MIC rows, and modification-normalization gaps remain explicit source_conflict/sequence_modified_not_normalized records."
+    },
+    {
+      "check": "supplementary_exhaustion",
+      "result": "pass",
+      "evidence": "packet supplementary_index.json and supplementary_tables.json report zero supplementary assets/tables; OA package, XML, PDF text, and database rows were checked."
+    },
+    {
+      "check": "mechanism_strength",
+      "result": "pass_with_scope_guard",
+      "evidence": "Direct mechanism claims are limited to DiSC3(5)/NPN membrane assays and SEM morphology; time-kill/biofilm records remain phenotype_supported."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is closed by source-reviewed worker-2/4/6 repair; rework_targets is empty."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "database_sequence_modification_normalization",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized_preserved",
+      "note": "Primary source reports RWR lipopeptides with lipoic acid, PEA, and crosslinked nanoparticle states; local DBAASP sequence rows expose only RWR letters."
+    },
+    {
+      "scope": "database_activity_rows",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "Database rows with figure-only exact antibiofilm/cytotoxicity values or condition-collapsed stability MICs remain source_conflict and are not promoted to clean primary-source table rows."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "nonblocking_absent",
+      "note": "No local supplementary assets or supplementary tables were present in the packet; XML/PDF/OA package assets cover the owned repair."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "bounded_direct_mechanism",
+      "note": "Membrane depolarization, outer-membrane permeability, and SEM morphology support membrane damage; no single molecular target is asserted."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "last_worker6_re_reviewed_at": "2026-05-09T17:01:03Z",
+    "latest_re_review_status": "source_supported_accepted_with_cautions"
+  },
+  "semantic_quality_summary": {
+    "activity_record_count": 97,
+    "database_status_summary": {
+      "source_conflict": 32,
+      "sequence_modified_not_normalized": 16,
+      "source_verified": 2
+    },
+    "mechanism_claim_count": 3
+  },
+  "unrecoverable_material_gaps": []
+}

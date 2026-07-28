@@ -1,0 +1,109 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1371_journal.pone.0060462",
+  "doi": "10.1371/journal.pone.0060462",
+  "generated_at": "2026-05-03T11:11:29Z",
+  "reviewed_at": "2026-05-03T11:11:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker": "worker-6",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism claims from XML/PDF result sections, methods, and figure captions; automated pending mechanism notes were replaced with bounded claims.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "temporin-1CEa in MDA-MB-231 and MCF-7 breast cancer cells",
+      "claim_text": "Primary results support rapid cancer-cell membrane disruption/permeability changes after temporin-1CEa exposure.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Annexin-V/PI flow cytometry",
+        "calcein AM/EthD-1 permeability assay",
+        "DiBAC4(3) transmembrane potential assay",
+        "SEM/TEM morphology"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1371_journal.pone.0060462/source/paper.xml",
+        "locator": "xml:sec=5-7; xml:fig=2; xml:fig=3; xml:fig=4; xml:fig=6"
+      },
+      "limitations": "Mechanism is bounded to cell-membrane integrity/permeability evidence; pore structure or stoichiometry is not established."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "temporin-1CEa-treated MDA-MB-231 and MCF-7 cells",
+      "claim_text": "Primary results support intracellular calcium elevation under calcium-containing and calcium-free conditions as a mechanism context for rapid cytotoxicity.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Fluo3-AM calcium flow cytometry in calcium-containing solution",
+        "Fluo3-AM calcium flow cytometry in calcium-free solution"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.1371_journal.pone.0060462/source/paper.xml",
+        "locator": "xml:sec=10:Temporin-1CEa Increases Cytosolic Calcium Level; xml:fig=7"
+      },
+      "limitations": "The paper reports involvement of calcium-related mechanisms but states that detailed intracellular signaling awaits further investigation."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "temporin-1CEa-treated MDA-MB-231 and MCF-7 cells",
+      "claim_text": "Primary results support ROS elevation and mitochondrial membrane-potential loss as downstream cell-death context after temporin-1CEa treatment.",
+      "evidence_class": "downstream_cell_death_context",
+      "source_locator": {
+        "source_path": "papers/doi__10.1371_journal.pone.0060462/source/paper.xml",
+        "locator": "xml:sec=11-12; xml:fig=8; xml:fig=9"
+      },
+      "limitations": "ROS and mitochondrial potential are retained as downstream context, not as an independently complete molecular target mechanism."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "figure_quantification_not_digitized",
+      "evidence_context": "Figures 3-9 are source-located and used qualitatively; exact bar heights not stated in text were not fabricated."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_payload_absent_or_html_only_after_local_recovery",
+      "source_paths_checked": [
+        "papers/doi__10.1371_journal.pone.0060462/source/supplementary",
+        "paper_packets/doi__10.1371_journal.pone.0060462/raw/supplementary_original/landing-*.bin",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0060462/supplementary/landing-*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "sed/head HTML inspection",
+        "supplementary_index review"
+      ],
+      "why_unrecoverable": "The paper-local supplementary directory is empty and the landed supplementary .bin files are HTML pages or article/guideline pages, not PDF/XLSX/DOCX/CSV supplementary data payloads.",
+      "impact": "No supplement-only activity, toxicity, database, or mechanism values were fabricated. Primary XML/PDF text and database JSONL rows were sufficient to repair the worker-2/4/6 blockers.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "figure_only_exact_dose_response_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/pdf_text/landing-1.txt",
+        "papers/doi__10.1371_journal.pone.0060462/source/paper.xml",
+        "papers/doi__10.1371_journal.pone.0060462/source/paper.pdf"
+      ],
+      "tools_attempted": [
+        "XML figure-caption review",
+        "existing pdftotext review",
+        "rg numeric/source locator search"
+      ],
+      "why_unrecoverable": "The local XML/PDF text gives exact example values at 40 µM and qualitative dose-response/caption summaries, but it does not tabulate all bar heights from Figures 1 and 3-9.",
+      "impact": "Only exact values stated in text were extracted as activity rows. Other figure-only quantitative values remain qualitative mechanism context and were not digitized or invented.",
+      "owner_worker": "worker-2 + worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

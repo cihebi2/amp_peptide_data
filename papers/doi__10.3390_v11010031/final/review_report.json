@@ -1,0 +1,89 @@
+{
+  "adjudication_summary": "Source-reviewed rework captured XML Tables 1-4 as activity evidence, matched linked DBAASP rows where exact primary-table support exists, preserved one numeric source_conflict and value-absent database-only rows, and closed the prior activity/parser rework ticket.",
+  "caution_findings": [
+    {
+      "caution_code": "database_only_rows_without_numeric_primary_value",
+      "owner_worker": "worker-4",
+      "evidence_context": "Seven linked experiment rows name synergy assays/subjects but contain no numeric value to verify; source table context is recorded, but value-level verification is not fabricated."
+    },
+    {
+      "caution_code": "database_source_numeric_conflict_preserved",
+      "owner_worker": "worker-4",
+      "evidence_context": "DBAASP I529T IC90 concentration 7.732 µM conflicts with XML Table 4 HR2P-M2-alone value 7.752 µM; final curation preserves the conflict."
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "owner_worker": "worker-6",
+      "evidence_context": "OA package/local packet inventory contains no supplementary assets or supplementary tables; no supplement-derived values were recoverable or required."
+    }
+  ],
+  "checked_inputs": [
+    "papers/doi__10.3390_v11010031/source/paper.xml",
+    "paper_packets/doi__10.3390_v11010031/raw/paper.xml",
+    "paper_packets/doi__10.3390_v11010031/extracted/oa_package/local-DBAASP-PMC6356712/PMC6356712/viruses-11-00031.nxml",
+    "paper_packets/doi__10.3390_v11010031/extracted/pdf_text/local-DBAASP-PMC6356712.txt",
+    "paper_packets/doi__10.3390_v11010031/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_v11010031/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_v11010031/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_v11010031/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_v11010031/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_v11010031/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_v11010031/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_v11010031/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_v11010031/analysis/mechanism_evidence.json"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "supplementary_assets_count": 0,
+    "merged_database_rows": true,
+    "note": "Local source package has XML/PDF/figures and no supplementary assets; all locally supported activity table values were captured, and unresolved database-only/numeric conflicts are preserved as cautions."
+  },
+  "paper_id": "doi__10.3390_v11010031",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP citation and exact assay values were matched to article metadata and XML Table 4 where supported. Linked experiment rows without numeric values remain database_only_no_primary_source, and the DBAASP I529T IC90 value 7.732 µM remains source_conflict against XML Table 4 value 7.752 µM.",
+    "layer_2_activity_toxicity": "Worker-2 source-reviewed XML Tables 1-4 and extracted 55 source-located activity/synergy records with endpoints, raw values/units, targets, assay context, replicate/statistical notes, and locators. No toxicity/hemolysis rows were present in local material.",
+    "layer_3_mechanism": "Mechanism remains bounded to source-supported fusion-inhibition context: HR2P-M2 targets the S2 HR1-mediated fusion process and m336 targets RBD; no unsupported membrane-permeabilization or toxicity mechanism is promoted."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "publication_grade_with_cautions",
+  "reviewed_at": "2026-06-20T13:26:44Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 55,
+    "activity_tables_reviewed": [
+      "Table 1",
+      "Table 2",
+      "Table 3",
+      "Table 4"
+    ],
+    "missing_activity_records": false,
+    "database_snapshots": {
+      "linked_assay_records": 21,
+      "linked_experiment_records": 21,
+      "linked_literature_records": 1,
+      "linked_dramp_activity_records": 0,
+      "linked_sequence_records": 0
+    },
+    "database_conflicts_preserved": true,
+    "open_rework_targets": 0,
+    "mechanism_claims": 1,
+    "suspicious_activity_target_strings": 0,
+    "supplementary_assets_local_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "oa_package_nxml_pdf_figures",
+    "local_supplement_inventory",
+    "packet_locator_index",
+    "linked_dbaasp_database_rows"
+  ],
+  "source_reviewed": true,
+  "validator_contract_passed": true
+}

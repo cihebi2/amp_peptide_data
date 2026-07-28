@@ -1,0 +1,196 @@
+{
+  "paper_id": "doi__10.1038_s41598-017-03576-1",
+  "pilot_sample_id": "PILOT20-005",
+  "audit_record_id": "doi__10.1038_s41598-017-03576-1:database_audit:231",
+  "reviewed_at": "2026-06-22T03:56:47Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "low",
+  "material_review": {
+    "inventory_reopened": true,
+    "packet_dir": "paper_packets/doi__10.1038_s41598-017-03576-1",
+    "surfaces_present": {
+      "raw_paper_xml": "paper_packets/doi__10.1038_s41598-017-03576-1/raw/paper.xml",
+      "raw_paper_pdf": "paper_packets/doi__10.1038_s41598-017-03576-1/raw/paper.pdf",
+      "oa_package": "paper_packets/doi__10.1038_s41598-017-03576-1/raw/oa_package/local-DBAASP-PMC5469811.tar.gz",
+      "oa_extracted_nxml": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/oa_package/local-DBAASP-PMC5469811/PMC5469811/41598_2017_Article_3576.nxml",
+      "oa_extracted_pdf": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/oa_package/local-DBAASP-PMC5469811/PMC5469811/41598_2017_Article_3576.pdf",
+      "oa_supplement_pdf": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/oa_package/local-DBAASP-PMC5469811/PMC5469811/41598_2017_3576_MOESM1_ESM.pdf",
+      "xml_sections": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json",
+      "figure_captions": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/figure_captions.json",
+      "pdf_text": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_Article_3576.txt",
+      "supplement_text": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_3576_MOESM1_ESM.txt",
+      "supplementary_index": "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_index.json",
+      "database_rows": [
+        "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_literature_records.jsonl"
+      ]
+    },
+    "status_assessment": {
+      "material_queue_status": "material_extracted_with_gaps",
+      "analysis_queue_status": "analysis_adjudicated_with_cautions",
+      "known_missing_or_blocked_materials": [],
+      "nonblocking_gaps": [
+        "packet_manifest test_scope notes terminal status is not publication-grade acceptance by itself",
+        "supplementary_tables.json has zero structured tables; MOESM1 PDF text is present",
+        "landed supplementary .bin assets are indexed only",
+        "no local numeric source table for exact Figure 1 hemolysis percentages was found"
+      ]
+    }
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "DBAASP:DBAASPS_10486",
+    "release_row_matches_sample_final_record": true,
+    "release_row_locator": "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:tsv_row=25952",
+    "release_status": "source_conflict",
+    "sample_final_status": "source_conflict",
+    "status_decision": "source_conflict justified and must be preserved",
+    "database_row_checked": {
+      "linked_assay_locator": "database:linked_assay_records:row=76",
+      "linked_experiment_locator": "database:linked_experiment_records:row=76",
+      "database_measure": "8% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "concentration": "40",
+      "unit": "uM",
+      "peptide_name": "Chrysophsin-1 [G13P]"
+    },
+    "primary_identity_support": {
+      "peptide_name_reviewed": "G13P-Chr-1",
+      "sequence_locator": "xml:table=2:row=4",
+      "sequence_text_spot_check": "FFGWLIKGAIHAPKAIHGLIHRRRH",
+      "citation_locator": "xml:article-meta"
+    },
+    "primary_conflict_support": {
+      "hemolysis_trend_locator": "xml:sec=5; xml:fig=1:Figure 1",
+      "hemolysis_method_locator": "xml:sec=21",
+      "pdf_text_lines_checked": [
+        "extracted/pdf_text/landing-1.txt:223-240",
+        "extracted/pdf_text/41598_2017_Article_3576.txt:1140-1150"
+      ],
+      "finding": "Primary XML/PDF supports G13P-Chr-1 reduced hemolytic activity and the hRBC assay method, but does not provide an extractable numeric table for the DBAASP exact 8% hemolysis value."
+    },
+    "status_summary_checked": {
+      "source_verified": 302,
+      "source_conflict": 22
+    }
+  },
+  "layer2_activity_toxicity_review": {
+    "final_artifact": "paper_packets/doi__10.1038_s41598-017-03576-1/final/activity_toxicity_evidence.json",
+    "record_count": 186,
+    "source_reviewed_records_without_true_flag": 0,
+    "hard_gate_spot_checks": {
+      "missing_locator_endpoint_value_or_mic_unit_count": 0,
+      "sentence_fragment_or_generic_endpoint_count": 0,
+      "missing_target_object_count": 0
+    },
+    "sampled_rows": [
+      {
+        "record_id": "doi__10.1038_s41598-017-03576-1-table3-r3-c3-MIC",
+        "entity": "G13P-Chr-1",
+        "endpoint": "MIC",
+        "raw_value": "3",
+        "raw_unit": "uM",
+        "target": "Escherichia coli (ATCC 9637)",
+        "source_locator": "xml:table=3:row=3:column=3"
+      },
+      {
+        "record_id": "doi__10.1038_s41598-017-03576-1-table5-r5-c3-MIC",
+        "entity": "G13P-Chr-1",
+        "endpoint": "MIC",
+        "raw_value": "12.3",
+        "raw_unit": "uM",
+        "target": "Escherichia coli (ATCC 25922)",
+        "source_locator": "xml:table=5:row=5:column=3"
+      }
+    ],
+    "hemolysis_value_handling": "The sampled DBAASP exact hemolysis value remains in layer 1 as source_conflict and is not fabricated into the final activity table as a source-verified primary activity row.",
+    "caution": "Figure 1 supports trend/cytotoxicity context, not exact table-backed percentages for the sampled DBAASP row."
+  },
+  "layer3_mechanism_review": {
+    "final_artifact": "paper_packets/doi__10.1038_s41598-017-03576-1/final/mechanism_evidence.json",
+    "claim_count": 4,
+    "missing_required_claim_field_count": 0,
+    "evidence_class_summary": {
+      "direct_mechanism": 4
+    },
+    "claim_field_check": "Each mechanism claim has claim_id, claim_text, entity_scope, evidence_class, source_locator, and direct_assay_types.",
+    "source_locator_spot_checks": [
+      "xml:sec=7; xml:fig=2:Figure 2; xml:sec=27 for PI/annexin/hemolysis membrane damage evidence",
+      "xml:sec=9; xml:sec=11; xml:fig=3:Figure 3; xml:fig=5:Figure 5; supp:Figure S3; supp:Figure S7 for membrane-mimetic biophysical assays",
+      "xml:sec=10; xml:fig=4:Figure 4; xml:sec=29 for SEM morphology evidence",
+      "xml:sec=12; xml:sec=13; xml:sec=14; xml:sec=15; xml:fig=6:Figure 6; xml:fig=7:Figure 7; xml:fig=8:Figure 8; supp:Figure S6; supp:Figure S7 for anti-endotoxin/LPS/NF-kB/in vivo evidence"
+    ],
+    "overclaim_assessment": "Mechanism language is bounded to assay-level direct readouts and explicitly avoids exact binding-site, molecular pore, or graph-only quantitative claims."
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "source_substantive_decision": "accepted_with_cautions_confirmed",
+    "terminal_decision_reason": "The user-required model/effort provenance cannot be independently proven in this runtime, so the packet decision is unverifiable_best_effort despite no source-review hard defect found for this sample.",
+    "preserve_cautions": true,
+    "rework_ticket_written": false,
+    "rework_ticket_reason": "No needs_targeted_rework or blocked_missing_primary_material decision was made."
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "caution_code": "model_effort_unverifiable",
+      "evidence_context": "The result records review_model=gpt-5.5 and reasoning_effort=xhigh as required by the packet schema, but this reviewer cannot independently attest the actual runtime model/effort; therefore the decision is unverifiable_best_effort."
+    },
+    {
+      "caution_code": "database_hemolysis_exact_percentages_source_conflict",
+      "evidence_context": "DBAASP reports exact G13P-Chr-1 human erythrocyte hemolysis values, including 8% at 40 uM; local XML/PDF supports Figure 1 trend and assay method but no exact numeric source table."
+    },
+    {
+      "caution_code": "material_extracted_with_gaps_preserved",
+      "evidence_context": "Material packet includes XML/PDF/OA/supplement/database rows, but the manifest remains material_extracted_with_gaps because exact figure-derived hemolysis percentages are not locally table-backed."
+    },
+    {
+      "caution_code": "packet_test_scope_note",
+      "evidence_context": "The packet manifest includes a test-scope note, so existing accepted_with_cautions/publication_grade fields were treated as claims to verify rather than terminal proof."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per packet instruction.",
+    "Runtime did not expose independently verifiable proof that this review was executed by gpt-5.5 with xhigh reasoning effort.",
+    "No image digitization was attempted for Figure 1; the conflict is preserved rather than converting graph/database values into source_verified numeric table values.",
+    "Supplementary landing .bin assets were indexed; the OA package MOESM1 PDF text was inspected, but no structured supplementary table was available."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-005__doi__10.1038_s41598-017-03576-1/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/analysis/analysis_status.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/final/review_report.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/final/database_record_verification.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/final/mechanism_evidence.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_Article_3576.txt",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_3576_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_experiment_records.jsonl"
+  ]
+}

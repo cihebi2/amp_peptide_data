@@ -1,0 +1,1672 @@
+{
+  "paper_id": "doi__10.1021_acsinfecdis.4c00160",
+  "generated_at": "2026-05-02T13:20:05Z",
+  "audit_scope": "Worker-4 source-reviewed DBAASP linked rows against primary XML/PDF/SI evidence and merged sequence rows; no row was accepted from packet/framework status alone.",
+  "database_row_counts": {
+    "linked_assay_records": 16,
+    "linked_experiment_records": 16,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0,
+    "linked_dramp_activity_records": 0
+  },
+  "source_paths_checked": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_acsinfecdis.4c00160/xml/local-DBAASP-PMC11320580.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_acsinfecdis.4c00160/pdf/local-DBAASP-PMC11320580.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160_si_001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/oa_package/local-DBAASP-PMC11320580/PMC11320580/id4c00160_si_002.xlsx",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "JATS XML table parser",
+    "PDF text index review",
+    "OOXML workbook inspection via zip/sharedStrings",
+    "CSV/JSONL row matching"
+  ],
+  "identity_summary": {
+    "database_sequence": "WVKKVARKVVKIGRKVAR",
+    "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+    "identity_status": "sequence_modified_not_normalized",
+    "identity_caution": "A11 sequence and name are source-supported, but terminal amidation is explicit in the paper and not represented in the merged plain sequence string."
+  },
+  "status_summary": {
+    "sequence_modified_not_normalized": 32,
+    "source_verified": 1
+  },
+  "source_verified_activity_match_count": 32,
+  "record_audits": [
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "5178",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "1.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Meropenem",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-meropenem-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "1.5",
+        "matched_interpretation": "indifference",
+        "matched_activity_record_id": "table3-atcc19606-a11-meropenem-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Meropenem"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=1"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "5179",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "0.286",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Levofloxacin",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-levofloxacin-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "0.286",
+        "matched_interpretation": "synergy",
+        "matched_activity_record_id": "table3-atcc19606-a11-levofloxacin-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Levofloxacin"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=2"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "5180",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "0.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Minocycline",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-minocycline-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "0.25",
+        "matched_interpretation": "synergy",
+        "matched_activity_record_id": "table3-atcc19606-a11-minocycline-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Minocycline"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=3"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "5181",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "1",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Colistin",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-colistin-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "1",
+        "matched_interpretation": "indifference",
+        "matched_activity_record_id": "table3-atcc19606-a11-colistin-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Colistin"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=4"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180364",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "15.63",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-table2-a11-atcc19606-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "15.63",
+        "matched_activity_record_id": "table1-table2-a11-atcc19606-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=6:column=A11"
+          },
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=5"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180365",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MBC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-table2-a11-atcc19606-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-table2-a11-atcc19606-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=6:column=A11"
+          },
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=6"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180366",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MIC",
+      "database_value": "7.81-15.63",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table2-a11-clinical-isolates-mic-range",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "clinical_isolate_range",
+        "matched_primary_value": "7.81-15.63",
+        "matched_activity_record_id": "table2-a11-clinical-isolates-mic-range",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:rows=4-11:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=7"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180367",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MBC",
+      "database_value": "15.63-31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table2-a11-clinical-isolates-mbc-range",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "clinical_isolate_range",
+        "matched_primary_value": "15.63-31.25",
+        "matched_activity_record_id": "table2-a11-clinical-isolates-mbc-range",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:rows=4-11:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=8"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180368",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterococcus faecium ATCC 700211",
+      "database_measure": "MIC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=9"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180369",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterococcus faecium ATCC 700211",
+      "database_measure": "MBC",
+      "database_value": "125",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "125",
+        "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=10"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180370",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=4:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=11"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180371",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=4:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=12"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180372",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Klebsiella pneumoniae ATCC 27736",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=5:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=13"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180373",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Klebsiella pneumoniae ATCC 27736",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=5:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=14"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180374",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterobacter cloacae",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=8:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=15"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "180375",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterobacter cloacae",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=8:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=16"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "5178",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "1.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Meropenem",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-meropenem-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "1.5",
+        "matched_interpretation": "indifference",
+        "matched_activity_record_id": "table3-atcc19606-a11-meropenem-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Meropenem"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "conflict_context": "Experiment snapshot row is field-sparse; resolved via paired linked_assay_records source_record_id while preserving the C-terminal amidation normalization caution.",
+      "review_notes": "Redundant linked_experiment assay_refs row lacks antibiotic/FICI fields locally, but its source_record_id pairs to the linked_assay_records row that was source-matched to Table 3. Primary A11 terminal amidation caution remains preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "5179",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "0.286",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Levofloxacin",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-levofloxacin-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "0.286",
+        "matched_interpretation": "synergy",
+        "matched_activity_record_id": "table3-atcc19606-a11-levofloxacin-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Levofloxacin"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=2"
+      },
+      "conflict_context": "Experiment snapshot row is field-sparse; resolved via paired linked_assay_records source_record_id while preserving the C-terminal amidation normalization caution.",
+      "review_notes": "Redundant linked_experiment assay_refs row lacks antibiotic/FICI fields locally, but its source_record_id pairs to the linked_assay_records row that was source-matched to Table 3. Primary A11 terminal amidation caution remains preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "5180",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "0.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Minocycline",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-minocycline-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "0.25",
+        "matched_interpretation": "synergy",
+        "matched_activity_record_id": "table3-atcc19606-a11-minocycline-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Minocycline"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=3"
+      },
+      "conflict_context": "Experiment snapshot row is field-sparse; resolved via paired linked_assay_records source_record_id while preserving the C-terminal amidation normalization caution.",
+      "review_notes": "Redundant linked_experiment assay_refs row lacks antibiotic/FICI fields locally, but its source_record_id pairs to the linked_assay_records row that was source-matched to Table 3. Primary A11 terminal amidation caution remains preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "5181",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "1",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "Colistin",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table3-atcc19606-a11-colistin-fici",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "checkerboard_fici",
+        "matched_primary_value": "1",
+        "matched_interpretation": "indifference",
+        "matched_activity_record_id": "table3-atcc19606-a11-colistin-fici",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=3:row=3:columns=A11_with_Colistin"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=4"
+      },
+      "conflict_context": "Experiment snapshot row is field-sparse; resolved via paired linked_assay_records source_record_id while preserving the C-terminal amidation normalization caution.",
+      "review_notes": "Redundant linked_experiment assay_refs row lacks antibiotic/FICI fields locally, but its source_record_id pairs to the linked_assay_records row that was source-matched to Table 3. Primary A11 terminal amidation caution remains preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180364",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MIC",
+      "database_value": "15.63",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-table2-a11-atcc19606-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "15.63",
+        "matched_activity_record_id": "table1-table2-a11-atcc19606-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=6:column=A11"
+          },
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=5"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180365",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii ATCC 19606",
+      "database_measure": "MBC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-table2-a11-atcc19606-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-table2-a11-atcc19606-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=6:column=A11"
+          },
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=6"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180366",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MIC",
+      "database_value": "7.81-15.63",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table2-a11-clinical-isolates-mic-range",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "clinical_isolate_range",
+        "matched_primary_value": "7.81-15.63",
+        "matched_activity_record_id": "table2-a11-clinical-isolates-mic-range",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:rows=4-11:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=7"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180367",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Acinetobacter baumannii",
+      "database_measure": "MBC",
+      "database_value": "15.63-31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table2-a11-clinical-isolates-mbc-range",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "clinical_isolate_range",
+        "matched_primary_value": "15.63-31.25",
+        "matched_activity_record_id": "table2-a11-clinical-isolates-mbc-range",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=2:rows=4-11:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=8"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180368",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterococcus faecium ATCC 700211",
+      "database_measure": "MIC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=9"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180369",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterococcus faecium ATCC 700211",
+      "database_measure": "MBC",
+      "database_value": "125",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "125",
+        "matched_activity_record_id": "table1-a11-enterococcus-faecium-atcc-700211-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=3:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=10"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180370",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=4:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=11"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180371",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Staphylococcus aureus ATCC 29213",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-staphylococcus-aureus-atcc-29213-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=4:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=12"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180372",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Klebsiella pneumoniae ATCC 27736",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=5:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=13"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180373",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Klebsiella pneumoniae ATCC 27736",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-klebsiella-pneumoniae-atcc-27736-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=5:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=14"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180374",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterobacter cloacae",
+      "database_measure": "MIC",
+      "database_value": "31.25",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mic",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "31.25",
+        "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mic",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=8:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=15"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_record_id": "180375",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Enterobacter cloacae",
+      "database_measure": "MBC",
+      "database_value": "62.5",
+      "database_unit": "µg/ml",
+      "database_antibiotic_or_partner": "",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "activity_match_status": "source_verified",
+      "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mbc",
+      "primary_source_match": {
+        "matched": true,
+        "match_type": "mic_mbc_table_value",
+        "matched_primary_value": "62.5",
+        "matched_activity_record_id": "table1-a11-enterobacter-cloacae-mbc",
+        "primary_source_locators": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=1:row=8:column=A11"
+          }
+        ]
+      },
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "name_agreement": "A11 name agrees between DBAASP rows and primary paper.",
+        "modification_status": "c_terminal_amidation_present_in_primary_source_not_normalized_in_database_sequence_string",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=16"
+      },
+      "conflict_context": "C-terminal amidation is explicit in the primary paper (A11 ... -NH2) but absent from the merged DBAASP plain sequence field; sequence was not normalized or hidden.",
+      "review_notes": "Activity or FICI value row-matched to primary-source Table 1, Table 2, or Table 3. Primary paper reports A11 as C-terminally amidated; DBAASP sequence snapshot stores the amino-acid string without the terminal -NH2, so the identity is preserved as sequence_modified_not_normalized."
+    },
+    {
+      "source_id": "DBAASPS_22822",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "doi:10.1021/acsinfecdis.4c00160",
+      "sequence_key": "DBAASP:DBAASPS_22822",
+      "peptide_name": "A11",
+      "database_subject": "Deciphering the Intracellular Action of the Antimicrobial Peptide A11 via an In-Depth Analysis of Its Effect on the Global Proteome of Acinetobacter baumannii.",
+      "database_measure": "literature_link",
+      "database_value": "10.1021/acsinfecdis.4c00160",
+      "database_unit": "",
+      "database_antibiotic_or_partner": "",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "activity_match_status": "not_activity_record",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "database_sequence": "WVKKVARKVVKIGRKVAR",
+        "primary_source_sequence": "WVKKVARKVVKIGRKVAR-NH2",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/extracted/pdf_text/id4c00160.txt",
+          "locator": "pdf_text:id4c00160.txt:lines=1260-1262",
+          "primary_source_statement": "A11 peptide is reported as WVKKVARKVVKIGRKVAR-NH2; terminal amide is source-evident and must not be silently normalized away."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi=10.1021/acsinfecdis.4c00160;pmid=39075773;pmcid=PMC11320580"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1021_acsinfecdis.4c00160/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches DOI/PMID/PMCID for the selected paper and is traced to article metadata."
+    }
+  ]
+}

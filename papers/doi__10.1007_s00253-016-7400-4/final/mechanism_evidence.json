@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1007_s00253-016-7400-4",
+  "doi": "10.1007/s00253-016-7400-4",
+  "run_id": "codex_rereview_worker2_4_6_20260501",
+  "worker": "worker-6",
+  "stage_id": "codex_rereview_mechanism_adjudication",
+  "generated_at": "2026-05-01T03:03:17Z",
+  "reviewed_at": "2026-05-01T03:03:17Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Melittin disrupts and permeabilizes the X. oryzae pv. oryzae cell envelope under the tested conditions.",
+      "entity_scope": "melittin against X. oryzae pv. oryzae strain ZJ-173",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SEM",
+        "TEM",
+        "FITC-melittin confocal uptake"
+      ],
+      "limitations": "The microscopy and uptake assays support membrane damage/permeabilization in this pathogen, but do not by themselves quantify pore size or exclude additional intracellular effects.",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00253-016-7400-4/raw/paper.xml",
+        "locator": "xml:sec=18:Melittin had the ability to disrupt bacterial cell membrane integrity",
+        "additional_locators": [
+          "xml:sec=19:Melittin had the ability to penetrate the bacterial cell membrane",
+          "xml:fig=2:Fig. 2",
+          "xml:fig=3:Fig. 3"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Melittin binds X. oryzae pv. oryzae nucleic acids in vitro and can interfere with macromolecular synthesis context.",
+      "entity_scope": "melittin with extracted X. oryzae pv. oryzae DNA/RNA",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "DNA gel retardation",
+        "restriction digestion interference assay",
+        "RNA gel retardation",
+        "SDS-PAGE protein profile assay"
+      ],
+      "limitations": "DNA/RNA binding is direct in vitro evidence; intracellular target inhibition in living bacteria remains mechanistic interpretation rather than a separately quantified intracellular binding assay.",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00253-016-7400-4/raw/paper.xml",
+        "locator": "xml:sec=20:Melittin had binding activity to X. oryzae pv. oryzae DNA in vitro",
+        "additional_locators": [
+          "xml:sec=21:Melittin had binding activity to X. oryzae pv. oryzae RNA",
+          "xml:fig=4:Fig. 4",
+          "xml:fig=5:Fig. 5",
+          "xml:sec=12:DNA/RNA gel retardation assay",
+          "xml:sec=13:Sodium dodecyl sulfate polyacrylamide gel electrophoresis (SDS-PAGE) analysis"
+        ]
+      }
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The tested melittin treatment did not show a significant T-ATPase suppression signal in the paper's ATP assay.",
+      "entity_scope": "X. oryzae pv. oryzae cells treated with melittin",
+      "evidence_class": "negative_mechanism_evidence",
+      "direct_assay_types": [
+        "T-ATPase activity assay"
+      ],
+      "limitations": "This is a negative/limited assay result and should not be promoted to a broad energy-metabolism mechanism.",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1007_s00253-016-7400-4/raw/paper.xml",
+        "locator": "xml:sec=19:Melittin had the ability to penetrate the bacterial cell membrane",
+        "additional_locators": [
+          "xml:sec=10:Determination of intracellular ATP depletion",
+          "xml:fig=3:Fig. 3"
+        ]
+      }
+    }
+  ],
+  "quality_controls": [
+    {
+      "check": "direct_mechanism_assay_types",
+      "result": "pass",
+      "detail": "Every direct_mechanism claim has explicit direct_assay_types and primary-source locators."
+    },
+    {
+      "check": "overclaim_guard",
+      "result": "pass_with_caution",
+      "detail": "Intracellular DNA/RNA effects are kept as in vitro binding plus interpretation rather than definitive intracellular target proof."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_note": "Worker-6 replaced automated placeholder mechanism notes with source-located mechanism claims while keeping interpretive limits explicit."
+}

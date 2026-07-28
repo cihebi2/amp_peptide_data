@@ -1,0 +1,66 @@
+{
+  "paper_id": "doi__10.3390_md15070205",
+  "generated_at": "2026-05-09T08:49:31Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_tickets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "closed_at": "2026-05-09T08:47:55Z",
+      "resolution": "closed_after_worker2_worker4_worker6_source_review",
+      "evidence": [
+        "papers/doi__10.3390_md15070205/final/activity_toxicity_evidence.json",
+        "papers/doi__10.3390_md15070205/final/database_record_verification.json",
+        "papers/doi__10.3390_md15070205/final/mechanism_ontology_record.json",
+        "papers/doi__10.3390_md15070205/final/review_report.json"
+      ]
+    }
+  ],
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "caution_findings": [
+    {
+      "caution_code": "hemolysis_species_label_conflict_preserved",
+      "severity": "minor",
+      "evidence_context": "Hemolysis value is supported locally, but erythrocyte species wording differs across article sections/table footnote and linked database rows.",
+      "affected_layer": "database/activity_toxicity"
+    },
+    {
+      "caution_code": "figure_numeric_matrix_not_structured",
+      "severity": "minor",
+      "evidence_context": "Mechanism figures support membrane disruption, but full plotted numeric matrices were not locally available as structured tables; claims remain qualitative/direct-assay bounded.",
+      "affected_layer": "mechanism"
+    }
+  ],
+  "verification_plan": [
+    "semantic_three_layer_gate.py --paper-id",
+    "check_three_layer_publication_quality.py --manifest"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_numeric_matrix_not_structured",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_md15070205/xml/local-DRAMP-28661457.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_md15070205/pdf/local-DRAMP-28661457.pdf",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md15070205/extracted/pdf_text/marinedrugs-15-00205.txt"
+      ],
+      "tools_attempted": [
+        "XML section/figure caption parsing",
+        "pdftotext-derived local text review"
+      ],
+      "why_unrecoverable": "Figures 6-8 are present as image/caption evidence, but the local packet does not contain structured numeric tables for every plotted time point or MFI value.",
+      "impact": "Does not block publication-grade curation because final mechanism claims are qualitative/direct-assay bounded and do not fabricate missing figure matrices.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "gate_results": {
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  }
+}

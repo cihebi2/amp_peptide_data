@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/rework_ticket.schema.json",
+  "title": "AMP Paper Rework Ticket",
+  "type": "object",
+  "required": [
+    "ticket_id",
+    "paper_id",
+    "target_queue",
+    "severity",
+    "requested_by",
+    "failure_code",
+    "reason",
+    "requested_outputs",
+    "blocks",
+    "created_at"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "ticket_id": { "type": "string", "minLength": 1 },
+    "paper_id": { "type": "string", "minLength": 1 },
+    "target_queue": {
+      "type": "string",
+      "enum": ["material_extraction", "analysis", "adjudication"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["blocking", "major", "minor", "caution"]
+    },
+    "requested_by": { "type": "string", "minLength": 1 },
+    "failure_code": { "type": "string", "minLength": 1 },
+    "reason": { "type": "string", "minLength": 1 },
+    "artifact_path": { "type": "string" },
+    "failing_object": { "type": "string" },
+    "source_evidence_to_check": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "requested_outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["need"],
+        "additionalProperties": true,
+        "properties": {
+          "asset": { "type": "string" },
+          "need": { "type": "string", "minLength": 1 },
+          "required_locators": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

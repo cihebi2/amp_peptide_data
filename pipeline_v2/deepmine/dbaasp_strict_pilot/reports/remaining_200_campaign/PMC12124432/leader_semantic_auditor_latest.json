@@ -1,0 +1,331 @@
+{
+  "paper_id": "PMC12124432",
+  "verdict": "FAIL",
+  "publication_grade_ready": false,
+  "independently_reviewed_primary_source": true,
+  "reviewed_every_current_final_record": true,
+  "recursive_authority_boundary_false": true,
+  "fallback_release_boundary_preserved": true,
+  "field_checks": [
+    {
+      "check_id": "body_table_activity_coverage",
+      "status": "PASS",
+      "summary": "Primary XML/PDF Table 1 and supplementary PDF Tables S3-S7 were independently inspected. Final activity/toxicity enumerates 421 MIC activity rows and 65 toxicity rows, matching the row-count audit: Table 1=56, S3=215 MIC plus 43 MHC, S4=30 MIC plus 6 MHC, S5=16 IC50, S6=60 MIC, S7=60 MIC. No sentence-fragment targets or missing source locators were found in the final activity/toxicity records.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/paper.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s002.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/activity_evidence/worker2_row_count_audit.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_tables.json"
+      ],
+      "source_locators": [
+        "xml:table-wrap:1",
+        "xml:p:15",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S3:pages=21-23",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S4:pages=23-25",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S5:pages=25-27",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S6:pages=33-34",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S7:pages=34-36"
+      ]
+    },
+    {
+      "check_id": "database_record_verification",
+      "status": "FAIL",
+      "summary": "Authoritative linked DBAASP/APD6/DRAMP rows are absent and fallback rows remain excluded from authoritative ingest, which preserves the release boundary. However, the final database artifact still contains placeholder-like candidate sequence fields: literal sequence='None' with sequence_length=4 and sequence_length_check_passed=true across candidate_identity_fields/candidate_identity_groups. Source tables provide modified sequence notation for PMB2 and EB12/EB13/EB16/EB18/EB21/EB22, so the current final is not publication-grade field-clean.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/dbaasp_machine_extracted_rows.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/linked_sequence_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/linked_literature_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_text.jsonl"
+      ],
+      "source_locators": [
+        "supp:ANIE-64-e202501299-s002.pdf:page=16:Table S1",
+        "supp:ANIE-64-e202501299-s002.pdf:page=18:Table S2",
+        "$.record_audits[*].candidate_identity_fields.sequence",
+        "$.candidate_identity_groups[*].candidate_sequence"
+      ]
+    },
+    {
+      "check_id": "final_mirror_and_count_consistency",
+      "status": "FAIL",
+      "summary": "The four core paper/packet final mirrors are byte-identical, and the packet mechanism_evidence alias is byte-identical to mechanism_ontology_record. But the current paper final materials_manifest is not mirrored in packet final and is stale against live packet state: paper final open_rework_ticket_ids=4 vs packet_manifest open_rework_ticket_ids=[], paper final analysis_queue_status=analysis_needs_analysis_rework vs packet_manifest analysis_source_reviewed_accepted, and paper final extraction_error_count=0 vs packet_manifest extraction_error_count=1. Final review_report also carries stale open ticket IDs under materials_exhausted/strict_gate while the live packet gate reports open_rework_ticket_count=0.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/materials_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/packet_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/rework_requests.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/closure_receipts.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12124432_strict_acceptance_audit_latest.json"
+      ],
+      "source_locators": [
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html",
+        "xml:p:27",
+        "review_report.materials_exhausted.open_rework_ticket_ids",
+        "materials_manifest.open_rework_ticket_ids",
+        "packet_manifest.open_rework_ticket_ids"
+      ]
+    },
+    {
+      "check_id": "mechanism_ontology_boundaries",
+      "status": "CAUTION",
+      "summary": "Mechanism ontology keeps MIC/growth phenotype below direct mechanism, separates inferred design/physicochemical claims, and includes direct assay types for NPN/DiSC3(5), vesicle leakage, TEM, and DsPMB/LPS displacement. One reported locator xml:p:115 is unresolved in the packet but was replaced with resolvable XML and supplementary locators, so this remains a caution rather than a blocking mechanism failure.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/mechanism_ontology_record.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/mechanism_ontology/mechanism_source_audit.worker5.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/xml_sections.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_text.jsonl"
+      ],
+      "source_locators": [
+        "xml:p:18",
+        "xml:fig:2",
+        "xml:caption:3",
+        "supp:ANIE-64-e202501299-s002.pdf:page=37",
+        "supp:ANIE-64-e202501299-s002.pdf:page=38",
+        "supp:ANIE-64-e202501299-s002.pdf:page=39",
+        "$.source_locator_resolution_issues[0]"
+      ]
+    },
+    {
+      "check_id": "paper_identity_and_entity_linkage",
+      "status": "FAIL",
+      "summary": "Paper identity is source-confirmed as DOI 10.1002/anie.202501299, PMID 40138381, PMCID PMC12124432, title 'Antimicrobial Peptide-Peptoid Macrocycles from the Polymyxin B2 Chemical Space'. Entity linkage is not publication-grade clean because final database identity objects retain placeholder sequence='None' while the primary supplement contains source sequence notation for the key entities and authoritative database row files are empty.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/paper.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/database_source_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/authoritative_match_report.json"
+      ],
+      "source_locators": [
+        "xml:article-title:1",
+        "article-id:doi=10.1002/anie.202501299",
+        "article-id:pmid=40138381",
+        "article-id:pmcid=PMC12124432",
+        "supp:ANIE-64-e202501299-s002.pdf:page=16:Table S1",
+        "supp:ANIE-64-e202501299-s002.pdf:page=18:Table S2"
+      ]
+    },
+    {
+      "check_id": "provenance_locator_and_normalization_integrity",
+      "status": "FAIL",
+      "summary": "All requested roots/files were readable, and locator coverage is substantial: packet locator_index has 196 locators and final activity rows preserve raw units without unsafe conversion. The integrity failure is material/provenance-level: the staged S1 CSV is readable but is HTML proof-of-work placeholder content, not source data, and final material/ticket state is inconsistent with the packet manifest.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/locators",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/analysis",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/locators/locator_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_quality_report.json"
+      ],
+      "source_locators": [
+        "xml:table-wrap:1",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S3:pages=21-23",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ]
+    },
+    {
+      "check_id": "recursive_authority_and_release_boundary",
+      "status": "PASS",
+      "summary": "I did not accept worker summaries or green gates as source evidence; final decision is based on primary XML/PDF, staged supplements, packet database snapshots, locators, final records, worker run sequence, and strict audit artifacts. Fallback DBAASP machine rows are not promoted to source_verified or authoritative ingest; authoritative_dbaasp_ingest_ready remains false in the latest strict acceptance artifact.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12124432_strict_acceptance_audit_latest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/worker_logs/PMC12124432/run_sequence_latest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/dbaasp_machine_extracted_rows.jsonl"
+      ],
+      "source_locators": [
+        "strict_acceptance.status.authoritative_dbaasp_ingest_ready=false",
+        "database_record_verification.authoritative_ingest_ready=false",
+        "database_record_verification.summary_counts.source_verified_records=0"
+      ]
+    },
+    {
+      "check_id": "source_conflicts_and_cautions",
+      "status": "FAIL",
+      "summary": "Two source-level cautions remain material to publication-grade readiness: S1 CSV is a placeholder rather than source data, and authoritative database rows are absent. An additional nonblocking source caution is that supplementary methods text says cell viability plates were incubated 72 h, while Table S5/Figure 2 report 24 h treatments; final toxicity rows use the 24 h table/figure locator and should preserve the conflict note.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s001.csv",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_errors.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/activity_toxicity_evidence.json"
+      ],
+      "source_locators": [
+        "xml:p:27",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html",
+        "supp:ANIE-64-e202501299-s002.pdf:page=25:Cell Viability Assay",
+        "supp:ANIE-64-e202501299-s002.pdf:page=25:Table S5",
+        "xml:fig:2",
+        "xml:caption:3"
+      ]
+    },
+    {
+      "check_id": "supplementary_surface_exhaustion",
+      "status": "FAIL",
+      "summary": "Every staged supplement was opened. S2 PDF is source-reviewable and structured tables S3-S7 are extracted. S1 CSV is readable but contains an NCBI 'Preparing to download' proof-of-work HTML page with POW_CHALLENGE, despite XML declaring it as a text/plain supplement and the paper data availability statement saying study data are in the supplementary material. This is scientifically not source-reviewable and blocks publication-grade source exhaustion.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s001.csv",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s002.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_status.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_quality_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_errors.jsonl"
+      ],
+      "source_locators": [
+        "xml:sec:12",
+        "xml:p:27",
+        "media:xlink:href=ANIE-64-e202501299-s001.csv",
+        "media:xlink:href=ANIE-64-e202501299-s002.pdf",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ]
+    },
+    {
+      "check_id": "toxicity_selectivity_coverage",
+      "status": "PASS",
+      "summary": "Toxicity/selectivity surfaces were reviewed: MHC hRBC records from S3/S4 and IC50 HEK293/HK-2 records from S5 are present with units and locators. Final toxicity count is 65, including 16 Table S5 IC50 records and 8 HK-2 records. The 24 h versus 72 h source-text discrepancy is retained as a caution under source_conflicts_and_cautions.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/activity_evidence/worker2_row_count_audit.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s002.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_tables.json"
+      ],
+      "source_locators": [
+        "supp:ANIE-64-e202501299-s002.pdf:table=S3:pages=21-23",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S4:pages=23-25",
+        "supp:ANIE-64-e202501299-s002.pdf:table=S5:pages=25-27",
+        "xml:fig:2",
+        "xml:caption:3"
+      ]
+    }
+  ],
+  "blocking_findings": [
+    {
+      "finding_id": "PMC12124432-BLOCK-FIELD-001",
+      "owner_worker": "worker-3",
+      "reason": "The staged S1 CSV is not a source-reviewable supplement. The path is readable, so this is not an infrastructure/access failure, but its content is HTML proof-of-work placeholder text rather than the XML-declared text/plain supplementary material. Because the paper states that supporting data are in the supplementary material, accepting publication_grade=true around this missing surface is not scientifically valid.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s001.csv",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/raw/supplementary_original/ANIE-64-e202501299-s001.csv",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_quality_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extraction/extraction_errors.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/paper.xml"
+      ],
+      "source_locators": [
+        "xml:p:27",
+        "media:xlink:href=ANIE-64-e202501299-s001.csv",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ],
+      "required_actions": [
+        "Restage the real ANIE-64-e202501299-s001.csv or write a durable source-gap record that explicitly proves the true CSV is unavailable after source-pool/package checks.",
+        "If the real CSV is recovered, extract and compare it against existing activity, identity, and mechanism surfaces; if unavailable, keep publication_grade false or accepted_with_caution non-publication-grade until the missing surface is adjudicated under the source-review contract.",
+        "Update supplementary_index, extraction_status, extraction_quality_report, and final review/material summaries so the CSV is not treated as exhausted source data."
+      ],
+      "acceptance_checks": [
+        "A byte/content check on ANIE-64-e202501299-s001.csv fails if it contains '<html', 'Preparing to download', or 'POW_CHALLENGE'.",
+        "extraction_status.json either has material_extracted_complete with the real CSV extracted or material_extracted_with_gaps with publication_grade=false in final review_report.",
+        "supplementary_evidence.json and review_report cite the CSV as recovered/extracted or explicitly preserve a blocking source gap without claiming publication-grade source exhaustion."
+      ]
+    },
+    {
+      "finding_id": "PMC12124432-BLOCK-FIELD-002",
+      "owner_worker": "worker-4",
+      "reason": "Database identity fields contain placeholder-like sequence values. The current final database record has candidate sequence='None', sequence_length=4, and sequence_length_check_passed=true for candidate records/groups, while the primary supplement contains modified sequence notation for PMB2 and the EB macrocycles. The release boundary is preserved because these fallback rows are not source_verified, but the final database JSON is not publication-grade field-clean.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/database_record_audit/record_identity_audit.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/dbaasp_machine_extracted_rows.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_text.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s002.pdf"
+      ],
+      "source_locators": [
+        "supp:ANIE-64-e202501299-s002.pdf:page=16:Table S1",
+        "supp:ANIE-64-e202501299-s002.pdf:page=18:Table S2",
+        "$.record_audits[*].candidate_identity_fields.sequence",
+        "$.record_audits[*].candidate_identity_fields.sequence_length",
+        "$.candidate_identity_groups[*].candidate_sequence"
+      ],
+      "required_actions": [
+        "Replace literal placeholder strings such as sequence='None' with JSON null plus explicit unresolved/database-candidate rationale, or separate them into a non-sequence raw fallback field.",
+        "For source notations such as FA5-A3-Lys-Asn-Dab(*)-Lys-H2-Lys-C3-Lys-* preserve a modified_sequence_notation/source_notation field with Table S1/S2 locators instead of pretending it is a one-letter sequence.",
+        "Set sequence_length_check_passed to false/not_applicable when no plain one-letter residue sequence exists; keep source_verified_records at 0 unless authoritative linked database rows are actually present."
+      ],
+      "acceptance_checks": [
+        "Recursive JSON scan over paper and packet database_record_verification finds no sequence field equal to 'None' and no sequence_length derived from placeholder text.",
+        "Every object with a plain one-letter sequence and sequence_length has len(sequence)==sequence_length with terminal modifications excluded.",
+        "summary_counts.source_verified_records remains 0 and authoritative_ingest_ready remains false unless linked_sequence_records/linked_literature_records are nonempty and source-verified."
+      ]
+    },
+    {
+      "finding_id": "PMC12124432-BLOCK-FIELD-003",
+      "owner_worker": "worker-1",
+      "reason": "Current final material/ticket state is internally inconsistent. The packet live state and latest packet gate report open_rework_ticket_count=0, but papers/PMC12124432/final/materials_manifest.json still lists four open_rework_ticket_ids, analysis_queue_status=analysis_needs_analysis_rework, and extraction_error_count=0 while packet_manifest has analysis_source_reviewed_accepted and extraction_error_count=1. The final review report also carries the four ticket IDs under materials_exhausted/strict_gate. This violates the required live ticket-state/count reconciliation for final records.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/materials_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/packet_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/rework_requests.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/rework_responses.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/rework/closure_receipts.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12124432_check_two_queue_packets_acceptance.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12124432_strict_acceptance_audit_latest.json"
+      ],
+      "source_locators": [
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html",
+        "xml:p:27",
+        "materials_manifest.open_rework_ticket_ids",
+        "packet_manifest.open_rework_ticket_ids",
+        "strict_acceptance.status.open_rework_ticket_count"
+      ],
+      "required_actions": [
+        "Regenerate or reconcile final materials_manifest and review_report ticket/material fields from the live packet manifest and rework ledger without suppressing the S1 CSV source gap.",
+        "If materials_manifest is a current final record, either mirror it into packet final or explicitly declare it non-mirrored in the final mirror contract; do not leave paper final-only stale material state.",
+        "Ensure review_report has an explicit open_rework_ticket_count that equals the live packet ticket state and that extraction_error_count remains aligned with packet_manifest/extraction_status."
+      ],
+      "acceptance_checks": [
+        "A script that parses rework_requests, rework_responses, closure_receipts, packet_manifest, materials_manifest, and review_report reports one identical live open ticket count everywhere.",
+        "papers/PMC12124432/final/materials_manifest.json and packets/PMC12124432/packet_manifest.json agree on open_rework_ticket_ids, analysis_queue_status or its intentional versioned alias, blocking_source_gap_count, and extraction_error_count.",
+        "Final mirror audit enumerates every current JSON final record and either proves byte-identical paper/packet mirrors or records a source-backed non-mirrored exception."
+      ]
+    }
+  ],
+  "cautions": [
+    {
+      "caution_id": "PMC12124432-CAUTION-001",
+      "summary": "Fallback DBAASP machine rows remain excluded from RC2/portal/authoritative ingest; latest strict acceptance and database final both report authoritative_dbaasp_ingest_ready=false and source_verified_records=0.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC12124432_strict_acceptance_audit_latest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/database/dbaasp_machine_extracted_rows.jsonl"
+      ]
+    },
+    {
+      "caution_id": "PMC12124432-CAUTION-002",
+      "summary": "Toxicity timing has a source-text tension: supplementary method prose says cells were incubated for 72 h, while Table S5 and Figure 2 report IC50 after 24 h; final rows use the table/figure 24 h value and should retain that as a source caution.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/source/supplementary/ANIE-64-e202501299-s002.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/extracted/supplementary_text.jsonl"
+      ]
+    },
+    {
+      "caution_id": "PMC12124432-CAUTION-003",
+      "summary": "Mechanism claim repair uses resolvable XML/supplement locators for DsPMB/LPS displacement, but the artifact preserves an unresolved reported locator xml:p:115; this should stay a caution unless the locator map is rebuilt.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/mechanism_ontology_record.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/locators/locator_index.json"
+      ]
+    }
+  ]
+}

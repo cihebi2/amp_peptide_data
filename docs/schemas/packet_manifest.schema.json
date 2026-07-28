@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/packet_manifest.schema.json",
+  "title": "AMP Paper Packet Manifest",
+  "type": "object",
+  "required": [
+    "paper_id",
+    "packet_version",
+    "updated_at",
+    "material_queue_status",
+    "analysis_queue_status",
+    "source_roots",
+    "raw_files",
+    "database_snapshot_inputs",
+    "locator_index_path",
+    "open_rework_ticket_ids",
+    "known_missing_or_blocked_materials"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "paper_id": { "type": "string", "minLength": 1 },
+    "doi": { "type": "string" },
+    "pmid": { "type": "string" },
+    "pmcid": { "type": "string" },
+    "title": { "type": "string" },
+    "journal": { "type": "string" },
+    "year": { "type": ["integer", "string"] },
+    "packet_version": { "type": "string", "minLength": 1 },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "material_queue_status": {
+      "type": "string",
+      "enum": [
+        "material_queued",
+        "material_extracting",
+        "material_extracted_complete",
+        "material_extracted_with_gaps",
+        "material_needs_rework",
+        "material_blocked_missing_source"
+      ]
+    },
+    "analysis_queue_status": {
+      "type": "string",
+      "enum": [
+        "analysis_queued",
+        "analysis_running",
+        "analysis_artifacts_present",
+        "analysis_needs_material_rework",
+        "analysis_needs_analysis_rework",
+        "analysis_adjudicated_with_cautions",
+        "analysis_source_reviewed_accepted",
+        "analysis_accepted",
+        "analysis_blocked"
+      ]
+    },
+    "source_roots": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "raw_files": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "database_snapshot_inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "locator_index_path": { "type": "string" },
+    "open_rework_ticket_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "known_missing_or_blocked_materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "path_or_asset": { "type": "string" },
+          "reason": { "type": "string" },
+          "impact": { "type": "string" }
+        }
+      }
+    }
+  }
+}

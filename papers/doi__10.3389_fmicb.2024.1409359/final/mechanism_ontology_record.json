@@ -1,0 +1,113 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2024.1409359",
+  "generated_at": "2026-05-07T16:33:10Z",
+  "reviewed_at": "2026-05-07T16:33:10Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "worker": "worker-6",
+  "artifact_type": "mechanism_ontology_record",
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from local XML/PDF/figure captions. Mechanism claims are bounded to phenotypic lysis, activity identity, and quorum/production context; no receptor, pore architecture, or intracellular target is overclaimed.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-thermophilin110-pediococcal-lysis",
+      "claim_text": "Thermophilin 110 exposure causes bactericidal lysis of Pediococcus acidilactici PAF under the source SEM/OD/viable-count assay context.",
+      "entity_names": [
+        "thermophilin 110 preparation",
+        "BlpU-associated B59671 bacteriocin activity"
+      ],
+      "evidence_class": "direct_mechanism",
+      "polarity": "supportive",
+      "direct_assay_types": [
+        "OD600 time-course after bacteriocin exposure",
+        "viable count reduction",
+        "scanning electron microscopy of treated cells"
+      ],
+      "source_locators": [
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::sec[Antimicrobial activity of BlpU]",
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::fig#Figure 3",
+        "paper_packets/doi__10.3389_fmicb.2024.1409359/extracted/pdf_text/landing-1.txt::Antimicrobial activity of BlpU"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml",
+        "locator": "xml:sec=Antimicrobial activity of BlpU; xml:fig=3:Figure 3"
+      },
+      "strength_notes": "Direct phenotypic evidence for bactericidal lysis of P. acidilactici, not a molecular target or pore-structure assignment."
+    },
+    {
+      "claim_id": "mech-002-blpu-independent-activity-after-tag-removal-or-synthesis",
+      "claim_text": "Mature BlpU itself is sufficient for antimicrobial activity after GST-tag removal or chemical synthesis, supporting BlpU as an active bacteriocin that does not require additional blp-cluster components for the tested agar-diffusion activity.",
+      "entity_names": [
+        "mature BlpU",
+        "recombinant BlpU after Factor Xa cleavage",
+        "chemically synthesized mature BlpU"
+      ],
+      "evidence_class": "direct_activity_identity",
+      "polarity": "supportive",
+      "direct_assay_types": [
+        "gel overlay assay",
+        "agar well diffusion assay with synthetic peptide"
+      ],
+      "source_locators": [
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::fig#Figure 5",
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::fig#Figure 6",
+        "paper_packets/doi__10.3389_fmicb.2024.1409359/extracted/pdf_text/landing-1.txt::Synthesis of BlpU"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml",
+        "locator": "xml:fig=5:Figure 5; xml:fig=6:Figure 6; xml:sec=Synthesis of BlpU"
+      },
+      "strength_notes": "Direct activity attribution for mature BlpU in vitro. The source does not provide exact inhibition-zone diameters or a molecular killing target."
+    },
+    {
+      "claim_id": "mech-003-blpc-regulated-spectrum-boundary",
+      "claim_text": "Loss of blpC removes the enterococcal, lactobacillus, mutans streptococcus, salivarius, and anti-pediococcal activities attributed to the blp locus while retaining a thermophilin 13-like spectrum against B. cereus and S. thermophilus strains.",
+      "entity_names": [
+        "B59671 blpC knock-out",
+        "thermophilin 110/BlpU",
+        "thermophilin 13"
+      ],
+      "evidence_class": "genetic_context_indirect_mechanism",
+      "polarity": "supportive_with_boundary",
+      "direct_assay_types": [
+        "agar well diffusion spectrum matrix",
+        "knockout comparison"
+      ],
+      "source_locators": [
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::table-wrap Table 2",
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml::fig#Figure 4"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml",
+        "locator": "xml:table=2; xml:fig=4:Figure 4"
+      },
+      "strength_notes": "Genetic and spectrum evidence supports production/regulatory attribution, but because B59671 carries two bacteriocin loci, this is not a standalone molecular mechanism claim."
+    }
+  ],
+  "absence_and_boundary_notes": [
+    "No MIC/MBC values are reported for BlpU in the local primary article.",
+    "No exact inhibition-zone diameters are reported for the qualitative agar-diffusion panels.",
+    "No direct receptor, pore architecture, or intracellular molecular target is identified."
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_inhibition_zone_diameters_not_reported",
+      "source_paths_checked": [
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.xml",
+        "papers/doi__10.3389_fmicb.2024.1409359/source/paper.pdf",
+        "paper_packets/doi__10.3389_fmicb.2024.1409359/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.3389_fmicb.2024.1409359/extracted/figure_captions.json"
+      ],
+      "tools_attempted": [
+        "xml.etree.ElementTree table extraction",
+        "rg over PDF text",
+        "figure caption review"
+      ],
+      "why_unrecoverable": "The local primary article reports qualitative plus/minus or visible/faint inhibition-zone outcomes but does not provide numerical zone diameters for Table 2 or Figures 4-6.",
+      "impact": "Activity records preserve qualitative source-supported outcomes and avoid fabricating zone diameters.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "artifact_role": "worker6_quality_feedback",
+  "caution_findings": [
+    {
+      "caution_id": "caution-s001-source-gap",
+      "impact": "publication_grade_false",
+      "locator_ids": [
+        "xml:p:27",
+        "media:xlink:href=ANIE-64-e202501299-s001.csv",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ],
+      "scope": "material_extraction",
+      "severity": "blocking",
+      "status": "unresolved_blocking_source_gap"
+    },
+    {
+      "caution_id": "caution-dbaasp-authoritative-no-match",
+      "impact": "authoritative_ingest_ready_false",
+      "locator_ids": [
+        "database:authoritative_match_report.json",
+        "database:linked_sequence_records.jsonl:row_count=0",
+        "database:dbaasp_machine_extracted_rows.jsonl:row_count=37"
+      ],
+      "scope": "database_boundary",
+      "severity": "caution",
+      "status": "fallback_rows_candidate_only_not_authoritative"
+    }
+  ],
+  "generated_at": "2026-07-28T03:27:36Z",
+  "hard_rework_targets": [
+    {
+      "acceptance_check": "Both paper and packet S1 CSV byte checks pass with no placeholder markers; extraction_status remains aligned; semantic and publication gates pass without allow flags.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/raw/supplementary_original/ANIE-64-e202501299-s001.csv",
+      "failing_object": "staged_supplementary_csv_s001",
+      "failure_code": "placeholder_html_supplement_blocks_publication_grade",
+      "layer": "material",
+      "required_action": "Restage a source-reviewable local S1 CSV from the paper-local package/source pool, or preserve the durable unavailable-source gap as non-publication-grade; do not mark publication_grade true while placeholder markers remain.",
+      "source_evidence_to_check": [
+        "xml:p:27",
+        "media:xlink:href=ANIE-64-e202501299-s001.csv",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-001",
+      "worker": "worker-3"
+    },
+    {
+      "acceptance_check": "No literal sequence placeholder remains; authoritative ingest stays false with zero linked authoritative rows; all three strict gates return 0 after material gap resolution.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+      "failing_object": "terminal_ticket_closure_for_database_field_cleanup",
+      "failure_code": "global_strict_gate_blocked_by_remaining_material_gap",
+      "layer": "database",
+      "related_owner_worker": "worker-4",
+      "required_action": "Keep the worker-4 repair as accepted-for-adjudication but do not append worker-6 closed_repaired until all runtime-open tickets, including the S1 CSV material gap, satisfy strict closure gates.",
+      "source_evidence_to_check": [
+        "$.record_audits[*].candidate_identity_fields.sequence",
+        "$.candidate_identity_groups[*].candidate_sequence",
+        "database:linked_sequence_records.jsonl:row_count=0"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-002",
+      "worker": "worker-6"
+    },
+    {
+      "acceptance_check": "Paper materials_manifest, packet_manifest, review_report, and rework ledger agree on live open tickets; final mirrors remain byte-identical; all strict gates return 0.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/materials_manifest.json",
+      "failing_object": "terminal_ticket_closure_for_manifest_reconciliation",
+      "failure_code": "global_strict_gate_blocked_by_remaining_material_gap",
+      "layer": "paper_manifest",
+      "related_owner_worker": "worker-1",
+      "required_action": "Preserve the reconciled open-ticket counts and final mirrors; retry terminal worker-6 closure only after the material blocker clears and semantic/publication gates return 0.",
+      "source_evidence_to_check": [
+        "materials_manifest.open_rework_ticket_ids",
+        "packet_manifest.open_rework_ticket_ids",
+        "strict_acceptance.status.open_rework_ticket_count"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-003",
+      "worker": "worker-6"
+    }
+  ],
+  "paper_id": "PMC12124432",
+  "publication_grade": false,
+  "quality_gate_plan": {
+    "current_gate_return_codes": {
+      "packet": 0,
+      "publication": 2,
+      "semantic": 1
+    },
+    "next_required_gate_state": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    },
+    "postwrite_gate_summary_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/work/review/validation/20260728T032757Z.worker6_postwrite_gate_run_summary.json",
+    "terminal_response_written": false
+  },
+  "review_status": "blocked_missing_primary_material",
+  "rework_targets": [
+    {
+      "acceptance_check": "Both paper and packet S1 CSV byte checks pass with no placeholder markers; extraction_status remains aligned; semantic and publication gates pass without allow flags.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12124432/raw/supplementary_original/ANIE-64-e202501299-s001.csv",
+      "failing_object": "staged_supplementary_csv_s001",
+      "failure_code": "placeholder_html_supplement_blocks_publication_grade",
+      "layer": "material",
+      "required_action": "Restage a source-reviewable local S1 CSV from the paper-local package/source pool, or preserve the durable unavailable-source gap as non-publication-grade; do not mark publication_grade true while placeholder markers remain.",
+      "source_evidence_to_check": [
+        "xml:p:27",
+        "media:xlink:href=ANIE-64-e202501299-s001.csv",
+        "supp:ANIE-64-e202501299-s001.csv:source_gap=placeholder_html"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-001",
+      "worker": "worker-3"
+    },
+    {
+      "acceptance_check": "No literal sequence placeholder remains; authoritative ingest stays false with zero linked authoritative rows; all three strict gates return 0 after material gap resolution.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/database_record_verification.json",
+      "failing_object": "terminal_ticket_closure_for_database_field_cleanup",
+      "failure_code": "global_strict_gate_blocked_by_remaining_material_gap",
+      "layer": "database",
+      "related_owner_worker": "worker-4",
+      "required_action": "Keep the worker-4 repair as accepted-for-adjudication but do not append worker-6 closed_repaired until all runtime-open tickets, including the S1 CSV material gap, satisfy strict closure gates.",
+      "source_evidence_to_check": [
+        "$.record_audits[*].candidate_identity_fields.sequence",
+        "$.candidate_identity_groups[*].candidate_sequence",
+        "database:linked_sequence_records.jsonl:row_count=0"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-002",
+      "worker": "worker-6"
+    },
+    {
+      "acceptance_check": "Paper materials_manifest, packet_manifest, review_report, and rework ledger agree on live open tickets; final mirrors remain byte-identical; all strict gates return 0.",
+      "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12124432/final/materials_manifest.json",
+      "failing_object": "terminal_ticket_closure_for_manifest_reconciliation",
+      "failure_code": "global_strict_gate_blocked_by_remaining_material_gap",
+      "layer": "paper_manifest",
+      "related_owner_worker": "worker-1",
+      "required_action": "Preserve the reconciled open-ticket counts and final mirrors; retry terminal worker-6 closure only after the material blocker clears and semantic/publication gates return 0.",
+      "source_evidence_to_check": [
+        "materials_manifest.open_rework_ticket_ids",
+        "packet_manifest.open_rework_ticket_ids",
+        "strict_acceptance.status.open_rework_ticket_count"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-003",
+      "worker": "worker-6"
+    }
+  ],
+  "ticket_feedback": [
+    {
+      "closure_blocked_reasons": [
+        "source_reviewable_s001_csv_not_recovered",
+        "semantic_gate_nonzero",
+        "publication_gate_nonzero",
+        "publication_grade_false_required"
+      ],
+      "contract_pass": false,
+      "owner_prerequisite_met": true,
+      "owner_worker": "worker-3",
+      "terminal_closure_allowed": false,
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-001"
+    },
+    {
+      "closure_blocked_reasons": [
+        "semantic_gate_nonzero",
+        "publication_gate_nonzero",
+        "sibling_material_source_gap_open"
+      ],
+      "contract_pass": true,
+      "owner_prerequisite_met": true,
+      "owner_worker": "worker-4",
+      "terminal_closure_allowed": false,
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-002"
+    },
+    {
+      "closure_blocked_reasons": [
+        "semantic_gate_nonzero",
+        "publication_gate_nonzero",
+        "sibling_material_source_gap_open"
+      ],
+      "contract_pass": true,
+      "owner_prerequisite_met": true,
+      "owner_worker": "worker-1",
+      "terminal_closure_allowed": false,
+      "ticket_id": "rwk-PMC12124432-campaign-r03-PMC12124432-BLOCK-FIELD-003"
+    }
+  ]
+}

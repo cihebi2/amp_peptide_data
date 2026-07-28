@@ -1,0 +1,434 @@
+{
+  "artifact_paths": {
+    "packet_analysis_mechanism_evidence_worker5": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/mechanism_evidence.worker5.json",
+    "paper_work_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/mechanism_evidence.json"
+  },
+  "artifact_role": "final_mechanism_ontology_record",
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/locators/locator_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/mechanism_locator_scan.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/mechanism_source_review_notes.worker5.json"
+  ],
+  "contracts_read": [
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md"
+  ],
+  "database_candidate_boundary": {
+    "boundary_statement": "Machine/fallback rows were not used as primary mechanism evidence.",
+    "dbaasp_machine_extracted_rows_count": 12,
+    "linked_article_records_count": 0,
+    "linked_assay_records_count": 0,
+    "linked_literature_records_count": 0,
+    "linked_sequence_records_count": 0
+  },
+  "generated_at_utc": "2026-07-27T16:43:11.512422+00:00",
+  "handoff_context_used_nonterminal": {
+    "activity_safe_candidate_handoff_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/activity_safe_candidate_handoff.json",
+    "use_boundary": "Used only for lane context; mechanism claims were rebuilt from packet source locators."
+  },
+  "lane": "mechanism",
+  "lane_status": "repair_ready_for_adjudication",
+  "layer": "mechanism_ontology",
+  "material_packet_status_seen": {
+    "packet_manifest_analysis_queue_status": "analysis_needs_analysis_rework",
+    "packet_manifest_material_queue_status": "material_extracted_complete"
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC12153049-MECH-001",
+      "claim_text": "SEM-based morphology evidence supports direct bacterial surface or membrane damage after treatment with the tested peptide and CPFx-conjugate set; the claim is limited to the SEM-tested E. coli surface.",
+      "direct_assay_types": [
+        "scanning electron microscopy (SEM) bacterial morphology assay"
+      ],
+      "entity_scope": {
+        "peptides": [
+          "Peptide 1 (lipid C6-Phe-Phe-Pae)",
+          "Peptide 2 (lipid C18-Pae)",
+          "CPFx-1",
+          "CPFx-2"
+        ],
+        "scope_note": "Direct morphology evidence is not generalized to every organism or activity row.",
+        "surface_scope": "bacterial cell surface / membrane morphology",
+        "target_organism": "E. coli"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitation_notes": [
+        "Direct only for SEM-observed bacterial morphology/surface damage.",
+        "Does not prove a specific intracellular molecular target."
+      ],
+      "machine_extraction_boundary": "paper-local XML/figure evidence; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:p:16",
+        "xml:fig:5",
+        "xml:caption:5"
+      ],
+      "source_review_status": "source_reviewed_verified"
+    },
+    {
+      "claim_id": "PMC12153049-MECH-002",
+      "claim_text": "NPN uptake evidence supports a direct outer-membrane permeability effect for CPFx-1 and CPFx-2; this is a membrane-permeability claim, not a direct intracellular target-engagement claim.",
+      "direct_assay_types": [
+        "NPN uptake / outer membrane permeability assay"
+      ],
+      "entity_scope": {
+        "peptides": [
+          "CPFx-1",
+          "CPFx-2"
+        ],
+        "scope_note": "The direct scope is permeability of the assayed outer membrane surface.",
+        "target_or_membrane_scope": "bacterial outer membrane assay surface"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitation_notes": [
+        "Direct only for outer-membrane permeability.",
+        "Does not directly assay DNA gyrase, intracellular accumulation, or esterase release."
+      ],
+      "machine_extraction_boundary": "paper-local XML/figure evidence; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:p:18",
+        "xml:fig:5",
+        "xml:caption:5"
+      ],
+      "source_review_status": "source_reviewed_verified"
+    },
+    {
+      "claim_id": "PMC12153049-MECH-003",
+      "claim_text": "Zeta-potential or surface-charge observations support an inferred electrostatic membrane-interaction model for the tested antimicrobial peptide set, but they are not direct membrane-damage or target-binding assays.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "peptides": "tested antimicrobial peptide set in the mechanism section",
+        "scope_note": "Surface-charge evidence is kept separate from direct SEM/NPN membrane evidence.",
+        "targets": [
+          "E. coli",
+          "S. aureus"
+        ]
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitation_notes": [
+        "Charge/surface-property evidence is inferential.",
+        "No ROS mechanism is retained in this claim."
+      ],
+      "machine_extraction_boundary": "paper-local XML/figure evidence; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:sec:6",
+        "xml:p:17",
+        "xml:fig:5",
+        "xml:caption:5"
+      ],
+      "source_review_status": "source_reviewed_verified_as_inference_only"
+    },
+    {
+      "claim_id": "PMC12153049-MECH-005",
+      "claim_text": "Peptide self-assembly and material-characterization observations support an inferred structure-function context for the tested compounds, not a direct bacterial target or membrane-damage mechanism.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "assay_scope": "peptide material characterization / self-assembly characterization",
+        "peptides": [
+          "Peptide 1 (lipid C6-Phe-Phe-Pae)",
+          "Peptide 2 (lipid C18-Pae)",
+          "CPFx-1",
+          "CPFx-2"
+        ],
+        "scope_note": "Assembly characterization is not treated as a direct bacterial mechanism assay."
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitation_notes": [
+        "Material assembly evidence is mechanistic context only.",
+        "No direct target engagement is measured by this evidence class."
+      ],
+      "machine_extraction_boundary": "paper-local XML/figure evidence; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:sec:4",
+        "xml:p:11",
+        "xml:fig:2",
+        "xml:caption:2"
+      ],
+      "source_review_status": "source_reviewed_verified_as_inference_only"
+    },
+    {
+      "claim_id": "PMC12153049-MECH-006",
+      "claim_text": "MIC/growth and related antibacterial phenotype evidence supports activity of the tested peptide set against the reported bacteria, but does not by itself establish a direct mechanism.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "peptides": [
+          "Peptide 1 (lipid C6-Phe-Phe-Pae)",
+          "Peptide 2 (lipid C18-Pae)",
+          "CPFx-1",
+          "CPFx-2"
+        ],
+        "scope_note": "Activity/toxicity row details belong to worker-2; this mechanism lane preserves phenotype support only.",
+        "targets": [
+          "E. coli",
+          "S. aureus"
+        ]
+      },
+      "evidence_class": "phenotype_supported",
+      "limitation_notes": [
+        "MIC/growth phenotype is not promoted to direct mechanism.",
+        "Activity evidence does not establish membrane damage or DNA-gyrase inhibition without the separate supporting assays or discussion locators."
+      ],
+      "machine_extraction_boundary": "paper-local XML/figure evidence; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:sec:5",
+        "xml:p:12",
+        "xml:p:13",
+        "xml:p:15",
+        "xml:fig:3",
+        "xml:caption:3",
+        "xml:fig:4",
+        "xml:caption:4"
+      ],
+      "source_review_status": "source_reviewed_verified_as_phenotype_only"
+    },
+    {
+      "claim_id": "PMC12153049-MECH-007",
+      "claim_text": "The paper proposes that CPFx-containing constructs can contribute to intracellular ciprofloxacin accumulation, esterase-mediated CPFx release, and downstream DNA-gyrase inhibition; this is retained only as an inferred/proposed mechanism because this paper does not directly assay intracellular DNA-gyrase target engagement or esterase release in cells.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "peptides": [
+          "CPFx-1",
+          "CPFx-2"
+        ],
+        "scope_note": "Source-located as discussion/proposed mechanism; no direct intracellular target assay in this paper.",
+        "target_or_pathway_scope": "proposed intracellular CPFx release and DNA-gyrase inhibition pathway"
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitation_notes": [
+        "No direct intracellular DNA-gyrase assay was performed in this paper.",
+        "No direct esterase-mediated intracellular release assay was identified in this packet.",
+        "Kept separate from the direct SEM and NPN membrane claims."
+      ],
+      "machine_extraction_boundary": "paper-local XML discussion/abstract locators; DBAASP fallback rows not used as source evidence",
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:p:12",
+        "xml:p:17",
+        "xml:p:23"
+      ],
+      "source_review_status": "source_reviewed_verified_as_inference_only"
+    }
+  ],
+  "mechanism_evidence_summary": {
+    "computational_only_claims_found": 0,
+    "cpfx_dna_gyrase_esterase_release_claim_class": "inferred_mechanism",
+    "direct_assay_types_supported": [
+      "scanning electron microscopy (SEM) bacterial morphology assay",
+      "NPN uptake / outer membrane permeability assay"
+    ],
+    "direct_membrane_mechanism_supported": true,
+    "evidence_class_summary": {
+      "direct_mechanism": 2,
+      "inferred_mechanism": 3,
+      "phenotype_supported": 1
+    },
+    "mechanism_claim_count": 6,
+    "non_membrane_intracellular_target_assays_found": false,
+    "phenotype_or_inference_not_promoted_to_direct": true,
+    "ros_mechanism_claim_retained": false
+  },
+  "needs_targeted_rework": false,
+  "negative_or_not_promoted_findings": [
+    {
+      "finding_id": "PMC12153049-MECH-NEG-ROS-001",
+      "finding_text": "Whole-token ROS/reactive oxygen species search did not identify a qualifying paper-local ROS assay locator, so no ROS mechanism claim is retained.",
+      "not_promoted_reason": "Term occurrence without a valid ROS assay surface is not mechanism evidence.",
+      "source_locator": [
+        "xml:p:24",
+        "xml:sec:8"
+      ],
+      "source_review_status": "source_reviewed_not_promoted"
+    },
+    {
+      "finding_id": "PMC12153049-MECH-NEG-CPFX-DIRECT-001",
+      "finding_text": "The CPFx intracellular release/DNA-gyrase pathway is retained as proposed/inferred only because no direct intracellular target assay was identified in this packet.",
+      "not_promoted_reason": "Discussion/proposed mechanism without direct intracellular DNA-gyrase or esterase-release assay.",
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:p:12",
+        "xml:p:17",
+        "xml:p:23"
+      ],
+      "source_review_status": "source_reviewed_not_promoted_to_direct"
+    },
+    {
+      "finding_id": "PMC12153049-MECH-NEG-MIC-DIRECT-001",
+      "finding_text": "MIC/growth phenotype evidence is not treated as a direct mechanism assay.",
+      "not_promoted_reason": "Activity phenotype does not close mechanism by itself.",
+      "source_locator": [
+        "xml:sec:5",
+        "xml:p:12",
+        "xml:p:13",
+        "xml:p:15"
+      ],
+      "source_review_status": "source_reviewed_not_promoted_to_direct"
+    }
+  ],
+  "paper_id": "PMC12153049",
+  "protocol": "amp_three_layer_v2",
+  "publication_grade_claim": "accepted_with_cautions_by_worker6; mechanism classes preserve evidence-strength boundaries",
+  "publication_grade_rationale": "Worker-5 mechanism lane is source-reviewed and repaired, but publication-grade acceptance requires fresh worker-6 adjudication and final rebuild.",
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-07-27T20:43:36Z",
+  "rework_state": {
+    "owner_lane_repair_status": "repair_ready_for_adjudication",
+    "owner_worker": "worker-5",
+    "response_required": true,
+    "terminal_closure_owner": "worker-6",
+    "ticket_id": "rwk-PMC12153049-campaign-r01-BF-PMC12153049-W5-MECHANISM-ONTOLOGY-SOURCE-BOUNDARY"
+  },
+  "source_review_depth": {
+    "figure_surfaces": true,
+    "leader_preflight_contracts": 0,
+    "leader_preflight_evidence_scaffolds": 0,
+    "linked_database_rows": true,
+    "paper_pdf_text": true,
+    "paper_xml": true,
+    "source_text_redacted_in_worker_artifacts": true,
+    "supplementary_tables_inventory": true,
+    "supplementary_text": true
+  },
+  "source_reviewed": true,
+  "source_reviewed_complete": true,
+  "strict_scope": {
+    "database_rows_boundary": "DBAASP Codex fallback rows treated as candidate machine evidence only; no linked authoritative DBAASP rows were present in packet counts.",
+    "internet_used": false,
+    "paper_id_only": "PMC12153049",
+    "source_scope": "paper-local packet and linked database snapshot only"
+  },
+  "supporting_artifacts": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/mechanism_locator_scan.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/mechanism_source_review_notes.worker5.json"
+  ],
+  "targeted_rework_needed": false,
+  "unresolved_blockers": [],
+  "updated_at_utc": "2026-07-27T21:18:28Z",
+  "validation": {
+    "claim_source_locator_count": 20,
+    "cpfx_direct_claim_present": false,
+    "cpfx_inferred_claim_present": true,
+    "direct_claims_have_direct_assay_types": true,
+    "gate_return_codes": {
+      "check_three_layer_publication_quality": 0,
+      "check_two_queue_packets": 0,
+      "semantic_three_layer_gate": 0
+    },
+    "internet_used": false,
+    "json_validated_after_write": true,
+    "json_validated_before_write": true,
+    "mechanism_claims_with_ros_text": 0,
+    "missing_required_xml_locators": [],
+    "packet_gate_summary": {
+      "analysis_status_counts": {
+        "analysis_needs_analysis_rework": 1
+      },
+      "hard_finding_count": 0,
+      "open_rework_ticket_count": 3,
+      "paper_count": 1
+    },
+    "publication_gate_summary": {
+      "paper_count": 1,
+      "publication_grade_pass": true,
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "risk_counts": {}
+    },
+    "reasoning_effort_exact": true,
+    "review_model_exact": true,
+    "ros_search_valid_assay_locator_found": false,
+    "schema_claim_required_fields_present": true,
+    "semantic_gate_summary": {
+      "failed_papers_count": 0,
+      "paper_count": 1,
+      "publication_grade_fail_count": 0,
+      "publication_grade_pass_count": 1
+    },
+    "source_text_printed_to_terminal_or_final": false,
+    "terminal_publication_grade_claimed": false,
+    "validation_artifacts": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/semantic_three_layer_gate.worker5.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/semantic_three_layer_gate.worker5.stderr.txt",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.stdout.txt",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.stderr.txt",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.stdout.txt",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.stderr.txt",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/validation_return_codes.worker5.json"
+    ],
+    "worker5_terminal_interpretation": "Nonterminal worker-5 repair evidence only; open rework ticket closure and final rebuild remain worker-6 responsibilities."
+  },
+  "validation_artifacts": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/semantic_three_layer_gate.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/semantic_three_layer_gate.worker5.stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.stdout.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_two_queue_packets.worker5.stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.stdout.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/check_three_layer_publication_quality.worker5.stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/mechanism_ontology/validation/validation_return_codes.worker5.json"
+  ],
+  "worker": "worker-5",
+  "worker_cautions": [
+    "Worker-5 did not modify final mechanism ontology; fresh worker-6 adjudication/final rebuild remains required by ticket contract."
+  ],
+  "worker_id": "worker-5",
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "rebuilt_from_current_worker_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/mechanism_evidence.worker5.json",
+  "finalized_at": "2026-07-27T21:18:28Z",
+  "finalized_by": "worker-6",
+  "gate_return_codes": {
+    "packet": 0,
+    "semantic": 0,
+    "publication": 0
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_packet_gate.runtime_closure.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_semantic_gate.runtime_closure.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_publication_gate.runtime_closure.json"
+  },
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/activity_toxicity_evidence.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/database_record_verification.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/database_record_verification.json"
+    },
+    "review_report": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/review_report.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/review_report.json"
+    },
+    "mechanism_final": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/mechanism_ontology_record.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_evidence.json",
+      "packet_ontology_mirror": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_ontology_record.json"
+    }
+  },
+  "final_counts": {
+    "mechanism_claims": 6
+  },
+  "rework_targets": [],
+  "worker6_mechanism_contract_validation": {
+    "claim_count": 6,
+    "claim_field_issue_count": 0,
+    "direct_claims_without_direct_assay_count": 0,
+    "status": "pass"
+  }
+}

@@ -1,0 +1,3364 @@
+{
+  "artifact_type": "worker4_database_record_audit",
+  "audit_scope": "Source-reviewed worker-4 repair reconciled DBAASP assay, experiment, and literature rows against primary XML Table 2/Table 4, biofilm/hemolysis text, Supplemental File 5, and packet database snapshots.",
+  "caution_summary": [
+    "DBAASP rows that aggregate MRSA isolates are expanded to isolate-specific primary Table 2 worker-2 rows.",
+    "DBAASP hemolysis rows are retained as source_conflict because the database labels are rounded/categories while primary text and Supplemental File 5 provide mean ± SD values.",
+    "The packet contains no linked_sequence_records rows; peptide sequence adjudication relies on primary Table 4 and DBAASP literature/assay sequence keys."
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.7717_peerj.16143/handoff_context.json",
+    "paper_packets/doi__10.7717_peerj.16143/packet_manifest.json",
+    "paper_packets/doi__10.7717_peerj.16143/locators/locator_index.json",
+    "paper_packets/doi__10.7717_peerj.16143/extraction/extraction_status.json",
+    "paper_packets/doi__10.7717_peerj.16143/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/xml_sections.json",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/pdf_text/peerj-11-16143.txt",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/pdf_text/local-DBAASP-PMC10552749.txt",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/figure_captions.json",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/archive_manifest.json",
+    "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+    "paper_packets/doi__10.7717_peerj.16143/raw/paper.pdf",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143.nxml",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s001.docx",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s002.png",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s003.png",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s004.png",
+    "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx",
+    "paper_packets/doi__10.7717_peerj.16143/database/database_source_manifest.json",
+    "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.7717_peerj.16143/database/linked_sequence_records.jsonl"
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 25,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 25,
+    "linked_literature_records": 5,
+    "linked_sequence_records": 0
+  },
+  "generated_at": "2026-05-10T17:52:20Z",
+  "paper_id": "doi__10.7717_peerj.16143",
+  "reasoning_effort": "xhigh",
+  "record_audits": [
+    {
+      "audit_id": "linked_assay_records.jsonl:row1:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P1",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169264",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row2:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "64",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P1",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169265",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row3:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-mrsa_isolate_142-mic",
+        "act-t2-pp1-mrsa_isolate_1096-mic",
+        "act-t2-pp1-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P1",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169266",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row4:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "64",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-mrsa_isolate_142-mbc",
+        "act-t2-pp1-mrsa_isolate_1096-mbc",
+        "act-t2-pp1-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P1",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169267",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row5:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2.92",
+      "database_measure": "MBIC50",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-biofilm-p2-saureus-tistr517-ic50",
+      "matched_activity_record_ids": [
+        "act-biofilm-p2-saureus-tistr517-ic50"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "DBAASP antibiofilm row reconciles to the primary source text/figures and local Supplemental File 5 data surface.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "1426",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row6:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "128",
+      "database_measure": "MBEC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-biofilm-p2-saureus-tistr517-mbec",
+      "matched_activity_record_ids": [
+        "act-biofilm-p2-saureus-tistr517-mbec"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "DBAASP antibiofilm row reconciles to the primary source text/figures and local Supplemental File 5 data surface.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "1428",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row7:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "0-10% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-16ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-16ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20459",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row8:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "32-64",
+      "database_measure": "10-20% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-32ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-32ugml",
+        "tox-fig9-p2-human-erythrocytes-64ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20460",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row9:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "256",
+      "database_measure": "30-40% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-256ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-256ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20461",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row10:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169268",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row11:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169269",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row12:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-mrsa_isolate_142-mic",
+        "act-t2-pp2-mrsa_isolate_1096-mic",
+        "act-t2-pp2-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169270",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row13:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4-8",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-mrsa_isolate_142-mbc",
+        "act-t2-pp2-mrsa_isolate_1096-mbc",
+        "act-t2-pp2-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P2",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169271",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=13",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row14:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P3",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169272",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=14",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row15:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P3",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169273",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=15",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row16:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-mrsa_isolate_142-mic",
+        "act-t2-pp3-mrsa_isolate_1096-mic",
+        "act-t2-pp3-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P3",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169274",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=16",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row17:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-mrsa_isolate_142-mbc",
+        "act-t2-pp3-mrsa_isolate_1096-mbc",
+        "act-t2-pp3-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P3",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169275",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=17",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row18:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P4",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169276",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=18",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row19:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P4",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169277",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=19",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row20:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-mrsa_isolate_142-mic",
+        "act-t2-pp4-mrsa_isolate_1096-mic",
+        "act-t2-pp4-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P4",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169278",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=20",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row21:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-mrsa_isolate_142-mbc",
+        "act-t2-pp4-mrsa_isolate_1096-mbc",
+        "act-t2-pp4-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P4",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169279",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=21",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row22:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P5",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169280",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=22",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row23:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P5",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169281",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=23",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row24:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-mrsa_isolate_142-mic",
+        "act-t2-pp5-mrsa_isolate_1096-mic",
+        "act-t2-pp5-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P5",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169282",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=24",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row25:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-mrsa_isolate_142-mbc",
+        "act-t2-pp5-mrsa_isolate_1096-mbc",
+        "act-t2-pp5-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "BrSPR19-P5",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2:MRSA isolate columns",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP aggregates MRSA isolate 142/1096/2468 into a Staphylococcus aureus row; primary Table 2 was expanded to isolate-specific worker-2 rows.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169283",
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=25",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169264",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row2:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "64",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169265",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row3:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-mrsa_isolate_142-mic",
+        "act-t2-pp1-mrsa_isolate_1096-mic",
+        "act-t2-pp1-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169266",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row4:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "64",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp1-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp1-mrsa_isolate_142-mbc",
+        "act-t2-pp1-mrsa_isolate_1096-mbc",
+        "act-t2-pp1-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASP:DBAASPS_21445",
+      "source_record_id": "169267",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row5:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2.92",
+      "database_measure": "MBIC50",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-biofilm-p2-saureus-tistr517-ic50",
+      "matched_activity_record_ids": [
+        "act-biofilm-p2-saureus-tistr517-ic50"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "DBAASP antibiofilm row reconciles to the primary source text/figures and local Supplemental File 5 data surface.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "1426",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row6:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "128",
+      "database_measure": "MBEC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-biofilm-p2-saureus-tistr517-mbec",
+      "matched_activity_record_ids": [
+        "act-biofilm-p2-saureus-tistr517-mbec"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=Biofilm inhibition and eradication;xml:fig=7;xml:fig=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "DBAASP antibiofilm row reconciles to the primary source text/figures and local Supplemental File 5 data surface.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "1428",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row7:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "0-10% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-16ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-16ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20459",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row8:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "32-64",
+      "database_measure": "10-20% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-32ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-32ugml",
+        "tox-fig9-p2-human-erythrocytes-64ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20460",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row9:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "DBAASP stores rounded/category hemolysis labels, while local source text and Supplemental File 5 support concentration-specific mean ± SD values; retained as source_conflict rather than exact source_verified percentages.",
+      "database": "DBAASP",
+      "database_concentration": "256",
+      "database_measure": "30-40% Hemolysis",
+      "database_subject": "Human erythrocytes",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "tox-fig9-p2-human-erythrocytes-256ugml",
+      "matched_activity_record_ids": [
+        "tox-fig9-p2-human-erythrocytes-256ugml"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:sec=In vitro hemolytic assay;xml:fig=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml",
+        "supplementary_sources": [
+          "paper_packets/doi__10.7717_peerj.16143/extracted/oa_package/local-DBAASP-PMC10552749/PMC10552749/peerj-11-16143-s005.xlsx"
+        ]
+      },
+      "review_notes": "Toxicity trend is source-supported, but the linked database row is not an exact primary-table value.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "20461",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row10:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169268",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row11:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169269",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row12:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "2",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-mrsa_isolate_142-mic",
+        "act-t2-pp2-mrsa_isolate_1096-mic",
+        "act-t2-pp2-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169270",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row13:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4-8",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp2-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp2-mrsa_isolate_142-mbc",
+        "act-t2-pp2-mrsa_isolate_1096-mbc",
+        "act-t2-pp2-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASP:DBAASPS_21446",
+      "source_record_id": "169271",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=13",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row14:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169272",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=14",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row15:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169273",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=15",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row16:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "4",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-mrsa_isolate_142-mic",
+        "act-t2-pp3-mrsa_isolate_1096-mic",
+        "act-t2-pp3-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169274",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=16",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row17:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp3-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp3-mrsa_isolate_142-mbc",
+        "act-t2-pp3-mrsa_isolate_1096-mbc",
+        "act-t2-pp3-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASP:DBAASPS_21447",
+      "source_record_id": "169275",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=17",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row18:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169276",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=18",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row19:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169277",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=19",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row20:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-mrsa_isolate_142-mic",
+        "act-t2-pp4-mrsa_isolate_1096-mic",
+        "act-t2-pp4-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169278",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=20",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row21:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp4-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp4-mrsa_isolate_142-mbc",
+        "act-t2-pp4-mrsa_isolate_1096-mbc",
+        "act-t2-pp4-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASP:DBAASPS_21448",
+      "source_record_id": "169279",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=21",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row22:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-s_aureus_tistr_517-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-s_aureus_tistr_517-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169280",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=22",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row23:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "16",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus TISTR 517",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-s_aureus_tistr_517-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-s_aureus_tistr_517-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169281",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=23",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row24:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "8",
+      "database_measure": "MIC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-mrsa_isolate_142-mic",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-mrsa_isolate_142-mic",
+        "act-t2-pp5-mrsa_isolate_1096-mic",
+        "act-t2-pp5-mrsa_isolate_2468-mic"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169282",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=24",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row25:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_concentration": "32",
+      "database_measure": "MBC",
+      "database_subject": "Staphylococcus aureus",
+      "database_unit": "µg/ml",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "act-t2-pp5-mrsa_isolate_142-mbc",
+      "matched_activity_record_ids": [
+        "act-t2-pp5-mrsa_isolate_142-mbc",
+        "act-t2-pp5-mrsa_isolate_1096-mbc",
+        "act-t2-pp5-mrsa_isolate_2468-mbc"
+      ],
+      "matched_primary_source": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "database_name": "",
+        "primary_name_locator": {
+          "locator": "xml:table=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:table=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "DBAASP assay row reconciles to primary source and row-level worker-2 evidence.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASP:DBAASPS_21449",
+      "source_record_id": "169283",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=25",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:DBAASP:DBAASPS_21445",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "literature_link",
+      "database_subject": "Anti-methicillin-resistant Staphylococcus aureus and antibiofilm activity of new peptides produced by a Brevibacillus strain.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "matched_primary_source": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "Literature link DOI/PMID/PMCID matches the selected primary paper metadata.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "TLEEGKSVEFEVVDQK",
+        "primary_name": "BrSPR19-P1",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=2",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21445",
+      "source_id": "DBAASPS_21445",
+      "source_record_id": "DBAASPS_21445",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row2:DBAASP:DBAASPS_21446",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "literature_link",
+      "database_subject": "Anti-methicillin-resistant Staphylococcus aureus and antibiofilm activity of new peptides produced by a Brevibacillus strain.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "matched_primary_source": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "Literature link DOI/PMID/PMCID matches the selected primary paper metadata.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "MFLVVKVLKYVV",
+        "primary_name": "BrSPR19-P2",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=3",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21446",
+      "source_id": "DBAASPS_21446",
+      "source_record_id": "DBAASPS_21446",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row3:DBAASP:DBAASPS_21447",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "literature_link",
+      "database_subject": "Anti-methicillin-resistant Staphylococcus aureus and antibiofilm activity of new peptides produced by a Brevibacillus strain.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "matched_primary_source": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "Literature link DOI/PMID/PMCID matches the selected primary paper metadata.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "LTKKLVVKVLYKVV",
+        "primary_name": "BrSPR19-P3",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=4",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21447",
+      "source_id": "DBAASPS_21447",
+      "source_record_id": "DBAASPS_21447",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row4:DBAASP:DBAASPS_21448",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "literature_link",
+      "database_subject": "Anti-methicillin-resistant Staphylococcus aureus and antibiofilm activity of new peptides produced by a Brevibacillus strain.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "matched_primary_source": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "Literature link DOI/PMID/PMCID matches the selected primary paper metadata.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLWVVVADKT",
+        "primary_name": "BrSPR19-P4",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=5",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21448",
+      "source_id": "DBAASPS_21448",
+      "source_record_id": "DBAASPS_21448",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row5:DBAASP:DBAASPS_21449",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "literature_link",
+      "database_subject": "Anti-methicillin-resistant Staphylococcus aureus and antibiofilm activity of new peptides produced by a Brevibacillus strain.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "matched_primary_source": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "name_check": {
+        "status": "not_applicable_literature_row"
+      },
+      "primary_source_locator": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+      },
+      "review_notes": "Literature link DOI/PMID/PMCID matches the selected primary paper metadata.",
+      "sequence_check": {
+        "status": "source_verified",
+        "primary_sequence": "FAELLGEVVVWKT",
+        "primary_name": "BrSPR19-P5",
+        "database_sequence_rows_checked": [
+          "linked_literature_records.jsonl",
+          "linked_assay_records.jsonl",
+          "linked_experiment_records.jsonl"
+        ],
+        "source_locator": {
+          "locator": "xml:table=4:row=6",
+          "source_path": "paper_packets/doi__10.7717_peerj.16143/raw/paper.xml"
+        },
+        "review_notes": "No linked_sequence_records snapshot was present; primary Table 4 supplies the peptide sequence used to adjudicate DBAASP assay/literature rows."
+      },
+      "sequence_key": "DBAASP:DBAASPS_21449",
+      "source_id": "DBAASPS_21449",
+      "source_record_id": "DBAASPS_21449",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.7717_peerj.16143/database/linked_literature_records.jsonl"
+      }
+    }
+  ],
+  "review_model": "gpt-5.5",
+  "sequence_catalog_rows_checked": [
+    "DBAASPS_21445",
+    "DBAASPS_21446",
+    "DBAASPS_21447",
+    "DBAASPS_21448",
+    "DBAASPS_21449"
+  ],
+  "source_reviewed": true,
+  "status_summary": {
+    "source_conflict": 6,
+    "source_verified": 49
+  },
+  "unrecoverable_material_gaps": []
+}

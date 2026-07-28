@@ -1,0 +1,73 @@
+{
+  "paper_id": "doi__10.1038_srep09216",
+  "generated_at": "2026-05-03T18:12:59Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_cautions": [
+    {
+      "caution_code": "database_acyl_identity_source_conflict",
+      "severity": "caution",
+      "evidence_context": "DBAASP local sequence snapshots encode several OAK derivatives as KKXK without N-terminal acyl details; source-supported activity rows are retained, while database IDs 12353/12354/12355 are not smoothed to source_verified."
+    },
+    {
+      "caution_code": "database_fici_not_primary_source_exposed",
+      "severity": "caution",
+      "evidence_context": "DBAASP synergy rows include FICI values that are not exposed in the local primary XML/PDF/supplement text; source-supported MIC/SF rows are used instead."
+    },
+    {
+      "caution_code": "supplementary_penicillin_panel_rowspan_not_promoted",
+      "severity": "caution",
+      "evidence_context": "Supplementary Table S1 penicillin G rowspans are layout-ambiguous in local extracted text; Table 1 penicillin values and the no-sensitization conclusion are preserved without inventing per-strain rows."
+    },
+    {
+      "caution_code": "figure_curve_points_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Figure-only MIC/permeabilization/time-kill curves were used only for qualitative/context claims unless exact values were present in captions/text/tables."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "dbaasp_acyl_identity_not_explicit_in_local_database_snapshot",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_srep09216/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_srep09216/database/linked_experiment_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "papers/doi__10.1038_srep09216/source/paper.xml"
+      ],
+      "tools_attempted": [
+        "rg over packet database rows",
+        "rg over merged sequence and experiment CSVs",
+        "primary XML Table 1 comparison"
+      ],
+      "why_unrecoverable": "Local DBAASP sequence rows collapse the OAKs to KKXK and do not encode the N-terminal acyl group; primary Table 1 identifies C12(omega7)X/C10X/C8X/C12X, so database IDs 12353/12354/12355 are preserved as source_conflict where acyl-specific identity is not directly recoverable from the local database snapshot.",
+      "impact": "Database layer keeps source_conflict cautions; activity/toxicity values are still source-supported from Table 1 and Supplementary Table S1.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "supplementary_table_s1_penicillin_panel_rowspan_ambiguous",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_srep09216/extracted/supplementary_text/srep09216-s1.txt",
+        "paper_packets/doi__10.1038_srep09216/extracted/oa_package/local-DBAASP-PMC4363860/PMC4363860/srep09216-s1.pdf",
+        "papers/doi__10.1038_srep09216/source/paper.xml"
+      ],
+      "tools_attempted": [
+        "pdftotext default",
+        "pdftotext -layout",
+        "main XML Table 1/prose cross-check"
+      ],
+      "why_unrecoverable": "The local supplementary PDF layout renders the Penicillin G panel with rowspans that do not safely assign every GNB strain to a separate exact row. The main XML and Table 1 support the curation-level conclusion that the tested OAKs did not sensitize bacteria to penicillin G, and exact E. coli ML-35p Table 1 values are captured.",
+      "impact": "No activity/database blocker remains; unsupported per-strain penicillin panel values were not fabricated.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

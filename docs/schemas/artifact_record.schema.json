@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/artifact_record.schema.json",
+  "title": "Miaobi Artifact Record",
+  "type": "object",
+  "required": [
+    "record_type",
+    "workflow_id",
+    "paper_id",
+    "artifact_type",
+    "path",
+    "produced_by_state",
+    "status",
+    "created_at"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "record_type": { "const": "artifact" },
+    "workflow_id": { "type": "string" },
+    "paper_id": { "type": "string" },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "packet_manifest",
+        "locator_index",
+        "extraction_status",
+        "analysis_output",
+        "gate_report",
+        "final_review_report",
+        "rework_ticket",
+        "reader_report",
+        "other"
+      ]
+    },
+    "path": { "type": "string", "minLength": 1 },
+    "produced_by_state": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["created", "updated", "present", "missing", "passed", "failed", "accepted", "blocked"]
+    },
+    "summary": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

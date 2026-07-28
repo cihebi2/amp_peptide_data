@@ -1,0 +1,232 @@
+{
+  "paper_id": "doi__10.1155_2020_2131535",
+  "generated_at": "2026-05-03T06:39:46Z",
+  "reviewed_at": "2026-05-03T06:39:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "status": "no_targeted_rework_required",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "checked_inputs": [
+    {
+      "stage": "handoff_context",
+      "path": "rework_context/doi__10.1155_2020_2131535/handoff_context.json",
+      "decision": "used",
+      "summary": "bounded retry context and owner-worker contract reopened"
+    },
+    {
+      "stage": "packet_manifest",
+      "path": "paper_packets/doi__10.1155_2020_2131535/packet_manifest.json",
+      "decision": "used",
+      "summary": "source roots, material status, database row counts, and open ticket state checked"
+    },
+    {
+      "stage": "primary_xml",
+      "path": "papers/doi__10.1155_2020_2131535/source/paper.xml",
+      "decision": "used",
+      "summary": "article metadata, methods, Table 1, Table 3, cytotoxicity section, figures/captions, discussion, and data-availability statement reviewed"
+    },
+    {
+      "stage": "primary_pdf_text",
+      "path": "paper_packets/doi__10.1155_2020_2131535/extracted/pdf_text/local-DBAASP-PMC7168710.txt",
+      "decision": "used",
+      "summary": "PDF text used to cross-check Table 3, MIC method, results prose, cytotoxicity prose, and figure captions"
+    },
+    {
+      "stage": "oa_package",
+      "path": "paper_packets/doi__10.1155_2020_2131535/extracted/archive_manifest.json",
+      "decision": "used",
+      "summary": "two local OA packages contain duplicate NXML/PDF plus Figures 1-3 image files; no separate supplementary asset member found"
+    },
+    {
+      "stage": "supplementary_inventory",
+      "path": "paper_packets/doi__10.1155_2020_2131535/extracted/supplementary_index.json",
+      "decision": "used",
+      "summary": "supplementary_assets list is empty and supplementary text/table extractions are empty"
+    },
+    {
+      "stage": "packet_locators",
+      "path": "paper_packets/doi__10.1155_2020_2131535/locators/locator_index.json",
+      "decision": "used",
+      "summary": "Table 1, Table 2, Table 3, Figure 1, Figure 2, Figure 3, and database snapshot locators checked"
+    },
+    {
+      "stage": "database_snapshots",
+      "path": "paper_packets/doi__10.1155_2020_2131535/database",
+      "decision": "used",
+      "summary": "linked assay, experiment, DRAMP activity, literature, and source manifest rows reviewed"
+    },
+    {
+      "stage": "merged_database_sequences",
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "decision": "used",
+      "summary": "DBAASP/DRAMP/CAMP sequence rows reopened for source identity checks"
+    }
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "worker2_activity_table3_repair",
+      "result": "pass",
+      "evidence": "24 activity/toxicity records now have endpoint, raw value, unit, target, assay context, and source locator; prior missing_activity_records blocker closed."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "50 linked database/literature rows reviewed; status_counts={'source_conflict': 45, 'source_verified': 5}; database-added names/source annotations and DRAMP unit conflict are preserved as cautions."
+    },
+    {
+      "check": "supplementary_exhaustion",
+      "result": "pass_with_caution",
+      "evidence": "No local supplementary assets are present in packet inventory/OA package; no unsupported supplement values were required for the repaired layers."
+    },
+    {
+      "check": "mechanism_scope_guard",
+      "result": "pass_with_caution",
+      "evidence": "Mechanism is limited to growth-inhibition phenotype and discussion-level cationic AMP context; no direct mechanism assay is promoted."
+    },
+    {
+      "check": "durable_rework_ticket",
+      "result": "pass",
+      "evidence": "Ticket rwk-complete-test-0001 is closed by rework response after source-reviewed worker-2/4/6 repair."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "database_record_identity",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "DBAASP/CAMP names for Molecules 3/7/8/10",
+      "note": "Primary paper labels entities by molecule number and sequence; database canonical names/source annotations are retained as database-added context rather than promoted to primary-source names."
+    },
+    {
+      "scope": "database_record_identity",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "DRAMP:DRAMP32274",
+      "note": "DRAMP cytotoxicity text gives HEK293T killing at 100 uM, while primary cytotoxicity assay uses 100 ug/ml; final activity rows use primary-source units."
+    },
+    {
+      "scope": "supplementary_materials",
+      "severity": "caution",
+      "status": "no_local_supplementary_assets",
+      "record": "supplementary_index.json",
+      "note": "The local packet/OA package contains no supplementary file beyond article NXML/PDF/figures. Data-availability text says data are available on request, so no absent external supplement was chased."
+    },
+    {
+      "scope": "activity_toxicity_figures",
+      "severity": "caution",
+      "status": "figure_values_not_overdigitized",
+      "record": "Figure 3",
+      "note": "Source text values at 100 ug/ml were recorded; additional per-dose bar heights in the image were not digitized into exact numeric rows."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "scope_guard",
+      "record": "mechanism_claims",
+      "note": "Growth inhibition and discussion support phenotype/inferred context only, not direct molecular mechanism."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "path": "papers/doi__10.1155_2020_2131535/source/paper.xml",
+      "coverage": "article identifiers, methods, Table 1 sequence matrix, Table 3 MIC matrix, cytotoxicity section/Figure 3, growth-inhibition figures, discussion, and data availability"
+    },
+    "paper_pdf": {
+      "status": "reviewed_text_crosscheck",
+      "path": "papers/doi__10.1155_2020_2131535/source/paper.pdf",
+      "coverage": "pdftotext output checked for methods, Table 1, Table 3, result prose, cytotoxicity prose, and figure captions"
+    },
+    "oa_package": {
+      "status": "reviewed_inventory",
+      "path": "paper_packets/doi__10.1155_2020_2131535/extracted/oa_package",
+      "coverage": "local DBAASP and DRAMP OA packages contain duplicate article NXML/PDF and Figures 1-3 images"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_absent_nonblocking",
+      "paths": [
+        "paper_packets/doi__10.1155_2020_2131535/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1155_2020_2131535/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1155_2020_2131535/extracted/supplementary_text.jsonl"
+      ],
+      "coverage": "no local supplementary assets/text/tables are present; no repaired value depends on missing supplement material"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "paths": [
+        "paper_packets/doi__10.1155_2020_2131535/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1155_2020_2131535/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1155_2020_2131535/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1155_2020_2131535/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv"
+      ],
+      "coverage": "linked DBAASP/DRAMP/CAMP rows, merged sequence rows, merged assay/activity rows, and literature links reviewed"
+    }
+  },
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": false,
+      "used": "inventory_checked",
+      "blocker": false,
+      "note": "No local supplementary assets in packet/OA package; repaired values come from article XML/PDF/figures/database rows."
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false
+  },
+  "latest_gate_results": {
+    "semantic_gate": {
+      "path": "reports/doi__10.1155_2020_2131535.semantic_gate.json",
+      "publication_grade_pass": true,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "path": "reports/doi__10.1155_2020_2131535.publication_quality.json",
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 24,
+        "mechanism_claims": 2
+      }
+    }
+  },
+  "gate_verified_at": "2026-05-03T06:42:21Z"
+}

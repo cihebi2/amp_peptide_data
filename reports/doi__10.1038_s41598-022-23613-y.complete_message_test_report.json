@@ -1,0 +1,116 @@
+{
+  "analysis": {
+    "activity_records": 9,
+    "activity_extraction_issue_count": 0,
+    "database_row_counts": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 0,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0,
+      "merged_sequence_rows_checked": 1,
+      "merged_activity_text_rows_checked": 1
+    },
+    "database_status_summary": {
+      "source_verified": 3
+    },
+    "mechanism_claims": 3,
+    "review_status": "accepted_with_cautions"
+  },
+  "completion_claim": "codex_rereview_publication_grade_accepted_with_cautions",
+  "current_state": "accepted_with_cautions",
+  "doi": "10.1038/s41598-022-23613-y",
+  "final_approval_status": "accepted_with_cautions",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_pass": true,
+    "semantic_report": "reports/doi__10.1038_s41598-022-23613-y.semantic_gate.json",
+    "publication_report": "reports/doi__10.1038_s41598-022-23613-y.publication_quality.json"
+  },
+  "gate_summary": {
+    "structural_ready": true,
+    "validator_contract_ready": true,
+    "semantic_gate_ready": true,
+    "publication_grade_ready": true
+  },
+  "generated_at": "2026-05-03T02:38:07Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1038_s41598-022-23613-y.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": 0,
+    "figures": 6,
+    "locators": 83,
+    "sections": 39,
+    "supplementary_assets": 10,
+    "supplementary_tables": 0,
+    "tables": 6
+  },
+  "message_counts": {
+    "artifacts": 16,
+    "chat_messages": 14,
+    "events": 30,
+    "rework_requests": 1,
+    "state_executions": 13
+  },
+  "not_publication_grade_reason": null,
+  "open_rework_ticket_count": 0,
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41598-022-23613-y",
+  "paper_id": "doi__10.1038_s41598-022-23613-y",
+  "pmcid": "PMC9640621",
+  "publication_quality_gate": "passed_after_worker2_worker4_worker6_rework",
+  "queue_status": {
+    "analysis": "analysis_source_reviewed_accepted_with_cautions",
+    "material": "material_extracted_with_gaps"
+  },
+  "rework_requests": [],
+  "rework_ticket_ids": [],
+  "semantic_gate": "passed_after_worker2_worker4_worker6_rework",
+  "state_count_expected": 13,
+  "terminal_status": "accepted_with_cautions_after_source_reviewed_worker246_repair",
+  "test_type": "complete_real_paper_message_transfer_test",
+  "title": "Integrated genomics and proteomics analysis of Paenibacillus peoriae IBSD35 and insights into its antimicrobial characteristics",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1038_s41598-022-23613-y",
+  "workflow_test_ok": true,
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_docx_not_locally_recovered",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-022-23613-y/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-022-23613-y/supplementary/landing-*.bin",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41598-022-23613-y/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over local landing HTML",
+        "HTML href extraction",
+        "supplementary_index/supplementary_tables review"
+      ],
+      "why_unrecoverable": "The ten local supplementary .bin files resolve to duplicate Nature article HTML landing pages. They link to an external Springer DOCX, but the DOCX payload is not present in the local packet or landed paper assets; obtainable-only mode did not chase external downloads.",
+      "impact": "Nonblocking for worker-2/4/6 closure because primary XML/PDF text and merged APD6 rows support the peptide identity, MIC, qualitative spectrum, AU value, stability range, and mechanism claims used in the repaired artifacts. Supplement-only exact tables S1-S7 are not fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "supplementary_payload_not_local",
+      "evidence_context": "Local supplementary .bin files are Nature HTML landing pages that link to an external DOCX; exact supplement-only tables S1-S7 were not locally recovered."
+    },
+    {
+      "caution_code": "figure1_zone_diameters_not_tabulated",
+      "evidence_context": "Figure 1 supports qualitative cut-well activity across five targets; exact diameters are not stated in local main text and were not invented."
+    },
+    {
+      "caution_code": "database_molarity_context_not_primary_raw_unit",
+      "evidence_context": "APD6 reports 14 uM for AP03483; final activity preserves the primary raw MIC 0.04 ug/uL and mass-concentration conversion only."
+    },
+    {
+      "caution_code": "mechanism_not_molecular_target_resolved",
+      "evidence_context": "SEM/no-leakage evidence supports morphology/cell-penetration context but not a precise molecular target."
+    }
+  ]
+}

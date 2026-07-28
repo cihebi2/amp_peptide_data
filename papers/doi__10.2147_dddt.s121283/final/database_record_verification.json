@@ -1,0 +1,112 @@
+{
+  "paper_id": "doi__10.2147_dddt.s121283",
+  "generated_at": "2026-05-05T21:40:40Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "worker_owner": "worker-4",
+  "audit_scope": "Source-reviewed database adjudication of packet-linked DBAASP literature row plus recovered merged sequence catalog row; database assay rows were checked but not promoted because no assay row is linked to this PMID/DOI.",
+  "database_row_counts": {
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0,
+    "linked_experiment_records": 0,
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "recovered_sequence_catalog_rows": 1,
+    "recovered_assay_rows_for_this_paper": 0
+  },
+  "record_audits": [
+    {
+      "record_id": "db-lit-dbaasp-28223778",
+      "source_id": "DBAASP:28223778",
+      "sequence_key": "DBAASP:DBAASPN_15017",
+      "source_table": "linked_literature_records.jsonl",
+      "database_subject": "Gancidin W, a potential low-toxicity antimalarial agent isolated from an endophytic Streptomyces SUK10.",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.2147_dddt.s121283/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "sequence_check": {
+        "status": "not_applicable_literature_link",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        }
+      },
+      "review_notes": "The packet-linked DBAASP literature row matches DOI 10.2147/dddt.s121283, PMID 28223778, PMCID PMC5308589, and the article title."
+    },
+    {
+      "record_id": "db-seq-dbaasp-dbaaspn-15017",
+      "source_id": "DBAASP:DBAASPN_15017",
+      "sequence_key": "DBAASP:DBAASPN_15017",
+      "source_table": "merged_amp_corpus/output/sequences/all_sequences.csv",
+      "database_subject": "Cyclo(Pro-Leu), S.sp. DKP-PL, Gancidin W",
+      "database_sequence": "PL",
+      "database_length": 2,
+      "database_peptide_type": "Nonribosomal",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "all_sequences.csv:DBAASP:DBAASPN_15017"
+      },
+      "citation_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+        "locator": "sequence_literature_links.csv:DBAASP:DBAASPN_15017:doi:10.2147/dddt.s121283"
+      },
+      "sequence_check": {
+        "database_sequence_representation": "PL",
+        "primary_source_statement": "Primary source supports gancidin W as a cyclic Pro/Leu diketopiperazine natural product, not a plain linear peptide sequence.",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.2147_dddt.s121283/extracted/oa_package/local-DBAASP-PMC5308589/PMC5308589/dddt-11-351.nxml",
+          "locator": "xml:results:compound_identity:Table 1/Figure 1"
+        }
+      },
+      "name_check": {
+        "status": "matches_primary_source_alias",
+        "primary_names": [
+          "gancidin W",
+          "GW",
+          "SUK10-V15"
+        ]
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source": "endophytic Streptomyces SUK10 from Shorea ovalis bark",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.2147_dddt.s121283/extracted/oa_package/local-DBAASP-PMC5308589/PMC5308589/dddt-11-351.nxml",
+          "locator": "xml:abstract/results"
+        }
+      },
+      "conflict_context": "DBAASP one-letter PL omits the cyclic diketopiperazine linkage and stereochemical/source nuance reported in the primary article; preserve as modified/non-normalized rather than a fully source-verified linear AMP sequence.",
+      "review_notes": "No linked DBAASP assay row for PMID 28223778 was found in dbaasp_assay_records.csv or all_experimental_records.csv; antimalarial and toxicity values are therefore taken from the primary paper, not database assay rows."
+    }
+  ],
+  "negative_checks": [
+    {
+      "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+      "query": "DBAASPN_15017 with PMID 28223778",
+      "result": "no matching assay rows"
+    },
+    {
+      "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+      "query": "DBAASPN_15017 with PMID 28223778",
+      "result": "no matching assay rows"
+    },
+    {
+      "source_path": "paper_packets/doi__10.2147_dddt.s121283/database/linked_sequence_records.jsonl",
+      "query": "packet-linked sequence rows",
+      "result": "0 rows in packet snapshot"
+    }
+  ],
+  "status_summary": {
+    "source_verified": 1,
+    "sequence_modified_not_normalized": 1
+  }
+}

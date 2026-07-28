@@ -1,0 +1,154 @@
+{
+  "analysis": {
+    "activity_extraction_issue_count": 0,
+    "activity_records": 5,
+    "database_row_counts": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0,
+      "merged_current_paper_activity_rows": 1,
+      "merged_dbaasp_relevant_rows": 15
+    },
+    "database_status_summary": {
+      "source_conflict": 1
+    },
+    "mechanism_claims": 4,
+    "review_status": "accepted_with_cautions"
+  },
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "completion_claim": "source_reviewed_worker2_worker4_worker6_rework_closed_publication_grade_accepted_with_cautions",
+  "current_state": "source_reviewed_publication_grade_ready",
+  "doi": "10.21203/rs.3.rs-2194162/v1",
+  "final_approval_status": "accepted_with_cautions",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "publication_quality_pass": true,
+    "publication_report": "reports/doi__10.21203_rs.3.rs-2194162_v1.publication_quality.json",
+    "publication_risk_counts": {},
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_report": "reports/doi__10.21203_rs.3.rs-2194162_v1.semantic_gate.json"
+  },
+  "gate_summary": {
+    "publication_grade_ready": true,
+    "semantic_gate_ready": true,
+    "structural_ready": true,
+    "validator_contract_ready": true
+  },
+  "generated_at": "2026-05-06T05:03:43Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.21203_rs.3.rs-2194162_v1.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": 0,
+    "figures": 0,
+    "locators": 3,
+    "sections": 0,
+    "supplementary_assets": 3,
+    "supplementary_tables": 0,
+    "tables": 0
+  },
+  "message_counts": {
+    "agent_logs": 2,
+    "artifacts": 20,
+    "chat_messages": 15,
+    "events": 37,
+    "rework_requests": 1,
+    "rework_responses": 1,
+    "state_executions": 16
+  },
+  "not_publication_grade_reason": null,
+  "open_rework_ticket_count": 0,
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1",
+  "paper_id": "doi__10.21203_rs.3.rs-2194162_v1",
+  "pmcid": "",
+  "publication_quality_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "queue_status": {
+    "analysis": "analysis_source_reviewed_accepted",
+    "material": "material_extracted_with_gaps"
+  },
+  "re_review": {
+    "owner_workers": [
+      "worker-2",
+      "worker-4",
+      "worker-6"
+    ],
+    "publication_report": "reports/doi__10.21203_rs.3.rs-2194162_v1.publication_quality.json",
+    "quality_feedback": "papers/doi__10.21203_rs.3.rs-2194162_v1/work/review/quality_feedback.json",
+    "remaining_cautions_count": 4,
+    "response_path": "paper_packets/doi__10.21203_rs.3.rs-2194162_v1/rework/rework_responses.jsonl",
+    "semantic_report": "reports/doi__10.21203_rs.3.rs-2194162_v1.semantic_gate.json",
+    "unrecoverable_material_gaps": [
+      {
+        "blocks_publication_grade": false,
+        "gap_code": "paper_xml_not_article_xml",
+        "impact": "XML table locators cannot be used; source review relies on local PDF text and local version-of-record HTML instead.",
+        "owner_worker": "worker-6",
+        "source_paths_checked": [
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/raw/paper.xml"
+        ],
+        "tools_attempted": [
+          "rg DOI/title/moricin over XML",
+          "head/file inspection"
+        ],
+        "why_unrecoverable": "The local XML is an RSS feed of unrelated Research Square preprints, not a JATS/NXML/fulltext article for this DOI."
+      },
+      {
+        "blocks_publication_grade": false,
+        "gap_code": "current_paper_exact_sequence_not_embedded",
+        "impact": "DBAASP/DRAMP/APD6 terminal-residue sequence disagreement is preserved as a database caution instead of being promoted to source_verified.",
+        "owner_worker": "worker-4",
+        "source_paths_checked": [
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/extracted/pdf_text/landing-1.txt",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/raw/supplementary_original/landing-2.bin",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+        ],
+        "tools_attempted": [
+          "rg sequence/name/molecular-weight terms",
+          "merged corpus CSV lookup"
+        ],
+        "why_unrecoverable": "The current paper states moricin identity, 42-aa length, source, PDB acquisition, supplier, and molecular weight, but does not embed the exact primary amino-acid string."
+      },
+      {
+        "blocks_publication_grade": false,
+        "gap_code": "figure_exact_values_not_locally_recoverable_without_digitization",
+        "impact": "Final activity rows record prose-supported exact values and qualitative thresholds; unsupported figure-only exact values are not fabricated.",
+        "owner_worker": "worker-2",
+        "source_paths_checked": [
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/extracted/pdf_text/landing-1.txt",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/raw/supplementary_original/landing-2.bin",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.21203_rs.3.rs-2194162_v1/raw/supplementary_original/landing-4.png"
+        ],
+        "tools_attempted": [
+          "pdftotext-derived text review",
+          "local HTML text extraction",
+          "local PNG inspection"
+        ],
+        "why_unrecoverable": "Local text gives the decisive MTT values and qualitative LDH/trypan-blue support, but exact bar heights for every figure panel/concentration are only graphical."
+      }
+    ]
+  },
+  "rework_requests": [
+    {
+      "failure_code": "full_source_review_not_completed",
+      "severity": "blocking",
+      "status": "closed_with_cautions",
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001"
+    }
+  ],
+  "rework_ticket_ids": [],
+  "semantic_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "state_count_expected": 13,
+  "terminal_status": "accepted_with_cautions",
+  "test_type": "complete_real_paper_message_transfer_test",
+  "title": "Antimicrobial peptide moricin induces ROS mediated caspase-dependent apoptosis in human triple negative breast cancer via suppression of notch pathway",
+  "updated_at": "2026-05-06T05:03:43Z",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.21203_rs.3.rs-2194162_v1",
+  "workflow_test_ok": true
+}

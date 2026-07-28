@@ -1,0 +1,63 @@
+[
+  {
+    "ticket_id": "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001",
+    "target_queue": "analysis",
+    "owner_worker": "worker-2, worker-3, worker-4, worker-5",
+    "severity": "blocking",
+    "required_conflict_ids": [
+      "fig2-dose-fold-caption-vs-methods-legend",
+      "fig2-timepoints-caption-vs-methods-axis",
+      "fig2-y-unit-axis-vs-methods-caption",
+      "fig2-global-legend-absolute-concentrations-vs-strain-specific-mic",
+      "fig3-biofilm-reduction-vs-residual-mass-endpoint",
+      "fig3-biofilm-fold-vs-absolute-concentration-and-strain",
+      "fig4-figure-axis-vs-prose-unit",
+      "fig4-caption-organ-matrix-omission",
+      "fig4-prose-exact-value-dose-attribution",
+      "fig6-survival-71.4-vs-75"
+    ],
+    "blocks": [
+      "activity_toxicity_evidence",
+      "database_record_verification",
+      "mechanism_ontology_record",
+      "review_report",
+      "publication_grade_acceptance",
+      "seventeen_paper_freeze"
+    ],
+    "acceptance_checks": {
+      "figure1_mic_rows": 10,
+      "figure2_sk1260_rows": 240,
+      "figure2_rows_with_calibration_coordinates_uncertainty": 240,
+      "figure3_sk1260_rows": 9,
+      "figure4_sk1260_rows": 16,
+      "figure6_sk1260_rows": 4,
+      "activity_records_total": 279,
+      "toxicity_records_total": 0,
+      "machine_rows_used_as_primary": 0,
+      "sequence_records": 1,
+      "sequence_length": 21,
+      "linked_authoritative_row_total": 0,
+      "authoritative_dbaasp_ingest_ready": false,
+      "paper_packet_final_mirrors_byte_identical": true,
+      "all_required_owner_responses_before_worker6_closure": true,
+      "strict_packet_semantic_publication_gates_all_zero": true
+    },
+    "requested_outputs": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/activity_evidence/activity_records.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/supplementary_methods/supplementary_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/database_record_audit/record_identity_audit.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/mechanism_ontology/mechanism_evidence.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/review_report.json"
+    ],
+    "required_owner_actions": {
+      "worker-2": "Rebuild exactly 279 source-located SK1260 activity rows: 10 Figure1 MIC, 240 Figure2 time-kill, 9 Figure3, 16 Figure4, and 4 Figure6; keep zero toxicity rows; exclude controls; preserve every named source conflict and never promote the 13 fallback rows as primary evidence.",
+      "worker-3": "Digitize all 240 Figure2 SK1260 points, all 9 Figure3 SK1260 bars, and all 16 Figure4 SK1260 bars with panel-specific calibration, coordinates, uncertainty, exact-versus-approximate status, and treatment role; preserve direct axis labels and all caption/method/prose conflicts.",
+      "worker-4": "Verify the 21-aa SK1260 paper-local sequence and synthesis/purification/identity evidence; keep terminal modifications not explicitly reported; preserve zero linked authoritative rows, candidate-only fallback provenance, and authoritative_dbaasp_ingest_ready=false.",
+      "worker-5": "Classify PI uptake as direct membrane-permeability evidence with limits; keep MIC, time-kill, biofilm, bacterial burden, histopathology, and survival as phenotype-supported; do not turn Figure5 into toxicity or claim complete exclusive molecular MOA."
+    },
+    "has_expected_shape": false,
+    "has_expected_observation_counts": false,
+    "has_require_cell_locators": false,
+    "has_expected_cell_observations": false
+  }
+]

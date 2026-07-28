@@ -1,0 +1,123 @@
+{
+  "paper_id": "doi__10.1038_s41598-017-02373-0",
+  "reviewed_at": "2026-05-03T13:24:36Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded recovery reopened XML, PDF text/layout, local HTML-like supplementary assets, locator indexes, and linked database snapshots. The .bin supplementary assets are duplicate article HTML pages and did not contain additional data tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-017-02373-0/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/raw/supplementary_original/*.bin",
+    "papers/doi__10.1038_s41598-017-02373-0/source/paper.xml",
+    "papers/doi__10.1038_s41598-017-02373-0/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-02373-0/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 34,
+    "activity_extraction_issue_count": 0,
+    "database_status_summary": {
+      "source_conflict": 6,
+      "sequence_modified_not_normalized": 102,
+      "database_only_no_primary_source": 4,
+      "source_verified": 6
+    },
+    "database_row_counts": {
+      "linked_assay_records": 55,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 57,
+      "linked_literature_records": 6,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "mic_like_units_present": true,
+    "source_conflicts_preserved_with_context": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reopened linked database rows and preserved database-only, modified-sequence, unit, endpoint-label, and row-granularity conflicts with row identifiers and source locators; literature links match the selected paper metadata.",
+    "layer_2_activity_toxicity": "Worker-2 recovered Table 1 grouped MIC ranges, explicit text MIC values, Table 2 comparator MICs, and source-supported figure/text killing claims with units, targets, conditions, and locators. Figure-only exact curve values were not fabricated.",
+    "layer_3_mechanism": "Worker-6 replaced pending mechanism placeholders with source-reviewed direct-assay mechanism claims for membrane permeabilization/depolarization and LPS binding, while preserving figure-quantification limits.",
+    "final_adjudication": "The prior open ticket is resolved because the missing activity rows were recovered and database conflicts are now adjudicated as cautions rather than blockers."
+  },
+  "adjudication_summary": "Source-reviewed worker-2/4/6 rework recovered supported activity rows from Table 1/Table 2/prose, adjudicated linked database rows without hiding conflicts, and replaced the framework-test review shell with paper-specific final decisions. The paper is publication-grade only as accepted_with_cautions.",
+  "summary": "Worker-2/4/6 re-review completed with source-backed activity rows and preserved database cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "grouped_mic_ranges_not_exact_strain_values",
+      "evidence_context": "Table 1 reports genus/species-group MIC ranges; database per-strain rows are preserved as group-supported but not exact per-strain primary measurements.",
+      "affected_artifacts": [
+        "papers/doi__10.1038_s41598-017-02373-0/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1038_s41598-017-02373-0/final/database_record_verification.json"
+      ]
+    },
+    {
+      "caution_code": "modified_oak_sequence_not_normalized_in_database_rows",
+      "evidence_context": "Primary source uses CnKKc12K OAK notation and synthesis/acyl/amide context, while merged database sequence rows encode generic KKXK/KXK.",
+      "affected_artifacts": [
+        "papers/doi__10.1038_s41598-017-02373-0/final/database_record_verification.json"
+      ]
+    },
+    {
+      "caution_code": "database_endpoint_and_unit_conflicts_preserved",
+      "evidence_context": "Some database rows label biofilm killing as MBEC or use units/rows not stated by the selected paper; these remain source_conflict/database_only cases with locators.",
+      "affected_artifacts": [
+        "papers/doi__10.1038_s41598-017-02373-0/final/database_record_verification.json"
+      ]
+    },
+    {
+      "caution_code": "figure_only_quantitation_not_digitized",
+      "evidence_context": "Bactericidal and membrane-damage figure curves support qualitative/threshold claims, but exact plotted values were not extracted from images.",
+      "affected_artifacts": [
+        "papers/doi__10.1038_s41598-017-02373-0/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1038_s41598-017-02373-0/final/mechanism_ontology_record.json"
+      ]
+    },
+    {
+      "caution_code": "local_supplementary_assets_are_html_pages",
+      "evidence_context": "Local supplementary .bin assets were checked with file/head/rg and are duplicate article HTML landing pages, not parseable data tables.",
+      "affected_artifacts": [
+        "paper_packets/doi__10.1038_s41598-017-02373-0/extracted/supplementary_index.json"
+      ]
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

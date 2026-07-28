@@ -1,0 +1,81 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2021.708904",
+  "generated_at": "2026-05-06T21:01:34Z",
+  "reviewed_at": "2026-05-06T21:01:34Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-src-001",
+      "entity_scope": "CLP 2605-4 and CLP 2612-8.1",
+      "claim_text": "The paper supports antibacterial activity for both cyclic lipopeptides by MIC90 broth microdilution against MRSA, P. aeruginosa, and A. baumannii.",
+      "evidence_class": "phenotypic_activity",
+      "direct_assay_types": [
+        "broth microdilution MIC90"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2021.708904/raw/paper.xml",
+        "locator": "xml:table=1",
+        "body_locator": "xml:sec=6:In vitro Antibacterial Activity"
+      },
+      "limitations": "This is activity evidence, not a molecular mechanism assay."
+    },
+    {
+      "claim_id": "mech-src-002",
+      "entity_scope": "CLP 2605-4 and CLP 2612-8.1",
+      "claim_text": "The paper supports in vivo wound bacterial-load reduction for 2605-4 against MRSA and 2612-8.1 against P. aeruginosa in a porcine full-thickness wound model.",
+      "evidence_class": "in_vivo_antibacterial_activity",
+      "direct_assay_types": [
+        "porcine wound bacterial count"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2021.708904/raw/paper.xml",
+        "locator": "xml:abstract",
+        "figure_locator": "xml:fig=2:FIGURE 2; xml:fig=3:FIGURE 3"
+      },
+      "limitations": "Exact figure datapoints were not required for the MIC/database blocker; qualitative/approximate reduction is retained from the source text."
+    },
+    {
+      "claim_id": "mech-src-003",
+      "entity_scope": "CLP 2605-4 versus CLP 2612-8.1",
+      "claim_text": "The paper supports a host-effect caution: 2605-4 impaired wound healing and prolonged inflammatory cytokine expression, while 2612-8.1 was less disruptive in the reported wound model.",
+      "evidence_class": "host_response_context",
+      "direct_assay_types": [
+        "histology/re-epithelialization",
+        "cytokine gene expression"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2021.708904/raw/paper.xml",
+        "locator": "xml:sec=18:Treatment With Peptide 2605-4 Resulted in Inhibition of Wound Healing",
+        "figure_locator": "xml:fig=4:FIGURE 4; xml:fig=7:FIGURE 7"
+      },
+      "limitations": "This is host response/toxicity context, not a direct antimicrobial molecular mechanism."
+    }
+  ],
+  "source_paths_checked": [
+    "paper_packets/doi__10.3389_fmicb.2021.708904/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/extracted/pdf_text/fmicb-12-708904.txt",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/extracted/pdf_text/Data_Sheet_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2021.708904/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "tools_attempted": [
+    "python stdlib ElementTree table extraction for raw/paper.xml",
+    "rg over extracted XML/PDF/supplement text",
+    "file probe over packet supplementary landing assets",
+    "python csv/json/jsonl review of linked DBAASP rows and merged sequence rows",
+    "semantic_three_layer_gate.py --paper-id doi__10.3389_fmicb.2021.708904 --json",
+    "check_three_layer_publication_quality.py --manifest reports/doi__10.3389_fmicb.2021.708904.complete_message_test_manifest.json"
+  ],
+  "unrecoverable_material_gaps": []
+}

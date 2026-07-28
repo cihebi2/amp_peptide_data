@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-27T11:04:16Z",
+  "paper_id": "PMC12606902",
+  "errors": [
+    {
+      "error_id": "worker3_20260727_supp_xls2csv_not_binary_excel",
+      "paper_id": "PMC12606902",
+      "created_at": "2026-07-27T13:02:48Z",
+      "source_file": "12866_2025_4475_MOESM1_ESM.xls",
+      "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/source/supplementary/12866_2025_4475_MOESM1_ESM.xls",
+      "tool": "xls2csv",
+      "command": "xls2csv <source> > recovered_surfaces/MOESM1_ESM.xls2csv.csv",
+      "status": "tool_failed_recovered_by_direct_tab_text_parse",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM1_ESM.xls2csv.stderr.log",
+      "output_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM1_ESM.xls2csv.csv",
+      "impact": "nonblocking_for_table_surface_after_direct_tab_delimited_parse"
+    },
+    {
+      "error_id": "worker3_20260727_supp_doc_pdf_render_failed",
+      "paper_id": "PMC12606902",
+      "created_at": "2026-07-27T13:02:48Z",
+      "source_file": "12866_2025_4475_MOESM2_ESM.doc",
+      "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/source/supplementary/12866_2025_4475_MOESM2_ESM.doc",
+      "tool": "antiword PDF renderer",
+      "command": "antiword -m UTF-8.txt -a a4 <source> > recovered_surfaces/MOESM2_ESM.antiword.pdf",
+      "status": "tool_failed_text_and_docbook_recovered",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM2_ESM.antiword_pdf.stderr.log",
+      "output_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM2_ESM.antiword.pdf",
+      "impact": "nonblocking_for_text_and_doc_tables; does_not_render_embedded_ChemDraw_object"
+    },
+    {
+      "error_id": "worker3_20260727_supp_doc_embedded_chemdraw_unrendered",
+      "paper_id": "PMC12606902",
+      "created_at": "2026-07-27T13:02:48Z",
+      "source_file": "12866_2025_4475_MOESM2_ESM.doc",
+      "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/source/supplementary/12866_2025_4475_MOESM2_ESM.doc",
+      "tool": "7zz stream extraction + file signature + OLE metadata string inspection",
+      "command": "7zz l/x <source>; classify ObjectPool/_1234567890 streams",
+      "status": "classified_not_rendered_locally",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM2_ole_stream_summary.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM2_extracted_stream_filetypes.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12606902/work/supplementary_methods/recovered_surfaces/MOESM2_embedded_object_classification.json"
+      ],
+      "locator": "supp:12866_2025_4475_MOESM2_ESM.doc:ole:ObjectPool/_1234567890",
+      "impact": "material_gap_possible_identity_or_modification_context; keep supplementary_assets_not_exhausted_until_worker6_adjudicates_or_renderer_available",
+      "blocking_ticket_id": "rwk-PMC12606902-campaign-r01-worker3-supplementary-surface-not-exhausted"
+    }
+  ],
+  "updated_at": "2026-07-27T13:02:48Z",
+  "worker3_supplementary_repair": {
+    "status": "material_extracted_with_gaps",
+    "recovered_text_surfaces": 27,
+    "recovered_table_surfaces": 11,
+    "unrendered_embedded_objects": 1,
+    "open_material_gap_ticket_ids": [
+      "rwk-PMC12606902-campaign-r01-worker3-supplementary-surface-not-exhausted"
+    ]
+  }
+}

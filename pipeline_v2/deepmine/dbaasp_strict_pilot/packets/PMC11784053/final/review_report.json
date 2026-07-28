@@ -1,0 +1,295 @@
+{
+  "adjudication_summary": "Worker-6 rebuilt the activity/toxicity final from the current worker-2 artifact, compacted the active rework response ledger to one terminal closure per ticket, verified all ticket cell/count contracts and owner responses, preserved the no-authoritative-DBAASP-linked-rows caution without promoting fallback rows, and found no remaining hard rework target for PMC11784053.",
+  "artifact": "review_report",
+  "authoritative_dbaasp_ingest_ready": false,
+  "authoritative_ingest_ready": false,
+  "caution_findings": [
+    {
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "evidence": {
+        "authoritative_match_report_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/authoritative_match_report.json",
+        "linked_counts": {
+          "linked_article_records.jsonl": 0,
+          "linked_assay_records.jsonl": 0,
+          "linked_literature_records.jsonl": 0,
+          "linked_sequence_records.jsonl": 0
+        }
+      },
+      "impact": "Publication-grade curation may proceed with cautions; authoritative DBAASP ingest remains false until linked rows exist.",
+      "severity": "caution"
+    },
+    {
+      "code": "dbaasp_codex_fallback_rows_candidate_only",
+      "evidence": {
+        "candidate_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/dbaasp_machine_extracted_rows.jsonl",
+        "candidate_row_count": 77
+      },
+      "impact": "Machine-extracted fallback rows are not promoted to source_verified or ingest-ready authoritative rows.",
+      "severity": "caution"
+    },
+    {
+      "code": "cross_database_conflicts_preserved",
+      "evidence": {
+        "artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/database_record_audit.worker4.json",
+        "conflict_count": 2
+      },
+      "impact": "Conflicts are retained as cautions rather than smoothed into source_verified records.",
+      "severity": "caution"
+    },
+    {
+      "authoritative_dbaasp_ingest_ready": false,
+      "caution_id": "authoritative_dbaasp_no_linked_rows_preserved",
+      "fallback_rows_promoted_to_authoritative": false,
+      "scope": "database_snapshot",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/packet_manifest.json",
+      "role": "packet manifest",
+      "status": "inspected"
+    },
+    {
+      "count": 104,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/xml_sections.json",
+      "role": "paper XML extracted sections",
+      "status": "inspected"
+    },
+    {
+      "count": 6,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/pdf_text.jsonl",
+      "role": "paper PDF extracted text",
+      "status": "inspected"
+    },
+    {
+      "count": 0,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/supplementary_index.json",
+      "role": "supplementary inventory",
+      "status": "inspected"
+    },
+    {
+      "count": 6,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/extracted/supplementary_text.jsonl",
+      "role": "supplementary extracted text/OCR",
+      "status": "inspected"
+    },
+    {
+      "count": 116,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/locators/locator_index.json",
+      "role": "locator index",
+      "status": "inspected"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/database_source_manifest.json",
+      "role": "database source manifest",
+      "status": "inspected"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/authoritative_match_report.json",
+      "role": "authoritative DBAASP match report",
+      "status": "inspected"
+    },
+    {
+      "count": 77,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/database/dbaasp_machine_extracted_rows.jsonl",
+      "role": "DBAASP Codex fallback candidate rows",
+      "status": "candidate_machine_evidence_only"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/activity_toxicity_evidence.worker2.json",
+      "role": "worker-2 current repaired activity/toxicity artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/database_record_audit.worker4.json",
+      "role": "worker-4 database audit artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/analysis/mechanism_evidence.worker5.json",
+      "role": "worker-5 mechanism artifact",
+      "status": "rebuilt_into_final"
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_ticket_contract_audit_current_20260715.json",
+      "role": "worker-6 independent open-ticket contract audit",
+      "status": "passed"
+    }
+  ],
+  "final_counts": {
+    "activity_records": 28,
+    "database_record_audits": 3,
+    "mechanism_claims": 3,
+    "review_rework_targets": 0,
+    "toxicity_records": 24
+  },
+  "gate_artifact_paths": {
+    "manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/worker6_single_paper_manifest.rebuilt.20260715T094131Z.json",
+    "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/two_queue_packet_gate.worker6.rebuilt.20260715T094131Z.json",
+    "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/publication_quality_gate.worker6.rebuilt.20260715T094131Z.json",
+    "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/semantic_three_layer_gate.worker6.rebuilt.20260715T094131Z.json"
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "publication": 0,
+    "semantic": 0
+  },
+  "materials_exhausted": {
+    "database_rows": {
+      "fallback_boundary": "candidate_machine_evidence_only",
+      "fallback_candidate_rows": 77,
+      "linked_authoritative_rows_available": false,
+      "linked_counts": {
+        "linked_article_records.jsonl": 0,
+        "linked_assay_records.jsonl": 0,
+        "linked_literature_records.jsonl": 0,
+        "linked_sequence_records.jsonl": 0
+      }
+    },
+    "oa_package": {
+      "available": false,
+      "gap_is_blocking": false,
+      "inspected": false,
+      "path": null
+    },
+    "paper_pdf": {
+      "available": true,
+      "extracted_blocks": 6,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/raw/paper.pdf"
+    },
+    "paper_xml": {
+      "available": true,
+      "extracted_sections": 104,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/raw/paper.xml"
+    },
+    "rework_ticket_contracts": {
+      "all_open_contracts_passed": true,
+      "contract_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_ticket_contract_audit_current_20260715.json",
+      "open_ticket_ids_prior_to_adjudication_closure": [
+        "rwk-PMC11784053-semantic-coverage-001",
+        "rwk-PMC11784053-semantic-coverage-002",
+        "rwk-PMC11784053-table1-table2-cell-dedup-006",
+        "rwk-PMC11784053-source-proof-clarification-007",
+        "rwk-PMC11784053-table-context-source-proof-008"
+      ]
+    },
+    "supplementary_assets": {
+      "available": true,
+      "extracted_blocks": 6,
+      "inspected": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/raw/supplementary_original"
+    }
+  },
+  "paper_id": "PMC11784053",
+  "per_layer_decision_rationale": {
+    "activity_toxicity_evidence": "Accepted with cautions after rebuilding from the current worker-2 artifact and independently matching expected table/cell contracts, normalization consistency, concentration copies, and activity/toxicity separation.",
+    "database_record_verification": "Accepted with cautions because no authoritative linked DBAASP rows are present; fallback rows remain non-authoritative and ingest-ready remains false.",
+    "mechanism_ontology_record": "Accepted with cautions; mechanism claims remain source-located and evidence-class bounded without direct-mechanism overclaim.",
+    "rework_ledger": "Accepted after active ledger compaction left exactly one worker-6 terminal closed_repaired response per ticket and zero open tickets under the strict packet gate."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T09:46:48.858951+00:00",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "independent_ticket_contract_audit_passed": true,
+    "no_hard_rework_targets_remaining": true,
+    "packet_gate_strict": true,
+    "packet_rework_open_ticket_count_after_compaction": 0,
+    "paper_packet_final_mirrors_required": true,
+    "publication_gate_strict": true,
+    "semantic_gate_strict": true,
+    "worker2_current_artifact_rebuilt_into_final": true
+  },
+  "source_review_depth": {
+    "merged_database_rows": "inspected_linked_snapshots_and_fallback_candidates",
+    "oa_package": "not_present_nonblocking_or_no_required_gap",
+    "paper_pdf": "inspected_packet_extraction",
+    "paper_xml": "inspected_packet_extraction",
+    "rework_contracts": "all_current_open_ticket_contracts_passed_by_worker6_audit",
+    "supplementary_assets": "inspected_packet_extraction"
+  },
+  "source_reviewed": true,
+  "source_text_emitted": false,
+  "strict_gate": {
+    "gate_artifact_paths": {
+      "manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/worker6_single_paper_manifest.rebuilt.20260715T094131Z.json",
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/two_queue_packet_gate.worker6.rebuilt.20260715T094131Z.json",
+      "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/publication_quality_gate.worker6.rebuilt.20260715T094131Z.json",
+      "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/gate_reports/semantic_three_layer_gate.worker6.rebuilt.20260715T094131Z.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    }
+  },
+  "terminal_rework_closure": {
+    "all_ticket_ids": [
+      "rwk-PMC11784053-assay-condition-concentration-005",
+      "rwk-PMC11784053-authoritative-dbaasp-no-match-001",
+      "rwk-PMC11784053-semantic-coverage-001",
+      "rwk-PMC11784053-semantic-coverage-002",
+      "rwk-PMC11784053-semantic-coverage-003",
+      "rwk-PMC11784053-semantic-coverage-004",
+      "rwk-PMC11784053-source-proof-clarification-007",
+      "rwk-PMC11784053-table-context-source-proof-008",
+      "rwk-PMC11784053-table1-table2-cell-dedup-006",
+      "rwk-PMC11784053-worker6-row-shape-003"
+    ],
+    "closed_ticket_ids_with_current_terminal_response": [
+      "rwk-PMC11784053-assay-condition-concentration-005",
+      "rwk-PMC11784053-authoritative-dbaasp-no-match-001",
+      "rwk-PMC11784053-semantic-coverage-001",
+      "rwk-PMC11784053-semantic-coverage-002",
+      "rwk-PMC11784053-semantic-coverage-003",
+      "rwk-PMC11784053-semantic-coverage-004",
+      "rwk-PMC11784053-source-proof-clarification-007",
+      "rwk-PMC11784053-table-context-source-proof-008",
+      "rwk-PMC11784053-table1-table2-cell-dedup-006",
+      "rwk-PMC11784053-worker6-row-shape-003"
+    ],
+    "duplicate_terminal_response_ticket_ids_after_compaction": [],
+    "open_ticket_ids": [],
+    "response_append_decision": "active_ledger_contains_exactly_one_worker6_terminal_response_per_ticket",
+    "response_ledger_compacted_this_turn": true,
+    "terminal_response_count_after_compaction": 10
+  },
+  "ticket_contract_evidence": {
+    "activity_toxicity_cross_array_duplicate_count": 0,
+    "audit_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/review/worker6_independent_contract_audit.json",
+    "concentration_consistency_issue_count": 0,
+    "normalization_issue_count": 0,
+    "overall_contract_pass": true,
+    "owner_response_prerequisites_pass": true,
+    "table_support_overall_pass": true,
+    "ticket_contracts_pass": true
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true,
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/activity_toxicity_evidence.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/database_record_verification.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/database_record_verification.json"
+    },
+    "mechanism_ontology_record": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/mechanism_ontology_record.json",
+      "packet_aligned_mechanism_evidence": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/mechanism_evidence.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/mechanism_ontology_record.json"
+    },
+    "review_report": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11784053/final/review_report.json",
+      "paper": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/final/review_report.json"
+    }
+  }
+}

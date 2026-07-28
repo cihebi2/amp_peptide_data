@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.3892_ol.2012.1042",
+  "generated_at": "2026-05-10T18:29:32Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_targets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "resolved_at": "2026-05-10T18:29:32Z",
+      "owner_workers": [
+        "worker-4",
+        "worker-6"
+      ],
+      "resolution": "Source-reviewed database reconciliation and final adjudication completed; remaining APD6/DRAMP unsupported claims are explicit nonblocking cautions."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "apd6_database_only_antimicrobial_claim",
+      "evidence_context": "APD6 AP02328 links CT19 to this paper but its E. coli MIC and immunomodulation text is not supported by local primary XML/PDF evidence.",
+      "affected_records": [
+        "APD6:AP02328"
+      ]
+    },
+    {
+      "caution_code": "dramp_broad_antimicrobial_and_ct19_exact_value_conflict",
+      "evidence_context": "DRAMP CT12/CT19/CT20 rows include broad antimicrobial labels not tested here; CT19 exact 9.59 uM is not present as an exact local primary-source value.",
+      "affected_records": [
+        "DRAMP:DRAMP33199",
+        "DRAMP:DRAMP33200",
+        "DRAMP:DRAMP33201"
+      ]
+    },
+    {
+      "caution_code": "no_table3_or_structured_supplement",
+      "evidence_context": "Local XML/PDF/OA package expose two tables and two figures; landed supplementary assets are HTML/JPG/indexed assets with no structured XLSX/PDF supplement table."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "ct19_exact_dramp_ic50_not_primary_source_supported",
+      "source_paths_checked": [
+        "papers/doi__10.3892_ol.2012.1042/source/paper.xml",
+        "papers/doi__10.3892_ol.2012.1042/source/paper.pdf",
+        "paper_packets/doi__10.3892_ol.2012.1042/extracted/pdf_text/ol-05-02-0641.txt",
+        "paper_packets/doi__10.3892_ol.2012.1042/extracted/figure_captions.json",
+        "paper_packets/doi__10.3892_ol.2012.1042/database/linked_dramp_activity_records.jsonl"
+      ],
+      "tools_attempted": [
+        "xml table/section extraction",
+        "rg over PDF text",
+        "database JSONL inspection"
+      ],
+      "why_unrecoverable": "The local article supports only an approximate CT19 A549 IC50 from results prose/Figure 1; it does not provide the exact DRAMP value 9.59 uM in text or tables.",
+      "impact": "CT19 exact 9.59 uM is not promoted as source-verified; CT19 remains represented by the primary-source approximate value and the DRAMP row is preserved as source_conflict.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "requested_table3_absent_from_local_article",
+      "source_paths_checked": [
+        "papers/doi__10.3892_ol.2012.1042/source/paper.xml",
+        "paper_packets/doi__10.3892_ol.2012.1042/extracted/xml_sections.json",
+        "paper_packets/doi__10.3892_ol.2012.1042/extracted/pdf_text/ol-05-02-0641.txt",
+        "paper_packets/doi__10.3892_ol.2012.1042/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "xml table extraction",
+        "rg over PDF text",
+        "archive manifest inspection"
+      ],
+      "why_unrecoverable": "The local XML/PDF/OA package expose two article tables and two figures; no Table III or structured supplementary table is present.",
+      "impact": "No Table III-derived value is fabricated; Table I/II and Figure 1/2 evidence are fully accounted for.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

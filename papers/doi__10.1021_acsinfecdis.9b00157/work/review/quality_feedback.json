@@ -1,0 +1,85 @@
+{
+  "paper_id": "doi__10.1021_acsinfecdis.9b00157",
+  "generated_at": "2026-06-20T09:26:02Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_targets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "closed_at": "2026-06-20T09:26:02Z",
+      "closure_status": "resolved_with_cautions",
+      "resolution": "Worker-2 activity rows, worker-4 database adjudication, and worker-6 source-reviewed final adjudication repaired from local materials; remaining unsupported database-only curve values are nonblocking preserved conflicts."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_summary_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "Some DRAMP/dbAMP/CAMP rows are bundled summaries or flatten comparators; unsupported exact curve values remain source_conflict rather than source_verified.",
+      "affected_records": 11
+    },
+    {
+      "caution_code": "xml_not_primary_article_body",
+      "severity": "caution",
+      "evidence_context": "The local XML path is a repository RSS feed; PDF layout text and paper-local figures are the primary source surfaces for activity/mechanism review."
+    },
+    {
+      "caution_code": "figure_only_curve_points_not_numeric_table",
+      "severity": "caution",
+      "evidence_context": "Cancer-cell dose-response point series are not locally recoverable as exact numeric rows; EC50 values and qualitative HDF non-lysis are source-supported."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "database_only_full_dose_response_series_not_locally_recoverable",
+      "source_paths_checked": [
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper.pdf",
+        "paper_packets/doi__10.1021_acsinfecdis.9b00157/extracted/pdf_text/landing-1.txt",
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_acsinfecdis.9b00157/supplementary/landing-1.bin",
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper-6_1.png",
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper-33_1.jpg",
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper-33_2.png",
+        "paper_packets/doi__10.1021_acsinfecdis.9b00157/database/linked_dramp_activity_records.jsonl"
+      ],
+      "tools_attempted": [
+        "pdftotext -layout page-targeted extraction",
+        "scoped Python JSON/text extraction",
+        "file type check for supplementary landing-1.bin",
+        "visual inspection of paper-local figure images"
+      ],
+      "why_unrecoverable": "The local PDF prose supports peptide 2 EC50 values and qualitative HDF non-lysis, but the exact DRAMP MCF7/HeLa/HDF point-by-point viability percentages are not present as local text/table; the available figure is a plotted dose-response curve, not an exact numeric table.",
+      "impact": "Exact database-only curve percentages are retained as source_conflict/database-only cautions; source-supported EC50 and qualitative activity rows remain recorded.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "local_xml_is_repository_rss_not_article_tables",
+      "source_paths_checked": [
+        "papers/doi__10.1021_acsinfecdis.9b00157/source/paper.xml",
+        "paper_packets/doi__10.1021_acsinfecdis.9b00157/raw/paper.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_acsinfecdis.9b00157/xml/landing-1.xml"
+      ],
+      "tools_attempted": [
+        "ElementTree tag counts",
+        "scoped text inspection of XML header"
+      ],
+      "why_unrecoverable": "The local XML path is a UCL Discovery RSS feed and contains no article table-wrap/table/p tags for this paper.",
+      "impact": "XML cannot support Table 1/S2 reconciliation; local PDF layout text is used as the primary source surface instead.",
+      "owner_worker": "worker-2 + worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "bounded_rework_result": {
+    "status": "resolved_after_source_review_repair",
+    "result_status": "accepted_with_cautions",
+    "result_reason_code": "source_reviewed_activity_database_mechanism_repair_completed",
+    "attempt_count": 2,
+    "max_rework_attempts": 5,
+    "updated_at": "2026-06-20T09:27:12Z",
+    "note": "Local obtainable evidence was extracted and unsupported database-only values were preserved as cautions."
+  },
+  "updated_at": "2026-06-20T09:27:12Z"
+}

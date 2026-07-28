@@ -1,0 +1,104 @@
+{
+  "paper_id": "doi__10.3390_md21020074",
+  "reviewed_at": "2026-05-09T09:37:56Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Worker-2/4/6 re-review recovered the Table 2 MIC condition matrix, reconciled APD6/DBAASP rows against primary XML/PDF/supplement evidence, and closed the prior rework ticket with database endpoint conflicts retained as cautions.",
+  "adjudication_summary": "The paper is publication-grade with cautions: supported activity and sequence/database claims are source-located, while linked database rows that mislabel Table 2 condition MIC values remain source_conflict rather than being normalized away.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md21020074/handoff_context.json",
+    "paper_packets/doi__10.3390_md21020074/packet_manifest.json",
+    "paper_packets/doi__10.3390_md21020074/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md21020074/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_md21020074/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_md21020074/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md21020074/extracted/pdf_text/marinedrugs-21-00074.txt",
+    "paper_packets/doi__10.3390_md21020074/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_md21020074/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_md21020074/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_md21020074/raw/supplementary_original/local-APD6-marinedrugs-21-00074-s001.zip",
+    "paper_packets/doi__10.3390_md21020074/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md21020074/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md21020074/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "papers/doi__10.3390_md21020074/source/paper.xml",
+    "papers/doi__10.3390_md21020074/source/paper.pdf"
+  ],
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "The relevant local XML/PDF/supplement/database surfaces were opened for the worker-2/4/6 blockers; no remaining owner-layer material gap blocks publication-grade review."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 20,
+    "table2_condition_rows_recovered": 10,
+    "database_status_summary": {
+      "source_verified": 23,
+      "source_conflict": 6
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "suspicious_activity_target_scan": "passed",
+    "mic_like_unit_scan": "passed",
+    "source_verified_database_locator_scan": "passed"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "APD6 and DBAASP sequence/literature links are source-located to supplementary Figure S1/article metadata; row-level activity values are matched to Table 1/2 where supported, with endpoint/condition mismatches retained as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Table 1 MIC/MBC rows and Table 2 S. epidermidis condition MIC rows are recovered with units, target species/strain where available, assay methods, and XML/PDF locators; no human cytotoxicity/hemolysis rows are present in local source.",
+    "layer_3_mechanism": "Mechanism language is bounded to viability, TEM morphology, and haemocyte localization evidence; no unsupported molecular target is claimed.",
+    "layer_4_publication_grade": "The prior open ticket is closed after source review; remaining database endpoint/condition mismatches are explicit nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_endpoint_condition_conflicts_preserved",
+      "affected_records": [
+        "DBAASP assay 161897",
+        "DBAASP assay 161898",
+        "DBAASP assay 161899"
+      ],
+      "impact": "Primary source supports Table 2 MIC condition values, but linked database rows label them as MBIC/MBC without condition context; retained as source_conflict."
+    },
+    {
+      "caution_code": "taxonomy_synonym_retained",
+      "affected_records": [
+        "DBAASP assay 161887",
+        "DBAASP assay 161888"
+      ],
+      "impact": "Database uses Alkalihalobacillus clausii while the paper table uses Bacillus clausii; database note and primary methods support synonym handling."
+    },
+    {
+      "caution_code": "no_mammalian_toxicity_endpoint_in_primary_source",
+      "impact": "Activity/toxicity final intentionally contains no fabricated hemolysis or mammalian cytotoxicity row."
+    },
+    {
+      "caution_code": "figure_bar_values_not_digitized",
+      "impact": "Mortality figures are represented qualitatively/with text-reported approximate values only; no invented exact bar values."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/final_review_report.schema.json",
+  "title": "AMP Paper Final Review Report",
+  "type": "object",
+  "required": [
+    "paper_id",
+    "review_status",
+    "publication_grade",
+    "validator_contract_passed",
+    "reviewed_at",
+    "review_model",
+    "reasoning_effort",
+    "source_review_depth",
+    "materials_exhausted",
+    "semantic_quality_checks",
+    "per_layer_decision_rationale",
+    "rework_targets",
+    "caution_findings"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "paper_id": { "type": "string", "minLength": 1 },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "accepted_clean",
+        "accepted_with_cautions",
+        "needs_targeted_rework",
+        "blocked_missing_primary_material"
+      ]
+    },
+    "publication_grade": { "type": "boolean" },
+    "validator_contract_passed": { "type": "boolean" },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "review_model": { "type": "string", "minLength": 1 },
+    "reasoning_effort": { "type": "string", "minLength": 1 },
+    "source_review_depth": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "paper_xml",
+          "paper_pdf",
+          "oa_package",
+          "supplementary_assets",
+          "archives",
+          "ocr_outputs",
+          "office_files",
+          "merged_database_rows"
+        ]
+      }
+    },
+    "materials_exhausted": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "boolean" },
+          { "type": "string" },
+          { "type": "object" },
+          { "type": "array" }
+        ]
+      }
+    },
+    "semantic_quality_checks": { "type": "object" },
+    "per_layer_decision_rationale": {
+      "type": "object",
+      "required": ["layer_1_database", "layer_2_activity_toxicity", "layer_3_mechanism"],
+      "properties": {
+        "layer_1_database": { "type": "string", "minLength": 1 },
+        "layer_2_activity_toxicity": { "type": "string", "minLength": 1 },
+        "layer_3_mechanism": { "type": "string", "minLength": 1 }
+      }
+    },
+    "adjudication_summary": { "type": "string" },
+    "rework_targets": {
+      "type": "array",
+      "items": { "$ref": "rework_ticket.schema.json" }
+    },
+    "caution_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "caution_code": { "type": "string" },
+          "evidence_context": { "type": "string" }
+        }
+      }
+    }
+  }
+}

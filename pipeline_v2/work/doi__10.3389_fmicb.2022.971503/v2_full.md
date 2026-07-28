@@ -1,0 +1,1 @@
+[{"assertion_index":0,"db_claimed":{"organism":"","endpoint":"","value":"","peptide":"WVILSKKIKRKKKENSDHQTKFSKKVKTKR"},"verification_outcome":"cannot_determine","normalization_note":"none","is_database_error":false,"evidence":null,"short_reason":"DB assertion has no organism, endpoint, value, or peptide name to anchor a table comparison."}]

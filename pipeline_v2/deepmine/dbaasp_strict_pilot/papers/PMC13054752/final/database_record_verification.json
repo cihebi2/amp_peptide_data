@@ -1,0 +1,1851 @@
+{
+  "artifact": "database_record_verification",
+  "authoritative_database_linkage": {
+    "note": "The local authoritative DBAASP/merged indexes were checked and returned zero linked article, assay, sequence, and literature rows for DOI 10.2478/jvetres-2026-0005 / PMID 41953746 / PMCID PMC13054752. The fallback rows therefore cannot be resolved to stable DBAASP record identities in this packet.",
+    "source_locator": {
+      "locator": "database:authoritative_match_report.json:row_counts",
+      "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json"
+    },
+    "status": "unresolved_record"
+  },
+  "authoritative_ingest_ready": false,
+  "caution_findings": [
+    {
+      "evidence_context": {
+        "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+        "linked_row_total": 0,
+        "source_record_links_present": false
+      },
+      "finding_id": "PMC13054752-CAUTION-DBAASP-LINKED-ROWS-ABSENT",
+      "impact": "Accepted with cautions only; fallback rows are not source_verified DBAASP ingest rows.",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Authoritative linked DBAASP rows are absent in the local snapshot; authoritative ingest remains false."
+    },
+    {
+      "evidence_context": {
+        "candidate_rows_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "machine_candidate_row_count": 16
+      },
+      "finding_id": "PMC13054752-CAUTION-MACHINE-FALLBACK-BOUNDARY",
+      "impact": "Human/source-reviewed paper evidence remains separate from machine extraction.",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "DBAASP Codex fallback rows were retained as candidate machine evidence and not promoted to authoritative/source-verified database rows."
+    },
+    {
+      "evidence_context": {
+        "linked_row_counts": {
+          "linked_article_records": 0,
+          "linked_assay_records": 0,
+          "linked_literature_records": 0,
+          "linked_sequence_records": 0
+        },
+        "machine_candidate_rows": 16
+      },
+      "finding_id": "caution-authoritative-zero-linked-rows",
+      "impact": "authoritative_ingest_ready remains false",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Local authoritative DBAASP/merged linked-row snapshots are empty for this paper; fallback rows are not promoted to authoritative ingest."
+    },
+    {
+      "evidence_context": {
+        "status_counts": {
+          "source_conflict": 3,
+          "unresolved_record": 13
+        }
+      },
+      "finding_id": "caution-layer1-unresolved-or-conflict-statuses",
+      "impact": "accepted with cautions only",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Layer-1 records remain unresolved/source-conflict rather than source-verified, preserving database-only uncertainty."
+    },
+    {
+      "adjudication": "Durable no-match/empty linked-row evidence is preserved; candidate DBAASP fallback rows remain machine evidence only and are not promoted to authoritative ingest.",
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_article_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_assay_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_sequence_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_literature_records.jsonl"
+      ],
+      "severity": "caution"
+    },
+    {
+      "adjudication": "Fallback rows are retained only as candidate machine evidence pending real linked DBAASP rows.",
+      "code": "machine_candidate_rows_not_authoritative",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl"
+      ],
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": {
+    "activity_source_table_audit": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/activity_source_table_audit.json",
+      "sha256_12": "5c691df0c758",
+      "top_level_keys": [
+        "activity_row_count",
+        "audit_scope",
+        "cited_table_classification",
+        "generated_at",
+        "paper_id",
+        "rejected_rows",
+        "row_audits",
+        "row_support_summary",
+        "source_surface_count",
+        "strict_issue_counts",
+        "toxicity_row_count"
+      ]
+    },
+    "authoritative_match_report": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+      "sha256_12": "2d1100cdf9d2",
+      "top_level_keys": [
+        "generated_at",
+        "input_path_exists",
+        "input_paths",
+        "match_terms",
+        "paper_id",
+        "row_counts",
+        "source_record_links_present",
+        "strict_interpretation"
+      ]
+    },
+    "database_source_manifest": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/database_source_manifest.json",
+      "sha256_12": "323946b1c4cd",
+      "top_level_keys": [
+        "authoritative_match_report",
+        "generated_at",
+        "identifiers",
+        "input_artifacts",
+        "paper_id",
+        "row_counts",
+        "source",
+        "source_record_links_present",
+        "strict_interpretation"
+      ]
+    },
+    "dbaasp_machine_extracted_rows": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+      "row_count": 16,
+      "sha256_12": "5667620906a0"
+    },
+    "linked_article_records": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_article_records.jsonl",
+      "row_count": 0,
+      "sha256_12": "e3b0c44298fc"
+    },
+    "linked_assay_records": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_assay_records.jsonl",
+      "row_count": 0,
+      "sha256_12": "e3b0c44298fc"
+    },
+    "linked_literature_records": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_literature_records.jsonl",
+      "row_count": 0,
+      "sha256_12": "e3b0c44298fc"
+    },
+    "linked_sequence_records": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_sequence_records.jsonl",
+      "row_count": 0,
+      "sha256_12": "e3b0c44298fc"
+    },
+    "packet_manifest": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/packet_manifest.json",
+      "sha256_12": "e66ee5e3ff53",
+      "top_level_keys": [
+        "analysis_queue_status",
+        "database_snapshot_inputs",
+        "generated_at",
+        "known_missing_or_blocked_materials",
+        "locator_count",
+        "locator_index_path",
+        "material_queue_status",
+        "metadata",
+        "open_rework_ticket_ids",
+        "packet_root",
+        "packet_version",
+        "paper_id",
+        "paper_root",
+        "source_root",
+        "staged_files",
+        "strict_boundary",
+        "updated_at"
+      ]
+    },
+    "pdf_tables": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/pdf_tables.json",
+      "sha256_12": "5d6ebd2834f8",
+      "top_level_keys": [
+        "note",
+        "tables"
+      ]
+    },
+    "pdf_text": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/pdf_text.jsonl",
+      "row_count": 11,
+      "sha256_12": "8812fac31d56"
+    },
+    "rework_requests": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/rework/rework_requests.jsonl",
+      "row_count": 2,
+      "sha256_12": "9513f4660fd6"
+    },
+    "rework_responses": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/rework/rework_responses.jsonl",
+      "row_count": 4,
+      "sha256_12": "3566f1a634f0"
+    },
+    "supplementary_index": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/supplementary_index.json",
+      "sha256_12": "ea8bda1a7465",
+      "top_level_keys": [
+        "files"
+      ]
+    },
+    "supplementary_ocr_text": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/ocr/jvetres-2026-0005_sm.pdf_text.jsonl",
+      "row_count": 1,
+      "sha256_12": "9e461799b79f"
+    },
+    "supplementary_tables": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/supplementary_tables.json",
+      "sha256_12": "868bb80afc72",
+      "top_level_keys": [
+        "note",
+        "tables"
+      ]
+    },
+    "supplementary_text": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/supplementary_text.jsonl",
+      "row_count": 0,
+      "sha256_12": "e3b0c44298fc"
+    },
+    "worker2_activity": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/activity_toxicity_evidence.worker2.json",
+      "sha256_12": "c2c0da3e6422",
+      "top_level_keys": [
+        "activity_records",
+        "artifact_role",
+        "checked_inputs",
+        "created_at",
+        "lane_status",
+        "machine_extraction_comparison",
+        "needs_targeted_rework",
+        "non_publication_grade_limitations",
+        "paper_id",
+        "publication_grade_claim",
+        "quality_checks",
+        "shared_assay_context",
+        "source_review_provenance",
+        "source_review_summary",
+        "source_work_artifact",
+        "strict_scope",
+        "summary_counts",
+        "toxicity_records",
+        "toxicity_review",
+        "unresolved_material_gaps",
+        "updated_at",
+        "worker_id"
+      ]
+    },
+    "worker3_supplementary": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/supplementary_evidence.worker3.json",
+      "sha256_12": "088eac736460",
+      "top_level_keys": [
+        "checked_inputs",
+        "handoff_notes",
+        "lane",
+        "lane_decision",
+        "local_commands_used_for_material_exhaustion",
+        "machine_evidence_boundary",
+        "paper_id",
+        "protocol",
+        "reasoning_effort",
+        "referenced_but_unstaged_supplements",
+        "review_model",
+        "reviewed_at",
+        "source_reviewed_supplementary_findings",
+        "source_scope",
+        "staged_but_unreferenced_supplements",
+        "supplement_inventory",
+        "unparsed_or_partially_parsed_material",
+        "unrecoverable_material_gaps",
+        "worker"
+      ]
+    },
+    "worker4_database": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/database_record_audit.worker4.json",
+      "sha256_12": "e5b8bf226199",
+      "top_level_keys": [
+        "artifact",
+        "artifact_paths",
+        "audit_scope",
+        "authoritative_database_linkage",
+        "caution_summary",
+        "checked_inputs",
+        "citation_traceability",
+        "database_row_counts",
+        "generated_at",
+        "material_observation",
+        "paper_id",
+        "primary_identity_evidence",
+        "publication_grade_claim",
+        "reasoning_effort",
+        "record_audits",
+        "review_model",
+        "semantic_qa",
+        "source_review_boundary",
+        "source_reviewed_complete",
+        "status_summary",
+        "strict_status_vocabulary",
+        "targeted_rework_needed",
+        "unresolved_blockers",
+        "worker"
+      ]
+    },
+    "worker5_mechanism": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/mechanism_evidence.worker5.json",
+      "sha256_12": "bf6120705790",
+      "top_level_keys": [
+        "artifact",
+        "caution_findings",
+        "checked_inputs",
+        "direct_mechanism_assay_assessment",
+        "evidence_class_summary",
+        "generated_at_utc",
+        "lane",
+        "lane_status",
+        "machine_candidate_evidence_boundary",
+        "material_status_observed",
+        "mechanism_claims",
+        "paper_id",
+        "paper_metadata",
+        "protocol",
+        "publication_grade_claim",
+        "reasoning_effort",
+        "review_constraints",
+        "review_model",
+        "semantic_qa",
+        "source_review_boundary_notes",
+        "source_reviewed_claims_complete_for_available_packet",
+        "source_reviewed_complete",
+        "status_reason",
+        "targeted_rework_needed",
+        "worker"
+      ]
+    },
+    "xml_sections": {
+      "exists": true,
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json",
+      "sha256_12": "8ba0e4cd2611",
+      "top_level_keys": [
+        "errors",
+        "section_count",
+        "sections",
+        "source"
+      ]
+    }
+  },
+  "checkout_only": true,
+  "citation_traceability": {
+    "doi": "10.2478/jvetres-2026-0005",
+    "pmcid": "PMC13054752",
+    "pmid": "41953746",
+    "source_locator": {
+      "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+      "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+    },
+    "status": "source_verified",
+    "title": "Analysis of the virulence potential, ability to form biofilms and susceptibility to bacteriocins of Staphylococcus aureus strains isolated from livestock and wildlife"
+  },
+  "database_snapshot_summary": {
+    "authoritative_row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    },
+    "row_counts": {
+      "codex_exec_sessions": 2,
+      "dbaasp_empty_done_rows": 0,
+      "dbaasp_machine_extracted_rows": 16,
+      "dbaasp_review_queue_rows": 16,
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    },
+    "source_record_links_present": false
+  },
+  "identifiers": {
+    "doi": "10.2478/jvetres-2026-0005",
+    "journal": "Journal of Veterinary Research",
+    "pmcaid": "13054752",
+    "pmcaiid": "13054752",
+    "pmcid": "PMC13054752",
+    "pmcid-ver": "PMC13054752.1",
+    "pmid": "41953746",
+    "publisher-id": "jvetres-2026-0005",
+    "source": "/mnt/d/work/抗菌肽/数据库/DBAASP/analysis/runtime/oa_200paper_batch_20260413_round14/source_pool/PMC13054752/paper.xml",
+    "staging_metadata": {
+      "doi": null,
+      "notes": "Auto-selected from local OA shard after excluding PMCs already present anywhere under analysis and requiring downloaded XML/PDF.",
+      "package_source": null,
+      "pdf_source": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\data\\oa_fulltext_pmc_shards\\shard_10\\PMC13054752.pdf",
+      "pmcid": "PMC13054752",
+      "staged_files": {
+        "paper_pdf": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\analysis\\runtime\\oa_200paper_batch_20260413_round14\\source_pool\\PMC13054752\\paper.pdf",
+        "paper_xml": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\analysis\\runtime\\oa_200paper_batch_20260413_round14\\source_pool\\PMC13054752\\paper.xml",
+        "pmc_oa_package": null,
+        "supplementary": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\analysis\\runtime\\oa_200paper_batch_20260413_round14\\source_pool\\PMC13054752\\supplementary"
+      },
+      "staged_root": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\analysis\\runtime\\oa_200paper_batch_20260413_round14\\source_pool\\PMC13054752",
+      "supplementary_source": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\data\\oa_fulltext_pmc_shards\\shard_10\\supplementary\\PMC13054752",
+      "title": null,
+      "xml_source": "D:\\BB_work\\抗菌肽\\数据库\\DBAASP\\data\\oa_fulltext_pmc_shards\\shard_10\\PMC13054752.xml",
+      "year": null
+    },
+    "title": "Analysis of the virulence potential, ability to form biofilms and susceptibility to bacteriocins of Staphylococcus aureus strains isolated from livestock and wildlife",
+    "year": "2026"
+  },
+  "internet_browsing_used": false,
+  "machine_rows_are_candidate_only": true,
+  "overall_adjudication_status": "accepted_with_cautions",
+  "paper_id": "PMC13054752",
+  "primary_identity_evidence": {
+    "assay_method_evidence": {
+      "source_locator": {
+        "locator": "xml:p:14",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+      },
+      "summary": "Activity was tested only against MRSA strains using agar spot testing; two-fold dilutions of bacteriocins were applied to BHIA overlay plates and activities were expressed in AU/mL."
+    },
+    "locators": [
+      {
+        "locator": "xml:p:14",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json",
+        "supports": "study design, 13 bacteriocins, producer species counts, MRSA target set, agar spot method, AU/mL definition"
+      },
+      {
+        "locator": "xml:table-wrap:2",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json",
+        "supports": "Table 2 bacteriocin names, producer bacteria, and source of isolation"
+      },
+      {
+        "locator": "xml:p:33",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json",
+        "supports": "activity result text: E. faecium and E. mundtii no inhibitory effect; E. asini, E. saccharolyticus, L. lactis, and nisin activity ranges"
+      },
+      {
+        "locator": "xml:fig:2",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json",
+        "supports": "Fig. 2 caption mapping abbreviated bacteriocin labels to producer sources and AU/mL activity context"
+      },
+      {
+        "locator": "pdf:page=1",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/ocr/jvetres-2026-0005_sm.pdf_text.jsonl",
+        "supports": "supplement checked; contains S. aureus strain characteristics, not bacteriocin sequence/modification identity"
+      }
+    ],
+    "primary_entity_class": "bacteriocins and bacteriocin-like inhibitory substances used as assay reagents against MRSA strains",
+    "primary_identity_description": "The paper tests 13 bacteriocins isolated from Enterococcus and Lactococcus spp. against 40 MRSA strains. It gives names, producer bacteria, source of isolation, assay method, and activity ranges, but no peptide sequence or modification-level identity record for any bacteriocin.",
+    "primary_modification_evidence_status": "unresolved_record",
+    "primary_sequence_evidence_status": "unresolved_record",
+    "table_2_bacteriocins": [
+      {
+        "primary_name": "Ent412",
+        "producer_bacteria": "Enterococcus faecium EF412",
+        "source_of_isolation": "faecal strain from a Slovak warmblood horse"
+      },
+      {
+        "primary_name": "EntM/AL41",
+        "producer_bacteria": "E. faecium AL41/CCM8558",
+        "source_of_isolation": "environment"
+      },
+      {
+        "primary_name": "Ent7420",
+        "producer_bacteria": "E. faecium EF2019/CCM7420",
+        "source_of_isolation": "rabbit faeces"
+      },
+      {
+        "primary_name": "EntA(P)/EK 13",
+        "producer_bacteria": "E. faecium EK13=CCM7419",
+        "source_of_isolation": "environment"
+      },
+      {
+        "primary_name": "Ent55",
+        "producer_bacteria": "E. faecium EF55",
+        "source_of_isolation": "gastrointestinal tract of a chicken"
+      },
+      {
+        "primary_name": "Ent4231",
+        "producer_bacteria": "E. faecium CCM4231",
+        "source_of_isolation": "rumen of a calf"
+      },
+      {
+        "primary_name": "EM41/3",
+        "producer_bacteria": "E. mundtii EM41/3",
+        "source_of_isolation": "faeces of a horse of the Norik of Muran breed"
+      },
+      {
+        "primary_name": "Ent. as. 1",
+        "producer_bacteria": "E. asini EAs 1/11D27",
+        "source_of_isolation": "inner part of the auricle mucosa of a mare of the Norik of Muran breed"
+      },
+      {
+        "primary_name": "Ent. sacch.",
+        "producer_bacteria": "E. saccharolyticus Es 3/11D27",
+        "source_of_isolation": "inner part of the auricle mucosa of a mare of the Norik of Muran breed"
+      },
+      {
+        "note": "Table 2 has a footnote marker 1 after this name.",
+        "primary_name": "L.l MK 2/8",
+        "producer_bacteria": "L. lactis",
+        "source_of_isolation": "raw goat milk"
+      },
+      {
+        "note": "Table 2 has a footnote marker 1 after this name.",
+        "primary_name": "L.l MK 2/2",
+        "producer_bacteria": "L. lactis",
+        "source_of_isolation": "raw goat milk"
+      },
+      {
+        "note": "Table 2 has a footnote marker 1 after this name.",
+        "primary_name": "L.l MK 2/7",
+        "producer_bacteria": "L. lactis",
+        "source_of_isolation": "raw goat milk"
+      },
+      {
+        "primary_name": "nisin",
+        "producer_bacteria": "L. lactis (from Nisaplin)",
+        "source_of_isolation": "commercial strain"
+      }
+    ]
+  },
+  "publication_grade_layer_status": "accepted_with_cautions",
+  "reasoning_effort": "xhigh",
+  "record_audits": [
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports E. asini bacteriocin activity against MRSA at 100-200 AU/mL; Fig. 2 maps E. as. to an equine E. asini isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent. as.1",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The primary paper does not report terminal caps, D-residues, cyclization, disulfides, amidation, lipidation, or absence of these modifications for this bacteriocin.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent. as.1",
+        "note": "Name matches the primary abbreviation after whitespace normalization.",
+        "primary_source_name": "Ent. as. 1",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. Do not treat the machine row as a source-verified DBAASP sequence record.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No amino-acid sequence is reported for Ent. as. 1 in the paper-local XML, PDF, or supplementary OCR text.",
+        "primary_source_sequence": null,
+        "source_locator_checked": {
+          "locator": "xml:p:14; xml:table-wrap:2; xml:p:33; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent. as.1|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=1",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "note": "The fallback row has target fields but no source-organism/source-isolation field to compare.",
+        "primary_producer_or_source": "E. asini EAs 1/11D27; inner part of the auricle mucosa of a mare of the Norik of Muran breed",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the E. asini bacteriocin label and producer context, but it does not report peptide sequence or modification identity, and no authoritative DBAASP linked row is present.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=1",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports E. saccharolyticus bacteriocin activity against MRSA at 100-200 AU/mL; Fig. 2 maps E. sacch. to an equine E. saccharolyticus isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent. sacch.",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent. sacch.",
+        "primary_source_name": "Ent. sacch.",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. Do not treat the machine row as a source-verified DBAASP sequence record.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No amino-acid sequence is reported for Ent. sacch. in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent. sacch.|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=2",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. saccharolyticus Es 3/11D27; inner part of the auricle mucosa of a mare of the Norik of Muran breed",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the E. saccharolyticus bacteriocin label and producer context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=2",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports nisin had the highest activity among tested L. lactis bacteriocins, 100-800 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "nisin",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-800",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "machine_modification_none_not_source_verified",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The machine field 'none' is not source-verified; the primary paper does not report nisin modification chemistry.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "nisin",
+        "primary_source_name": "nisin",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The familiar name nisin is not enough for source_verified database identity without paper-local sequence/modification or linked DBAASP sequence evidence.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No nisin sequence is reported in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "nisin|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=3",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis (from Nisaplin); commercial strain",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports nisin as a commercial L. lactis bacteriocin used in the assay, but it does not report the nisin sequence, lanthionine/dehydro residue pattern, terminal chemistry, or an authoritative DBAASP record link.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=3",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The result text reports L. lactis bacteriocin L.l MK 2/8 activity against MRSA in the range 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/8",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/8",
+        "note": "The primary Table 2 has a footnote marker 1 after the name; the candidate without the marker matches the source name.",
+        "primary_source_name": "L.l MK 2/8",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. Do not merge this with the footnote-artifact row without adjudication.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/8 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/8|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=4",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the L.l MK 2/8 label and activity range, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=4",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The result text reports L. lactis bacteriocin L.l MK 2/2 activity against MRSA in the range 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/2",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/2",
+        "note": "The primary Table 2 has a footnote marker 1 after the name; the candidate without the marker matches the source name.",
+        "primary_source_name": "L.l MK 2/2",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. Do not merge this with the footnote-artifact row without adjudication.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/2 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/2|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=5",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the L.l MK 2/2 label and activity range, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=5",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "Activity context does not resolve an authoritative DBAASP identity record.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The result text reports L. lactis bacteriocin L.l MK 2/7 activity against MRSA in the range 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/7",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/7",
+        "note": "The primary Table 2 has a footnote marker 1 after the name; the candidate without the marker matches the source name.",
+        "primary_source_name": "L.l MK 2/7",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. Do not merge this with the footnote-artifact row without adjudication.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/7 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/7|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=6",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the L.l MK 2/7 label and activity range, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=6",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps Ent412 to an equine E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent412",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent412",
+        "primary_source_name": "Ent412",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for Ent412 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent412|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=7",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "Enterococcus faecium EF412; faecal strain from a Slovak warmblood horse",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the Ent412 name and producer/source context, but this negative activity candidate has no sequence/modification identity and no authoritative DBAASP linkage.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=7",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps EntM to an environmental E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "EntM/AL41",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "EntM/AL41",
+        "primary_source_name": "EntM/AL41",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for EntM/AL41 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "EntM/AL41|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=8",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. faecium AL41/CCM8558; environment",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the EntM/AL41 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=8",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps Ent7420 to a leporine E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent7420",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent7420",
+        "primary_source_name": "Ent7420",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for Ent7420 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent7420|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=9",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. faecium EF2019/CCM7420; rabbit faeces",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the Ent7420 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=9",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps EntA(P) to an environmental E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "EntA(P)/EK 13",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "EntA(P)/EK 13",
+        "primary_source_name": "EntA(P)/EK 13",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for EntA(P)/EK 13 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "EntA(P)/EK 13|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=10",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. faecium EK13=CCM7419; environment",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the EntA(P)/EK 13 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=10",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps Ent55 to a poultry E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent55",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent55",
+        "primary_source_name": "Ent55",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for Ent55 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent55|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=11",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. faecium EF55; gastrointestinal tract of a chicken",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the Ent55 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=11",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. faecium enterocins against MRSA; Fig. 2 maps Ent4231 to a vituline E. faecium isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "Ent4231",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "Ent4231",
+        "primary_source_name": "Ent4231",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for Ent4231 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "Ent4231|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=12",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. faecium CCM4231; rumen of a calf",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the Ent4231 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=12",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "A qualitative negative activity claim is not an identity verification.",
+        "paper_local_activity_locator": "xml:p:33; xml:fig:2",
+        "paper_local_support": "The result text reports no inhibitory effect of E. mundtii bacteriocin against MRSA; Fig. 2 maps EM41/3 to an equine E. mundtii isolate."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "EM41/3",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": null,
+      "candidate_value": "no inhibitory effect",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "negative_activity_claim",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "unresolved_record",
+      "machine_sequence_field": "None",
+      "machine_unit_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "EM41/3",
+        "primary_source_name": "EM41/3",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_verified"
+      },
+      "review_notes": "Keep as unresolved_record. The primary source supports the label, but not database identity.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for EM41/3 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "EM41/3|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=13",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "E. mundtii EM41/3; faeces of a horse of the Norik of Muran breed",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "unresolved_record",
+      "status_reason": "Primary paper supports the EM41/3 name and producer/source context, but sequence/modification identity and authoritative DBAASP linkage are absent.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=13",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "This footnote-artifact row should not be promoted or silently merged into a source_verified database identity.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The source-supported L.l MK 2/8 activity range is 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/81",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "machine_name_contains_table_footnote_marker",
+        "duplicates_row_4_source_name",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "source_conflict",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/81",
+        "note": "Table 2 prints L.l MK 2/8 with footnote marker 1; the candidate row collapses that marker into the name.",
+        "primary_source_name": "L.l MK 2/8",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_conflict"
+      },
+      "review_notes": "Preserve as source_conflict. The conflict is name/provenance parsing, not a verified separate bacteriocin.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/8 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/81|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=14",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "source_conflict",
+      "status_reason": "The candidate name appears to concatenate the Table 2 footnote marker '1' onto primary name L.l MK 2/8. It duplicates the source-supported L.l MK 2/8 candidate and still lacks sequence/modification identity.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=14",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "This footnote-artifact row should not be promoted or silently merged into a source_verified database identity.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The source-supported L.l MK 2/2 activity range is 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/21",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "machine_name_contains_table_footnote_marker",
+        "duplicates_row_5_source_name",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "source_conflict",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/21",
+        "note": "Table 2 prints L.l MK 2/2 with footnote marker 1; the candidate row collapses that marker into the name.",
+        "primary_source_name": "L.l MK 2/2",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_conflict"
+      },
+      "review_notes": "Preserve as source_conflict. The conflict is name/provenance parsing, not a verified separate bacteriocin.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/2 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/21|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=15",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "source_conflict",
+      "status_reason": "The candidate name appears to concatenate the Table 2 footnote marker '1' onto primary name L.l MK 2/2. It duplicates the source-supported L.l MK 2/2 candidate and still lacks sequence/modification identity.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=15",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    },
+    {
+      "activity_context_not_identity_acceptance": {
+        "limitation": "This footnote-artifact row should not be promoted or silently merged into a source_verified database identity.",
+        "paper_local_activity_locator": "xml:p:33",
+        "paper_local_support": "The source-supported L.l MK 2/7 activity range is 100-200 AU/mL."
+      },
+      "candidate_endpoint": "growth inhibition activity",
+      "candidate_modification": "none",
+      "candidate_peptide": "L.l MK 2/71",
+      "candidate_sequence": null,
+      "candidate_target": "methicillin-resistant Staphylococcus aureus strains",
+      "candidate_unit": "AU/mL",
+      "candidate_value": "100-200",
+      "citation_check": {
+        "source_locator": {
+          "locator": "xml:article-meta:doi=10.2478/jvetres-2026-0005;pmid=41953746;pmcid=PMC13054752",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/raw/paper.xml"
+        },
+        "status": "source_verified"
+      },
+      "conflict_flags": [
+        "candidate_row_is_codex_fallback_not_authoritative_dbaasp_record",
+        "machine_name_contains_table_footnote_marker",
+        "duplicates_row_6_source_name",
+        "candidate_sequence_missing",
+        "primary_sequence_not_reported",
+        "primary_modification_identity_not_reported",
+        "no_authoritative_dbaasp_record_id_or_linked_sequence_row"
+      ],
+      "database_record_resolution": {
+        "note": "No authoritative DBAASP record id or linked_sequence_records row is present for this candidate; source_record_links_present=false.",
+        "status": "unresolved_record"
+      },
+      "layer1_status": "source_conflict",
+      "machine_sequence_field": "None",
+      "modification_check": {
+        "candidate_modification_fields": "none",
+        "note": "The paper does not report modification state or absence of modification.",
+        "primary_modifications": null,
+        "status": "unresolved_record"
+      },
+      "name_check": {
+        "candidate_name": "L.l MK 2/71",
+        "note": "Table 2 prints L.l MK 2/7 with footnote marker 1; the candidate row collapses that marker into the name.",
+        "primary_source_name": "L.l MK 2/7",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:p:33",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "source_conflict"
+      },
+      "review_notes": "Preserve as source_conflict. The conflict is name/provenance parsing, not a verified separate bacteriocin.",
+      "sequence_check": {
+        "candidate_sequence": null,
+        "note": "No sequence is reported for L.l MK 2/7 in the paper-local packet.",
+        "primary_source_sequence": null,
+        "status": "unresolved_record"
+      },
+      "sequence_key": "L.l MK 2/71|sequence_unreported",
+      "source_id": "DBAASP_MACHINE_CANDIDATE:PMC13054752:row=16",
+      "source_organism_check": {
+        "candidate_source_organism": null,
+        "primary_producer_or_source": "L. lactis; raw goat milk",
+        "source_locator": {
+          "locator": "xml:table-wrap:2; xml:fig:2",
+          "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+        },
+        "status": "unresolved_record"
+      },
+      "source_table": "dbaasp_machine_extracted_rows.jsonl",
+      "status": "source_conflict",
+      "status_reason": "The candidate name appears to concatenate the Table 2 footnote marker '1' onto primary name L.l MK 2/7. It duplicates the source-supported L.l MK 2/7 candidate and still lacks sequence/modification identity.",
+      "traceability": {
+        "locator": "database:dbaasp_machine_extracted_rows.jsonl:row=16",
+        "source_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "strict_use": "candidate_machine_provenance_only"
+      }
+    }
+  ],
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T12:44:51Z",
+  "rework_targets": [],
+  "semantic_quality_checks": [
+    {
+      "check": "database_authoritative_ingest_boundary",
+      "evidence": {
+        "authoritative_ingest_ready": false,
+        "linked_row_total": 0,
+        "machine_candidate_rows": 16
+      },
+      "status": "caution"
+    },
+    {
+      "check": "database_status_vocabulary_and_conflicts_preserved",
+      "evidence": {
+        "record_count": 16,
+        "targeted_rework_needed": 0
+      },
+      "status": "pass"
+    },
+    {
+      "check": "strict_gate_post_write",
+      "evidence": {
+        "gate_dir": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/gate_runs"
+      },
+      "status": "pending_post_write"
+    }
+  ],
+  "source_reviewed": true,
+  "status_summary": {
+    "record_count": 16,
+    "status_counts": {
+      "database_only_no_primary_source": 0,
+      "sequence_modified_not_normalized": 0,
+      "source_conflict": 3,
+      "source_verified": 0,
+      "unresolved_record": 13
+    },
+    "strict_status_vocabulary": [
+      "source_verified",
+      "source_conflict",
+      "database_only_no_primary_source",
+      "sequence_modified_not_normalized",
+      "unresolved_record"
+    ]
+  },
+  "unresolved_blockers_preserved_as_cautions": true,
+  "updated_at": "2026-07-15T12:44:51Z",
+  "worker6_rebuild_note": "Database layer preserved from source-reviewed final; overall paper acceptance blocked by current activity contract mismatch.",
+  "worker6_terminal_adjudication": {
+    "adjudicated_at": "2026-07-15T12:44:51Z",
+    "authoritative_ingest_ready": false,
+    "publication_grade_layer_status": "accepted_with_cautions",
+    "review_status": "accepted_with_cautions",
+    "runtime_tickets_considered": [
+      "rwk-PMC13054752-current-worker2-contract-003",
+      "rwk-PMC13054752-normalization-schema-001",
+      "rwk-PMC13054752-table2-identity-scalar-normalization-002"
+    ]
+  }
+}

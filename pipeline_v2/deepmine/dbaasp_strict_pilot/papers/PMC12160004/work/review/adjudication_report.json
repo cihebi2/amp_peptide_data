@@ -1,0 +1,147 @@
+{
+  "caution_findings": [
+    {
+      "adjudication": "accepted_with_cautions because candidate fallback rows are preserved as unresolved/non-authoritative and authoritative_dbaasp_ingest_ready remains false.",
+      "caution_id": "PMC12160004-DBAASP-NO-LINKED-AUTHORITY-ROWS",
+      "evidence_context": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/database/database_source_manifest.json"
+      ],
+      "finding_code": "authoritative_dbaasp_linked_rows_absent",
+      "layer": "database",
+      "severity": "caution"
+    },
+    {
+      "adjudication": "coverage records preserve the source-located toxicity surface without inventing row-level quantitative values.",
+      "caution_id": "PMC12160004-ZEBRAFISH-QUANTITATION-AMBIGUOUS",
+      "evidence_context": [
+        "xml:p:26",
+        "xml:p:40",
+        "xml:fig:11"
+      ],
+      "finding_code": "toxicity_figure_quantitative_binding_not_promoted",
+      "layer": "activity_toxicity",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": {
+    "activity_surface_enumerator_worker2": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/work/activity_evidence/activity_surface_enumerator.worker2.json",
+    "activity_worker2": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/analysis/activity_toxicity_evidence.worker2.json",
+    "activity_worker2_current_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/analysis/activity_toxicity_evidence.worker2.json",
+    "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/database/authoritative_match_report.json",
+    "database_source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/database/database_source_manifest.json",
+    "database_worker4": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/analysis/database_record_audit.worker4.json",
+    "figure_captions": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/extracted/figure_captions.json",
+    "materials_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/final/materials_manifest.json",
+    "mechanism_worker5": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/analysis/mechanism_evidence.worker5.json",
+    "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/packet_manifest.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/extracted/pdf_text.jsonl",
+    "rework_requests": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/rework/rework_requests.jsonl",
+    "rework_responses": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/rework/rework_responses.jsonl",
+    "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/extracted/supplementary_index.json",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/extracted/supplementary_text.jsonl",
+    "worker2_body_length_quantitative_binding": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/work/activity_evidence/zebrafish_p40_quantitative_binding.worker2.sanitized.json",
+    "worker2_body_length_source_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/work/activity_evidence/body_length_locator_audit.worker2.sanitized.json",
+    "worker6_body_length_contract_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/work/review/worker6_body_length_source_contract_audit.json",
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/extracted/xml_sections.json"
+  },
+  "final_counts": {
+    "activity_records": 62,
+    "database_record_audits": 5,
+    "mechanism_claims": 5,
+    "review_rework_targets": 0,
+    "toxicity_records": 11
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/worker6/PMC12160004/20260727T220048Z.packet_gate.direct_locator_closure.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/worker6/PMC12160004/20260727T220048Z.publication_gate.direct_locator_closure.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/worker6/PMC12160004/20260727T220048Z.semantic_gate.direct_locator_closure.json"
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "publication": 0,
+    "semantic": 0
+  },
+  "overall_contract_pass": true,
+  "paper_id": "PMC12160004",
+  "per_layer_decision_rationale": {
+    "activity_toxicity": "Worker-2 repaired MIC rows to source mass units with table-cell locators, added source-located hemolysis/zebrafish coverage, and preserved approximate biofilm digitization without promoting it to exact table evidence.",
+    "activity_toxicity_body_length_ticket": "The worker-2 repair adds qualitative body-length coverage records with xml:p:40 and xml:fig:11 locators, no exact body-length numeric value promotion, and aligned concentration metadata.",
+    "adjudication": "Worker-6 rebuilt paper and packet finals from the current owner artifacts, superseded stale terminal candidates, verified runtime ticket contracts, and accepted only after strict gates passed without allow flags.",
+    "adjudication_runtime_ticket_closure": "Worker-6 verified the owner response, source-locator contract, final counts, byte-identical mirrors, and strict gates before closing the runtime-open ticket.",
+    "database": "Worker-4 repaired locator provenance so paper/source locators and database provenance are separated; unresolved and modified-sequence statuses remain because no authoritative linked rows are present.",
+    "materials": "Worker-1 material status is aligned across packet_manifest and final materials_manifest; final JSON mirrors are byte-identical or covered by the mechanism alias policy.",
+    "mechanism": "Worker-5 mechanism claims keep direct, phenotype, inferred, computational, and unknown classes separated with locator-backed claim records.",
+    "mechanism_locator_rework": "Accepted after independent locator audit: direct mechanism locators resolve to microscopy method/result/figure/supplement surfaces, and forbidden toxicity/biofilm locators are absent from direct claims.",
+    "runtime_ticket_closure": "Closing the runtime-listed owner-lane ticket only after owner worker-5 supplied a nonterminal repair response and worker-6 rebuilt byte-identical paper/packet finals."
+  },
+  "post_response_gate_status": "passed",
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-27T22:00:48Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_body_figure_surfaces_accounted": true,
+    "activity_mic_cell_values_match_source": true,
+    "activity_mic_units_preserve_source_mass_units": true,
+    "biofilm_digitized_values_preserve_approximation": true,
+    "biofilm_s13_not_direct_mechanism": true,
+    "database_authoritative_boundary_preserved": true,
+    "database_recursive_source_locator_paths_absent": true,
+    "direct_mechanism_direct_assay_types_non_empty": true,
+    "direct_mechanism_forbidden_locators_absent": true,
+    "materials_manifest_status_aligned": true,
+    "mechanism_claims_schema_complete": true,
+    "mechanism_recursive_locator_repair_verified": true,
+    "mirror_pairs_byte_identical": true,
+    "open_rework_ticket_count": 0,
+    "owner_repair_responses_present": true,
+    "paper_packet_final_mirrors_byte_identical": true,
+    "review_rework_target_count": 0,
+    "runtime_ticket_id": "rwk-PMC12160004-campaign-r02-BF-PMC12160004-W5-DIRECT-MECHANISM-LOCATOR-CONFLATION",
+    "strict_gates_rerun_after_terminal_response": "pending",
+    "strict_packet_gate": true,
+    "strict_publication_gate": true,
+    "strict_semantic_gate": true,
+    "toxicity_source_surfaces_covered": true,
+    "zebrafish_body_length_fig11f_covered": true,
+    "zebrafish_body_length_pending_worker6_terminal_closure": false
+  },
+  "source_reviewed": true,
+  "source_text_included": false,
+  "terminal_responses_appended": [
+    "rwk-PMC12160004-campaign-r02-BF-PMC12160004-W5-DIRECT-MECHANISM-LOCATOR-CONFLATION"
+  ],
+  "ticket_contract_evidence": {
+    "direct_locator_contract_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/work/mechanism_ontology/worker6_direct_mechanism_locator_contract_audit.json",
+    "overall_contract_pass": true,
+    "owner_repair_response_present": true,
+    "owner_repair_response_status": "repair_ready_for_adjudication",
+    "owner_worker": "worker-5",
+    "ticket_id": "rwk-PMC12160004-campaign-r02-BF-PMC12160004-W5-DIRECT-MECHANISM-LOCATOR-CONFLATION"
+  },
+  "ticket_id": "rwk-PMC12160004-campaign-r02-BF-PMC12160004-W5-DIRECT-MECHANISM-LOCATOR-CONFLATION",
+  "updated_at": "2026-07-27T22:05:33Z",
+  "validator_contract_passed": true,
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/final/activity_toxicity_evidence.json",
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/final/database_record_verification.json",
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/final/database_record_verification.json"
+    },
+    "mechanism_ontology_record": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/final/mechanism_evidence.json",
+      "packet_canonical": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/final/mechanism_ontology_record.json",
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/final/mechanism_ontology_record.json"
+    },
+    "review_report": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12160004/final/review_report.json",
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12160004/final/review_report.json"
+    }
+  }
+}

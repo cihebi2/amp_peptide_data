@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.1007_s12539-016-0163-x",
+  "generated_at": "2026-06-22T08:42:59Z",
+  "extraction_scope": "Worker-6 non-dispatch final mechanism ontology review from primary XML/PDF and packet locators; claims use only the five allowed evidence classes and are not promoted beyond source support.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "CGA-N46 and the four derived peptides show source-supported secondary-structure changes across aqueous, SDS, and lipid-vesicle conditions, consistent with membrane-interaction context.",
+      "entity_scope": "CGA-N46, CGA-N15, CGA-N16, CGA-N12, and CGA-N8",
+      "evidence_class": "inferred_mechanism",
+      "source_locator": {
+        "locator": "xml:sec=7:Circular Dichroism Assay; xml:sec=12:Peptide Design and Predicted Physicochemical Properties; xml:table=3; xml:fig=2",
+        "source_path": "papers/doi__10.1007_s12539-016-0163-x/source/paper.xml"
+      },
+      "limitations": "The local paper provides CD/structural membrane-context evidence, not a direct permeabilization, binding, or molecular-target assay. Evidence class normalized to inferred_mechanism under the five-class ontology; no direct_mechanism claim is made.",
+      "ontology_mapping": {
+        "previous_evidence_class": "supporting_structure_context",
+        "mapped_by": "worker-6 non-dispatch final review",
+        "mapped_at": "2026-06-22T08:42:59Z",
+        "rationale": "Primary XML/PDF support CD/secondary-structure and author discussion context only; no direct permeabilization, binding, target, or molecular mechanism assay is reported, so the safe five-class ontology mapping is inferred_mechanism."
+      },
+      "direct_assay_types": []
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "The discussion frames CGA-N46 derivatives as not sharing a common alpha-helical AMP action mechanism, based on weak-positive/neutral hydrophilic properties and solvent-dependent CD changes.",
+      "entity_scope": "CGA-N46 derivatives",
+      "evidence_class": "inferred_mechanism",
+      "source_locator": {
+        "locator": "xml:sec=13:Antifungal and Hemolytic Activities; xml:sec=14:Discussion",
+        "source_path": "papers/doi__10.1007_s12539-016-0163-x/source/paper.xml"
+      },
+      "limitations": "This is author interpretation supported by structural context; no direct mechanism class is assigned. Evidence class normalized to inferred_mechanism under the five-class ontology; no direct_mechanism claim is made.",
+      "ontology_mapping": {
+        "previous_evidence_class": "author_interpretation_mechanism_context",
+        "mapped_by": "worker-6 non-dispatch final review",
+        "mapped_at": "2026-06-22T08:42:59Z",
+        "rationale": "Primary XML/PDF support CD/secondary-structure and author discussion context only; no direct permeabilization, binding, target, or molecular mechanism assay is reported, so the safe five-class ontology mapping is inferred_mechanism."
+      },
+      "direct_assay_types": []
+    }
+  ],
+  "allowed_evidence_classes": [
+    "direct_mechanism",
+    "phenotype_supported",
+    "inferred_mechanism",
+    "computational_only",
+    "unknown_or_not_tested"
+  ],
+  "worker6_non_dispatch_ontology_repair": {
+    "reviewed_at": "2026-06-22T08:42:59Z",
+    "review_model": "gpt-5.5",
+    "reasoning_effort": "xhigh",
+    "pilot_sample_id": "PILOT20-001",
+    "audit_record_id": "doi__10.1007_s12539-016-0163-x:database_audit:56",
+    "repair_summary": "Replaced non-standard mechanism context labels with inferred_mechanism because local source evidence supports only CD/structure and author interpretation context.",
+    "repairs": [
+      {
+        "claim_id": "mech-001",
+        "previous_evidence_class": "supporting_structure_context",
+        "repaired_evidence_class": "inferred_mechanism",
+        "safe_mapping_basis": [
+          "xml:sec=9:Circular Dichroism Assay",
+          "xml:sec=13/15:CD spectra and Table 3/Fig. 2 secondary-structure context",
+          "xml:sec=17:Discussion author interpretation"
+        ],
+        "overclaim_avoided": "No direct permeabilization, binding, target, or molecular mechanism assay was promoted to direct_mechanism."
+      },
+      {
+        "claim_id": "mech-002",
+        "previous_evidence_class": "author_interpretation_mechanism_context",
+        "repaired_evidence_class": "inferred_mechanism",
+        "safe_mapping_basis": [
+          "xml:sec=9:Circular Dichroism Assay",
+          "xml:sec=13/15:CD spectra and Table 3/Fig. 2 secondary-structure context",
+          "xml:sec=17:Discussion author interpretation"
+        ],
+        "overclaim_avoided": "No direct permeabilization, binding, target, or molecular mechanism assay was promoted to direct_mechanism."
+      }
+    ]
+  }
+}

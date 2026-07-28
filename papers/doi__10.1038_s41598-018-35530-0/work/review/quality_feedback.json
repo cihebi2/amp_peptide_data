@@ -1,0 +1,218 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T04:34:44Z"
+  },
+  "generated_at": "2026-05-03T04:27:16Z",
+  "issue_count": 3,
+  "paper_id": "doi__10.1038_s41598-018-35530-0",
+  "qc_failure_reasons": [
+    {
+      "code": "activity_table_endpoint_and_target_class_scaffold",
+      "owner_worker": "worker-2",
+      "reason": "Worker-6 re-review found the activity artifact still has scaffold-level Table 1 endpoint/entity/target-class problems; worker-4 source locators are repaired, but worker-2 owns the activity artifact rewrite.",
+      "severity": "blocking"
+    },
+    {
+      "code": "supplement_doc_declared_but_not_local",
+      "owner_worker": "worker-3",
+      "reason": "The primary XML declares a DOC supplement, but only HTML landing pages are present in local supplementary assets; supplement-dependent tables/figures cannot be source-reviewed locally.",
+      "severity": "blocking"
+    },
+    {
+      "code": "mechanism_context_pending_review",
+      "owner_worker": "worker-5",
+      "reason": "The mechanism artifact still labels claims as automated context notes pending publication-grade worker-5/6 adjudication, so final mechanism acceptance is not controllable in the worker-4/6-only repair.",
+      "severity": "major"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41598-018-35530-0/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "resolved_owner_layer_issues": [
+    {
+      "code": "database_conflicts_require_adjudication",
+      "owner_worker": "worker-4 + worker-6",
+      "resolution": "Linked database rows were re-adjudicated with source locators; database layer no longer carries the broad framework-test conflict blocker.",
+      "resolved_at": "2026-05-03T04:27:16Z"
+    },
+    {
+      "code": "full_source_review_not_completed_for_worker6",
+      "owner_worker": "worker-6",
+      "resolution": "Worker-6 replaced the generic framework-test report with a source-reviewed non-acceptance decision and targeted tickets.",
+      "resolved_at": "2026-05-03T04:27:16Z"
+    }
+  ],
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-018-35530-0/final/activity_toxicity_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T04:27:16Z",
+      "failure_code": "activity_table_endpoint_and_target_class_scaffold",
+      "layer": "activity_toxicity",
+      "omission_code": "activity_table_endpoint_and_target_class_scaffold",
+      "owner_worker": "worker-2",
+      "packet_artifact_path": "paper_packets/doi__10.1038_s41598-018-35530-0/analysis/activity_toxicity_evidence.json",
+      "paper_id": "doi__10.1038_s41598-018-35530-0",
+      "required_action": "Rebuild Table 1 activity rows so VLL-28 MIC/MFC endpoints map to the correct columns, Candida targets are fungal targets, and source-supported MBIC/MBEC prose rows are represented without inventing supplement-only values.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.xml",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/locators/locator_index.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/xml_sections.json"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-20260503-worker2-activity-table1-endpoint-target-class",
+      "worker": "worker-2"
+    },
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-018-35530-0/work/supplementary_methods/supplementary_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T04:27:16Z",
+      "failure_code": "supplement_doc_declared_but_not_local",
+      "layer": "supplementary_material",
+      "omission_code": "supplement_doc_declared_but_not_local",
+      "owner_worker": "worker-3",
+      "packet_artifact_path": "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_index.json",
+      "paper_id": "doi__10.1038_s41598-018-35530-0",
+      "required_action": "Treat as terminal local material gap unless an external DOC supplement is explicitly supplied; do not mark accepted from HTML landing pages.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.xml",
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/locators/locator_index.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/supplementary/landing-*.bin"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-20260503-worker3-unrecoverable-supplement-doc",
+      "unrecoverable_material_gap": {
+        "blocks_publication_grade": true,
+        "gap_code": "supplement_doc_declared_but_not_local",
+        "impact": "Supplementary Tables S1/S2/S3 and supplementary figure panels cannot be source-reviewed locally, so final publication-grade adjudication cannot verify supplement-dependent antifungal comparator data, p-values, or supplemental CLSM panels.",
+        "next_action": "record_and_continue",
+        "owner_worker": "worker-3",
+        "source_paths_checked": [
+          "papers/doi__10.1038_s41598-018-35530-0/source/paper.xml",
+          "papers/doi__10.1038_s41598-018-35530-0/source/paper.pdf",
+          "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_tables.json",
+          "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/archive_manifest.json",
+          "paper_packets/doi__10.1038_s41598-018-35530-0/locators/locator_index.json",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/asset_manifest.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/metadata.json",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/supplementary/landing-*.bin"
+        ],
+        "tools_attempted": [
+          "rg over paper.xml and local supplementary HTML landing files",
+          "file signature check on local supplementary landing-*.bin",
+          "head byte/header check on packet/landed supplementary candidates",
+          "pdftotext over local paper.pdf for MBIC/MBEC/main-text support",
+          "packet supplementary_index/supplementary_text/supplementary_tables/archive_manifest review"
+        ],
+        "why_unrecoverable": "The article XML declares 41598_2018_35530_MOESM1_ESM.doc, but the local supplementary assets are repeated Nature HTML landing pages and no DOC/OOXML/archive package is present locally; obtainable-only mode forbids chasing absent external material after these paths are checked."
+      },
+      "worker": "worker-3"
+    },
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-018-35530-0/final/mechanism_ontology_record.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T04:27:16Z",
+      "failure_code": "mechanism_context_pending_review",
+      "layer": "mechanism",
+      "omission_code": "mechanism_context_pending_review",
+      "owner_worker": "worker-5",
+      "packet_artifact_path": "paper_packets/doi__10.1038_s41598-018-35530-0/analysis/mechanism_evidence.json",
+      "paper_id": "doi__10.1038_s41598-018-35530-0",
+      "required_action": "Replace automated mechanism-context placeholder claims with source-reviewed ontology classes and direct/indirect evidence limits; do not overclaim direct mechanism without assay support.",
+      "severity": "major",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.xml",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/figure_captions.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/locators/locator_index.json"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-20260503-worker5-mechanism-source-review",
+      "worker": "worker-5"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplement_doc_declared_but_not_local",
+      "impact": "Supplementary Tables S1/S2/S3 and supplementary figure panels cannot be source-reviewed locally, so final publication-grade adjudication cannot verify supplement-dependent antifungal comparator data, p-values, or supplemental CLSM panels.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-3",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.xml",
+        "papers/doi__10.1038_s41598-018-35530-0/source/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/locators/locator_index.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0/supplementary/landing-*.bin"
+      ],
+      "tools_attempted": [
+        "rg over paper.xml and local supplementary HTML landing files",
+        "file signature check on local supplementary landing-*.bin",
+        "head byte/header check on packet/landed supplementary candidates",
+        "pdftotext over local paper.pdf for MBIC/MBEC/main-text support",
+        "packet supplementary_index/supplementary_text/supplementary_tables/archive_manifest review"
+      ],
+      "why_unrecoverable": "The article XML declares 41598_2018_35530_MOESM1_ESM.doc, but the local supplementary assets are repeated Nature HTML landing pages and no DOC/OOXML/archive package is present locally; obtainable-only mode forbids chasing absent external material after these paths are checked."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-018-35530-0",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/database",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/extracted",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/locators",
+        "paper_packets/doi__10.1038_s41598-018-35530-0/raw",
+        "papers/doi__10.1038_s41598-018-35530-0/final",
+        "papers/doi__10.1038_s41598-018-35530-0/source",
+        "papers/doi__10.1038_s41598-018-35530-0/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

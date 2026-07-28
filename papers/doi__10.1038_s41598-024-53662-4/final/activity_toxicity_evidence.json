@@ -1,0 +1,244 @@
+{
+  "paper_id": "doi__10.1038_s41598-024-53662-4",
+  "generated_at": "2026-05-05T06:21:21Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "analysis_decision": "source_reviewed_rebuilt",
+  "extraction_scope": "Worker-2 re-review removed the prior 24 rows that mislabeled Table 1 physicochemical/design columns as measured IC50 activity. Local evidence supports predicted in-silico IC50/design context plus source-reviewed HCEC biocompatibility, HSV-1 plaque-assay statistics, and qualitative pre/post treatment immunofluorescence records.",
+  "checked_inputs": [
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    "rework_context/doi__10.1038_s41598-024-53662-4/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/supplementary_index.json"
+  ],
+  "activity_records": [
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-table1-predicted-ic50",
+      "entity": "GF19",
+      "endpoint": "predicted_in_silico_antiviral_IC50",
+      "raw_value": "1.21",
+      "raw_unit": "uM",
+      "normalization_status": "not_normalized_predicted_value",
+      "evidence_ladder": "in_silico_prediction_not_measured_assay",
+      "target": {
+        "class": "virus_prediction_context",
+        "species": "HSV-1",
+        "strain": "not_applicable_prediction"
+      },
+      "assay_conditions": {
+        "model_or_method": "AVP-IC50Pred prediction server",
+        "table_context": "Table 1 predicted in-silico anti-viral IC50 column; not a measured HCEC IC50 assay.",
+        "peptide_sequence_context": "GF19 is GF17 with C-terminal KL extension and C-terminal amidation."
+      },
+      "source_locator": {
+        "locator": "xml:table=1:row=GF19:column=Predicted in silico anti-viral IC50; pdf_text:41598_2024_Article_53662.txt:317-320",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/raw/paper.xml"
+      },
+      "curation_notes": "The previous artifact incorrectly expanded Table 1 physicochemical columns into IC50 rows. Only this predicted IC50 value is retained from Table 1 and is explicitly labeled as predicted, not experimental."
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-hcec-viability-24h-50um",
+      "entity": "GF19",
+      "endpoint": "HCEC_cell_viability_cytotoxicity_24h",
+      "raw_value": "48",
+      "raw_unit": "percent cytotoxicity at 50 uM",
+      "normalization_status": "direct",
+      "evidence_ladder": "primary_text_and_supplementary_statistical_table",
+      "target": {
+        "class": "mammalian_cell_line",
+        "species": "Homo sapiens corneal epithelial cells",
+        "strain": "immortalized HCEC line"
+      },
+      "assay_conditions": {
+        "assay": "alamarBlue cell viability",
+        "dose": "50 uM GF19",
+        "timepoint": "24 h",
+        "replicates": "n=6 samples per group",
+        "statistics": "Supplementary Table S3: 0 uM vs 50 uM mean difference 0.3713, adjusted p < 0.0001, significant"
+      },
+      "source_locator": {
+        "locator": "xml:sec=8:Biocompatibility and immune compatibility of GF19; fig=3; supplement:Table S3",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt:67-182"
+        ]
+      }
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-hcec-viability-48h-50um",
+      "entity": "GF19",
+      "endpoint": "HCEC_cell_viability_cytotoxicity_48h",
+      "raw_value": "0.2969",
+      "raw_unit": "viability_ratio_mean_difference_vs_0_uM_control",
+      "normalization_status": "not_convertible",
+      "evidence_ladder": "primary_text_and_supplementary_statistical_table",
+      "target": {
+        "class": "mammalian_cell_line",
+        "species": "Homo sapiens corneal epithelial cells",
+        "strain": "immortalized HCEC line"
+      },
+      "assay_conditions": {
+        "assay": "alamarBlue cell viability",
+        "dose": "50 uM GF19",
+        "timepoint": "48 h",
+        "replicates": "n=6 samples per group",
+        "statistics": "Supplementary Table S4: 0 uM vs 50 uM adjusted p = 0.0006, significant; the text reports GF19 as cytotoxic at 50 uM at 48 h."
+      },
+      "source_locator": {
+        "locator": "xml:sec=8:Biocompatibility and immune compatibility of GF19; fig=3; supplement:Table S4",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt:183-298"
+        ]
+      }
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-plaque-assay-24h",
+      "entity": "GF19",
+      "endpoint": "HSV1_plaque_assay_reduction_24h",
+      "raw_value": "10 uM mean_difference_vs_0_uM=1.551, adjusted_p=0.004; 15-45 uM also significant",
+      "raw_unit": "plaque_assay_mean_difference_vs_0_uM_control; plotted unit not reported in supplement",
+      "normalization_status": "not_convertible",
+      "evidence_ladder": "primary_text_and_supplementary_statistical_table",
+      "target": {
+        "class": "virus_in_cell_culture",
+        "species": "HSV-1 McKrae",
+        "strain": "McKrae"
+      },
+      "assay_conditions": {
+        "host_model": "human corneal epithelial cells",
+        "moi": "1",
+        "dose_series": "0, 5, 10, 15, 25, 35, 45 uM",
+        "timepoint": "24 h post-treatment",
+        "replicates": "three replicates at each concentration",
+        "statistics": "Supplementary Table S5: GF19 becomes significant at 10 uM and remains significant at 15, 25, 35, and 45 uM."
+      },
+      "source_locator": {
+        "locator": "xml:sec=9:Antiviral efficacy of GF19 against HSV-1; fig=4A; supplement:Table S5",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt:299-456"
+        ]
+      }
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-plaque-assay-48h",
+      "entity": "GF19",
+      "endpoint": "HSV1_plaque_assay_reduction_48h",
+      "raw_value": "35 uM mean_difference_vs_0_uM=2.476, adjusted_p=0.0015; 45 uM mean_difference_vs_0_uM=5.965, adjusted_p<0.0001",
+      "raw_unit": "plaque_assay_mean_difference_vs_0_uM_control; plotted unit not reported in supplement",
+      "normalization_status": "not_convertible",
+      "evidence_ladder": "primary_text_and_supplementary_statistical_table",
+      "target": {
+        "class": "virus_in_cell_culture",
+        "species": "HSV-1 McKrae",
+        "strain": "McKrae"
+      },
+      "assay_conditions": {
+        "host_model": "human corneal epithelial cells",
+        "moi": "1",
+        "dose_series": "0, 5, 10, 15, 25, 35, 45 uM",
+        "timepoint": "48 h post-treatment",
+        "replicates": "three replicates at each concentration",
+        "statistics": "Supplementary Table S6: GF19 is significant only at 35 and 45 uM at 48 h; 5-25 uM comparisons are not significant."
+      },
+      "source_locator": {
+        "locator": "xml:sec=9:Antiviral efficacy of GF19 against HSV-1; fig=4A; supplement:Table S6",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt:457-618"
+        ]
+      }
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-gf19-pre-post-immunofluorescence",
+      "entity": "GF19",
+      "endpoint": "HSV1_immunofluorescence_pre_post_treatment_effect",
+      "raw_value": "qualitative: pre-treatment showed minimal or less HSV-1 staining; immediate post-infection treatment attenuated but did not arrest infection",
+      "raw_unit": "qualitative_immunofluorescence",
+      "normalization_status": "not_convertible",
+      "evidence_ladder": "primary_text_and_figure_caption",
+      "target": {
+        "class": "virus_in_host_models",
+        "species": "HSV-1 McKrae",
+        "strain": "McKrae"
+      },
+      "assay_conditions": {
+        "host_models": "ex vivo mouse cornea and cultured human corneal epithelial cells",
+        "dose": "45 uM GF19",
+        "treatment_timing": "1 h before infection or immediately after infection",
+        "readout": "HSV-1 antibody immunofluorescence"
+      },
+      "source_locator": {
+        "locator": "xml:sec=9:Antiviral efficacy of GF19 against HSV-1; fig=4B; pdf_text:41598_2024_Article_53662.txt:430-551",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt"
+      }
+    },
+    {
+      "record_id": "doi__10.1038_s41598-024-53662-4-sinp-gf19-48h-immunofluorescence",
+      "entity": "SiNP-GF19",
+      "endpoint": "HSV1_immunofluorescence_sustained_GF19_effect_48h",
+      "raw_value": "qualitative: 2.5 uM GF19 or SiNP-GF19 pre-treatment blocked detectable HSV-1 staining at 24 h; by 48 h infection spread, but a proportion of SiNP-GF19-treated cells remained attached with intact TNT formation",
+      "raw_unit": "qualitative_immunofluorescence",
+      "normalization_status": "not_convertible",
+      "evidence_ladder": "primary_text_and_figure_caption",
+      "target": {
+        "class": "virus_in_cell_culture",
+        "species": "HSV-1 McKrae",
+        "strain": "McKrae"
+      },
+      "assay_conditions": {
+        "host_model": "human corneal epithelial cells",
+        "dose": "2.5 uM FITC-tagged GF19 or SiNP-GF19",
+        "treatment_timing": "1 h pre-treatment before viral infection",
+        "timepoints": "24 h and 48 h after infection",
+        "readout": "HSV-1 antibody immunofluorescence and cell morphology"
+      },
+      "source_locator": {
+        "locator": "xml:sec=11:GF19 interaction with human corneal epithelial cells; fig=6; pdf_text:41598_2024_Article_53662.txt:620-704",
+        "source_path": "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt"
+      }
+    }
+  ],
+  "rejected_rows": [
+    {
+      "rejection_code": "table1_physicochemical_columns_not_measured_activity",
+      "source_locator": "xml:table=1",
+      "reason": "Net charge, hydrophobic ratio, Boman index, GRAVY index, instability index, and aliphatic index are design/physicochemical properties and must not be represented as HCEC IC50 activity rows."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_figure3_4_raw_plot_values_not_in_local_text",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-024-53662-4/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_Article_53662.txt",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_text/41598_2024_53662_MOESM1_ESM.txt",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/figure_captions.json",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-024-53662-4/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "jq JSON artifact inspection",
+        "rg over article and supplement text",
+        "pdftotext-derived article review",
+        "pdftotext-derived supplement review",
+        "figure caption review",
+        "supplementary asset file type inspection"
+      ],
+      "why_unrecoverable": "The local article and supplement provide narrative results, figure captions, Tukey mean differences, confidence intervals, and adjusted p values, but not raw replicate data or exact plotted Fig. 3/Fig. 4 bar heights. The paper states raw data are available from the corresponding author on request.",
+      "impact": "The layer uses source-supported qualitative/statistical records and does not fabricate exact chart values.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    }
+  ]
+}

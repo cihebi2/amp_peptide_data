@@ -1,0 +1,102 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics14102081",
+  "reviewed_at": "2026-05-09T18:04:06Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": "not_present_in_local_packet_after supplementary_index, supplementary_tables, archive_manifest, XML/PDF, and OA package checks",
+    "merged_database_rows": true
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_pharmaceutics14102081/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/locators/locator_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/raw/paper.xml",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/raw/paper.pdf",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/extracted/pdf_text/pharmaceutics-14-02081.txt",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics14102081/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "ElementTree XML table parser",
+    "pdftotext-derived packet text",
+    "JSONL database row reconciliation"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 62,
+    "activity_extraction_issue_count": 0,
+    "database_record_audits": 78,
+    "database_status_summary": {
+      "source_verified": 58,
+      "source_conflict": 20
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "source_conflicts_preserved_as_cautions": 20,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet is complete-with-gaps: XML/PDF/OA package/database rows are present; no supplementary assets were locally present, and this does not block the repaired activity/database adjudication.",
+    "validator_contract": "Required final and packet artifacts are present with row-level activity records, database audit records, locators, and source-review provenance.",
+    "layer_1_database": "DBAASP assay/experiment rows were reconciled row-by-row to Table 1 or Table 2 where exact peptide/target/value support exists; figure-only toxicity values and target-label mismatches remain explicit source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 repair rebuilt Table 1 peptide-specific MIC rows and Table 2 MIC/BPC/MBIC biofilm rows with raw units, organism labels, and locators; the prior Table 2 parser failure is closed.",
+    "layer_3_mechanism": "Worker-6 final mechanism record keeps membrane permeabilization and LPS/cytokine assays source-located and avoids digitizing figure-only curves.",
+    "publication_grade_review": "No blocking or major rework target remains after bounded local-source review; residual conflicts are nonblocking cautions preserved in final artifacts."
+  },
+  "caution_findings": [
+    {
+      "code": "database_exact_toxicity_values_figure_only",
+      "severity": "caution",
+      "evidence_context": "DBAASP hemolysis and 50% cell-death rows provide exact values, while local XML/PDF provides Figure 5 caption/context but no table of exact percentages or EC50 values.",
+      "affected_database_rows": [
+        "linked_assay_records rows 3-4,21,24-26,35",
+        "linked_experiment_records rows 3-4,21,24-26,35"
+      ]
+    },
+    {
+      "code": "database_target_label_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "K. pneumoniae ATCC number mismatch and C. striatum incomplete strain label are kept as source_conflict rather than normalized silently."
+    },
+    {
+      "code": "table1_footnoted_values_retained_with_context",
+      "severity": "caution",
+      "evidence_context": "Some Table 1 MIC values are marked by the article as values from prior references; they are retained as local table evidence with source_footnote metadata."
+    },
+    {
+      "code": "no_local_supplementary_assets",
+      "severity": "caution",
+      "evidence_context": "Supplementary index, supplementary tables file, OA package manifest, XML, and PDF text were checked; no local supplementary spreadsheet/PDF table assets were present."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "summary": "Re-review repaired the source-backed activity matrix and database adjudication for M33D/M33i/l: Table 2 biofilm rows are now represented, DBAASP rows are matched only when local support is exact, and unresolved figure-only toxicity values remain nonblocking cautions.",
+  "adjudication_summary": "Worker-2/4/6 re-review completed bounded paper-local source review and closed rwk-complete-test-0001 with accepted-with-cautions final artifacts."
+}

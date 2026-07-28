@@ -1,0 +1,228 @@
+{
+  "paper_id": "PMC11672609",
+  "verdict": "FAIL",
+  "publication_grade_ready": false,
+  "independently_reviewed_primary_source": true,
+  "reviewed_every_current_final_record": true,
+  "recursive_authority_boundary_false": true,
+  "fallback_release_boundary_preserved": true,
+  "field_checks": [
+    {
+      "check_id": "body_table_activity_coverage",
+      "status": "FAIL",
+      "summary": "All current activity rows were enumerated, and Table 2/S1/Figure 3/Figure 6/Supplement Figure S2 surfaces were inspected. The PA-Win2 endpoint values are covered, but Table 2 MIC assay conditions flatten a source conflict: the results paragraph says MIC was assessed at 0.25-256 ug/mL for 18 h, while methods say 0.25-64 ug/mL and 16 h; final MIC/MBC rows preserve only unqualified 16 h.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json"
+      ],
+      "source_locators": [
+        "xml:table-wrap:2",
+        "xml:p:17",
+        "xml:p:44",
+        "activity_toxicity_evidence.json $.activity_records[0..15].assay_conditions.incubation_time"
+      ]
+    },
+    {
+      "check_id": "database_record_verification",
+      "status": "CAUTION",
+      "summary": "Thirteen DBAASP Codex fallback candidates were reviewed as unresolved_record; no source_verified database record is claimed because the authoritative linked article/assay/sequence/literature snapshots are empty. This is acceptable only as paper-level evidence, not authoritative ingest.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/database/dbaasp_machine_extracted_rows.jsonl"
+      ],
+      "source_locators": [
+        "database_record_verification.json $.summary_counts.row_status_counts.unresolved_record=13",
+        "authoritative_match_report.json $.row_counts all zero",
+        "xml:table-wrap:1 PA-Win2 sequence LLRGLRYLCLKILYILKLRK"
+      ]
+    },
+    {
+      "check_id": "final_mirror_and_count_consistency",
+      "status": "PASS",
+      "summary": "Paper final contains five JSON records; packet final contains the same five plus mechanism_evidence.json as a byte-identical compatibility alias of mechanism_ontology_record.json. Common paper/packet final files are byte-identical and final review counts report 44 activity, 3 toxicity, 13 database audits, and 6 mechanism claims.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/materials_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/review_report.json"
+      ],
+      "source_locators": [
+        "materials_manifest.json $.final_mirror_policy",
+        "review_report.json $.final_counts"
+      ]
+    },
+    {
+      "check_id": "mechanism_ontology_boundaries",
+      "status": "PASS",
+      "summary": "Six mechanism claims preserve ontology boundaries: DiSC3(5) membrane depolarization is the only direct_mechanism claim; time-kill and CV biofilm data remain phenotype_supported; RT-qPCR gene-expression and quorum-sensing effects remain inferred_mechanism; in-silico discovery/modeling remains computational_only.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/mechanism_ontology_record.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/analysis/mechanism_evidence.worker5.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml"
+      ],
+      "source_locators": [
+        "xml:p:23",
+        "xml:fig:4",
+        "xml:p:25",
+        "xml:fig:5",
+        "xml:p:28",
+        "xml:fig:6",
+        "xml:p:31",
+        "xml:fig:7",
+        "mechanism_ontology_record.json $.mechanism_claims[0..5]"
+      ]
+    },
+    {
+      "check_id": "paper_identity_and_entity_linkage",
+      "status": "PASS",
+      "summary": "Paper identity and PA-Win2 entity linkage were source-verified: PMC11672609, PMID 39766503, DOI 10.3390/antibiotics13121113, title match, and Table 1 links TBIU038647 to PA-Win2 sequence LLRGLRYLCLKILYILKLRK. The sequence is 20 residues; no current final object contains both sequence and sequence_length needing a length mismatch repair.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/packet_manifest.json"
+      ],
+      "source_locators": [
+        "xml:article-id[pub-id-type=pmcid]=PMC11672609",
+        "xml:article-id[pub-id-type=pmid]=39766503",
+        "xml:article-id[pub-id-type=doi]=10.3390/antibiotics13121113",
+        "xml:table-wrap:1 row TBIU038647"
+      ]
+    },
+    {
+      "check_id": "provenance_locator_and_normalization_integrity",
+      "status": "FAIL",
+      "summary": "Locator surfaces are present and recursive/path-like source-locator authority was not found, but activity/toxicity normalization is not fully source-faithful: Table 2 MIC rows omit the conflicting xml:p:17 condition locator, and HaCaT toxicity reports raw_value >256 as direct/censored even though the primary text only supports no observed decrease within 0.25 to 256 ug/mL.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/locators/locator_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json"
+      ],
+      "source_locators": [
+        "xml:p:17",
+        "xml:p:19",
+        "xml:p:20",
+        "xml:p:44",
+        "activity_toxicity_evidence.json $.toxicity_records[0].raw_value"
+      ]
+    },
+    {
+      "check_id": "recursive_authority_and_release_boundary",
+      "status": "PASS",
+      "summary": "Fallback release boundary is preserved: authoritative_dbaasp_ingest_ready is false, all fallback database candidates remain unresolved_record, no fallback rows are promoted to source_verified or authoritative ingest, recursive authority flags are false, and review open_rework_ticket_count=0 matches the live packet ticket state after 14/14 request IDs closed.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/rework/rework_requests.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/rework/rework_responses.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/rework/closure_receipts.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC11672609_strict_acceptance_audit_latest.json"
+      ],
+      "source_locators": [
+        "database_record_verification.json $.authoritative_dbaasp_ingest_ready=false",
+        "database_record_verification.json $.candidate_machine_rows_reviewed_summary.all_rows_excluded_from_authoritative_ingest=true",
+        "review_report.json $.open_rework_ticket_count=0"
+      ]
+    },
+    {
+      "check_id": "source_conflicts_and_cautions",
+      "status": "FAIL",
+      "summary": "Database cautions are preserved, but the primary-source MIC condition conflict is not: xml:p:17 gives 18 h and 0.25-256 ug/mL, xml:p:44 gives 16 h and 0.25-64 ug/mL, and final Table 2 activity records do not carry this conflict/caution.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/review_report.json"
+      ],
+      "source_locators": [
+        "xml:p:17",
+        "xml:p:44",
+        "review_report.json $.caution_findings"
+      ]
+    },
+    {
+      "check_id": "supplementary_surface_exhaustion",
+      "status": "PASS",
+      "summary": "The staged supplement ZIP is readable and contains one 9-page PDF. Supplement extraction surfaces cover pages 1-9, Tables S1-S3, 34 S2 condition rows, 14 S3 primer-target rows, and source-reviewed S2 figure observations; extraction_error_count is zero.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/supplementary/antibiotics-13-01113-s001.zip",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/extracted/supplementary_text.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/extracted/supplementary_tables.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/extracted/supplementary_figure_observations.worker3.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/supplementary_methods/rendered"
+      ],
+      "source_locators": [
+        "supp:antibiotics-3288224-supplementary.pdf:page=1..9",
+        "supp:antibiotics-3288224-supplementary.pdf:page=6:table=S1",
+        "supp:antibiotics-3288224-supplementary.pdf:page=7-8:table=S2",
+        "supp:antibiotics-3288224-supplementary.pdf:page=9:table=S3",
+        "supp:antibiotics-3288224-supplementary.pdf:page=3:figure=S2"
+      ]
+    },
+    {
+      "check_id": "toxicity_selectivity_coverage",
+      "status": "FAIL",
+      "summary": "Three toxicity records are present and HaCaT/hADMSC/HDFalpha targets are split as mammalian cell lines, but HaCaT raw_value >256 is not a direct primary-source raw value; the source supports no significant cytotoxicity within the tested 0.25 to 256 ug/mL range. hADMSC and HDFalpha >64 thresholds are source-supported.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json"
+      ],
+      "source_locators": [
+        "xml:p:19",
+        "xml:p:20",
+        "activity_toxicity_evidence.json $.toxicity_records[0]",
+        "activity_toxicity_evidence.json $.toxicity_records[1]",
+        "activity_toxicity_evidence.json $.toxicity_records[2]"
+      ]
+    }
+  ],
+  "blocking_findings": [
+    {
+      "finding_id": "BF-PMC11672609-W2-ACTIVITY-TOXICITY-CONDITION-NORMALIZATION",
+      "owner_worker": "worker-2",
+      "reason": "The final activity/toxicity record is not publication-grade source-faithful. For PA-Win2 Table 2 MIC/MBC rows, it records a single incubation_time=16 h from methods while omitting the source conflict that the results paragraph states MIC was assessed at 0.25-256 ug/mL for 18 h and methods state 0.25-64 ug/mL for 16 h. It also records HaCaT toxicity raw_value as >256 with direct/censored rationale, while the primary source only reports treatment from 0.25 to 256 ug/mL and no observed HaCaT decrease within that range.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/final/activity_toxicity_evidence.json"
+      ],
+      "source_locators": [
+        "xml:p:17: MIC assessed at 0.25-256 ug/mL for 18 h",
+        "xml:p:44: MIC method states final peptide concentrations 0.25-64 ug/mL and 16 h incubation; MBC plates 16 h",
+        "xml:p:19 and xml:p:20: HaCaT unaffected within 0.25 to 256 ug/mL, hADMSC/HDFalpha decrease above 64 ug/mL",
+        "activity_toxicity_evidence.json $.activity_records[0..15].assay_conditions.incubation_time",
+        "activity_toxicity_evidence.json $.toxicity_records[0].raw_value"
+      ],
+      "required_actions": [
+        "Rebuild the Table 2 PA-Win2 MIC/MBC activity records so MIC rows preserve both xml:p:17 and xml:p:44 condition evidence, explicitly marking the 18 h versus 16 h and 0.25-256 versus 0.25-64 ug/mL source conflict instead of using an unqualified 16 h condition.",
+        "For MBC rows, keep the Table 2 endpoint values and distinguish endpoint value evidence from method-condition evidence; do not use the method concentration range to contradict source table endpoint values without a conflict note.",
+        "Revise the HaCaT toxicity record to represent the source-supported statement as no observed cytotoxicity within 0.25 to 256 ug/mL, or explicitly mark any >256 threshold as an inferred censored lower bound rather than a directly transcribed raw value.",
+        "Mirror the repaired activity_toxicity_evidence.json byte-identically to paper final and packet final, then have worker-6 re-adjudicate the repaired lane."
+      ],
+      "acceptance_checks": [
+        "A script over both paper and packet final activity_toxicity_evidence.json finds no MIC activity record with assay_conditions.incubation_time equal to unqualified 16 h unless xml:p:17/xml:p:44 conflict text or equivalent conflict fields are present.",
+        "All Table 2 PA-Win2 endpoint values still match xml:table-wrap:2: B. subtilis 2/2, E. coli 8/32, P. aeruginosa ATCC 9027 4/4, S. aureus 256/>256, S. epidermidis 64/>256, MRPA CCARM 2095 2/2 ug/mL.",
+        "The HaCaT toxicity object no longer claims direct raw_value >256 without a source-supported censoring rationale tied to xml:p:19/xml:p:20.",
+        "Paper and packet final activity_toxicity_evidence.json SHA-256 hashes are identical after repair, and final review_report.json open_rework_ticket_count equals the live packet open-ticket count."
+      ]
+    }
+  ],
+  "cautions": [
+    {
+      "caution_id": "CAUTION-PMC11672609-DATABASE-AUTHORITY-ABSENT",
+      "summary": "No authoritative APD6/DBAASP/DRAMP linked rows are present locally for this paper. The 13 DBAASP fallback candidates are useful paper-level candidates only and must remain excluded from RC2, portal, and authoritative ingest.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/database_record_verification.json"
+      ]
+    },
+    {
+      "caution_id": "CAUTION-PMC11672609-GRAPH-DIGITIZATION",
+      "summary": "Figure-derived biofilm CV and one time-kill value are approximate visual digitizations rather than exact numeric source values; the current activity final marks these exact-vs-approximate statuses, so this is not an additional blocker.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11672609/extracted/supplementary_figure_observations.worker3.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11672609/work/activity_evidence/rendered_pages"
+      ]
+    }
+  ]
+}

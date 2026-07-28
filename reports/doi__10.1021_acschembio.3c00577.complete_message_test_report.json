@@ -1,0 +1,118 @@
+{
+  "analysis": {
+    "activity_extraction_issue_count": 0,
+    "activity_records": 26,
+    "linked_database_activity_records": 130,
+    "database_row_counts": {
+      "linked_assay_records": 130,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 135,
+      "linked_literature_records": 15,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 3,
+    "review_status": "accepted_with_cautions"
+  },
+  "completion_claim": "targeted_worker_2_4_6_rework_completed_with_cautions",
+  "current_state": "accepted_with_cautions",
+  "doi": "10.1021/acschembio.3c00577",
+  "final_approval_status": "accepted_with_cautions_after_rework",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "publication_quality_pass": true,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1
+  },
+  "gate_summary": {
+    "publication_grade_ready": true,
+    "semantic_gate_ready": true,
+    "structural_ready": true,
+    "validator_contract_ready": true
+  },
+  "generated_at": "2026-05-02T10:30:27Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1021_acschembio.3c00577.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": null,
+    "figures": 5,
+    "locators": 34,
+    "sections": 19,
+    "supplementary_assets": 0,
+    "supplementary_tables": 0,
+    "tables": 2
+  },
+  "message_counts": {
+    "artifacts": 16,
+    "chat_messages": 14,
+    "events": 30,
+    "rework_requests": 1,
+    "rework_responses": 1,
+    "state_executions": 13
+  },
+  "not_publication_grade_reason": null,
+  "open_rework_ticket_count": 0,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1021_acschembio.3c00577",
+  "paper_id": "doi__10.1021_acschembio.3c00577",
+  "pmcid": "PMC10877564",
+  "publication_quality_gate": "passed_after_worker_2_4_6_rework",
+  "queue_status": {
+    "analysis": "analysis_accepted_with_cautions",
+    "material": "material_extracted_with_gaps"
+  },
+  "rework_requests": [
+    {
+      "failure_code": "full_source_review_not_completed",
+      "severity": "blocking",
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001",
+      "status": "closed_after_repair"
+    }
+  ],
+  "rework_ticket_ids": [],
+  "semantic_gate": "passed_after_worker_2_4_6_rework",
+  "state_count_expected": 13,
+  "terminal_status": "accepted_with_cautions",
+  "test_type": "complete_real_paper_message_transfer_test_repaired",
+  "title": "Activity of Gut-Derived Nisin-like Lantibiotics against Human Gut Pathogens and Commensals.",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1021_acschembio.3c00577",
+  "workflow_test_ok": true,
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_activity_values_not_primary_text_rows",
+      "evidence_context": "Linked DBAASP MIC values are retained as database provenance/source_conflict where local primary XML/PDF exposes figures or summary tables rather than exact machine-readable values."
+    },
+    {
+      "caution_code": "no_structured_supplementary_tables",
+      "evidence_context": "Local supplementary inventory contains no spreadsheet/structured supplementary table; SI PDF text was checked for methods and masses."
+    },
+    {
+      "caution_code": "figure_point_values_not_textual",
+      "evidence_context": "Figure 3-5 exact plotted MIC point values are not recovered as primary text; Table 1/2 MIC rows and database-linked rows are preserved instead."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_exact_mic_points_not_textual_primary_table",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1021_acschembio.3c00577/raw/paper.xml",
+        "paper_packets/doi__10.1021_acschembio.3c00577/extracted/pdf_text/cb3c00577.txt",
+        "paper_packets/doi__10.1021_acschembio.3c00577/extracted/pdf_text/cb3c00577_si_001.txt",
+        "paper_packets/doi__10.1021_acschembio.3c00577/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1021_acschembio.3c00577/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1021_acschembio.3c00577/database/linked_assay_records.jsonl"
+      ],
+      "tools_attempted": [
+        "xml.etree.ElementTree table parse",
+        "rg over PDF/SI text",
+        "jq/head review of linked database JSONL"
+      ],
+      "why_unrecoverable": "Exact plotted MIC dot/bar values in Figures 3-5 are not exposed as local primary-source text tables; linked DBAASP rows are retained separately as database provenance.",
+      "impact": "Does not block the repaired worker-2 table evidence because primary Table 1/2 MIC rows are now source-located; database exact rows remain cautions, not primary assay rows.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

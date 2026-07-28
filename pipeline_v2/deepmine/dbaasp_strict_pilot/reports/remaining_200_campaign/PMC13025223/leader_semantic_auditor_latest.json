@@ -1,0 +1,242 @@
+{
+  "paper_id": "PMC13025223",
+  "verdict": "PASS",
+  "publication_grade_ready": true,
+  "independently_reviewed_primary_source": true,
+  "reviewed_every_current_final_record": true,
+  "recursive_authority_boundary_false": true,
+  "fallback_release_boundary_preserved": true,
+  "field_checks": [
+    {
+      "check_id": "body_table_activity_coverage",
+      "status": "PASS",
+      "summary": "Primary XML/PDF Table 1 was independently expanded through rowspans: 30 body rows, 12 SM07 rows. Current final preserves all 12 SM07 source rows: one exact Purified SM07 MIC of 4 ug/mL against Pseudomonas aeruginosa ATCC27853 and 11 ND/non-numeric selectivity exclusions, with no target/treatment/value mismatches found.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/pdf_text.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/table1_sm07_repair_grid.worker2.json"
+      ],
+      "source_locators": [
+        "xml:p:16",
+        "xml:p:17",
+        "xml:p:28",
+        "xml:table-wrap:1",
+        "xml:table-wrap:1:body-row=25:cell=3",
+        "pdf:page=8"
+      ]
+    },
+    {
+      "check_id": "database_record_verification",
+      "status": "CAUTION",
+      "summary": "One database identity group is present and correctly retained as unresolved_record. Authoritative linked DBAASP/merged article, assay, sequence, and literature row counts are all zero; the two fallback machine rows preserve SM07 activity/toxicity context but sequence is the placeholder None and no source_verified or authoritative-ingest claim is made.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/database_source_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/dbaasp_machine_extracted_rows.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/linked_sequence_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json"
+      ],
+      "source_locators": [
+        "database:dbaasp_machine_extracted_rows:rows=2",
+        "database:linked_article_records:row_count=0",
+        "database:linked_assay_records:row_count=0",
+        "database:linked_sequence_records:row_count=0",
+        "database:linked_literature_records:row_count=0",
+        "xml:article-title:1",
+        "xml:abstract:1",
+        "xml:p:20",
+        "xml:p:26"
+      ]
+    },
+    {
+      "check_id": "final_mirror_and_count_consistency",
+      "status": "PASS",
+      "summary": "Every current paper-final JSON and packet-final JSON was reviewed. Shared paper/packet final files are byte-identical; packet-only mechanism_evidence.json is a byte-identical legacy alias of mechanism_ontology_record.json. Current counts are activity=1, toxicity=1, excluded=29, database_records=1, mechanism_claims=4, review rework_targets=0. Live packet gate, materials manifest, and analysis_status all report open rework ticket count 0.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/materials_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/mechanism_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/analysis/analysis_status.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC13025223_strict_acceptance_audit_latest.json"
+      ],
+      "source_locators": [
+        "paper_final_json_files=5",
+        "packet_final_json_files=6",
+        "packet:mechanism_evidence.json=alias_of_mechanism_ontology_record.json",
+        "live_open_rework_ticket_count=0"
+      ]
+    },
+    {
+      "check_id": "mechanism_ontology_boundaries",
+      "status": "PASS",
+      "summary": "Four mechanism claims are present with stable IDs/text and valid evidence classes: computational_only, phenotype_supported, inferred_mechanism, and unknown_or_not_tested. No direct_mechanism claim is made, and MIC, sequence/domain annotation, toxicity, and discussion-level lytic/permeability language are not promoted to direct mechanism evidence.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/mechanism_ontology_record.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/mechanism_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/mechanism_ontology/mechanism_locator_scan.worker5.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/locators/locator_index.json"
+      ],
+      "source_locators": [
+        "xml:p:20",
+        "xml:p:35",
+        "xml:p:36",
+        "xml:p:38",
+        "xml:p:39",
+        "xml:p:42",
+        "xml:table-wrap:1",
+        "pdf:page=9",
+        "pdf:page=10",
+        "pdf:page=11"
+      ]
+    },
+    {
+      "check_id": "paper_identity_and_entity_linkage",
+      "status": "CAUTION",
+      "summary": "Paper identity is source-verified as PMCID PMC13025223, PMID 41899469, DOI 10.3390/cimb48030318, title matching the staged XML/PDF. SM07 is source-located as the recombinant phage-derived lytic protein entity, but authoritative database entity linkage remains absent and is preserved as a non-ingest caution rather than smoothed into source_verified.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper_meta.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json"
+      ],
+      "source_locators": [
+        "xml:article-title:1",
+        "xml:abstract:1",
+        "xml:p:20",
+        "xml:p:26",
+        "database:linked_authoritative_rows:row_count=0"
+      ]
+    },
+    {
+      "check_id": "provenance_locator_and_normalization_integrity",
+      "status": "PASS",
+      "summary": "A scripted final-record scan checked 595 locator values from paper-final JSON; all resolved to packet XML/PDF/database locators or accepted derived cell/figure coordinates, with no project-file/work-artifact values in source_locator fields. No current final object contains both a plain one-letter sequence and sequence_length, so residue-length mismatch is absent. MIC normalization is direct/no conversion; toxicity is explicitly not_convertible plus approximate graph observations.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/locators/locator_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/mechanism_ontology_record.json"
+      ],
+      "source_locators": [
+        "locator_values_checked=595",
+        "suspect_locator_count=0",
+        "sequence_length_objects=0",
+        "xml:table-wrap:1:body-row=25:cell=3",
+        "pdf:page=9:figure=Figure 6"
+      ]
+    },
+    {
+      "check_id": "recursive_authority_and_release_boundary",
+      "status": "PASS",
+      "summary": "Recursive authority boundary is false: final source locators point to paper-local XML/PDF/table/figure or database row-count provenance, not worker summaries or project artifacts. Fallback DBAASP machine rows remain candidate-only, source_verified_count is 0, authoritative_ingest_ready is false, and strict acceptance states the paper-level result must not be promoted to authoritative DBAASP/RC2/portal ingest.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/materials_manifest.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC13025223_strict_acceptance_audit_latest.json"
+      ],
+      "source_locators": [
+        "database:dbaasp_machine_extracted_rows:rows=2",
+        "database:linked_authoritative_rows:row_count=0",
+        "xml:article-title:1",
+        "xml:table-wrap:1",
+        "pdf:page=9:figure=Figure 6"
+      ]
+    },
+    {
+      "check_id": "source_conflicts_and_cautions",
+      "status": "CAUTION",
+      "summary": "No blocking source conflict remains. Preserved cautions are scientific boundary cautions: no linked authoritative DBAASP rows, fallback sequence None unresolved, and Figure 6 toxicity values are approximate graph digitizations. These cautions are visible in final review and do not create release/ingest authority.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/review_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/figure6_digitization/figure6_approximate_graph_values.worker2.json"
+      ],
+      "source_locators": [
+        "database:linked_authoritative_rows:row_count=0",
+        "database:dbaasp_machine_extracted_rows:sequence=None",
+        "xml:p:32",
+        "xml:fig:6",
+        "pdf:page=9:figure=Figure 6"
+      ]
+    },
+    {
+      "check_id": "supplementary_surface_exhaustion",
+      "status": "PASS",
+      "summary": "Primary XML and PDF are staged/readable. Both staged supplementary directories are empty; packet supplementary_index has zero files, supplementary_text has zero rows, supplementary_tables has zero tables, archive_manifest has zero archives, and extraction_errors is empty. No uninspected staged supplement remains.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/supplementary",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/raw/supplementary_original",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/supplementary_index.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/supplementary_text.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/supplementary_tables.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/archive_manifest.json"
+      ],
+      "source_locators": [
+        "paper_xml_sections=28",
+        "pdf_pages=13",
+        "supplementary_files=0",
+        "supplementary_text_rows=0",
+        "supplementary_tables=0",
+        "archives=0"
+      ]
+    },
+    {
+      "check_id": "toxicity_selectivity_coverage",
+      "status": "CAUTION",
+      "summary": "Toxicity coverage is source-reviewed: Vero-cell MTT methods and qualitative result are captured, with Figure 6 graph points preserved as approximate rather than exact. Selectivity coverage is complete for Table 1 SM07 rows, including ND rows for Acinetobacter baumannii, ESCCO ATCC 25922, Staphylococcus aureus, Enterococcus faecalis, Pseudomonas crude lysate, and Escherichia coli. The remaining caution is graph-derived exactness, not omission.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.xml",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.pdf",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/figure6_digitization/figure6_approximate_graph_values.worker2.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/figure6_digitization/figure6_crop.png"
+      ],
+      "source_locators": [
+        "xml:p:18",
+        "xml:p:19",
+        "xml:p:32",
+        "xml:fig:6",
+        "xml:caption:7",
+        "xml:table-wrap:1",
+        "pdf:page=9",
+        "pdf:page=9:figure=Figure 6"
+      ]
+    }
+  ],
+  "blocking_findings": [],
+  "cautions": [
+    {
+      "caution_id": "PMC13025223-CAUTION-NO-LINKED-AUTHORITY",
+      "summary": "Authoritative DBAASP/merged linked rows are absent; the paper-level source review is publication-grade, but authoritative DBAASP/RC2/portal ingest remains false.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC13025223_strict_acceptance_audit_latest.json"
+      ]
+    },
+    {
+      "caution_id": "PMC13025223-CAUTION-FALLBACK-SEQUENCE-PLACEHOLDER",
+      "summary": "Fallback machine candidate rows contain sequence None; final records keep this unresolved and excluded from authoritative ingest rather than normalizing or source-verifying it.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/dbaasp_machine_extracted_rows.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/review_report.json"
+      ]
+    },
+    {
+      "caution_id": "PMC13025223-CAUTION-FIGURE6-APPROXIMATE-TOXICITY",
+      "summary": "Figure 6 toxicity values are approximate graph-read observations; exact source support is the qualitative Vero-cell no-significant-toxicity text and the plotted figure surface, not an exact numeric table.",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/figure6_digitization/figure6_approximate_graph_values.worker2.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/figure6_digitization/figure6_crop.png"
+      ]
+    }
+  ]
+}

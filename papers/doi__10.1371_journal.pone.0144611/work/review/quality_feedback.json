@@ -1,0 +1,37 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0144611",
+  "generated_at": "2026-05-05T19:16:13Z",
+  "status": "resolved_after_codex_cli_rereview",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "resolution_summary": "Worker-2 recovered the table-shaped activity/toxicity rows; worker-4 reconciled database rows against primary locators with conflicts preserved; worker-6 re-adjudicated as accepted_with_cautions after strict gate rerun.",
+  "remaining_cautions": [
+    {
+      "code": "database_source_conflicts_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "Some database rows remain source_conflict because their target/value text is aggregate, external-reference-only, or conflicts with primary table strain/value locators.",
+      "affected_artifact": "papers/doi__10.1371_journal.pone.0144611/final/database_record_verification.json"
+    },
+    {
+      "code": "not_determined_activity_cells_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-6",
+      "reason": "Primary Table 3 contains explicit n.d. cells; these are retained as not_determined source cells and not interpreted as measured MIC values.",
+      "affected_artifact": "papers/doi__10.1371_journal.pone.0144611/final/activity_toxicity_evidence.json"
+    },
+    {
+      "code": "supplement_context_not_primary_assay_expansion",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "reason": "S1 is primer-only and S2 is a comparison table; neither creates a new independently required activity/toxicity matrix beyond the repaired primary source tables.",
+      "affected_artifact": "paper_packets/doi__10.1371_journal.pone.0144611/raw/supplementary_original"
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

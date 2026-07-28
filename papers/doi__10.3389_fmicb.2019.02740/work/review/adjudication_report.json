@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2019.02740",
+  "reviewed_at": "2026-05-06T19:21:22Z",
+  "generated_at": "2026-05-06T19:21:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded local recovery opened XML, PDF text, local supplementary_original HTML/bin assets, and linked DBAASP JSONL snapshots. No external or absent supplement was chased."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fmicb.2019.02740/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02740/raw/supplementary_original"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 584,
+    "supporting_context_records": 91,
+    "database_status_summary": {
+      "source_verified": 261,
+      "source_conflict": 170
+    },
+    "mechanism_claims": 3,
+    "unrecoverable_material_gap_count": 0,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material remains material_extracted_with_gaps only because local supplementary assets are HTML/redirect pages, but XML/PDF/database sources are sufficient for obtainable source-reviewed analysis.",
+    "validator_contract": "Structural packet and final artifacts are present; this is treated as contract readiness only, not scientific acceptance by itself.",
+    "layer_1_database": "Worker-4 matched linked DBAASP assay rows to Table 2, Table 4, or Table 7 where source-controllable; unresolved identity metadata is preserved as source_conflict instead of hidden.",
+    "layer_2_activity_toxicity": "Worker-2 corrected the row orientation and extracted peptide MIC/FIC records with explicit endpoint, entity, raw value, unit, target strain, assay conditions, and locators. Table 3 is retained as a statistical summary rather than fake assay rows.",
+    "layer_3_mechanism": "Worker-6 final mechanism is phenotypic/contextual only; no direct molecular mechanism is overclaimed.",
+    "publication_grade_review": "No blocking or major issue remains after bounded local source review; cautions are explicit and no rework target remains open."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_identity_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "170 linked DBAASP rows retain source_conflict status, mainly blank/incomplete DBAASP identity metadata for source_id DBAASPS_1728 or unmatched local row details; values are source-located where possible."
+    },
+    {
+      "caution_code": "supplementary_assets_html_only",
+      "severity": "caution",
+      "evidence_context": "Six local supplementary_original *.bin assets were opened; file(1) identifies them as HTML/redirect or article/related landing pages rather than spreadsheet/PDF data supplements. Primary XML/PDF tables carry the recoverable evidence."
+    },
+    {
+      "caution_code": "table3_statistical_summary_not_assay_rows",
+      "severity": "caution",
+      "evidence_context": "Table 3 is a derived statistical analysis of Table 2 MIC classes and was retained as summary evidence, not fabricated as target/entity/value assay rows."
+    },
+    {
+      "caution_code": "mechanism_context_not_direct_assay",
+      "severity": "caution",
+      "evidence_context": "Mechanism claims are phenotypic/contextual; direct molecular mechanisms are not overclaimed."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 source re-review repaired the activity-table orientation, reconciled linked DBAASP rows against primary tables where locally supportable, preserved conflicts, and closed the prior complete-message-test rework without promoting unsupported mechanism or supplement claims."
+}

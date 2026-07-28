@@ -1,0 +1,65 @@
+
+You are a STRICT database-record auditor (pipeline v2). You compare what a peptide database ASSERTS
+against the PRIMARY PAPER's deterministically-parsed tables that are given to you below. You must not
+read raw XML or invent values: the ONLY admissible source evidence is the `longform_cells` provided.
+
+For EACH database assertion, output one JSON object with this exact schema:
+{
+ "assertion_index": <int, 0-based position in db_assertions>,
+ "db_claimed": {"organism": "...", "endpoint": "...", "value": "...", "peptide": "..."},
+ "verification_outcome": one of
+     "value_match"            (source has the SAME value for the same peptide+organism+endpoint),
+     "value_mismatch"         (source has a DIFFERENT value -> candidate real DB error),
+     "endpoint_mismatch"      (source reports this value under a DIFFERENT endpoint than the DB claims,
+                               e.g. DB says IC50 but the source column header says GI50/EC50/MBC),
+     "variant_misattribution" (the value EXISTS in source but belongs to a DIFFERENT peptide/variant
+                               than the DB row names),
+     "not_in_provided_tables" (the organism/target/value is NOT in the tables provided to you;
+                               this is NOT evidence of a database error -- the value may live in a
+                               figure, supplement, or a table not provided. Treat as undetermined.),
+     "cannot_determine"       (value lives only in a figure image, or no matching cell exists in the
+                               provided tables, or the table structure is too ambiguous to match),
+ "normalization_note": one of
+     "strain_id_differs_value_same", "modification_representation_only", "unit_differs", "none",
+ "is_database_error": <bool>,
+ "evidence": {"table_index": <int>, "row_label": "...", "col_header": "...", "source_value": "..."},
+ "short_reason": "<=200 chars"
+}
+
+HARD RULES (these encode the fixes over the old pipeline):
+1. GROUNDING: the `evidence` object MUST be copied verbatim from one of the provided `longform_cells`.
+   If no provided cell supports a comparison, you MUST return "cannot_determine" and leave evidence null.
+   Never guess a number that is not in the provided cells.
+2. ENDPOINT FROM SOURCE: take the endpoint from the table column header / caption / footnote, NOT from
+   the database. If the DB endpoint label differs from the source header for the same value -> endpoint_mismatch.
+3. STRAIN-ID NORMALIZATION: if the source has the SAME value for the same GENUS+SPECIES and SAME endpoint
+   but a different strain/collection id (e.g. DB "ATCC 6258" vs source "CCM 8271"; ATCC/CCM/PCM/DSM/KCTC/CGMCC),
+   this is NOT an error: verification_outcome="value_match", normalization_note="strain_id_differs_value_same",
+   is_database_error=false.
+4. MODIFICATION NORMALIZATION: a DB "core sequence" vs a source "core sequence + terminal -NH2 / N-acetyl"
+   is representation, not error: normalization_note="modification_representation_only", is_database_error=false
+   (unless the residue letters themselves differ).
+5. is_database_error=true ONLY for value_mismatch / endpoint_mismatch / variant_misattribution that
+   (a) are NOT explained by a normalization_note AND (b) carry a positive `evidence` cell copied from
+   longform_cells showing the CONFLICTING source value.
+5b. VARIANT MISATTRIBUTION needs an identity anchor: only use "variant_misattribution" when the DB
+   assertion provides a peptide name (db_claimed_peptide_name) that maps to a SPECIFIC source row/column.
+   If the DB record has no peptide name, or the source columns are coded (e.g. #1..#25) without a legend
+   you can resolve, you CANNOT know which variant the value belongs to -> use "cannot_determine".
+6. ABSENCE IS NOT ERROR (critical): you are given ONLY some tables, never the whole paper. If a DB
+   organism/target/value is not in the provided cells, you MUST return "not_in_provided_tables" with
+   is_database_error=false. NEVER conclude the database is wrong merely because something is missing
+   from the tables you were given -- it may be in a figure, supplement, or a table not provided.
+7. Output ONLY a JSON array of these objects as your final message. No prose, no markdown fences.
+
+
+=== PAPER ID ===
+doi__10.7150_ijbs.9859
+
+=== DETERMINISTICALLY PARSED SOURCE TABLES (admissible evidence cells) ===
+[{"table_index": 1, "label": "Table 1", "caption": "Physico-chemical characteristics of the natural A. crassicauda antimicrobial peptides, AcrAP1 and AcrAP2, and their cationicity/amphipathicity enhanced analogues, AcrAP1a and AcrAP2a. C = random coil and H = α-helix.", "footnotes": [], "header_rows": [["Peptides", "Secondary structure", "α-helix (%)", "Hydrophobicity (H)", "Hydrophobic moment (μH)", "Net charge"]], "longform_cells": [{"table_index": 1, "row_index": 2, "col_index": 2, "row_label": "AcrAP1", "col_header": "Secondary structure", "value": "FLFSLIPHAISGLISAFKCHHHHHHHHHHHHHHHCC"}, {"table_index": 1, "row_index": 2, "col_index": 3, "row_label": "AcrAP1", "col_header": "α-helix (%)", "value": "83.33"}, {"table_index": 1, "row_index": 2, "col_index": 4, "row_label": "AcrAP1", "col_header": "Hydrophobicity (H)", "value": "0.902"}, {"table_index": 1, "row_index": 2, "col_index": 5, "row_label": "AcrAP1", "col_header": "Hydrophobic moment (μH)", "value": "0.437"}, {"table_index": 1, "row_index": 2, "col_index": 6, "row_label": "AcrAP1", "col_header": "Net charge", "value": "+2"}, {"table_index": 1, "row_index": 3, "col_index": 2, "row_label": "AcrAP2", "col_header": "Secondary structure", "value": "FLFSLIPNAISGLLSAFKCHHHHHHHHHHHHHHHCC"}, {"table_index": 1, "row_index": 3, "col_index": 3, "row_label": "AcrAP2", "col_header": "α-helix (%)", "value": "83.33"}, {"table_index": 1, "row_index": 3, "col_index": 4, "row_label": "AcrAP2", "col_header": "Hydrophobicity (H)", "value": "0.856"}, {"table_index": 1, "row_index": 3, "col_index": 5, "row_label": "AcrAP2", "col_header": "Hydrophobic moment (μH)", "value": "0.474"}, {"table_index": 1, "row_index": 3, "col_index": 6, "row_label": "AcrAP2", "col_header": "Net charge", "value": "+2"}, {"table_index": 1, "row_index": 4, "col_index": 2, "row_label": "AcrAP1a", "col_header": "Secondary structure", "value": "FLFKLIPKAIKGLIKAFKCHHHHHHHHHHHHHHHHC"}, {"table_index": 1, "row_index": 4, "col_index": 3, "row_label": "AcrAP1a", "col_header": "α-helix (%)", "value": "88.89"}, {"table_index": 1, "row_index": 4, "col_index": 4, "row_label": "AcrAP1a", "col_header": "Hydrophobicity (H)", "value": "0.681"}, {"table_index": 1, "row_index": 4, "col_index": 5, "row_label": "AcrAP1a", "col_header": "Hydrophobic moment (μH)", "value": "0.640"}, {"table_index": 1, "row_index": 4, "col_index": 6, "row_label": "AcrAP1a", "col_header": "Net charge", "value": "+6"}, {"table_index": 1, "row_index": 5, "col_index": 2, "row_label": "AcrAP2a", "col_header": "Secondary structure", "value": "FLFKLIPKAIKGLLKAFKCHHHHHHHHHHHHHHHHC"}, {"table_index": 1, "row_index": 5, "col_index": 3, "row_label": "AcrAP2a", "col_header": "α-helix (%)", "value": "88.89"}, {"table_index": 1, "row_index": 5, "col_index": 4, "row_label": "AcrAP2a", "col_header": "Hydrophobicity (H)", "value": "0.676"}, {"table_index": 1, "row_index": 5, "col_index": 5, "row_label": "AcrAP2a", "col_header": "Hydrophobic moment (μH)", "value": "0.639"}, {"table_index": 1, "row_index": 5, "col_index": 6, "row_label": "AcrAP2a", "col_header": "Net charge", "value": "+6"}]}, {"table_index": 2, "label": "Table 2", "caption": "Mean inhibitory concentrations (MICs) and and minimum bactericidal concentrations (MBCs) of AcrAP1, AcrAP2, AcrAP1a and AcrAP2a against the test micro-organisms employed and their concentrations effecting 100% lysis of horse erythrocytes.", "footnotes": [], "header_rows": [["Peptides", "MIC (µM)", "MIC (µM)", "MIC (µM)", "MBC (µM) 100% Haemolysis (µM)", "MBC (µM) 100% Haemolysis (µM)", "MBC (µM) 100% Haemolysis (µM)"], ["S. aureus", "E. coli", "C. albicans", "S. aureus", "E. coli", "C. Horse red cellsalbicans"]], "longform_cells": [{"table_index": 2, "row_index": 3, "col_index": 2, "row_label": "AcrAP1", "col_header": "MIC (µM) / S. aureus", "value": "8"}, {"table_index": 2, "row_index": 3, "col_index": 3, "row_label": "AcrAP1", "col_header": "MIC (µM) / E. coli", "value": ">250"}, {"table_index": 2, "row_index": 3, "col_index": 4, "row_label": "AcrAP1", "col_header": "MIC (µM) / C. albicans", "value": "16"}, {"table_index": 2, "row_index": 3, "col_index": 5, "row_label": "AcrAP1", "col_header": "MBC (µM) 100% Haemolysis (µM) / S. aureus", "value": "32"}, {"table_index": 2, "row_index": 3, "col_index": 6, "row_label": "AcrAP1", "col_header": "MBC (µM) 100% Haemolysis (µM) / E. coli", "value": "NT"}, {"table_index": 2, "row_index": 3, "col_index": 7, "row_label": "AcrAP1", "col_header": "MBC (µM) 100% Haemolysis (µM) / C. Horse red cellsalbicans", "value": "64 64"}, {"table_index": 2, "row_index": 4, "col_index": 2, "row_label": "AcrAP2", "col_header": "MIC (µM) / S. aureus", "value": "8"}, {"table_index": 2, "row_index": 4, "col_index": 3, "row_label": "AcrAP2", "col_header": "MIC (µM) / E. coli", "value": ">250"}, {"table_index": 2, "row_index": 4, "col_index": 4, "row_label": "AcrAP2", "col_header": "MIC (µM) / C. albicans", "value": "16"}, {"table_index": 2, "row_index": 4, "col_index": 5, "row_label": "AcrAP2", "col_header": "MBC (µM) 100% Haemolysis (µM) / S. aureus", "value": "32"}, {"table_index": 2, "row_index": 4, "col_index": 6, "row_label": "AcrAP2", "col_header": "MBC (µM) 100% Haemolysis (µM) / E. coli", "value": "NT"}, {"table_index": 2, "row_index": 4, "col_index": 7, "row_label": "AcrAP2", "col_header": "MBC (µM) 100% Haemolysis (µM) / C. Horse red cellsalbicans", "value": "64 64"}, {"table_index": 2, "row_index": 5, "col_index": 2, "row_label": "AcrAP1a", "col_header": "MIC (µM) / S. aureus", "value": "4"}, {"table_index": 2, "row_index": 5, "col_index": 3, "row_label": "AcrAP1a", "col_header": "MIC (µM) / E. coli", "value": "8"}, {"table_index": 2, "row_index": 5, "col_index": 4, "row_label": "AcrAP1a", "col_header": "MIC (µM) / C. albicans", "value": "4"}, {"table_index": 2, "row_index": 5, "col_index": 5, "row_label": "AcrAP1a", "col_header": "MBC (µM) 100% Haemolysis (µM) / S. aureus", "value": "32"}, {"table_index": 2, "row_index": 5, "col_index": 6, "row_label": "AcrAP1a", "col_header": "MBC (µM) 100% Haemolysis (µM) / E. coli", "value": "32"}, {"table_index": 2, "row_index": 5, "col_index": 7, "row_label": "AcrAP1a", "col_header": "MBC (µM) 100% Haemolysis (µM) / C. Horse red cellsalbicans", "value": "4 32"}, {"table_index": 2, "row_index": 6, "col_index": 2, "row_label": "AcrAP2a", "col_header": "MIC (µM) / S. aureus", "value": "4"}, {"table_index": 2, "row_index": 6, "col_index": 3, "row_label": "AcrAP2a", "col_header": "MIC (µM) / E. coli", "value": "8"}, {"table_index": 2, "row_index": 6, "col_index": 4, "row_label": "AcrAP2a", "col_header": "MIC (µM) / C. albicans", "value": "4"}, {"table_index": 2, "row_index": 6, "col_index": 5, "row_label": "AcrAP2a", "col_header": "MBC (µM) 100% Haemolysis (µM) / S. aureus", "value": "32"}, {"table_index": 2, "row_index": 6, "col_index": 6, "row_label": "AcrAP2a", "col_header": "MBC (µM) 100% Haemolysis (µM) / E. coli", "value": "32"}, {"table_index": 2, "row_index": 6, "col_index": 7, "row_label": "AcrAP2a", "col_header": "MBC (µM) 100% Haemolysis (µM) / C. Horse red cellsalbicans", "value": "8 32"}]}]
+
+=== DATABASE ASSERTIONS TO VERIFY ===
+[{"assertion_index": 0, "database": "dbAMP", "db_subject_text": "Staphylococcus aureus NCTC 10788 (MIC=4μM)\nStaphylococcus aureus NCTC 10788 (MBC=32μM)\nEscherichia coli NCTC 10418 (MIC=8μM)\nEscherichia coli NCTC 10418 (MBC=32μM)\nCandida albicans NCPF 1467 (MIC=4μM)\nCandida albicans NCPF 1467 (MBC=8μM)\nHuman lung carcinoma NCI-H460 (IC50=3.60μM)\nHuman breast adenocarcinoma MDA-MB-435S (IC50=2.75μM)\nHuman breast adenocarcinoma MCF-7 (IC50=3.51μM)\nHuman prostate adenocarcinoma PC-3 (IC50=2.93μM)", "db_measure": "NO", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 1, "database": "dbAMP", "db_subject_text": "Staphylococcus aureus NCTC 10788 (MIC=8μM)\nStaphylococcus aureus NCTC 10788 (MBC=32μM)\nEscherichia coli NCTC 10418 (MIC=>250μM)\nCandida albicans NCPF 1467 (MIC=16μM)\nCandida albicans NCPF 1467 (MBC=64μM)\nHuman breast adenocarcinoma MCF-7 (IC50=7.222μM)\nHuman melanoma A375 (IC50=9.478μM)\nHuman glioblastoma U87-MG (IC50=10.21Unknown Unit)", "db_measure": "NO", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}]
+
+Return ONLY the JSON array now (one object per assertion above).

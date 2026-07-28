@@ -1,0 +1,110 @@
+{
+  "artifact_type": "database_record_verification",
+  "paper_id": "doi__10.3390_ijms231810558",
+  "generated_at": "2026-05-08T13:17:16Z",
+  "reviewed_at": "2026-05-08T13:17:16Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker": "worker-4",
+  "role": "paper-database-record-auditor",
+  "protocol": "amp_three_layer_v2_batch4_rereview",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "overall_status": "accepted_with_cautions",
+  "audit_scope": "Re-reviewed all linked packet database rows plus targeted merged-output DRAMP/LTX-315 lookups. The packet contains one DRAMP literature link and no linked assay, activity, experiment, or sequence rows for this DOI.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 0,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "database": "DRAMP",
+      "sequence_key": "DRAMP:DRAMP29326",
+      "source_id": "DRAMP29326",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "row=1",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "record_name": "Effect of Membrane Surface Charge / LTX-315 literature link",
+      "database_measure": "",
+      "database_subject": "Effect of Membrane Surface Charge",
+      "matched_activity_record_id": "",
+      "primary_activity_support": {
+        "status": "no_database_activity_row_for_current_doi",
+        "notes": "Packet linked_assay_records, linked_dramp_activity_records, and linked_experiment_records are empty. Current-paper activity evidence is biophysical model-membrane response, not database potency data."
+      },
+      "sequence_check": {
+        "status": "source_verified_primary_ltx315_sequence_from_current_paper",
+        "database_sequence": "not present in linked packet sequence rows",
+        "primary_source_sequence": "Lys-Lys-Trp-Trp-Lys-Lys-Trp-Dip-Lys-NH2",
+        "normalized_sequence_for_lookup_only": "KKWWKKWXK",
+        "terminal_or_noncanonical_modifications": "C-terminal amidation and internal Dip residue are explicitly present in the primary paper sequence notation.",
+        "source_locator": {
+          "source_path": "papers/doi__10.3390_ijms231810558/source/paper.xml",
+          "locator": "xml:sec=8:3.1. Peptide; xml:fig=1:Figure 1A",
+          "primary_source_statement": "The peptide section and Figure 1A give LTX-315 as Lys-Lys-Trp-Trp-Lys-Lys-Trp-Dip-Lys-NH2."
+        }
+      },
+      "identity_review": {
+        "name_or_synonym": "source_verified_name_LTX-315",
+        "sequence": "source_verified_primary_sequence_for_current_paper",
+        "terminal_or_noncanonical_modifications": "source_verified_C_terminal_amidation_and_Dip",
+        "source_organism_or_origin": "synthetic peptide derived from bovine lactoferricin context; synthesized by Anygen for current experiments",
+        "citation_traceability": "source_verified_current_doi_pmid_pmcid",
+        "activity_value": "no_database_activity_value_for_current_doi"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.3390_ijms231810558/database/linked_literature_records.jsonl"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta DOI=10.3390/ijms231810558 PMID=36142470 PMCID=PMC9501188",
+        "source_path": "papers/doi__10.3390_ijms231810558/source/paper.xml"
+      },
+      "conflict_context": "No source_conflict was found in the packet-linked database rows. The caution is that DRAMP29326 is present only as a literature/sequence key link here; there are no linked sequence or activity database rows to reconcile for current-paper potency.",
+      "conflict_flags": [
+        "linked_sequence_rows_absent",
+        "linked_activity_rows_absent",
+        "current_paper_biophysical_not_cellular_potency_assay"
+      ],
+      "review_notes": "The literature link matches the current DOI/PMID/PMCID and the primary paper supports LTX-315 sequence/modification identity. Database potency fields are absent for this DOI and were not fabricated from prior LTX-315 papers."
+    }
+  ],
+  "merged_output_checks": [
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+      "query": "DRAMP29326 and 10.3390/ijms231810558",
+      "result": "current DOI literature row links DRAMP29326 to PMID 36142470"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+      "query": "DRAMP29326",
+      "result": "links DRAMP29326 to the current DOI and a separate 2022 JITC DOI; no current-paper activity row is implied"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "query": "DRAMP29326",
+      "result": "no exact DRAMP29326 sequence row found in all_sequences.csv during targeted lookup"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+      "query": "DRAMP29326 and PMID 36142470",
+      "result": "no linked current-paper experimental activity row found; LTX-315 potency rows found in merged output belong to other papers and were not promoted to this DOI"
+    }
+  ],
+  "status_summary": {
+    "source_verified": 1
+  },
+  "quality_controls": {
+    "all_packet_database_jsonl_files_opened": true,
+    "database_only_activity_rows_not_promoted": true,
+    "cross_paper_ltx315_activity_not_promoted_to_current_doi": true,
+    "sequence_modification_identity_source_reviewed_from_current_paper": true,
+    "citation_traceability_verified": true
+  },
+  "adjudication_note": "Worker-4 re-review resolves the prior generic database-conflict blocker: this packet has no conflicting linked assay/activity/sequence rows. The only linked row is a DRAMP literature link, source-verified for the current DOI with a caution that no current-paper database activity row exists."
+}

@@ -1,0 +1,71 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0067937",
+  "reviewed_at": "2026-05-03T14:51:57Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_summary": {
+      "source_path": "paper_packets/doi__10.1371_journal.pone.0067937/extracted/oa_package/local-DBAASP-PMC3701609/PMC3701609/pone.0067937.s001.xlsx",
+      "sheet_names": [
+        "Shrimp ALFs"
+      ],
+      "row_count": 68,
+      "finding": "Supplemental Table S1 contains ALF sequence/biochemical properties; it adds sequence context but no additional MIC, toxicity, or mechanism table beyond primary Table 3."
+    }
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1371_journal.pone.0067937/packet_manifest.json",
+    "papers/doi__10.1371_journal.pone.0067937/source/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0067937/extracted/pdf_text/pone.0067937.txt",
+    "paper_packets/doi__10.1371_journal.pone.0067937/extracted/oa_package/local-DBAASP-PMC3701609/PMC3701609/pone.0067937.s001.xlsx",
+    "paper_packets/doi__10.1371_journal.pone.0067937/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0067937/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0067937/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "table2_peptide_sequences_source_reviewed": 5,
+    "table3_activity_records": 88,
+    "database_record_audits": 189,
+    "database_source_conflicts_preserved": 42,
+    "mechanism_claims": 3,
+    "supplement_xlsx_reviewed": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/CAMP/dbAMP linked rows were reconciled to primary Table 2 peptide sequences and Table 3 MIC cells. Rows whose database target nomenclature differs from the primary table are retained as source_conflict with value-match context.",
+    "layer_2_activity_toxicity": "Final activity artifact now records all 88 tested Table 3 MIC cells with peptide entity, unit, target, and source locators. No toxicity table is present in local material.",
+    "layer_3_mechanism": "Mechanism output is bounded to LPS-binding/LAL evidence and source-supported structure-activity context; no membrane-disruption or killing pathway is overclaimed.",
+    "supplementary_material": "OA package spreadsheet Table S1 was opened as OOXML and contains sequence/biochemical properties, not additional activity/toxicity endpoints."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_nomenclature_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "Linked database rows use Corynebacterium stationis, Vibrio penaeicida, and/or Parastagonospora nodorum where primary Table 3 uses Brevibacterium stationis, Vibrio penaeicidae, and Septoria nodorum; matching MIC values remain recorded but the target-name differences are preserved as source_conflict.",
+      "affected_record_count": 42
+    },
+    {
+      "caution_code": "no_local_toxicity_endpoint",
+      "severity": "caution",
+      "evidence_context": "Local XML/PDF/OA package and Table S1 do not provide a toxicity endpoint for these ALF peptides; final activity records are MIC-only."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Worker-4/6 source-reviewed rework closes rwk-complete-test-0001 with accepted_with_cautions: Table 3 MIC extraction is complete, database nomenclature conflicts are explicit, supplement Table S1 was checked, and mechanism claims are bounded to source-supported evidence."
+}

@@ -1,0 +1,104 @@
+{
+  "ticket_id": "pilot20-019-rwk-moesm1-local-supplement-absent",
+  "paper_id": "doi__10.1038_s41598-017-16784-6",
+  "owner_worker": "worker-2_main_text_assay_extractor",
+  "action_taken": "needs_upstream_material",
+  "files_to_update_or_review": [
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/raw/supplementary_original/41598_2017_16784_MOESM1_ESM.pdf",
+      "status": "missing_required_source_asset",
+      "reason": "Primary XML declares MOESM1 as 41598_2017_16784_MOESM1_ESM.pdf, but only landing-*.bin HTML assets are present locally."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+      "status": "review_after_material_recovery",
+      "reason": "Current file has table_count=0. Tables S1/S2 must be parsed into row-level checkerboard MIC/FICI evidence before DBAASP assay 498 can be repaired or source-reviewed."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_assay_records.jsonl",
+      "status": "reviewed_row_10_only",
+      "reason": "Row 10 is DBAASP assay_id 498: Oxacillin synergy/FICI 0.52 for Staphylococcus aureus 547582, but it is supplement-dependent."
+    }
+  ],
+  "source_inputs_checked": [
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-019__doi__10.1038_s41598-017-16784-6/true_review_result.json",
+      "finding": "Prior source review already identified local_moesm1_supplement_pdf_absent and table_count=0; rechecked against packet files below."
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-019__doi__10.1038_s41598-017-16784-6/rework_ticket.json",
+      "finding": "Ticket requests recovery of 41598_2017_16784_MOESM1_ESM.pdf and parsing of Tables S1/S2 for checkerboard MIC/FICI evidence."
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-010-PILOT20-019-worker-2/dispatch_packet.json",
+      "finding": "Dispatch confirms worker-2 owner, target_queue=material_extraction, and expected owner_response path."
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-019__doi__10.1038_s41598-017-16784-6/material_inventory.json",
+      "finding": "Inventory shows raw/paper.xml and raw/paper.pdf exist, raw/oa_package absent, supplementary_original has ten landing-*.bin files, and supplementary_tables.json has table_count=0."
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-019__doi__10.1038_s41598-017-16784-6/source_locator_hints.json",
+      "finding": "Hints preserve missing_local_supplement and supplement_only_fici conflict flags for database:linked_assay_records.jsonl:row=10."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/raw/paper.xml",
+      "finding": "Line 61 / xml:sec=13 routes combination MIC/FICI values to Tables S1/S2; line 98 declares supplementary-material id MOESM1 with href 41598_2017_16784_MOESM1_ESM.pdf."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/xml_sections.json",
+      "finding": "xml:sec=13 gives the S1/S2 dependency and a highlighted FIC 0.52 example for S. aureus 949987, not the sampled S. aureus 547582 row."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/database/linked_assay_records.jsonl:row=10",
+      "finding": "Sampled database row is DBAASP DBAASPR_3442 assay 498, assay_type=synergy, measure_group=MIC, antibiotic=Oxacillin, fici=0.52, subject=Staphylococcus aureus 547582."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_index.json",
+      "finding": "Lists only landing-1.bin through landing-10.bin supplementary assets."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+      "finding": "Structured supplementary table extraction is empty with table_count=0."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_text.jsonl",
+      "finding": "All ten supplementary landing assets are status=indexed_only; no parsed S1/S2 content is present."
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-017-16784-6",
+      "finding": "Exact paper-root scan found main PDFs/XML plus supplementary landing-*.bin files only; no 41598_2017_16784_MOESM1_ESM.pdf."
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-16784-6",
+      "finding": "Exact paper-root scan found main PDFs/XML plus supplementary landing-*.bin files only. file(1) identifies landing-*.bin as HTML documents, not the MOESM1 PDF."
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "gap": "required_primary_supplement_absent",
+      "missing_material": "41598_2017_16784_MOESM1_ESM.pdf",
+      "required_locators": [
+        "supp:MOESM1",
+        "supp:MOESM1:table=S1",
+        "supp:MOESM1:table=S2"
+      ],
+      "impact": "Worker-2 cannot parse or repair row-level checkerboard MIC/FICI evidence for DBAASP assay 498 without the supplement that contains Tables S1/S2."
+    },
+    {
+      "gap": "main_text_does_not_support_sampled_row",
+      "checked_locators": [
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics",
+        "xml:table=3:row=7:column=Oxacillin",
+        "xml:table=5:row=3:column=FIC index",
+        "database:linked_assay_records.jsonl:row=10"
+      ],
+      "impact": "Main text supports antibiotic-alone and different-strain highlighted examples, but not the sampled Macropin-plus-Oxacillin checkerboard row for Staphylococcus aureus 547582."
+    },
+    {
+      "gap": "no_safe_owned_layer_repair",
+      "impact": "Promoting the DBAASP row to source_verified would convert database-only supplement-dependent evidence into primary-source evidence; this dispatch therefore preserves the conflict and stops."
+    }
+  ],
+  "worker6_followup_required": true
+}

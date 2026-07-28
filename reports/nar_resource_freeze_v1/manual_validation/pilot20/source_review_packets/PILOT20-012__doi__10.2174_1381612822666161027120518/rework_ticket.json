@@ -1,0 +1,33 @@
+{
+  "ticket_id": "pilot20-012-rwk-001",
+  "paper_id": "doi__10.2174_1381612822666161027120518",
+  "audit_record_id": "doi__10.2174_1381612822666161027120518:database_audit:138",
+  "target_queue": "analysis",
+  "severity": "major",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "Layer-3 mechanism claims are source-located and do not overclaim direct mechanisms, but mechanism_claims[*].evidence_class uses custom labels instead of the required ontology values. This prevents confirming publication-grade acceptance from the current final artifact.",
+  "requested_outputs": [
+    {
+      "artifact": "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+      "need": "Rewrite mechanism_claims[*].evidence_class using only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; preserve claim_id, claim_text, source_locator, and limitation notes.",
+      "required_locators": [
+        "xml:sec=3.4:Antimicrobial Activity",
+        "xml:table=2",
+        "xml:sec=3.5:Hemolytic Activity and Membranolytic Selectivity",
+        "xml:table=3",
+        "xml:sec=3.6:Chemotaxis",
+        "xml:sec=4:Discussion"
+      ]
+    },
+    {
+      "artifact": "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+      "need": "Re-adjudicate after mechanism ontology repair and preserve remaining cautions, especially sequence_modified_not_normalized and no direct molecular mechanism assay."
+    }
+  ],
+  "blocks": [
+    "layer3_mechanism_review",
+    "worker6_publication_grade_confirmation",
+    "final_source_review_acceptance_for_PILOT20-012"
+  ],
+  "created_at": "2026-06-22T04:11:28Z"
+}

@@ -1,0 +1,120 @@
+{
+  "paper_id": "doi__10.3390_ijms221810156",
+  "reviewed_at": "2026-05-08T13:01:06Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_assets_note": "Opened OA package s001 ZIP and extracted supplementary PDF text; no extra activity/toxicity table was present beyond HPLC/CD/synergy/secondary-structure support."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms221810156/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms221810156/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms221810156/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms221810156/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms221810156/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_ijms221810156/source/paper.xml",
+    "papers/doi__10.3390_ijms221810156/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms221810156/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms221810156/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/pdf_text/local-DBAASP-PMC8470881.txt",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/oa_package/local-DBAASP-PMC8470881/PMC8470881/ijms-22-10156-g003.jpg",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/oa_package/local-DBAASP-PMC8470881/PMC8470881/ijms-22-10156-g004.jpg",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/oa_package/local-DBAASP-PMC8470881/PMC8470881/ijms-22-10156-g005.jpg",
+    "paper_packets/doi__10.3390_ijms221810156/extracted/oa_package/local-DBAASP-PMC8470881/PMC8470881/ijms-22-10156-s001.zip",
+    "/tmp/doi__10.3390_ijms221810156_supp/ijms-1383135-supplementary.pdf",
+    "paper_packets/doi__10.3390_ijms221810156/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms221810156/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms221810156/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms221810156/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ijms221810156/analysis/database_record_audit.json",
+    "papers/doi__10.3390_ijms221810156/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_ijms221810156/final/database_record_verification.json",
+    "papers/doi__10.3390_ijms221810156/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_ijms221810156/work/review/quality_feedback.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 42,
+    "mic_like_units_present": true,
+    "suspicious_target_strings_checked": true,
+    "database_status_summary": {
+      "source_conflict": 4,
+      "source_verified": 73
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "strict_gate_evidence": {
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_grade_pass": true,
+      "publication_risk_counts": {},
+      "semantic_report": "reports/doi__10.3390_ijms221810156.semantic_gate.json",
+      "publication_report": "reports/doi__10.3390_ijms221810156.publication_quality.json",
+      "semantic_returncode": 0,
+      "publication_returncode": 0,
+      "verified_at": "2026-05-08T13:03:26Z"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains an inventory layer and was not re-bootstrapped; worker-6 reopened XML/PDF/OA package/supplement ZIP/database rows from the handoff paths.",
+    "validator_contract": "Structural readiness is kept separate from publication-grade review; final acceptance depends on strict semantic and publication gates after owner-layer repair.",
+    "activity_toxicity": "Prior Table 2 parser artifact was rejected. Final activity rows now use source-located MIC, hemolysis, and model-membrane leakage evidence with raw values/units/targets preserved.",
+    "database_record_verification": "Worker-4 reconciled all linked DBAASP assay/experiment/literature rows to Table 1 sequence identity and Figure/prose assay evidence, preserving Ltc1/Ltc2a hemolysis as source_conflict.",
+    "mechanism_ontology": "Worker-6 limits mechanism claims to direct membrane folding/orientation/leakage assays and does not promote speculative intracellular target language.",
+    "publication_grade_review": "The original framework-only ticket is closed after source-reviewed repair; remaining issues are cautions, not blockers or open rework targets."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_hemolysis_conflict",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "Ltc1/Ltc2a hemolysis values conflict between Table 2 and Figure 4/prose/DBAASP; conflict is preserved in worker-4 rows."
+    },
+    {
+      "scope": "mic_numeric_values",
+      "severity": "caution",
+      "status": "source_verified_with_figure_locator",
+      "note": "Exact MIC concentrations are recovered from linked DBAASP rows and checked against Figure 3 bars/methods because the primary article has no numeric MIC table."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "nonblocking_exhausted",
+      "note": "OA supplementary ZIP was opened and the supplementary PDF text checked; it contains HPLC/CD/synergy/secondary-structure support and no additional MIC/hemolysis table needed to resolve the ticket."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "bounded_direct_membrane_evidence",
+      "note": "Direct mechanism claims are limited to membrane folding/orientation/leakage assays; intracellular target language remains hypothesis only."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 re-review recovered source-located latarcin sequence, MIC, hemolysis, leakage, and membrane-mechanism evidence from local XML/PDF/OA/supplement/database materials; the prior framework-only rework ticket is closed with Ltc1/Ltc2a hemolysis conflict preserved as a caution."
+}

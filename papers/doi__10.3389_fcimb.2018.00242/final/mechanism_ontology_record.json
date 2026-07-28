@@ -1,0 +1,101 @@
+{
+  "paper_id": "doi__10.3389_fcimb.2018.00242",
+  "generated_at": "2026-05-05T22:11:23Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 replaced automated placeholder mechanism notes with bounded source-reviewed mechanism/context claims from the primary XML/PDF; no unsupported molecular target is promoted.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Biogenic MccJ25 has direct antibacterial activity against ETEC K88 in MIC, agar diffusion, and time-kill assays, but this paper does not experimentally resolve the molecular target of killing.",
+      "entity_scope": "biogenic MccJ25 against ETEC K88",
+      "evidence_class": "direct_activity_evidence_not_molecular_mechanism",
+      "direct_assay_types": [
+        "broth microdilution MIC",
+        "agar diffusion",
+        "time-kill curve"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=20:In vitro antimicrobial effects of biogenic MccJ25",
+        "supporting_locators": [
+          "xml:fig=1:Figure 1"
+        ]
+      },
+      "limitations": "Do not convert the general lasso-peptide/protein-synthesis background into a paper-specific direct molecular mechanism claim."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "MccJ25 pretreatment protects IPEC-J2 epithelial barrier readouts during ETEC K88 challenge, including LDH/TEER and tight-junction protein readouts.",
+      "entity_scope": "IPEC-J2 epithelial barrier model challenged with ETEC K88",
+      "evidence_class": "host_barrier_modulation_evidence",
+      "direct_assay_types": [
+        "LDH release",
+        "TEER",
+        "qPCR and protein abundance for tight junction proteins",
+        "immunofluorescence"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=23:Effects of biogenic MccJ25 on ETEC K88-induced cellular damage",
+        "supporting_locators": [
+          "xml:fig=4:Figure 4",
+          "xml:fig=5:Figure 5",
+          "xml:fig=6:Figure 6"
+        ]
+      },
+      "limitations": "Barrier protection is host-response context, not a normalized antimicrobial potency endpoint."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "MccJ25 reduces ETEC-triggered inflammatory cytokine readouts and MAPK/NF-kB pathway activation markers in IPEC-J2 cells.",
+      "entity_scope": "ETEC K88-challenged IPEC-J2 inflammatory response model",
+      "evidence_class": "pathway_modulation_evidence",
+      "direct_assay_types": [
+        "cytokine secretion/mRNA expression",
+        "western blot for P38 MAPK and NF-kB pathway markers"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=26:Concentrations and gene expression of proinflammatory cytokines",
+        "supporting_locators": [
+          "xml:sec=27:Effects of biogenic MccJ25 on mitogen-activated protein kinase and nuclear factor κB pathways in IPEC-J2 cells",
+          "xml:fig=7:Figure 7",
+          "xml:fig=8:Figure 8"
+        ]
+      },
+      "limitations": "The pathway claim is bounded to measured cell-line markers and should not be generalized to in vivo mechanism without additional evidence."
+    }
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fcimb.2018.00242/handoff_context.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/packet_manifest.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extraction/extraction_quality_report.json",
+    "papers/doi__10.3389_fcimb.2018.00242/source/paper.xml",
+    "papers/doi__10.3389_fcimb.2018.00242/source/paper.pdf",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/pdf_text/fcimb-08-00242.txt",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/pdf_text/Presentation_1.txt",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/oa_package/local-DBAASP-PMC6053529/PMC6053529/Table_1.DOCX",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fcimb.2018.00242/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq JSON inspection",
+    "rg over source XML and extracted PDF text",
+    "pdfinfo on paper.pdf",
+    "pdftotext on paper.pdf and Presentation_1.PDF",
+    "python stdlib OOXML table parser for Table_1.DOCX",
+    "file type inspection for landed supplementary HTML/bin assets",
+    "database JSONL row reconciliation"
+  ],
+  "unrecoverable_material_gaps": []
+}

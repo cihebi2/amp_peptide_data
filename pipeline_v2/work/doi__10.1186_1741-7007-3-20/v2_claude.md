@@ -1,0 +1,1 @@
+[{"assertion_index": 0, "db_claimed": {"organism": "", "endpoint": "", "value": "", "peptide": ""}, "verification_outcome": "cannot_determine", "normalization_note": "none", "is_database_error": false, "evidence": null, "short_reason": "All db assertion fields are empty; no organism, endpoint, value, or peptide name provided to match against any source table cell."}]

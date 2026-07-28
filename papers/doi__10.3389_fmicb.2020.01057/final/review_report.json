@@ -1,0 +1,85 @@
+{
+  "adjudication_summary": "Accepted with cautions after worker-2 activity repair, worker-4 database reconciliation, and worker-6 source-reviewed adjudication of local XML/PDF/OA/supplement/database evidence.",
+  "caution_findings": [
+    {
+      "affected_records": [
+        "DBAASP:DBAASPS_17281",
+        "DBAASP:DBAASPS_17281"
+      ],
+      "caution_code": "database_cytotoxicity_transform_preserved",
+      "evidence_context": "DBAASP/CAMP RAW 264.7 entries express cytotoxicity as 28.6% killing; primary paper reports 71.4% viability at 256 μg/mL. This is preserved as source_conflict rather than rewritten as a primary-source killing row."
+    },
+    {
+      "affected_records": [
+        "APD6:AP03737",
+        "CAMP:CAMPSQ24634"
+      ],
+      "caution_code": "database_descriptor_fields_not_all_primary_source_fields",
+      "evidence_context": "APD6/CAMP entry-level descriptor text contains calculated or compressed annotations beyond the exact table/prose fields; those rows remain source_conflict while matched MIC/hemolysis/literature rows are source_verified."
+    },
+    {
+      "caution_code": "supplement_has_no_extra_activity_table",
+      "evidence_context": "Data_Sheet_1.docx was opened via OOXML; it contains design principles and supplementary figures, not additional activity/toxicity tables changing worker-2 rows."
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fmicb.2020.01057/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/extracted/oa_package/local-APD6-pmc_package/PMC7291858/Data_Sheet_1.docx",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/extracted/pdf_text/fmicb-11-01057.txt",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2020.01057/rework/rework_requests.jsonl"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package DOCX/figures and linked APD6/DBAASP/CAMP rows were exhausted for the owner-worker blockers. No unrecoverable material gap remains for worker-2/4/6 acceptance.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3389_fmicb.2020.01057",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 source review matched DBAASP MIC/hemolysis and literature rows to primary locators; APD6/CAMP descriptor and transformed cytotoxicity rows remain preserved source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 source review recovered Table 1 screening MIC values, Table 2 pathogen MIC matrix, Figure 2 toxicity/cytotoxicity values, and key pharmacodynamic efficacy values with row-level locators.",
+    "layer_3_mechanism": "Worker-6 limits direct mechanism to membrane permeabilization/K+ leakage, DNA interaction, and microscopy evidence; pharmacodynamics is kept as efficacy context.",
+    "review_gate": "The prior full_source_review_not_completed and missing_activity_records blockers are resolved; no blocking rework target remains after this owner-worker pass."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T18:08:52Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 62,
+    "database_status_summary": {
+      "source_conflict": 4,
+      "source_verified": 18
+    },
+    "mechanism_claims": 4,
+    "non_numeric_activity_observations": 36,
+    "rework_targets": 0,
+    "source_conflicts_preserved_as_cautions": 4,
+    "unrecoverable_material_gaps": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "summary": "Source-reviewed rework recovered the missing activity rows and reconciled database rows for ID13/DLP4/controls while preserving database-only or transformed annotations as cautions.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

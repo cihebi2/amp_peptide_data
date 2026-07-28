@@ -1,0 +1,119 @@
+{
+  "paper_id": "doi__10.3390_toxins15010042",
+  "reviewed_at": "2026-05-10T16:16:20Z",
+  "generated_at": "2026-05-10T16:16:20Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded re-review opened XML/PDF text, OA archive manifest, supplementary zip/PDF text, and linked APD6/DBAASP rows. No unrecoverable local material gap remains for worker-4/6 acceptance; remaining issues are explicit cautions."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_toxins15010042/handoff_context.json",
+    "paper_packets/doi__10.3390_toxins15010042/packet_manifest.json",
+    "paper_packets/doi__10.3390_toxins15010042/locators/locator_index.json",
+    "paper_packets/doi__10.3390_toxins15010042/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_toxins15010042/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_toxins15010042/source/paper.xml",
+    "papers/doi__10.3390_toxins15010042/source/paper.pdf",
+    "paper_packets/doi__10.3390_toxins15010042/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_toxins15010042/extracted/pdf_text/toxins-15-00042.txt",
+    "paper_packets/doi__10.3390_toxins15010042/raw/supplementary_original/local-APD6-toxins-15-00042-s001.zip",
+    "paper_packets/doi__10.3390_toxins15010042/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_toxins15010042/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_toxins15010042/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_toxins15010042/database/linked_literature_records.jsonl"
+  ],
+  "adjudication_summary": "Worker-4/6 source re-review recovered the missing Table 2/3, biofilm, hemolysis, mechanism, and database-row adjudication evidence; the prior ticket is closed with preserved database cautions rather than clean acceptance.",
+  "summary": "Hp-MAP3 is source-reviewed as a synthetic temporin-PTa derivative with antibacterial, antifungal, antibiofilm, cytotoxic, hemolytic, membrane-permeabilization, and CD structure evidence in local materials. Publication-grade acceptance is with cautions because several database strain/value annotations conflict with the primary source and the linked sequence snapshot is absent.",
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains material_extracted_with_gaps structurally because supplement tables were not machine-tabulated, but bounded re-review opened the supplement zip/PDF and found no additional Hp-MAP3 activity table; the gap is nonblocking for worker-4/6 adjudication.",
+    "validator_contract": "Packet and final files required by the validator are present; final review now removes open rework targets after source-reviewed repair.",
+    "layer_1_database": "Every linked APD6/DBAASP literature, assay, and experiment row is audited. Source-supported rows are verified; strain/value/comment mismatches remain source_conflict with row-specific context.",
+    "layer_2_activity_toxicity": "Final activity rows now retain only Hp-MAP3 values from primary Table 1/2/3 plus source-supported biofilm and hemolysis prose/figure values; ciprofloxacin comparator rows are excluded from peptide evidence.",
+    "layer_3_mechanism": "Mechanism is limited to direct Sytox Green membrane permeabilization, phenotypic antibiofilm context, and CD structural context; no unsupported nucleic-acid/direct-target claim is promoted.",
+    "publication_grade_review": "The original blocking ticket is closed because source-reviewed worker-4/6 artifacts are now complete enough for acceptance with cautions and strict gates pass."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 36,
+    "database_record_audits": 63,
+    "database_status_summary": {
+      "source_verified": 50,
+      "source_conflict": 13
+    },
+    "mechanism_claims": 3,
+    "open_rework_target_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "supplementary_assets_checked": true,
+    "unrecoverable_material_gap_count": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_strain_identifier_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "K. pneumoniae, P. aeruginosa, and C. glabrata database strain identifiers are not fully supported by local primary labels; values are preserved with source_conflict statuses.",
+      "affected_database_rows": [
+        "linked_assay_records:13",
+        "linked_assay_records:14",
+        "linked_assay_records:17",
+        "linked_assay_records:18",
+        "linked_assay_records:24",
+        "linked_experiment_records:13",
+        "linked_experiment_records:14",
+        "linked_experiment_records:17",
+        "linked_experiment_records:18",
+        "linked_experiment_records:24"
+      ]
+    },
+    {
+      "caution_code": "database_hela_ic50_value_conflict_preserved",
+      "severity": "caution",
+      "evidence_context": "DBAASP gives HeLa IC50 10.64 µM while local Table 3 gives 10.46 µM; final activity keeps the primary-source value and audit preserves the database conflict.",
+      "affected_database_rows": [
+        "linked_assay_records:30",
+        "linked_experiment_records:30"
+      ]
+    },
+    {
+      "caution_code": "apd6_activity_comment_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "APD6 AP03635 exact paper/peptide identity is supported, but its activity comments summarize strain labels/ranges not exactly reproduced in the local source tables.",
+      "affected_database_rows": [
+        "linked_experiment_records:31"
+      ]
+    },
+    {
+      "caution_code": "supplement_checked_no_extra_hpmap3_activity_rows",
+      "severity": "caution",
+      "evidence_context": "Supplementary zip was opened and its PDF text extracted; it contains Figure S1 peptide purification/mass evidence and Table S1 antibiotic resistance, not additional Hp-MAP3 activity values."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "severity": "caution",
+      "evidence_context": "Packet database has no linked_sequence_records rows; sequence identity is verified from local primary article text and linked APD6/DBAASP literature/assay rows, not from a separate local sequence snapshot."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

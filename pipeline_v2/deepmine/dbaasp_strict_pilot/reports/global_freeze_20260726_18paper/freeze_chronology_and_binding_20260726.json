@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-07-26T13:21:26.994288+00:00",
+  "generated_at_cst": "2026-07-26T21:21:26.994288+08:00",
+  "verdict": "HISTORICAL_BINDING_INVALID_FOR_TERMINAL_FREEZE",
+  "freeze_directory": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/global_freeze_20260726_18paper",
+  "events": {
+    "saved_verify_generated_at": "2026-07-26T12:38:23Z",
+    "saved_verify_file_mtime_utc": "2026-07-26T12:38:26.365273+00:00",
+    "candidate19_manifest_append_created_at": "2026-07-26T12:44:21Z",
+    "candidate19_packet_generated_at": "2026-07-26T12:44:21Z",
+    "immutable_snapshot_actual_write_mtime_utc": "2026-07-26T12:46:03.417424+00:00",
+    "leader_fail_amendment_at": "2026-07-26T13:14:06.586236+00:00"
+  },
+  "paper_set_binding": {
+    "snapshot_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/global_freeze_20260726_18paper/manifest_snapshot_18paper.json",
+    "snapshot_sha256": "cc087699b62fe62d8ce9e8cf90c8cc84483489aee6d9d062e0ed0e7d7bee11f0",
+    "snapshot_paper_count": 18,
+    "rolling_manifest_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_manifest.json",
+    "rolling_manifest_sha256_current": "9abb1a0f06de7c4fde774d075c2c690ef45523596e120af0db6047459651839a",
+    "rolling_paper_count_current": 19,
+    "rolling_extra_papers": [
+      "PMC11956232"
+    ]
+  },
+  "saved_verify_binding": {
+    "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/global_freeze_20260726_18paper/verify.json",
+    "declared_manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_manifest.json",
+    "declared_manifest_is_mutable_rolling_manifest": true,
+    "bound_snapshot_sha256": null,
+    "valid_for_terminal_18paper_freeze": false
+  },
+  "chronology_findings": [
+    "The saved verify run predates Candidate 19 append, but its manifest field points to the mutable rolling manifest path.",
+    "The immutable 18-paper snapshot file was physically written after Candidate 19 append; its embedded created_at is inherited source metadata rather than snapshot-write time.",
+    "A new terminal freeze must run gates against an immutable manifest path/hash and save explicit start/write/amend timestamps."
+  ],
+  "required_next_freeze_contract": {
+    "snapshot_before_downstream_manifest_append": true,
+    "gates_use_snapshot_path_directly": true,
+    "verify_records_snapshot_sha256": true,
+    "leader_report_generated_after_all_gate_artifacts": true,
+    "independent_verifier_pass_required": true
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "analysis": {
+    "activity_records": 121,
+    "activity_extraction_issue_count": 0,
+    "database_row_counts": {
+      "linked_assay_records": 111,
+      "linked_dramp_activity_records": 50,
+      "linked_experiment_records": 182,
+      "linked_literature_records": 21,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_verified": 243,
+      "source_conflict": 121
+    },
+    "mechanism_claims": 3,
+    "review_status": "accepted_with_cautions"
+  },
+  "completion_claim": "source_reviewed_worker2_worker4_worker6_rework_closed_publication_grade_accepted_with_cautions",
+  "current_state": "source_reviewed_publication_grade_ready",
+  "doi": "10.3390/molecules18010859",
+  "final_approval_status": "accepted_with_cautions",
+  "gate_results": {
+    "packet_hard_finding_count": 0,
+    "publication_quality_pass": true,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1
+  },
+  "gate_summary": {
+    "publication_grade_ready": true,
+    "semantic_gate_ready": true,
+    "structural_ready": true,
+    "validator_contract_ready": true
+  },
+  "generated_at": "2026-05-09T11:06:44Z",
+  "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_molecules18010859.complete_message_test_manifest.json",
+  "material": {
+    "archive_members": 30,
+    "figures": 6,
+    "locators": 42,
+    "sections": 22,
+    "supplementary_assets": 0,
+    "supplementary_tables": 0,
+    "tables": 2
+  },
+  "message_counts": {
+    "artifacts": 16,
+    "chat_messages": 14,
+    "events": 30,
+    "rework_requests": 1,
+    "state_executions": 13
+  },
+  "not_publication_grade_reason": null,
+  "open_rework_ticket_count": 0,
+  "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules18010859",
+  "paper_id": "doi__10.3390_molecules18010859",
+  "pmcid": "PMC6270530",
+  "publication_quality_gate": "passed_after_worker246_source_review",
+  "queue_status": {
+    "analysis": "source_reviewed_publication_grade_ready",
+    "material": "material_extracted_with_nonblocking_gaps"
+  },
+  "rework_requests": [],
+  "rework_ticket_ids": [],
+  "semantic_gate": "passed_after_worker246_source_review",
+  "state_count_expected": 13,
+  "terminal_status": "source_reviewed_publication_grade_ready",
+  "test_type": "complete_real_paper_message_transfer_test",
+  "title": "Structural characterization of de novo designed L5K5W model peptide isomers with potent antimicrobial and varied hemolytic activities.",
+  "workflow_dir": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.3390_molecules18010859",
+  "workflow_test_ok": true,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_figure2_percent_hemolysis_points_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_molecules18010859/raw/paper.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules18010859/package/local-DBAASP-PMC6270530.tar.gz::PMC6270530/molecules-18-00859-g002.jpg",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules18010859/package/local-DBAASP-PMC6270530.tar.gz::PMC6270530/molecules-18-00859-g006.jpg"
+      ],
+      "tools_attempted": [
+        "XML caption/table review",
+        "local package image inspection"
+      ],
+      "why_unrecoverable": "The local paper provides hemolysis curves and Figure 6 extracted graph summaries, but exact per-concentration percent hemolysis values are not tabulated in XML/PDF/package text. Table 2 MHC values are available and were curated.",
+      "impact": "Non-blocking for publication-grade curation because source-supported MHC toxicity endpoints and assay methods are captured; exact curve-point values are not fabricated.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "no_local_supplementary_assets_for_this_paper",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_molecules18010859/extracted/supplementary_index.json",
+        "papers/doi__10.3390_molecules18010859/source/supplementary"
+      ],
+      "tools_attempted": [
+        "packet supplementary index review",
+        "paper-local supplementary directory inspection",
+        "OA package member listing"
+      ],
+      "why_unrecoverable": "The packet and OA package expose XML, PDF, and figures but no supplementary files; the earlier request for supplement extraction does not map to a local supplementary asset.",
+      "impact": "Non-blocking after XML/PDF/package source review because all activity/toxicity rows required for this paper are present in primary Tables 1-2.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    }
+  ],
+  "caution_findings": [
+    {
+      "code": "database_conflicts_preserved_not_blocking",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "count": 121,
+      "finding": "DRAMP entry rows omit hemolysis despite Table 2 MHC values, and one dbAMP W6 entry carries MIC values inconsistent with this paper; these are retained as source_conflict cautions, not accepted as source truth."
+    },
+    {
+      "code": "figure_curve_exact_points_not_tabulated",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-6",
+      "finding": "Figure-only exact hemolysis curve points are not fabricated; source-supported MHC values from Table 2 are used."
+    },
+    {
+      "code": "mechanism_bounded_to_structural_and_phenotypic_evidence",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "finding": "The final mechanism layer removes automated protein-synthesis/immune overclaims and keeps only source-supported structural context, antibacterial phenotype, and hemolysis-structure correlation."
+    }
+  ]
+}

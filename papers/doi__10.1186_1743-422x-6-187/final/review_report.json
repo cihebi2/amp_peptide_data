@@ -1,0 +1,205 @@
+{
+  "paper_id": "doi__10.1186_1743-422x-6-187",
+  "reviewed_at": "2026-06-20T09:42:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "blocked_missing_primary_material",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "primary_xml_tables",
+    "primary_pdf_text",
+    "primary_methods_sections",
+    "oa_package_manifest",
+    "linked_dbaasp_assay_rows",
+    "linked_dbaasp_experiment_rows",
+    "linked_dbaasp_literature_rows",
+    "linked_sequence_rows_empty"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "supplementary_assets_note": "PMC metadata reports no supplement; OA package contains XML/PDF/figures, not supplementary tables.",
+    "merged_database_rows": true,
+    "linked_sequence_records_empty": true,
+    "materials_exhausted_for_local_obtainable_mode": true
+  },
+  "checked_inputs": [
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/packet_manifest.json",
+      "purpose": "packet status and prior blocker review"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/locators/locator_index.json",
+      "purpose": "XML table/figure locator confirmation"
+    },
+    {
+      "path": "papers/doi__10.1186_1743-422x-6-187/source/paper.xml",
+      "purpose": "primary title/abstract/method/table source review"
+    },
+    {
+      "path": "papers/doi__10.1186_1743-422x-6-187/source/paper.pdf",
+      "purpose": "PDF text cross-check for table terms"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/extracted/xml_sections.json",
+      "purpose": "packet extraction cross-check"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/extracted/pdf_text.jsonl",
+      "purpose": "packet PDF parse cross-check"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/extracted/archive_manifest.json",
+      "purpose": "OA package member check"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_assay_records.jsonl",
+      "purpose": "DBAASP assay value comparison"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_experiment_records.jsonl",
+      "purpose": "DBAASP experiment row comparison"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_literature_records.jsonl",
+      "purpose": "citation traceability check"
+    },
+    {
+      "path": "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_sequence_records.jsonl",
+      "purpose": "sequence evidence check; file is empty"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 28,
+    "non_quantitative_table_cells_preserved": 3,
+    "supporting_ti_values_preserved": 16,
+    "activity_core_fields_present": true,
+    "activity_database_only_rows_treated_as_primary": false,
+    "suspicious_target_fragments_found": false,
+    "database_snapshots": {
+      "linked_assay_records": 9,
+      "linked_experiment_records": 9,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0,
+      "linked_dramp_activity_records": 0
+    },
+    "database_conflicts_preserved": true,
+    "mechanism_direct_amp_overclaim": false,
+    "open_rework_targets": 1
+  },
+  "per_layer_decision_rationale": {
+    "activity_toxicity": "Worker-2 blocker repaired: Table 1/Table 2 XML and PDF text support IC50/CC50 activity rows with raw nM values, µM conversions, assay targets, method locators, and DNC/ND cells preserved separately.",
+    "database_record": "Worker-4 blocker partially repaired: linked gliotoxin activity values match primary table values after nM-to-µM conversion, but all assay/experiment rows remain source_conflict for AMP identity because no primary/source-linked peptide sequence exists and the article describes small molecules.",
+    "mechanism": "Worker-6 corrected the final mechanism layer to indirect small-molecule antiviral mechanism context only; no direct AMP mechanism claim is accepted.",
+    "adjudication": "Local material is exhausted under obtainable-only mode. The paper remains non-publication-grade because the missing AMP sequence/peptide identity is not recoverable from local sources."
+  },
+  "qc_failure_reasons": [
+    {
+      "code": "database_identity_not_amp_sequence_supported",
+      "severity": "blocking",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "Primary source and linked database snapshot do not provide an AMP/peptide sequence or modification/source-organism evidence for DBAASP:DBAASPN_21167; the paper reports low-molecular-weight antiviral compounds.",
+      "evidence_paths": [
+        "papers/doi__10.1186_1743-422x-6-187/source/paper.xml",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_sequence_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_assay_records.jsonl"
+      ]
+    },
+    {
+      "code": "source_conflict_preserved_for_database_rows",
+      "severity": "major",
+      "owner_worker": "worker-4",
+      "reason": "Gliotoxin DBAASP assay values match primary tables after nM-to-µM conversion, but the database record identity remains source_conflict because no peptide sequence record is present locally.",
+      "evidence_paths": [
+        "paper_packets/doi__10.1186_1743-422x-6-187/analysis/database_record_audit.json",
+        "papers/doi__10.1186_1743-422x-6-187/final/database_record_verification.json"
+      ]
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "small_molecule_not_amp_identity",
+      "evidence_context": "The primary title/abstract/tables identify gliotoxin, gentian violet, brilliant green, and ribavirin as compounds; linked DBAASP sequence rows are absent.",
+      "record_identifiers": [
+        "DBAASP:DBAASPN_21167"
+      ]
+    },
+    {
+      "caution_code": "activity_values_source_matched_but_database_identity_conflict",
+      "evidence_context": "Gliotoxin DBAASP concentrations match table values after nM-to-µM conversion, but value matching does not resolve absent AMP identity evidence.",
+      "record_identifiers": [
+        "DBAASP assay_ids 20270, 20271, 166960-166966"
+      ]
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-owner-worker-20260620-0001",
+      "paper_id": "doi__10.1186_1743-422x-6-187",
+      "created_at": "2026-06-20T09:42:11Z",
+      "updated_at": "2026-06-20T09:42:11Z",
+      "target_queue": "analysis",
+      "worker": "worker-4 + worker-6",
+      "owner_worker": "worker-4 + worker-6",
+      "layer": "database_record_adjudication",
+      "severity": "blocking",
+      "failure_code": "no_primary_amp_sequence_or_peptide_identity",
+      "omission_code": "no_primary_amp_sequence_or_peptide_identity",
+      "failing_object": "publication_grade_database_identity",
+      "artifact_path": "papers/doi__10.1186_1743-422x-6-187/final/database_record_verification.json",
+      "source_paths_to_check": [
+        "papers/doi__10.1186_1743-422x-6-187/source/paper.xml",
+        "papers/doi__10.1186_1743-422x-6-187/source/paper.pdf",
+        "paper_packets/doi__10.1186_1743-422x-6-187/locators/locator_index.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/pdf_text.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_sequence_records.jsonl"
+      ],
+      "required_action": "External/manual curation may decide whether this DBAASP small-molecule record is out-of-scope for AMP publication. Do not accept from local material alone.",
+      "reason": "Local XML/PDF/OA package and linked DBAASP snapshots support antiviral small-molecule activity values, but do not contain an AMP/peptide sequence, peptide modification, peptide source organism, or linked sequence record for DBAASP:DBAASPN_21167.",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ]
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "no_primary_amp_sequence_or_peptide_identity",
+      "source_paths_checked": [
+        "papers/doi__10.1186_1743-422x-6-187/source/paper.xml",
+        "papers/doi__10.1186_1743-422x-6-187/source/paper.pdf",
+        "paper_packets/doi__10.1186_1743-422x-6-187/locators/locator_index.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/pdf_text.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.1186_1743-422x-6-187/database/linked_sequence_records.jsonl"
+      ],
+      "tools_attempted": [
+        "ElementTree XML table and section parse",
+        "pdftotext scoped activity/table term check",
+        "packet extracted JSON manifest review",
+        "linked DBAASP JSONL row comparison"
+      ],
+      "why_unrecoverable": "Local XML/PDF/OA package and linked DBAASP snapshots support antiviral small-molecule activity values, but do not contain an AMP/peptide sequence, peptide modification, peptide source organism, or linked sequence record for DBAASP:DBAASPN_21167.",
+      "impact": "Paper cannot be accepted as publication-grade AMP curation; activity values are retained as source-supported context and database rows remain source_conflict.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "adjudication_summary": "Source re-review repaired the activity layer from primary Table 1/Table 2 and source-matched the linked gliotoxin assay values where possible. The paper remains blocked_missing_primary_material for AMP publication because local primary/database materials contain no peptide sequence or peptide identity evidence for the DBAASP record."
+}

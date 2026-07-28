@@ -1,0 +1,334 @@
+{
+  "benchmark": "AMP Evidence Atlas Grounding Benchmark (v1)",
+  "description": "40 factual QA items with ground truth traceable to the AMP Evidence Atlas (atlas.db). Designed to measure whether serving a source-verified AMP database to an LLM via MCP reduces hallucination and improves factual accuracy versus the same LLM answering from parametric memory alone.",
+  "n_items": 40,
+  "categories": {
+    "activity_value": "specific peptide activity values (MIC/CC50) traceable to a paper_id",
+    "database_error_awareness": "questions whose answer is a known database-vs-primary-source disagreement (audit.status='source_conflict')",
+    "sequence_fact": "amino-acid sequence facts traceable to a paper_id",
+    "target_organism_fact": "target/organism/strain/Gram-status facts traceable to a paper_id"
+  },
+  "provenance": "All ground-truth values were queried read-only from portal/atlas.db (tables: papers, activity, audit, figures). Each source_ref is a resolvable paper_id or audit_record_id.",
+  "items": [
+    {
+      "id": "amp-001",
+      "category": "activity_value",
+      "question": "In the study reported under paper doi__10.1002_advs.202205301, what is the MIC of the peptide KTA (sequence RIKTATWRLALRWLKL) against Escherichia coli O157:H7 ATCC 35150?",
+      "ground_truth": "2.5 umol/L (2.5 µM).",
+      "source_ref": "doi__10.1002_advs.202205301",
+      "why_hard": "KTA is a novel engineered chickpea-derived peptide (FCLAP series) not in any pretraining corpus; an ungrounded model has no stored value and will fabricate a plausible single-digit MIC."
+    },
+    {
+      "id": "amp-002",
+      "category": "activity_value",
+      "question": "What MIC did KTR (RIKTRTWRLALRWLKL) show against Klebsiella pneumoniae ATCC 13883 in paper doi__10.1002_advs.202205301?",
+      "ground_truth": "2.4 umol/L (2.4 µM).",
+      "source_ref": "doi__10.1002_advs.202205301",
+      "why_hard": "Engineered analog with a strain-specific value; the model cannot distinguish KTR from sibling analogs KTA/RI/RT and will guess."
+    },
+    {
+      "id": "amp-003",
+      "category": "activity_value",
+      "question": "In paper doi__10.1016_j.csbj.2024.05.020, what is the MIC of TS-CATH (KRFKKFFKKIKKSVKKRVKKLFKKPRVIPISIPF) against Escherichia coli ATCC 25922?",
+      "ground_truth": "4 µg/mL.",
+      "source_ref": "doi__10.1016_j.csbj.2024.05.020",
+      "why_hard": "TS-CATH is a recently designed cathelicidin hybrid; exact assay value is paper-specific and not memorized."
+    },
+    {
+      "id": "amp-004",
+      "category": "activity_value",
+      "question": "What MIC did arenicin-3 (GFCWYVCVYRNGVRVCYRRCN) show against Escherichia coli ATCC 25922 in paper doi__10.1021_acsinfecdis.6b00045?",
+      "ground_truth": "0.5 µg/mL.",
+      "source_ref": "doi__10.1021_acsinfecdis.6b00045",
+      "why_hard": "Even for a named natural peptide, the specific strain/assay MIC varies across papers; the model tends to give a generic order-of-magnitude value rather than this paper's 0.5 µg/mL."
+    },
+    {
+      "id": "amp-005",
+      "category": "activity_value",
+      "question": "In paper doi__10.1016_j.jare.2025.01.029, what is the MIC of sC184b (GLRKRLRKFFNKIKF-NH2) against Bacillus subtilis ATCC 6633?",
+      "ground_truth": "6.25 µM.",
+      "source_ref": "doi__10.1016_j.jare.2025.01.029",
+      "why_hard": "De novo designed peptide with an amidated C-terminus; the value is not recoverable from parametric memory."
+    },
+    {
+      "id": "amp-006",
+      "category": "activity_value",
+      "question": "What MIC did brevinin-1pl (FFPIVAGVAAKVLKKIFCTISKKC) show against Staphylococcus aureus 6538 in paper doi__10.1016_j.csbj.2024.09.006?",
+      "ground_truth": "2 µM.",
+      "source_ref": "doi__10.1016_j.csbj.2024.09.006",
+      "why_hard": "Brevinin-1PL is an obscure frog-skin peptide variant; the model may confuse it with other brevinin-1 family members that have very different MICs."
+    },
+    {
+      "id": "amp-007",
+      "category": "activity_value",
+      "question": "In paper doi__10.1002_advs.202507457, what is the MIC of Pep1 (TCNRARAAYIRNITRVRFTYY) against Escherichia coli ATCC 25922?",
+      "ground_truth": "128 µg/mL.",
+      "source_ref": "doi__10.1002_advs.202507457",
+      "why_hard": "Generic internal code name 'Pep1' plus a novel sequence: no grounding means pure guessing, and the model will likely under-estimate the (relatively weak) 128 µg/mL value."
+    },
+    {
+      "id": "amp-008",
+      "category": "activity_value",
+      "question": "What MIC did the peptide '1-4' (WKKWSKRWRHWIPQCKKFGRR) show against Micrococcus luteus in paper doi__10.1021_acsomega.4c01577?",
+      "ground_truth": "2 µg/mL.",
+      "source_ref": "doi__10.1021_acsomega.4c01577",
+      "why_hard": "Peptide is identified only by a table label ('1-4') with a novel sequence; ungrounded retrieval is impossible."
+    },
+    {
+      "id": "amp-009",
+      "category": "activity_value",
+      "question": "In paper doi__10.1021_acsomega.5c07214, what is the MIC of Onc19 (VDKPPYLPRPRPPRRIYNR) against Escherichia coli MRE600?",
+      "ground_truth": "2 µg/mL.",
+      "source_ref": "doi__10.1021_acsomega.5c07214",
+      "why_hard": "Onc19 is an oncocin-derived proline-rich analog tested on an unusual E. coli MRE600 strain; the model cannot recall the strain-specific MIC."
+    },
+    {
+      "id": "amp-010",
+      "category": "activity_value",
+      "question": "What MIC did magainin (GIGKWLHSAKKFGKAFVGEIMNS) show against Bacillus subtilis KCTC 3068 in paper doi__10.1021_acsomega.9b02278?",
+      "ground_truth": "8 µM.",
+      "source_ref": "doi__10.1021_acsomega.9b02278",
+      "why_hard": "Magainin is famous, but its MIC is highly assay/strain dependent; the model tends to state a canonical value that does not match this paper's 8 µM for KCTC 3068."
+    },
+    {
+      "id": "amp-011",
+      "category": "activity_value",
+      "question": "In paper doi__10.1021_acs.jmedchem.4c00912, what is the MIC of LP1 (KKKKLKKILKKLFQFINQLDNQLQDIKQNK-NH2) against Escherichia coli TOP10?",
+      "ground_truth": "0.8 µM.",
+      "source_ref": "doi__10.1021_acs.jmedchem.4c00912",
+      "why_hard": "LP1 is a long designed lipopeptide/AMP with sub-µM potency; ungrounded models rarely predict sub-1-µM values correctly."
+    },
+    {
+      "id": "amp-012",
+      "category": "activity_value",
+      "question": "What MIC did Thymopentin (TP-5, RKDVY-NH2) show against RIF-susceptible Mycobacterium smegmatis in paper doi__10.1016_j.biomaterials.2013.12.049?",
+      "ground_truth": ">1000 mg/L (essentially inactive).",
+      "source_ref": "doi__10.1016_j.biomaterials.2013.12.049",
+      "why_hard": "TP-5 is an immunomodulatory pentapeptide, not an antibacterial; the model may hallucinate a real MIC rather than reporting that it is inactive (>1000 mg/L)."
+    },
+    {
+      "id": "amp-013",
+      "category": "database_error_awareness",
+      "question": "DBAASP lists an MIC of 1 µg/mL for Polymyxin F350 against Acinetobacter baumannii FADDI-AB034 (paper doi__10.1038_s41467-022-29234-3). Is that consistent with the primary source?",
+      "ground_truth": "No. This is a recorded source_conflict: the primary XML Table 1 reports 4 µg/mL, not 1 µg/mL. The database value is off by 4-fold.",
+      "source_ref": "doi__10.1038_s41467-022-29234-3:database_audit:160",
+      "why_hard": "Without the audit trail, an LLM will simply repeat the confidently-stated DBAASP number and treat it as ground truth, propagating the database error."
+    },
+    {
+      "id": "amp-014",
+      "category": "database_error_awareness",
+      "question": "DBAASP reports MIC 4 µg/mL for Polymyxin F379 against Acinetobacter baumannii FADDI-AB030 (paper doi__10.1038_s41467-022-29234-3). Does the primary source agree?",
+      "ground_truth": "No. Recorded source_conflict: primary XML Table 1 reports 2 µg/mL. The database over-states the MIC 2-fold.",
+      "source_ref": "doi__10.1038_s41467-022-29234-3:database_audit:198",
+      "why_hard": "The discrepancy is small (2 vs 4 µg/mL) and only detectable by consulting the primary table; an ungrounded model cannot flag it."
+    },
+    {
+      "id": "amp-015",
+      "category": "database_error_awareness",
+      "question": "For crotamine against E. coli in paper doi__10.3390_toxins14010001, DBAASP records the MIC as 13.3 µg/mL. Is the unit correct per the primary source?",
+      "ground_truth": "No. Recorded source_conflict: the primary Table 1 value is 13.3 µM, not 13.3 µg/mL. The number is right but the unit is wrong (a µg/mL vs µM unit error).",
+      "source_ref": "doi__10.3390_toxins14010001:database_audit:1",
+      "why_hard": "The magnitude matches, so the error is invisible unless the unit is cross-checked against the source; unit confusion is a classic silent hallucination."
+    },
+    {
+      "id": "amp-016",
+      "category": "database_error_awareness",
+      "question": "DBAASP lists MIC 62.5 µg/mL for c-PKFI against Bacillus cereus ATCC 11778 in paper doi__10.1098_rsos.201822. Does this match the primary source table?",
+      "ground_truth": "No. Recorded source_conflict: primary Table 3 gives 62.25 µg/mL. The database carries the rounded prose value (62.5) rather than the exact table cell (62.25).",
+      "source_ref": "doi__10.1098_rsos.201822:database_audit:64",
+      "why_hard": "The rounding difference (62.5 vs 62.25) is beyond what any model could reconstruct from memory; grounding on the exact table cell is required."
+    },
+    {
+      "id": "amp-017",
+      "category": "database_error_awareness",
+      "question": "DBAASP gives an MIC of 2.1 µM for the LM peptide against the matched target in paper doi__10.1039_d4md00383g. Is that consistent with the primary source?",
+      "ground_truth": "No. Recorded source_conflict: source Table 2 lists 2.3 (µM), not 2.1, for that target cell.",
+      "source_ref": "doi__10.1039_d4md00383g:database_audit:83",
+      "why_hard": "A 2.1-vs-2.3 mismatch is only resolvable by looking at the exact source table; the model would echo the database value."
+    },
+    {
+      "id": "amp-018",
+      "category": "database_error_awareness",
+      "question": "DBAASP records MIC 3.7 µM for the peptide in paper doi__10.1039_d4md00383g against its matched target. Does the primary source agree?",
+      "ground_truth": "No. Recorded source_conflict: the primary Table 2 value is 4.1 (µM), not 3.7.",
+      "source_ref": "doi__10.1039_d4md00383g:database_audit:102",
+      "why_hard": "Close-but-wrong numeric database entries cannot be caught without the source table; ungrounded answers will restate 3.7."
+    },
+    {
+      "id": "amp-019",
+      "category": "database_error_awareness",
+      "question": "A database records the MIC of the Ala1 peptide against Lactococcus lactis MG1363 as 18±8 (paper doi__10.1371_journal.pone.0091007). Is this exactly what the primary source reports?",
+      "ground_truth": "No. Recorded source_conflict: primary Table 1 reports 18±7, not 18±8. The mean matches but the reported error term differs.",
+      "source_ref": "doi__10.1371_journal.pone.0091007:database_audit:5",
+      "why_hard": "The difference is only in the uncertainty term (±8 vs ±7), an extremely fine-grained discrepancy no model could reproduce without the source."
+    },
+    {
+      "id": "amp-020",
+      "category": "database_error_awareness",
+      "question": "In paper doi__10.1002_advs.202507457, DBAASP associates an MIC of 128 µg/mL for Pep2 with Enterococcus faecalis ATCC 29212. Is the target organism correct per the primary source?",
+      "ground_truth": "No. Recorded source_conflict: the primary wet-lab section/Figure 6b tested Pep2 only against E. coli and S. aureus; the 128 µg/mL value belongs to Pep2 vs E. coli (ATCC 25922), not E. faecalis. The database attached the value to the wrong organism.",
+      "source_ref": "doi__10.1002_advs.202507457:database_audit:5",
+      "why_hard": "The number is real but mis-assigned to an organism that was never tested; an ungrounded model has no way to detect the target-mislabeling."
+    },
+    {
+      "id": "amp-021",
+      "category": "database_error_awareness",
+      "question": "DBAASP reports a numeric CC50 (50% cytotoxicity) of 300 µg/mL for Pep10 in paper doi__10.1002_advs.202507457. Is that supported by the primary source?",
+      "ground_truth": "No. Recorded source_conflict: the primary text only supports the bounded statement CC50 >=256 µg/mL; the exact 300 µg/mL figure is not stated in the paper (fabricated precision).",
+      "source_ref": "doi__10.1002_advs.202507457:database_audit:28",
+      "why_hard": "The database invents a precise value where the source only gives a bound; models similarly over-report precision, so this tests fabricated exactness."
+    },
+    {
+      "id": "amp-022",
+      "category": "database_error_awareness",
+      "question": "DBAASP reports MIC 4000 µM for the peptide FELPLGAG in paper doi__10.1016_j.psj.2023.102695. Is the peptide identity/value consistent with the primary source?",
+      "ground_truth": "Partly, but it is a preserved source_conflict: primary Table 4 and DBAASP use FELPLGAG (MIC 4 mmol/L, i.e. 4000 µM), whereas primary Table 3 lists the LC-MS plausible peptide as FELPTGAGL. The sequence identity conflicts across the paper's own tables and no normalization was applied.",
+      "source_ref": "doi__10.1016_j.psj.2023.102695:database_audit:5",
+      "why_hard": "The conflict is an internal sequence-identity ambiguity (FELPLGAG vs FELPTGAGL); an ungrounded model cannot know the paper itself is inconsistent."
+    },
+    {
+      "id": "amp-023",
+      "category": "database_error_awareness",
+      "question": "DBAASP records an IC50 of 104.23±0.24 µg/mL for the peptide in paper doi__10.1042_bsr20170967. Is the unit consistent with the primary source?",
+      "ground_truth": "No. Recorded source_conflict: Figure 7 of the primary source reports the IC50 in µM (104.23±0.24 µM), while the database stored the value with unit µg/mL. It is a unit conflict.",
+      "source_ref": "doi__10.1042_bsr20170967:database_audit:26",
+      "why_hard": "Same number, wrong unit; only source verification exposes the µg/mL-vs-µM discrepancy."
+    },
+    {
+      "id": "amp-024",
+      "category": "database_error_awareness",
+      "question": "DBAASP labels a value of 8.0±0.3 µg/mL for SLP1 as 'IC50 F' (cell-cell fusion) in paper doi__10.1371_journal.pone.0215227. Is that endpoint characterization consistent with the primary source?",
+      "ground_truth": "No. Recorded source_conflict: the numeric concentration matches primary Table 2, but the primary paper reports it as a plaque-reduction EC50 against PEDV, not an IC50 for cell-cell fusion. The endpoint/mechanism label is wrong.",
+      "source_ref": "doi__10.1371_journal.pone.0215227:database_audit:2",
+      "why_hard": "The value is correct but the assay/endpoint semantics are mis-stated; ungrounded models routinely conflate IC50/EC50 and assay types."
+    },
+    {
+      "id": "amp-025",
+      "category": "database_error_awareness",
+      "question": "DBAASP stores an MIC of >250 µM for the peptide in paper doi__10.3390_toxins14010001. Is the endpoint definition consistent with the primary source?",
+      "ground_truth": "No. Recorded source_conflict: DBAASP labels the measure as MIC, but primary Table 4 defines the endpoint as MIC90; the value preserved is actually an MIC90.",
+      "source_ref": "doi__10.3390_toxins14010001:database_audit:121",
+      "why_hard": "MIC vs MIC90 is a subtle endpoint-definition error that changes interpretation; no ungrounded model would flag it."
+    },
+    {
+      "id": "amp-026",
+      "category": "database_error_awareness",
+      "question": "DBAASP's note says a peptide in paper doi__10.1021_acsomega.4c09054 is 'not active up to 32 µg/mL' (hemolytic/cytotoxic). Does that match the primary-source table?",
+      "ground_truth": "No. Recorded source_conflict: the primary-source table records the value as >32 µg/mL. The database's 'not active/NA' phrasing conflicts with the source's explicit >32 µg/mL entry.",
+      "source_ref": "doi__10.1021_acsomega.4c09054:database_audit:5",
+      "why_hard": "Free-text 'NA/not active' vs a bounded numeric '>32' is a qualitative-vs-quantitative mismatch models cannot detect without the source."
+    },
+    {
+      "id": "amp-027",
+      "category": "sequence_fact",
+      "question": "According to paper doi__10.1002_advs.202205301, what is the amino-acid sequence of the antimicrobial peptide KTA?",
+      "ground_truth": "RIKTATWRLALRWLKL (16 residues).",
+      "source_ref": "doi__10.1002_advs.202205301",
+      "why_hard": "KTA is a de novo engineered peptide absent from any training data; the model must fabricate a sequence."
+    },
+    {
+      "id": "amp-028",
+      "category": "sequence_fact",
+      "question": "What is the amino-acid sequence of TS-CATH as reported in paper doi__10.1016_j.csbj.2024.05.020?",
+      "ground_truth": "KRFKKFFKKIKKSVKKRVKKLFKKPRVIPISIPF.",
+      "source_ref": "doi__10.1016_j.csbj.2024.05.020",
+      "why_hard": "TS-CATH is a novel cathelicidin design; the long lysine/arginine-rich sequence cannot be recalled and errors compound over 34 residues."
+    },
+    {
+      "id": "amp-029",
+      "category": "sequence_fact",
+      "question": "What is the sequence of arenicin-3 as recorded in paper doi__10.1021_acsinfecdis.6b00045?",
+      "ground_truth": "GFCWYVCVYRNGVRVCYRRCN.",
+      "source_ref": "doi__10.1021_acsinfecdis.6b00045",
+      "why_hard": "Arenicin-3 is a disulfide-bonded natural peptide; models frequently misplace the cysteines or confuse it with arenicin-1/-2."
+    },
+    {
+      "id": "amp-030",
+      "category": "sequence_fact",
+      "question": "What is the sequence of the proline-rich peptide Onc19 in paper doi__10.1021_acsomega.5c07214?",
+      "ground_truth": "VDKPPYLPRPRPPRRIYNR.",
+      "source_ref": "doi__10.1021_acsomega.5c07214",
+      "why_hard": "Onc19 is an oncocin analog with an unusual proline-rich motif; the exact substitutions relative to native oncocin are paper-specific."
+    },
+    {
+      "id": "amp-031",
+      "category": "sequence_fact",
+      "question": "What sequence does paper doi__10.1021_acs.jmedchem.4c00912 report for peptide LP1?",
+      "ground_truth": "KKKKLKKILKKLFQFINQLDNQLQDIKQNK-NH2.",
+      "source_ref": "doi__10.1021_acs.jmedchem.4c00912",
+      "why_hard": "LP1 is a long designed sequence with a C-terminal amide; there is no chance of unaided recall and the amidation is easily dropped."
+    },
+    {
+      "id": "amp-032",
+      "category": "sequence_fact",
+      "question": "What amino-acid sequence is reported for the human cathelicidin LL-37 in paper doi__10.1371_journal.pone.0018756?",
+      "ground_truth": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES (37 residues).",
+      "source_ref": "doi__10.1371_journal.pone.0018756",
+      "why_hard": "LL-37 is famous, but models very commonly truncate the 37-mer or corrupt the C-terminal '...VPRTES'; this tests exact-sequence fidelity even for a known peptide."
+    },
+    {
+      "id": "amp-033",
+      "category": "sequence_fact",
+      "question": "What is the sequence of brevinin-1pl as given in paper doi__10.1016_j.csbj.2024.09.006?",
+      "ground_truth": "FFPIVAGVAAKVLKKIFCTISKKC.",
+      "source_ref": "doi__10.1016_j.csbj.2024.09.006",
+      "why_hard": "Brevinin-1 family peptides share motifs (e.g. the C-terminal 'Rana box' with two cysteines) that models blur together, producing a wrong-family sequence."
+    },
+    {
+      "id": "amp-034",
+      "category": "target_organism_fact",
+      "question": "In paper doi__10.1002_advs.202205301, what is the full strain designation of the Escherichia coli O157:H7 isolate against which KTA's 2.5 µM MIC was measured, and is it Gram-positive or Gram-negative?",
+      "ground_truth": "Escherichia coli O157:H7 ATCC 35150; it is Gram-negative.",
+      "source_ref": "doi__10.1002_advs.202205301",
+      "why_hard": "The specific ATCC catalogue number tied to this exact assay row is not something a model can retrieve; it will guess a generic strain."
+    },
+    {
+      "id": "amp-035",
+      "category": "target_organism_fact",
+      "question": "Against which specific E. coli strain was Pep2's 128 µg/mL MIC actually measured in paper doi__10.1002_advs.202507457?",
+      "ground_truth": "Escherichia coli ATCC 25922 (Gram-negative). (Note: DBAASP mis-attributes this value to E. faecalis ATCC 29212, a recorded source_conflict.)",
+      "source_ref": "doi__10.1002_advs.202507457",
+      "why_hard": "The correct organism differs from what the database records; only source-grounded retrieval yields E. coli ATCC 25922 rather than the mis-attributed E. faecalis."
+    },
+    {
+      "id": "amp-036",
+      "category": "target_organism_fact",
+      "question": "In paper doi__10.1016_j.jare.2025.01.029, what is the target organism (with strain) for the reported sC184b MIC of 6.25 µM?",
+      "ground_truth": "Bacillus subtilis ATCC 6633 (Gram-positive).",
+      "source_ref": "doi__10.1016_j.jare.2025.01.029",
+      "why_hard": "Strain-level target identity for a novel peptide's specific assay is not memorizable; the model cannot tie 6.25 µM to B. subtilis ATCC 6633."
+    },
+    {
+      "id": "amp-037",
+      "category": "target_organism_fact",
+      "question": "What organism and strain was arenicin-3 tested against for its 0.5 µg/mL MIC in paper doi__10.1021_acsinfecdis.6b00045, and what is its Gram status?",
+      "ground_truth": "Escherichia coli ATCC 25922, a Gram-negative bacterium.",
+      "source_ref": "doi__10.1021_acsinfecdis.6b00045",
+      "why_hard": "The model may recall arenicin-3 as broad-spectrum but cannot pin the 0.5 µg/mL value to E. coli ATCC 25922 specifically."
+    },
+    {
+      "id": "amp-038",
+      "category": "target_organism_fact",
+      "question": "In paper doi__10.1002_advs.202205301, is Enterococcus faecium (a target of the KTA/KTR peptides) classified as Gram-positive or Gram-negative in the Atlas record?",
+      "ground_truth": "Gram-positive (target_class: bacteria).",
+      "source_ref": "doi__10.1002_advs.202205301",
+      "why_hard": "While the Gram status of E. faecium is knowable, tying it to the specific curated assay context in this paper requires grounding, and models sometimes misclassify enterococci."
+    },
+    {
+      "id": "amp-039",
+      "category": "target_organism_fact",
+      "question": "According to paper doi__10.1002_advs.202507457, what host cell line was used to measure Pep2's cytotoxicity (CC50), and what CC50 was found?",
+      "ground_truth": "Human bronchial/lung epithelial BEAS-2B cells; CC50 was >=512 µg/mL (Pep2 was non-cytotoxic up to the top tested concentration).",
+      "source_ref": "doi__10.1002_advs.202507457",
+      "why_hard": "The specific cell line and the bounded (>=512) CC50 are paper-specific; models tend to fabricate a finite CC50 and a generic cell line."
+    },
+    {
+      "id": "amp-040",
+      "category": "target_organism_fact",
+      "question": "In paper doi__10.1021_acsinfecdis.3c00421, against which E. coli strain is peptide ln65's MIC of 4 µg/mL reported?",
+      "ground_truth": "Escherichia coli W3110.",
+      "source_ref": "doi__10.1021_acsinfecdis.3c00421",
+      "why_hard": "E. coli W3110 is a less common lab strain, and ln65 is a designed peptide; the strain-specific value cannot be recalled and may be confused with the ln65 PAO1 value (3 µg/mL) from a sibling paper."
+    }
+  ]
+}

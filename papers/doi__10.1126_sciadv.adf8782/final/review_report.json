@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1126_sciadv.adf8782",
+  "reviewed_at": "2026-05-03T00:39:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Reopened local XML/PDF, OA package figures, supplement PDF, Data S1 XLSX inside the ZIP, and linked APD6 rows. No external missing supplement is required for the repaired worker-2/4/6 decision."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1126_sciadv.adf8782/packet_manifest.json",
+    "paper_packets/doi__10.1126_sciadv.adf8782/locators/locator_index.json",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extraction/extraction_status.json",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extraction/extraction_quality_report.json",
+    "papers/doi__10.1126_sciadv.adf8782/source/paper.xml",
+    "papers/doi__10.1126_sciadv.adf8782/source/paper.pdf",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extracted/pdf_text/sciadv.adf8782.txt",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extracted/pdf_text/sciadv.adf8782_sm.txt",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extracted/oa_package/local-APD6-pmc_package/PMC10541502/sciadv.adf8782_data_s1.zip",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extracted/oa_package/local-APD6-pmc_package/PMC10541502/sciadv.adf8782-f1.jpg",
+    "paper_packets/doi__10.1126_sciadv.adf8782/extracted/oa_package/local-APD6-pmc_package/PMC10541502/sciadv.adf8782-f3.jpg",
+    "paper_packets/doi__10.1126_sciadv.adf8782/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1126_sciadv.adf8782/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+  ],
+  "tools_attempted": [
+    "jq/jsonl review",
+    "rg source search",
+    "pdftotext outputs",
+    "OOXML/XLSX zip parser",
+    "PaddleOCR Fig. 1/Fig. 3 pass",
+    "semantic/publication gate scripts"
+  ],
+  "semantic_quality_checks": {
+    "activity_records_parsed": 90,
+    "database_record_status_summary": {
+      "source_verified": 10
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 10 linked APD6 records were source-reviewed against local supplement sequence tables, article metadata, paper figure/text locators, and linked database rows; statuses are source_verified with APD traceability.",
+    "layer_2_activity_toxicity": "MIC and toxicity rows now have endpoint, raw value, unit, target, strain when available, assay context, and source locators. Exact figure-matrix values are retained from the APD6 linked row plus primary figure/text context rather than invented.",
+    "layer_3_mechanism": "Final mechanism framing is source-reviewed and bounded to envelope disruption, biofilm/self-assembly support, and in vivo burden/inflammation context without promoting indirect inflammatory effects to a direct immune mechanism.",
+    "adjudication": "The prior rwk-complete-test-0001 blocker is closed after owner-layer repair; no blocking or major QC issue remains open."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "figure_matrix_exact_values_reconciled_with_database_snapshot",
+      "evidence_context": "The local paper provides MIC matrix panels and APD-linked exact rows; Data S1 did not include the MIC heatmap matrix as a text table, so exact non-key matrix values retain APD row traceability plus primary figure locators."
+    },
+    {
+      "caution_code": "synthetic_designed_peptide_source",
+      "evidence_context": "APD6 source organism fields are adjudicated as synthetic designed peptides rather than natural-source organism claims."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "qc_reasons_cleared": [
+    {
+      "code": "full_source_review_not_completed",
+      "resolution": "worker-6 source-reviewed XML/PDF/OA package/supplement/Data S1/database rows and rewrote final review/adjudication artifacts"
+    },
+    {
+      "code": "database_conflicts_require_adjudication",
+      "resolution": "worker-4 reconciled all 10 APD6 records to source sequence/name/citation locators and preserved APD traceability"
+    },
+    {
+      "code": "no_supported_activity_rows_extracted",
+      "resolution": "worker-2 wrote 90 MIC/toxicity records with units, targets, assay context, and source locators"
+    }
+  ],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "summary": "Source-reviewed repair replaced the framework-test shell with concrete activity rows, APD6 sequence/citation adjudication, and bounded final mechanism review for F6P1/F6P6 and related MLamP/HAMP records. The paper is accepted with cautions because figure-matrix exact values remain tied to APD6 row traceability plus primary figure locators rather than a text-extracted table.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_count": 0,
+    "publication_grade_ready": true
+  }
+}

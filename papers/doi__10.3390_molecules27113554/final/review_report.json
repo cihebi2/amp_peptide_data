@@ -1,0 +1,91 @@
+{
+  "paper_id": "doi__10.3390_molecules27113554",
+  "reviewed_at": "2026-05-09T18:04:37Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "linked_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "All local material relevant to worker-4/worker-6 blockers was opened. Supplement tables were recovered from the OA ZIP member even though the generated supplementary_index did not enumerate them as structured tables."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_molecules27113554/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules27113554/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules27113554/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules27113554/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules27113554/extracted/pdf_text/molecules-27-03554.txt",
+    "paper_packets/doi__10.3390_molecules27113554/extracted/oa_package/local-DBAASP-PMC9182383/PMC9182383/molecules-27-03554-s001.zip::molecules-1722688-supplementary.pdf",
+    "paper_packets/doi__10.3390_molecules27113554/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules27113554/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules27113554/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules27113554/database/database_source_manifest.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 42,
+    "toxicity_rows_source_reviewed": 0,
+    "database_record_audits": 77,
+    "database_status_summary": {
+      "source_conflict": 4,
+      "source_verified": 73
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Preserved as material_extracted_with_gaps because the automated supplementary_index did not parse structured supplement tables; worker-6 reopened the OA ZIP and recovered the supplementary PDF locally.",
+    "activity_toxicity": "Final activity records now include 27 main-text antifungal IC50 rows and 15 supplement-supported yeast/bacterial activity or no-inhibition rows. No toxicity rows were present in local material.",
+    "database_record": "Worker-4 audit reconciled 77 linked DBAASP literature/assay/experiment rows against Table 3, Tables 1-2, and Supplement Tables S1-S4; four endpoint-label conflicts remain explicit.",
+    "mechanism": "Mechanism claims are bounded to source-supported structure-function evidence; contextual membrane/cell-wall language is not promoted to a direct mechanism.",
+    "publication_grade_review": "The original ticket is closed because the owner-layer source review is complete and remaining limitations are caution-level rather than blocking."
+  },
+  "adjudication_summary": "Source-reviewed worker-4/worker-6 re-review recovered the supplementary PDF from the OA ZIP, repaired database/activity/final review provenance, preserved endpoint-label conflicts, and closed the prior analysis rework ticket with publication-grade cautions.",
+  "summary": "EcAMP1 re-review is publication-grade with cautions: source-supported activity and database rows are retained, endpoint-label conflicts are preserved, and mechanism claims are bounded.",
+  "caution_findings": [
+    {
+      "caution_code": "database_endpoint_label_conflict_preserved",
+      "evidence_context": "Four DBAASP assay/experiment rows use MIC where the supplement labels the same concentrations as MIC99; kept as source_conflict rather than smoothed to source_verified.",
+      "affected_records": [
+        "DBAASP:DBAASPR_4291 Staphylococcus aureus 20 µM",
+        "DBAASP:DBAASPR_4291 Candida albicans 1.25 µM"
+      ]
+    },
+    {
+      "caution_code": "supplement_recovered_from_oa_zip",
+      "evidence_context": "The packet supplementary_index reported zero structured assets, but the OA package contains molecules-27-03554-s001.zip with a text-readable supplementary PDF; Tables S1-S4 were opened by pdftotext."
+    },
+    {
+      "caution_code": "mechanism_not_direct",
+      "evidence_context": "Structure-function and assay evidence are supported; membrane/cell-wall mechanism is preserved as contextual, not direct_mechanism."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "DBAASP linked_sequence_records count is zero; sequence/modification provenance is therefore anchored to source Table 3 and database peptide names, not to an independent database sequence dump."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "pilot20-019-rwk-moesm1-local-supplement-absent",
+  "paper_id": "doi__10.1038_s41598-017-16784-6",
+  "audit_record_id": "doi__10.1038_s41598-017-16784-6:database_audit:10",
+  "target_queue": "material_extraction",
+  "severity": "blocking",
+  "requested_by": "pilot20_true_source_review",
+  "reason": "Sampled DBAASP assay 498 is a supplement-dependent checkerboard MIC/FICI row. The XML references 41598_2017_16784_MOESM1_ESM.pdf and Tables S1/S2, but local packet, paper directory, and landed-asset paper root contain no MOESM1 PDF or parsed supplementary table; only HTML landing .bin files were found.",
+  "requested_outputs": [
+    {
+      "asset": "41598_2017_16784_MOESM1_ESM.pdf",
+      "need": "Recover or stage the real supplementary PDF locally.",
+      "required_locators": [
+        "supp:MOESM1",
+        "supp:MOESM1:table=S1",
+        "supp:MOESM1:table=S2"
+      ]
+    },
+    {
+      "asset": "paper_packets/doi__10.1038_s41598-017-16784-6/extracted/supplementary_tables.json",
+      "need": "Parse Tables S1/S2 into row-level checkerboard MIC/FICI evidence for DBAASP synergy rows, including assay 498.",
+      "required_locators": [
+        "database:linked_assay_records.jsonl:row=10",
+        "xml:sec=13:Synergistic effect of Macropin and antibiotics"
+      ]
+    }
+  ],
+  "blocks": [
+    "database_record_verification:DBAASP:DBAASPR_3442:assay_498",
+    "activity_toxicity_evidence:DBAASP_checkerboard_FICI_rows",
+    "publication_grade_ready",
+    "final_approval"
+  ],
+  "created_at": "2026-06-22T12:24:23+08:00"
+}

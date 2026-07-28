@@ -1,0 +1,144 @@
+{
+  "paper_id": "PMC12019989",
+  "worker": "worker-6",
+  "reviewed_at": "2026-07-16T13:00:22.831394+00:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": "not present in packet; absence inventoried",
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "checked_inputs": {
+    "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/packet_manifest.json",
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/extracted/xml_sections.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/extracted/pdf_text.jsonl",
+    "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/extracted/supplementary_index.json",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/extracted/supplementary_text.jsonl",
+    "database_source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/database/database_source_manifest.json",
+    "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/database/authoritative_match_report.json",
+    "worker2_activity": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/analysis/activity_toxicity_evidence.worker2.json",
+    "worker3_supplementary": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/analysis/supplementary_evidence.worker3.json",
+    "worker4_database": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/analysis/database_record_audit.worker4.json",
+    "worker5_mechanism": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/analysis/mechanism_evidence.worker5.json",
+    "rework_requests": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/rework/rework_requests.jsonl",
+    "rework_responses": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/rework/rework_responses.jsonl"
+  },
+  "semantic_quality_checks": {
+    "runtime_open_ticket_owner_responses_verified": true,
+    "runtime_open_ticket_terminal_response_required": true,
+    "runtime_open_ticket_terminal_responses_appended": false,
+    "activity_rows_match_ticket_count": true,
+    "toxicity_rows_match_ticket_count": true,
+    "database_audit_count": 13,
+    "mechanism_claim_count": 5,
+    "machine_rows_used_as_primary": 0,
+    "authoritative_dbaasp_ingest_ready": false,
+    "fallback_rows_promoted_to_source_verified_or_authoritative": false,
+    "rework_targets_remaining": 0,
+    "figure2_rows_with_calibration_metadata": 240,
+    "final_mirror_pairs_byte_identical": "verified_after_write"
+  },
+  "per_layer_decision_rationale": {
+    "database_record_verification": "Accepted with cautions because paper-local identity is source-reviewed while all fallback DBAASP machine rows remain unresolved records; authoritative ingest remains false until linked DBAASP rows exist.",
+    "activity_toxicity_evidence": "Accepted with cautions because the current worker-2/worker-3 repair integrates 279 source-located activity observations, preserves approximate figure quantitation metadata, and promotes no toxicity row without source-located evidence.",
+    "mechanism_ontology_record": "Accepted with cautions because mechanism claims retain source locators and evidence-class boundaries without promoting inferred or computational evidence beyond its class.",
+    "review_rework": "No hard rework target remains after owner nonterminal repairs; runtime-open tickets still require fresh worker-6 terminal closure responses."
+  },
+  "caution_findings": [
+    {
+      "caution_id": "no-linked-authoritative-dbaasp-rows",
+      "layer": "database",
+      "severity": "caution",
+      "adjudication": "Authoritative DBAASP article/assay/sequence/literature linked rows are absent in the packet; fallback rows remain unresolved machine evidence and authoritative ingest remains false.",
+      "evidence": "database/authoritative_match_report.json row_counts all zero"
+    },
+    {
+      "caution_id": "fallback-machine-rows-not-authoritative",
+      "layer": "database",
+      "severity": "caution",
+      "adjudication": "DBAASP Codex fallback rows were retained only as candidate machine evidence and were not promoted to source_verified or authoritative ingest-ready.",
+      "evidence": "database/dbaasp_machine_extracted_rows.jsonl count 13"
+    },
+    {
+      "caution_id": "no-source-located-toxicity-records",
+      "layer": "activity_toxicity",
+      "severity": "caution",
+      "adjudication": "Source-reviewed final has zero toxicity records; no toxicity claim is promoted without source-located row evidence.",
+      "evidence": "final/activity_toxicity_evidence.json toxicity_records count 0"
+    },
+    {
+      "caution_id": "figure-values-approximate-digitized",
+      "layer": "activity_toxicity",
+      "severity": "caution",
+      "adjudication": "Quantitative figure rows preserve approximation/calibration evidence and are not promoted to exact source-table measurements.",
+      "evidence": "final/activity_toxicity_evidence.json figure quantitation metadata"
+    }
+  ],
+  "rework_targets": [],
+  "runtime_open_ticket_ids": [
+    "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001",
+    "rwk-PMC12019989-leader-color-digitization-enforced-004",
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+    "rwk-PMC12019989-true-figure2-digitization-and-integration-002"
+  ],
+  "owner_response_prerequisite_satisfied": true,
+  "final_counts": {
+    "activity_records": 279,
+    "toxicity_records": 0,
+    "database_record_audits": 13,
+    "mechanism_claims": 5,
+    "review_rework_targets": 0
+  },
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/activity_toxicity_evidence.json",
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/database_record_verification.json",
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/final/database_record_verification.json"
+    },
+    "review_report": {
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/review_report.json",
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/final/review_report.json"
+    },
+    "mechanism_final_aligned": {
+      "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/mechanism_ontology_record.json",
+      "packet_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/final/mechanism_evidence.json",
+      "packet_mechanism_ontology_record": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12019989/final/mechanism_ontology_record.json"
+    }
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/gates/check_two_queue_packets.worker6.strict.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/gates/semantic_three_layer_gate.worker6.strict.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/gates/check_three_layer_publication_quality.worker6.strict.json"
+  },
+  "adjudication_summary": "Worker-6 source-reviewed the repaired layer outputs for PMC12019989, accepted the paper with cautions, and preserved the database fallback boundary: source-located paper evidence is final, but DBAASP fallback rows are unresolved machine candidates and authoritative ingest remains false.",
+  "runtime_open_ticket_ids_closed_by_this_adjudication": [
+    "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001",
+    "rwk-PMC12019989-leader-color-digitization-enforced-004",
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+    "rwk-PMC12019989-true-figure2-digitization-and-integration-002"
+  ],
+  "terminal_response_created_at_by_ticket": {
+    "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001": "2026-07-16T13:00:22.831394+00:00",
+    "rwk-PMC12019989-leader-color-digitization-enforced-004": "2026-07-16T13:00:22.831394+00:00",
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003": "2026-07-16T13:00:22.831394+00:00",
+    "rwk-PMC12019989-true-figure2-digitization-and-integration-002": "2026-07-16T13:00:22.831394+00:00"
+  },
+  "ticket_contract_evidence_overall_contract_pass": true
+}

@@ -1,0 +1,135 @@
+{
+  "paper_id": "doi__10.1186_s12885-023-11045-4",
+  "generated_at": "2026-05-03T12:23:43Z",
+  "reviewed_at": "2026-05-03T12:23:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 source-reviewed every linked DRAMP row against the primary XML/PDF text and packet database snapshots.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "DRAMP:DRAMP35973",
+      "sequence_key": "DRAMP:DRAMP35973",
+      "source_table": "general_amps.txt",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "Tumor cells: SNU449 (4.8% viability=162 µM); SNU449 (52.8% viability=71 µM)",
+      "database_measure": "Antimicrobial, Anticancer",
+      "matched_activity_record_ids": [
+        "doi__10.1186_s12885-023-11045-4-snu449-24h-71um-viability",
+        "doi__10.1186_s12885-023-11045-4-snu449-24h-162um-viability"
+      ],
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "TKEQKEQIAKATGLTTKQVRNWYVQLNASIKVCMCSC",
+        "primary_source_statement": "Primary article reports the final modified 37-mer sequence.",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=Results:modified 37-mer final sequence"
+        }
+      },
+      "activity_check": {
+        "status": "source_verified_for_anticancer_snu449_values",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=Results:37-mer peptide dose-dependent cytotoxicity; xml:fig=3"
+        }
+      },
+      "conflict_context": "Primary source supports the modified sequence and SNU449 anticancer viability values in this DRAMP row, but does not provide a paper-local antimicrobial assay supporting the broad DRAMP 'Antimicrobial' label.",
+      "review_notes": "Preserve as source_conflict rather than source_verified because the database row mixes source-supported anticancer values with an unsupported antimicrobial label.",
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12885-023-11045-4/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi/pmed"
+      }
+    },
+    {
+      "source_id": "DRAMP:DRAMP35973",
+      "sequence_key": "DRAMP:DRAMP35973",
+      "source_table": "general_amps.txt",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "Tumor cells: SNU449 (4.8% viability=162 µM); SNU449 (52.8% viability=71 µM)",
+      "database_measure": "Not available",
+      "matched_activity_record_ids": [
+        "doi__10.1186_s12885-023-11045-4-snu449-24h-71um-viability",
+        "doi__10.1186_s12885-023-11045-4-snu449-24h-162um-viability"
+      ],
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "TKEQKEQIAKATGLTTKQVRNWYVQLNASIKVCMCSC",
+        "primary_source_statement": "Primary article reports the final modified 37-mer sequence.",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=Results:modified 37-mer final sequence"
+        }
+      },
+      "activity_check": {
+        "status": "source_verified_for_snu449_viability_values",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=Results:37-mer peptide dose-dependent cytotoxicity; xml:fig=3"
+        }
+      },
+      "conflict_context": "Linked experiment row is an aggregate DRAMP source-table row without assay-type granularity; SNU449 values are source matched, but the row cannot be promoted to a fully source-verified structured assay record.",
+      "review_notes": "Preserve as source_conflict with matched primary-source activity rows and explicit row-granularity limitation.",
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12885-023-11045-4/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi/pmid"
+      }
+    },
+    {
+      "source_id": "DRAMP:DRAMP35973",
+      "sequence_key": "DRAMP:DRAMP35973",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Characterization of a novel peptide mined from the Red Sea brine pools and modified to enhance its anticancer activity",
+      "database_measure": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "literature_link_only",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta:title-group; xml:article-meta:doi/pmid"
+        }
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected paper DOI, PMID, title, journal, and publication year.",
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s12885-023-11045-4/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:doi/pmid/title"
+      }
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 2,
+    "source_verified": 1
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_antimicrobial_label_not_source_supported",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "evidence_context": "Primary paper supports anticancer SNU449 values and the modified sequence, but no local antimicrobial assay supports DRAMP's broad antimicrobial label."
+    }
+  ]
+}

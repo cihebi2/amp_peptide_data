@@ -1,0 +1,146 @@
+{
+  "artifact": "quality_feedback",
+  "paper_id": "PMC12022103",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "reviewed_at": "2026-07-13T09:31:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "caution_findings": [
+    {
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "layer": "database_ingest",
+      "severity": "caution",
+      "evidence_summary": "authoritative linked article/assay/sequence/literature row counts are all zero; closed no-match responses permit analysis to resume, but authoritative DBAASP ingest remains false.",
+      "locator_ids": [
+        "database:authoritative_match_report",
+        "database:linked_article_records",
+        "database:linked_assay_records",
+        "database:linked_sequence_records",
+        "database:linked_literature_records"
+      ],
+      "linked_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "analysis_can_resume": true
+    },
+    {
+      "code": "candidate_machine_rows_not_authoritative",
+      "layer": "database_ingest",
+      "severity": "caution",
+      "evidence_summary": "DBAASP Codex fallback rows remain candidate machine evidence only and are not promoted to source_verified or authoritative ingest-ready records.",
+      "candidate_machine_row_count": 49,
+      "machine_rows_promoted_to_authoritative": false
+    },
+    {
+      "code": "database_identity_unresolved_preserved",
+      "layer": "database_record_verification",
+      "severity": "caution",
+      "evidence_summary": "Layer-1 unresolved and modified-sequence statuses are preserved with lane-specific rationale instead of being smoothed into source_verified.",
+      "status_counts": {
+        "unresolved_record": 7,
+        "sequence_modified_not_normalized": 2
+      }
+    },
+    {
+      "code": "unresolved_toxicity_evidence_preserved",
+      "layer": "activity_toxicity_evidence",
+      "severity": "caution",
+      "evidence_summary": "No accepted toxicity row is manufactured; unresolved toxicity evidence remains separate from activity_records and toxicity_records.",
+      "toxicity_record_count": 0,
+      "unresolved_toxicity_evidence_count": 1
+    },
+    {
+      "code": "mechanism_scope_limited_by_evidence_class",
+      "layer": "mechanism_ontology",
+      "severity": "caution",
+      "evidence_summary": "Mechanism claims retain direct, phenotype-supported, inferred, and computational evidence classes; non-direct evidence is not promoted to direct mechanism.",
+      "mechanism_class_counts": {
+        "direct_mechanism": 1,
+        "phenotype_supported": 2,
+        "inferred_mechanism": 1,
+        "computational_only": 1
+      }
+    },
+    {
+      "code": "cross_database_conflict_preserved",
+      "layer": "database_record_verification",
+      "severity": "caution",
+      "evidence_summary": "Worker-4 cross-database conflict list remains present and is not converted to source_verified.",
+      "conflict_count": 1
+    }
+  ],
+  "rework_targets": [],
+  "lane_feedback": [
+    {
+      "worker": "worker-2",
+      "layer": "activity_toxicity_evidence",
+      "status": "accepted",
+      "checks": [
+        "full_table_observation_counts",
+        "cell_locator_contract",
+        "forbidden_table_filter",
+        "normalization_consistency",
+        "nested_concentration_consistency"
+      ]
+    },
+    {
+      "worker": "worker-4",
+      "layer": "database_record_verification",
+      "status": "accepted_with_caution",
+      "checks": [
+        "status_vocabulary",
+        "no_source_verified_without_locator",
+        "closed_no_match_boundary",
+        "machine_rows_not_promoted"
+      ]
+    },
+    {
+      "worker": "worker-5",
+      "layer": "mechanism_ontology",
+      "status": "accepted",
+      "checks": [
+        "claim_core_fields",
+        "evidence_class_vocabulary",
+        "direct_assay_type_for_direct_claim"
+      ]
+    },
+    {
+      "worker": "worker-3",
+      "layer": "supplementary_materials",
+      "status": "accepted_with_caution",
+      "checks": [
+        "supplement_inventory_present",
+        "unresolved_toxicity_preserved"
+      ]
+    }
+  ],
+  "analysis_can_resume": true,
+  "authoritative_ingest_ready": false,
+  "gate_results": {
+    "updated_at": "2026-07-13T09:32:13Z",
+    "packet_gate": {
+      "returncode": 0,
+      "hard_finding_count": 0,
+      "open_rework_ticket_count": 0,
+      "json": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12022103/work/review/packet_gate_rebuilt_worker6.json"
+    },
+    "semantic_gate": {
+      "returncode": 0,
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "json": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12022103/work/review/semantic_gate_rebuilt_worker6.json"
+    },
+    "publication_quality_gate": {
+      "returncode": 0,
+      "publication_grade_pass": true,
+      "json": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12022103/work/review/publication_quality_rebuilt_worker6.json"
+    },
+    "strict_allow_flags_used": false
+  }
+}

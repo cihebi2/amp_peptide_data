@@ -1,0 +1,152 @@
+{
+  "paper_id": "doi__10.1021_np5003548",
+  "review_sample_id": "V420P0028",
+  "reviewed_at": "2026-06-25T02:02:03Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0038",
+      "audit_record_id": "doi__10.1021_np5003548:database_audit:6",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled DBAASP HT-29 IC50 row is source-backed for compound, citation, target, value, and unit: the primary text reports Trichormamide B activity against HT-29 with IC50 1.5 uM, and the linked DBAASP experiment row 184060 records IC50 1.5 uM for Human colon adenocarcinoma HT29. The row correctly remains source_conflict because the DBAASP nonribosomal sequence encoding xIxXxQXsTPyT is not printed literally in the primary paper; the paper instead gives the cyclic residue/stereochemistry statement for Trichormamide B.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/sample_final_records.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/source_locator_hints.json",
+        "papers/doi__10.1021_np5003548/final/database_record_verification.json::record_audits[source_record_id=184060]",
+        "papers/doi__10.1021_np5003548/final/activity_toxicity_evidence.json::record_id=doi__10.1021_np5003548:trichormamide-b:ht-29:ic50",
+        "paper_packets/doi__10.1021_np5003548/extracted/pdf_text/np5003548.txt:740-760",
+        "paper_packets/doi__10.1021_np5003548/extracted/pdf_text/np5003548.txt:1454-1460",
+        "paper_packets/doi__10.1021_np5003548/extracted/pdf_text/np5003548.txt:1573-1574",
+        "paper_packets/doi__10.1021_np5003548/database/linked_experiment_records.jsonl:row=2",
+        "/mnt/d/work/\u6297\u83cc\u80bd/\u6570\u636e\u5e93/merged_amp_corpus/output/sequences/all_sequences.csv:line=29646"
+      ],
+      "cautions": [
+        "Preserve source_conflict for the database-specific nonribosomal one-letter encoding because the primary source prints the cyclic residue structure, not the literal DBAASP encoding.",
+        "The sampled release row has empty public primary_source_* fields, but the release row carries structured source_locator, activity_check, sequence_check, and traceability JSON that support the caution-preserving decision.",
+        "No replicate statistics are reported for the IC50 values in the checked local text."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1021_np5003548",
+    "material_status": "sufficient_for_sampled_row_with_cautions",
+    "materials_checked": [
+      "paper_packets/doi__10.1021_np5003548/packet_manifest.json",
+      "paper_packets/doi__10.1021_np5003548/extraction/extraction_status.json",
+      "paper_packets/doi__10.1021_np5003548/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.1021_np5003548/rework/rework_requests.jsonl",
+      "paper_packets/doi__10.1021_np5003548/rework/rework_responses.jsonl",
+      "paper_packets/doi__10.1021_np5003548/raw/paper.xml",
+      "paper_packets/doi__10.1021_np5003548/raw/paper.pdf",
+      "paper_packets/doi__10.1021_np5003548/extracted/pdf_text/np5003548.txt",
+      "paper_packets/doi__10.1021_np5003548/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1021_np5003548/analysis/database_record_audit.json",
+      "paper_packets/doi__10.1021_np5003548/analysis/activity_toxicity_evidence.json",
+      "paper_packets/doi__10.1021_np5003548/analysis/mechanism_evidence.json",
+      "papers/doi__10.1021_np5003548/final/review_report.json"
+    ],
+    "material_limits": [
+      "packet_manifest.json still contains a stale test_scope warning saying the historical terminal status was needs_targeted_rework, but rework_responses.jsonl later closes rwk-complete-test-0001 and final/review_report.json records accepted_with_cautions.",
+      "extraction_status.json reports material_extracted_with_gaps; the sampled IC50/identity row is still decidable from primary PDF/XML text and linked DBAASP database rows."
+    ],
+    "blocked_missing_primary_material": false
+  },
+  "layer_checks": {
+    "layer_1_database_identity_status": "confirmed_with_caution",
+    "layer_1_summary": "Compound name, citation, source organism context, and activity traceability are supported; the database-specific nonribosomal sequence encoding remains a preserved source_conflict.",
+    "layer_2_activity_toxicity_status": "confirmed",
+    "layer_2_summary": "The HT-29 IC50 value 1.5 uM and target are directly supported by the checked primary text and linked DBAASP experiment row.",
+    "layer_3_mechanism_status": "needs_targeted_rework",
+    "layer_3_summary": "The accepted mechanism output uses a non-standard evidence_class, indirect_context_no_direct_mechanism. The required ontology only allows direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested."
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "adjudication_summary": "The sampled database/activity row is correctly caution-preserving and does not require row-level repair. The paper-level accepted outputs are not safe to leave publication-grade because final/mechanism_ontology_record.json contains a non-standard mechanism evidence class in an accepted output.",
+    "hard_failures": [
+      {
+        "failure_code": "non_standard_mechanism_evidence_class",
+        "artifact_path": "papers/doi__10.1021_np5003548/final/mechanism_ontology_record.json",
+        "failing_object": "mechanism_claims[0].evidence_class",
+        "observed_value": "indirect_context_no_direct_mechanism",
+        "required_action": "Reclassify the mechanism claim using the standard ontology and update worker-5/worker-6 outputs plus final review status only after a strict source-reviewed check."
+      }
+    ],
+    "semantic_quality_conclusion": "Hard failure present despite prior semantic/publication gate reports passing; the manual source-review prompt explicitly treats non-standard mechanism evidence classes in accepted outputs as needs_targeted_rework."
+  },
+  "rework_targets": [
+    {
+      "ticket_id": "V420P0028-rwk-0001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5",
+      "secondary_owner_worker": "worker-6",
+      "severity": "blocking",
+      "failure_code": "non_standard_mechanism_evidence_class",
+      "artifact_paths": [
+        "papers/doi__10.1021_np5003548/final/mechanism_ontology_record.json",
+        "paper_packets/doi__10.1021_np5003548/analysis/mechanism_evidence.json",
+        "papers/doi__10.1021_np5003548/final/review_report.json"
+      ],
+      "reason": "Accepted output uses mechanism_claims[0].evidence_class=indirect_context_no_direct_mechanism, which is not in the required evidence-strength ontology.",
+      "requested_outputs": [
+        "Re-open the cited mechanism locators and choose a standard evidence_class, likely inferred_mechanism for discussion/family context or unknown_or_not_tested if no mechanism evidence is claimed for trichormamides A/B.",
+        "Update mechanism claim limitations without promoting indirect/background language to direct_mechanism.",
+        "Re-adjudicate final review_report.json so publication_grade is not asserted until the mechanism ontology uses only standard evidence classes."
+      ],
+      "blocks": [
+        "mechanism_ontology_record",
+        "review_report",
+        "publication_grade_ready"
+      ],
+      "created_at": "2026-06-25T02:02:03Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_specific_nonribosomal_encoding_not_primary_literal",
+      "evidence_context": "DBAASP sequence xIxXxQXsTPyT is linked to the record, while the primary paper prints the cyclic residue/stereochemistry statement for Trichormamide B."
+    },
+    {
+      "caution_code": "no_replicate_statistics_in_local_text",
+      "evidence_context": "The source text reports IC50 point values and units, but no n/SD/SEM/CI for the checked row."
+    },
+    {
+      "caution_code": "stale_packet_test_scope_note",
+      "evidence_context": "The packet manifest retains an older test_scope warning even though later rework responses and review_report fields say the earlier ticket was closed."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0028__doi__10.1021_np5003548/material_inventory.json",
+    "paper_packets/doi__10.1021_np5003548/packet_manifest.json",
+    "paper_packets/doi__10.1021_np5003548/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_np5003548/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_np5003548/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_np5003548/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1021_np5003548/extracted/pdf_text/np5003548.txt",
+    "paper_packets/doi__10.1021_np5003548/database/linked_experiment_records.jsonl",
+    "papers/doi__10.1021_np5003548/final/database_record_verification.json",
+    "papers/doi__10.1021_np5003548/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_np5003548/final/mechanism_ontology_record.json",
+    "papers/doi__10.1021_np5003548/final/review_report.json",
+    "reports/doi__10.1021_np5003548.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "reports/doi__10.1021_np5003548.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  ]
+}

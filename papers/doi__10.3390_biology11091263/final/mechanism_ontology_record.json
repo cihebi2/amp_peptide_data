@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.3390_biology11091263",
+  "generated_at": "2026-05-07T17:53:00Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": {
+    "mode": "worker-5 targeted re-review",
+    "source_sections_checked": [
+      "xml:sec=10:2.5. Kinetic Time Killing Assay",
+      "xml:sec=11:2.6. Membrane Permeabilisation Assay",
+      "xml:sec=17:3.5. Time-Killing Kinetics of VM and Its Analogues",
+      "xml:sec=18:3.6. Bacterial Cell Membrane Permeabilisation of VM and Its Analogues",
+      "xml:sec=22:4. Discussion"
+    ],
+    "figure_captions_checked": [
+      "xml:fig=2:Figure 2",
+      "xml:fig=3:Figure 3"
+    ],
+    "obtainable_only_mode": true
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "VM family peptides directly permeabilize S. aureus cell membranes in the recovered SYTOX Green membrane-permeabilization assay, with source text reporting concentration-dependent permeabilization and high permeabilization at elevated MIC multiples.",
+      "entity_scope": "VM, VM-3K, VM-3G, VM-3W and VM-3Y against Staphylococcus aureus",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SYTOX Green nucleic-acid uptake membrane permeabilization assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=11:2.6. Membrane Permeabilisation Assay; xml:sec=18:3.6. Bacterial Cell Membrane Permeabilisation of VM and Its Analogues; xml:fig=3:Figure 3"
+      },
+      "limitations": "The recovered XML/PDF text supports the assay and qualitative/concentration-relative interpretation; exact image-derived bar heights were not extracted and are not needed for row-level activity values."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Time-kill experiments support rapid bactericidal phenotype against S. aureus at MIC-multiple exposures, but this endpoint is not itself a molecular mechanism.",
+      "entity_scope": "VM, VM-3K, VM-3G, VM-3W and VM-3Y against Staphylococcus aureus",
+      "evidence_class": "phenotype_supported",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=10:2.5. Kinetic Time Killing Assay; xml:sec=17:3.5. Time-Killing Kinetics of VM and Its Analogues; xml:fig=2:Figure 2"
+      },
+      "limitations": "Classified as phenotype_supported rather than direct_mechanism because killing kinetics do not identify a specific molecular target."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Biofilm inhibition and eradication are source-supported phenotypes for Gram-positive targets, but the recovered material does not establish a separate direct antibiofilm mechanism.",
+      "entity_scope": "VM, VM-3K, VM-3G, VM-3W, VM-3Y and melittin control in Table 5",
+      "evidence_class": "phenotype_supported",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=5; xml:sec=8:2.4. Antibiofilm Assays; xml:sec=16:3.4. Anti-Biofilm Activity of VM and Its Analogues"
+      },
+      "limitations": "MBIC/MBEC values are retained in activity records; no biofilm-specific molecular mechanism is promoted from these assays."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "Discussion-level statements proposing intracellular dysfunction, carpet-like behavior, pore formation, electrostatic interaction, or hydrophobic interaction are mechanistic interpretations rather than directly proven intracellular targets in the recovered local material.",
+      "entity_scope": "VM family peptides",
+      "evidence_class": "inferred_mechanism",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=22:4. Discussion"
+      },
+      "limitations": "Kept separate from the direct SYTOX Green membrane-permeabilization assay; no enzyme, ribosome, DNA/RNA-binding, or pull-down assay was recovered locally."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "intracellular_dysfunction_not_directly_assayed",
+      "evidence_context": "The discussion proposes intracellular dysfunction when MIC-level permeabilization is below 50%, but no direct intracellular target assay was found in local XML/PDF/supplement evidence."
+    },
+    {
+      "caution_code": "figure3_values_not_digitized",
+      "evidence_context": "Figure 3 caption and Section 3.6 support concentration-relative membrane permeabilization; exact bar values were not needed for mechanism classification."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

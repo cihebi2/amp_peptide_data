@@ -1,0 +1,71 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-3789296_v1",
+  "generated_at": "2026-05-05T18:28:51Z",
+  "source_reviewed": true,
+  "worker": "worker-6",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "worker-6 final mechanism adjudication from primary PDF result/method text; no worker-5 packet claim is promoted without source locator",
+  "source_paths_checked": [
+    "rework_context/doi__10.21203_rs.3.rs-3789296_v1/handoff_context.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/packet_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/locators/locator_index.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_status.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.pdf",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/paper.xml",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-3.docx",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/raw/supplementary_original/landing-4.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/database_source_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/database/linked_assay_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-membrane-disruption-001",
+      "claim_text": "The three lead peptides are adjudicated as membrane-disrupting AMPs based on SEM/TEM observations of peptide-treated A. baumannii cells showing disrupted morphology/membrane integrity.",
+      "entity_scope": "EME4(6), EME7(7), and EME11(8); direct imaging example emphasizes EME7(7)",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "scanning electron microscopy",
+        "transmission electron microscopy"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:lines=353-365; figure=5c-h"
+      },
+      "limitations": "The local text supports membrane disruption qualitatively; it does not provide parser-readable quantitative membrane-damage values."
+    },
+    {
+      "claim_id": "mech-resistance-development-002",
+      "claim_text": "A. baumannii 17978 did not show resistance development against the lead peptides over repeated sub-MIC exposure in the parsed source text, while polymyxin B increased after repeated culture.",
+      "entity_scope": "EME4(6), EME7(7), and EME11(8)",
+      "evidence_class": "phenotypic_resistance_assay",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:lines=366-373; methods=516-519; figure=5i"
+      },
+      "limitations": "Exact generation-by-generation MIC values are figure-level and not extracted as row-level numeric data here."
+    },
+    {
+      "claim_id": "in-vivo-efficacy-toxicity-003",
+      "claim_text": "EME7(7) is source-supported for in vivo A. baumannii acute pneumonia efficacy with lower kidney injury signal than polymyxin B in the parsed result text.",
+      "entity_scope": "EME7(7)",
+      "evidence_class": "in_vivo_efficacy_and_toxicity",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3789296_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:lines=381-413; figure=6"
+      },
+      "limitations": "This is therapeutic-efficacy/toxicity context, not an additional antimicrobial MIC row."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

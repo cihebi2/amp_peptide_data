@@ -1,0 +1,145 @@
+{
+  "paper_id": "doi__10.3390_md17090488",
+  "reviewed_at": "2026-05-09T11:03:21Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_md17090488/handoff_context.json",
+      "paper_packets/doi__10.3390_md17090488/packet_manifest.json",
+      "paper_packets/doi__10.3390_md17090488/locators/locator_index.json",
+      "paper_packets/doi__10.3390_md17090488/raw/paper.xml",
+      "paper_packets/doi__10.3390_md17090488/raw/paper.pdf",
+      "paper_packets/doi__10.3390_md17090488/extracted/pdf_text/marinedrugs-17-00488.txt",
+      "paper_packets/doi__10.3390_md17090488/extracted/supplementary_text/marinedrugs-17-00488-s001.txt",
+      "paper_packets/doi__10.3390_md17090488/extracted/oa_package/local-DBAASP-PMC6780696/PMC6780696/marinedrugs-17-00488-s001.pdf",
+      "paper_packets/doi__10.3390_md17090488/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_md17090488/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_md17090488/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+    ],
+    "tools_attempted": [
+      "XML table-wrap parser for source Tables 1-3",
+      "pdftotext-derived primary PDF text line review",
+      "supplementary PDF text review for activity-changing tables",
+      "JSONL reconciliation of linked DBAASP assay/experiment/literature rows",
+      "merged sequence catalog lookup for DBAASP compact sequence keys"
+    ],
+    "bounded_best_effort_result": "all owner-layer blockers recoverable from local materials; no blocking unrecoverable gap remains"
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md17090488/handoff_context.json",
+    "paper_packets/doi__10.3390_md17090488/packet_manifest.json",
+    "paper_packets/doi__10.3390_md17090488/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md17090488/raw/paper.xml",
+    "paper_packets/doi__10.3390_md17090488/raw/paper.pdf",
+    "paper_packets/doi__10.3390_md17090488/extracted/pdf_text/marinedrugs-17-00488.txt",
+    "paper_packets/doi__10.3390_md17090488/extracted/supplementary_text/marinedrugs-17-00488-s001.txt",
+    "paper_packets/doi__10.3390_md17090488/extracted/oa_package/local-DBAASP-PMC6780696/PMC6780696/marinedrugs-17-00488-s001.pdf",
+    "paper_packets/doi__10.3390_md17090488/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md17090488/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md17090488/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "paper_packets/doi__10.3390_md17090488/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_md17090488/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_md17090488/analysis/mechanism_evidence.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 48,
+    "mic_limit_rows": 40,
+    "enzyme_ic50_rows": 8,
+    "database_record_audits": 63,
+    "database_status_summary": {
+      "source_verified": 63
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": 0,
+    "strict_gate_rerun": {
+      "semantic_gate_pass": true,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "semantic_report": "reports/doi__10.3390_md17090488.semantic_gate.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "publication_quality_report": "reports/doi__10.3390_md17090488.publication_quality.json",
+      "checked_at": "2026-05-09T11:08:18Z"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Packet remains material_extracted_with_gaps historically, but the owner-layer blockers were recoverable from local XML/PDF/OA package/supplement/database files listed in checked_inputs.",
+    "activity_toxicity": "Worker-2 repair recovered 40 source-supported antimicrobial MIC-limit rows from primary prose/methods and 8 row-level SrtA/ICL IC50 rows from Table 3; no parser-only gap remains.",
+    "database_record_audit": "Worker-4 repair reconciled 60 linked DBAASP assay/experiment rows to source-supported MIC-limit activity rows and 3 literature rows to article metadata; compact nonribosomal sequence codes are preserved with source-locator cautions.",
+    "mechanism": "Worker-6 adjudication replaces framework placeholders with direct enzyme-assay claims for SrtA/ICL and a separate negative antimicrobial-activity boundary.",
+    "publication_grade": "Accepted with cautions because all blocking/major owner-layer issues are resolved, no open rework target remains, and remaining database snapshot limitations are explicit cautions rather than hidden conflicts."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "linked_sequence_records_absent",
+      "severity": "caution",
+      "evidence_context": "The packet has no linked_sequence_records.jsonl rows; DBAASP compact nonribosomal sequence codes were checked against the merged sequence catalog and primary-source residue tables instead.",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_md17090488/database/linked_sequence_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+        "paper_packets/doi__10.3390_md17090488/raw/paper.xml"
+      ]
+    },
+    {
+      "caution_code": "source_compound_4_not_in_linked_dbaasp_snapshot",
+      "severity": "caution",
+      "evidence_context": "Primary source supports compound 4 activity rows, but the local DBAASP-linked rows cover only DBAASPN_21685, DBAASPN_21686, and DBAASPN_21687."
+    },
+    {
+      "caution_code": "negative_mic_limit_not_positive_antimicrobial_activity",
+      "severity": "caution",
+      "evidence_context": "MIC rows are negative/censored >128 µg/mL findings and must not be promoted to positive antimicrobial potency."
+    },
+    {
+      "caution_code": "enzyme_activity_separate_from_growth_inhibition",
+      "severity": "caution",
+      "evidence_context": "Direct SrtA/ICL inhibition claims are bounded to enzyme assays; antimicrobial growth assays remain inactive at the source-reported ceiling."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "open_rework_ticket_ids": [],
+    "gate_evidence": {
+      "semantic_gate_pass": true,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "semantic_report": "reports/doi__10.3390_md17090488.semantic_gate.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "publication_quality_report": "reports/doi__10.3390_md17090488.publication_quality.json",
+      "checked_at": "2026-05-09T11:08:18Z"
+    }
+  },
+  "summary": "Source-reviewed worker-2/4/6 repair closed the prior framework-test rework ticket: activity rows, database reconciliation, and mechanism boundaries now pass strict semantic and publication gates with explicit cautions.",
+  "unrecoverable_material_gaps": []
+}

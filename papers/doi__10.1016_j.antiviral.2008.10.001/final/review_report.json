@@ -1,0 +1,91 @@
+{
+  "paper_id": "doi__10.1016_j.antiviral.2008.10.001",
+  "reviewed_at": "2026-06-20T08:58:06Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "oa_package_figures",
+    "supplement_inventory",
+    "linked_database_rows",
+    "packet_analysis_outputs",
+    "final_outputs"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "pdf_text": true,
+    "oa_package": true,
+    "figure_images": true,
+    "supplementary_assets": true,
+    "linked_database_rows": true,
+    "note": "No supplementary assets are present in the packet. Figure curves were not digitized beyond exact values reported in prose/table text; unsupported database-normalized claims are conflict-preserved."
+  },
+  "checked_inputs": [
+    "papers/doi__10.1016_j.antiviral.2008.10.001/source/paper.xml",
+    "papers/doi__10.1016_j.antiviral.2008.10.001/source/paper.pdf",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/oa_package/local-DBAASP-PMC7114320/PMC7114320/gr1.jpg",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/oa_package/local-DBAASP-PMC7114320/PMC7114320/gr2.jpg",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/oa_package/local-DBAASP-PMC7114320/PMC7114320/gr3.jpg",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1016_j.antiviral.2008.10.001/rework/rework_requests.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 10,
+    "primary_activity_rows": 9,
+    "primary_toxicity_rows": 1,
+    "database_record_audits": 56,
+    "database_status_summary": {
+      "source_conflict": 15,
+      "source_verified": 41
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "source_conflicts_preserved": 15,
+    "database_only_rows_treated_as_primary": false,
+    "sentence_fragment_target_check": "pass",
+    "generic_endpoint_check": "pass",
+    "mic_like_unit_check": "not_applicable_antiviral_ic50_rows_have_units",
+    "supplementary_assets_present": false,
+    "unrecoverable_material_gaps_blocking": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/DRAMP/CAMP/dbAMP linked rows were rechecked against article metadata, Fig. 1 sequence panels, Fig. 2/prose activity values, infectivity text, and toxicity prose. Source-supported IC50 rows were verified; exact 0% cytotoxicity, older-reference, MERS-CoV, anticancer, and over-specific claims remain source_conflict cautions.",
+    "layer_2_activity_toxicity": "Primary source supports nine IC50 activity rows across fusion and infectivity assays plus one qualitative MTT toxicity row. No unsupported curve-digitized or database-only value was fabricated.",
+    "layer_3_mechanism": "Mechanism is curated as functional fusion-inhibition with structural/CD support, not membrane permeabilization or direct antimicrobial killing. No direct binding constants are claimed.",
+    "adjudication": "The previous full_source_review_not_completed ticket is resolved by source-located row-level repair and conflict-preserving database adjudication."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_cytotoxicity_not_primary_exact_value",
+      "evidence_context": "Primary article reports no discernable cytotoxicity at 25 µM in HeLa/VeroE6 but does not provide exact 0% cytotoxicity values; database exact rows remain source_conflict."
+    },
+    {
+      "caution_code": "database_claims_exceed_this_doi",
+      "evidence_context": "Some merged database rows include MERS-CoV, older-reference CP-1/EC50, anticancer, or over-specific mechanism claims; supported SARS-CoV portions are noted but the rows are conflict-preserved."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Curated numeric values are restricted to exact values stated in XML/PDF prose/table text; plotted-only high-concentration values for P2/P3/P5/P7 are not converted to exact records."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source re-review recovered paper-supported antiviral IC50 rows, resolved the empty activity layer, replaced placeholder mechanism text, and preserved database conflicts where linked rows exceed the primary article. Final status is accepted_with_cautions because database-normalized cytotoxicity, older-reference, MERS-CoV, anticancer, and over-specific claims remain source_conflict final outcomes."
+}

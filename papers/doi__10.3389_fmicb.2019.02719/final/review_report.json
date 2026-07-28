@@ -1,0 +1,100 @@
+{
+  "adjudication_summary": "Worker-4/6 source re-review closed the prior framework-only blocker. The paper is accepted_with_cautions because source-supported MIC/FICI/toxicity/mechanism/database findings are recovered, while database-only or exact image-derived values remain explicit nonblocking source_conflict cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_cytotoxic_exact_percent_source_conflict",
+      "evidence_context": "DBAASP gives exact HEK293T killing percentages for four peptides, but the reopened local primary text supports only low cytotoxicity and the TIFF supplement was not machine-quantified; exact database percentages remain source_conflict.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "camp_mixed_source_aggregate_rows",
+      "evidence_context": "CAMP rows aggregate multiple PMIDs and organisms; current-paper-supported S. epidermidis/host-toxicity subset is retained, while out-of-paper aggregate targets are not promoted to source_verified.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "supplementary_figure_exact_bar_heights_not_extracted",
+      "evidence_context": "Local supplementary Figure S1 is a TIFF image; no exact bar-height values were fabricated. Final toxicity rows use text-supported inequalities and preserve database exact values as conflicts.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "material_packet_status_preserved",
+      "evidence_context": "Packet material status remains material_extracted_with_gaps because supplementary tables were not represented in supplementary_tables.json, but the gate-changing DOCX tables were recovered from the OA package.",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmicb.2019.02719/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/pdf_text/fmicb-10-02719.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/oa_package/local-DBAASP-PMC6886405/PMC6886405/Table_1.docx",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/extracted/oa_package/local-DBAASP-PMC6886405/PMC6886405/Image_1.TIFF",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02719/database/linked_literature_records.jsonl",
+    "papers/doi__10.3389_fmicb.2019.02719/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2019.02719/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Reopened local XML/PDF, OA package assets, DOCX supplementary Tables S1-S3, TIFF supplementary figures, and linked database rows. Exact TIFF bar heights were not fabricated; nonblocking conflicts are explicit.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3389_fmicb.2019.02719",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 matched DBAASP peptide identities to Table 1 sequences and C-terminal amidation, matched Table 2 MIC rows and Table 3 FICI rows, and preserved CAMP mixed-source aggregate rows plus exact HEK293T database values as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-6 replaced the framework parser's antibiotic-column rows with source-reviewed peptide MIC, FICI, hemolysis, and cytotoxicity records. Unsupported exact Figure S1 bar heights were not invented.",
+    "layer_3_mechanism": "Worker-6 replaced pending-review placeholders with source-located biofilm, qPCR, membrane depolarization/permeability, SEM, and in vivo efficacy context, limiting direct-mechanism labels to assays that directly support them.",
+    "supplementary_material": "The OA DOCX was opened and Tables S2/S3 were used to verify FICa/FICb components; supplementary image exact values remain caution-level where not machine-quantified."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T19:00:08Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 36,
+    "database_record_status_summary": {
+      "source_conflict": 12,
+      "source_verified": 68
+    },
+    "mechanism_claims_source_reviewed": 6,
+    "open_rework_targets": 0,
+    "supplementary_docx_tables_recovered": [
+      "Table S1",
+      "Table S2",
+      "Table S3"
+    ],
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_ticket_ids": [],
+    "required_rework_count": 0
+  },
+  "summary": "Source-reviewed worker-4/6 closeout with preserved database cautions and no open owner-layer rework.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

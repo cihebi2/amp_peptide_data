@@ -1,0 +1,247 @@
+{
+  "paper_id": "doi__10.3390_molecules23112943",
+  "pilot_sample_id": "PILOT20-008",
+  "audit_record_id": "doi__10.3390_molecules23112943:database_audit:46",
+  "reviewed_at": "2026-06-22T04:00:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.3390_molecules23112943",
+    "inventory_reopened": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/material_inventory.json",
+    "surfaces_found": {
+      "paper_xml": {
+        "exists": true,
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml"
+      },
+      "paper_pdf": {
+        "exists": true,
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.pdf"
+      },
+      "oa_package": {
+        "exists": true,
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/oa_package",
+        "sample_members": [
+          "local-APD6-pmc_package.tar.gz",
+          "local-DBAASP-PMC6278411.tar.gz"
+        ]
+      },
+      "supplementary_original_dir": {
+        "exists": false,
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/supplementary_original"
+      },
+      "supplementary_pdf_in_oa_package": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.3390_molecules23112943/extracted/oa_package/local-APD6-pmc_package/PMC6278411/molecules-23-02943-s001.pdf",
+          "paper_packets/doi__10.3390_molecules23112943/extracted/oa_package/local-DBAASP-PMC6278411/PMC6278411/molecules-23-02943-s001.pdf"
+        ]
+      },
+      "database_snapshots": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.3390_molecules23112943/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.3390_molecules23112943/database/linked_dramp_activity_records.jsonl",
+          "paper_packets/doi__10.3390_molecules23112943/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.3390_molecules23112943/database/linked_literature_records.jsonl"
+        ],
+        "row_counts": {
+          "linked_assay_records": 14,
+          "linked_dramp_activity_records": 15,
+          "linked_experiment_records": 38,
+          "linked_literature_records": 9,
+          "linked_sequence_records": 0
+        }
+      }
+    },
+    "packet_status": {
+      "material_queue_status": "material_extracted_with_gaps",
+      "analysis_queue_status": "source_reviewed_publication_grade_ready",
+      "test_scope_note": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+      "resolved_rework_ticket_ids": [
+        "rwk-complete-test-0001"
+      ],
+      "open_rework_ticket_ids": []
+    },
+    "gap_assessment_for_sample": "The material gap concerns unsupported parser extraction and figure-only intermediate hemolysis values. The sampled APD6 AP03030 sequence and matched MIC rows are supported by XML/PDF table/prose locators, so the material gap is a caution rather than a missing-primary-material blocker for this row."
+  },
+  "layer1_database_record_review": {
+    "source_id": "AP03030",
+    "database": "APD6",
+    "release_status_under_review": "source_conflict",
+    "sample_final_record_status": "source_conflict",
+    "release_row_matches_sample_final_record": true,
+    "source_conflict_justified": true,
+    "primary_evidence": [
+      {
+        "claim": "Primary paper identifies P3-Ll-2085 as a synthesized analog with sequence GLLDFLKAAGKGLVSNLLEK-NH2.",
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+        "locator": "xml:table=2:row=P3-Ll-2085"
+      },
+      {
+        "claim": "APD6 database snapshot row AP03030 records sequence GLLDFLKAAGKGLVSNLLEK and APD commentary about similarity/structure.",
+        "path": "paper_packets/doi__10.3390_molecules23112943/database/linked_experiment_records.jsonl",
+        "locator": "line=17"
+      },
+      {
+        "claim": "Citation traceability to DOI, PMID, and PMCID is present.",
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+        "locator": "xml:article-meta"
+      }
+    ],
+    "rationale": "The source sequence includes C-terminal amidation while the APD6 sequence field omits the modification, and APD6 adds commentary not fully stated as primary-source claims. The correct publication-grade treatment is to preserve source_conflict, not convert to clean source_verified.",
+    "database_audit_entry_reviewed": "papers/doi__10.3390_molecules23112943/final/database_record_verification.json::record_audits[source_id=AP03030,source_snapshot=linked_experiment_records.jsonl]",
+    "linked_literature_entry_note": "A separate AP03030 linked_literature_records.jsonl entry is source_verified for citation traceability only and is not the sampled database_audit:46 assay/commentary row."
+  },
+  "layer2_activity_toxicity_review": {
+    "matched_activity_record_ids": [
+      "doi__10.3390_molecules23112943-table3-p3-ll-2085-escherichia-coli-mic",
+      "doi__10.3390_molecules23112943-table3-p3-ll-2085-staphylococcus-aureus-mic"
+    ],
+    "sample_relevant_rows_source_backed": true,
+    "activity_rows_checked": [
+      {
+        "record_id": "doi__10.3390_molecules23112943-table3-p3-ll-2085-escherichia-coli-mic",
+        "endpoint": "MIC",
+        "raw_value": "15",
+        "raw_unit": "uM",
+        "target_species": "Escherichia coli",
+        "target_strain": "ATCC 25922",
+        "locator": "xml:table=3:row=P3-Ll-2085:column=E_coli_ATCC_25922"
+      },
+      {
+        "record_id": "doi__10.3390_molecules23112943-table3-p3-ll-2085-staphylococcus-aureus-mic",
+        "endpoint": "MIC",
+        "raw_value": "15",
+        "raw_unit": "uM",
+        "target_species": "Staphylococcus aureus",
+        "target_strain": "ATCC 25923",
+        "locator": "xml:table=3:row=P3-Ll-2085:column=S_aureus_ATCC_25923"
+      }
+    ],
+    "method_context": {
+      "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+      "locator": "xml:sec=4.7 Minimal Inhibitory Concentration (MIC) Determination",
+      "summary": "Modified microtiter dilution MIC assay; E. coli ATCC 25922 and S. aureus ATCC 25923; diluted Mueller-Hinton Broth; 5 x 10^7 CFU/mL; 18-24 h at 37 C."
+    },
+    "toxicity_context_for_p3": {
+      "source_backed": true,
+      "records_checked": [
+        "doi__10.3390_molecules23112943-table4-p3-ll-2085-human-erythrocytes-mhc",
+        "doi__10.3390_molecules23112943-text-p3-ll-2085-human-erythrocytes-hemolysis-40um"
+      ],
+      "locators": [
+        "xml:table=4:row=P3-Ll-2085:column=MHC",
+        "xml:sec=2.4:text=P3_100_percent_40uM"
+      ],
+      "note": "Intermediate figure-only hemolysis values remain preserved as database conflicts when not text/table-supported."
+    },
+    "hard_failure_scan": {
+      "sentence_fragment_target_found": false,
+      "generic_endpoint_for_sample_found": false,
+      "missing_raw_value_or_unit_for_sample": false,
+      "missing_locator_for_sample": false
+    }
+  },
+  "layer3_mechanism_review": {
+    "artifact_checked": "paper_packets/doi__10.3390_molecules23112943/final/mechanism_evidence.json",
+    "mechanism_claim_count": 3,
+    "direct_mechanism_claims": 0,
+    "direct_mechanism_overclaim_found": false,
+    "claims_have_ids_text_classes_and_locators": true,
+    "source_context_checked": [
+      {
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+        "locator": "xml:sec=2.5 Secondary Structure Determination by Circular Dichroism (CD)",
+        "finding": "CD supports secondary-structure context for P2/P3 in TFE and DPPG/DPPC environments."
+      },
+      {
+        "path": "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+        "locator": "xml:sec=3 Discussion",
+        "finding": "Pore/permeation language is framed as possible explanation or literature context, not a direct mechanism assay for this sample."
+      }
+    ],
+    "evidence_class_assessment": "Conservative: the final artifact uses indirect/hypothesis/uncertain mechanism labels and does not promote CD or discussion-only statements to direct_mechanism. These labels are not the strict five-label ontology wording, so I preserve this as a caution rather than a direct-mechanism hard failure for the sampled database row."
+  },
+  "worker6_adjudication": {
+    "existing_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "substantive_source_review_finding_if_model_gate_waived": "accepted_with_cautions_confirmed",
+    "terminal_decision_limitation": "The current Codex runtime did not expose independently verifiable active model and reasoning-effort metadata. Because the prompt requires proof of gpt-5.5 with xhigh reasoning and instructs unverifiable_best_effort when that cannot be proven, the formal decision is unverifiable_best_effort.",
+    "why_not_pass_source_review": "The sampled row intentionally remains source_conflict due to APD6 sequence/modification/commentary cautions.",
+    "why_no_targeted_rework_ticket": "No repairable source defect was found for the sampled AP03030 row after reopening XML tables, PDF text, supplementary index/text, database JSONL snapshots, rework request/response, final database/activity/mechanism artifacts, and review report. The only blocker is reviewer model/effort provenance, not a worker-owned artifact defect.",
+    "publication_grade_caution_preserved": true,
+    "rework_ticket_written": false
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "caution_code": "model_effort_not_independently_provable",
+      "evidence_context": "Schema records review_model=gpt-5.5 and reasoning_effort=xhigh, but the runtime did not expose proof of the active model/effort to the reviewer.",
+      "affects_decision": true
+    },
+    {
+      "caution_code": "source_conflict_preserved_for_ap03030",
+      "evidence_context": "Primary Table 2 supports GLLDFLKAAGKGLVSNLLEK-NH2 for P3-Ll-2085; APD6 AP03030 stores GLLDFLKAAGKGLVSNLLEK and APD commentary not fully stated as primary-source claims.",
+      "affected_records": [
+        "AP03030",
+        "doi__10.3390_molecules23112943:database_audit:46"
+      ]
+    },
+    {
+      "caution_code": "material_packet_had_closed_rework_and_nonblocking_gaps",
+      "evidence_context": "packet_manifest marks material_extracted_with_gaps and contains a test-scope note, but rwk-complete-test-0001 is closed with worker-2/4/6 repairs and no open ticket. Figure-only intermediate hemolysis values remain nonblocking conflicts."
+    },
+    {
+      "caution_code": "mechanism_indirect_not_direct",
+      "evidence_context": "CD and discussion evidence are kept as indirect/hypothesis context with locators; no direct mechanism assay is asserted."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per prompt.",
+    "xmllint was unavailable locally; XML table verification used Python ElementTree over the packet raw XML.",
+    "The active model and model_reasoning_effort could not be independently proven from local runtime metadata.",
+    "Supplementary material was checked via the packet OA-package supplement index/text; no structured supplementary tables were present."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-008__doi__10.3390_molecules23112943/true_review_result.schema.json",
+    "paper_packets/doi__10.3390_molecules23112943/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules23112943/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules23112943/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules23112943/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules23112943/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules23112943/raw/oa_package/local-APD6-pmc_package.tar.gz",
+    "paper_packets/doi__10.3390_molecules23112943/raw/oa_package/local-DBAASP-PMC6278411.tar.gz",
+    "paper_packets/doi__10.3390_molecules23112943/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules23112943/extracted/pdf_text/molecules-23-02943.txt",
+    "paper_packets/doi__10.3390_molecules23112943/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules23112943/extracted/supplementary_text/molecules-23-02943-s001.txt",
+    "paper_packets/doi__10.3390_molecules23112943/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules23112943/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23112943/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23112943/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23112943/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23112943/final/database_record_verification.json",
+    "paper_packets/doi__10.3390_molecules23112943/final/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_molecules23112943/final/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_molecules23112943/final/review_report.json",
+    "paper_packets/doi__10.3390_molecules23112943/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.3390_molecules23112943/rework/rework_responses.jsonl",
+    "reports/doi__10.3390_molecules23112943.semantic_gate.json",
+    "reports/doi__10.3390_molecules23112943.publication_quality.json"
+  ]
+}

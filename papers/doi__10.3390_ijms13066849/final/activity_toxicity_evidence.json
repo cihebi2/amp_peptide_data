@@ -1,0 +1,4246 @@
+{
+  "paper_id": "doi__10.3390_ijms13066849",
+  "generated_at": "2026-05-08T14:37:50Z",
+  "reviewed_at": "2026-05-08T14:37:50Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "extraction_scope": "Worker-2 source-reviewed activity/toxicity repair from primary XML Table 3 plus anticancer and hemolysis methods; no database-only rows are promoted as primary evidence.",
+  "activity_records": [
+    {
+      "record_id": "mhc-p-human_red_blood_cells",
+      "entity": "P",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=2"
+      },
+      "modifications": [],
+      "endpoint": "MHC",
+      "raw_value": "5.20 ± 0.02",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=2"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 5.2,
+      "reported_variability": "0.02"
+    },
+    {
+      "record_id": "ic50-p-hela_cells",
+      "entity": "P",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=2"
+      },
+      "modifications": [],
+      "endpoint": "IC50",
+      "raw_value": "1.71 ± 0.07",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=2"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 1.71,
+      "reported_variability": "0.07"
+    },
+    {
+      "record_id": "therapeutic_index-p-hela_human_erythrocytes",
+      "entity": "P",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=2"
+      },
+      "modifications": [],
+      "endpoint": "therapeutic_index",
+      "raw_value": "3.04",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=2"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 3.04,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-p-hela_human_erythrocytes",
+      "entity": "P",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=2"
+      },
+      "modifications": [],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "1.0",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=2"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 1.0,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k7d-human_red_blood_cells",
+      "entity": "K7D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=4"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "10.4 ± 0.04",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=3"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 10.4,
+      "reported_variability": "0.04"
+    },
+    {
+      "record_id": "ic50-k7d-hela_cells",
+      "entity": "K7D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=4"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "1.29 ± 0.03",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=3"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 1.29,
+      "reported_variability": "0.03"
+    },
+    {
+      "record_id": "therapeutic_index-k7d-hela_human_erythrocytes",
+      "entity": "K7D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=4"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "8.07",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=3"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 8.07,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k7d-hela_human_erythrocytes",
+      "entity": "K7D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=4"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "2.7",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=3"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 2.7,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k14d-human_red_blood_cells",
+      "entity": "K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "5.20 ± 0.02",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=4"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 5.2,
+      "reported_variability": "0.02"
+    },
+    {
+      "record_id": "ic50-k14d-hela_cells",
+      "entity": "K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "1.52 ± 0.05",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=4"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 1.52,
+      "reported_variability": "0.05"
+    },
+    {
+      "record_id": "therapeutic_index-k14d-hela_human_erythrocytes",
+      "entity": "K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "3.42",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=4"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 3.42,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k14d-hela_human_erythrocytes",
+      "entity": "K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=5"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "1.1",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=4"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 1.1,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k22d-human_red_blood_cells",
+      "entity": "K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6"
+      },
+      "modifications": [
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.10",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=5"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.10"
+    },
+    {
+      "record_id": "ic50-k22d-hela_cells",
+      "entity": "K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6"
+      },
+      "modifications": [
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "1.39 ± 0.02",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=5"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 1.39,
+      "reported_variability": "0.02"
+    },
+    {
+      "record_id": "therapeutic_index-k22d-hela_human_erythrocytes",
+      "entity": "K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6"
+      },
+      "modifications": [
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "14.97",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=5"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 14.97,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k22d-hela_human_erythrocytes",
+      "entity": "K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=6"
+      },
+      "modifications": [
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "4.9",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=5"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 4.9,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k7d_k14d-human_red_blood_cells",
+      "entity": "K7D/K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.15",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=6"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.15"
+    },
+    {
+      "record_id": "ic50-k7d_k14d-hela_cells",
+      "entity": "K7D/K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "2.06 ± 0.01",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=6"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 2.06,
+      "reported_variability": "0.01"
+    },
+    {
+      "record_id": "therapeutic_index-k7d_k14d-hela_human_erythrocytes",
+      "entity": "K7D/K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "10.10",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=6"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 10.1,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k7d_k14d-hela_human_erythrocytes",
+      "entity": "K7D/K14D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=7"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "3.3",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=6"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 3.3,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k14d_k22d-human_red_blood_cells",
+      "entity": "K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=8"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.06",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=7"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.06"
+    },
+    {
+      "record_id": "ic50-k14d_k22d-hela_cells",
+      "entity": "K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=8"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "1.40 ± 0.09",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=7"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 1.4,
+      "reported_variability": "0.09"
+    },
+    {
+      "record_id": "therapeutic_index-k14d_k22d-hela_human_erythrocytes",
+      "entity": "K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=8"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "14.86",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=7"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 14.86,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k14d_k22d-hela_human_erythrocytes",
+      "entity": "K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=8"
+      },
+      "modifications": [
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "4.9",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=7"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 4.9,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k7d_k14d_k22d-human_red_blood_cells",
+      "entity": "K7D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=9"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "81.31 ± 0.17",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=8"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 81.31,
+      "reported_variability": "0.17"
+    },
+    {
+      "record_id": "ic50-k7d_k14d_k22d-hela_cells",
+      "entity": "K7D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=9"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "4.45 ± 0.19",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=8"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 4.45,
+      "reported_variability": "0.19"
+    },
+    {
+      "record_id": "therapeutic_index-k7d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K7D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=9"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "18.27",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=8"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 18.27,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k7d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K7D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=9"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "6.0",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=8"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 6.0,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k7d_k10d_k14d_k22d-human_red_blood_cells",
+      "entity": "K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=10"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "325.20 ± 0.82",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=9"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 325.2,
+      "reported_variability": "0.82"
+    },
+    {
+      "record_id": "ic50-k7d_k10d_k14d_k22d-hela_cells",
+      "entity": "K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=10"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "4.79 ± 0.23",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=9"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 4.79,
+      "reported_variability": "0.23"
+    },
+    {
+      "record_id": "therapeutic_index-k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=10"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "67.89",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=9"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 67.89,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=10"
+      },
+      "modifications": [
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "22.3",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=9"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 22.3,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k3d_k7d_k10d_k14d_k22d-human_red_blood_cells",
+      "entity": "K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=11"
+      },
+      "modifications": [
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": ">325.20",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=10"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": ">",
+      "normalization_status": "direct",
+      "normalized_value": 325.2
+    },
+    {
+      "record_id": "ic50-k3d_k7d_k10d_k14d_k22d-hela_cells",
+      "entity": "K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=11"
+      },
+      "modifications": [
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "20.41 ± 0.64",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=10"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.41,
+      "reported_variability": "0.64"
+    },
+    {
+      "record_id": "therapeutic_index-k3d_k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=11"
+      },
+      "modifications": [
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "31.87",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=10"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 31.87,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k3d_k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=11"
+      },
+      "modifications": [
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "10.5",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=10"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 10.5,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-k1d_k3d_k7d_k10d_k14d_k22d-human_red_blood_cells",
+      "entity": "K1D/K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=12"
+      },
+      "modifications": [
+        {
+          "position": 1,
+          "residue": "K",
+          "source_token": "K1D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": ">325.20",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=11"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": ">",
+      "normalization_status": "direct",
+      "normalized_value": 325.2
+    },
+    {
+      "record_id": "ic50-k1d_k3d_k7d_k10d_k14d_k22d-hela_cells",
+      "entity": "K1D/K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=12"
+      },
+      "modifications": [
+        {
+          "position": 1,
+          "residue": "K",
+          "source_token": "K1D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "18.07 ± 0.48",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=11"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 18.07,
+      "reported_variability": "0.48"
+    },
+    {
+      "record_id": "therapeutic_index-k1d_k3d_k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K1D/K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=12"
+      },
+      "modifications": [
+        {
+          "position": 1,
+          "residue": "K",
+          "source_token": "K1D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "35.99",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=11"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 35.99,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-k1d_k3d_k7d_k10d_k14d_k22d-hela_human_erythrocytes",
+      "entity": "K1D/K3D/K7D/K10D/K14D/K22D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=12"
+      },
+      "modifications": [
+        {
+          "position": 1,
+          "residue": "K",
+          "source_token": "K1D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 3,
+          "residue": "K",
+          "source_token": "K3D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 7,
+          "residue": "K",
+          "source_token": "K7D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 10,
+          "residue": "K",
+          "source_token": "K10D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 14,
+          "residue": "K",
+          "source_token": "K14D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 22,
+          "residue": "K",
+          "source_token": "K22D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "11.8",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=11"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 11.8,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l6d-human_red_blood_cells",
+      "entity": "L6D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=14"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "10.40 ± 0.08",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=12"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 10.4,
+      "reported_variability": "0.08"
+    },
+    {
+      "record_id": "ic50-l6d-hela_cells",
+      "entity": "L6D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=14"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "2.23 ± 0.10",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=12"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 2.23,
+      "reported_variability": "0.10"
+    },
+    {
+      "record_id": "therapeutic_index-l6d-hela_human_erythrocytes",
+      "entity": "L6D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=14"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "4.67",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=12"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 4.67,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l6d-hela_human_erythrocytes",
+      "entity": "L6D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=14"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "1.5",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=12"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 1.5,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l12d-human_red_blood_cells",
+      "entity": "L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=15"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.03",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=13"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.03"
+    },
+    {
+      "record_id": "ic50-l12d-hela_cells",
+      "entity": "L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=15"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "2.63 ± 0.07",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=13"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 2.63,
+      "reported_variability": "0.07"
+    },
+    {
+      "record_id": "therapeutic_index-l12d-hela_human_erythrocytes",
+      "entity": "L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=15"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "7.91",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=13"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 7.91,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l12d-hela_human_erythrocytes",
+      "entity": "L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=15"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "2.6",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=13"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 2.6,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l20d-human_red_blood_cells",
+      "entity": "L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=16"
+      },
+      "modifications": [
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.13",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=14"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.13"
+    },
+    {
+      "record_id": "ic50-l20d-hela_cells",
+      "entity": "L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=16"
+      },
+      "modifications": [
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "2.33 ± 0.06",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=14"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 2.33,
+      "reported_variability": "0.06"
+    },
+    {
+      "record_id": "therapeutic_index-l20d-hela_human_erythrocytes",
+      "entity": "L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=16"
+      },
+      "modifications": [
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "8.93",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=14"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 8.93,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l20d-hela_human_erythrocytes",
+      "entity": "L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=16"
+      },
+      "modifications": [
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "2.9",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=14"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 2.9,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l6d_l12d-human_red_blood_cells",
+      "entity": "L6D/L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=17"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "20.81 ± 0.10",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=15"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 20.81,
+      "reported_variability": "0.10"
+    },
+    {
+      "record_id": "ic50-l6d_l12d-hela_cells",
+      "entity": "L6D/L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=17"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "3.01 ± 0.08",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=15"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 3.01,
+      "reported_variability": "0.08"
+    },
+    {
+      "record_id": "therapeutic_index-l6d_l12d-hela_human_erythrocytes",
+      "entity": "L6D/L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=17"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "6.91",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=15"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 6.91,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l6d_l12d-hela_human_erythrocytes",
+      "entity": "L6D/L12D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=17"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "2.3",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=15"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 2.3,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l12d_l20d-human_red_blood_cells",
+      "entity": "L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=18"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "81.31 ± .43",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=16"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 81.31,
+      "reported_variability": ".43"
+    },
+    {
+      "record_id": "ic50-l12d_l20d-hela_cells",
+      "entity": "L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=18"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "3.14 ± 0.06",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=16"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 3.14,
+      "reported_variability": "0.06"
+    },
+    {
+      "record_id": "therapeutic_index-l12d_l20d-hela_human_erythrocytes",
+      "entity": "L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=18"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "25.89",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=16"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 25.89,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l12d_l20d-hela_human_erythrocytes",
+      "entity": "L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=18"
+      },
+      "modifications": [
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "8.5",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=16"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 8.5,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l6d_l12d_l20d-human_red_blood_cells",
+      "entity": "L6D/L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=19"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "162.61 ± 0.19",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=17"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 162.61,
+      "reported_variability": "0.19"
+    },
+    {
+      "record_id": "ic50-l6d_l12d_l20d-hela_cells",
+      "entity": "L6D/L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=19"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "7.80 ± 0.26",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=17"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 7.8,
+      "reported_variability": "0.26"
+    },
+    {
+      "record_id": "therapeutic_index-l6d_l12d_l20d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=19"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "20.85",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=17"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 20.85,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l6d_l12d_l20d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=19"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "6.9",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=17"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 6.9,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l6d_l12d_l17d_l20d-human_red_blood_cells",
+      "entity": "L6D/L12D/L17D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=20"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": "81.31 ± 1.05",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=18"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 81.31,
+      "reported_variability": "1.05"
+    },
+    {
+      "record_id": "ic50-l6d_l12d_l17d_l20d-hela_cells",
+      "entity": "L6D/L12D/L17D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=20"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "9.69 ± 0.38",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=18"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 9.69,
+      "reported_variability": "0.38"
+    },
+    {
+      "record_id": "therapeutic_index-l6d_l12d_l17d_l20d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L17D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=20"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "8.39",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=18"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 8.39,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l6d_l12d_l17d_l20d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L17D/L20D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=20"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "2.8",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=18"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 2.8,
+      "normalized_unit": "fold"
+    },
+    {
+      "record_id": "mhc-l6d_l12d_l17d_l20d_l21d-human_red_blood_cells",
+      "entity": "L6D/L12D/L17D/L20D/L21D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=21"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 21,
+          "residue": "L",
+          "source_token": "L21D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "MHC",
+      "raw_value": ">325.20",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "erythrocyte",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "human red blood cells",
+        "display_name_in_source": "human red blood cells"
+      },
+      "assay_conditions": {
+        "assay": "minimal hemolytic concentration after 1 h incubation with human erythrocytes",
+        "method_locator": "xml:sec=17:4.7. Measurement of Hemolytic Activity",
+        "erythrocyte_final_concentration": "1%",
+        "temperature": "37 °C",
+        "readout": "hemoglobin release absorbance at 578 nm",
+        "controls": "PBS as 0% hemolysis; distilled water as 100% hemolysis",
+        "non_detected_rule": "When no hemolytic activity was observed at 325.2 µmol/L, the table used 650.4 µmol/L for therapeutic-index calculation."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=19"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "MHC (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": ">",
+      "normalization_status": "direct",
+      "normalized_value": 325.2
+    },
+    {
+      "record_id": "ic50-l6d_l12d_l17d_l20d_l21d-hela_cells",
+      "entity": "L6D/L12D/L17D/L20D/L21D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=21"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 21,
+          "residue": "L",
+          "source_token": "L21D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "IC50",
+      "raw_value": "12.88 ± 0.15",
+      "raw_unit": "µmol/L",
+      "normalized_unit": "µmol/L",
+      "target": {
+        "class": "cancer cell line",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa human cervix carcinoma cells",
+        "display_name_in_source": "HeLa cells"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay after peptide exposure",
+        "method_locator": "xml:sec=16:4.6. Measurement of Anticancer Activity",
+        "cell_line_source": "ATCC",
+        "peptide_concentration_range": "0.6-86 µmol/L",
+        "incubation": "1 h at 37 °C before MTT readout",
+        "readout": "formazan absorbance at 490 nm",
+        "replicate_note": "IC50 was averaged from three repeated experiments."
+      },
+      "replicate_statistics": "plus-minus values are reported in Table 3; exact variability statistic is not separately labeled for MHC, while IC50 is stated as averaged across three repeated experiments",
+      "evidence_ladder": "primary_xml_table_and_methods",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=19"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "IC50 (µmol/L)",
+        "source_unit": "µmol/L"
+      },
+      "linked_database_rows": [],
+      "comparison_operator": "=",
+      "normalization_status": "direct",
+      "normalized_value": 12.88,
+      "reported_variability": "0.15"
+    },
+    {
+      "record_id": "therapeutic_index-l6d_l12d_l17d_l20d_l21d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L17D/L20D/L21D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=21"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 21,
+          "residue": "L",
+          "source_token": "L21D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index",
+      "raw_value": "50.50",
+      "raw_unit": "ratio",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "MHC/IC50 specificity ratio against HeLa cells relative to human red blood cell hemolysis.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=19"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Therapeutic Index",
+        "source_unit": "ratio"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 50.5,
+      "normalized_unit": "ratio"
+    },
+    {
+      "record_id": "therapeutic_index_fold_improvement-l6d_l12d_l17d_l20d_l21d-hela_human_erythrocytes",
+      "entity": "L6D/L12D/L17D/L20D/L21D",
+      "sequence": "Ac-K-W-K-S-F-L-K-T-F-K-S-L-K-K-T-V-L-H-T-L-L-K-A-I-S-S-amide",
+      "sequence_source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1:row=21"
+      },
+      "modifications": [
+        {
+          "position": 6,
+          "residue": "L",
+          "source_token": "L6D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 12,
+          "residue": "L",
+          "source_token": "L12D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 17,
+          "residue": "L",
+          "source_token": "L17D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 20,
+          "residue": "L",
+          "source_token": "L20D",
+          "modification": "D-amino-acid substitution"
+        },
+        {
+          "position": 21,
+          "residue": "L",
+          "source_token": "L21D",
+          "modification": "D-amino-acid substitution"
+        }
+      ],
+      "endpoint": "therapeutic_index_fold_improvement",
+      "raw_value": "16.6",
+      "raw_unit": "fold",
+      "normalization_status": "not_convertible",
+      "target": {
+        "class": "derived selectivity metric",
+        "species": "Homo sapiens",
+        "strain_or_isolate": "HeLa cells and human red blood cells",
+        "display_name_in_source": "HeLa cells versus human red blood cells"
+      },
+      "assay_conditions": {
+        "description": "Fold improvement in therapeutic index relative to parent peptide P.",
+        "source_methods": [
+          "xml:sec=16:4.6. Measurement of Anticancer Activity",
+          "xml:sec=17:4.7. Measurement of Hemolytic Activity"
+        ]
+      },
+      "evidence_ladder": "primary_xml_table_derived_metric",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3:row=19"
+      },
+      "source_column_context": {
+        "table": "Table 3",
+        "source_column_header": "Fold",
+        "source_unit": "fold"
+      },
+      "linked_database_rows": [],
+      "normalized_value": 16.6,
+      "normalized_unit": "fold"
+    }
+  ],
+  "extraction_issues": [],
+  "parser_quality_control": {
+    "prior_issue_codes_resolved": [
+      "activity_table_shape_not_supported",
+      "no_supported_activity_rows_extracted",
+      "missing_activity_records"
+    ],
+    "activity_record_count": 72,
+    "mhc_records": 18,
+    "ic50_records": 18,
+    "derived_specificity_records": 36,
+    "database_only_rows_promoted_as_primary": 0,
+    "suspicious_target_strings_found": 0,
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_ijms13066849/handoff_context.json",
+      "paper_packets/doi__10.3390_ijms13066849/packet_manifest.json",
+      "paper_packets/doi__10.3390_ijms13066849/locators/locator_index.json",
+      "paper_packets/doi__10.3390_ijms13066849/extraction/extraction_status.json",
+      "paper_packets/doi__10.3390_ijms13066849/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/xml_sections.json",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/pdf_text/ijms-13-06849.txt",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/pdf_text/local-DBAASP-PMC3397499.txt",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/pdf_tables.json",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/figure_captions.json",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/supplementary_index.json",
+      "paper_packets/doi__10.3390_ijms13066849/extracted/supplementary_tables.json",
+      "paper_packets/doi__10.3390_ijms13066849/database/database_source_manifest.json",
+      "paper_packets/doi__10.3390_ijms13066849/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_ijms13066849/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_ijms13066849/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.3390_ijms13066849/database/linked_dramp_activity_records.jsonl",
+      "papers/doi__10.3390_ijms13066849/source/paper.xml",
+      "papers/doi__10.3390_ijms13066849/source/paper.pdf",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms13066849/package/local-DBAASP-PMC3397499.tar.gz",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms13066849/xml/local-DBAASP-PMC3397499.xml",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms13066849/xml/remote-PMC3397499.xml",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms13066849/pdf/local-DBAASP-PMC3397499.pdf"
+    ]
+  },
+  "source_tables_reviewed": [
+    {
+      "table": "Table 1",
+      "locator": "xml:table=1",
+      "purpose": "peptide identity and D-amino-acid substitution positions"
+    },
+    {
+      "table": "Table 3",
+      "locator": "xml:table=3",
+      "purpose": "MHC, IC50, therapeutic index, and fold improvement rows"
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

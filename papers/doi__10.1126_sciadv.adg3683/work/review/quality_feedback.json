@@ -1,0 +1,175 @@
+{
+  "paper_id": "doi__10.1126_sciadv.adg3683",
+  "generated_at": "2026-05-03T01:09:49Z",
+  "reviewed_at": "2026-05-03T01:09:49Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "status": "no_targeted_rework_required",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    {
+      "stage": "handoff_context",
+      "path": "rework_context/doi__10.1126_sciadv.adg3683/handoff_context.json",
+      "decision": "used",
+      "summary": "rework ticket, source inventory, gate failures, and owner-worker boundaries reopened"
+    },
+    {
+      "stage": "primary_xml",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/raw/paper.xml",
+      "decision": "used",
+      "summary": "article metadata, results text, Table 1, mechanism sections, methods, and supplementary declaration checked"
+    },
+    {
+      "stage": "paper_source_pdf_symlink",
+      "path": "papers/doi__10.1126_sciadv.adg3683/source/paper.pdf",
+      "decision": "used_with_caution",
+      "summary": "staged paper.pdf resolves to the supplementary PDF; article PDF was recovered from the OA package member"
+    },
+    {
+      "stage": "oa_article_pdf",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/extracted/oa_package/local-DBAASP-PMC10208570/PMC10208570/sciadv.adg3683.pdf",
+      "decision": "used",
+      "summary": "article PDF Table 1 and text layout checked with pdftotext -layout"
+    },
+    {
+      "stage": "supplementary_pdf_text",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/extracted/pdf_text/sciadv.adg3683_sm.txt",
+      "decision": "used",
+      "summary": "Table S4 ADMET/activity spectrum, Table S5/S6 context, Table S7/S9 resistance context checked"
+    },
+    {
+      "stage": "packet_manifest",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/packet_manifest.json",
+      "decision": "used",
+      "summary": "material status, raw assets, packet version, and open ticket state checked"
+    },
+    {
+      "stage": "locator_index",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/locators/locator_index.json",
+      "decision": "used",
+      "summary": "XML table row locators checked for Table 1"
+    },
+    {
+      "stage": "extraction_status",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/extraction/extraction_status.json",
+      "decision": "used",
+      "summary": "material extracted-with-gaps state and source inventory checked"
+    },
+    {
+      "stage": "extraction_quality_report",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/extraction/extraction_quality_report.json",
+      "decision": "used",
+      "summary": "activity table parser issue checked and replaced with manual row extraction"
+    },
+    {
+      "stage": "packet_database_assays",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/database/linked_assay_records.jsonl",
+      "decision": "used",
+      "summary": "122 linked DBAASP assay rows checked and mapped to source tables"
+    },
+    {
+      "stage": "packet_database_experiments",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/database/linked_experiment_records.jsonl",
+      "decision": "used",
+      "summary": "122 linked experiment rows checked as database support"
+    },
+    {
+      "stage": "packet_database_literature",
+      "path": "paper_packets/doi__10.1126_sciadv.adg3683/database/linked_literature_records.jsonl",
+      "decision": "used",
+      "summary": "9 literature rows checked for DOI/PMID/PMCID traceability"
+    }
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "122 rows now have endpoint, raw value, unit or unit context, target species, and source locator."
+    },
+    {
+      "check": "activity_table_shape_repair",
+      "result": "pass",
+      "evidence": "Primary XML Table 1 row/column matrix was manually mapped; unsupported parser shape no longer leaves zero activity rows."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "9 DBAASP sequence keys preserve sequence_modified_not_normalized status instead of unsupported source_verified closure."
+    },
+    {
+      "check": "mechanism_claim_contract",
+      "result": "pass_with_scope_guard",
+      "evidence": "Three mechanism claims have IDs, text, locators, and direct assay types only where direct experiments support them."
+    },
+    {
+      "check": "source_exhaustion",
+      "result": "pass_with_cautions",
+      "evidence": "XML, OA article PDF, supplementary PDF text, OA package members, locator index, and linked database rows were checked; no remaining gate-changing local source was left unopened."
+    },
+    {
+      "check": "open_rework_ticket_state",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is closed by this worker response and final rework_targets are empty."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "source_material_staging",
+      "severity": "caution",
+      "status": "nonblocking_material_caution",
+      "record": "source/paper.pdf",
+      "note": "The paper-local source/paper.pdf symlink resolves to the supplementary PDF; the OA package article PDF member and paper XML were used for primary article review."
+    },
+    {
+      "scope": "database_record_identity",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized",
+      "record": "DBAASP modified peptide labels",
+      "note": "Exact noncanonical sequence/chemical-structure normalization is not structured in packet linked_sequence_records; DBAASP labels are preserved and activity/citation rows are source-supported."
+    },
+    {
+      "scope": "supplementary_extraction",
+      "severity": "caution",
+      "status": "pdf_text_indexed_no_structured_tables",
+      "record": "sciadv.adg3683_sm.pdf",
+      "note": "Supplementary PDF tables were available as text/PDF surfaces, not structured spreadsheet rows; source-supported values were extracted without inventing image-only or unsupported fields."
+    },
+    {
+      "scope": "mechanism_scope",
+      "severity": "caution",
+      "status": "scope_guard",
+      "record": "compound 7/Lpt bridge direct mechanism",
+      "note": "Direct mechanism claims are limited to reported Lpt bridge binding/disassembly assays; MIC and mutation data remain phenotype-supported evidence."
+    }
+  ],
+  "latest_gate_results": {
+    "semantic_gate": {
+      "path": "reports/doi__10.1126_sciadv.adg3683.semantic_gate.json",
+      "publication_grade_pass": true,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "path": "reports/doi__10.1126_sciadv.adg3683.publication_quality.json",
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 122,
+        "mechanism_claims": 3
+      }
+    }
+  }
+}

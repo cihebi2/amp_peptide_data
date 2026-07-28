@@ -1,0 +1,175 @@
+{
+  "paper_id": "doi__10.1155_2014_158546",
+  "generated_at": "2026-05-03T02:53:03Z",
+  "reviewed_at": "2026-05-03T02:53:03Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "status": "no_targeted_rework_required",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    {
+      "stage": "handoff_context",
+      "path": "rework_context/doi__10.1155_2014_158546/handoff_context.json",
+      "decision": "used",
+      "summary": "rework ticket, failure reasons, owner-worker boundaries, source inventory, and obtainable-only protocol reopened"
+    },
+    {
+      "stage": "packet_manifest",
+      "path": "paper_packets/doi__10.1155_2014_158546/packet_manifest.json",
+      "decision": "used",
+      "summary": "packet status, raw XML/PDF/OA package paths, database snapshot counts, and open ticket state checked"
+    },
+    {
+      "stage": "primary_xml",
+      "path": "paper_packets/doi__10.1155_2014_158546/raw/paper.xml",
+      "decision": "used",
+      "summary": "article metadata, peptide identity, methods, results sections 3.3/3.4, and figure captions checked"
+    },
+    {
+      "stage": "paper_source_xml",
+      "path": "papers/doi__10.1155_2014_158546/source/paper.xml",
+      "decision": "used",
+      "summary": "local paper XML mirror checked against packet raw XML for the same source-supported values"
+    },
+    {
+      "stage": "paper_pdf_text",
+      "path": "paper_packets/doi__10.1155_2014_158546/extracted/pdf_text/TSWJ2014-158546.txt",
+      "decision": "used",
+      "summary": "pdftotext line-indexed article text checked for sequence, MIC values, hemolysis value, EC50 values, methods, and figure labels"
+    },
+    {
+      "stage": "oa_package",
+      "path": "paper_packets/doi__10.1155_2014_158546/extracted/oa_package/local-DBAASP-PMC3947715/PMC3947715",
+      "decision": "used",
+      "summary": "OA package member list, NXML, PDF, and figure image surfaces checked; no extra supplementary data files were present"
+    },
+    {
+      "stage": "locator_index",
+      "path": "paper_packets/doi__10.1155_2014_158546/locators/locator_index.json",
+      "decision": "used",
+      "summary": "figure and database locators checked; no XML table locators exist for this article"
+    },
+    {
+      "stage": "extraction_quality_report",
+      "path": "paper_packets/doi__10.1155_2014_158546/extraction/extraction_quality_report.json",
+      "decision": "used",
+      "summary": "zero XML tables and zero supplementary assets confirmed, so repair used results prose and figure captions rather than inventing table rows"
+    },
+    {
+      "stage": "linked_assay_records",
+      "path": "paper_packets/doi__10.1155_2014_158546/database/linked_assay_records.jsonl",
+      "decision": "used",
+      "summary": "four DBAASP assay rows checked against primary MIC and hemolysis evidence"
+    },
+    {
+      "stage": "linked_experiment_records",
+      "path": "paper_packets/doi__10.1155_2014_158546/database/linked_experiment_records.jsonl",
+      "decision": "used",
+      "summary": "five merged experiment rows checked, including the CAMP entry-text row"
+    },
+    {
+      "stage": "linked_literature_records",
+      "path": "paper_packets/doi__10.1155_2014_158546/database/linked_literature_records.jsonl",
+      "decision": "used",
+      "summary": "DOI/PMID/PMCID traceability checked for the selected paper"
+    }
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "Six activity/toxicity records now have endpoint, raw value, unit, target species/tissue, assay context, and source locator."
+    },
+    {
+      "check": "zero_parser_row_repair",
+      "result": "pass",
+      "evidence": "Manual repair used primary results prose and Figure 3/4 captions because the article has zero structured XML tables."
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "result": "pass_with_caution",
+      "evidence": "Ten linked database rows were reviewed; all have source_verified status with primary sequence/activity/citation locators and packet-coverage cautions."
+    },
+    {
+      "check": "conflict_preservation",
+      "result": "pass",
+      "evidence": "No remaining source_conflict/database-only row was found after primary-source comparison; unit and missing sequence-snapshot cautions are preserved as nonblocking."
+    },
+    {
+      "check": "mechanism_claim_contract",
+      "result": "pass_with_scope_guard",
+      "evidence": "Three mechanism/pharmacology claims have IDs, text, locators, and no unsupported direct antimicrobial mechanism assignment."
+    },
+    {
+      "check": "source_exhaustion",
+      "result": "pass",
+      "evidence": "XML, PDF text, OA package/NXML/PDF/images, locator index, extraction reports, and linked database rows were checked; no gate-changing local supplement remains unopened."
+    },
+    {
+      "check": "open_rework_ticket_state",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is closed by this re-review and final rework_targets are empty."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "material_extraction",
+      "severity": "caution",
+      "status": "no_structured_tables",
+      "record": "xml_table_count=0",
+      "note": "Activity values are in abstract/results prose and figure captions, not XML tables."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "no_supplementary_assets_present",
+      "record": "supplementary_asset_count=0",
+      "note": "OA package contained article NXML/PDF/figures but no separate supplementary assets to parse."
+    },
+    {
+      "scope": "database_coverage",
+      "severity": "caution",
+      "status": "linked_sequence_records_absent",
+      "record": "linked_sequence_records=0",
+      "note": "Primary paper sequence and amidation evidence supports AcT-2 identity; packet lacks independent linked sequence rows."
+    },
+    {
+      "scope": "mechanism_scope",
+      "severity": "caution",
+      "status": "no_direct_antimicrobial_mechanism_assay",
+      "record": "mechanism ontology",
+      "note": "The final mechanism artifact preserves antimicrobial mechanism discussion as indirect/hypothesis rather than a direct mechanism."
+    }
+  ],
+  "latest_gate_results": {
+    "semantic_gate": {
+      "path": "reports/doi__10.1155_2014_158546.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+      "publication_grade_pass": true,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "path": "reports/doi__10.1155_2014_158546.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 6,
+        "mechanism_claims": 3
+      }
+    }
+  },
+  "updated_at": "2026-05-03T02:58:13Z"
+}

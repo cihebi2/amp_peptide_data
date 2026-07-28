@@ -1,0 +1,65 @@
+{
+  "commands": [
+    {
+      "cmd": [
+        "python",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py",
+        "--packet-root",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets",
+        "--manifest",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json-out",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/check_two_queue_packets.worker6.needs_rework_actualroot.json"
+      ],
+      "name": "packet_gate"
+    },
+    {
+      "cmd": [
+        "python",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py",
+        "--root",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot",
+        "--manifest",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json"
+      ],
+      "name": "semantic_gate"
+    },
+    {
+      "cmd": [
+        "python",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/.codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py",
+        "--root",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot",
+        "--manifest",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json-out",
+        "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_quality.worker6.needs_rework_actualroot.json"
+      ],
+      "name": "publication_gate"
+    }
+  ],
+  "generated_at_utc": "2026-07-13T08:52:34Z",
+  "results": [
+    {
+      "exit_code": 0,
+      "name": "packet_gate",
+      "stderr": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.needs_rework_actualroot.stderr",
+      "stdout": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.needs_rework_actualroot.stdout"
+    },
+    {
+      "exit_code": 1,
+      "name": "semantic_gate",
+      "stderr": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_gate.needs_rework_actualroot.stderr",
+      "stdout": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_three_layer_gate.worker6.needs_rework_actualroot.json"
+    },
+    {
+      "exit_code": 2,
+      "name": "publication_gate",
+      "stderr": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_gate.needs_rework_actualroot.stderr",
+      "stdout": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_gate.needs_rework_actualroot.stdout"
+    }
+  ],
+  "root_used": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot",
+  "strict_no_allow_flags": true
+}

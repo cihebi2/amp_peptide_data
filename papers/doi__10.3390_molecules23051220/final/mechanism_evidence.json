@@ -1,0 +1,113 @@
+{
+  "paper_id": "doi__10.3390_molecules23051220",
+  "generated_at": "2026-05-09T16:00:37Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed final mechanism ontology from XML results, methods, and figure captions; previous pending-review placeholder claims were replaced with bounded direct-assay mechanism evidence.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-outer-membrane-npn",
+      "entity_scope": "Cp1 and melittin in E. coli UB1005; Cp1 is the paper lead peptide",
+      "claim_text": "NPN uptake assays support outer membrane permeabilization by Cp1 and melittin, with concentration-dependent differences described in the source text.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "NPN uptake outer membrane permeability assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=2.3.1:outer_membrane_permeability; xml:fig=4; xml:sec=4.6",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Quantitative curve values are figure-level; local text supports direction and assay type, not a full numeric curve extraction."
+    },
+    {
+      "claim_id": "mech-inner-membrane-onpg",
+      "entity_scope": "Cp1 and melittin in E. coli UB1005",
+      "claim_text": "ONPG assays support increased inner membrane permeability after peptide treatment at 1x MIC and 1/2 MIC.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "ONPG beta-galactosidase inner membrane permeability assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=2.3.2:inner_membrane_permeability; xml:fig=5; xml:sec=4.7",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Use as membrane-permeability evidence only; no independent molecular receptor target is established."
+    },
+    {
+      "claim_id": "mech-membrane-depolarization-disc3-5",
+      "entity_scope": "Cp1 and melittin in E. coli UB1005",
+      "claim_text": "diSC3-5 assays show cytoplasmic membrane depolarization after peptide treatment, while the source explicitly cautions that depolarization was not required for strong antimicrobial activity.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "diSC3-5 cytoplasmic membrane depolarization assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=2.3.3:cytoplasmic_membrane_electrical_potential; xml:fig=6; xml:sec=4.8",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Do not overstate depolarization as the sole or necessary killing mechanism."
+    },
+    {
+      "claim_id": "mech-pi-flow-cytometry",
+      "entity_scope": "Cp1 and melittin in E. coli ATCC 25922",
+      "claim_text": "PI flow cytometry supports bacterial membrane damage after treatment; source text reports higher stained-cell fraction for melittin than Cp1 at 1x MIC.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide flow cytometry membrane integrity assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=2.3.4:flow_cytometry; xml:fig=7; xml:sec=4.9",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "PI staining is interpreted as membrane damage/cell death; it is not evidence for sequence-specific nucleic-acid binding."
+    },
+    {
+      "claim_id": "mech-em-structural-damage",
+      "entity_scope": "Cp1 and melittin in E. coli ATCC 25922",
+      "claim_text": "SEM/TEM figure panels provide qualitative structural evidence of membrane/cell envelope disruption after peptide treatment at 1x MIC.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SEM imaging",
+        "TEM imaging"
+      ],
+      "source_locator": {
+        "locator": "xml:fig=8; xml:fig=9; xml:sec=4.10; xml:sec=4.11",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Qualitative image evidence; no additional numerical membrane-damage value was fabricated from local images."
+    }
+  ],
+  "mechanism_claim_count": 5,
+  "unsupported_claims_not_promoted": [
+    {
+      "claim": "direct nucleic-acid binding",
+      "reason": "PI is a membrane-damage/cell-death readout in this paper, not a nucleic-acid target-binding assay."
+    }
+  ],
+  "source_paths_checked": [
+    "paper_packets/doi__10.3390_molecules23051220/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules23051220/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/pdf_text/local-DBAASP-PMC6100444.txt",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/pdf_text/molecules-23-01220.txt",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules23051220/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules23051220/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules23051220/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules23051220/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23051220/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23051220/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23051220/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23051220/database/linked_sequence_records.jsonl",
+    "papers/doi__10.3390_molecules23051220/source/paper.xml",
+    "papers/doi__10.3390_molecules23051220/source/paper.pdf"
+  ],
+  "tools_attempted": [
+    "python xml.etree.ElementTree XML table parser",
+    "rg over XML/PDF extracted text for activity/toxicity/mechanism phrases",
+    "jq/json review of packet/final/status artifacts",
+    "JSONL linked database row reconciliation"
+  ]
+}

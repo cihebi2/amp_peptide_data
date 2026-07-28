@@ -1,0 +1,94 @@
+{
+  "paper_id": "doi__10.3390_ph7050502",
+  "reviewed_at": "2026-05-09T18:11:52Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets_absent_confirmed",
+    "merged_database_rows",
+    "figure_images",
+    "database_snapshots"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": {
+      "available": false,
+      "exhausted": true,
+      "note": "Packet supplementary_index and supplementary_tables list no supplementary assets."
+    },
+    "merged_database_rows": true,
+    "figure_images": true,
+    "database_snapshots": true
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ph7050502/handoff_context.json",
+    "paper_packets/doi__10.3390_ph7050502/packet_manifest.json",
+    "paper_packets/doi__10.3390_ph7050502/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ph7050502/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ph7050502/extracted/pdf_text/pharmaceuticals-07-00502.txt",
+    "paper_packets/doi__10.3390_ph7050502/extracted/pdf_text/local-DBAASP-PMC4035766.txt",
+    "paper_packets/doi__10.3390_ph7050502/extracted/oa_package/local-DBAASP-PMC4035766/PMC4035766/pharmaceuticals-07-00502.nxml",
+    "paper_packets/doi__10.3390_ph7050502/extracted/oa_package/local-DBAASP-PMC4035766/PMC4035766/pharmaceuticals-07-00502-i001.jpg",
+    "paper_packets/doi__10.3390_ph7050502/extracted/oa_package/local-DBAASP-PMC4035766/PMC4035766/pharmaceuticals-07-00502-g002.jpg",
+    "paper_packets/doi__10.3390_ph7050502/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ph7050502/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ph7050502/database/linked_literature_records.jsonl"
+  ],
+  "adjudication_summary": "Source-reviewed re-review of AamAP1-Lysine closed the prior targeted ticket: Table 3 hemolysis values were recovered, Table 2 MIC rows were de-duplicated and corrected, MBC-equals-MIC claims were retained from text, database conflicts were adjudicated instead of smoothed, and mechanism claims were downgraded or accepted according to direct assay support.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 27,
+    "activity_endpoint_counts": {
+      "MIC": 9,
+      "MBC": 9,
+      "percent_hemolysis": 8,
+      "cell_viability_range": 1
+    },
+    "database_record_audits": 38,
+    "database_status_summary": {
+      "source_verified": 33,
+      "source_conflict": 5
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0,
+    "source_conflicts_preserved": 5
+  },
+  "per_layer_decision_rationale": {
+    "worker-2_activity_toxicity": "Accepted with cautions after correcting Table 2 MIC parsing, adding MBC-equals-MIC rows from the paper text, recovering Table 3 hemolysis rows, and preserving Figure 2 only as a text/figure range.",
+    "worker-4_database_records": "Accepted with cautions. MIC and hemolysis DBAASP rows are source verified against Table 2/Table 3; exact MTT threshold and mixed dbAMP aggregate rows remain source_conflict with explicit context.",
+    "worker-6_final_review": "Accepted with cautions because source review covered XML, PDF text, OA package members, sequence inline image, figure images, and linked database snapshots; no blocking or major rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_mtt_threshold_source_conflict",
+      "evidence_context": "DBAASP rows report 50% cell death for HEK293/Vero thresholds, but the local primary paper gives Figure 2 and a textual 60-80 uM viability range instead of exact threshold tables.",
+      "record_ids": [
+        "linked_assay_records rows 8-9",
+        "linked_experiment_records rows 8-9"
+      ]
+    },
+    {
+      "caution_code": "mixed_dbamp_aggregate_conflict",
+      "evidence_context": "The dbAMP aggregate row includes primary-paper MIC claims plus later-publication PMID/targets not supported by this paper-local source; the supported 2014 Table 2 subset is retained separately.",
+      "record_ids": [
+        "linked_experiment_records row 19"
+      ]
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Figure-only MTT and beta-galactosidase traces were inspected from local OA images; exact point digitization was not fabricated."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": []
+}

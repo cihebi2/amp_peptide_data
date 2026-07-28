@@ -1,0 +1,117 @@
+{
+  "paper_id": "doi__10.1186_s12941-024-00701-7",
+  "reviewed_at": "2026-05-03T16:38:36Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": {
+    "paper_xml": [
+      "source/paper.xml",
+      "xml:table=1",
+      "xml:table=2",
+      "xml:table=3",
+      "xml body/result sections"
+    ],
+    "paper_pdf": [
+      "source/paper.pdf",
+      "extracted/pdf_text/landing-1.txt"
+    ],
+    "oa_package": [
+      "packet raw oa_package checked; package_member_count=0 in extraction_quality_report"
+    ],
+    "supplementary_assets": [
+      "raw/supplementary_original HTML .bin files checked; XML media href for DOCX recorded as nonblocking unavailable local asset"
+    ],
+    "merged_database_rows": [
+      "linked_assay_records.jsonl",
+      "linked_experiment_records.jsonl",
+      "linked_literature_records.jsonl",
+      "all_sequences.csv"
+    ]
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded best-effort local recovery completed for worker-2/4/6 blockers; absent supplementary DOCX recorded as nonblocking local-material gap."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s12941-024-00701-7/handoff_context.json",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/packet_manifest.json",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s12941-024-00701-7/database/linked_experiment_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 116,
+    "activity_table2_matrix_repaired": true,
+    "table3_mic_mbc_pairs_split": true,
+    "database_record_audit_rows": 144,
+    "database_status_summary": {
+      "source_verified": 122,
+      "source_conflict": 22
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 1,
+    "blocking_unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "worker_2_activity_toxicity": "Accepted with cautions after source re-review: XML Table 2 was converted to MBIC50/MBIC90 rows, XML Table 3 MIC(MBC) pairs were split into separate MIC and MBC rows, Table 3 MHC/GM/TI rows were preserved, and text-supported MBEC/cytotoxicity values were added. Figure/database-only exact hemolysis thresholds were not promoted.",
+    "worker_4_database_records": "Accepted with cautions: DBAASP linked assay/experiment rows were reconciled against XML Table 1/2/3, text-supported MBEC/MHC evidence, and merged sequence rows. Acinetobacter spelling/normalization and non-MHC figure-derived hemolysis thresholds remain explicit source_conflict cautions.",
+    "worker_6_adjudication": "Accepted with cautions: original framework-test blocker is closed because source-reviewed layer outputs now exist and rework targets are empty; nonblocking local supplementary DOCX absence is recorded without fabricating unsupported values.",
+    "mechanism_final_review": "Accepted with cautions: automated pending-review mechanism placeholders were replaced in final outputs with source-reviewed mechanism classes and limitations; no protein-synthesis mechanism is claimed."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "source_conflict_acinetobacter_taxon_spelling",
+      "evidence_context": "Primary table uses Acinetobacter baumanii MT strain while DBAASP rows normalize to Acinetobacter baumannii/clinical isolate MT; values are retained with source_conflict status."
+    },
+    {
+      "caution_code": "database_only_non_mhc_hemolysis_thresholds",
+      "evidence_context": "DBAASP non-MHC hemolysis threshold rows are preserved as source_conflict because local XML/PDF text and captions do not provide parseable exact primary values."
+    },
+    {
+      "caution_code": "terminal_amidation_snapshot_gap",
+      "evidence_context": "Primary methods state peptide amidation, while linked sequence snapshot lacks terminal-modification fields; this is preserved as a database identity caution."
+    },
+    {
+      "caution_code": "supplementary_docx_not_local_nonblocking",
+      "evidence_context": "XML/HTML points to a supplementary DOCX, but only landing HTML .bin files are present locally; no repaired worker-2/4/6 value depends on that missing asset."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_docx_not_local_nonblocking",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1186_s12941-024-00701-7/raw/supplementary_original/*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12941-024-00701-7/supplementary/*.bin",
+        "papers/doi__10.1186_s12941-024-00701-7/source/paper.xml"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "XML media href inspection"
+      ],
+      "why_unrecoverable": "The XML and publisher landing HTML point to a supplementary DOCX, but the paper-local landed/downloaded folders contain landing HTML .bin files rather than the actual DOCX asset.",
+      "impact": "Primer-table supplement not recovered locally; repaired worker-2/4/6 activity, database, and adjudication values are supported by XML tables/body text and linked database snapshots.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review repaired the table-level activity matrix, reconciled linked DBAASP rows against primary XML/text evidence, preserved remaining source conflicts as cautions, and closed the prior full-source-review ticket without promoting unsupported figure-only values."
+}

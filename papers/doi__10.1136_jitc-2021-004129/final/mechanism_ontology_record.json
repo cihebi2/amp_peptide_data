@@ -1,0 +1,88 @@
+{
+  "artifact_type": "worker6_bounded_mechanism_adjudication",
+  "extraction_scope": "Worker-6 replaced automated locator placeholders with bounded, source-reviewed mechanism claims from XML/PDF figure captions and result text.",
+  "generated_at": "2026-05-03T21:30:17Z",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "LTX-315 downregulates PD-L1 expression in pancreatic tumor/cell contexts and this is supported by IHC, flow-cytometry, and western-blot panels rather than inferred from database annotation.",
+      "direct_assay_types": [
+        "immunohistochemistry",
+        "flow cytometry",
+        "western blot"
+      ],
+      "entity_scope": "LTX-315 in pancreatic cancer models",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Dose/time exact band intensities are figure-panel values and are not tabulated as structured text.",
+      "source_locator": {
+        "figure_locator": "xml:fig=3:Figure 3",
+        "locator": "pdf_text:Figure 3 caption; xml:sec=29:LTX-315 downregulates PD-L1 expression",
+        "source_path": "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/local-DRAMP-35288467.txt"
+      }
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "ATP11B interacts with PD-L1 in a CMTM6-dependent manner, and ATP11B/CMTM6 depletion or rescue changes PD-L1 stability through lysosomal degradation.",
+      "direct_assay_types": [
+        "immunoprecipitation",
+        "western blot",
+        "lysosome/proteasome inhibitor rescue",
+        "CMTM6 rescue"
+      ],
+      "entity_scope": "ATP11B-CMTM6-PD-L1 axis downstream of LTX-315 response",
+      "evidence_class": "direct_mechanism",
+      "limitations": "The claim is bounded to PD-L1 stability/trafficking in cancer-cell models, not an antimicrobial membrane mechanism.",
+      "source_locator": {
+        "figure_locator": "xml:fig=6:Figure 6; xml:fig=7:Figure 7",
+        "locator": "pdf_text:Figure 6-7 captions; xml:sec=32-33",
+        "source_path": "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/local-DRAMP-35288467.txt"
+      }
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "LTX-315 and ATP11B depletion activate anti-pancreatic cancer immunity in immunocompetent mouse models, with increased tumor-infiltrating and activated CD8-positive T-cell measures.",
+      "direct_assay_types": [],
+      "entity_scope": "in vivo antitumor immune response",
+      "evidence_class": "phenotypic_antitumor_immunity",
+      "limitations": "This is in vivo immunotherapy phenotype evidence; exact figure-panel percentages beyond text-reported values were not digitized.",
+      "source_locator": {
+        "figure_locator": "xml:fig=1:Figure 1; xml:fig=2:Figure 2; xml:fig=8:Figure 8; supp:Figure S1-S2",
+        "locator": "pdf_text:lines 655-727 and Figure 8 caption; xml:sec=27-28,34",
+        "source_path": "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/local-DRAMP-35288467.txt"
+      }
+    }
+  ],
+  "paper_id": "doi__10.1136_jitc-2021-004129",
+  "quality_controls": {
+    "direct_mechanism_claims_with_assay_types": 2,
+    "mechanism_claim_count": 3,
+    "mechanism_locator_coverage": "3/3",
+    "overclaim_guard": "No antimicrobial MIC/hemolysis mechanism is asserted for this cancer immunotherapy paper."
+  },
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "figure_exact_tumor_values_not_transcribed",
+      "impact": "Nonblocking: source-supported activity rows record recoverable dose, model, qualitative/statistical outcomes, and locators; exact figure-only values were not fabricated.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/local-DRAMP-35288467.txt",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/figure_captions.json",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/jitc-2021-004129supp001.txt",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/pdf_text/jitc-2021-004129supp002.txt",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/oa_package/local-DRAMP-35288467/PMC8921947/jitc-2021-004129f01.jpg",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/oa_package/local-DRAMP-35288467/PMC8921947/jitc-2021-004129f02.jpg",
+        "paper_packets/doi__10.1136_jitc-2021-004129/extracted/oa_package/local-DRAMP-35288467/PMC8921947/jitc-2021-004129f08.jpg"
+      ],
+      "tools_attempted": [
+        "rg",
+        "sed",
+        "python json parser",
+        "file",
+        "pdftotext pre-extracted text review"
+      ],
+      "why_unrecoverable": "The local XML/PDF text and captions support treatment doses, model identities, qualitative directions, and statistical significance classes, but exact tumor-volume and tumor-weight chart values are not tabulated in text or supplementary tables."
+    }
+  ]
+}

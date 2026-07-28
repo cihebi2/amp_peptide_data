@@ -1,0 +1,172 @@
+{
+  "paper_id": "PMC13025223",
+  "artifact_role": "worker6_adjudication_report",
+  "reviewed_at": "2026-07-27T19:06:27Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "source_text_excerpts_included": false,
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/activity_evidence/activity_records.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/database_record_audit/record_identity_audit.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/mechanism_ontology/mechanism_evidence.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.xml",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/source/paper.pdf"
+  ],
+  "runtime_open_ticket_ids": [
+    "rwk-PMC13025223-campaign-r01-BF-001-recursive-database-source-locators",
+    "rwk-PMC13025223-campaign-r01-BF-002-recursive-mechanism-work-locator",
+    "rwk-PMC13025223-campaign-r01-BF-003-table-selectivity-and-toxicity-exactness-coverage",
+    "rwk-PMC13025223-campaign-r03-BF-PMC13025223-W2-001-target-and-toxicity-field-integrity"
+  ],
+  "owner_repair_response_prerequisite": {
+    "worker_2_nonterminal_responses_present": true,
+    "worker_4_nonterminal_responses_present": true,
+    "worker_5_nonterminal_responses_present": true
+  },
+  "semantic_quality_checks": {
+    "database_source_locator_recursive_project_path_count": false,
+    "mechanism_work_locator_count_zero": true,
+    "table1_sm07_rows_source_to_final_complete": true,
+    "target_field_internal_consistency": true,
+    "toxicity_figure_values_approximate_not_exact": true,
+    "machine_rows_kept_separate": true,
+    "rework_targets_empty": true
+  },
+  "per_layer_decision_rationale": {
+    "database": "Accepted with cautions: no linked authoritative DBAASP/merged rows are present, source locator misuse is repaired, and fallback machine rows remain unresolved with authoritative ingest disabled.",
+    "activity_toxicity": "Accepted with cautions: the source Table 1 SM07 row surface is fully represented, target/strain fields are internally consistent, the single source-supported MIC is preserved, and Figure 6 values are retained only as approximate graph-derived toxicity observations.",
+    "mechanism": "Accepted: mechanism locators now cite paper-local source surfaces only, evidence classes remain computational-only/phenotype/inferred/unknown as appropriate, and direct mechanism remains zero."
+  },
+  "caution_findings": [
+    {
+      "caution_id": "PMC13025223-W6-CAUTION-DBAASP-NO-LINKED-AUTHORITY",
+      "layer": "database",
+      "status": "accepted_with_cautions",
+      "evidence_boundary": "linked authoritative article/assay/sequence/literature row counts are zero; fallback rows remain unresolved machine/database candidates and authoritative ingest remains false"
+    },
+    {
+      "caution_id": "PMC13025223-W6-CAUTION-DBAASP-FALLBACK-SEQUENCE",
+      "layer": "database",
+      "status": "accepted_with_cautions",
+      "evidence_boundary": "candidate fallback row has no source-verified sequence/modification/source-organism resolution and is not promoted"
+    },
+    {
+      "caution_id": "PMC13025223-W6-CAUTION-FIGURE-DIGITIZATION",
+      "layer": "activity_toxicity",
+      "status": "accepted_with_cautions",
+      "evidence_boundary": "Figure-derived toxicity values are approximate graph observations, not exact table values"
+    }
+  ],
+  "rework_targets": [],
+  "final_counts": {
+    "activity_records": 1,
+    "toxicity_records": 1,
+    "database_record_audits": 1,
+    "mechanism_claims": 4,
+    "review_rework_targets": 0
+  },
+  "ticket_contract_evidence": {
+    "overall_contract_pass": true,
+    "runtime_open_ticket_ids": [
+      "rwk-PMC13025223-campaign-r01-BF-001-recursive-database-source-locators",
+      "rwk-PMC13025223-campaign-r01-BF-002-recursive-mechanism-work-locator",
+      "rwk-PMC13025223-campaign-r01-BF-003-table-selectivity-and-toxicity-exactness-coverage",
+      "rwk-PMC13025223-campaign-r03-BF-PMC13025223-W2-001-target-and-toxicity-field-integrity"
+    ],
+    "contract_checks": {
+      "database_locator_contract": {
+        "ticket_id": "rwk-PMC13025223-campaign-r01-BF-001-recursive-database-source-locators",
+        "source_verified_count": 0,
+        "authoritative_ingest_ready": false,
+        "linked_authoritative_row_total": 0,
+        "fallback_rows_promoted_to_source_verified": 0,
+        "pass": true
+      },
+      "mechanism_locator_contract": {
+        "ticket_id": "rwk-PMC13025223-campaign-r01-BF-002-recursive-mechanism-work-locator",
+        "evidence_class_counts": {
+          "computational_only": 1,
+          "phenotype_supported": 1,
+          "inferred_mechanism": 1,
+          "unknown_or_not_tested": 1,
+          "direct_mechanism": 0
+        },
+        "mechanism_claim_count": 4,
+        "pass": true
+      },
+      "table_selectivity_toxicity_contract": {
+        "ticket_id": "rwk-PMC13025223-campaign-r01-BF-003-table-selectivity-and-toxicity-exactness-coverage",
+        "xml_table1_sm07_body_row_count": 12,
+        "final_sm07_table_row_count": 12,
+        "positive_purified_mic_record_count": 1,
+        "activity_field_failure_count": 0,
+        "toxicity_approximate_graph_value_count": 16,
+        "toxicity_graph_failure_count": 0,
+        "pass": true
+      },
+      "target_toxicity_integrity_contract": {
+        "ticket_id": "rwk-PMC13025223-campaign-r03-BF-PMC13025223-W2-001-target-and-toxicity-field-integrity",
+        "xml_table1_sm07_body_row_count": 12,
+        "final_sm07_table_row_count": 12,
+        "nested_target_failure_count": 0,
+        "toxicity_approximate_graph_value_count": 16,
+        "toxicity_graph_failure_count": 0,
+        "redundant_concentration_failure_count": 0,
+        "duplicated_activity_toxicity_observation_failure_count": 0,
+        "pass": true
+      }
+    },
+    "ticket_contract_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/ticket_contract_audit.worker6.json",
+    "source_locator_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/source_locator_audit.worker6.json"
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/gates/worker6_runtime_close_packet_gate_20260727T190136Z.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/gates/worker6_runtime_close_semantic_gate_20260727T190136Z.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/gates/worker6_runtime_close_publication_gate_20260727T190136Z.json",
+    "manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/review/gates/worker6_runtime_close_manifest_20260727T190136Z.json"
+  },
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/activity_toxicity_evidence.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/database_record_verification.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/database_record_verification.json"
+    },
+    "mechanism_ontology_record": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/mechanism_ontology_record.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/mechanism_ontology_record.json",
+      "packet_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/mechanism_evidence.json"
+    },
+    "review_report": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/final/review_report.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/final/review_report.json"
+    }
+  },
+  "adjudication_summary": "Worker-6 re-adjudicated PMC13025223 after the current worker-2 repair and verified the database, activity/toxicity, and mechanism final mirrors against the runtime-open ticket contracts. The paper-level curation is accepted with cautions because authoritative DBAASP linked rows remain absent and figure-derived toxicity values are approximate, while no fallback database row is promoted to source-verified or ingest-ready.",
+  "gate_return_codes": {
+    "packet": 0,
+    "semantic": 0,
+    "publication": 0
+  },
+  "strict_gate": {
+    "packet": 0,
+    "semantic": 0,
+    "publication": 0,
+    "allow_flags_used": false,
+    "post_response_rerun_required": true
+  }
+}

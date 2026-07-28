@@ -1,0 +1,248 @@
+{
+  "artifact_role": "final_mechanism_ontology_record",
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/figure_captions.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/ocr/41598_2025_8159_MOESM1_ESM.pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/pdf_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/extracted/supplementary_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/analysis/activity_safe_candidate_handoff.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/analysis/activity_toxicity_evidence.worker2.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/analysis/supplementary_evidence.worker3.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/mechanism_surface_index.redacted.json"
+  ],
+  "claim_counts_by_evidence_class": {
+    "direct_mechanism": 5,
+    "phenotype_supported": 1
+  },
+  "excluded_or_nonpromoted_evidence": [
+    {
+      "evidence_class_if_used": "phenotype_supported_or_database_candidate_only",
+      "evidence_signal": "DBAASP Codex fallback rows and activity handoff machine rows",
+      "handling": "treated as candidate machine evidence only; not used to source-verify mechanism claims",
+      "source_locator": "database:dbaasp_machine_extracted_rows.jsonl"
+    },
+    {
+      "evidence_class_if_used": "inferred_mechanism",
+      "evidence_signal": "ROS, physicochemical, family/domain, and discussion-level mechanism language detected in redacted scan surfaces",
+      "handling": "not promoted to direct mechanism without a direct assay locator; retained only as nonpromoted contextual signal",
+      "source_locator": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/mechanism_surface_index.redacted.json"
+    },
+    {
+      "evidence_class_if_used": "phenotype_supported",
+      "evidence_signal": "CFU or growth inhibition without paired direct assay evidence",
+      "handling": "classified as phenotype_supported rather than direct_mechanism",
+      "source_locator": "xml:fig:5"
+    }
+  ],
+  "generated_at": "2026-07-16T07:39:07.006499+00:00",
+  "lane": "mechanism_ontology_extractor",
+  "material_status_observed": {
+    "extraction_status": "material_extracted_complete",
+    "known_missing_or_blocked_materials": [],
+    "locator_count": 151,
+    "packet_manifest_material_queue_status": "material_extracted_complete",
+    "pdf_page_count": 16,
+    "supplementary_file_count": 1,
+    "supplementary_text_count": 7,
+    "xml_section_count": 128
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC12230126-MECH-001",
+      "claim_text": "GmSPID has direct protease-inhibition evidence in the paper-local enzyme panel, with strongest support for trypsin inhibition and weaker or absent support for the other tested proteases.",
+      "direct_assay_types": [
+        "enzyme_activity_inhibition_assay"
+      ],
+      "entity_scope": "GmSPID protein in the paper protease activity assay panel",
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "Protease inhibition is a direct biochemical function assay, but the paper-local evidence does not prove that bacterial killing is mediated through a bacterial protease target."
+      ],
+      "source_locator": "xml:fig:4",
+      "source_review_verification": "Checked against packet figure/caption locator and local rendered PDF page; not accepted from DBAASP machine rows.",
+      "supporting_source_locators": [
+        "xml:caption:4",
+        "pdf:page=5",
+        "papers/PMC12230126/work/leader_preflight/paper_page5_fig4.png"
+      ]
+    },
+    {
+      "claim_id": "PMC12230126-MECH-002",
+      "claim_text": "GmSPID shows antimicrobial growth or viability phenotype in the tested microorganism panel after incubation, but CFU reduction alone is phenotype evidence rather than a closed molecular mechanism.",
+      "direct_assay_types": [],
+      "entity_scope": "GmSPID-treated microbial viability or CFU phenotype across the paper-local panel",
+      "evidence_class": "phenotype_supported",
+      "limitations": [
+        "CFU/growth outcomes are antimicrobial phenotype evidence and are not promoted to direct mechanism without an accompanying direct assay locator."
+      ],
+      "source_locator": "xml:fig:5",
+      "source_review_verification": "Checked source-located figure/caption plus worker-2 handoff boundary; DBAASP fallback rows remained candidate-only.",
+      "supporting_source_locators": [
+        "xml:caption:5",
+        "pdf:page=6",
+        "packets/PMC12230126/analysis/activity_toxicity_evidence.worker2.json"
+      ]
+    },
+    {
+      "claim_id": "PMC12230126-MECH-003",
+      "claim_text": "The packet contains direct membrane-permeability evidence for GmSPID treatment in the E. coli assay, based on leakage of a cytosolic reporter enzyme into the medium.",
+      "direct_assay_types": [
+        "beta_galactosidase_leakage_membrane_permeabilization_assay"
+      ],
+      "entity_scope": "GmSPID-treated E. coli membrane-permeability assay",
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "The permeability readout is species/condition-specific and should not be generalized to every activity row without separate source evidence."
+      ],
+      "source_locator": "xml:fig:5",
+      "source_review_verification": "Checked figure/caption locator and worker-3 quantitative figure-surface inventory; no source passage was copied.",
+      "supporting_source_locators": [
+        "xml:caption:5",
+        "pdf:page=6",
+        "packets/PMC12230126/analysis/supplementary_evidence.worker3.json"
+      ]
+    },
+    {
+      "claim_id": "PMC12230126-MECH-004",
+      "claim_text": "AFM evidence supports GmSPID-associated changes to P. entomophila cell-surface topography and measured surface biophysical parameters after treatment.",
+      "direct_assay_types": [
+        "atomic_force_microscopy_cell_surface_topography"
+      ],
+      "entity_scope": "GmSPID-treated P. entomophila cell surface by AFM",
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "AFM directly supports surface alteration under the tested conditions, but it does not identify a single molecular target."
+      ],
+      "source_locator": "xml:fig:6",
+      "source_review_verification": "Checked packet figure/caption locator and rendered PDF page for the AFM surface.",
+      "supporting_source_locators": [
+        "xml:caption:6",
+        "pdf:page=7",
+        "papers/PMC12230126/work/leader_preflight/paper_page7_fig6.png"
+      ]
+    },
+    {
+      "claim_id": "PMC12230126-MECH-005",
+      "claim_text": "SEM evidence supports GmSPID-associated changes in P. entomophila cell morphology and surface structure after treatment.",
+      "direct_assay_types": [
+        "scanning_electron_microscopy_cell_morphology"
+      ],
+      "entity_scope": "GmSPID-treated P. entomophila morphology by SEM",
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "SEM provides direct morphology evidence but remains structural/phenotypic at the cell-envelope level rather than target-specific chemistry."
+      ],
+      "source_locator": "xml:fig:7",
+      "source_review_verification": "Checked packet figure/caption locator and rendered PDF page for the SEM surface.",
+      "supporting_source_locators": [
+        "xml:caption:7",
+        "pdf:page=8",
+        "papers/PMC12230126/work/supplementary_methods/rendered_pages/paper_page-08.png"
+      ]
+    },
+    {
+      "claim_id": "PMC12230126-MECH-006",
+      "claim_text": "TEM evidence supports GmSPID-associated disturbance of P. entomophila cell-envelope or ultrastructural organization after treatment.",
+      "direct_assay_types": [
+        "transmission_electron_microscopy_ultrastructure"
+      ],
+      "entity_scope": "GmSPID-treated P. entomophila ultrastructure by TEM",
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "TEM provides direct ultrastructural evidence but does not by itself resolve the molecular target or distinguish primary from downstream damage."
+      ],
+      "source_locator": "xml:fig:8",
+      "source_review_verification": "Checked packet figure/caption locator and rendered PDF page for the TEM surface.",
+      "supporting_source_locators": [
+        "xml:caption:8",
+        "pdf:page=9",
+        "papers/PMC12230126/work/supplementary_methods/rendered_pages/paper_page-09.png"
+      ]
+    }
+  ],
+  "paper_id": "PMC12230126",
+  "publication_grade": true,
+  "quality_gate_notes": [
+    "Every mechanism_claim has claim_id, claim_text, entity_scope, evidence_class, source_locator, and direct_assay_types for direct claims.",
+    "Direct mechanism claims are limited to paper-local enzyme assay, membrane permeability assay, AFM, SEM, and TEM surfaces.",
+    "Worker-5 lane is not terminal publication-grade acceptance; worker-6 strict adjudication remains required.",
+    "Local worker-5 field validation passed for required claim fields and model provenance values.",
+    "Strict packet/semantic/publication gates remain nonterminal because final worker-6/adjudication-layer artifacts are not present in this lane."
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-26T14:20:07.782032+00:00",
+  "runtime_open_ticket_repair": {
+    "ticket_id": "rwk-PMC12230126-recursive-authority-boundary-007",
+    "repair_verified_by": "worker-6",
+    "verified_at": "2026-07-26T14:20:07.782032+00:00",
+    "authoritative_dbaasp_ingest_ready": false,
+    "linked_authoritative_row_total": 0,
+    "fallback_rows_promoted_to_authoritative_ingest": false
+  },
+  "source_locator_resolution_issues": [],
+  "source_review_boundary": {
+    "checkout_only": true,
+    "database_fallback_rows_handling": "candidate_machine_evidence_only_not_source_verified",
+    "internet_used": false,
+    "paper_local_packet_only": true,
+    "publication_grade_claim": "not_claimed_by_worker5_lane"
+  },
+  "source_reviewed": true,
+  "source_text_not_emitted": true,
+  "strongest_supported_evidence_class": "direct_mechanism",
+  "targeted_rework_needed": false,
+  "unresolved_blockers": [],
+  "validation_artifacts": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/worker5_single_paper_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/worker5_mechanism_field_validation.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_two_queue_packets.worker5_diagnostic.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_two_queue_packets.worker5_stdout.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_two_queue_packets.worker5_stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/semantic_three_layer_gate.worker5_diagnostic.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/semantic_three_layer_gate.worker5_stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_three_layer_publication_quality.worker5_diagnostic.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_three_layer_publication_quality.worker5_stdout.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/check_three_layer_publication_quality.worker5_stderr.txt",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/mechanism_ontology/worker5_rework_response_contract_check.json"
+  ],
+  "validation_summary": {
+    "gate_returncodes": {
+      "packet_gate": 2,
+      "publication_gate": 2,
+      "semantic_gate": 1
+    },
+    "packet_gate_interpretation": "nonzero due to missing final/adjudication files; material extraction complete and locators present",
+    "publication_gate_interpretation": "nonzero because publication-grade final files/review are not present; worker-5 does not claim terminal publication-grade acceptance",
+    "rework_response_contract_check": "passed",
+    "semantic_gate_interpretation": "nonzero because final review/activity/database artifacts are not terminally present for publication-grade gate",
+    "worker5_required_field_issue_count": 0,
+    "worker5_required_field_validation": "passed"
+  },
+  "worker": "worker-5",
+  "worker5_lane_status": "source_reviewed_complete_needs_worker6_adjudication",
+  "worker6_adjudication": {
+    "decision": "accepted_with_cautions",
+    "source_reviewed": true,
+    "worker": "worker-6"
+  },
+  "worker6_adjudication_note": {
+    "adjudicated_at": "2026-07-16T07:06:12.358575+00:00",
+    "adjudicator": "worker-6",
+    "decision": "accepted_with_cautions_no_mechanism_rework_open",
+    "source_locator_resolution_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/review/worker6_source_locator_resolution_audit.json",
+    "source_text_not_emitted": true
+  },
+  "runtime_open_ticket_ids_reviewed": [
+    "rwk-PMC12230126-recursive-authority-boundary-007"
+  ]
+}

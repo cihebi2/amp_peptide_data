@@ -1,0 +1,1780 @@
+{
+  "paper_id": "doi__10.1021_acsomega.5c07214",
+  "generated_at": "2026-05-02T12:07:31Z",
+  "reviewed_at": "2026-05-02T12:07:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 re-review reconciled packet APD6/DBAASP rows against primary Table 1, MIC methods, and merged sequence/assay rows; source conflicts are preserved rather than smoothed.",
+  "database_row_counts": {
+    "linked_assay_records": 4,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 10,
+    "linked_literature_records": 10,
+    "linked_sequence_records": 0
+  },
+  "source_paths_checked": [
+    "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "tools_attempted": [
+    "jq over packet/final/status JSON",
+    "rg over raw XML, extracted PDF text, SI text, and packet database JSONL",
+    "sed/nl source-window reopening for XML Table 1, MIC methods, DMS/docking sections, and JSONL rows",
+    "unzip -l plus Python zipfile/xml parsing for ao5c07214_si_002.xlsx",
+    "Python csv scan for exact APD6/DBAASP sequence and assay rows in merged corpus outputs"
+  ],
+  "record_audits": [
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5804:APD6:AP05803",
+      "sequence_key": "APD6:AP05803",
+      "source_id": "APD6:AP05803",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc19",
+      "paper_short_name": "Onc19",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc19:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc19:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=3",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5804",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5804",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPRRIYNR",
+        "primary_source_sequence": "VDKPPYLPRPRPPRRIYNR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=3",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5804",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5805:APD6:AP05804",
+      "sequence_key": "APD6:AP05804",
+      "source_id": "APD6:AP05804",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc19 P4K,L7R",
+      "paper_short_name": "Onc19 P4K,L7R",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc19-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc19-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=4",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5805",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5805",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPRRIYNR",
+        "primary_source_sequence": "VDKKPYRPRPRPPRRIYNR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=4",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5805",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5806:APD6:AP05805",
+      "sequence_key": "APD6:AP05805",
+      "source_id": "APD6:AP05805",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc15",
+      "paper_short_name": "Onc15",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5806",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5806",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPRR",
+        "primary_source_sequence": "VDKPPYLPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5806",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5807:APD6:AP05806",
+      "sequence_key": "APD6:AP05806",
+      "source_id": "APD6:AP05806",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc14",
+      "paper_short_name": "Onc14",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "8",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14:mic",
+        "doi__10.1021_acsomega.5c07214:table1:onc14-propargyl:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5807",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5807",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "8",
+        "primary_source_value": "8",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPR",
+        "primary_source_sequence": "VDKPPYLPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5807",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5808:APD6:AP05807",
+      "sequence_key": "APD6:AP05807",
+      "source_id": "APD6:AP05807",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc15 P4K,L7R",
+      "paper_short_name": "Onc15 P4K,L7R",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "1",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5808",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5808",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "1",
+        "primary_source_value": "1",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPRR",
+        "primary_source_sequence": "VDKKPYRPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5808",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "apd6_activity_text_records.csv:line5809:APD6:AP05808",
+      "sequence_key": "APD6:AP05808",
+      "source_id": "APD6:AP05808",
+      "source_table": "apd6_activity_text_records.csv",
+      "database": "APD6",
+      "peptide_name_database": "Onc14 P4K,L7R",
+      "paper_short_name": "Onc14 P4K,L7R",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "MIC",
+      "database_subject": "E. coli",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "merged:all_sequences.csv:line=5809",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "APD6 sequence key, sequence, name"
+          ]
+        },
+        {
+          "locator": "merged:apd6_activity_text_records.csv:line=5809",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+          "supports": [
+            "APD6 linked activity comment and citation"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPR",
+        "primary_source_sequence": "VDKKPYRPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=5809",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_for_table1_context",
+        "source_organism_or_origin": "source_verified_as_oncocin_derived_engineered_variant",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked APD6 row"
+        ]
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Primary Table 1 verifies APD6 peptide name/sequence/MIC for this paper; APD6 descriptive text is retained as provenance.",
+      "adjudication_decision": "source_verified_primary_table_sequence_and_mic"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row1:DBAASP:DBAASPS_24614:194616",
+      "sequence_key": "DBAASP:DBAASPS_24614",
+      "source_id": "DBAASP:DBAASPS_24614",
+      "source_record_id": "194616",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-15)",
+      "paper_short_name": "Onc15",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217318",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=5; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPRR",
+        "primary_source_sequence": "VDKPPYLPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30935",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:DBAASP:DBAASPS_24614:194616",
+      "sequence_key": "DBAASP:DBAASPS_24614",
+      "source_id": "DBAASP:DBAASPS_24614",
+      "source_record_id": "194616",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-15)",
+      "paper_short_name": "Onc15",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217318",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=5; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPRR",
+        "primary_source_sequence": "VDKPPYLPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=5",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30935",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row2:DBAASP:DBAASPS_24615:194617",
+      "sequence_key": "DBAASP:DBAASPS_24615",
+      "source_id": "DBAASP:DBAASPS_24615",
+      "source_record_id": "194617",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-14)",
+      "paper_short_name": "Onc14",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "8",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217319",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "8",
+        "primary_source_value": "8",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=6; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPR",
+        "primary_source_sequence": "VDKPPYLPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30936",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row2:DBAASP:DBAASPS_24615:194617",
+      "sequence_key": "DBAASP:DBAASPS_24615",
+      "source_id": "DBAASP:DBAASPS_24615",
+      "source_record_id": "194617",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-14)",
+      "paper_short_name": "Onc14",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "8",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217319",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "8",
+        "primary_source_value": "8",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=6; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKPPYLPRPRPPR",
+        "primary_source_sequence": "VDKPPYLPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=6",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30936",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row3:DBAASP:DBAASPS_24616:194618",
+      "sequence_key": "DBAASP:DBAASPS_24616",
+      "source_id": "DBAASP:DBAASPS_24616",
+      "source_record_id": "194618",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-15)[P4K,L7R]",
+      "paper_short_name": "Onc15 P4K,L7R",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "1",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217320",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "1",
+        "primary_source_value": "1",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=7; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPRR",
+        "primary_source_sequence": "VDKKPYRPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30937",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row3:DBAASP:DBAASPS_24616:194618",
+      "sequence_key": "DBAASP:DBAASPS_24616",
+      "source_id": "DBAASP:DBAASPS_24616",
+      "source_record_id": "194618",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-15)[P4K,L7R]",
+      "paper_short_name": "Onc15 P4K,L7R",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "1",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc15-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217320",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "1",
+        "primary_source_value": "1",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=7; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPRR",
+        "primary_source_sequence": "VDKKPYRPRPRPPRR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30937",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row4:DBAASP:DBAASPS_24617:194619",
+      "sequence_key": "DBAASP:DBAASPS_24617",
+      "source_id": "DBAASP:DBAASPS_24617",
+      "source_record_id": "194619",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-14)[P4K,L7R]",
+      "paper_short_name": "Onc14 P4K,L7R",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217321",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=8; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPR",
+        "primary_source_sequence": "VDKKPYRPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30938",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_assay_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row4:DBAASP:DBAASPS_24617:194619",
+      "sequence_key": "DBAASP:DBAASPS_24617",
+      "source_id": "DBAASP:DBAASPS_24617",
+      "source_record_id": "194619",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Oncocin (1-14)[P4K,L7R]",
+      "paper_short_name": "Onc14 P4K,L7R",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "MIC",
+      "database_subject": "Escherichia coli DH5alpha",
+      "database_concentration": "2",
+      "database_unit": "ug/ml",
+      "matched_activity_record_id": "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic",
+      "matched_activity_record_ids": [
+        "doi__10.1021_acsomega.5c07214:table1:onc14-p4k-l7r:mic"
+      ],
+      "source_locator": [
+        {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "primary Table 1 sequence/name/MIC value"
+          ]
+        },
+        {
+          "locator": "xml:sec=4.7:Broth Microdilution Assay",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "MIC method specifies E. coli MRE600"
+          ]
+        },
+        {
+          "locator": "merged:dbaasp_assay_records.csv:line=217321",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "supports": [
+            "DBAASP assay row value and DH5alpha target label"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_value_target_strain_conflict",
+        "database_value": "2",
+        "primary_source_value": "2",
+        "unit": "ug/mL",
+        "value_match": true,
+        "database_target": "Escherichia coli DH5alpha",
+        "primary_source_target": "Escherichia coli MRE600",
+        "target_match": false,
+        "source_locator": {
+          "locator": "xml:table=1:row=8; xml:sec=4.7",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "sequence_check": {
+        "status": "source_verified",
+        "database_sequence": "VDKKPYRPRPRPPR",
+        "primary_source_sequence": "VDKKPYRPRPRPPR",
+        "sequence_match": true,
+        "source_locator": {
+          "locator": "xml:table=1:row=8",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+          "supports": [
+            "exact peptide sequence in Table 1"
+          ]
+        },
+        "database_sequence_locator": {
+          "locator": "merged:all_sequences.csv:line=30938",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        }
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "source_verified",
+        "name_or_synonym": "source_verified",
+        "terminal_or_noncanonical_modifications": "source_verified_c_terminal_amide_for_synthetic_mic_peptides",
+        "source_organism_or_origin": "synthetic_oncocin_variant_source_supported",
+        "citation_traceability": "source_verified",
+        "target_strain": "source_conflict"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_experiment_records.jsonl",
+        "supports": [
+          "packet-linked DBAASP assay row"
+        ]
+      },
+      "conflict_flags": [
+        "dbaasp_target_strain_dh5alpha_conflicts_with_primary_mic_method_mre600"
+      ],
+      "conflict_context": "Primary Table 1 verifies the sequence and MIC value, but the broth microdilution method specifies E. coli MRE600 while the linked DBAASP row records Escherichia coli DH5alpha. The target strain conflict is preserved instead of promoting the full row to source_verified.",
+      "review_notes": "Worker-4 re-review matched value and sequence to the primary table and preserved the source/database strain conflict required by the curation contract.",
+      "adjudication_decision": "activity_value_source_verified_target_strain_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:APD6:AP05803",
+      "sequence_key": "APD6:AP05803",
+      "source_id": "APD6:AP05803",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row2:APD6:AP05804",
+      "sequence_key": "APD6:AP05804",
+      "source_id": "APD6:AP05804",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row3:APD6:AP05805",
+      "sequence_key": "APD6:AP05805",
+      "source_id": "APD6:AP05805",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row4:APD6:AP05806",
+      "sequence_key": "APD6:AP05806",
+      "source_id": "APD6:AP05806",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row5:APD6:AP05807",
+      "sequence_key": "APD6:AP05807",
+      "source_id": "APD6:AP05807",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row6:APD6:AP05808",
+      "sequence_key": "APD6:AP05808",
+      "source_id": "APD6:AP05808",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row7:DBAASP:DBAASPS_24614",
+      "sequence_key": "DBAASP:DBAASPS_24614",
+      "source_id": "DBAASP:DBAASPS_24614",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "DBAASP",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row8:DBAASP:DBAASPS_24615",
+      "sequence_key": "DBAASP:DBAASPS_24615",
+      "source_id": "DBAASP:DBAASPS_24615",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "DBAASP",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row9:DBAASP:DBAASPS_24616",
+      "sequence_key": "DBAASP:DBAASPS_24616",
+      "source_id": "DBAASP:DBAASPS_24616",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "DBAASP",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row10:DBAASP:DBAASPS_24617",
+      "sequence_key": "DBAASP:DBAASPS_24617",
+      "source_id": "DBAASP:DBAASPS_24617",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "DBAASP",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Truncated and Disubstituted (P4K and L7R) Oncocin Peptides Target the Ribosome with Improved Antibacterial Activity.",
+      "matched_activity_record_id": "",
+      "matched_activity_record_ids": [],
+      "sequence_check": {
+        "status": "citation_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml"
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "doi": "10.1021/acsomega.5c07214",
+        "pmid": "41114226",
+        "pmcid": "PMC12529121"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/database/linked_literature_records.jsonl"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches article DOI/PMID/PMCID; sequence/activity adjudication is handled in linked assay/experiment rows.",
+      "adjudication_decision": "citation_traceability_source_verified"
+    }
+  ],
+  "status_summary": {
+    "source_verified": 16,
+    "source_conflict": 8
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_target_strain_conflict",
+      "evidence_context": "Four DBAASP MIC rows match Table 1 values and sequences but label DH5alpha; the primary MIC method uses E. coli MRE600.",
+      "affected_records": [
+        "DBAASP:DBAASPS_24614",
+        "DBAASP:DBAASPS_24615",
+        "DBAASP:DBAASPS_24616",
+        "DBAASP:DBAASPS_24617"
+      ]
+    },
+    {
+      "caution_code": "apd6_propargyl_is_sar_comment_not_separate_sequence_record",
+      "evidence_context": "APD6 AP05806 embeds the Onc14-propargyl MIC as SAR text; the primary paper has a separate Table 1 row and SI synthesis evidence."
+    }
+  ]
+}

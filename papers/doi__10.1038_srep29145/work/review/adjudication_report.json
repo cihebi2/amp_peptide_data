@@ -1,0 +1,169 @@
+{
+  "paper_id": "doi__10.1038_srep29145",
+  "generated_at": "2026-05-03T04:44:28Z",
+  "reviewed_at": "2026-05-03T04:44:28Z",
+  "last_re_reviewed_at": "2026-05-03T04:44:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker": "worker-6",
+  "role": "paper-adjudicator-review-worker",
+  "protocol": "amp_three_layer_v2_bounded_rework",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Source-reviewed rework recovered the missing Table 1/2 activity matrix, reconciled DBAASP/DRAMP identities against supplementary sequence evidence, and preserved database-only rows as cautions rather than unresolved tickets.",
+  "adjudication_summary": "The prior complete-message framework ticket is closed after worker-2/4/6 rework. The paper is publication-grade with explicit cautions for database-only cross-database annotations, V13K missing packet database key, indexed-only landing binaries, and scope-limited mechanism evidence.",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_srep29145/handoff_context.json",
+    "paper_packets/doi__10.1038_srep29145/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep29145/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep29145/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep29145/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_srep29145/raw/paper.xml",
+    "papers/doi__10.1038_srep29145/source/paper.xml",
+    "papers/doi__10.1038_srep29145/source/paper.pdf",
+    "paper_packets/doi__10.1038_srep29145/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_srep29145/extracted/pdf_text/srep29145.txt",
+    "paper_packets/doi__10.1038_srep29145/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep29145/extracted/oa_package/local-DRAMP-27363513/PMC4929710/srep29145-s1.doc",
+    "paper_packets/doi__10.1038_srep29145/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep29145/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep29145/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_srep29145/database/linked_literature_records.jsonl"
+  ],
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "path": "papers/doi__10.1038_srep29145/source/paper.xml",
+      "coverage": "article metadata, Results, Tables 1-3, Methods sections 9-16, figure captions"
+    },
+    "paper_pdf": {
+      "status": "reviewed_supporting_layout",
+      "path": "papers/doi__10.1038_srep29145/source/paper.pdf",
+      "coverage": "article PDF text available through packet pdf_text and source PDF for layout cross-check"
+    },
+    "oa_package": {
+      "status": "reviewed",
+      "path": "paper_packets/doi__10.1038_srep29145/extracted/oa_package/local-DRAMP-27363513/PMC4929710",
+      "coverage": "NXML, PDF, figures, and supplementary Word member inventoried"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_with_cautions",
+      "paths": [
+        "paper_packets/doi__10.1038_srep29145/extracted/oa_package/local-DRAMP-27363513/PMC4929710/srep29145-s1.doc",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_srep29145/supplementary/local-DRAMP-srep29145-s1.doc"
+      ],
+      "coverage": "antiword parse recovered Table S1 sequences/modifications, Table S2/S3 context, and permeabilization figure captions; landing .bin assets were indexed-only and non-gate-changing"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "paths": [
+        "paper_packets/doi__10.1038_srep29145/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_srep29145/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_srep29145/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1038_srep29145/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "coverage": "packet DBAASP/DRAMP/CAMP/dbAMP assay, experiment, and literature snapshots reviewed through paper-local packet rows"
+    }
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "unavailable_or_nonblocking_materials": [
+      "landing-*.bin assets stayed indexed-only; the parseable local Word supplement supplied the gate-changing sequence/method evidence"
+    ]
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "108 rows have endpoint, raw value, unit context, target species/strain where applicable, and XML source locator."
+    },
+    {
+      "check": "activity_table_shape_repair",
+      "result": "pass",
+      "evidence": "Primary XML Tables 1 and 2 were manually mapped despite parser rejection of the multi-row header shape."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "9 source-verified database identities and 6 database-only text annotations are explicitly preserved."
+    },
+    {
+      "check": "mechanism_claim_contract",
+      "result": "pass_with_scope_guard",
+      "evidence": "Two mechanism claims have claim IDs, direct assay types, locators, and limitations against overclaiming figure-only quantitative values."
+    },
+    {
+      "check": "source_exhaustion",
+      "result": "pass_with_cautions",
+      "evidence": "XML, PDF text, OA package, supplementary DOC, figure captions, locator index, and linked database rows were checked; no gate-changing local source remains unopened."
+    },
+    {
+      "check": "open_rework_ticket_state",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is closed by this worker response and final rework_targets are empty."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/DRAMP peptide identities are source-verified from article metadata plus supplementary Table S1; text-only CAMP/dbAMP rows are preserved as database_only_no_primary_source cautions.",
+    "layer_2_activity_toxicity": "Table 1 MHC/MIC and Table 2 IC50 values were recovered as row-level source-supported records with units, targets, assay conditions, and locators.",
+    "layer_3_mechanism": "Mechanism is accepted with scope limits: source supports membrane interaction/permeabilization/selectivity by AFM, fluorescence, and NPN/ONPG assays, without inferred pore architecture."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_only_cross_database_rows_preserved",
+      "scope": "database_record_identity",
+      "severity": "caution",
+      "evidence_context": "CAMP/dbAMP text-only linked rows are retained as database_only_no_primary_source because local primary material does not identify those database records exactly.",
+      "status": "nonblocking_caution"
+    },
+    {
+      "caution_code": "v13k_no_linked_database_sequence_key",
+      "scope": "database_record_identity",
+      "severity": "caution",
+      "evidence_context": "V13K is source-supported in Table 1/2 and supplementary Table S1, but no packet linked database sequence key was present; no database row was fabricated.",
+      "status": "nonblocking_caution"
+    },
+    {
+      "caution_code": "supplementary_doc_parsed_no_structured_spreadsheet",
+      "scope": "supplementary_extraction",
+      "severity": "caution",
+      "evidence_context": "The Word supplement was parsed with antiword for sequence/method support; landing .bin assets stayed indexed-only and did not add gate-changing values.",
+      "status": "nonblocking_caution"
+    },
+    {
+      "caution_code": "mechanism_numeric_figures_not_over_extracted",
+      "scope": "mechanism_scope",
+      "severity": "caution",
+      "evidence_context": "Mechanism claims use source locators to AFM/fluorescence/permeabilization evidence; figure-only exact probabilities were not fabricated.",
+      "status": "nonblocking_caution"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "unrecoverable_material_gaps": [],
+  "final_layer_outputs_ready": true,
+  "final_outputs": {
+    "activity_toxicity_evidence": "papers/doi__10.1038_srep29145/final/activity_toxicity_evidence.json",
+    "database_record_verification": "papers/doi__10.1038_srep29145/final/database_record_verification.json",
+    "mechanism_ontology_record": "papers/doi__10.1038_srep29145/final/mechanism_ontology_record.json",
+    "review_report": "papers/doi__10.1038_srep29145/final/review_report.json"
+  },
+  "packet_layer": "analysis/adjudication_report",
+  "activity_record_count": 108,
+  "database_status_summary": {
+    "source_verified": 9,
+    "database_only_no_primary_source": 6
+  },
+  "mechanism_claim_count": 2
+}

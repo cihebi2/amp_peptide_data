@@ -1,0 +1,915 @@
+{
+  "paper_id": "doi__10.4103_0973-1296.141781",
+  "schema_version": "amp_three_layer_activity_v2_source_reviewed",
+  "generated_at": "2026-05-10T16:43:13Z",
+  "reviewed_by_workers": [
+    "worker-2",
+    "worker-6"
+  ],
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_paths_checked": [
+    "rework_context/doi__10.4103_0973-1296.141781/handoff_context.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/packet_manifest.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/locators/locator_index.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extraction/extraction_status.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/xml_sections.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410.nxml",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/archive_manifest.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/supplementary_index.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.4103_0973-1296.141781/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.4103_0973-1296.141781/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.4103_0973-1296.141781/database/linked_literature_records.jsonl",
+    "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+    "papers/doi__10.4103_0973-1296.141781/source/paper.pdf",
+    "papers/doi__10.4103_0973-1296.141781/source/oa_package/local-DBAASP-PMC4239716.tar.gz"
+  ],
+  "tools_attempted": [
+    "jq over handoff, packet, final, quality feedback, and report artifacts",
+    "rg over XML, extracted PDF text, and linked database JSONL rows",
+    "sed inspection of extracted PDF text around Table 2",
+    "view_image inspection of the local Table 2 JPG from the OA package",
+    "tar -tzf inventory of the local PMCID OA package",
+    "file inspection of Table 2 image assets",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "extraction_scope": "Worker-2 source-reviewed Table 2 activity rows from XML/PDF/OA package image; positive controls are retained as comparator context, not AMP rows.",
+  "activity_records": [
+    {
+      "record_id": "act-table2-mic-compound1-candida-albicans",
+      "entity": {
+        "entity_id": "compound-1",
+        "name": "cyclo (D-Pro-L-Tyr-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 1"
+        ],
+        "residue_sequence": [
+          "D-Pro",
+          "L-Tyr",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic D-Pro-L-Tyr-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; one D-Pro residue; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=1:Figure 1",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=1:Figure 1",
+        "database_keys": [
+          "DBAASP:DBAASPN_7237",
+          "CAMP:CAMPSQ22084",
+          "dbAMP:dbAMP_24040"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "35",
+      "raw_unit": "µg/mL",
+      "normalized_value": "35",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Candida albicans",
+        "raw_source_label": "Candida albican",
+        "strain": "",
+        "target_class": "human-derived fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Ketoconazole",
+        "mic": "2",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=1",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Table label omits final s; article abstract and methods name Candida albicans.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound2-candida-albicans",
+      "entity": {
+        "entity_id": "compound-2",
+        "name": "cyclo (Gly-L-Phe-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 2"
+        ],
+        "residue_sequence": [
+          "Gly",
+          "L-Phe",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic Gly-L-Phe-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; L-Phe, L-Pro, and L-Tyr assigned by Marfey analysis; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=2:Figure 2",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=2:Figure 2",
+        "database_keys": [
+          "DBAASP:DBAASPN_7238",
+          "CAMP:CAMPSQ22085",
+          "dbAMP:dbAMP_24041"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "25",
+      "raw_unit": "µg/mL",
+      "normalized_value": "25",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Candida albicans",
+        "raw_source_label": "Candida albican",
+        "strain": "",
+        "target_class": "human-derived fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Ketoconazole",
+        "mic": "2",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=1",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Table label omits final s; article abstract and methods name Candida albicans.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound1-gaeumannomyces-graminis",
+      "entity": {
+        "entity_id": "compound-1",
+        "name": "cyclo (D-Pro-L-Tyr-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 1"
+        ],
+        "residue_sequence": [
+          "D-Pro",
+          "L-Tyr",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic D-Pro-L-Tyr-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; one D-Pro residue; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=1:Figure 1",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=1:Figure 1",
+        "database_keys": [
+          "DBAASP:DBAASPN_7237",
+          "CAMP:CAMPSQ22084",
+          "dbAMP:dbAMP_24040"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "300",
+      "raw_unit": "µg/mL",
+      "normalized_value": "300",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Gaeumannomyces graminis",
+        "raw_source_label": "Gaeumannomyces graminis",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "150",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=2",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Primary Table 2 supplies the MIC value and unit.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound2-gaeumannomyces-graminis",
+      "entity": {
+        "entity_id": "compound-2",
+        "name": "cyclo (Gly-L-Phe-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 2"
+        ],
+        "residue_sequence": [
+          "Gly",
+          "L-Phe",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic Gly-L-Phe-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; L-Phe, L-Pro, and L-Tyr assigned by Marfey analysis; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=2:Figure 2",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=2:Figure 2",
+        "database_keys": [
+          "DBAASP:DBAASPN_7238",
+          "CAMP:CAMPSQ22085",
+          "dbAMP:dbAMP_24041"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "200",
+      "raw_unit": "µg/mL",
+      "normalized_value": "200",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Gaeumannomyces graminis",
+        "raw_source_label": "Gaeumannomyces graminis",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "150",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=2",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Primary Table 2 supplies the MIC value and unit.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound1-rhizoctonia-cerealis",
+      "entity": {
+        "entity_id": "compound-1",
+        "name": "cyclo (D-Pro-L-Tyr-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 1"
+        ],
+        "residue_sequence": [
+          "D-Pro",
+          "L-Tyr",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic D-Pro-L-Tyr-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; one D-Pro residue; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=1:Figure 1",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=1:Figure 1",
+        "database_keys": [
+          "DBAASP:DBAASPN_7237",
+          "CAMP:CAMPSQ22084",
+          "dbAMP:dbAMP_24040"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "250",
+      "raw_unit": "µg/mL",
+      "normalized_value": "250",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Rhizoctonia cerealis",
+        "raw_source_label": "Rhzioctonia cerealis",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "100",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=3",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Table/article spelling is Rhzioctonia; target normalized to Rhizoctonia cerealis while preserving the raw label.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound2-rhizoctonia-cerealis",
+      "entity": {
+        "entity_id": "compound-2",
+        "name": "cyclo (Gly-L-Phe-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 2"
+        ],
+        "residue_sequence": [
+          "Gly",
+          "L-Phe",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic Gly-L-Phe-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; L-Phe, L-Pro, and L-Tyr assigned by Marfey analysis; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=2:Figure 2",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=2:Figure 2",
+        "database_keys": [
+          "DBAASP:DBAASPN_7238",
+          "CAMP:CAMPSQ22085",
+          "dbAMP:dbAMP_24041"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "150",
+      "raw_unit": "µg/mL",
+      "normalized_value": "150",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Rhizoctonia cerealis",
+        "raw_source_label": "Rhzioctonia cerealis",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "100",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=3",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Table/article spelling is Rhzioctonia; target normalized to Rhizoctonia cerealis while preserving the raw label.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound1-helminthosporium-sativum",
+      "entity": {
+        "entity_id": "compound-1",
+        "name": "cyclo (D-Pro-L-Tyr-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 1"
+        ],
+        "residue_sequence": [
+          "D-Pro",
+          "L-Tyr",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic D-Pro-L-Tyr-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; one D-Pro residue; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=1:Figure 1",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=1:Figure 1",
+        "database_keys": [
+          "DBAASP:DBAASPN_7237",
+          "CAMP:CAMPSQ22084",
+          "dbAMP:dbAMP_24040"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "350",
+      "raw_unit": "µg/mL",
+      "normalized_value": "350",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Helminthosporium sativum",
+        "raw_source_label": "Helminthosporium sativum",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "120",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=4",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Linked databases use Bipolaris sorokiniana for this row; local paper text/table supports Helminthosporium sativum only.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound2-helminthosporium-sativum",
+      "entity": {
+        "entity_id": "compound-2",
+        "name": "cyclo (Gly-L-Phe-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 2"
+        ],
+        "residue_sequence": [
+          "Gly",
+          "L-Phe",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic Gly-L-Phe-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; L-Phe, L-Pro, and L-Tyr assigned by Marfey analysis; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=2:Figure 2",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=2:Figure 2",
+        "database_keys": [
+          "DBAASP:DBAASPN_7238",
+          "CAMP:CAMPSQ22085",
+          "dbAMP:dbAMP_24041"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "200",
+      "raw_unit": "µg/mL",
+      "normalized_value": "200",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Helminthosporium sativum",
+        "raw_source_label": "Helminthosporium sativum",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "120",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=4",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Linked databases use Bipolaris sorokiniana for this row; local paper text/table supports Helminthosporium sativum only.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound1-fusarium-graminearum",
+      "entity": {
+        "entity_id": "compound-1",
+        "name": "cyclo (D-Pro-L-Tyr-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 1"
+        ],
+        "residue_sequence": [
+          "D-Pro",
+          "L-Tyr",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic D-Pro-L-Tyr-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; one D-Pro residue; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=1:Figure 1",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=1:Figure 1",
+        "database_keys": [
+          "DBAASP:DBAASPN_7237",
+          "CAMP:CAMPSQ22084",
+          "dbAMP:dbAMP_24040"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "400",
+      "raw_unit": "µg/mL",
+      "normalized_value": "400",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Fusarium graminearum",
+        "raw_source_label": "Fusarium graminearum",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "150",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=5",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Primary Table 2 supplies the MIC value and unit.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    },
+    {
+      "record_id": "act-table2-mic-compound2-fusarium-graminearum",
+      "entity": {
+        "entity_id": "compound-2",
+        "name": "cyclo (Gly-L-Phe-L-Pro-L-Tyr)",
+        "database_names": [
+          "Cyclic tetrapeptide 2"
+        ],
+        "residue_sequence": [
+          "Gly",
+          "L-Phe",
+          "L-Pro",
+          "L-Tyr"
+        ],
+        "sequence_representation": "cyclic Gly-L-Phe-L-Pro-L-Tyr",
+        "modifications": "Cyclic tetrapeptide; L-Phe, L-Pro, and L-Tyr assigned by Marfey analysis; no linear N- or C-terminus is present.",
+        "source_organism_context": "Co-culture broth of Phomopsis sp. K38 and Alternaria sp. E33.",
+        "figure_locator": "xml:fig=2:Figure 2",
+        "structure_locator": "xml:sec=17:DISSCUSSION;xml:fig=2:Figure 2",
+        "database_keys": [
+          "DBAASP:DBAASPN_7238",
+          "CAMP:CAMPSQ22085",
+          "dbAMP:dbAMP_24041"
+        ]
+      },
+      "endpoint": "MIC",
+      "raw_value": "250",
+      "raw_unit": "µg/mL",
+      "normalized_value": "250",
+      "normalized_unit": "µg/mL",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Fusarium graminearum",
+        "raw_source_label": "Fusarium graminearum",
+        "strain": "",
+        "target_class": "plant pathogenic fungus",
+        "gram_status": "not_applicable_fungus"
+      },
+      "assay_context": {
+        "assay": "in vitro dilution method MIC assay in 96-well microplates",
+        "sample_solvent": "DMSO; serially diluted with 20% DMSO in sterile water",
+        "concentration_range": "500 to 20 µg/mL",
+        "final_volume": "200 µL",
+        "inoculum": "10^4 CFU/mL final target inoculum",
+        "medium": "Sabouraud dextrose culture broth",
+        "readout": "OD630 before and after incubation",
+        "incubation": "28 C for 72 h",
+        "replicates": "duplicate wells",
+        "method_locator": {
+          "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+          "locator": "xml:sec=13:Antifungal activity"
+        }
+      },
+      "replicate_statistics": {
+        "n": "duplicate wells",
+        "summary_statistic": "single MIC table value; no SD/SEM reported"
+      },
+      "positive_control_context": {
+        "name": "Triadimefon",
+        "mic": "150",
+        "unit": "µg/mL"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.4103_0973-1296.141781/source/paper.xml",
+        "locator": "xml:table=T2:Table 2:row=5",
+        "table": "Table 2",
+        "caption": "Antifungal activity of compound 1 and 2 (MIC, µg/mL)",
+        "figure_locator": "xml:table-wrap=T2:graphic=PM-10-410-g004",
+        "image_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/oa_package/local-DBAASP-PMC4239716/PMC4239716/PM-10-410-g004.jpg",
+        "pdf_text_path": "paper_packets/doi__10.4103_0973-1296.141781/extracted/pdf_text/PM-10-410.txt",
+        "pdf_text_locator": "Table 2 block"
+      },
+      "evidence_ladder": [
+        "primary_pdf_table_text",
+        "primary_xml_table_graphic",
+        "oa_package_table_image",
+        "method_section_context"
+      ],
+      "source_database_rows": [],
+      "source_column_context": {
+        "endpoint_group": "MIC",
+        "unit_from_header": "µg/mL"
+      },
+      "review_notes": "Primary Table 2 supplies the MIC value and unit.",
+      "reviewed_at": "2026-05-10T16:43:13Z"
+    }
+  ],
+  "activity_record_count": 10,
+  "toxicity_records": [],
+  "extraction_issues": [],
+  "parser_quality_control": {
+    "mic_like_units_present": true,
+    "activity_source_locators_present": true,
+    "rejects_database_only_primary_rows": true,
+    "suspicious_target_strings_checked": true
+  },
+  "unrecoverable_material_gaps": []
+}

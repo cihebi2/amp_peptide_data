@@ -1,0 +1,89 @@
+{
+  "paper_id": "doi__10.1021_acs.jmedchem.1c01033",
+  "generated_at": "2026-06-22T08:50:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 non-dispatch final review repaired mechanism evidence classes to the five-class ontology from existing XML/PDF locators; no mechanism claim text or source locator was invented.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Peptide 12 directly perturbs model bacterial membranes: GP laurdan Table 3 and liposome leakage assays show membrane-order/fluidity and leakage changes in Gram-positive and Gram-negative mimetic LUVs.",
+      "entity_scope": "peptide 12",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Laurdan generalized polarization membrane-fluidity assay",
+        "ANTS/DPX liposome leakage assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3 + xml:fig=8:Figure 6 + xml:sec=2.9:Ability of Peptide 12 to Induce Leakage"
+      },
+      "limitations": "Model-liposome assays support membrane perturbation context; they are not whole-cell target identification."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Peptides 9, 12, and 17 form aggregates with LPS, PGN, and teichoic acid in ThT/CD assays; peptide 12 is discussed as interacting with bacterial cell-wall/membrane components.",
+      "entity_scope": "peptides 9, 12, 17",
+      "evidence_class": "direct_mechanism",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:fig=6:Figure 4 + xml:fig=7:Figure 5 + xml:sec=2.8:Aggregation Mode in the Interaction between Peptides and Cell-Wall Components"
+      },
+      "limitations": "Direct physicochemical interaction/aggregation assays support cell-wall or membrane-component context; they do not identify an intracellular molecular target.",
+      "direct_assay_types": [
+        "Thioflavin T peptide aggregation assay with LPS/cell-wall component context",
+        "circular dichroism assay with bacterial membrane/cell-wall component systems"
+      ],
+      "worker6_evidence_class_repair": {
+        "reviewed_at": "2026-06-22T08:50:28Z",
+        "previous_evidence_class": "mechanism_context",
+        "repaired_evidence_class": "direct_mechanism",
+        "repair_reason": "Mapped non-standard local label to the five-class mechanism ontology using the existing claim text and source locator; no new source evidence was invented."
+      }
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Peptide 12 shows rapid MRSA killing and biofilm eradication phenotypes, including complete MRSA killing within 30 min at 12.5 µM and BEC90 values of 12.5 µM for S. aureus and 25 µM for A. baumannii biofilms.",
+      "entity_scope": "peptide 12 compared with peptide 9",
+      "evidence_class": "phenotype_supported",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=2.10:Activity against MRSA ATCC and Time Kill Assay + xml:sec=2.11:Antibiofilm Activity"
+      },
+      "limitations": "Killing/biofilm phenotypes are activity evidence, not a molecular target by themselves."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "CD/NMR structure evidence supports peptide 12 conformational stabilization relative to peptide 9, but this is retained as structural context rather than promoted to a direct antimicrobial mechanism.",
+      "entity_scope": "peptide 12 and comparator peptide 9",
+      "evidence_class": "inferred_mechanism",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2 + xml:fig=12:Figure 10 + xml:sec=2.12:Structural Characterization of Peptide 12 by NMR"
+      },
+      "limitations": "CD/NMR structural stabilization is source-backed design and conformation evidence; mechanism relevance is inferred and must not be promoted to a direct killing mechanism.",
+      "worker6_evidence_class_repair": {
+        "reviewed_at": "2026-06-22T08:50:28Z",
+        "previous_evidence_class": "structure_context",
+        "repaired_evidence_class": "inferred_mechanism",
+        "repair_reason": "Mapped non-standard local label to the five-class mechanism ontology using the existing claim text and source locator; no new source evidence was invented."
+      }
+    }
+  ],
+  "worker6_non_dispatch_final_review": {
+    "pilot_sample_id": "PILOT20-007",
+    "audit_record_id": "doi__10.1021_acs.jmedchem.1c01033:database_audit:239",
+    "reviewed_at": "2026-06-22T08:50:28Z",
+    "review_model": "gpt-5.5",
+    "reasoning_effort": "xhigh",
+    "allowed_evidence_classes": [
+      "computational_only",
+      "direct_mechanism",
+      "inferred_mechanism",
+      "phenotype_supported",
+      "unknown_or_not_tested"
+    ],
+    "repair_summary": "mech-002 mechanism_context -> direct_mechanism; mech-004 structure_context -> inferred_mechanism."
+  }
+}

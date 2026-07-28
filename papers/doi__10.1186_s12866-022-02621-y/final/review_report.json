@@ -1,0 +1,154 @@
+{
+  "paper_id": "doi__10.1186_s12866-022-02621-y",
+  "reviewed_at": "2026-05-03T09:12:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": false,
+  "review_status": "blocked_missing_primary_material",
+  "adjudication_summary": "Bounded source-reviewed rework recovered the LL-1 primary E. coli MIC, growth inhibition, hemolysis, PK-15 viability, DBAASP literature linkage, and direct mechanism evidence from local XML/PDF text. The paper remains non-publication-grade because the local corpus lacks the MOESM DOCX/TIF supplement payloads needed to verify Table S1 non-E. coli MIC rows and exact supplement figure values.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1186_s12866-022-02621-y/packet_manifest.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extraction/extraction_quality_report.json",
+    "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+    "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s12866-022-02621-y/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-1.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-3.bin"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package_unavailable_remote_package_fetch_failed_in_material_packet",
+    "supplementary_assets_html_wrappers_checked_payloads_missing",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": "not locally available; packet metadata records remote_package request failure",
+    "supplementary_assets": "bounded check completed on local .bin HTML wrappers plus XML associated-data media references; MOESM TIF/DOCX payloads not present locally",
+    "merged_database_rows": true,
+    "unavailable_sources": [
+      "12866_2022_2621_MOESM1_ESM.tif",
+      "12866_2022_2621_MOESM2_ESM.tif",
+      "12866_2022_2621_MOESM3_ESM.docx"
+    ]
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 4,
+    "database_status_summary": {
+      "source_verified": 7,
+      "database_only_no_primary_source": 14
+    },
+    "mechanism_claims": 3,
+    "unrecoverable_material_gap_count": 1,
+    "open_rework_targets": 1
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature and assay rows for hemolysis, PK-15 viability, and E. coli ATCC 25922 MIC are source-verified from local XML/PDF text. Non-E. coli MIC rows are preserved as database_only_no_primary_source because the paper points to Table S1 but the MOESM3 DOCX payload is absent locally.",
+    "layer_2_activity_toxicity": "Worker-2 repair added four primary-source-supported activity/toxicity records and retained unsupported database-only annotations separately from primary assay rows.",
+    "layer_3_mechanism": "Worker-6 adjudication records direct membrane-permeability and DNA-binding evidence plus ATP-associated phenotype without overclaiming a resolved molecular target.",
+    "publication_grade_review": "Validator/semantic structure is repaired enough to show concrete evidence, but open unrecoverable supplement material blocks publication-grade acceptance under obtainable-only mode."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "supplement_payloads_absent_locally",
+      "evidence_context": "XML/HTML identify MOESM1/MOESM2 TIF and MOESM3 DOCX, but the local DOI packet contains only HTML .bin wrappers and no payload files."
+    },
+    {
+      "caution_code": "hemolysis_result_label_typo",
+      "evidence_context": "Primary result sentence labels the 250 µg/mL hemolysis result as AC-1 while methods and paper context are LL-1; retained as LL-1 with caution."
+    }
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "local_supplement_payloads_missing_moesm1_2_3",
+      "owner_worker": "worker-2",
+      "severity": "blocking",
+      "reason": "Local source recovery found only article XML/PDF and HTML supplementary wrappers; MOESM1/2 TIF and MOESM3 DOCX payloads needed for exact supplement figure/table values are absent locally."
+    },
+    {
+      "code": "database_table_s1_values_database_only_no_primary_source",
+      "owner_worker": "worker-4 + worker-6",
+      "severity": "major",
+      "reason": "DBAASP rows for non-E. coli Table S1 MIC values are preserved, but cannot be source-verified without the missing MOESM3 DOCX payload."
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-local-source-gap-ll1-supplement-20260503",
+      "paper_id": "doi__10.1186_s12866-022-02621-y",
+      "created_at": "2026-05-03T09:12:22Z",
+      "worker": "worker-2",
+      "owner_worker": "worker-2",
+      "target_queue": "material_extraction",
+      "layer": "activity_toxicity",
+      "failure_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "omission_code": "missing_moesm3_table_s1_docx_and_moesm1_2_tif_payloads",
+      "severity": "blocking",
+      "artifact_path": "papers/doi__10.1186_s12866-022-02621-y/final/activity_toxicity_evidence.json",
+      "source_evidence_to_check": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml associated-data media hrefs",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin",
+        "expected local payloads: 12866_2022_2621_MOESM1_ESM.tif, 12866_2022_2621_MOESM2_ESM.tif, 12866_2022_2621_MOESM3_ESM.docx"
+      ],
+      "required_action": "If the missing MOESM payload files become locally available, extract Fig. S1/S2 and Table S1; verify or correct the database-only MIC rows and update activity/database/final review artifacts. Do not fabricate values from DBAASP alone.",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "blocks_publication_grade": true,
+      "unrecoverable_material_gap_code": "local_supplement_payloads_missing_moesm1_2_3"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "local_supplement_payloads_missing_moesm1_2_3",
+      "source_paths_checked": [
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.xml",
+        "papers/doi__10.1186_s12866-022-02621-y/source/paper.pdf",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s12866-022-02621-y/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1186_s12866-022-02621-y/supplementary/*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg over XML/PDF text/HTML wrappers/database JSONL",
+        "find targeted DOI-local landed/downloaded assets",
+        "PDF text extraction already present in packet",
+        "XML associated-data media-reference inspection"
+      ],
+      "why_unrecoverable": "Local packet and landed/downloaded DOI folders contain article XML/PDF and HTML .bin wrappers. The XML/HTML identify MOESM1/2 TIF and MOESM3 DOCX payload names, but those TIF/DOCX payload files are not present in the local packet, landed assets, or downloaded assets checked in this bounded pass.",
+      "impact": "Exact supplemental Fig. S1/S2 dose-curve values and Table S1 MIC values for non-E. coli microorganisms cannot be source-verified locally; database rows for those Table S1 values are preserved as database_only_no_primary_source and the paper remains non-publication-grade.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "strict_gate": {
+    "publication_grade_ready": false,
+    "required_rework_count": 1,
+    "blocking_issue_count": 1,
+    "validator_contract_ready": true,
+    "semantic_gate_expected_to_fail_until_external_material_available": true
+  }
+}

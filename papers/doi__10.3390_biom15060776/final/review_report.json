@@ -1,0 +1,89 @@
+{
+  "paper_id": "doi__10.3390_biom15060776",
+  "reviewed_at": "2026-05-08T16:37:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded local recovery opened XML, PDF text, OA/package locators, supplementary ZIP/PDF text, packet database snapshots, and merged sequence/activity rows relevant to the blocker."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_biom15060776/packet_manifest.json",
+    "paper_packets/doi__10.3390_biom15060776/locators/locator_index.json",
+    "paper_packets/doi__10.3390_biom15060776/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_biom15060776/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_biom15060776/source/paper.xml",
+    "papers/doi__10.3390_biom15060776/source/paper.pdf",
+    "paper_packets/doi__10.3390_biom15060776/extracted/pdf_text/biomolecules-15-00776.txt",
+    "paper_packets/doi__10.3390_biom15060776/raw/supplementary_original/local-APD6-biomolecules-15-00776-s001.zip",
+    "paper_packets/doi__10.3390_biom15060776/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_biom15060776/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_biom15060776/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+  ],
+  "tools_attempted": [
+    "ElementTree XML table parsing",
+    "pdftotext over primary PDF text output",
+    "unzip -l and pdftotext over supplementary PDF member",
+    "csv.DictReader over merged sequence and APD6 activity rows",
+    "jq/JSONL row inspection"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 126,
+    "toxicity_records": 1,
+    "database_status_summary": {
+      "source_conflict": 16,
+      "source_verified": 239
+    },
+    "mechanism_claims": 3,
+    "rework_targets_open": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material remains complete-with-analysis-gaps at the material layer, but the owner-worker repair opened the relevant XML/PDF/supplement/database sources and resolved the analysis blocker without rerunning bootstrap.",
+    "database_record_audit": "Worker-4 matched Table 1 sequences and rounded Table 2 MIC/MBC values to APD6/DBAASP linked rows; exact DBAASP cytotoxicity percentages remain conflict-preserved because only Figure 1, not a local numeric source table, supports them.",
+    "activity_toxicity": "Worker-6 final activity now records all 126 primary Table 2 MIC/MBC values and attaches Supplementary Table S1 geometric means as supporting values.",
+    "mechanism": "Mechanism claims are limited to direct assay surfaces actually present: cell-free translation inhibition, PI membrane perturbation, and SbmA phenotype context.",
+    "publication_grade": "Accepted with cautions because no blocking worker-4/6 issue or open rework target remains; cautions preserve figure-only cytotoxicity percentages instead of over-verifying them."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_cytotoxicity_percentages_figure_only",
+      "evidence_context": "Twelve duplicated DBAASP cytotoxicity rows preserve exact A549 percentage claims as source_conflict because local XML/PDF/supplement text does not provide a numeric table for Figure 1 bars.",
+      "affected_records": 12
+    },
+    {
+      "caution_code": "database_antimicrobial_row_conflicts_preserved",
+      "evidence_context": "Four duplicated DBAASP antimicrobial rows remain source_conflict after Table 2/Supplement S1 review: B7-B11/S. aureus has one row labeled MIC with a value matching the MBC column, and B7-L6/A. baumannii has MIC 1 uM while primary Table 2 is 2 uM and Supplement S1 is 1.6 uM.",
+      "affected_records": 4
+    },
+    {
+      "caution_code": "supplement_table_s1_differs_from_rounded_main_table",
+      "evidence_context": "Supplementary Table S1 provides geometric means, while primary Table 2 provides rounded MIC/MBC values used by linked database rows; both surfaces are recorded without normalizing one into the other."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "closed_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "adjudication_summary": "Worker-4/6 source-reviewed repair closed the prior adjudication/database blocker for this DOI. Table 1 sequences, Table 2 MIC/MBC rows, Supplementary Table S1, Figure 1/2/3 captions, linked APD6/DBAASP rows, and merged sequence rows were reopened and reconciled. The paper is publication-grade accepted_with_cautions, with exact database cytotoxicity percentages preserved as source_conflict rather than silently verified."
+}

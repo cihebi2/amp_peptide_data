@@ -1,0 +1,77 @@
+{
+  "paper_id": "doi__10.7150_ijbs.23419",
+  "generated_at": "2026-05-10T16:17:22Z",
+  "updated_at": "2026-05-10T16:19:49Z",
+  "issue_count": 0,
+  "publication_grade_ready": true,
+  "final_decision": "accepted_with_cautions",
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "rework_context_packet_required": false,
+  "source_paths_checked": [
+    "paper_packets/doi__10.7150_ijbs.23419/packet_manifest.json",
+    "paper_packets/doi__10.7150_ijbs.23419/locators/locator_index.json",
+    "paper_packets/doi__10.7150_ijbs.23419/raw/paper.xml",
+    "paper_packets/doi__10.7150_ijbs.23419/raw/paper.pdf",
+    "paper_packets/doi__10.7150_ijbs.23419/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.7150_ijbs.23419/extracted/supplementary_text/local-DRAMP-ijbsv14p0599s1.txt",
+    "paper_packets/doi__10.7150_ijbs.23419/extracted/oa_package/local-APD6-pmc_package/PMC6001651/ijbsv14p0599s1.pdf",
+    "paper_packets/doi__10.7150_ijbs.23419/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.7150_ijbs.23419/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.7150_ijbs.23419/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.7150_ijbs.23419/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.7150_ijbs.23419/database/database_source_manifest.json"
+  ],
+  "tools_attempted": [
+    "jq artifact inspection",
+    "rg over XML/PDF/supplement text",
+    "xml.etree.ElementTree table parse",
+    "pdftotext -layout supplementary PDF",
+    "pdfinfo supplementary PDF",
+    "file supplementary/source inventory"
+  ],
+  "residual_cautions": [
+    {
+      "caution_code": "database_entry_level_conflicts_preserved",
+      "severity": "nonblocking_caution",
+      "evidence_context": "DRAMP MP-C rows mix PMID 29904274 with PMID 33285267; APD6/CAMP/dbAMP rows summarize or omit row-level endpoints. These rows remain source_conflict while primary-source-supported assay rows are recorded separately.",
+      "affected_records": [
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "AP03041",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104",
+        "DRAMP29104"
+      ]
+    },
+    {
+      "caution_code": "supplementary_statistics_not_endpoint_matrix",
+      "severity": "nonblocking_caution",
+      "evidence_context": "The local supplementary PDF contains MALDI mass spectra and statistical comparison tables S1-S3, but no additional MIC/MBC/MBIC/MBEC/IC50/HC50 endpoint table beyond main Tables 2-4.",
+      "source_paths_checked": [
+        "paper_packets/doi__10.7150_ijbs.23419/extracted/supplementary_text/local-DRAMP-ijbsv14p0599s1.txt",
+        "paper_packets/doi__10.7150_ijbs.23419/extracted/oa_package/local-APD6-pmc_package/PMC6001651/ijbsv14p0599s1.pdf"
+      ]
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "gate_evidence": {
+    "semantic_gate_report": "reports/doi__10.7150_ijbs.23419.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.7150_ijbs.23419.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "gate_ready": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "commands": [
+    {
+      "cmd": [
+        "python",
+        ".codex/skills/paper-batch-orchestrator/scripts/check_two_queue_packets.py",
+        "--packet-root",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets",
+        "--manifest",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json-out",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/check_two_queue_packets.worker6.needs_rework_current.json"
+      ],
+      "name": "packet_gate"
+    },
+    {
+      "cmd": [
+        "python",
+        ".codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py",
+        "--root",
+        ".",
+        "--manifest",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json"
+      ],
+      "name": "semantic_gate"
+    },
+    {
+      "cmd": [
+        "python",
+        ".codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py",
+        "--root",
+        ".",
+        "--manifest",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/one_paper_manifest.json",
+        "--json-out",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_quality.worker6.needs_rework_current.json"
+      ],
+      "name": "publication_gate"
+    }
+  ],
+  "generated_at_utc": "2026-07-13T08:51:22Z",
+  "results": [
+    {
+      "exit_code": 0,
+      "json": "",
+      "name": "packet_gate",
+      "stderr": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.needs_rework_current.stderr",
+      "stdout": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.needs_rework_current.stdout"
+    },
+    {
+      "exit_code": 1,
+      "json": "",
+      "name": "semantic_gate",
+      "stderr": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_gate.needs_rework_current.stderr",
+      "stdout": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_three_layer_gate.worker6.needs_rework_current.json"
+    },
+    {
+      "exit_code": 2,
+      "json": "",
+      "name": "publication_gate",
+      "stderr": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_gate.needs_rework_current.stderr",
+      "stdout": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_gate.needs_rework_current.stdout"
+    }
+  ],
+  "strict_no_allow_flags": true
+}

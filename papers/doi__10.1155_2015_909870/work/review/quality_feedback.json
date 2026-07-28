@@ -1,0 +1,57 @@
+{
+  "paper_id": "doi__10.1155_2015_909870",
+  "generated_at": "2026-05-03T05:34:16Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "open_rework_ticket_ids": [],
+  "review_status": "accepted_with_cautions",
+  "verification_status": "gates_passed_after_source_review",
+  "semantic_gate_report": "reports/doi__10.1155_2015_909870.semantic_gate.json",
+  "publication_quality_report": "reports/doi__10.1155_2015_909870.publication_quality.json",
+  "caution_findings": [
+    {
+      "caution_code": "database_target_strain_conflict_s_sanguis",
+      "affected_rows": [
+        "database:linked_assay_records.jsonl:row=2",
+        "database:linked_assay_records.jsonl:row=5",
+        "database:linked_assay_records.jsonl:row=8",
+        "database:linked_assay_records.jsonl:row=13",
+        "database:linked_experiment_records.jsonl:row=2",
+        "database:linked_experiment_records.jsonl:row=5",
+        "database:linked_experiment_records.jsonl:row=8",
+        "database:linked_experiment_records.jsonl:row=13"
+      ],
+      "evidence_context": "Primary paper labels the streptococcal target as S. sanguis 10556/ATCC10556, while linked DBAASP rows use Streptococcus sanguinis ATCC 10566; endpoint/value support is not normalized into a clean target match."
+    },
+    {
+      "caution_code": "database_mbec50_endpoint_not_in_primary_source",
+      "affected_rows": [
+        "database:linked_assay_records.jsonl:row=1",
+        "database:linked_experiment_records.jsonl:row=1"
+      ],
+      "evidence_context": "Primary results support Pac-525 biofilm activity at 0.5 mg/mL but do not state an MBEC50 endpoint; DBAASP MBEC50 label remains source_conflict."
+    },
+    {
+      "caution_code": "terminal_modifications_preserved_from_primary_source",
+      "evidence_context": "Primary sequences include Ac-/NH2 terminal annotations; database core sequence rows omit terminal annotations, so final review records modifications explicitly instead of silently normalizing them."
+    },
+    {
+      "caution_code": "no_table_2_3_or_supplement_assets_in_local_material",
+      "evidence_context": "Handoff requested Table 2/3 and supplement review, but reopened XML/PDF/OA package and supplementary indexes show one source table, six figures, and zero supplementary assets; this is not a remaining material blocker.",
+      "affected_layer": "material_packet_review"
+    },
+    {
+      "caution_code": "mechanism_not_overclaimed",
+      "evidence_context": "Biofilm killing/thickness reduction is source-supported; membrane/LPS language remains discussion-level inference rather than direct mechanism evidence.",
+      "affected_layer": "mechanism_ontology_record"
+    }
+  ],
+  "semantic_issue_count": 0,
+  "publication_risk_counts": {}
+}

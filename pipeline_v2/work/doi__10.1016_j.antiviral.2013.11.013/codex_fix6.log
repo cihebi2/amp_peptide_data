@@ -1,0 +1,604 @@
+OpenAI Codex v0.141.0
+--------
+workdir: /home/cihebi/抗菌肽/数据集/batch/5-team
+model: gpt-5.5
+provider: crs
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 019f045e-6017-7cb0-9235-8e728ff82501
+--------
+user
+
+You are a STRICT database-record auditor (pipeline v2). You compare what a peptide database ASSERTS
+against the PRIMARY PAPER's deterministically-parsed tables that are given to you below. You must not
+read raw XML or invent values: the ONLY admissible source evidence is the `longform_cells` provided.
+
+For EACH database assertion, output one JSON object with this exact schema:
+{
+ "assertion_index": <int, 0-based position in db_assertions>,
+ "db_claimed": {"organism": "...", "endpoint": "...", "value": "...", "peptide": "..."},
+ "verification_outcome": one of
+     "value_match"            (source has the SAME value for the same peptide+organism+endpoint),
+     "value_mismatch"         (source has a DIFFERENT value -> candidate real DB error),
+     "endpoint_mismatch"      (source reports this value under a DIFFERENT endpoint than the DB claims,
+                               e.g. DB says IC50 but the source column header says GI50/EC50/MBC),
+     "variant_misattribution" (the value EXISTS in source but belongs to a DIFFERENT peptide/variant
+                               than the DB row names),
+     "not_in_provided_tables" (the organism/target/value is NOT in the tables provided to you;
+                               this is NOT evidence of a database error -- the value may live in a
+                               figure, supplement, or a table not provided. Treat as undetermined.),
+     "cannot_determine"       (value lives only in a figure image, or no matching cell exists in the
+                               provided tables, or the table structure is too ambiguous to match),
+ "normalization_note": one of
+     "strain_id_differs_value_same", "modification_representation_only", "unit_differs", "none",
+ "is_database_error": <bool>,
+ "evidence": {"table_index": <int>, "row_label": "...", "col_header": "...", "source_value": "..."},
+ "short_reason": "<=200 chars"
+}
+
+HARD RULES (these encode the fixes over the old pipeline):
+1. GROUNDING: the `evidence` object MUST be copied verbatim from one of the provided `longform_cells`.
+   If no provided cell supports a comparison, you MUST return "cannot_determine" and leave evidence null.
+   Never guess a number that is not in the provided cells.
+2. ENDPOINT FROM SOURCE: take the endpoint from the table column header / caption / footnote, NOT from
+   the database. If the DB endpoint label differs from the source header for the same value -> endpoint_mismatch.
+3. STRAIN-ID NORMALIZATION: if the source has the SAME value for the same GENUS+SPECIES and SAME endpoint
+   but a different strain/collection id (e.g. DB "ATCC 6258" vs source "CCM 8271"; ATCC/CCM/PCM/DSM/KCTC/CGMCC),
+   this is NOT an error: verification_outcome="value_match", normalization_note="strain_id_differs_value_same",
+   is_database_error=false.
+4. MODIFICATION NORMALIZATION: a DB "core sequence" vs a source "core sequence + terminal -NH2 / N-acetyl"
+   is representation, not error: normalization_note="modification_representation_only", is_database_error=false
+   (unless the residue letters themselves differ).
+5. is_database_error=true ONLY for value_mismatch / endpoint_mismatch / variant_misattribution that
+   (a) are NOT explained by a normalization_note AND (b) carry a positive `evidence` cell copied from
+   longform_cells showing the CONFLICTING source value.
+5b. VARIANT MISATTRIBUTION needs an identity anchor: only use "variant_misattribution" when the DB
+   assertion provides a peptide name (db_claimed_peptide_name) that maps to a SPECIFIC source row/column.
+   If the DB record has no peptide name, or the source columns are coded (e.g. #1..#25) without a legend
+   you can resolve, you CANNOT know which variant the value belongs to -> use "cannot_determine".
+6. ABSENCE IS NOT ERROR (critical): you are given ONLY some tables, never the whole paper. If a DB
+   organism/target/value is not in the provided cells, you MUST return "not_in_provided_tables" with
+   is_database_error=false. NEVER conclude the database is wrong merely because something is missing
+   from the tables you were given -- it may be in a figure, supplement, or a table not provided.
+7. Output ONLY a JSON array of these objects as your final message. No prose, no markdown fences.
+
+
+=== PAPER ID ===
+doi__10.1016_j.antiviral.2013.11.013
+
+=== DETERMINISTICALLY PARSED SOURCE TABLES (admissible evidence cells) ===
+[{"table_index": 1, "label": "Table 1", "caption": "Pharmacological profiles of Hp1036 and Hp1239 peptides.", "footnotes": ["EC50 (50% effective concentration) value of HSV-1 was determined on Vero cells.", "CC50 (50% cytotoxic concentration) value of Vero cells was determined by MTT assay.", "HC50 (50% hemolysis concentration) value was determined as described above."], "header_rows": [["Peptide", "EC50 (μM)a in the following assay", "EC50 (μM)a in the following assay", "EC50 (μM)a in the following assay", "EC50 (μM)a in the following assay", "CC50 (μM)b", "HC50 (μM)c"], ["Viral inactivation", "Viral attachment", "Viral entry", "Postentry"]], "longform_cells": [{"table_index": 1, "row_index": 3, "col_index": 2, "row_label": "Hp1036", "col_header": "EC50 (μM)a in the following assay", "value": "0.43 ± 0.09"}, {"table_index": 1, "row_index": 3, "col_index": 3, "row_label": "Hp1036", "col_header": "EC50 (μM)a in the following assay", "value": "2.87 ± 0.16"}, {"table_index": 1, "row_index": 3, "col_index": 4, "row_label": "Hp1036", "col_header": "EC50 (μM)a in the following assay", "value": "4.29 ± 0.35"}, {"table_index": 1, "row_index": 3, "col_index": 5, "row_label": "Hp1036", "col_header": "EC50 (μM)a in the following assay", "value": "7.86 ± 0.80"}, {"table_index": 1, "row_index": 3, "col_index": 6, "row_label": "Hp1036", "col_header": "CC50 (μM)b", "value": "46.71 ± 3.80"}, {"table_index": 1, "row_index": 3, "col_index": 7, "row_label": "Hp1036", "col_header": "HC50 (μM)c", "value": "34.91 ± 0.47"}, {"table_index": 1, "row_index": 4, "col_index": 2, "row_label": "Hp1239", "col_header": "EC50 (μM)a in the following assay", "value": "0.41 ± 0.06"}, {"table_index": 1, "row_index": 4, "col_index": 3, "row_label": "Hp1239", "col_header": "EC50 (μM)a in the following assay", "value": "5.73 ± 0.61"}, {"table_index": 1, "row_index": 4, "col_index": 4, "row_label": "Hp1239", "col_header": "EC50 (μM)a in the following assay", "value": "4.32 ± 0.47"}, {"table_index": 1, "row_index": 4, "col_index": 5, "row_label": "Hp1239", "col_header": "EC50 (μM)a in the following assay", "value": "8.41 ± 0.73"}, {"table_index": 1, "row_index": 4, "col_index": 6, "row_label": "Hp1239", "col_header": "CC50 (μM)b", "value": "26.15 ± 1.91"}, {"table_index": 1, "row_index": 4, "col_index": 7, "row_label": "Hp1239", "col_header": "HC50 (μM)c", "value": "33.32 ± 0.96"}]}]
+
+=== DATABASE ASSERTIONS TO VERIFY ===
+[{"assertion_index": 0, "database": "DBAASP", "db_subject_text": "Vero cells", "db_measure": "IC50", "db_value": "46.71±3.80", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 1, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 I", "db_value": "0.43±0.09", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 2, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 E", "db_value": "4.29±0.35", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 3, "database": "DBAASP", "db_subject_text": "Vero cells", "db_measure": "IC50", "db_value": "26.15±1.91", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 4, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 I", "db_value": "0.41±0.06", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 5, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 E", "db_value": "4.32±0.47", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 6, "database": "DBAASP", "db_subject_text": "Vero cells", "db_measure": "IC50", "db_value": "46.71±3.80", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 7, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 I", "db_value": "0.43±0.09", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 8, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 E", "db_value": "4.29±0.35", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 9, "database": "DBAASP", "db_subject_text": "Vero cells", "db_measure": "IC50", "db_value": "26.15±1.91", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 10, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 I", "db_value": "0.41±0.06", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 11, "database": "DBAASP", "db_subject_text": "HSV-1", "db_measure": "IC50 E", "db_value": "4.32±0.47", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 12, "database": "dbAMP", "db_subject_text": "HSV-1 (IC50 I=0.43±0.09μM)\nHSV-1 (EC50=2.87±0.16μM)\nHSV-1 (IC50 E=4.29±0.35μM)\nHSV-1 (EC50=7.86±0.80μM)", "db_measure": "text", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}, {"assertion_index": 13, "database": "dbAMP", "db_subject_text": "HSV-1 (IC50 I=0.41±0.06μM)\nHSV-1 (EC50=5.73±0.61μM)\nHSV-1 (IC50 E=4.32±0.47μM)\nHSV-1 (EC50=8.41±0.73μM)", "db_measure": "text", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": ""}]
+
+Return ONLY the JSON array now (one object per assertion above).
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+warning: Under-development features enabled: child_agents_md. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /root/.codex/config.toml.
+hook: SessionStart
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+codex
+[
+  {
+    "assertion_index": 0,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "46.71±3.80",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "CC50 (μM)b",
+      "source_value": "46.71 ± 3.80"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 1,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.43±0.09",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.43 ± 0.09"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 2,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.29±0.35",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.29 ± 0.35"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 3,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "26.15±1.91",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "CC50 (μM)b",
+      "source_value": "26.15 ± 1.91"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 4,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.41±0.06",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.41 ± 0.06"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 5,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.32±0.47",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.32 ± 0.47"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 6,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "46.71±3.80",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "CC50 (μM)b",
+      "source_value": "46.71 ± 3.80"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 7,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.43±0.09",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.43 ± 0.09"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 8,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.29±0.35",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.29 ± 0.35"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 9,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "26.15±1.91",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "CC50 (μM)b",
+      "source_value": "26.15 ± 1.91"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 10,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.41±0.06",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.41 ± 0.06"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 11,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.32±0.47",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.32 ± 0.47"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 12,
+    "db_claimed": {
+      "organism": "HSV-1 (IC50 I=0.43±0.09μM)\nHSV-1 (EC50=2.87±0.16μM)\nHSV-1 (IC50 E=4.29±0.35μM)\nHSV-1 (EC50=7.86±0.80μM)",
+      "endpoint": "text",
+      "value": "",
+      "peptide": ""
+    },
+    "verification_outcome": "cannot_determine",
+    "normalization_note": "none",
+    "is_database_error": false,
+    "evidence": null,
+    "short_reason": "Text field contains multiple values and endpoints; no single provided cell supports the whole assertion."
+  },
+  {
+    "assertion_index": 13,
+    "db_claimed": {
+      "organism": "HSV-1 (IC50 I=0.41±0.06μM)\nHSV-1 (EC50=5.73±0.61μM)\nHSV-1 (IC50 E=4.32±0.47μM)\nHSV-1 (EC50=8.41±0.73μM)",
+      "endpoint": "text",
+      "value": "",
+      "peptide": ""
+    },
+    "verification_outcome": "cannot_determine",
+    "normalization_note": "none",
+    "is_database_error": false,
+    "evidence": null,
+    "short_reason": "Text field contains multiple values and endpoints; no single provided cell supports the whole assertion."
+  }
+]
+hook: Stop
+hook: Stop Completed
+tokens used
+12,937
+[
+  {
+    "assertion_index": 0,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "46.71±3.80",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "CC50 (μM)b",
+      "source_value": "46.71 ± 3.80"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 1,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.43±0.09",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.43 ± 0.09"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 2,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.29±0.35",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.29 ± 0.35"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 3,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "26.15±1.91",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "CC50 (μM)b",
+      "source_value": "26.15 ± 1.91"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 4,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.41±0.06",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.41 ± 0.06"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 5,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.32±0.47",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.32 ± 0.47"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 6,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "46.71±3.80",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "CC50 (μM)b",
+      "source_value": "46.71 ± 3.80"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 7,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.43±0.09",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.43 ± 0.09"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 8,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.29±0.35",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1036",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.29 ± 0.35"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 9,
+    "db_claimed": {
+      "organism": "Vero cells",
+      "endpoint": "IC50",
+      "value": "26.15±1.91",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "CC50 (μM)b",
+      "source_value": "26.15 ± 1.91"
+    },
+    "short_reason": "Same value is reported for Vero cells as CC50, not IC50."
+  },
+  {
+    "assertion_index": 10,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 I",
+      "value": "0.41±0.06",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "0.41 ± 0.06"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 I."
+  },
+  {
+    "assertion_index": 11,
+    "db_claimed": {
+      "organism": "HSV-1",
+      "endpoint": "IC50 E",
+      "value": "4.32±0.47",
+      "peptide": ""
+    },
+    "verification_outcome": "endpoint_mismatch",
+    "normalization_note": "none",
+    "is_database_error": true,
+    "evidence": {
+      "table_index": 1,
+      "row_label": "Hp1239",
+      "col_header": "EC50 (μM)a in the following assay",
+      "source_value": "4.32 ± 0.47"
+    },
+    "short_reason": "Same HSV-1 value is reported under EC50, not IC50 E."
+  },
+  {
+    "assertion_index": 12,
+    "db_claimed": {
+      "organism": "HSV-1 (IC50 I=0.43±0.09μM)\nHSV-1 (EC50=2.87±0.16μM)\nHSV-1 (IC50 E=4.29±0.35μM)\nHSV-1 (EC50=7.86±0.80μM)",
+      "endpoint": "text",
+      "value": "",
+      "peptide": ""
+    },
+    "verification_outcome": "cannot_determine",
+    "normalization_note": "none",
+    "is_database_error": false,
+    "evidence": null,
+    "short_reason": "Text field contains multiple values and endpoints; no single provided cell supports the whole assertion."
+  },
+  {
+    "assertion_index": 13,
+    "db_claimed": {
+      "organism": "HSV-1 (IC50 I=0.41±0.06μM)\nHSV-1 (EC50=5.73±0.61μM)\nHSV-1 (IC50 E=4.32±0.47μM)\nHSV-1 (EC50=8.41±0.73μM)",
+      "endpoint": "text",
+      "value": "",
+      "peptide": ""
+    },
+    "verification_outcome": "cannot_determine",
+    "normalization_note": "none",
+    "is_database_error": false,
+    "evidence": null,
+    "short_reason": "Text field contains multiple values and endpoints; no single provided cell supports the whole assertion."
+  }
+]

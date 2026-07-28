@@ -1,0 +1,80 @@
+{
+  "analysis_queue_status": "analysis_blocked_unrecoverable_material_gap",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 40,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 43,
+      "linked_literature_records": 3,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.1371/journal.pone.0098935",
+  "journal": "PLoS One",
+  "known_missing_or_blocked_materials": [
+    {
+      "gap_code": "figure_only_antibiofilm_percentages_not_locally_extractable",
+      "description": "DBAASP anti-biofilm rows contain exact percent-inhibition values for FV7/R-FV-I16, but the local XML/PDF text provides only qualitative Fig. 11/12 descriptions and no source table with those exact percentages.",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1371_journal.pone.0098935/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_status.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0098935/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935/asset_manifest.csv",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-009.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-010.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-011.jpg",
+        "/tmp/doi__10.1371_journal.pone.0098935_pdfimages/img-012.jpg"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF extracted text for Table 1/2/3/4, biofilm, inhibition, cytotoxicity, membrane terms",
+        "file on landed supplementary assets: all nine supplementary-labeled files are HTML landing/metadata pages",
+        "pdfinfo and pdfimages -list on paper.pdf",
+        "pdfimages -j to extract local PDF figure images into /tmp/doi__10.1371_journal.pone.0098935_pdfimages",
+        "tesseract probe: binary unavailable in PATH",
+        "/root/software/PaddleOCR/.venv/bin/python import paddleocr probe: module not installed"
+      ],
+      "why_unrecoverable": "The local XML/PDF text and extracted tables do not contain the exact anti-biofilm percentages; local supplementary-labeled files are publisher/metadata HTML pages rather than data supplements; figure images are present in the PDF, but local OCR tooling is unavailable and the prompt forbids fabricating exact graph-derived values.",
+      "impact": "Exact DBAASP anti-biofilm percentage annotations remain source_conflict/database-only with preserved context; the paper must remain non-publication-grade under obtainable-only mode.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": true,
+      "affected_records": [
+        "DBAASP:DBAASPS_9961 assay rows 916-919",
+        "DBAASP:DBAASPS_10047 assay rows 910-915"
+      ]
+    }
+  ],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.1371_journal.pone.0098935",
+  "pmcid": "PMC4063695",
+  "pmid": "24945359",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.pone.0098935/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0098935",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "Design of embedded-hybrid antimicrobial peptides with enhanced cell selectivity and anti-biofilm activity.",
+  "updated_at": "2026-05-06T00:08:40Z",
+  "year": "2014"
+}

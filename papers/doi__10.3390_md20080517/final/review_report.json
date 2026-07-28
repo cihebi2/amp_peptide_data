@@ -1,0 +1,131 @@
+{
+  "paper_id": "doi__10.3390_md20080517",
+  "reviewed_at": "2026-05-09T08:22:04Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": {
+      "path": "papers/doi__10.3390_md20080517/source/paper.xml",
+      "status": "inspected_directly_for_table1_sections_fig_captions_and_methods"
+    },
+    "paper_pdf": {
+      "path": "papers/doi__10.3390_md20080517/source/paper.pdf",
+      "status": "pdf_text_cross_checked_for_table1_results_in_vivo_and_methods"
+    },
+    "oa_package": {
+      "path": "paper_packets/doi__10.3390_md20080517/extracted/oa_package/local-DBAASP-PMC9410094/PMC9410094",
+      "status": "nxml_pdf_figures_and_supplement_zip_checked"
+    },
+    "supplementary_assets": {
+      "paths": [
+        "paper_packets/doi__10.3390_md20080517/extracted/oa_package/local-DBAASP-PMC9410094/PMC9410094/marinedrugs-20-00517-s001.zip",
+        "marinedrugs-1869413-supplementary.pdf inside marinedrugs-20-00517-s001.zip",
+        "/tmp/doi__10.3390_md20080517_supp/supp.txt"
+      ],
+      "status": "supplement_pdf_recovered_with_unzip_and_pdftotext; contains Figure S1 and Tables S1/S2, no additional activity/toxicity table"
+    },
+    "merged_database_rows": {
+      "paths": [
+        "paper_packets/doi__10.3390_md20080517/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_md20080517/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3390_md20080517/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3390_md20080517/database/linked_sequence_records.jsonl"
+      ],
+      "status": "linked DBAASP rows checked; no linked sequence rows present; activity rows linked to Figure 2/Table 1 where primary support exists"
+    },
+    "unavailable_materials": [],
+    "extraction_blockers": []
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md20080517/handoff_context.json",
+    "paper_packets/doi__10.3390_md20080517/packet_manifest.json",
+    "paper_packets/doi__10.3390_md20080517/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md20080517/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_md20080517/extracted/pdf_text/local-DBAASP-PMC9410094.txt",
+    "papers/doi__10.3390_md20080517/source/paper.xml",
+    "papers/doi__10.3390_md20080517/source/paper.pdf",
+    "paper_packets/doi__10.3390_md20080517/extracted/oa_package/local-DBAASP-PMC9410094/PMC9410094/marinedrugs-20-00517-g002.jpg",
+    "paper_packets/doi__10.3390_md20080517/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_md20080517/extracted/oa_package/local-DBAASP-PMC9410094/PMC9410094/marinedrugs-20-00517-s001.zip",
+    "/tmp/doi__10.3390_md20080517_supp/supp.txt",
+    "paper_packets/doi__10.3390_md20080517/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md20080517/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md20080517/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_md20080517/database/linked_sequence_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 241,
+    "activity_endpoint_counts": {
+      "MIC": 241
+    },
+    "figure2_mic_rows": 238,
+    "table1_fbs_rows": 3,
+    "database_record_audits": 414,
+    "database_status_summary": {
+      "database_only_no_primary_source": 12,
+      "source_conflict": 388,
+      "source_verified": 14
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "supplement_pdf_checked": true,
+    "database_conflicts_preserved_as_cautions": true
+  },
+  "per_layer_decision_rationale": {
+    "worker-2_activity": "Source-supported MIC rows were recovered from Figure 2 and Table 1. Table 1 FBS rows are explicit XML table values; Figure 2 MIC grid was manually source-reviewed from the local OA image.",
+    "worker-4_database": "DBAASP literature links match the paper metadata. Activity rows can be linked to primary Figure 2/Table 1 values, but exact sequence rows are absent from the linked database snapshot, so sequence-level rows remain source_conflict/database-only cautions rather than being promoted to source_verified.",
+    "worker-6_adjudication": "The earlier open ticket is resolved for the gate-blocking missing activity rows and generic review. Remaining limitations are preserved as caution findings and do not hide unsupported values.",
+    "mechanism": "Mechanism claims are bounded to direct ONPG membrane permeabilization, toxicity/selectivity assays, antibiofilm phenotype, and resistance phenotype; no unsupported protein-synthesis or quorum target is asserted."
+  },
+  "caution_findings": [
+    {
+      "code": "database_sequence_rows_absent",
+      "severity": "caution",
+      "finding": "linked_sequence_records.jsonl is empty; DBAASP sequence identity was not promoted to source_verified for assay rows even when the activity value was source-supported."
+    },
+    {
+      "code": "toxicity_exact_values_graph_only",
+      "severity": "caution",
+      "finding": "Figure 4 supports hemolysis/cytotoxicity assay context, but exact DBAASP threshold values are graph-derived and not represented as primary row-level activity/toxicity records."
+    },
+    {
+      "code": "supplement_no_activity_tables",
+      "severity": "caution",
+      "finding": "The recoverable supplementary PDF contains Figure S1 and Tables S1/S2, not additional activity/toxicity matrices."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "semantic_issue_count": 0,
+    "publication_risk_counts": {}
+  },
+  "adjudication_summary": "Source re-review recovered the missing Table 1/Figure 2 MIC evidence, preserved database identity cautions instead of over-verifying unsupported rows, and replaced automated mechanism placeholders with bounded source-reviewed claims. The paper is accepted with cautions, not clean acceptance.",
+  "gate_rerun_at": "2026-05-09T08:24:10Z",
+  "gate_results": {
+    "semantic_gate_report": "reports/doi__10.3390_md20080517.semantic_gate.json",
+    "semantic_gate_pass": true,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.3390_md20080517.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  }
+}

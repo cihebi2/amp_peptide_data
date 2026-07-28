@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "caution_findings": {
+      "type": "array"
+    },
+    "checked_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "final_decision": {
+      "enum": [
+        "accepted_clean",
+        "accepted_with_cautions",
+        "needs_targeted_rework",
+        "blocked_missing_primary_material",
+        "unverifiable_best_effort",
+        "deferred_not_safe_to_edit"
+      ]
+    },
+    "reasoning_effort": {
+      "const": "xhigh"
+    },
+    "review_model": {
+      "const": "gpt-5.5"
+    },
+    "rework_targets": {
+      "type": "array"
+    },
+    "sample_row_decisions": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "paper_id",
+    "review_sample_id",
+    "reviewed_at",
+    "review_model",
+    "reasoning_effort",
+    "final_decision",
+    "sample_row_decisions",
+    "material_review",
+    "worker6_adjudication",
+    "rework_targets",
+    "caution_findings",
+    "checked_inputs"
+  ],
+  "title": "Validation420PaperSourceReviewResult",
+  "type": "object"
+}

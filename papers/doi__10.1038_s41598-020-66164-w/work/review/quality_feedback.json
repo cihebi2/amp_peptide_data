@@ -1,0 +1,148 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T14:20:05Z"
+  },
+  "generated_at": "2026-05-03T14:16:50Z",
+  "issue_count": 1,
+  "paper_id": "doi__10.1038_s41598-020-66164-w",
+  "qc_failure_reasons": [
+    {
+      "code": "supplementary_docx_not_present_in_local_materials",
+      "owner_worker": "worker-3",
+      "reason": "Worker-4 database conflicts were source-reviewed, but the XML-declared supplementary DOCX is absent from all local paper material checked, so worker-6 cannot close the publication-grade source-exhaustion gate.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41598-020-66164-w/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "resolved_by_this_re_review": [
+    {
+      "code": "database_conflicts_require_adjudication",
+      "owner_worker": "worker-4 + worker-6",
+      "result": "Resolved as source_verified where supported and source_conflict where unsupported; no unresolved/database_only rows remain in the worker-4 audit."
+    },
+    {
+      "code": "full_source_review_not_completed",
+      "owner_worker": "worker-6",
+      "result": "Superseded by a narrower source-exhaustion blocker: missing XML-declared supplementary DOCX."
+    }
+  ],
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-020-66164-w/work/supplementary_methods/supplementary_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T14:16:50Z",
+      "failure_code": "supplementary_docx_not_present_in_local_materials",
+      "layer": "supplementary_material",
+      "omission_code": "supplementary_docx_not_present_in_local_materials",
+      "owner_worker": "worker-3",
+      "paper_id": "doi__10.1038_s41598-020-66164-w",
+      "requested_by": "codex_re_review_worker_4_6",
+      "required_action": "Acquire or prove unavailability of the XML-declared 41598_2020_66164_MOESM1_ESM.docx from paper-local/landed materials; if it remains absent, keep this paper blocked/unrecoverable instead of accepting from main-text evidence alone.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41598-020-66164-w/source/paper.xml",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/raw/supplementary_original/",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/metadata.json"
+      ],
+      "supersedes_ticket_id": "rwk-complete-test-0001",
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-local-material-gap-0002",
+      "unrecoverable_material_gap": {
+        "blocks_publication_grade": true,
+        "gap_code": "supplementary_docx_not_present_in_local_materials",
+        "impact": "Supplementary Tables 1-2 and any DOCX-only details cannot be source-reviewed from local material, so publication-grade review remains blocked even though main-text database reconciliation was repaired.",
+        "next_action": "record_and_continue",
+        "owner_worker": "worker-3",
+        "source_paths_checked": [
+          "papers/doi__10.1038_s41598-020-66164-w/source/paper.xml",
+          "paper_packets/doi__10.1038_s41598-020-66164-w/raw/supplementary_original/",
+          "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_text.jsonl",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/metadata.json"
+        ],
+        "tools_attempted": [
+          "XML media inspection",
+          "find for MOESM/docx/xlsx/pdf/zip/image assets under paper-local roots",
+          "file on packet supplementary symlinks and landed supplementary bins",
+          "rg over local supplementary HTML/bin assets",
+          "pdf text extraction review from existing packet text"
+        ],
+        "why_unrecoverable": "The primary XML references 41598_2020_66164_MOESM1_ESM.docx, but the local packet/landed/downloaded supplementary folders contain only Nature HTML landing-page .bin assets; no DOCX, OA package member, spreadsheet, or figure image file is locally present, and metadata records a failed remote OA package retrieval."
+      },
+      "worker": "worker-3"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplementary_docx_not_present_in_local_materials",
+      "impact": "Supplementary Tables 1-2 and any DOCX-only details cannot be source-reviewed from local material, so publication-grade review remains blocked even though main-text database reconciliation was repaired.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-3",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41598-020-66164-w/source/paper.xml",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/raw/supplementary_original/",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1038_s41598-020-66164-w/supplementary/",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w/metadata.json"
+      ],
+      "tools_attempted": [
+        "XML media inspection",
+        "find for MOESM/docx/xlsx/pdf/zip/image assets under paper-local roots",
+        "file on packet supplementary symlinks and landed supplementary bins",
+        "rg over local supplementary HTML/bin assets",
+        "pdf text extraction review from existing packet text"
+      ],
+      "why_unrecoverable": "The primary XML references 41598_2020_66164_MOESM1_ESM.docx, but the local packet/landed/downloaded supplementary folders contain only Nature HTML landing-page .bin assets; no DOCX, OA package member, spreadsheet, or figure image file is locally present, and metadata records a failed remote OA package retrieval."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-66164-w",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/database",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/extracted",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/locators",
+        "paper_packets/doi__10.1038_s41598-020-66164-w/raw",
+        "papers/doi__10.1038_s41598-020-66164-w/final",
+        "papers/doi__10.1038_s41598-020-66164-w/source",
+        "papers/doi__10.1038_s41598-020-66164-w/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

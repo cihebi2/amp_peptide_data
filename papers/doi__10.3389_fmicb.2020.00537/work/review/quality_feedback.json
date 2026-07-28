@@ -1,0 +1,66 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2020.00537",
+  "generated_at": "2026-05-06T22:16:29Z",
+  "status": "qc_passed_after_worker2_worker4_worker6_repair",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "publication_grade_ready": true,
+  "semantic_gate_ready": true,
+  "validator_contract_ready": true,
+  "open_rework_tickets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_only_exact_toxicity_values_not_recoverable",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00537/xml/local-DBAASP-PMC7160233.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00537/pdf/landing-1.pdf",
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/figure_captions.json",
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00537/supplementary/landing-1.bin"
+      ],
+      "tools_attempted": [
+        "rg hemolysis/HEK/RAW/cytotoxicity over XML and PDF text",
+        "pdfimages -list",
+        "file supplementary/*.bin",
+        "supplementary HTML text inspection"
+      ],
+      "why_unrecoverable": "Local XML/PDF text and Frontiers HTML assets expose Figure 1A/caption and qualitative toxicity statements but no numeric source table for per-peptide hemolysis/HEK/RAW plot values; exact plot digitization was not used as a fabricated numeric source.",
+      "impact": "Exact database toxicity percentages remain source_conflict; source-supported qualitative toxicity statements are retained and do not block MIC/activity publication-grade curation.",
+      "owner_worker": "worker-2 + worker-4 + worker-6",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "no_distinct_structured_supplement_available_locally",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2020.00537/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00537/supplementary/landing-1.bin"
+      ],
+      "tools_attempted": [
+        "file supplementary/*.bin",
+        "HTML/rg inspection",
+        "supplementary_tables.json inspection"
+      ],
+      "why_unrecoverable": "All ten local supplementary .bin assets are duplicate Frontiers article HTML captures; packet supplementary table count is zero and PMC XML metadata reports no true supplement.",
+      "impact": "No additional activity/toxicity/mechanism values can be recovered from local supplementary material; Table 1-3 XML/PDF evidence remains the primary source surface.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "gate_evidence": {
+    "semantic_report": "reports/doi__10.3389_fmicb.2020.00537.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3389_fmicb.2020.00537.publication_quality.json",
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "semantic_returncode": 0,
+    "publication_returncode": 0,
+    "semantic_issue_count": 0,
+    "publication_risk_counts": {}
+  }
+}

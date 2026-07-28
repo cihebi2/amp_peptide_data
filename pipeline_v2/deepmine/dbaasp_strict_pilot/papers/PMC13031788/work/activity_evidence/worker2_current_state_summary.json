@@ -1,0 +1,354 @@
+{
+  "paper_id": "PMC13031788",
+  "generated_at": "2026-07-11T12:40:40.625549+00:00",
+  "paths": {
+    "packet_root": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788",
+    "paper_root": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788"
+  },
+  "packet_manifest.json": {
+    "exists": true,
+    "type": "dict",
+    "keys": [
+      "analysis_queue_status",
+      "database_snapshot_inputs",
+      "generated_at",
+      "known_missing_or_blocked_materials",
+      "locator_count",
+      "locator_index_path",
+      "material_queue_status",
+      "metadata",
+      "open_rework_ticket_ids",
+      "packet_root",
+      "packet_version",
+      "paper_id",
+      "paper_root",
+      "source_root",
+      "staged_files",
+      "strict_boundary",
+      "updated_at"
+    ],
+    "material_queue_status": "material_extracted_complete",
+    "analysis_queue_status": "analysis_needs_material_rework",
+    "open_rework_ticket_ids": [
+      "rwk-PMC13031788-semantic-002"
+    ],
+    "locator_count": 187
+  },
+  "database/database_source_manifest.json": {
+    "exists": true,
+    "type": "dict",
+    "keys": [
+      "authoritative_match_report",
+      "generated_at",
+      "identifiers",
+      "input_artifacts",
+      "paper_id",
+      "row_counts",
+      "source",
+      "source_record_links_present",
+      "strict_interpretation"
+    ],
+    "row_counts": {
+      "dbaasp_machine_extracted_rows": 35,
+      "dbaasp_review_queue_rows": 0,
+      "dbaasp_empty_done_rows": 0,
+      "codex_exec_sessions": 0,
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_sequence_records": 0,
+      "linked_literature_records": 0
+    },
+    "source_record_links_present": false,
+    "strict_interpretation": "machine rows are candidate evidence only; worker-4/6 must source-review before any source_verified or release/portal ingest claim"
+  },
+  "database/authoritative_match_report.json": {
+    "exists": true,
+    "type": "dict",
+    "keys": [
+      "generated_at",
+      "input_path_exists",
+      "input_paths",
+      "match_terms",
+      "paper_id",
+      "row_counts",
+      "source_record_links_present",
+      "strict_interpretation"
+    ],
+    "row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_sequence_records": 0,
+      "linked_literature_records": 0
+    },
+    "source_record_links_present": false,
+    "strict_interpretation": "zero linked rows means the local authoritative indexes were checked and did not contain a stable DBAASP/merged link for this paper; Codex fallback rows remain machine candidates only."
+  },
+  "analysis/activity_safe_candidate_handoff.json": {
+    "exists": true,
+    "type": "dict",
+    "keys": [
+      "artifact_role",
+      "counts",
+      "deterministic_table_candidate_rows",
+      "excluded_non_activity_table_entries",
+      "generated_at",
+      "machine_candidate_rows",
+      "paper_id",
+      "safety_boundary",
+      "source_files",
+      "source_locator_groups",
+      "worker2_instructions"
+    ],
+    "counts": {
+      "deterministic_table_candidate_rows": 0,
+      "excluded_non_activity_table_entries": 0,
+      "activity_table_locator_candidates": 2,
+      "toxicity_locator_candidates": 0,
+      "machine_candidate_rows": 35,
+      "machine_duplicate_candidate_rows": 0
+    },
+    "source_locator_groups_keys": [
+      "activity_table_locator_candidates",
+      "hemolysis_locator_candidates",
+      "mic_method_locator_candidates",
+      "table_1_mic_fraction_rows",
+      "table_2_mic_peptide_rows",
+      "toxicity_locator_candidates"
+    ],
+    "machine_candidate_rows_len": 35,
+    "deterministic_table_candidate_rows_len": 0,
+    "excluded_non_activity_table_entries_len": 0
+  },
+  "rework/rework_requests.jsonl": {
+    "row_count": 4,
+    "rows": [
+      {
+        "line": 1,
+        "ticket_id": "rwk-PMC13031788-w6-001",
+        "paper_id": "PMC13031788",
+        "target_queue": "analysis",
+        "target_worker": "worker-2",
+        "layer": null,
+        "severity": "blocking",
+        "status": null,
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": [
+          "activity_toxicity_evidence",
+          "review_report",
+          "publication_grade_acceptance"
+        ],
+        "requested_outputs_count": 1,
+        "responds_to": "rwk-PMC13031788-w6-001",
+        "analysis_can_resume": null,
+        "closed": null
+      },
+      {
+        "line": 2,
+        "ticket_id": "rwk-PMC13031788-w6-002",
+        "paper_id": "PMC13031788",
+        "target_queue": "material_extraction",
+        "target_worker": "worker-1",
+        "layer": null,
+        "severity": "blocking",
+        "status": null,
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": [
+          "database_record_verification",
+          "authoritative_dbaasp_ingest",
+          "review_report",
+          "publication_grade_acceptance"
+        ],
+        "requested_outputs_count": 1,
+        "responds_to": "rwk-PMC13031788-w6-002",
+        "analysis_can_resume": null,
+        "closed": null
+      },
+      {
+        "line": 3,
+        "ticket_id": "rwk-PMC13031788-semantic-001",
+        "paper_id": "PMC13031788",
+        "target_queue": "analysis",
+        "target_worker": "worker-2",
+        "layer": null,
+        "severity": "blocking",
+        "status": null,
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": [
+          "activity_toxicity_evidence",
+          "review_report",
+          "publication_grade_acceptance"
+        ],
+        "requested_outputs_count": 1,
+        "responds_to": "rwk-PMC13031788-semantic-001",
+        "analysis_can_resume": null,
+        "closed": null
+      },
+      {
+        "line": 4,
+        "ticket_id": "rwk-PMC13031788-semantic-002",
+        "paper_id": "PMC13031788",
+        "target_queue": "analysis",
+        "target_worker": "worker-2",
+        "layer": null,
+        "severity": "blocking",
+        "status": null,
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": [
+          "activity_toxicity_evidence",
+          "review_report",
+          "publication_grade_acceptance"
+        ],
+        "requested_outputs_count": 1,
+        "responds_to": "rwk-PMC13031788-semantic-002",
+        "analysis_can_resume": null,
+        "closed": null
+      }
+    ]
+  },
+  "rework/rework_responses.jsonl": {
+    "row_count": 3,
+    "rows": [
+      {
+        "line": 1,
+        "ticket_id": "rwk-PMC13031788-w6-002",
+        "paper_id": "PMC13031788",
+        "target_queue": "material_extraction",
+        "target_worker": "worker-1",
+        "layer": null,
+        "severity": null,
+        "status": "closed_no_match",
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": null,
+        "requested_outputs_count": 0,
+        "responds_to": "rwk-PMC13031788-w6-002",
+        "analysis_can_resume": true,
+        "closed": null
+      },
+      {
+        "line": 2,
+        "ticket_id": "rwk-PMC13031788-w6-001",
+        "paper_id": "PMC13031788",
+        "target_queue": null,
+        "target_worker": null,
+        "layer": null,
+        "severity": null,
+        "status": "closed_repaired",
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": null,
+        "requested_outputs_count": 0,
+        "responds_to": "rwk-PMC13031788-w6-001",
+        "analysis_can_resume": true,
+        "closed": null
+      },
+      {
+        "line": 3,
+        "ticket_id": "rwk-PMC13031788-semantic-001",
+        "paper_id": "PMC13031788",
+        "target_queue": null,
+        "target_worker": null,
+        "layer": null,
+        "severity": null,
+        "status": "closed_repaired",
+        "failure_code": null,
+        "artifact_path": null,
+        "blocks": null,
+        "requested_outputs_count": 0,
+        "responds_to": "rwk-PMC13031788-semantic-001",
+        "analysis_can_resume": true,
+        "closed": null
+      }
+    ]
+  },
+  "work/activity_evidence/activity_records.json": {
+    "exists": true,
+    "top_type": "dict",
+    "keys": [
+      "activity_records",
+      "artifact_role",
+      "database_provenance_boundary",
+      "generated_at",
+      "lane_scope",
+      "machine_extraction_boundary",
+      "needs_targeted_rework",
+      "paper_id",
+      "protocol",
+      "publication_grade_claim",
+      "quality_checks",
+      "source_review_provenance",
+      "source_review_status",
+      "source_reviewed_complete",
+      "summary_counts",
+      "toxicity_records",
+      "toxicity_review",
+      "unresolved_blockers",
+      "worker"
+    ],
+    "activity_records_type": "list",
+    "activity_records_len": 14,
+    "toxicity_records_type": "list",
+    "toxicity_records_len": 0,
+    "source_review_provenance_type": "dict",
+    "source_review_provenance_keys": [
+      "checked_inputs",
+      "safe_handoff_activity_locator_candidates",
+      "source_review_boundary",
+      "source_tables_checked",
+      "toxicity_scan_artifact"
+    ]
+  },
+  "final/activity_toxicity_evidence.json": {
+    "exists": true,
+    "top_type": "dict",
+    "keys": [
+      "activity_records",
+      "artifact_role",
+      "authoritative_dbaasp_ingest_ready",
+      "database_provenance_boundary",
+      "finalized_at",
+      "finalized_by_worker",
+      "generated_at",
+      "lane_scope",
+      "machine_extraction_boundary",
+      "mirrors_work_artifact",
+      "needs_targeted_rework",
+      "paper_id",
+      "protocol",
+      "publication_grade",
+      "publication_grade_claim",
+      "quality_checks",
+      "review_status",
+      "rework_targets",
+      "safe_candidate_handoff_counts",
+      "source_review_provenance",
+      "source_review_status",
+      "source_reviewed",
+      "source_reviewed_complete",
+      "summary_counts",
+      "toxicity_records",
+      "toxicity_review",
+      "unresolved_blockers",
+      "validator_contract_passed",
+      "worker",
+      "worker6_decision",
+      "worker6_rejected_activity_rows"
+    ],
+    "activity_records_type": "list",
+    "activity_records_len": 14,
+    "toxicity_records_type": "list",
+    "toxicity_records_len": 0,
+    "source_review_provenance_type": "dict",
+    "source_review_provenance_keys": [
+      "checked_inputs",
+      "safe_handoff_activity_locator_candidates",
+      "source_review_boundary",
+      "source_tables_checked",
+      "toxicity_scan_artifact"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "adjudication_summary": "Worker-6 re-review resolved rwk-complete-test-0001 for the owned layers. Primary XML/PDF/Fig. 5 and linked DBAASP rows now support source-located activity rows; the DBAASP literature link is verified; the DBAASP peptide sequence conflict is preserved as a caution instead of being smoothed. No open rework target remains for worker-2, worker-4, or worker-6.",
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_sequence_source_conflict",
+      "evidence_context": "Primary paper core peptide for archalan alpha is GCGFTCSPFSSW, while merged DBAASP sequence DBAASPR_22068 is GCGFTCSPFSTF. Database activity rows remain usable only with this sequence conflict preserved."
+    },
+    {
+      "caution_code": "figure_derived_activity_values",
+      "evidence_context": "Percent inhibition values for Fig. 5a are figure/database-supported approximations; exact primary numeric table values were not locally available."
+    },
+    {
+      "caution_code": "true_supplement_pdf_not_local",
+      "evidence_context": "XML declares 40168_2023_1521_MOESM1_ESM.pdf, but local landed assets contain HTML landing .bin files rather than the true supplement PDF. Main XML/PDF/Fig. 5/methods provided the activity and database evidence needed for the owned-layer repair."
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism",
+      "evidence_context": "The paper supports phenotypic anti-archaeal inhibition and ecological antagonism context, but no direct molecular target or killing-mechanism assay is claimed."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s40168-023-01521-1/handoff_context.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/packet_manifest.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s40168-023-01521-1/database/linked_literature_records.jsonl",
+    "papers/doi__10.1186_s40168-023-01521-1/source/paper.xml",
+    "papers/doi__10.1186_s40168-023-01521-1/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true,
+    "unavailable_sources": [
+      {
+        "impact": "nonblocking for the repaired owner layers because primary XML/PDF/Fig. 5/methods and linked DBAASP rows support the activity/database adjudication",
+        "locator": "40168_2023_1521_MOESM1_ESM.pdf",
+        "reason": "declared by XML but not present in local landed/downloaded packet paths; local supplementary .bin files are HTML landing pages"
+      }
+    ]
+  },
+  "paper_id": "doi__10.1186_s40168-023-01521-1",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature row is source_verified by DOI/PMID/PMCID. DBAASP sequence and all linked assay rows remain source_conflict because DBAASPR_22068 sequence GCGFTCSPFSTF conflicts with primary GCGFTCSPFSSW; activity values are retained with explicit database/figure provenance.",
+    "layer_2_activity_toxicity": "Eleven source-located rows were recovered from Fig. 5, activity text, methods, and linked DBAASP rows. MIC/IC50 rows retain units; percent-inhibition rows are marked figure/database-derived and not over-normalized.",
+    "layer_3_mechanism": "Final mechanism language is bounded to phenotypic anti-archaeal inhibition, ecological antagonism context, and structure identity; no direct molecular mechanism is promoted."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T06:35:44Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 11,
+    "database_status_summary": {
+      "source_conflict": 12,
+      "source_verified": 1
+    },
+    "mechanism_claims": 2,
+    "open_rework_ticket_ids": [],
+    "supplementary_pdf_unavailable_nonblocking": true
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_ticket_ids": [],
+    "required_rework_count": 0
+  },
+  "summary": "Source-reviewed rework repaired the missing activity rows and database conflict adjudication while preserving caution labels for database sequence conflict, figure-derived values, unavailable true supplement PDF, and absence of direct mechanism.",
+  "validator_contract_passed": true
+}

@@ -1,0 +1,105 @@
+{
+  "summary_counts": {
+    "activity_records": 38,
+    "toxicity_records": 0,
+    "source_tables_checked": 2,
+    "activity_tables_accepted": 1,
+    "activity_tables_excluded": 1,
+    "safe_handoff_machine_candidate_rows": 35,
+    "toxicity_keyword_count": 0,
+    "toxicity_percent_surface_count": 49,
+    "table5_log_cfu_ml_observations": 24,
+    "machine_candidate_rows_preserved_as_candidates_only": 35
+  },
+  "quality_checks": {
+    "activity_field_validation": {
+      "required_fields_checked": [
+        "endpoint",
+        "raw_value",
+        "raw_unit_or_rationale",
+        "target.species",
+        "assay_conditions",
+        "evidence_ladder",
+        "source_locator"
+      ],
+      "record_count": 14,
+      "all_records_have_endpoint": true,
+      "all_records_have_raw_value": true,
+      "all_records_have_raw_unit_or_rationale": true,
+      "all_records_have_target_species": true,
+      "all_records_have_source_locator": true
+    },
+    "normalization_policy": "no concentration-to-molar conversion attempted; inhibition-zone values retained in source table unit",
+    "semantic_gate_relevant_activity_checks": {
+      "generic_endpoint_rows": 0,
+      "mic_like_missing_unit_rows": 0,
+      "missing_target_species_rows": 0,
+      "missing_source_locator_rows": 0,
+      "database_only_primary_rows": 0,
+      "non_activity_source_tables_excluded": [
+        "xml:table-wrap:5"
+      ]
+    },
+    "table5_missing_activity_table_coverage": "repaired",
+    "table5_expected_observations": 24,
+    "table5_emitted_observations": 24,
+    "sentence_fragment_target_check": "pending_validation",
+    "mic_like_missing_unit_check": "pending_validation",
+    "database_only_primary_evidence_check": "pending_validation",
+    "toxicity_material_surface_exclusion_check": "passed_worker2_source_review"
+  },
+  "source_review_provenance": {
+    "checked_inputs": [
+      "packets/PMC13031788/analysis/activity_safe_candidate_handoff.json",
+      "packets/PMC13031788/raw/paper.xml",
+      "packets/PMC13031788/extracted/xml_sections.json",
+      "packets/PMC13031788/extracted/pdf_tables.json",
+      "packets/PMC13031788/extracted/pdf_text.jsonl",
+      "packets/PMC13031788/extracted/supplementary_index.json",
+      "packets/PMC13031788/extracted/supplementary_text.jsonl",
+      "packets/PMC13031788/database/dbaasp_machine_extracted_rows.jsonl",
+      "packets/PMC13031788/database/authoritative_match_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/analysis/activity_safe_candidate_handoff.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/xml_sections.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/raw/paper.xml",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/pdf_text.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/supplementary_index.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/supplementary_text.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/database/dbaasp_machine_extracted_rows.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/database/authoritative_match_report.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/rework/rework_requests.jsonl",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/rework/rework_responses.jsonl"
+    ],
+    "safe_handoff_activity_locator_candidates": [
+      "xml:table-wrap:4",
+      "xml:table-wrap:5"
+    ],
+    "source_tables_checked": [
+      "{\"accepted_for_activity_rows\": true, \"column_counts\": [3], \"endpoint_supported\": true, \"exclusion_reason\": null, \"locator\": \"xml:table-wrap:4\", \"row_count\": 9, \"target_column_count\": 2, \"target_supported\": true, \"unit_supported\": true}",
+      "{\"accepted_for_activity_rows\": false, \"column_counts\": [7], \"endpoint_supported\": false, \"exclusion_reason\": \"no endpoint-specific biological activity target/unit could be derived from the source table caption/header; rows excluded rather than relabeled\", \"locator\": \"xml:table-wrap:5\", \"row_count\": 6, \"target_supported\": false, \"unit_supported\": false}",
+      "xml:table-wrap:4",
+      "xml:table-wrap:5"
+    ],
+    "toxicity_scan_artifact": "papers/PMC13031788/work/activity_evidence/toxicity_bounded_scan.worker2.json",
+    "source_review_boundary": "Paper-local packet XML/PDF/supplement/database rows only; DBAASP fallback rows candidate-only.",
+    "worker2_repair_ticket": "rwk-PMC13031788-semantic-002",
+    "table5_private_extraction_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/activity_evidence/table5_structured_extraction.worker2.private.json",
+    "table5_summary_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/activity_evidence/table5_structured_extraction_summary.worker2.json"
+  },
+  "toxicity_review": {
+    "toxicity_records_count": 0,
+    "source_review_status": "no_source_located_biological_toxicity_rows_found_in_worker2_scope",
+    "checked_locator_groups": [
+      "toxicity_locator_candidates",
+      "hemolysis_locator_candidates",
+      "xml:sec:24",
+      "xml:p:42",
+      "xml:fig:6"
+    ],
+    "durable_gap_evidence": "Matched percentage-rich surfaces in the worker-2 scope were material-science measurements, not row-level biological toxicity endpoints.",
+    "analysis_can_resume": true,
+    "notes": [
+      "No toxicity rows were emitted from formulation/composition, spectroscopy, TGA/thermal, contact-angle, tensile/mechanical, or reference columns."
+    ]
+  }
+}

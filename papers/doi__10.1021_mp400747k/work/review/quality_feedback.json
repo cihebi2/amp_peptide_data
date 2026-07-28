@@ -1,0 +1,78 @@
+{
+  "paper_id": "doi__10.1021_mp400747k",
+  "generated_at": "2026-05-02T09:19:25Z",
+  "reviewed_at": "2026-05-02T09:19:25Z",
+  "issue_count": 0,
+  "status": "source_reviewed_accepted_with_cautions",
+  "obtainable_only_mode": true,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "caution_findings": [
+    {
+      "caution_code": "database_activity_label_source_conflict",
+      "evidence_context": "DRAMP labels all seven constructs Antimicrobial/Anticancer, but the local primary paper reports CPP uptake/surface-binding and CD data only. Final database status preserves source_conflict for the broad database activity label."
+    },
+    {
+      "caution_code": "activity_scope_non_antimicrobial",
+      "evidence_context": "Recovered activity records are HeLa cell uptake/surface-binding ratios from Table 2, not MIC/MBC/hemolysis/cytotoxicity rows."
+    },
+    {
+      "caution_code": "figure_exact_values_not_digitized",
+      "evidence_context": "Figure-only exact plotted values were not fabricated; Table 2 ratios and qualitative figure conclusions were retained as the locally controllable evidence."
+    }
+  ],
+  "source_exhaustion_status": {
+    "paper_xml": "checked",
+    "paper_pdf": "checked",
+    "oa_package": "checked",
+    "supplementary_assets": "absent_after_inventory",
+    "linked_database_rows": "checked",
+    "merged_database_rows": "checked"
+  },
+  "bounded_rework_result": {
+    "status": "resolved_accepted_with_cautions",
+    "closed_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "repair_summary": [
+      "Recovered 16 Table 2 HeLa uptake/surface-binding ratio records.",
+      "Replaced scaffold database audit with seven source-reviewed DRAMP source_conflict records preserving unsupported broad activity labels.",
+      "Replaced automated mechanism keyword notes with bounded source-reviewed CPP pH-sensitivity/CD claims.",
+      "No blocking or major QC issue remains; no paper acceptance is based on database-only activity annotations."
+    ]
+  },
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_only_exact_uptake_binding_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1021_mp400747k/raw/paper.xml",
+        "paper_packets/doi__10.1021_mp400747k/raw/paper.pdf",
+        "paper_packets/doi__10.1021_mp400747k/extracted/pdf_text/local-DRAMP-24697211.txt",
+        "paper_packets/doi__10.1021_mp400747k/extracted/pdf_text/mp400747k.txt",
+        "paper_packets/doi__10.1021_mp400747k/extracted/figure_captions.json",
+        "paper_packets/doi__10.1021_mp400747k/extracted/oa_package/local-DRAMP-24697211/PMC4012841/mp-2013-00747k_0002.jpg",
+        "paper_packets/doi__10.1021_mp400747k/extracted/oa_package/local-DRAMP-24697211/PMC4012841/mp-2013-00747k_0003.jpg",
+        "paper_packets/doi__10.1021_mp400747k/extracted/oa_package/local-DRAMP-24697211/PMC4012841/mp-2013-00747k_0009.jpg",
+        "paper_packets/doi__10.1021_mp400747k/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1021_mp400747k/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "jq JSON inspection of handoff, packet, final, and QC artifacts",
+        "xml.etree.ElementTree table and figure href extraction from paper.xml",
+        "rg over XML/PDF text/database snapshots and merged output for activity, toxicity, sequence, and DRAMP IDs",
+        "pdftotext -layout review of primary PDF text",
+        "tar -tzf OA package member listing",
+        "file inspection of PDF/XML/archive and source figure assets"
+      ],
+      "why_unrecoverable": "Figures 2, 5, and 6 provide plotted mean/SD uptake and surface-binding values, but the local XML/PDF/OA package contains no machine-readable source data table for exact graph point or bar heights beyond Table 2 ratios. Exact graph values were not fabricated or digitized heuristically.",
+      "impact": "Nonblocking for this owner repair: Table 2 supplies source-supported ratio values needed to clear the missing activity-row gate, and the unsupported DRAMP antimicrobial/anticancer labels are handled as database source_conflict rather than graph-derived activity records.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

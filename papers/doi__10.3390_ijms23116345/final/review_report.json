@@ -1,0 +1,90 @@
+{
+  "paper_id": "doi__10.3390_ijms23116345",
+  "reviewed_at": "2026-05-08T16:13:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets_absent_no_supplement_declared",
+    "merged_database_rows"
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms23116345/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms23116345/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms23116345/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms23116345/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms23116345/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_ijms23116345/source/paper.xml",
+    "papers/doi__10.3390_ijms23116345/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms23116345/extracted/pdf_text/ijms-23-06345.txt",
+    "paper_packets/doi__10.3390_ijms23116345/extracted/pdf_text/local-DBAASP-PMC9181532.txt",
+    "paper_packets/doi__10.3390_ijms23116345/extracted/oa_package/local-DBAASP-PMC9181532/PMC9181532/ijms-23-06345.nxml",
+    "paper_packets/doi__10.3390_ijms23116345/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms23116345/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms23116345/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms23116345/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms23116345/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "PMC/packet metadata report no supplementary files; XML/PDF/OA package figures/tables and linked DBAASP rows were sufficient for obtainable-only adjudication."
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-2 recovered the previously missing Table 3 sorbitol MIC matrix from local XML and rebuilt activity rows with units, fungal targets, controls, and locators. Worker-4 preserved DBAASP sequence identity as database-only because the paper names Temporin G but does not embed the exact sequence. Worker-6 source-reviewed the final activity, database, and mechanism layers and accepts the paper with explicit cautions, not clean acceptance.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 130,
+    "table3_repaired": true,
+    "database_record_audits": 47,
+    "database_status_summary": {
+      "database_only_no_primary_source": 47
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP-linked rows are traceable to local packet database files and DOI/PMID. Exact sequence identity for DBAASP:DBAASPR_16137 is not in the primary article, so records remain database_only_no_primary_source with source-supported activity/citation context where available.",
+    "layer_2_activity_toxicity": "Tables 1, 2, and 3 were re-opened from paper.xml. Table footnotes provide µM units and replicate/statistical context. Table 3 is now represented as target/entity/value rows instead of a parser gap.",
+    "layer_3_mechanism": "Membrane perturbation is accepted as direct assay evidence; ergosterol binding and cell-wall synthesis are negative/unsupported mechanisms; biofilm and morphogenesis effects remain phenotype-level activity claims.",
+    "adjudication": "Open ticket rwk-complete-test-0001 is resolvable because all local recoverable values needed by worker-2/4/6 were checked and no blocking material gap remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_identity_database_only",
+      "evidence_context": "Local primary article supports the Temporin G name and activity tables but not the exact DBAASP sequence/modification identity; database sequence is retained from merged all_sequences.csv."
+    },
+    {
+      "caution_code": "no_supplementary_assets_present",
+      "evidence_context": "Packet/PMC metadata and supplementary index report zero supplementary assets; no external supplement was chased."
+    },
+    {
+      "caution_code": "figure_exact_values_not_inferred",
+      "evidence_context": "Figure/prose phenotype values are kept as approximate source-reported values where text gives approximations; exact graph-derived values were not fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "open_rework_ticket_ids": [],
+    "publication_grade_ready": true,
+    "semantic_gate_ready": true,
+    "publication_quality_ready": true,
+    "semantic_issue_count": 0,
+    "publication_risk_counts": {},
+    "semantic_report": "reports/doi__10.3390_ijms23116345.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_ijms23116345.publication_quality.json",
+    "verified_at": "2026-05-08T16:15:40Z"
+  }
+}

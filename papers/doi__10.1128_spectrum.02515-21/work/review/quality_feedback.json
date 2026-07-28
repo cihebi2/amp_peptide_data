@@ -1,0 +1,45 @@
+{
+  "paper_id": "doi__10.1128_spectrum.02515-21",
+  "generated_at": "2026-05-03T18:40:17Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "publication_grade_ready": true,
+  "validator_contract_ready": true,
+  "semantic_gate_expected": "pass_after_worker2_worker4_worker6_source_review",
+  "nonblocking_caution_findings": [
+    {
+      "code": "database_exact_sequence_database_only",
+      "owner_worker": "worker-4",
+      "severity": "caution",
+      "reason": "Exact sequence strings are retained from merged DBAASP sequence catalog because local article text exposes peptide names/protein sources but not machine-readable sequence strings."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_primary_sequence_strings_not_machine_readable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1128_spectrum.02515-21/raw/paper.xml",
+        "paper_packets/doi__10.1128_spectrum.02515-21/extracted/pdf_text/spectrum.02515-21.txt",
+        "paper_packets/doi__10.1128_spectrum.02515-21/extracted/supplementary_text/spectrum.02515-21-s001.txt",
+        "paper_packets/doi__10.1128_spectrum.02515-21/extracted/oa_package/local-DBAASP-PMC9241943/PMC9241943/spectrum.02515-21-f002.jpg",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "xml table/caption parse",
+        "pdftotext output review",
+        "rg over XML/PDF/supplement/database text",
+        "OA package image inventory",
+        "tesseract availability check",
+        "PaddleOCR import check"
+      ],
+      "why_unrecoverable": "The local XML/PDF text and supplementary text do not expose exact peptide sequence strings; the alignment is present only as an OA raster figure, and no working local OCR surface was available in this session. The merged DBAASP sequence catalog was therefore preserved as database-only exact-sequence evidence.",
+      "impact": "Exact sequence strings are not promoted to source_verified. Activity/toxicity values, peptide names, article citation, and database assay rows are source-reviewed from XML/PDF/figures/database rows, so this is retained as a nonblocking caution.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false
+    }
+  ]
+}

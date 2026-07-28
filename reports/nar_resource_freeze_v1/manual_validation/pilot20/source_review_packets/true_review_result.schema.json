@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audit_record_id": {
+      "type": "string"
+    },
+    "best_effort_limits": {
+      "type": "array"
+    },
+    "caution_findings": {
+      "type": "array"
+    },
+    "checked_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "decision": {
+      "enum": [
+        "pass_source_review",
+        "accepted_with_cautions_confirmed",
+        "needs_targeted_rework",
+        "blocked_missing_primary_material",
+        "unverifiable_best_effort"
+      ]
+    },
+    "layer1_database_record_review": {
+      "type": "object"
+    },
+    "layer2_activity_toxicity_review": {
+      "type": "object"
+    },
+    "layer3_mechanism_review": {
+      "type": "object"
+    },
+    "material_review": {
+      "type": "object"
+    },
+    "paper_id": {
+      "type": "string"
+    },
+    "pilot_sample_id": {
+      "type": "string"
+    },
+    "reasoning_effort": {
+      "const": "xhigh"
+    },
+    "review_model": {
+      "const": "gpt-5.5"
+    },
+    "reviewed_at": {
+      "type": "string"
+    },
+    "rework_targets": {
+      "type": "array"
+    },
+    "worker6_adjudication": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "paper_id",
+    "pilot_sample_id",
+    "audit_record_id",
+    "reviewed_at",
+    "review_model",
+    "reasoning_effort",
+    "decision",
+    "material_review",
+    "layer1_database_record_review",
+    "layer2_activity_toxicity_review",
+    "layer3_mechanism_review",
+    "worker6_adjudication",
+    "rework_targets",
+    "caution_findings",
+    "checked_inputs"
+  ],
+  "title": "Pilot20TrueSourceReviewResult",
+  "type": "object"
+}

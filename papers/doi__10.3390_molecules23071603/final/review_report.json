@@ -1,0 +1,123 @@
+{
+  "paper_id": "doi__10.3390_molecules23071603",
+  "reviewed_at": "2026-05-09T16:42:49Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package/supplement/database snapshots were sufficient to repair worker-2/4/6 blockers. Supplementary PDF contains A3 RP-HPLC/MS identity figures and no additional activity tables."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules23071603/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules23071603/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules23071603/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules23071603/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules23071603/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules23071603/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules23071603/extracted/pdf_text/molecules-23-01603.txt",
+    "paper_packets/doi__10.3390_molecules23071603/extracted/oa_package/local-DBAASP-PMC6100099/PMC6100099/molecules-23-01603-s001.pdf",
+    "paper_packets/doi__10.3390_molecules23071603/extracted/supplementary_text/molecules-23-01603-s001.txt",
+    "paper_packets/doi__10.3390_molecules23071603/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23071603/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23071603/database/linked_literature_records.jsonl"
+  ],
+  "adjudication_summary": "Source re-review rebuilt XML Tables 2-9 into target-specific activity/toxicity rows, corrected the Table 2 ATCC-value parse error, preserved the linked database ATCC BAA-2365 versus primary ATCC BAA-2356 conflict, bounded mechanism claims to source-supported design/phenotypic/inferred evidence, and closes rwk-complete-test-0001 as accepted_with_cautions rather than clean acceptance.",
+  "semantic_quality_checks": {
+    "activity_records": 101,
+    "activity_duplicate_record_ids": 0,
+    "activity_missing_core_fields": 0,
+    "activity_database_only_primary_rows": 0,
+    "database_status_summary": {
+      "source_verified": 92,
+      "source_conflict": 4
+    },
+    "database_source_conflicts_preserved": 4,
+    "database_unresolved_records": 0,
+    "mechanism_claims": 3,
+    "direct_mechanism_claims": 0,
+    "open_rework_targets": 0,
+    "source_review_gap_remaining": false,
+    "supplement_activity_tables_found": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains separate from final review. XML/PDF/OA/supplement/database artifacts were reopened; no initial queue bootstrap was rerun.",
+    "validator_contract": "Structural validator contract was already passable, but stale final status was blocked by open rework. This pass repairs semantic/source-review blockers rather than treating file presence as acceptance.",
+    "worker_2_activity_toxicity": "Accepted with cautions: all source-supported Table 2-9 values were captured with endpoints, values, units, target species/strain, conditions, and XML locators; no database-only rows are masquerading as primary rows.",
+    "worker_4_database": "Accepted with cautions: linked database rows were reconciled to source tables; the Enterococcus faecalis BAA-2365/BAA-2356 mismatch is retained as source_conflict.",
+    "worker_6_adjudication": "Accepted with cautions after worker-6 source review; rework target rwk-complete-test-0001 is closed and no blocking/major issue remains.",
+    "mechanism_layer": "Accepted with cautions: source supports design rationale, phenotypic antibiofilm activity, and inferred synergy explanation; no direct molecular-target mechanism is overclaimed."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_target_strain_conflict",
+      "severity": "caution",
+      "status": "source_conflict",
+      "records": [
+        "linked_assay_records.jsonl:row43:DBAASP:DBAASPS_12573",
+        "linked_assay_records.jsonl:row44:DBAASP:DBAASPS_12573",
+        "linked_experiment_records.jsonl:row43:DBAASP:DBAASPS_12573",
+        "linked_experiment_records.jsonl:row44:DBAASP:DBAASPS_12573"
+      ],
+      "note": "Database rows list Enterococcus faecalis ATCC BAA-2365; primary paper methods/Table 2 list ATCC BAA-2356 for the 5 µM A3 MIC/MBC row."
+    },
+    {
+      "scope": "supplement_scope",
+      "severity": "caution",
+      "status": "no_activity_table_in_supplement",
+      "note": "Local supplementary PDF provides A3 RP-HPLC/MS identity figures only; no additional activity/toxicity table was found or fabricated."
+    },
+    {
+      "scope": "mechanism_strength",
+      "severity": "caution",
+      "status": "indirect_mechanism_only",
+      "note": "The paper discusses membrane-related HDP behavior and antibiotic synergy but does not provide a direct A3 membrane-disruption assay in local material."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "semantic_issue_count": 0,
+    "publication_risk_counts": {},
+    "semantic_report": "reports/doi__10.3390_molecules23071603.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_molecules23071603.publication_quality.json",
+    "resolved_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "gate_results": {
+    "gate_decision": "passed_after_worker2_worker4_worker6_source_review",
+    "semantic_report": "reports/doi__10.3390_molecules23071603.semantic_gate.json",
+    "semantic_after_worker_report": "reports/doi__10.3390_molecules23071603.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_report": "reports/doi__10.3390_molecules23071603.publication_quality.json",
+    "publication_after_worker_report": "reports/doi__10.3390_molecules23071603.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_counts": {
+      "activity_records": 101,
+      "mechanism_claims": 3
+    },
+    "reviewed_at": "2026-05-09T16:42:49Z"
+  },
+  "updated_at": "2026-05-09T16:45:31Z"
+}

@@ -1,0 +1,86 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.3389_fmicb.2019.02327",
+  "doi": "10.3389/fmicb.2019.02327",
+  "generated_at": "2026-05-06T22:00:07Z",
+  "reviewed_at": "2026-05-06T22:00:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "extraction_scope": "Worker-6 adjudicated mechanism claims from source-located microscopy, Results, and Discussion sections without promoting literature-only membrane context to direct mechanism evidence.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Fengycin treatment produced prominent vesicle-like swollen structures in Venturia inaequalis hyphae; surfactin produced similar changes less systematically, while mycosubtilin did not produce vesicles.",
+      "entity_scope": "fengycin, surfactin, mycosubtilin treatments of S755 and rs552 Venturia inaequalis strains",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "optical_microscopy_morphology_after_liquid_microplate_assay"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+        "locator": "xml:sec=S3.SS2;xml:fig=4",
+        "note": "Optical microscopy section and Figure 4 describe treatment-associated morphology."
+      },
+      "limitations": "Morphology was observed directly, but the authors caution that vesicle-like structures were not simply correlated with antifungal IC50 activity."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "The paper interprets lipopeptide mode of action through membrane interaction and ergosterol-related context, but this is literature-supported discussion rather than a direct biochemical assay in this paper.",
+      "entity_scope": "Bacillus subtilis cyclic lipopeptides tested against Venturia inaequalis",
+      "evidence_class": "mechanism_context_literature_supported",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+        "locator": "xml:sec=S4.SS3",
+        "note": "Discussion links differential strain responses to membrane properties and ergosterol context using cited literature."
+      },
+      "limitations": "No membrane permeabilization, ergosterol quantification, or target-enzyme assay was performed in the recovered local material."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Fengycin plus surfactin and ternary FSM mixtures showed strong activity on the reduced-sensitivity strain, supporting a source-reviewed synergy hypothesis but not a quantified FICI calculation.",
+      "entity_scope": "FS and FSM mixtures against Venturia inaequalis rs552",
+      "evidence_class": "activity_pattern_mechanism_hypothesis",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+        "locator": "xml:sec=S3.SS1;xml:table=3:rows=7,9",
+        "note": "Results text and Table 3 support FS/FSM activity patterns; the source frames synergy as possible."
+      },
+      "limitations": "No FICI or checkerboard synergy endpoint was reported in the local primary material."
+    }
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fmicb.2019.02327/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/fmicb-10-02327.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/Image_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/Image_1.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/fmicb-10-02327.nxml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/supplementary_original/landing-*.bin",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.pdf"
+  ],
+  "tools_attempted": [
+    "project-local worker-2/4/6 SKILL.md files",
+    "handoff_context.json source inventory",
+    "rg over XML/PDF text/database rows",
+    "perl XML table-wrap extraction for Tables 1-3",
+    "pdftotext-derived Image_1.txt supplementary table text",
+    "file over supplementary landing-*.bin assets",
+    "manual row reconciliation against linked DBAASP assay JSONL",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ]
+}

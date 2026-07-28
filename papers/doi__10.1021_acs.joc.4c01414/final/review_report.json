@@ -1,0 +1,117 @@
+{
+  "paper_id": "doi__10.1021_acs.joc.4c01414",
+  "reviewed_at": "2026-05-02T06:46:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-2/4/6 re-review recovered the source-supported Table 1 MIC matrix, reconciled linked DBAASP activity/literature rows to primary XML evidence, and scoped mechanism claims without promoting indirect SAR/model text to direct mechanism.",
+  "checked_inputs": [
+    "rework_context/doi__10.1021_acs.joc.4c01414/handoff_context.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/packet_manifest.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/raw/paper.xml",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/raw/paper.pdf",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/extracted/pdf_text/jo4c01414.txt",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/extracted/pdf_text/jo4c01414_si_001.txt",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acs.joc.4c01414/analysis/mechanism_evidence.json"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Primary XML and main PDF text were sufficient to repair the MIC matrix; OA package/SI text and database JSONL snapshots were opened for bounded best-effort source recovery. No blocking local material gap remains."
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP assay/experiment rows match Table 1 for the 10 covered clovibactin/SAR entities, and literature rows match article metadata. Empty linked sequence snapshot is retained as a caution rather than inventing sequence verification.",
+    "layer_2_activity_toxicity": "Primary XML Table 1 supports 75 MIC records across 15 entities and 5 bacterial targets; raw values and units are retained without molar conversion.",
+    "layer_3_mechanism": "The paper supports phenotypic SAR and structural/model context, not a direct mechanism assay; final mechanism output preserves that boundary."
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "75 Table 1 MIC rows have endpoint, raw value, unit, entity, target species/strain, assay context, and primary XML locator."
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "result": "pass_with_cautions",
+      "evidence": "110 linked database rows reviewed; status_summary={'source_verified': 110}; linked_sequence_records=0 is preserved as a caution."
+    },
+    {
+      "check": "mechanism_scope",
+      "result": "pass_with_scope_guard",
+      "evidence": "Mechanism output keeps SAR/model/crystallography as indirect context and makes no direct_mechanism claim."
+    },
+    {
+      "check": "supplementary_source_recovery",
+      "result": "pass_with_cautions",
+      "evidence": "OA package and extracted SI text were opened; no additional parser-supported MIC/toxicity table changed the Table 1 repair."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "Ticket rwk-complete-test-0001 is closed by worker-2/4/6 owner repair; final review carries no open rework targets."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_snapshot_partial_for_table1_entities",
+      "evidence_context": "Linked DBAASP rows cover 10 source-table entities; five Table 1 rows are preserved as source-supported activity records without linked database IDs."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "linked_sequence_records.jsonl is empty; database audit verifies assay/literature traceability and Table 1 profile matching but does not claim exact standalone sequence verification from a sequence snapshot."
+    },
+    {
+      "caution_code": "no_host_toxicity_endpoint_reported",
+      "evidence_context": "No hemolysis, cytotoxicity, CC50, HC50, or cell viability endpoint was found in opened local XML/PDF/SI/database materials."
+    },
+    {
+      "caution_code": "material_packet_layer_unchanged",
+      "evidence_context": "Material extraction status remains material_extracted_with_gaps from the earlier parser limitation; the owner-layer re-review repaired the activity rows directly from primary XML/PDF evidence without rerunning the initial workflow."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "gate_results": {
+    "gate_decision": "passed_after_source_reviewed_worker_2_4_6_repair",
+    "reviewed_at": "2026-05-02T06:48:57Z",
+    "semantic_report": "reports/doi__10.1021_acs.joc.4c01414.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_report": "reports/doi__10.1021_acs.joc.4c01414.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_review_status": {
+      "accepted_with_cautions": 1
+    },
+    "publication_counts": {
+      "activity_records": 75,
+      "mechanism_claims": 3
+    },
+    "publication_risk_counts": {}
+  }
+}

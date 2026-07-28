@@ -1,0 +1,173 @@
+{
+  "paper_id": "doi__10.1038_ki.2012.410",
+  "doi": "10.1038/ki.2012.410",
+  "title": "Ribonuclease 7, an antimicrobial peptide upregulated during infection, contributes to microbial defense of the human urinary tract.",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "reviewed_at": "2026-05-02T13:41:03Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_ki.2012.410/handoff_context.json",
+    "paper_packets/doi__10.1038_ki.2012.410/packet_manifest.json",
+    "paper_packets/doi__10.1038_ki.2012.410/locators/locator_index.json",
+    "paper_packets/doi__10.1038_ki.2012.410/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_ki.2012.410/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_ki.2012.410/raw/paper.xml",
+    "paper_packets/doi__10.1038_ki.2012.410/raw/paper.pdf",
+    "paper_packets/doi__10.1038_ki.2012.410/raw/oa_package/local-DBAASP-PMC3612368.tar.gz",
+    "paper_packets/doi__10.1038_ki.2012.410/extracted/oa_package/local-DBAASP-PMC3612368/PMC3612368/nihms422709.nxml",
+    "paper_packets/doi__10.1038_ki.2012.410/extracted/pdf_text/local-DBAASP-PMC3612368.txt",
+    "paper_packets/doi__10.1038_ki.2012.410/extracted/pdf_text/nihms422709.txt",
+    "paper_packets/doi__10.1038_ki.2012.410/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_ki.2012.410/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_ki.2012.410/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_ki.2012.410/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_ki.2012.410/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_ki.2012.410/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "papers/doi__10.1038_ki.2012.410/source/paper.xml",
+    "papers/doi__10.1038_ki.2012.410/source/paper.pdf"
+  ],
+  "adjudication_summary": "Worker-4/worker-6 re-review replaced the framework-test adjudication with row-level database reconciliation and source-reviewed final approval. The prior rework ticket is closed with explicit nonblocking cautions for a DBAASP endpoint-label conflict, absent local supplementary assets, and bounded mechanism strength.",
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 14,
+    "database_status_summary": {
+      "source_verified": 23,
+      "source_conflict": 2
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Packet-linked DBAASP rows were reconciled against primary Table 1, toxicity prose, article metadata, and merged database rows: 23 rows are source_verified and 2 duplicate Proteus endpoint-label rows remain source_conflict with context.",
+    "layer_2_activity_toxicity": "Final activity/toxicity evidence keeps the 12 primary Table 1 MIC/MBC rows plus 2 qualitative negative toxicity/hemolysis records supported by source prose and methods; duplicate scaffold rows were removed and no supplement-only exact values were fabricated.",
+    "layer_3_mechanism": "Final mechanism claims are restricted to source-located direct membrane disruption/killing assays and host-defense expression context; no unsupported molecular target claim is promoted.",
+    "publication_gate": "All blocking framework-test rework reasons are resolved; remaining uncertainties are nonblocking cautions preserved in final review."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_endpoint_label",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "DBAASP assay 47361 duplicated in linked assay/experiment snapshots",
+      "note": "DBAASP labels the Proteus mirabilis PEDUTI-971 1.0-1.25 μM value as MIC, while primary Table 1 supports that value in the MBC column; final activity uses the primary MBC row and the database row remains source_conflict.",
+      "conflict_flags": [
+        "database_endpoint_MIC_conflicts_with_primary_MBC_column"
+      ]
+    },
+    {
+      "scope": "database_sequence_snapshot",
+      "severity": "caution",
+      "status": "database_only_no_primary_source_nonblocking",
+      "record": "DBAASP:DBAASPR_6786 merged all_sequences.csv row",
+      "note": "The current paper confirms full-length RNase 7 construct context but does not print the exact amino-acid sequence; the merged sequence row was checked but not promoted to exact primary-source sequence verification from this paper alone."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "reviewed_absent_nonblocking",
+      "record": "supplementary_index.json and OA package manifest",
+      "note": "The paper references supplemental figures, but no supplementary original/PDF/XLSX files are present in the local packet or OA package. The source text supports the qualitative toxicity/hemolysis conclusions, so no unsupported figure-only exact values were fabricated."
+    },
+    {
+      "scope": "mechanism_strength",
+      "severity": "caution",
+      "status": "accepted_with_scope_guard",
+      "record": "mechanism_ontology_record.json",
+      "note": "Membrane disruption is direct-assay supported by AFM and Live/Dead/confocal experiments; no molecular receptor or biochemical target is claimed."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": false,
+      "used": true,
+      "blocker": false,
+      "note": "No local supplementary assets were present after raw packet/OA package inventory; source prose covers qualitative toxicity/hemolysis rows and no exact supplement-only values were promoted."
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false
+  },
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "paths": [
+        "papers/doi__10.1038_ki.2012.410/source/paper.xml",
+        "paper_packets/doi__10.1038_ki.2012.410/raw/paper.xml"
+      ],
+      "coverage": "article identifiers, Table 1 MIC/MBC matrix, Table 2 urinary AMP context, results/methods, figure captions, cytotoxicity/hemolysis prose, and mechanism sections"
+    },
+    "paper_pdf": {
+      "status": "reviewed_text_extraction",
+      "paths": [
+        "papers/doi__10.1038_ki.2012.410/source/paper.pdf",
+        "paper_packets/doi__10.1038_ki.2012.410/extracted/pdf_text/local-DBAASP-PMC3612368.txt",
+        "paper_packets/doi__10.1038_ki.2012.410/extracted/pdf_text/nihms422709.txt"
+      ],
+      "coverage": "PDF text indexes cross-checked against XML-supported activity, toxicity, expression, and mechanism locators"
+    },
+    "oa_package": {
+      "status": "reviewed_inventory",
+      "paths": [
+        "paper_packets/doi__10.1038_ki.2012.410/raw/oa_package/local-DBAASP-PMC3612368.tar.gz",
+        "paper_packets/doi__10.1038_ki.2012.410/extracted/oa_package/local-DBAASP-PMC3612368/PMC3612368"
+      ],
+      "coverage": "OA package contains article NXML/PDF plus seven article figure image pairs; no separate supplementary file member was present"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_absent_nonblocking",
+      "paths": [
+        "paper_packets/doi__10.1038_ki.2012.410/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_ki.2012.410/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_ki.2012.410/extraction/extraction_errors.jsonl"
+      ],
+      "coverage": "local packet and OA package inventory contain no supplementary original/PDF/XLSX assets; source prose covers the qualitative toxicity/hemolysis database rows, so no unsupported exact supplement values were invented"
+    },
+    "merged_database_rows": {
+      "status": "reviewed_row_level",
+      "paths": [
+        "paper_packets/doi__10.1038_ki.2012.410/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_ki.2012.410/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1038_ki.2012.410/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+      ],
+      "coverage": "25 packet-linked DBAASP assay/experiment/literature rows plus merged sequence/assay catalog context reviewed against primary source locators"
+    }
+  },
+  "final_approval_status": "accepted_with_cautions",
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": []
+}

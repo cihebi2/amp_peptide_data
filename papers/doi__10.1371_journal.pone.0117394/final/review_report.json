@@ -1,0 +1,91 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0117394",
+  "reviewed_at": "2026-05-05T20:25:32Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened handoff packet, raw XML/PDF, extracted XML/PDF text, OA-package members, S1 DOCX via OOXML, linked database JSONL rows, and specific merged-output rows relevant to worker-4/6 blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0117394/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0117394/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0117394/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0117394/extracted/pdf_text/pone.0117394.txt",
+    "paper_packets/doi__10.1371_journal.pone.0117394/raw/supplementary_original/local-APD6-pone.0117394.s001.docx",
+    "paper_packets/doi__10.1371_journal.pone.0117394/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0117394/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0117394/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 36,
+    "database_record_count": 88,
+    "database_record_status_summary": {
+      "source_conflict": 11,
+      "source_verified": 77
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gap_count": 0,
+    "table2_pair_column_layout_verified": true,
+    "supplementary_docx_checked": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled every linked assay/experiment/literature row against primary Table 1 sequences, Table 2 EC50/NA values, Table 3 prediction context, article metadata, and relevant merged-output rows. Source conflicts are explicit cautions and no database-only blocker remains.",
+    "layer_2_activity_toxicity": "Worker-6 repaired the final activity table from primary Table 2, preserving EC50 values, 95% CI text, NA/wide values, target species/strains, units, and locators.",
+    "layer_3_mechanism": "Worker-6 replaced the framework placeholder with bounded source-reviewed mechanism/context claims and did not promote prediction scores or discovery-enrichment methods to molecular antimicrobial mechanisms.",
+    "supplementary_material": "S1 DOCX validates LL-37 assay agreement and does not change alligator-peptide sequence, activity, toxicity, database, or mechanism conclusions.",
+    "publication_grade_review": "The original broad worker-4/6 source-review ticket is closed with cautions; no blocking or major issue remains open in the repaired final artifacts."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "evidence_context": "A1P coordinate naming in DBAASP, APD6 note text with non-primary context, and dbAMP_15859 mixed-current/later-study values remain explicit source_conflict rows instead of being silently normalized."
+    },
+    {
+      "caution_code": "previous_table2_parser_column_shift_repaired",
+      "evidence_context": "Earlier activity rows assigned 95% CI columns as organism EC50 values; final activity evidence now follows the primary Table 2 paired EC50/95% CI layout."
+    },
+    {
+      "caution_code": "supplementary_docx_checked_no_core_change",
+      "evidence_context": "S1 DOCX contains LL-37 dilution-plating/resazurin validation material and does not add alligator-peptide sequence, database, or activity rows beyond the primary article tables."
+    },
+    {
+      "caution_code": "mechanism_bounded_to_activity_and_discovery_context",
+      "evidence_context": "The primary paper supports direct antibacterial activity and a cationic peptide discovery workflow, but not a molecular target or membrane-disruption mechanism for the alligator peptides."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_blocking_issue_count": 0
+  },
+  "adjudication_summary": "Worker-4/6 source re-review closed rwk-complete-test-0001. The paper is accepted_with_cautions: primary Table 1/2/3 evidence, S1 DOCX scope, linked database rows, final activity rows, database conflicts, and mechanism/context claims were source-reviewed from local material."
+}

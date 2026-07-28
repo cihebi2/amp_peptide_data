@@ -1,0 +1,77 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0060462",
+  "generated_at": "2026-05-03T11:11:29Z",
+  "status": "qc_passed_after_worker246_source_review",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_payload_absent_or_html_only_after_local_recovery",
+      "source_paths_checked": [
+        "papers/doi__10.1371_journal.pone.0060462/source/supplementary",
+        "paper_packets/doi__10.1371_journal.pone.0060462/raw/supplementary_original/landing-*.bin",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0060462/supplementary/landing-*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "sed/head HTML inspection",
+        "supplementary_index review"
+      ],
+      "why_unrecoverable": "The paper-local supplementary directory is empty and the landed supplementary .bin files are HTML pages or article/guideline pages, not PDF/XLSX/DOCX/CSV supplementary data payloads.",
+      "impact": "No supplement-only activity, toxicity, database, or mechanism values were fabricated. Primary XML/PDF text and database JSONL rows were sufficient to repair the worker-2/4/6 blockers.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "figure_only_exact_dose_response_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/figure_captions.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/xml_sections.json",
+        "paper_packets/doi__10.1371_journal.pone.0060462/extracted/pdf_text/landing-1.txt",
+        "papers/doi__10.1371_journal.pone.0060462/source/paper.xml",
+        "papers/doi__10.1371_journal.pone.0060462/source/paper.pdf"
+      ],
+      "tools_attempted": [
+        "XML figure-caption review",
+        "existing pdftotext review",
+        "rg numeric/source locator search"
+      ],
+      "why_unrecoverable": "The local XML/PDF text gives exact example values at 40 µM and qualitative dose-response/caption summaries, but it does not tabulate all bar heights from Figures 1 and 3-9.",
+      "impact": "Only exact values stated in text were extracted as activity rows. Other figure-only quantitative values remain qualitative mechanism context and were not digitized or invented.",
+      "owner_worker": "worker-2 + worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "resolution_summary": "Worker-2 recovered four primary text-supported cytotoxicity rows, worker-4 adjudicated linked DBAASP/CAMP rows with conflicts preserved, and worker-6 rewrote final adjudication with no open blocking/major QC failure.",
+  "remaining_cautions": [
+    {
+      "scope": "database_identity",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "DBAASP assay values match local source, but exact sequence identity is not locally resolved."
+    },
+    {
+      "scope": "database_only_bacterial_activity",
+      "severity": "caution",
+      "status": "database_only_no_primary_source",
+      "note": "CAMP bacterial activity text is not supported by this selected paper."
+    },
+    {
+      "scope": "supplement_and_figures",
+      "severity": "caution",
+      "status": "nonblocking_after_source_review",
+      "note": "No supplement payload or full figure numeric table was fabricated."
+    }
+  ]
+}

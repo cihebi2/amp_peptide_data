@@ -1,0 +1,101 @@
+{
+  "paper_id": "doi__10.1021_ol3022758",
+  "reviewed_at": "2026-05-02T11:37:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Local XML, main PDF text, SI PDF text from the OA package, figure captions, locator index, packet database rows, and merged DBAASP sequence/experiment rows were checked for the worker-2/4/6 blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1021_ol3022758/handoff_context.json",
+    "paper_packets/doi__10.1021_ol3022758/packet_manifest.json",
+    "paper_packets/doi__10.1021_ol3022758/locators/locator_index.json",
+    "paper_packets/doi__10.1021_ol3022758/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_ol3022758/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_ol3022758/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_ol3022758/extracted/pdf_text/ol3022758.txt",
+    "paper_packets/doi__10.1021_ol3022758/extracted/pdf_text/local-DBAASP-PMC3466018.txt",
+    "paper_packets/doi__10.1021_ol3022758/extracted/figure_captions.json",
+    "paper_packets/doi__10.1021_ol3022758/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_ol3022758/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_ol3022758/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_ol3022758/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_ol3022758/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "adjudication_summary": "Worker-2/4/6 bounded re-review repaired the previous hard blocker: two primary-source MIC rows are now recorded, DBAASP strain/sequence conflicts are preserved rather than forced to source_verified, and final review provenance/QC no longer depends on the framework test summary.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "The literature link is source_verified. Six linked DBAASP MIC assay/experiment rows remain source_conflict because their strain labels do not match the primary SI strains. The merged DBAASP sequence row is sequence_modified_not_normalized because X placeholders differ from the primary precursor sequence.",
+    "layer_2_activity_toxicity": "The main paper and SI support Bottromycin D MIC 2 ug/mL against MSSA ATCC 29213 and MRSA ATCC 33591. No hemolysis/cytotoxicity rows for Bottromycin D were recovered from local primary material.",
+    "layer_3_mechanism": "The source supports bacteriostatic phenotypic action under tested conditions and RiPP/bst-cluster biosynthetic evidence. No unsupported direct molecular killing mechanism is promoted.",
+    "worker_6_gate_decision": "All prior blocking rework targets are closed after source review. Remaining issues are caution-level preserved conflicts, not open blocker tickets."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 2,
+    "activity_rows_parsed": 2,
+    "database_record_audits": 8,
+    "database_status_summary": {
+      "source_conflict": 6,
+      "sequence_modified_not_normalized": 1,
+      "source_verified": 1
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_issue_count": 0,
+    "semantic_gate_report": "reports/doi__10.1021_ol3022758.codex_worker246_rereview_20260502.semantic_gate.json",
+    "publication_quality_pass": true,
+    "publication_quality_report": "reports/doi__10.1021_ol3022758.codex_worker246_rereview_20260502.publication_quality.json"
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_strain_label_conflicts_preserved",
+      "severity": "caution",
+      "affected_layer": "database",
+      "evidence_context": "Six DBAASP assay/experiment rows carry MIC 2 ug/mL but use Staphylococcus aureus 209P, Smith, or MRSA clinical-isolate labels that are not the ATCC 29213/ATCC 33591 strains named in the local primary SI."
+    },
+    {
+      "caution_code": "database_sequence_modified_not_normalized",
+      "severity": "caution",
+      "affected_layer": "database",
+      "evidence_context": "Merged DBAASP sequence catalog uses GXAXXXDC while the primary paper reports GPAVVFDC as the precursor-encoded sequence; X placeholders were preserved instead of normalized."
+    },
+    {
+      "caution_code": "supplement_pdf_text_checked_no_structured_sheet",
+      "severity": "caution",
+      "affected_layer": "material_packet",
+      "evidence_context": "The OA package includes an SI PDF that was text-indexed and checked for MIC/method details; no separate spreadsheet/table supplement was present in the local packet."
+    },
+    {
+      "caution_code": "mechanism_not_promoted_to_direct_molecular_target",
+      "severity": "caution",
+      "affected_layer": "mechanism",
+      "evidence_context": "The local source supports bacteriostatic phenotypic action and RiPP biosynthetic evidence, but not a source-reviewed direct molecular killing target for Bottromycin D."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

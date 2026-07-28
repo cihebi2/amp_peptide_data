@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1016_j.antiviral.2005.10.005",
+  "reviewed_at": "2026-06-20T08:34:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "publication_grade",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "xml_tables",
+    "figure_captions",
+    "supplementary_index",
+    "packet_database_jsonl",
+    "final_artifact_crosscheck"
+  ],
+  "checked_inputs": [
+    "papers/doi__10.1016_j.antiviral.2005.10.005/source/paper.xml",
+    "papers/doi__10.1016_j.antiviral.2005.10.005/source/paper.pdf",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1016_j.antiviral.2005.10.005/analysis/mechanism_evidence.json",
+    "papers/doi__10.1016_j.antiviral.2005.10.005/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1016_j.antiviral.2005.10.005/final/database_record_verification.json",
+    "papers/doi__10.1016_j.antiviral.2005.10.005/final/mechanism_ontology_record.json"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf_text": true,
+    "xml_tables": {
+      "table_count": 2,
+      "activity_table_repaired": "Table 2"
+    },
+    "figure_captions": {
+      "figure_count": 5,
+      "numeric_curve_tables_available": false
+    },
+    "supplementary_assets": {
+      "available": false,
+      "source": "supplementary_index.json"
+    },
+    "oa_package": true,
+    "merged_database_rows": true,
+    "note": "Local material supports ACE2/S-protein ELISA IC50 rows and qualitative SP-10 pseudovirus inhibition; it does not support database pseudovirus numeric IC50 wording."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": true,
+    "activity_record_count": 8,
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "database_snapshots": true,
+    "database_conflicts_preserved": true,
+    "mechanism_claims": true,
+    "mechanism_overclaim_check": "passed",
+    "open_rework_targets": false,
+    "unrecoverable_blocking_gaps": false,
+    "validator_contract_passed": true
+  },
+  "per_layer_decision_rationale": {
+    "worker-2_activity_toxicity": "Accepted with cautions: primary XML Table 2 and results text support eight IC50 rows with endpoints, raw values, units, assay context, statistics, and locators; figure-only exact data points remain nonblocking because reported IC50 values are available.",
+    "worker-4_database_records": "Accepted with cautions: citation links verify to article metadata, while DBAASP/DRAMP activity rows remain source_conflict because primary source reports ACE2/S-protein ELISA nmol quantities, not database pseudovirus nM/µM activity.",
+    "worker-5_mechanism_context": "Final mechanism record was rewritten by worker-6 to source-reviewed ACE2/S-protein binding inhibition and SP-10 pseudovirus infectivity context without claiming unreported numeric pseudovirus IC50.",
+    "worker-6_final_adjudication": "Publication-grade accepted with explicit cautions and no open blocking rework targets after source review of local XML/PDF/database packet artifacts."
+  },
+  "caution_findings": [
+    {
+      "code": "database_activity_unit_target_conflict_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "DBAASP/DRAMP activity rows map source IC50 values to pseudovirus/Vero-cell activity and nM/µM concentration language; primary source supports nmol quantities for competitive S protein-ACE2 ELISA and only qualitative pseudovirus inhibition for SP-10.",
+      "affected_records": [
+        "DBAASP:DBAASPS_19458",
+        "DRAMP:DRAMP31558",
+        "DRAMP:DRAMP31559",
+        "DRAMP:DRAMP31560"
+      ],
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "figure_curve_exact_points_not_tabulated",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-6",
+      "reason": "Fig. 2/4/5 exact per-point values are not tabulated in local XML/PDF text; exact reported IC50 values and qualitative figure conclusions were retained with locators.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Source re-review recovered the missing activity layer from primary XML Table 2 and results text, linked those rows to database records, preserved database target/unit conflicts as cautions, and replaced generic mechanism placeholders with source-reviewed ACE2/S-protein inhibition evidence. No blocking local-material gap remains for the paper-local obtainable-only contract."
+}

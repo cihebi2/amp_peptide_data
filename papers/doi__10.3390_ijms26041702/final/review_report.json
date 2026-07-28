@@ -1,0 +1,88 @@
+{
+  "paper_id": "doi__10.3390_ijms26041702",
+  "generated_at": "2026-05-09T11:26:38Z",
+  "reviewed_at": "2026-05-09T11:26:38Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "source_paths_checked": [
+      "papers/doi__10.3390_ijms26041702/source/paper.xml",
+      "papers/doi__10.3390_ijms26041702/source/paper.pdf",
+      "paper_packets/doi__10.3390_ijms26041702/extracted/pdf_text/ijms-26-01702.txt",
+      "paper_packets/doi__10.3390_ijms26041702/extracted/oa_package/local-DBAASP-PMC11855086/PMC11855086/ijms-26-01702-s001.zip::ijms-3391989-supplementary.pdf",
+      "paper_packets/doi__10.3390_ijms26041702/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_ijms26041702/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_ijms26041702/database/linked_literature_records.jsonl"
+    ]
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "The structured packet supplement index stayed incomplete, but the OA-package ZIP was opened directly and Supplementary Table S1 was rowized. Remaining exact cytotoxic figure/database values are cautioned as nonblocking conflicts."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/locators/locator_index.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms26041702/xml/local-DBAASP-PMC11855086.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms26041702/pdf/local-DBAASP-PMC11855086.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/extracted/pdf_text/ijms-26-01702.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/extracted/oa_package/local-DBAASP-PMC11855086/PMC11855086/ijms-26-01702-s001.zip",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms26041702/database/linked_literature_records.jsonl"
+  ],
+  "summary": "Worker-2/4/6 re-review recovered Supplementary Table S1 from the paper-local OA ZIP, rowized all MIC/MBC values for the tested compound table, reconciled DBAASP MIC rows to source-backed activity rows, preserved exact cytotoxic database values as cautioned conflicts, and bounded the final mechanism claims to source-supported assay evidence.",
+  "adjudication_summary": "Accepted with cautions after bounded source recovery; no blocking worker-2/4/6 rework remains.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 309,
+    "mic_rows": 152,
+    "mbc_rows": 152,
+    "cytotoxicity_summary_rows": 5,
+    "database_status_summary": {
+      "source_conflict": 82,
+      "source_verified": 306
+    },
+    "mechanism_claims": 4,
+    "source_locators_present": true,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP MIC rows match the recovered Supplementary Table S1 values and are source_verified; exact cytotoxic database percentages remain source_conflict because local primary text does not provide a complete exact table.",
+    "layer_2_activity_toxicity": "All Supplementary Table S1 MIC/MBC rows were rowized with units, SEM, targets, assay context, and source locators. Text-supported cytotoxicity summaries and 5a IC50 were also recorded.",
+    "layer_3_mechanism": "Mechanism claims are bounded to MIC/MBC phenotype, tyrosinase enzyme inhibition, Fpg/DNA damage context, and MTT toxicity context; docking and broad AMP mechanism statements are not overclaimed.",
+    "worker_6_final_review": "The previous full_source_review_not_completed ticket is closed only after strict semantic and publication-quality gates are rerun on repaired artifacts."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "structured_packet_supplement_index_gap_recovered_by_direct_zip_open",
+      "evidence_context": "extraction_status listed no supplementary files, but the OA package contains ijms-26-01702-s001.zip with Supplementary Table S1; worker-6 records this as source recovery rather than pretending the material packet was originally complete."
+    },
+    {
+      "caution_code": "exact_cytotoxic_database_values_preserved_as_conflicts",
+      "evidence_context": "DBAASP exact cytotoxic rows are retained in database audit but not promoted to primary exact activity rows without a source table."
+    },
+    {
+      "caution_code": "compound_identity_not_sequence_based",
+      "evidence_context": "The linked database has no sequence snapshot for these synthetic peptidomimetics; verification uses compound labels, article metadata, and Table S1 activity context."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_gate_expected": "pass_after_worker246_repair"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "paper_id": "doi__10.3390_antibiotics10121529",
+  "reviewed_at": "2026-05-07T18:26:14Z",
+  "updated_at": "2026-05-07T18:29:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened handoff, packet manifest/locators, primary XML/PDF text, OA package extracts, supplementary ZIP/PDF text, linked database JSONL snapshots, and merged sequence CSV. Remaining cautions are preserved database/source limitations, not open rework."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.3390_antibiotics10121529/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/pdf_text/antibiotics-10-01529.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/pdf_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/supplementary_text.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/extracted/figure_captions.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics10121529/supplementary/local-APD6-antibiotics-10-01529-s001.zip",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/database/linked_dramp_activity_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics10121529/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics10121529/xml/local-DBAASP-PMC8698721.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics10121529/pdf/local-DBAASP-PMC8698721.pdf"
+  ],
+  "summary": "Source-reviewed worker-2/4/6 closeout for t-DPH1: primary XML Tables 3-6 now provide 165 row-level activity/toxicity records; DBAASP/APD6/DRAMP database rows are reconciled where local source support exists; CAMP/dbAMP identity gaps and figure-only exact mechanism values remain explicit cautions without open rework.",
+  "semantic_quality_checks": {
+    "database_record_count": 242,
+    "database_status_summary": {
+      "source_verified": 232,
+      "source_conflict": 10
+    },
+    "activity_records": 165,
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "upstream_packet_activity_parser_zero_rows_found": true,
+    "upstream_packet_activity_parser_zero_rows_resolved_in_final": true,
+    "supplementary_activity_tables_found": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled DBAASP assay rows and APD6/DRAMP identity/activity annotations to primary Table 1 plus Tables 3-6. CAMP/dbAMP linked experiment rows are preserved as source_conflict because local packet evidence lacks sequence/name metadata for those identifiers.",
+    "layer_2_activity_toxicity": "Worker-2/6 rebuilt row-level activity/toxicity evidence from XML Tables 3-6, preserving MIC/MBC, MBIC/MBEC, IC50, HC50 values, µM units, strains/cell lines, assay conditions, and XML locators.",
+    "layer_3_mechanism": "Worker-6 replaced automated pending-review mechanism notes with bounded source-located membrane permeabilisation, time-kill, resistance, and structure-activity claims while preserving figure-only limitations.",
+    "review_layer": "The generic rework ticket is closed after source-reviewed repair; remaining cautions do not block publication-grade acceptance because all source-supported local values were extracted and unsupported claims were not fabricated."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "camp_dbamp_identity_not_source_verified",
+      "evidence_context": "Ten CAMP/dbAMP linked experiment rows contain MIC/IC50 text compatible with primary Tables 3 and 5, but the local packet lacks sequence/name metadata for those database identifiers; preserved as source_conflict instead of source_verified."
+    },
+    {
+      "caution_code": "supplement_contains_figures_not_activity_tables",
+      "evidence_context": "Both local supplementary ZIP copies contain the same supplementary PDF with HPLC/MS Figure S1/S2 material; no additional activity/toxicity table was recoverable from local supplement text."
+    },
+    {
+      "caution_code": "figure_level_mechanism_values_not_tabulated",
+      "evidence_context": "Membrane permeabilisation, time-kill, resistance, viability, and haemolysis figures support bounded claims, but exact figure-level data points are not tabulated in local XML/PDF text."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "gate_evidence": {
+    "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_antibiotics10121529.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.3390_antibiotics10121529.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "rerun_at": "2026-05-07T18:30:40.576441+00:00"
+  },
+  "publication_quality_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "semantic_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "adjudication_report_type": "worker_6_source_reviewed_adjudication",
+  "generated_at": "2026-05-07T18:26:14Z"
+}

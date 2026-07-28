@@ -1,0 +1,76 @@
+{
+  "paper_id": "doi__10.1038_s41522-024-00637-y",
+  "dispatch_id": "dispatch-009-PILOT20-018-worker-5",
+  "reviewed_at": "2026-06-22T08:17:54Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "blocked_missing_primary_material",
+  "files_updated": [
+    {
+      "path": "paper_packets/doi__10.1038_s41522-024-00637-y/final/review_report.json",
+      "action": "added_worker6_final_mirror_blocked_adjudication",
+      "result": "review_status remains blocked_missing_primary_material and publication_grade remains false"
+    },
+    {
+      "path": "papers/doi__10.1038_s41522-024-00637-y/final/review_report.json",
+      "action": "added_worker6_final_mirror_blocked_adjudication",
+      "result": "review_status remains blocked_missing_primary_material and publication_grade remains false"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/worker6_final_mirror/dispatch-009-PILOT20-018-worker-5/worker6_final_response.json",
+      "action": "created",
+      "result": "schema-target response for dispatch final mirror"
+    }
+  ],
+  "files_checked_not_updated": [
+    {
+      "path": "paper_packets/doi__10.1038_s41522-024-00637-y/final/mechanism_evidence.json",
+      "reason": "owner response did not repair mechanism analysis artifacts; blocked dispatch does not justify mechanism mirroring or normalization"
+    },
+    {
+      "path": "papers/doi__10.1038_s41522-024-00637-y/final/mechanism_ontology_record.json",
+      "reason": "owner response did not repair canonical mechanism ontology; preserving uncertainty and non-clean cautions"
+    }
+  ],
+  "qc_summary": {
+    "owner_action_taken": "blocked_missing_material",
+    "owner_performed_analysis_layer_repair": false,
+    "owner_repair_assessment": "owner-5 reviewed local materials and recommended preserving the block; it did not edit final mechanism or canonical review artifacts",
+    "analysis_artifacts_mirrored": false,
+    "accepted_clean": false,
+    "accepted_with_cautions": false,
+    "publication_grade": false,
+    "review_report_status_confirmed": "blocked_missing_primary_material",
+    "semantic_qa_summary": "Existing final reports already contain blocked_missing_primary_material, publication_grade=false, concrete rework targets, and unrecoverable material gaps. Owner response confirms true Supplementary Table 1/Figs. 1-13, OA package, and exact DJK-5 sequence/modification evidence remain unavailable locally.",
+    "caution_findings_preserved": [
+      "database_sequence_not_primary_sourced",
+      "supplementary_assets_are_article_landing_html",
+      "database_daptomycin_rows_require_missing_supplement",
+      "noncanonical_non_direct_mechanism_labels"
+    ]
+  },
+  "remaining_blockers": [
+    {
+      "blocker_code": "supplementary_table_and_figures_not_locally_recoverable",
+      "target_queue": "material_extraction",
+      "evidence": "owner_response reports true Supplementary Table 1 and Supplementary Figs. 1-13 absent; raw supplementary landing-*.bin files are HTML documents, supplementary_text.jsonl is indexed_only, supplementary_tables.json has table_count 0, and OA package is absent",
+      "required_action": "recover true supplementary files or OA package before supplement-dependent activity/mechanism exact-value review"
+    },
+    {
+      "blocker_code": "database_sequence_records_absent_primary_sequence_not_embedded",
+      "target_queue": "analysis",
+      "evidence": "linked_sequence_records.jsonl has zero rows and local XML/PDF name DJK-5 without exact sequence/modification evidence",
+      "required_action": "supply exact DJK-5 sequence/modification evidence from primary XML/PDF or linked sequence material, or keep DBAASP:DBAASPS_11338 unresolved/database-only"
+    }
+  ],
+  "worker6_followup": {
+    "required_before_acceptance": "recover true missing source material and rerun worker-6 re-adjudication",
+    "do_not_do": [
+      "do not mark accepted_clean",
+      "do not mark accepted_with_cautions",
+      "do not set publication_grade true",
+      "do not infer blocked supplementary or sequence evidence from database-only rows"
+    ],
+    "next_owner": "material_extraction for missing supplement/OA package; analysis only after recovered source material is available"
+  }
+}

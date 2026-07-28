@@ -1,0 +1,451 @@
+{
+  "paper_id": "PMC12715223",
+  "worker": "worker-5",
+  "lane": "mechanism_ontology_extractor",
+  "protocol": "amp_three_layer_v2",
+  "artifact_role": "worker5_mechanism_ontology_record",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "reviewed_at": "2026-07-27T11:07:16.807134Z",
+  "strict_scope": {
+    "paper_ids_reviewed": [
+      "PMC12715223"
+    ],
+    "internet_used": false,
+    "source_boundary": "Only packet-local XML, PDF text, figure captions, supplementary text/tables, OCR outputs, database snapshot files, and worker handoff artifacts for PMC12715223 were used.",
+    "database_boundary": "DBAASP Codex fallback rows were treated as candidate machine evidence only; no linked authoritative DBAASP/APD6/DRAMP rows were available for mechanism promotion."
+  },
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/supplementary_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/extracted/figure_captions.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12715223/analysis/activity_safe_candidate_handoff.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json"
+  ],
+  "material_status_snapshot": {
+    "packet_material_queue_status": "material_extracted_complete",
+    "known_missing_or_blocked_materials": [],
+    "xml_section_count": 158,
+    "pdf_page_count": 13,
+    "figure_caption_count": 18,
+    "supplementary_file_count": 4,
+    "supplementary_text_record_count": 61,
+    "supplementary_xlsx_sheet_count": 38,
+    "locator_index_count": 232,
+    "linked_authoritative_database_rows_present": false,
+    "fallback_machine_candidate_rows_seen": 7
+  },
+  "source_reviewed_synthesis": "Worker-5 repair re-opened packet XML/PDF/supplement/database surfaces locally. Direct mechanism evidence is limited to source-located microscopy/localization and immunoblot/SDS-PAGE degradation readouts; pMurD-MurD recognition is kept computational-only, and antimicrobial activity/growth evidence remains phenotype-supported.",
+  "evidence_class_counts": {
+    "direct_mechanism": 2,
+    "phenotype_supported": 2,
+    "inferred_mechanism": 1,
+    "computational_only": 2,
+    "unknown_or_not_tested": 0
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC12715223-W5-MECH-001",
+      "claim_text": "pMurD-MurD target-recognition support is limited to computational/design evidence at the cited source locators; no source-local surface-plasmon binding assay was verified.",
+      "entity_scope": {
+        "entities": [
+          "pMurD",
+          "MurD",
+          "bacNID pMurD/tSsrA-GNP construct"
+        ],
+        "target": "MurD protein recognition model",
+        "scope_note": "Classification is limited to computational/design evidence for target-recognition; downstream direct evidence is recorded separately for cellular delivery and MurD abundance/degradation."
+      },
+      "evidence_class": "computational_only",
+      "source_locator": "xml:p:7; method:xml:sec:23; method:xml:p:50; supp:41467_2025_66221_MOESM1_ESM.pdf:page=2; supp:41467_2025_66221_MOESM3_ESM.pdf:page=1",
+      "supporting_source_locators": [
+        "xml:sec:2",
+        "xml:sec:3",
+        "pdf:page=3",
+        "pdf:page=12"
+      ],
+      "direct_assay_types": [],
+      "limitations": [
+        "Computational/design evidence is not a direct binding assay and is not promoted to direct_mechanism.",
+        "No packet-local SPR/surface-plasmon signal was detected in XML, PDF, supplementary text, supplementary tables, or figure captions by the worker-5 repair source-signal check."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml:p:7",
+          "method:xml:sec:23",
+          "method:xml:p:50",
+          "supp:41467_2025_66221_MOESM1_ESM.pdf:page=2",
+          "supp:41467_2025_66221_MOESM3_ESM.pdf:page=1"
+        ],
+        "machine_rows_used_as_evidence": false,
+        "source_signal_check": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json",
+        "repair_decision": "downgraded_from_direct_mechanism_to_computational_only_after_no_source_local_surface_plasmon_signal"
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-002",
+      "claim_text": "The bacNID construct has direct delivery/localization evidence in bacterial-cell contexts from microscopy and fluorescence surfaces.",
+      "entity_scope": {
+        "entities": [
+          "bacNID pMurD/tSsrA-GNP construct",
+          "pMurD",
+          "tSsrA"
+        ],
+        "target": "bacterial cells",
+        "scope_note": "The claim is limited to cellular delivery/localization or uptake support and is not counted as lethal mechanism closure."
+      },
+      "evidence_class": "direct_mechanism",
+      "source_locator": "xml:p:8; xml:p:9; xml:p:10; xml:fig:2; xml:caption:2; method:xml:sec:14; method:xml:p:38; method:xml:p:67; supp:41467_2025_66221_MOESM1_ESM.pdf:page=4; supp:41467_2025_66221_MOESM1_ESM.pdf:page=5",
+      "supporting_source_locators": [
+        "xml:sec:3",
+        "pdf:page=3",
+        "pdf:page=4",
+        "supp:41467_2025_66221_MOESM2_ESM.pdf:page=7",
+        "supp:41467_2025_66221_MOESM2_ESM.pdf:page=12"
+      ],
+      "direct_assay_types": [
+        "transmission_electron_microscopy",
+        "confocal_fluorescence_microscopy",
+        "fluorescence_localization_assay"
+      ],
+      "limitations": [
+        "Direct for uptake/localization of the construct, not sufficient alone to assign growth inhibition to a specific target.",
+        "Membrane/permeability keyword surfaces were not promoted beyond the microscopy/localization evidence unless paired with direct assays."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml_sections",
+          "figure_captions",
+          "pdf_text",
+          "supplementary_text",
+          "ocr_text"
+        ],
+        "machine_rows_used_as_evidence": false
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-003",
+      "claim_text": "bacNID treatment is directly supported as reducing or degrading MurD protein abundance in bacterial contexts, with SsrA/ClpXP-linked construct logic preserved as the pathway context.",
+      "entity_scope": {
+        "entities": [
+          "bacNID pMurD/tSsrA-GNP construct",
+          "MurD",
+          "SsrA/ClpXP pathway context"
+        ],
+        "target": "MurD protein abundance/degradation",
+        "scope_note": "Direct classification is based on source-local immunoblot/western-blot degradation surfaces, not on antimicrobial phenotype rows."
+      },
+      "evidence_class": "direct_mechanism",
+      "source_locator": "xml:p:11; xml:p:12; xml:p:14; xml:p:15; xml:p:17; xml:fig:3; xml:caption:3; method:xml:sec:20; method:xml:p:46; method:xml:p:47; supp:41467_2025_66221_MOESM1_ESM.pdf:page=11; supp:41467_2025_66221_MOESM1_ESM.pdf:page=14",
+      "supporting_source_locators": [
+        "xml:sec:4",
+        "pdf:page=5",
+        "pdf:page=6",
+        "pdf:page=7",
+        "supp:41467_2025_66221_MOESM2_ESM.pdf:page=13",
+        "supp:41467_2025_66221_MOESM2_ESM.pdf:page=14"
+      ],
+      "direct_assay_types": [
+        "immunoblot_or_western_blot",
+        "SDS_PAGE_protein_abundance_assay"
+      ],
+      "limitations": [
+        "Direct for MurD protein abundance/degradation readout.",
+        "The SsrA/ClpXP pathway context is retained with the source locators and not generalized to all bacterial proteins."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml_sections",
+          "figure_captions",
+          "pdf_text",
+          "supplementary_text",
+          "ocr_text"
+        ],
+        "machine_rows_used_as_evidence": false
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-004",
+      "claim_text": "The packet supports antimicrobial phenotypes for bacNIDs against Staphylococcus aureus and Salmonella typhimurium contexts, but MIC, inhibition-zone, and colony-survival endpoints are not direct mechanism assays.",
+      "entity_scope": {
+        "entities": [
+          "bacNID pMurD/tSsrA-GNP construct"
+        ],
+        "target": "Staphylococcus aureus and Salmonella typhimurium assay contexts",
+        "scope_note": "Phenotype classification follows source-reviewed activity rows and paper-local figure/text locators."
+      },
+      "evidence_class": "phenotype_supported",
+      "source_locator": "xml:p:15; xml:p:16; xml:p:18; xml:fig:3; xml:caption:3; xml:fig:4; xml:caption:4; pdf:page=5; supp:41467_2025_66221_MOESM1_ESM.pdf:page=36",
+      "supporting_source_locators": [
+        "xml:p:15",
+        "xml:p:16",
+        "xml:p:18",
+        "xml:fig:3",
+        "xml:caption:3",
+        "xml:fig:4",
+        "xml:caption:4",
+        "pdf:page=5",
+        "supp:41467_2025_66221_MOESM1_ESM.pdf:page=36"
+      ],
+      "direct_assay_types": [],
+      "limitations": [
+        "MIC, zone, and colony-survival observations support activity/phenotype only.",
+        "No activity row was promoted to direct protein-degradation mechanism evidence."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml:p:15",
+          "xml:p:16",
+          "xml:p:18",
+          "xml:fig:3",
+          "xml:caption:3",
+          "xml:fig:4",
+          "xml:caption:4",
+          "pdf:page=5",
+          "supp:41467_2025_66221_MOESM1_ESM.pdf:page=36"
+        ],
+        "machine_rows_used_as_evidence": false,
+        "source_signal_check": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json",
+        "repair_decision": "removed_recursive_activity_json_support_locator_and_kept_phenotype_supported_class"
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-005",
+      "claim_text": "Microscopy/morphology and membrane-surface evidence supports bacterial damage after bacNID treatment, but it is kept as phenotype-supported rather than molecular target closure.",
+      "entity_scope": {
+        "entities": [
+          "bacNID pMurD/tSsrA-GNP construct"
+        ],
+        "target": "treated bacterial cells",
+        "scope_note": "SEM and related morphology/permeability surfaces are treated as downstream phenotype support unless tied to the MurD degradation readout."
+      },
+      "evidence_class": "phenotype_supported",
+      "source_locator": "xml:p:18; xml:p:19; xml:p:20; xml:fig:4; xml:caption:4; method:xml:sec:16; method:xml:p:41; supp:41467_2025_66221_MOESM2_ESM.pdf:page=15",
+      "supporting_source_locators": [
+        "xml:sec:5",
+        "pdf:page=6",
+        "supp:41467_2025_66221_MOESM2_ESM.pdf:page=7",
+        "supp:41467_2025_66221_MOESM3_ESM.pdf:page=2"
+      ],
+      "direct_assay_types": [],
+      "limitations": [
+        "Morphology and membrane-surface readouts do not by themselves prove the protein-degradation mechanism.",
+        "These observations are preserved separately from the direct immunoblot/western-blot MurD degradation claim."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml_sections",
+          "figure_captions",
+          "pdf_text",
+          "supplementary_text",
+          "ocr_text"
+        ],
+        "machine_rows_used_as_evidence": false
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-006",
+      "claim_text": "Docking/modeling supports the proposed pMurD-MurD recognition model but remains computational-only evidence.",
+      "entity_scope": {
+        "entities": [
+          "pMurD",
+          "MurD"
+        ],
+        "target": "pMurD-MurD recognition model",
+        "scope_note": "Computational evidence is recorded separately from direct cellular delivery and MurD abundance/degradation assays."
+      },
+      "evidence_class": "computational_only",
+      "source_locator": "xml:p:7; method:xml:sec:23; method:xml:p:50; supp:41467_2025_66221_MOESM1_ESM.pdf:page=2; supp:41467_2025_66221_MOESM3_ESM.pdf:page=1",
+      "supporting_source_locators": [
+        "xml:sec:2",
+        "xml:sec:3",
+        "pdf:page=3",
+        "pdf:page=12"
+      ],
+      "direct_assay_types": [],
+      "limitations": [
+        "Computational docking/modeling is not direct mechanism evidence.",
+        "Direct target-engagement status is assigned only to the source-local binding assay claim."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml_sections",
+          "pdf_text",
+          "supplementary_text",
+          "ocr_text"
+        ],
+        "machine_rows_used_as_evidence": false
+      }
+    },
+    {
+      "claim_id": "PMC12715223-W5-MECH-007",
+      "claim_text": "The SsrA/ClpXP nanoinducer design rationale is mechanism-relevant but remains inferred when separated from the direct MurD degradation assay.",
+      "entity_scope": {
+        "entities": [
+          "SsrA",
+          "tSsrA",
+          "ClpXP",
+          "bacNID pMurD/tSsrA-GNP construct"
+        ],
+        "target": "protease-recruitment design rationale",
+        "scope_note": "Design and pathway rationale are preserved but not promoted to direct evidence outside the immunoblot/western-blot degradation claim."
+      },
+      "evidence_class": "inferred_mechanism",
+      "source_locator": "xml:abstract:1; xml:abstract:2; xml:p:1; xml:p:2; xml:p:4; xml:p:5; xml:p:6; xml:fig:1; xml:caption:1; pdf:page=1; pdf:page=2",
+      "supporting_source_locators": [
+        "xml:sec:1",
+        "pdf:page=10",
+        "pdf:page=13"
+      ],
+      "direct_assay_types": [],
+      "limitations": [
+        "Construct design, tag logic, and pathway statements are not accepted as direct mechanism evidence without paired protein-abundance/degradation readouts.",
+        "This claim prevents discussion/design language from being flattened into generic direct mechanism."
+      ],
+      "source_review_verification": {
+        "primary_source_surfaces_reopened": [
+          "xml_sections",
+          "figure_captions",
+          "pdf_text"
+        ],
+        "machine_rows_used_as_evidence": false
+      }
+    }
+  ],
+  "excluded_or_nonpromoted_evidence": [
+    {
+      "evidence_type": "DBAASP Codex fallback activity rows",
+      "status": "candidate_machine_evidence_only",
+      "reason": "Seven fallback rows were reviewed only as hints; no linked authoritative database rows are present and activity rows do not establish direct mechanism."
+    },
+    {
+      "evidence_type": "MIC, inhibition-zone, colony-survival, and growth-inhibition endpoints",
+      "status": "phenotype_supported_only",
+      "reason": "Activity endpoints support antibacterial phenotype but are not direct mechanism assays."
+    },
+    {
+      "evidence_type": "Docking/modeling",
+      "status": "computational_only",
+      "reason": "Computational support was preserved separately from unsupported direct binding/binding and immunoblot/western-blot evidence."
+    },
+    {
+      "evidence_type": "Charge, hydrophobicity, peptide tag, and nanoinducer design rationale",
+      "status": "inferred_mechanism_only",
+      "reason": "Design features and discussion/rationale language were not promoted to direct mechanism."
+    },
+    {
+      "evidence_type": "SEM or morphology-only bacterial damage surfaces",
+      "status": "phenotype_supported_only",
+      "reason": "Morphology supports downstream damage but not target-specific MurD degradation closure by itself."
+    }
+  ],
+  "source_locator_resolution_issues": [],
+  "quality_checks": {
+    "all_claims_have_claim_id": true,
+    "all_claims_have_claim_text": true,
+    "all_claims_have_entity_scope": true,
+    "all_claims_have_evidence_class": true,
+    "all_claims_have_source_locator": true,
+    "direct_claims_have_direct_assay_types": true,
+    "mic_or_growth_not_promoted_to_direct": true,
+    "computational_not_promoted_to_direct": true,
+    "human_source_review_kept_separate_from_machine_extraction": true,
+    "internet_used": false,
+    "unsupported_surface_plasmon_assay_absent_from_direct_claims": true,
+    "mechanism_source_locator_project_path_refs": 0
+  },
+  "rework_state": {
+    "targeted_rework_needed": false,
+    "runtime_open_ticket_ids_assigned_to_worker5": [
+      "rwk-PMC12715223-campaign-r01-BF-PMC12715223-W5-MECH-001"
+    ],
+    "owner_repair_responses_appended": [
+      "rwk-PMC12715223-campaign-r01-BF-PMC12715223-W5-MECH-001"
+    ],
+    "reason": "Worker-5 repaired assigned mechanism ticket and leaves terminal closure to worker-6 adjudication."
+  },
+  "unresolved_blockers": [],
+  "worker_cautions": [
+    "This worker-5 artifact is not a terminal publication-grade claim; worker-6 adjudication and strict semantic/publication gates are still required.",
+    "The database snapshot has no linked authoritative DBAASP/APD6/DRAMP rows for this paper; fallback rows remain candidate machine evidence only.",
+    "Morphology and antimicrobial activity endpoints are intentionally separated from direct target-degradation mechanism evidence.",
+    {
+      "caution_id": "PMC12715223-W5-CAUTION-SPR-REPAIR-001",
+      "severity": "blocking_repaired_pending_worker6_adjudication",
+      "finding": "No source-local surface-plasmon assay signal was verified; claim 001 was downgraded to computational_only and has no direct_assay_types.",
+      "source_locator_signal_check": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json"
+    },
+    {
+      "caution_id": "PMC12715223-W5-CAUTION-LOCATOR-REPAIR-004",
+      "severity": "blocking_repaired_pending_worker6_adjudication",
+      "finding": "Claim 004 now uses only source-local XML/PDF/supplement locators in source_locator and supporting_source_locators.",
+      "source_locator_signal_check": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json"
+    }
+  ],
+  "validation": {
+    "schema_self_check": {
+      "checked_at": "2026-07-27T11:07:16.807134Z",
+      "claim_count": 7,
+      "direct_claim_count": 2,
+      "non_source_locator_refs_in_mechanism_source_fields": 0,
+      "unsupported_surface_plasmon_direct_assay_claims": 0,
+      "valid": true
+    },
+    "validation_summary": "Worker-5 repair self-check passed for required claim fields, direct assay typing, source-locator boundary, and unsupported surface-plasmon direct assay removal. Terminal publication-grade acceptance still requires fresh worker-6 adjudication and final rebuild.",
+    "gate_artifacts": [
+      {
+        "gate": "worker5_json_self_check",
+        "returncode": 0,
+        "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/worker5_schema_self_check.json",
+        "status": "pass"
+      },
+      {
+        "gate": "check_two_queue_packets",
+        "returncode": 2,
+        "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/gate_two_queue_packets.worker5.json",
+        "status": "diagnostic_nonterminal",
+        "worker5_interpretation": "Packet materials and locators are present; nonzero status is driven by missing final/adjudication files outside worker-5 ownership.",
+        "missing_final_files": [
+          "final/database_record_verification.json",
+          "final/activity_toxicity_evidence.json",
+          "final/mechanism_evidence.json",
+          "final/review_report.json"
+        ]
+      },
+      {
+        "gate": "semantic_three_layer_gate",
+        "returncode": 1,
+        "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/gate_semantic_three_layer.worker5.json",
+        "status": "diagnostic_nonterminal",
+        "worker5_interpretation": "Nonzero status reflects missing final review/database/activity artifacts before worker-6 adjudication; worker-5 mechanism claims passed local required-field self-check.",
+        "issue_codes": [
+          "missing_review_report",
+          "missing_activity_records",
+          "missing_database_record_verification"
+        ]
+      },
+      {
+        "gate": "check_three_layer_publication_quality",
+        "returncode": 2,
+        "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/gate_publication_quality.worker5.json",
+        "status": "diagnostic_nonterminal",
+        "worker5_interpretation": "Publication gate cannot pass until final layer files and worker-6 review are written.",
+        "risk_counts": {
+          "missing_final_file": 4
+        }
+      },
+      {
+        "artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12715223/work/mechanism_ontology/mechanism_source_signal_check.worker5_repair.json",
+        "role": "worker5_repair_source_signal_check"
+      }
+    ]
+  },
+  "lane_assessment": "source_reviewed_complete_for_worker5_pending_worker6_adjudication"
+}

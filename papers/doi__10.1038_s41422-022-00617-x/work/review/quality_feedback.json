@@ -1,0 +1,92 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 5,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "codex_worker_nonzero_exit",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-06-20T09:37:57Z"
+  },
+  "caution_findings": [
+    {
+      "code": "xml_tables_absent_values_recovered_from_pdf_figure",
+      "finding": "The local XML has zero table-wrap elements; the old Table 1/2/3 request is not applicable to this article package. Activity values were recovered from article PDF text and Fig. 1 image/caption instead.",
+      "severity": "caution",
+      "source_paths": [
+        "papers/doi__10.1038_s41422-022-00617-x/source/paper.xml",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/pdf_text/41422_2022_Article_617.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/oa_package/local-DRAMP-35087243/PMC8793821/41422_2022_617_Fig1_HTML.jpg"
+      ]
+    },
+    {
+      "code": "supplement_has_methods_no_structured_activity_tables",
+      "finding": "Supplementary PDF/landing assets were checked; structured supplementary table_count is 0 and the supplement contributes methods/caption context, not additional row-level activity values.",
+      "severity": "caution",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_text/local-DRAMP-41422_2022_617_MOESM1_ESM.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_tables.json"
+      ]
+    },
+    {
+      "code": "modified_sequences_not_plain_normalized_for_lipopeptides",
+      "finding": "EK1C4 and EKL1C activity values are source-supported, but their cholesterol-conjugated/noncanonical Fig. 1c notation is not fully represented by DRAMP plain sequence strings, so database rows retain sequence_modified_not_normalized.",
+      "severity": "caution",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/oa_package/local-DRAMP-35087243/PMC8793821/41422_2022_617_Fig1_HTML.jpg",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_dramp_activity_records.jsonl"
+      ]
+    },
+    {
+      "code": "no_toxicity_rows_in_local_material",
+      "finding": "No hemolysis, cytotoxicity, HC50, CC50, or cell-viability toxicity row was present in the checked local primary/supplement/database materials; no toxicity value was fabricated.",
+      "severity": "caution",
+      "source_paths": [
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/pdf_text/41422_2022_Article_617.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted/supplementary_text/local-DRAMP-41422_2022_617_MOESM1_ESM.txt",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/database/linked_dramp_activity_records.jsonl"
+      ]
+    }
+  ],
+  "generated_at": "2026-06-20T09:37:33Z",
+  "issue_count": 0,
+  "paper_id": "doi__10.1038_s41422-022-00617-x",
+  "qc_failure_reasons": [
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41422-022-00617-x/work/review/quality_feedback.json",
+      "code": "codex_worker_nonzero_exit",
+      "owner_worker": "worker-6",
+      "reason": "Codex owner-worker exited non-zero after bounded review, and strict gates still did not pass; controller retried 0 time(s), tagged the paper for later infrastructure recovery, and advanced. If the worker wrote partial artifacts, the after_worker gate reports above remain the scientific source of truth.",
+      "severity": "blocking"
+    }
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "codex_worker_nonzero_exit",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41422-022-00617-x",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/database",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/extracted",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/locators",
+        "paper_packets/doi__10.1038_s41422-022-00617-x/raw",
+        "papers/doi__10.1038_s41422-022-00617-x/final",
+        "papers/doi__10.1038_s41422-022-00617-x/source",
+        "papers/doi__10.1038_s41422-022-00617-x/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Codex owner-worker exited non-zero after bounded review, and strict gates still did not pass; controller retried 0 time(s), tagged the paper for later infrastructure recovery, and advanced. If the worker wrote partial artifacts, the after_worker gate reports above remain the scientific source of truth."
+    }
+  ]
+}

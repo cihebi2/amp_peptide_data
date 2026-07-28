@@ -1,0 +1,206 @@
+{
+  "adjudication_summary": "Database sequence/literature rows and Table 1 activity rows were source-reviewed; local supplement assets do not expose Table S1-S3, so database-only toxicity rows remain a blocking material gap.",
+  "caution_findings": [
+    {
+      "caution_code": "supplementary_tables_unavailable_locally",
+      "evidence_context": "Supplementary Table S1-S3 content is referenced by the paper but local supplementary .bin assets are HTML landing pages and supplementary_tables.json has table_count=0."
+    },
+    {
+      "caution_code": "database_only_toxicity_values_preserved",
+      "evidence_context": "Vero/3T3-L1 exact DBAASP cytotoxicity values are retained as database_only_no_primary_source rather than normalized or deleted."
+    },
+    {
+      "caution_code": "dbaasp_21458_blank_name_field",
+      "evidence_context": "DBAASPS_21458 has a blank name in the merged DBAASP sequence catalog; source design text supports the IL15.5 peptide identity."
+    }
+  ],
+  "checked_inputs": [
+    {
+      "path": "papers/doi__10.1038_s41598-023-43274-9/source/paper.xml",
+      "role": "primary_xml"
+    },
+    {
+      "path": "papers/doi__10.1038_s41598-023-43274-9/source/paper.pdf",
+      "role": "primary_pdf"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/pdf_text/landing-1.txt",
+      "role": "pdf_text_index"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/packet_manifest.json",
+      "role": "packet_manifest"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/locators/locator_index.json",
+      "role": "locator_index"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/extraction/extraction_quality_report.json",
+      "role": "extraction_quality"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_index.json",
+      "role": "supplementary_inventory"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_tables.json",
+      "role": "supplementary_table_parse"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_literature_records.jsonl",
+      "role": "linked_literature_rows"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_assay_records.jsonl",
+      "role": "linked_assay_rows"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_experiment_records.jsonl",
+      "role": "linked_experiment_rows"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "role": "merged_sequence_catalog"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/asset_manifest.csv",
+      "role": "landed_asset_manifest"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/supplementary",
+      "role": "landed_supplementary_assets"
+    }
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "All local material listed in handoff_context was reopened; supplementary .bin files are HTML landing pages, not recoverable table files.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true,
+    "unavailable_sources": [
+      "supplementary Tables S1-S3 exact data not present in local landing-page .bin assets"
+    ]
+  },
+  "paper_id": "doi__10.1038_s41598-023-43274-9",
+  "per_layer_decision_rationale": {
+    "activity_toxicity": "Existing worker-2 activity artifact was not edited under this assignment; worker-6 uses it only as prior evidence and does not promote unsupported supplement/figure-only values.",
+    "database_record_audit": "Worker-4 audit rebuilt 245 DBAASP-linked rows: Table 1 MIC/MBC and text-supported HC50/IC50 rows are source_verified; exact Vero/3T3-L1 toxicity rows remain database_only_no_primary_source.",
+    "material_packet": "Packet XML/PDF, locator index, database snapshots, and supplementary inventory were present; supplementary table content is not locally recoverable because the landed .bin assets are HTML landing pages.",
+    "mechanism_ontology": "Existing worker-5 mechanism artifact was not edited; XML/PDF support membrane disruption and possible DNA interaction context, but publication-grade acceptance is blocked by the database/toxicity material gap.",
+    "publication_grade_review": "Obtainable-only closeout is blocked_missing_primary_material, not accepted_with_cautions, because exact local support for a subset of DBAASP toxicity values is absent."
+  },
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "unrecoverable_supplementary_toxicity_tables",
+      "owner_worker": "worker-6",
+      "reason": "Local material does not contain extractable Table S1-S3 content; exact Vero/3T3-L1 cytotoxicity percentages in DBAASP cannot be primary-source verified.",
+      "severity": "blocking"
+    },
+    {
+      "code": "database_toxicity_rows_not_primary_source_verified",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "28 linked DBAASP toxicity rows remain database_only_no_primary_source after bounded local source review.",
+      "severity": "major"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "blocked_missing_primary_material",
+  "reviewed_at": "2026-05-03T06:21:02Z",
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-023-43274-9/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T06:21:02Z",
+      "failure_code": "unrecoverable_supplementary_toxicity_tables",
+      "layer": "review",
+      "omission_code": "supplementary_tables_s1_s3_and_exact_figure_toxicity_values_not_recovered",
+      "owner_worker": "worker-6",
+      "paper_id": "doi__10.1038_s41598-023-43274-9",
+      "reason": "Table 1 antimicrobial MIC/MBC rows and text-supported HC50/IC50 rows were retained as source_verified. Exact DBAASP Vero/3T3-L1 cytotoxicity values remain database_only_no_primary_source, so publication-grade final acceptance is blocked in obtainable-only mode.",
+      "required_action": "Keep this paper non-accepted unless true local supplementary Table S1-S3 data or another primary-source extraction of exact Vero/3T3-L1 toxicity values is supplied; do not rerun the initial workflow/bootstrap.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1038_s41598-023-43274-9/source/paper.xml",
+        "papers/doi__10.1038_s41598-023-43274-9/source/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/locators/locator_index.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/asset_manifest.csv",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_experiment_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-complete-test-0001",
+      "worker": "worker-6"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_existing_final": 44,
+    "database_record_audit_status_summary": {
+      "database_only_no_primary_source": 28,
+      "source_conflict": 2,
+      "source_verified": 215
+    },
+    "database_record_count": 245,
+    "mechanism_claims_existing_final": 3,
+    "open_rework_targets": 1,
+    "table1_primary_values_reconciled_per_database_surface": 84,
+    "unrecoverable_material_gap_count": 1
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "publication_grade_ready": false,
+    "reason": "unrecoverable local supplementary table / exact toxicity value gap",
+    "required_rework_count": 1
+  },
+  "summary": "Source-reviewed worker-4/6 repair completed for QL17/IL15 DBAASP rows, but the paper remains non-accepted because exact supplementary/figure-derived toxicity values cannot be recovered from local material.",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplementary_tables_s1_s3_and_exact_figure_toxicity_values_not_recovered",
+      "impact": "Table 1 antimicrobial MIC/MBC rows and text-supported HC50/IC50 rows were retained as source_verified. Exact DBAASP Vero/3T3-L1 cytotoxicity values remain database_only_no_primary_source, so publication-grade final acceptance is blocked in obtainable-only mode.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41598-023-43274-9/source/paper.xml",
+        "papers/doi__10.1038_s41598-023-43274-9/source/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/locators/locator_index.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-023-43274-9/asset_manifest.csv",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1038_s41598-023-43274-9/database/linked_experiment_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "XML Table 1 extraction with ElementTree",
+        "PDF text index review with rg/sed",
+        "supplementary_index.json and supplementary_tables.json review",
+        "file type check for landed supplementary .bin assets",
+        "HTML landing page inspection for supplementary .bin assets",
+        "DBAASP linked assay/experiment/literature JSONL reconciliation",
+        "merged sequence catalog lookup"
+      ],
+      "why_unrecoverable": "The local supplementary assets are repeated Scientific Reports HTML landing pages rather than extractable Table S1-S3 spreadsheet/PDF data. The XML/PDF text gives narrative HC50/IC50 support and references Table S1-S3, but does not expose exact Vero or 3T3-L1 cytotoxicity percentages for all DBAASP rows."
+    }
+  ],
+  "validator_contract_passed": true
+}

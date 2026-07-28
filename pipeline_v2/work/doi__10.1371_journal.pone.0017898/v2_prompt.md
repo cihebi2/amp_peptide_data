@@ -1,0 +1,65 @@
+
+You are a STRICT database-record auditor (pipeline v2). You compare what a peptide database ASSERTS
+against the PRIMARY PAPER's deterministically-parsed tables that are given to you below. You must not
+read raw XML or invent values: the ONLY admissible source evidence is the `longform_cells` provided.
+
+For EACH database assertion, output one JSON object with this exact schema:
+{
+ "assertion_index": <int, 0-based position in db_assertions>,
+ "db_claimed": {"organism": "...", "endpoint": "...", "value": "...", "peptide": "..."},
+ "verification_outcome": one of
+     "value_match"            (source has the SAME value for the same peptide+organism+endpoint),
+     "value_mismatch"         (source has a DIFFERENT value -> candidate real DB error),
+     "endpoint_mismatch"      (source reports this value under a DIFFERENT endpoint than the DB claims,
+                               e.g. DB says IC50 but the source column header says GI50/EC50/MBC),
+     "variant_misattribution" (the value EXISTS in source but belongs to a DIFFERENT peptide/variant
+                               than the DB row names),
+     "not_in_provided_tables" (the organism/target/value is NOT in the tables provided to you;
+                               this is NOT evidence of a database error -- the value may live in a
+                               figure, supplement, or a table not provided. Treat as undetermined.),
+     "cannot_determine"       (value lives only in a figure image, or no matching cell exists in the
+                               provided tables, or the table structure is too ambiguous to match),
+ "normalization_note": one of
+     "strain_id_differs_value_same", "modification_representation_only", "unit_differs", "none",
+ "is_database_error": <bool>,
+ "evidence": {"table_index": <int>, "row_label": "...", "col_header": "...", "source_value": "..."},
+ "short_reason": "<=200 chars"
+}
+
+HARD RULES (these encode the fixes over the old pipeline):
+1. GROUNDING: the `evidence` object MUST be copied verbatim from one of the provided `longform_cells`.
+   If no provided cell supports a comparison, you MUST return "cannot_determine" and leave evidence null.
+   Never guess a number that is not in the provided cells.
+2. ENDPOINT FROM SOURCE: take the endpoint from the table column header / caption / footnote, NOT from
+   the database. If the DB endpoint label differs from the source header for the same value -> endpoint_mismatch.
+3. STRAIN-ID NORMALIZATION: if the source has the SAME value for the same GENUS+SPECIES and SAME endpoint
+   but a different strain/collection id (e.g. DB "ATCC 6258" vs source "CCM 8271"; ATCC/CCM/PCM/DSM/KCTC/CGMCC),
+   this is NOT an error: verification_outcome="value_match", normalization_note="strain_id_differs_value_same",
+   is_database_error=false.
+4. MODIFICATION NORMALIZATION: a DB "core sequence" vs a source "core sequence + terminal -NH2 / N-acetyl"
+   is representation, not error: normalization_note="modification_representation_only", is_database_error=false
+   (unless the residue letters themselves differ).
+5. is_database_error=true ONLY for value_mismatch / endpoint_mismatch / variant_misattribution that
+   (a) are NOT explained by a normalization_note AND (b) carry a positive `evidence` cell copied from
+   longform_cells showing the CONFLICTING source value.
+5b. VARIANT MISATTRIBUTION needs an identity anchor: only use "variant_misattribution" when the DB
+   assertion provides a peptide name (db_claimed_peptide_name) that maps to a SPECIFIC source row/column.
+   If the DB record has no peptide name, or the source columns are coded (e.g. #1..#25) without a legend
+   you can resolve, you CANNOT know which variant the value belongs to -> use "cannot_determine".
+6. ABSENCE IS NOT ERROR (critical): you are given ONLY some tables, never the whole paper. If a DB
+   organism/target/value is not in the provided cells, you MUST return "not_in_provided_tables" with
+   is_database_error=false. NEVER conclude the database is wrong merely because something is missing
+   from the tables you were given -- it may be in a figure, supplement, or a table not provided.
+7. Output ONLY a JSON array of these objects as your final message. No prose, no markdown fences.
+
+
+=== PAPER ID ===
+doi__10.1371_journal.pone.0017898
+
+=== DETERMINISTICALLY PARSED SOURCE TABLES (admissible evidence cells) ===
+[{"table_index": 1, "label": "Table 1", "caption": "IC50 value for MDM2 and MDMX-p53 interaction in ELISA.", "footnotes": [], "header_rows": [["Peptides", "Sequences", "IC50 for MDM2 (µM)", "IC50 for MDMX (µM)"]], "longform_cells": [{"table_index": 1, "row_index": 2, "col_index": 2, "row_label": "MIP", "col_header": "Sequences", "value": "PRFWEYWLRLME"}, {"table_index": 1, "row_index": 2, "col_index": 3, "row_label": "MIP", "col_header": "IC50 for MDM2 (µM)", "value": "0.01"}, {"table_index": 1, "row_index": 2, "col_index": 4, "row_label": "MIP", "col_header": "IC50 for MDMX (µM)", "value": "0.12"}, {"table_index": 1, "row_index": 3, "col_index": 2, "row_label": "DI", "col_header": "Sequences", "value": "LTFEHYWAQLTS"}, {"table_index": 1, "row_index": 3, "col_index": 3, "row_label": "DI", "col_header": "IC50 for MDM2 (µM)", "value": "0.29"}, {"table_index": 1, "row_index": 3, "col_index": 4, "row_label": "DI", "col_header": "IC50 for MDMX (µM)", "value": "1.6"}, {"table_index": 1, "row_index": 4, "col_index": 2, "row_label": "3A", "col_header": "Sequences", "value": "LTAEHYAAQATS"}, {"table_index": 1, "row_index": 4, "col_index": 3, "row_label": "3A", "col_header": "IC50 for MDM2 (µM)", "value": ">100"}, {"table_index": 1, "row_index": 4, "col_index": 4, "row_label": "3A", "col_header": "IC50 for MDMX (µM)", "value": ">100"}, {"table_index": 1, "row_index": 5, "col_index": 2, "row_label": "p5317–28", "col_header": "Sequences", "value": "QETFSDLWKLLP"}, {"table_index": 1, "row_index": 5, "col_index": 3, "row_label": "p5317–28", "col_header": "IC50 for MDM2 (µM)", "value": "4.7"}, {"table_index": 1, "row_index": 5, "col_index": 4, "row_label": "p5317–28", "col_header": "IC50 for MDMX (µM)", "value": "30"}, {"table_index": 1, "row_index": 6, "col_index": 2, "row_label": "MIP (F3A)", "col_header": "Sequences", "value": "PRAWEYWLRLME"}, {"table_index": 1, "row_index": 6, "col_index": 3, "row_label": "MIP (F3A)", "col_header": "IC50 for MDM2 (µM)", "value": "0.57"}, {"table_index": 1, "row_index": 6, "col_index": 4, "row_label": "MIP (F3A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}, {"table_index": 1, "row_index": 7, "col_index": 2, "row_label": "MIP (Y6A)", "col_header": "Sequences", "value": "PRFWEAWLRLME"}, {"table_index": 1, "row_index": 7, "col_index": 3, "row_label": "MIP (Y6A)", "col_header": "IC50 for MDM2 (µM)", "value": ">100"}, {"table_index": 1, "row_index": 7, "col_index": 4, "row_label": "MIP (Y6A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}, {"table_index": 1, "row_index": 8, "col_index": 2, "row_label": "MIP (W7A)", "col_header": "Sequences", "value": "PRFWEYALRLME"}, {"table_index": 1, "row_index": 8, "col_index": 3, "row_label": "MIP (W7A)", "col_header": "IC50 for MDM2 (µM)", "value": ">100"}, {"table_index": 1, "row_index": 8, "col_index": 4, "row_label": "MIP (W7A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}, {"table_index": 1, "row_index": 9, "col_index": 2, "row_label": "MIP (R9A)", "col_header": "Sequences", "value": "PRFWEYWLALME"}, {"table_index": 1, "row_index": 9, "col_index": 3, "row_label": "MIP (R9A)", "col_header": "IC50 for MDM2 (µM)", "value": "0.02"}, {"table_index": 1, "row_index": 9, "col_index": 4, "row_label": "MIP (R9A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}, {"table_index": 1, "row_index": 10, "col_index": 2, "row_label": "MIP (L10A)", "col_header": "Sequences", "value": "PRFWEYWLRAME"}, {"table_index": 1, "row_index": 10, "col_index": 3, "row_label": "MIP (L10A)", "col_header": "IC50 for MDM2 (µM)", "value": "1.14"}, {"table_index": 1, "row_index": 10, "col_index": 4, "row_label": "MIP (L10A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}, {"table_index": 1, "row_index": 11, "col_index": 2, "row_label": "MIP (M11A)", "col_header": "Sequences", "value": "PRFWEYWLRLAE"}, {"table_index": 1, "row_index": 11, "col_index": 3, "row_label": "MIP (M11A)", "col_header": "IC50 for MDM2 (µM)", "value": "0.4"}, {"table_index": 1, "row_index": 11, "col_index": 4, "row_label": "MIP (M11A)", "col_header": "IC50 for MDMX (µM)", "value": "Not tested"}]}]
+
+=== DATABASE ASSERTIONS TO VERIFY ===
+[{"assertion_index": 0, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=0.29 µM); -- (IC50 for MDMX-p53=1.6 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "DI"}, {"assertion_index": 1, "database": "DRAMP", "db_subject_text": "", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "DI"}, {"assertion_index": 2, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2>100 µM); -- (IC50 for MDMX-p53>100 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "3A"}, {"assertion_index": 3, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=4.7 µM); -- (IC50 for MDMX-p53=30 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "P5317-28"}, {"assertion_index": 4, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=0.57 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(F3A)"}, {"assertion_index": 5, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2>100 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(Y6A)"}, {"assertion_index": 6, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2>100 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(W7A)"}, {"assertion_index": 7, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=0.02 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(R9A)"}, {"assertion_index": 8, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=1.14 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(L10A)"}, {"assertion_index": 9, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=0.4 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(M11A)"}, {"assertion_index": 10, "database": "DRAMP", "db_subject_text": "Tumor cells: -- (IC50 for MDM2=0.01 µM); -- (IC50 for MDMX-p53=0.12 µM)", "db_measure": "Antimicrobial, Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP"}, {"assertion_index": 11, "database": "dbAMP", "db_subject_text": "MIP(F3A)\nE3 ubiquitin-protein ligase", "db_measure": "Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(F3A) E3 ubiquitin-protein ligase"}, {"assertion_index": 12, "database": "dbAMP", "db_subject_text": "MIP(Y6A)\nE3 ubiquitin-protein ligase", "db_measure": "Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(Y6A) E3 ubiquitin-protein ligase"}, {"assertion_index": 13, "database": "dbAMP", "db_subject_text": "MIP(W7A)\nE3 ubiquitin-protein ligase", "db_measure": "Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(W7A) E3 ubiquitin-protein ligase"}, {"assertion_index": 14, "database": "dbAMP", "db_subject_text": "MIP(M11A)\nE3 ubiquitin-protein ligase", "db_measure": "Antimicrobial Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(M11A) E3 ubiquitin-protein ligase"}, {"assertion_index": 15, "database": "dbAMP", "db_subject_text": "MIP(L10A)\nE3 ubiquitin-protein ligase", "db_measure": "Antimicrobial Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(L10A) E3 ubiquitin-protein ligase"}, {"assertion_index": 16, "database": "dbAMP", "db_subject_text": "MIP(R9A)\nE3 ubiquitin-protein ligase", "db_measure": "Anticancer", "db_value": "", "db_unit": "", "db_sequence": "", "db_claimed_peptide_name": "MIP(R9A) E3 ubiquitin-protein ligase"}]
+
+Return ONLY the JSON array now (one object per assertion above).

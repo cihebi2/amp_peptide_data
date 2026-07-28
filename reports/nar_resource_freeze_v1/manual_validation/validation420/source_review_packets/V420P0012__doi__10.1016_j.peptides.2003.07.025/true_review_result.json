@@ -1,0 +1,155 @@
+{
+  "paper_id": "doi__10.1016_j.peptides.2003.07.025",
+  "review_sample_id": "V420P0012",
+  "reviewed_at": "2026-06-25T01:07:52Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "decision_rationale": "The sampled DBAASP database audit row is source-backed and caution-preserving: primary Table 1 supports BMAP-28 with C-terminal amide, primary Table 2 supports the Enterococcus faecium MIC range, and the linked DBAASP row carries the matching MIC plus database sequence lacking the paper terminal amide. However, the accepted paper-level mechanism ontology uses non-standard evidence_class values, which this validation prompt defines as a hard rework condition for accepted outputs.",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0010",
+      "audit_record_id": "doi__10.1016_j.peptides.2003.07.025:database_audit:22",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "Confirmed with preserved sequence/modification caution. The final database audit row links DBAASP DBAASPR_2383 row 22 to source/paper.xml Table 1 row 5 for BMAP-28 sequence GGLRSLGRKILRAWKKYGPIIVPIIRI-NH2, while the database sequence snapshot is GGLRSLGRKILRAWKKYGPIIVPIIRIG. The matched activity evidence is source/paper.xml Table 2 row 5: BMAP-28 against Enterococcus faecium has MIC 1-8 uM under the Table 2 MIC unit/context. The row correctly remains sequence_modified_not_normalized rather than source_verified.",
+      "locators_checked": [
+        "validation_samples.json::VAL0010",
+        "release_rows.json::doi__10.1016_j.peptides.2003.07.025:database_audit:22",
+        "sample_final_records.json::VAL0010",
+        "papers/doi__10.1016_j.peptides.2003.07.025/final/database_record_verification.json::record_audits[traceability.locator=database:linked_assay_records.jsonl:row=22]",
+        "papers/doi__10.1016_j.peptides.2003.07.025/final/activity_toxicity_evidence.json::activity_records[record_id=doi__10.1016_j.peptides.2003.07.025-table2-mic-03]",
+        "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_assay_records.jsonl:22",
+        "paper_packets/doi__10.1016_j.peptides.2003.07.025/locators/locator_index.json::xml:table=1:row=5",
+        "paper_packets/doi__10.1016_j.peptides.2003.07.025/locators/locator_index.json::xml:table=2:row=5",
+        "paper_packets/doi__10.1016_j.peptides.2003.07.025/extracted/xml_sections.json::Results/Table 1/Table 2"
+      ],
+      "cautions": [
+        "DBAASP sequence snapshot lacks the paper-reported C-terminal amide and instead ends with terminal glycine; source Table 1 reports BMAP-28 as C-terminally amidated.",
+        "Release row database_unit is blank, but primary Table 2 supplies the MIC column unit as uM and final activity evidence preserves raw_unit as uM."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_status_for_sampled_row": "sufficient_primary_material",
+    "primary_material_checked": [
+      "papers/doi__10.1016_j.peptides.2003.07.025/source/paper.xml",
+      "papers/doi__10.1016_j.peptides.2003.07.025/source/paper.pdf",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/raw/paper.xml",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/raw/paper.pdf",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/raw/oa_package/local-DBAASP-PMC7124310.tar.gz",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/extracted/xml_sections.json",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/locators/locator_index.json"
+    ],
+    "database_material_checked": [
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_literature_records.jsonl",
+      "papers/doi__10.1016_j.peptides.2003.07.025/final/database_record_verification.json",
+      "papers/doi__10.1016_j.peptides.2003.07.025/final/activity_toxicity_evidence.json",
+      "papers/doi__10.1016_j.peptides.2003.07.025/final/mechanism_ontology_record.json",
+      "papers/doi__10.1016_j.peptides.2003.07.025/final/review_report.json"
+    ],
+    "supplementary_review": {
+      "supplementary_assets_present": false,
+      "evidence": "supplementary_index.json lists an empty supplementary_assets array; extraction_quality_report reports supplementary_asset_count 0 and xml_table_count 5.",
+      "impact_on_sampled_row": "none"
+    },
+    "material_cautions": [
+      "packet_manifest.json still contains a test_scope note saying the historical message-transfer workflow test was not publication-grade acceptance, but later rework_responses.jsonl, quality_feedback.json, and review_report.json mark rwk-complete-test-0001 resolved.",
+      "extraction_status.json has material_extracted_with_gaps, but the sampled Table 1/Table 2/database-row evidence is locally present and readable."
+    ]
+  },
+  "worker6_adjudication": {
+    "layer_1_database_identity": {
+      "decision": "confirmed_with_caution",
+      "rationale": "Layer 1 status sequence_modified_not_normalized is appropriate because source sequence core and peptide name are verified by Table 1, while terminal amidation is not encoded in the database sequence snapshot."
+    },
+    "layer_2_activity_toxicity": {
+      "decision": "confirmed",
+      "rationale": "The matched activity row is row-level, source-located, uses concrete endpoint MIC, raw value 1-8, raw unit uM from Table 2 column context, target Enterococcus faecium, and assay conditions from the primary source."
+    },
+    "layer_3_mechanism_ontology": {
+      "decision": "needs_targeted_rework",
+      "rationale": "Accepted mechanism_ontology_record.json contains evidence_class values literature_supported_mechanism_context, structure_activity_relationship, and phenotypic_activity_context. These are outside the required ontology vocabulary and therefore meet the prompt's hard-failure rule for non-standard mechanism evidence classes in accepted outputs.",
+      "non_standard_evidence_classes": [
+        "literature_supported_mechanism_context",
+        "structure_activity_relationship",
+        "phenotypic_activity_context"
+      ]
+    },
+    "prior_gate_context": "Existing semantic/publication gate reports passed with zero issues, but this validation pass treats that as insufficient because the prompt-specific ontology vocabulary check exposes a hard mechanism-class defect."
+  },
+  "rework_targets": [
+    {
+      "target_id": "rwk-v420p0012-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5/mechanism_ontology_extractor",
+      "secondary_owner": "worker-6/adjudicator_review",
+      "severity": "blocking",
+      "reason": "Accepted mechanism ontology uses non-standard evidence_class values despite the required five-class ontology.",
+      "artifact_path": "papers/doi__10.1016_j.peptides.2003.07.025/final/mechanism_ontology_record.json",
+      "failing_objects": [
+        "mechanism_claims[0].evidence_class=literature_supported_mechanism_context",
+        "mechanism_claims[1].evidence_class=structure_activity_relationship",
+        "mechanism_claims[2].evidence_class=phenotypic_activity_context"
+      ],
+      "requested_outputs": [
+        "Reclassify each mechanism claim using only direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+        "Preserve source locators and limitations; add direct_assay_types only if a claim is reclassified as direct_mechanism.",
+        "Rerun worker-6 adjudication so review_report.json no longer accepts a non-standard mechanism ontology."
+      ],
+      "blocks": [
+        "mechanism_ontology_record",
+        "review_report",
+        "publication_grade_acceptance"
+      ]
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "c_terminal_amidation_not_encoded_in_database_sequence",
+      "severity": "minor",
+      "evidence_context": "Primary Table 1 reports BMAP-28 as GGLRSLGRKILRAWKKYGPIIVPIIRI-NH2; the linked DBAASP sequence snapshot for DBAASPR_2383 is GGLRSLGRKILRAWKKYGPIIVPIIRIG."
+    },
+    {
+      "caution_code": "release_unit_blank_but_source_unit_present",
+      "severity": "minor",
+      "evidence_context": "The release row database_unit is blank, but source Table 2 provides the MIC column unit as uM and final activity evidence records raw_unit uM."
+    },
+    {
+      "caution_code": "historical_packet_rework_metadata_stale",
+      "severity": "minor",
+      "evidence_context": "Packet manifest and extraction status retain historical test/gap notes; later rework responses and quality feedback mark the old ticket resolved. This validation does not treat the old ticket as open, but records the inconsistency."
+    }
+  ],
+  "checked_inputs": [
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0012__doi__10.1016_j.peptides.2003.07.025/true_review_result.schema.json",
+    "papers/doi__10.1016_j.peptides.2003.07.025/source/paper.xml",
+    "papers/doi__10.1016_j.peptides.2003.07.025/source/paper.pdf",
+    "papers/doi__10.1016_j.peptides.2003.07.025/final/database_record_verification.json",
+    "papers/doi__10.1016_j.peptides.2003.07.025/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1016_j.peptides.2003.07.025/final/mechanism_ontology_record.json",
+    "papers/doi__10.1016_j.peptides.2003.07.025/final/review_report.json",
+    "papers/doi__10.1016_j.peptides.2003.07.025/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1016_j.peptides.2003.07.025/rework/rework_responses.jsonl",
+    "reports/doi__10.1016_j.peptides.2003.07.025.codex_re_review_20260502T040502Z.semantic_gate.json",
+    "reports/doi__10.1016_j.peptides.2003.07.025.codex_re_review_20260502T040502Z.publication_quality.json"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2018.02300",
+  "reviewed_at": "2026-05-06T21:58:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "source_paths_checked": [
+      "paper_packets/doi__10.3389_fmicb.2018.02300/packet_manifest.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/locators/locator_index.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/xml_sections.json",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/pdf_text/fmicb-09-02300.txt",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/oa_package/local-DBAASP-PMC6170612/PMC6170612/Data_Sheet_1.DOCX",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/supplementary_text.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_literature_records.jsonl",
+      "papers/doi__10.3389_fmicb.2018.02300/source/paper.xml",
+      "papers/doi__10.3389_fmicb.2018.02300/source/paper.pdf"
+    ],
+    "unrecoverable_material_gaps": [],
+    "bounded_best_effort_complete": true
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fmicb.2018.02300/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/pdf_text/fmicb-09-02300.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/oa_package/local-DBAASP-PMC6170612/PMC6170612/Data_Sheet_1.DOCX",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02300/database/linked_literature_records.jsonl",
+    "papers/doi__10.3389_fmicb.2018.02300/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2018.02300/source/paper.pdf"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 14,
+    "activity_extraction_issue_count": 0,
+    "database_status_summary": {
+      "source_verified": 5
+    },
+    "database_conflict_records": 0,
+    "mechanism_claims": 3,
+    "direct_mechanism_overclaims": 0,
+    "supplementary_tables": 0,
+    "supplementary_docx_reviewed": true,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked all linked DBAASP assay/experiment/literature rows. Table 4 supports mature PG-1 identity; Table 5 supports the linked MIC values. The remaining caveat is database granularity: DBAASP collapses peptide-form columns that the primary paper keeps separate.",
+    "layer_2_activity_toxicity": "Worker-2 repaired the prior Table 6 parser gap and corrected Table 5 entity labels. The final activity layer now has 14 primary-source MIC rows with target, raw value, unit, conditions, and locators. No toxicity endpoint is reported in the local paper.",
+    "layer_3_mechanism": "Worker-6 replaced automated pending-review mechanism notes with source-located phenotype claims and explicitly avoids classifying the paper as proving a direct molecular antimicrobial mechanism.",
+    "supplementary_material": "The OA package Data_Sheet_1.DOCX contains codon-optimized PG-1 ORF sequence support, not additional activity/toxicity tables; landing-*.bin files are HTML landing pages and do not add recoverable assay rows."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_granularity_loss",
+      "evidence_context": "DBAASP assay rows match Table 5 values but do not retain the separate primary-paper columns for CC-PG-1, EK-cleaved PG-1, and rPG-1.",
+      "record_ids": [
+        "DBAASP:DBAASPR_4675:assay_id=90889",
+        "DBAASP:DBAASPR_4675:assay_id=90890"
+      ]
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism",
+      "evidence_context": "The paper reports antimicrobial activity, stability, and cell migration phenotypes, but direct killing mechanism/receptor assays are absent."
+    },
+    {
+      "caution_code": "supplement_no_assay_table",
+      "evidence_context": "The DOCX supplement supports codon-optimized sequence context and does not contain additional activity/toxicity values."
+    }
+  ],
+  "adjudication_summary": "Source re-review repaired the worker-2 Table 6 parser miss, reconciled linked DBAASP rows to Table 5 without hiding database granularity loss, and replaced the generic worker-6 closeout with paper-specific source-reviewed final artifacts. The paper is publication-grade with explicit cautions, not clean acceptance.",
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "paper_id": "doi__10.2147_dddt.s121283",
+  "reviewed_at": "2026-05-05T21:40:40Z",
+  "generated_at": "2026-05-05T21:40:40Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Source re-review recovered table-level in vivo antimalarial and toxicity rows from the primary article and resolved the prior framework-only failure. The paper is accepted with cautions because DBAASP represents gancidin W as a modified cyclic dipeptide sequence, no database assay row is linked to this PMID, and the mechanism remains phenotype-level rather than molecular.",
+  "adjudication_summary": "Worker-6 compared packet artifacts, XML/PDF tables, OA package members, landed supplementary assets, and merged DBAASP rows; prior ticket rwk-complete-test-0001 is closed by source-supported worker-2/4 repairs.",
+  "checked_inputs": [
+    "paper_packets/doi__10.2147_dddt.s121283/packet_manifest.json",
+    "paper_packets/doi__10.2147_dddt.s121283/locators/locator_index.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extraction/extraction_status.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/xml_sections.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/oa_package/local-DBAASP-PMC5308589/PMC5308589/dddt-11-351.nxml",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/figure_captions.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/supplementary_index.json",
+    "paper_packets/doi__10.2147_dddt.s121283/extracted/archive_manifest.json",
+    "paper_packets/doi__10.2147_dddt.s121283/database/database_source_manifest.json",
+    "paper_packets/doi__10.2147_dddt.s121283/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local materials were exhausted for the active blockers. Nonblocking gaps are recorded without fabricating figure-only values or nonexistent supplement tables."
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature link is source-verified. Recovered DBAASPN_15017 catalog row matches gancidin W aliases but PL is a non-normalized cyclic dipeptide representation, so it is preserved as sequence_modified_not_normalized. No assay rows for this PMID were found.",
+    "layer_2_activity_toxicity": "Worker-2 repair extracted primary-source parasitemia, inhibition, survival, serum enzyme/protein, and histology toxicity rows with dose, units, target, statistics, and locators.",
+    "layer_3_mechanism": "Mechanism adjudication retains direct in vivo phenotypic antimalarial evidence but blocks molecular mechanism overclaim; no direct molecular target assay was recovered."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 31,
+    "activity_core_fields_complete": true,
+    "database_snapshots": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 0,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0,
+      "recovered_sequence_catalog_rows": 1
+    },
+    "database_conflicts_preserved": [
+      "DBAASPN_15017 sequence PL retained as sequence_modified_not_normalized due cyclic/stereochemical representation caveat"
+    ],
+    "mechanism_claims": 2,
+    "direct_mechanism_overclaim": false,
+    "unrecoverable_material_gaps": 2,
+    "blocking_unrecoverable_material_gaps": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "DBAASP PL representation does not encode cyclic diketopiperazine/stereochemical nuance from the primary article.",
+      "record_id": "DBAASP:DBAASPN_15017"
+    },
+    {
+      "caution_code": "no_database_assay_rows_for_paper",
+      "evidence_context": "Merged DBAASP assay tables contain no DBAASPN_15017 assay row linked to PMID 28223778; activity/toxicity values are primary-paper rows only."
+    },
+    {
+      "caution_code": "phenotypic_mechanism_only",
+      "evidence_context": "The paper supports in vivo antimalarial phenotype and low-toxicity observations, not a direct molecular mechanism."
+    },
+    {
+      "caution_code": "nonblocking_material_gaps_recorded",
+      "evidence_context": "Figure-only survival values outside the text-supported 3.125 µg kg-1 bw values and nonexistent structured supplement tables were not fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure3_full_numeric_series_not_text_recoverable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/oa_package/local-DBAASP-PMC5308589/PMC5308589/dddt-11-351.nxml",
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/figure_captions.json",
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/oa_package/local-DBAASP-PMC5308589/PMC5308589/dddt-11-351Fig3.jpg"
+      ],
+      "tools_attempted": [
+        "pdftotext existing extraction",
+        "XML table/figure parsing",
+        "figure caption review"
+      ],
+      "why_unrecoverable": "Figure 3 is an image plot and the extracted XML/PDF text gives exact survival values only for the 3.125 µg kg-1 bw group and long-survivor subset, not every plotted dose.",
+      "impact": "Nonblocking for publication-grade review because primary activity tables 2-3 and the text-supported survival values capture the source-supported antimalarial endpoints; exact visual bar heights were not fabricated.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "no_structured_supplementary_activity_table_present",
+      "source_paths_checked": [
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/supplementary_index.json",
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.2147_dddt.s121283/extracted/archive_manifest.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.2147_dddt.s121283/supplementary"
+      ],
+      "tools_attempted": [
+        "file over landed supplementary assets",
+        "pdftotext on landing-8.bin",
+        "rg over landed supplementary HTML/PDF assets",
+        "archive manifest review"
+      ],
+      "why_unrecoverable": "The only present supplementary asset in asset_manifest is a duplicate article PDF; other landed supplementary files are publisher/third-party HTML captures, not structured data supplements.",
+      "impact": "Nonblocking; all activity/toxicity values needed for this paper are in the primary XML/PDF tables and figure captions.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0,
+    "open_rework_target_count": 0
+  }
+}

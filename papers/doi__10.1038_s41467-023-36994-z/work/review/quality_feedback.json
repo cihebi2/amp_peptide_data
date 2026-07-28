@@ -1,0 +1,47 @@
+{
+  "paper_id": "doi__10.1038_s41467-023-36994-z",
+  "generated_at": "2026-05-03T01:54:58Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "evidence_context": "Some DBAASP assay rows do not exactly match the primary XML table value/axis for the mapped peptide and are retained as source_conflict in database_record_verification.json."
+    },
+    {
+      "caution_code": "supplementary_payloads_not_local",
+      "evidence_context": "Local supplementary assets are article landing HTML with external supplement links; owner-layer activity/database values were recoverable from XML/PDF/database rows."
+    },
+    {
+      "caution_code": "mechanism_is_computational_context",
+      "evidence_context": "Membrane association/penetration is supported by simulations and is not promoted to a direct wet-lab mechanism claim."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_payloads_not_locally_recovered",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41467-023-36994-z/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-023-36994-z/supplementary/landing-*.bin",
+        "paper_packets/doi__10.1038_s41467-023-36994-z/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41467-023-36994-z/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "HTML href extraction",
+        "rg over local landing HTML",
+        "supplementary_index/supplementary_tables review"
+      ],
+      "why_unrecoverable": "The local supplementary *.bin files are article HTML landing pages with external supplement links, not local PDF/XLSX payloads; obtainable-only mode did not chase external downloads.",
+      "impact": "Nonblocking for this owner-layer repair because primary XML/PDF tables contain the activity/toxicity values and linked DBAASP rows needed for worker-2/4 adjudication.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "status": "qc_passed_with_cautions_after_worker_2_4_6_repair"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "assertion_index": 0,
+    "db_claimed": {
+      "organism": "Bacillus subtilis, Staphylococcus aureus, Pseudomonas aeruginosa[MIC = 6 microg/ml], Candida albicans[MIC = 6 microg/ml], Microsporum audouinii[MIC = 6 microg/ml], Aspergillus niger, Trichophyton mentagrophytes[MIC = 6 microg/ml], Megascolex konkanensis[90-100% Killing = 2000 microg/ml], Pontoscolex corethrurus[90-100% Killing = 2000 microg/ml], Eudrilus eugeniae[90-100% Killing = 2000 microg/ml], Bacillus subtilis[MIC = 25 microg/ml], Staphylococcus aureus[MIC = 12.5 microg/ml], Klebsiella pneumoniae[MIC = 6 microg/ml]",
+      "endpoint": "text",
+      "value": "",
+      "peptide": ""
+    },
+    "verification_outcome": "cannot_determine",
+    "normalization_note": "none",
+    "is_database_error": false,
+    "evidence": null,
+    "short_reason": "DB assertion has no peptide name; source rows are coded as compounds 6/7, so values cannot be assigned to the DB record."
+  }
+]

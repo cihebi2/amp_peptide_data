@@ -1,0 +1,301 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T05:42:10Z"
+  },
+  "generated_at": "2026-05-03T05:35:25Z",
+  "issue_count": 3,
+  "latest_gate_results": {
+    "publication_quality": {
+      "counts": {
+        "mechanism_claims": 2
+      },
+      "passed": false,
+      "publication_grade_pass": false,
+      "report": "reports/doi__10.1186_s40064-016-1854-9.publication_quality.json",
+      "review_status": {
+        "blocked_missing_primary_material": 1
+      },
+      "risk_counts": {
+        "open_rework_targets": 1
+      }
+    },
+    "semantic_gate": {
+      "failed_papers": [
+        "doi__10.1186_s40064-016-1854-9"
+      ],
+      "issue_codes": [
+        "review_status_not_publication_grade",
+        "publication_grade_not_true",
+        "missing_activity_records"
+      ],
+      "issue_count": 3,
+      "passed": false,
+      "publication_grade_fail_count": 1,
+      "publication_grade_pass_count": 0,
+      "report": "reports/doi__10.1186_s40064-016-1854-9.semantic_gate.json"
+    }
+  },
+  "paper_id": "doi__10.1186_s40064-016-1854-9",
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "artifact_path": "papers/doi__10.1186_s40064-016-1854-9/final/activity_toxicity_evidence.json",
+      "blocks_publication_grade": true,
+      "code": "no_primary_amp_activity_toxicity_assay_rows_in_local_material",
+      "owner_worker": "worker-2",
+      "reason": "The reopened local XML/PDF identify DOI 10.1186/s40064-016-1854-9 as a SpringerPlus paper on Sulfolobus solfataricus superoxide dismutase thermostability and N-terminal domain fusion. It reports SOD enzymatic activity/stability assays, not antimicrobial peptide MIC/MBC/hemolysis/cytotoxicity assays. No source-supported AMP target/value/unit row can be recovered from the local XML, PDF text, figures, supplementary landing pages, packet database snapshot, or merged APD6 rows.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "papers/doi__10.1186_s40064-016-1854-9/final/database_record_verification.json",
+      "blocks_publication_grade": true,
+      "code": "apd6_ap02766_source_conflict_with_primary_article",
+      "owner_worker": "worker-4",
+      "reason": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "papers/doi__10.1186_s40064-016-1854-9/final/review_report.json",
+      "blocks_publication_grade": true,
+      "code": "publication_grade_blocked_by_obtainable_only_source_gap",
+      "owner_worker": "worker-6",
+      "reason": "Worker-6 completed source review for local materials, but strict publication-grade acceptance is not controllable because the local primary source is not the APD6 lysozyme antimicrobial paper and contains no primary AMP assay rows.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1186_s40064-016-1854-9/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "remaining_open_rework_ticket_ids": [
+    "rwk-obtainable-gap-0002"
+  ],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "review_model": "gpt-5.5",
+  "review_status": "blocked_missing_primary_material",
+  "reviewed_at": "2026-05-03T05:35:25Z",
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1186_s40064-016-1854-9/final/activity_toxicity_evidence.json",
+      "blocks": [
+        "semantic_gate_activity_records",
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T05:35:25Z",
+      "failing_object": "activity_records and APD6:AP02766 source verification",
+      "failure_code": "obtainable_only_primary_amp_activity_absent_and_apd6_source_conflict",
+      "layer": "activity/database/adjudication",
+      "omission_context": [
+        "The reopened local XML/PDF identify DOI 10.1186/s40064-016-1854-9 as a SpringerPlus paper on Sulfolobus solfataricus superoxide dismutase thermostability and N-terminal domain fusion. It reports SOD enzymatic activity/stability assays, not antimicrobial peptide MIC/MBC/hemolysis/cytotoxicity assays.",
+        "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article.",
+        "The local supplementary landing page advertises a MOESM1 DOCX, but that DOCX is not present locally and should not be chased in obtainable-only mode."
+      ],
+      "owner_worker": "worker-2 + worker-4 + worker-6",
+      "paper_id": "doi__10.1186_s40064-016-1854-9",
+      "requested_outputs": [
+        {
+          "asset": "papers/doi__10.1186_s40064-016-1854-9/final/activity_toxicity_evidence.json",
+          "need": "Keep primary AMP activity_records empty; preserve SOD biochemical context separately from AMP assay rows."
+        },
+        {
+          "asset": "papers/doi__10.1186_s40064-016-1854-9/final/database_record_verification.json",
+          "need": "Keep APD6:AP02766 as source_conflict/database_only_no_primary_source unless new local primary material proves the lysozyme paper/sequence/activity belongs to this DOI."
+        },
+        {
+          "asset": "papers/doi__10.1186_s40064-016-1854-9/work/review/quality_feedback.json",
+          "need": "Keep publication_grade false and carry unrecoverable_material_gaps while the local material cannot support AMP acceptance."
+        }
+      ],
+      "required_action": "Leave the paper non-accepted. Do not fabricate MIC/MBC/toxicity values. Reopen only if new local primary material for the APD6 lysozyme article or its assay table is supplied.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "rework_context/doi__10.1186_s40064-016-1854-9/handoff_context.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/packet_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/locators/locator_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/analysis/analysis_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.pdf",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/database_source_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-obtainable-gap-0002",
+      "tools_attempted": [
+        "jq/sed inspection of packet, final, work, and report JSON artifacts",
+        "rg over paper XML, extracted PDF text, figure captions, supplementary landing pages, and database snapshots",
+        "file over raw PDF and supplementary landing assets",
+        "pdftotext-derived publisher PDF text inspection from packet/extracted/pdf_text/landing-1.txt",
+        "Python csv.DictReader spot checks for APD6:AP02766 in merged sequence, experiment, and literature outputs",
+        "No OCR or office extraction attempted because the local supplementary assets are HTML landing/support pages and no DOCX/XLSX/PDF supplement file is present in the local packet or landed asset manifest"
+      ],
+      "worker": "worker-2"
+    }
+  ],
+  "source_review_summary": "Re-review reopened the handoff packet, manifest, locators, extraction reports, local XML/PDF/PDF text, figure captions, supplementary landing assets, packet APD6 link, and merged APD6 sequence/activity/literature rows. The local DOI resolves to a SOD thermostability paper, while APD6:AP02766 is a Sus scrofa lysozyme antimicrobial entry pointing to a different PMID/title. No source-supported AMP activity/toxicity rows are locally recoverable.",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "no_primary_amp_activity_toxicity_assay_rows_in_local_material",
+      "impact": "worker-2 cannot create source-supported AMP activity/toxicity records; activity_records must remain empty and the semantic missing_activity_records failure is a true obtainable-only blocker.",
+      "next_action": "record_and_continue_without_fabricating_values",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "rework_context/doi__10.1186_s40064-016-1854-9/handoff_context.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/packet_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/locators/locator_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/analysis/analysis_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.pdf",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/database_source_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+      ],
+      "tools_attempted": [
+        "jq/sed inspection of packet, final, work, and report JSON artifacts",
+        "rg over paper XML, extracted PDF text, figure captions, supplementary landing pages, and database snapshots",
+        "file over raw PDF and supplementary landing assets",
+        "pdftotext-derived publisher PDF text inspection from packet/extracted/pdf_text/landing-1.txt",
+        "Python csv.DictReader spot checks for APD6:AP02766 in merged sequence, experiment, and literature outputs",
+        "No OCR or office extraction attempted because the local supplementary assets are HTML landing/support pages and no DOCX/XLSX/PDF supplement file is present in the local packet or landed asset manifest"
+      ],
+      "why_unrecoverable": "The reopened local XML/PDF identify DOI 10.1186/s40064-016-1854-9 as a SpringerPlus paper on Sulfolobus solfataricus superoxide dismutase thermostability and N-terminal domain fusion. It reports SOD enzymatic activity/stability assays, not antimicrobial peptide MIC/MBC/hemolysis/cytotoxicity assays. No source-supported AMP target/value/unit row can be recovered from the local XML, PDF text, figures, supplementary landing pages, packet database snapshot, or merged APD6 rows."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "apd6_ap02766_literature_and_sequence_conflict_with_primary_article",
+      "impact": "worker-4 cannot source-verify APD6:AP02766 against this local DOI; the database row remains source_conflict/database_only_no_primary_source and cannot support publication-grade acceptance for this paper.",
+      "next_action": "preserve_conflict_and_do_not_promote_to_source_verified",
+      "owner_worker": "worker-4",
+      "source_paths_checked": [
+        "rework_context/doi__10.1186_s40064-016-1854-9/handoff_context.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/packet_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/locators/locator_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/analysis/analysis_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.pdf",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/database_source_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+      ],
+      "tools_attempted": [
+        "jq/sed inspection of packet, final, work, and report JSON artifacts",
+        "rg over paper XML, extracted PDF text, figure captions, supplementary landing pages, and database snapshots",
+        "file over raw PDF and supplementary landing assets",
+        "pdftotext-derived publisher PDF text inspection from packet/extracted/pdf_text/landing-1.txt",
+        "Python csv.DictReader spot checks for APD6:AP02766 in merged sequence, experiment, and literature outputs",
+        "No OCR or office extraction attempted because the local supplementary assets are HTML landing/support pages and no DOCX/XLSX/PDF supplement file is present in the local packet or landed asset manifest"
+      ],
+      "why_unrecoverable": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article."
+    },
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "springer_moesm_docx_not_present_in_local_material",
+      "impact": "Does not create a missing AMP assay row because the linked supplement description is primers, inhibitor/stability table, and SOD structural plots; it remains a nonblocking material gap relative to the stronger AMP/database mismatch blocker.",
+      "next_action": "do_not_fetch_external_supplement_in_obtainable_only_mode",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/supplementary"
+      ],
+      "tools_attempted": [
+        "find",
+        "file",
+        "rg over local HTML landing pages",
+        "inspection of packet supplementary_index/supplementary_text/supplementary_tables"
+      ],
+      "why_unrecoverable": "The local HTML landing page links a Springer MOESM1 DOCX, but the local packet and landed asset manifest contain only the article XML/PDF plus HTML/support landing files, not the DOCX itself."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/locators",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw",
+        "papers/doi__10.1186_s40064-016-1854-9/final",
+        "papers/doi__10.1186_s40064-016-1854-9/source",
+        "papers/doi__10.1186_s40064-016-1854-9/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ],
+  "updated_at": "2026-05-03T05:39:38Z",
+  "validator_contract_passed": true,
+  "worker6_repair_summary": "Final adjudication remains blocked_missing_primary_material with publication_grade=false pending new local primary material for the APD6 lysozyme paper or controller-level non-publication-grade disposition."
+}

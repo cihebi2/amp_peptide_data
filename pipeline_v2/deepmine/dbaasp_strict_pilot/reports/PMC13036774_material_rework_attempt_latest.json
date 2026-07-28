@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC13036774",
+  "created_at": "2026-07-08T07:12:46Z",
+  "scope": "material rework acquisition attempt for missing supporting information",
+  "target_tickets": [
+    "rwk-PMC13036774-0001"
+  ],
+  "requested_assets": [
+    "np5c01579_si_001.pdf",
+    "np5c01579_si_002.zip"
+  ],
+  "attempts": [
+    {
+      "source": "ACS Supporting Information URL from paper XML",
+      "urls": [
+        "https://pubs.acs.org/doi/suppl/10.1021/acs.jnatprod.5c01579/suppl_file/np5c01579_si_001.pdf",
+        "https://pubs.acs.org/doi/suppl/10.1021/acs.jnatprod.5c01579/suppl_file/np5c01579_si_002.zip"
+      ],
+      "command": "curl -L -I --max-time 30 <url>",
+      "result": "HTTP 403 Cloudflare challenge; not downloaded; access control not bypassed"
+    },
+    {
+      "source": "PMC/NCBI common bin paths",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/instance/13036774/bin/np5c01579_si_001.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/instance/13036774/bin/np5c01579_si_002.zip",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13036774/bin/np5c01579_si_001.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13036774/bin/np5c01579_si_002.zip"
+      ],
+      "command": "curl -L -I/GET --max-time 30/60 <url>",
+      "result": "instance/bin returns 1817-byte HTML proof-of-work/preparing page, not PDF/ZIP; PMC article bin paths return 404; not downloaded"
+    },
+    {
+      "source": "local filesystem search",
+      "paths_searched": [
+        "/mnt/d/work/抗菌肽/数据库",
+        "/mnt/d/work/抗菌肽",
+        "/home/cihebi/抗菌肽",
+        "/root/work/抗菌肽"
+      ],
+      "command": "find ... -name np5c01579_si_001.pdf -o -name np5c01579_si_002.zip -o -iname *5c01579*",
+      "result": "no matching local supplementary PDF/ZIP found"
+    }
+  ],
+  "ticket_status": "not_closed_external_or_local_material_unavailable",
+  "next_required_action": "Acquire the ACS SI PDF/ZIP through an approved local/institutional route or choose a pilot paper whose declared supplements are already locally staged, then rerun worker-3 and worker-6.",
+  "strict_boundary": "Do not promote PMC13036774 to publication-grade while this material ticket is open."
+}

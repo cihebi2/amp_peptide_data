@@ -1,0 +1,81 @@
+{
+  "paper_id": "doi__10.3390_cimb47080673",
+  "generated_at": "2026-05-08T13:45:40Z",
+  "updated_at": "2026-05-08T13:48:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade_ready": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "repair_summary": "Bounded worker-2/4/6 re-review recovered source-supported activity/toxicity rows, reconciled linked database records, and replaced framework-only adjudication with source-reviewed acceptance with cautions.",
+  "source_paths_checked": [
+    "rework_context/doi__10.3390_cimb47080673/handoff_context.json",
+    "paper_packets/doi__10.3390_cimb47080673/packet_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/locators/locator_index.json",
+    "paper_packets/doi__10.3390_cimb47080673/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_cimb47080673/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_cimb47080673/raw/paper.xml",
+    "paper_packets/doi__10.3390_cimb47080673/raw/paper.pdf",
+    "papers/doi__10.3390_cimb47080673/source/paper.xml",
+    "papers/doi__10.3390_cimb47080673/source/paper.pdf",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/pdf_text/cimb-47-00673.txt",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/pdf_text/local-DBAASP-PMC12412326.txt",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "xml.etree.ElementTree table/section extraction",
+    "rg over extracted PDF text",
+    "jq over packet manifest, locator index, database JSONL, supplementary indexes",
+    "archive manifest inspection for OA package members"
+  ],
+  "unrecoverable_material_gaps": [],
+  "remaining_cautions": [
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "evidence_context": "Supplementary indexes and OA package inventory show no separate supplementary tables/files; all recoverable gate-changing values came from XML/PDF text and figures."
+    },
+    {
+      "caution_code": "bacterial_strains_not_named",
+      "evidence_context": "The paper names bacterial species and source laboratory but not per-species strain identifiers; target strain fields preserve this missingness."
+    },
+    {
+      "caution_code": "apd6_computed_fields_source_conflict",
+      "evidence_context": "APD6 AP05672 includes database-computed sequence-analysis/molecular-weight text that is not fully primary-source-supported and differs from Table 1 molecular weight, so it remains source_conflict."
+    },
+    {
+      "caution_code": "mechanism_bounded_to_assay_strength",
+      "evidence_context": "Cyp1a1 CAFLUX reduction is source-supported; upstream AhR/membrane/apoptosis mechanisms remain hypotheses/context."
+    }
+  ],
+  "gate_evidence": {
+    "commands": {
+      "semantic": "python .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root . --manifest reports/doi__10.3390_cimb47080673.complete_message_test_manifest.json --json > reports/doi__10.3390_cimb47080673.semantic_gate.json",
+      "publication": "python .codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py --root . --manifest reports/doi__10.3390_cimb47080673.complete_message_test_manifest.json --json-out reports/doi__10.3390_cimb47080673.publication_quality.json"
+    },
+    "semantic_report": "reports/doi__10.3390_cimb47080673.semantic_gate.json",
+    "semantic_returncode": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.3390_cimb47080673.publication_quality.json",
+    "publication_returncode": 0,
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "gates_ready": true,
+    "reran_at": "2026-05-08T13:48:30Z"
+  }
+}

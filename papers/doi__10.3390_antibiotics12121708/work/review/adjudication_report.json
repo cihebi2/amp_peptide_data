@@ -1,0 +1,101 @@
+{
+  "paper_id": "doi__10.3390_antibiotics12121708",
+  "reviewed_at": "2026-05-07T17:43:37Z",
+  "generated_at": "2026-05-07T17:43:37Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Worker-2/4/6 re-review closed the prior framework-test blocker by manually extracting Table 2 MIC rows, prose IC95/toxicity/anti-inflammatory values, source-reconciling linked DBAASP/APD6 rows, and replacing framework-test mechanism notes with source-reviewed mechanism classes. Remaining limitations are nonblocking cautions, not open rework.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics12121708/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/raw/paper.xml",
+    "paper_packets/doi__10.3390_antibiotics12121708/raw/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics12121708/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/extracted/pdf_text/antibiotics-12-01708.txt",
+    "paper_packets/doi__10.3390_antibiotics12121708/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/raw/supplementary_original/local-APD6-antibiotics-12-01708-s001.zip",
+    "paper_packets/doi__10.3390_antibiotics12121708/raw/supplementary_original/local-APD6-antibiotics-12-01708-s001.zip!antibiotics-2726644-supplementary.pdf",
+    "paper_packets/doi__10.3390_antibiotics12121708/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics12121708/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics12121708/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "paper_packets/doi__10.3390_antibiotics12121708/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_antibiotics12121708/analysis/mechanism_evidence.json"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened handoff packet, packet manifest, locator index, XML/NXML, PDF text, OA package members, supplementary ZIP/PDF, figure captions, database JSONL rows, and merged sequence/experiment rows. Gate-changing worker-2/4/6 evidence was recoverable locally; no blocking unrecoverable gap remains."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 19,
+    "prediction_records_preserved": 6,
+    "database_record_status_summary": {
+      "source_verified": 16,
+      "source_conflict": 1
+    },
+    "mechanism_claims_source_reviewed": 5,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gap_count": 0,
+    "supplement_parse_outcome": "supplementary ZIP contained one PDF caption page for melittin Supplementary Figure S1 and no structured supplementary tables."
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay rows for MIC/cytotoxicity are source-verified against Table 2 and toxicity prose; APD6 entry-level summary is preserved as source_conflict because it compresses primary-source nuances.",
+    "layer_2_activity_toxicity": "Primary XML/PDF Table 2 and results prose now support MIC, IC95, toxicity, hemolysis, LDH, and NO-suppression rows with raw units and locators. Figure-only curves were not digitized beyond values stated in source text.",
+    "layer_3_mechanism": "Membrane disruption, ROS induction, and inflammatory signaling evidence are source-located and bounded by assay type; computational TLR4 docking remains a hypothesis, not direct binding proof.",
+    "review_layer": "Prior rework ticket is closed because blocking/major worker-2 and worker-4 omissions were repaired and worker-6 re-adjudicated from reopened local sources."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_entry_text_source_conflict_preserved",
+      "evidence_context": "APD6 entry-level prose compresses hemolysis/comparator wording; primary-source rows preserve <10% hemolysis at 20 µM and melittin exception for S. aureus."
+    },
+    {
+      "caution_code": "exact_sequence_primary_text_is_figure_based",
+      "evidence_context": "The exact database sequence is concordant across APD6/DBAASP and source-located to Figure 1B/local image; XML text supports the 66-mer/disulfide context but does not expose the sequence as machine-readable text."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Figure-only curves for colony formation, membrane fluorescence, ROS, viability, LDH, NO, RT-qPCR, and Western blot were not digitized; only exact values stated in text/tables are recorded."
+    },
+    {
+      "caution_code": "supplement_has_no_structured_values",
+      "evidence_context": "Local supplementary ZIP was opened and contains a one-page PDF caption for melittin Supplementary Figure S1; no extractable supplementary tables were present."
+    },
+    {
+      "caution_code": "docking_not_direct_binding",
+      "evidence_context": "TLR4 interaction remains computational HDOCK context and is not treated as direct binding proof."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_ids": [],
+    "ticket_closed": "rwk-complete-test-0001"
+  },
+  "unrecoverable_material_gaps": [],
+  "packet_analysis_status": "analysis_accepted_with_cautions"
+}

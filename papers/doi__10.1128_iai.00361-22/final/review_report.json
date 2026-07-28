@@ -1,0 +1,96 @@
+{
+  "paper_id": "doi__10.1128_iai.00361-22",
+  "reviewed_at": "2026-05-03T07:29:46Z",
+  "generated_at": "2026-05-03T07:29:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, supplement PDF text/table index, and linked APD6/DBAASP packet rows were exhausted for worker-2/4/6 blockers. Remaining limitations are preserved as cautions, not blocking gaps."
+  },
+  "checked_inputs": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1128_iai.00361-22/xml/local-DBAASP-PMC9872612.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1128_iai.00361-22/pdf/local-DBAASP-PMC9872612.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extracted/oa_package/local-DBAASP-PMC9872612/PMC9872612/iai.00361-22-s0001.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extracted/pdf_text/iai.00361-22.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extracted/supplementary_text/iai.00361-22-s0001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/database/linked_literature_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_iai.00361-22/extraction/extraction_quality_report.json"
+  ],
+  "summary": "Source-reviewed rework recovered the primary Table 1 activity matrix, reconciled DBAASP assay rows to those source-backed records, preserved APD6 entry-text rows as database-only cautions, and bounded mechanism claims to phenotypic/SAR evidence. The paper is publication-grade with cautions and no open rework target for worker-2/4/6 Two L-Crp1 database rows are preserved as source-conflict cautions.",
+  "adjudication_summary": "Worker-6 compared the repaired activity, database, mechanism, packet manifest, supplement, and source paths. No blocking/major issue remains after preserving nonblocking database and toxicity/mechanism cautions.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 160,
+    "activity_rows_have_locator": true,
+    "activity_rows_have_units": true,
+    "database_status_summary": {
+      "source_verified": 267,
+      "source_conflict": 2,
+      "database_only_no_primary_source": 11
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "database_only_rows_preserved": 11,
+    "source_conflict_rows": 2
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay rows were source-matched to XML Table 1 by peptide key, target strain, and concentration; APD6 entry-text rows remain database_only_no_primary_source because exact structured identity/activity fields are absent from the linked rows.",
+    "layer_2_activity_toxicity": "XML Table 1 yields 160 source-backed antibacterial vLD rows with units, target strains, conditions, statistics, and locators. Local sources do not report host toxicity/hemolysis rows, so none are fabricated.",
+    "layer_3_mechanism": "Final mechanism output is limited to phenotypic antibacterial activity, indirect structure-activity/self-association interpretation, and direct Crp14 structural evidence. No direct antimicrobial target mechanism is overclaimed.",
+    "material_packet": "Material packet remains material_extracted_with_gaps because supplement tables are not structured, but the owned worker-2/4/6 blockers are recoverable from XML/PDF/database paths."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_entry_text_not_promoted_to_source_verified",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "11 APD6 entry_text rows remain database_only_no_primary_source because they lack structured peptide/target/concentration fields despite DOI traceability."
+    },
+    {
+      "caution_code": "toxicity_not_reported",
+      "severity": "caution",
+      "owner_worker": "worker-2",
+      "evidence_context": "No host cytotoxicity or hemolysis assay rows were recovered from local XML/PDF/supplement text."
+    },
+    {
+      "caution_code": "mechanism_bounded_to_indirect_sar",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "Mechanism conclusions are restricted to phenotypic killing and structure/activity/self-association context."
+    },
+    {
+      "caution_code": "dbaasp_l_crp1_source_conflict_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "Two DBAASP rows assign the Crp1 S. aureus vLD50 value to the L-Crp1 sequence key; Table 1 does not support that assignment, so both duplicate database rows remain source_conflict with locators instead of being smoothed."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": []
+  }
+}

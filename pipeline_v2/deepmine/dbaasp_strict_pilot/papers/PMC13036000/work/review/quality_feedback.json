@@ -1,0 +1,73 @@
+{
+  "analysis_can_resume": true,
+  "artifact": "quality_feedback",
+  "caution_findings": [
+    {
+      "code": "authoritative_dbaasp_zero_linked_rows",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/database/database_source_manifest.json"
+      ],
+      "impact": "authoritative_dbaasp_ingest_ready_false",
+      "layer": "database"
+    },
+    {
+      "code": "worker2_lane_not_terminal_publication_grade",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/analysis/activity_toxicity_evidence.worker2.json"
+      ],
+      "impact": "worker6_adjudication_required_and_applied",
+      "layer": "activity"
+    }
+  ],
+  "feedback_by_lane": {
+    "worker-2": {
+      "required_action": "none",
+      "status": "repair_verified_by_worker6",
+      "ticket_ids": [
+        "rwk-PMC13036000-normalization-schema-001",
+        "rwk-PMC13036000-table1-viability-completeness-002"
+      ]
+    },
+    "worker-4": {
+      "required_action": "none",
+      "status": "accepted_with_caution"
+    },
+    "worker-5": {
+      "required_action": "none",
+      "status": "accepted_with_caution"
+    }
+  },
+  "feedback_status": "no_hard_rework_after_worker6_rebuild",
+  "open_ticket_ids_verified_for_closure": [
+    "rwk-PMC13036000-normalization-schema-001",
+    "rwk-PMC13036000-table1-viability-completeness-002"
+  ],
+  "packet_rework_tickets_required": false,
+  "paper_id": "PMC13036000",
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T11:44:42.083165Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rebuilt_from_latest_worker2_artifact": true,
+    "activity_toxicity_contract_audit_passed": true,
+    "authoritative_dbaasp_ingest_ready": false,
+    "hard_rework_targets_remaining": 0,
+    "human_source_review_kept_separate_from_machine_rows": true,
+    "owner_nonterminal_repair_responses_present": true,
+    "paper_packet_scope_single_paper": true,
+    "runtime_open_ticket_ids": [
+      "rwk-PMC13036000-normalization-schema-001",
+      "rwk-PMC13036000-table1-viability-completeness-002"
+    ]
+  },
+  "ticket_contract_evidence": {
+    "activity_contract_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/worker6_activity_ticket_contract_audit.current.json",
+    "overall_contract_pass": true,
+    "owner_response_inventory_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/worker6_rework_ticket_response_inventory.json"
+  },
+  "validator_contract_passed": true
+}

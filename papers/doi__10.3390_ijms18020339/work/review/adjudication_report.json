@@ -1,0 +1,93 @@
+{
+  "paper_id": "doi__10.3390_ijms18020339",
+  "reviewed_at": "2026-05-08T12:34:44.306360Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No local supplementary assets were present; XML tables, PDF text, OA figures, and packet database rows were sufficient for owner-layer repair."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms18020339/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms18020339/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms18020339/locators/locator_index.json",
+    "papers/doi__10.3390_ijms18020339/source/paper.xml",
+    "papers/doi__10.3390_ijms18020339/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms18020339/extracted/pdf_text/ijms-18-00339.txt",
+    "paper_packets/doi__10.3390_ijms18020339/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms18020339/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms18020339/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms18020339/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms18020339/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms18020339/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms18020339/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_table3_recovered": true,
+    "activity_records_have_endpoint_value_unit_target_locator": true,
+    "database_conflicts_preserved": true,
+    "source_verified_records_have_primary_locators": true,
+    "mechanism_claims_have_valid_evidence_classes_and_direct_assays": true,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "worker-2_activity_toxicity": "Reparsed XML Table 2 and Table 3 into row-level MIC records with peptide/entity, target, raw value, unit, condition, and source locator; added source-supported hemolysis rows from text/Figure 3.",
+    "worker-4_database_records": "Reconciled DBAASP/DRAMP/database snapshot rows against Table 1 identity and Table 2/3/Figure 3 activity evidence; preserved FV-CE sequence conflict and database-only rows instead of smoothing them.",
+    "worker-6_final_adjudication": "Replaced framework-test placeholders with source-reviewed final activity, database, mechanism, and review artifacts; closed the targeted rework ticket with cautions but no blocking issue.",
+    "material_packet": "Material packet remains the source layer; no new material bootstrap was run and no missing supplementary file was chased after local absence was confirmed."
+  },
+  "adjudication_summary": "Source-reviewed rework resolved the Table 3 activity parser failure and completed database/final adjudication for the FV7 hybrid-peptide paper. The paper is publication-grade with explicit cautions for the FV-CE sequence conflict, figure-only quantitative trends, and absent supplementary assets.",
+  "caution_findings": [
+    {
+      "code": "fv_ce_sequence_source_conflict_preserved",
+      "severity": "caution",
+      "owner_worker": "worker-4/worker-6",
+      "summary": "FV-CE has a primary-source sequence/design inconsistency; database sequence was not normalized into a source-verified identity.",
+      "source_locators": [
+        "xml:table=1",
+        "database:linked_dramp_activity_records",
+        "database:linked_assay_records"
+      ]
+    },
+    {
+      "code": "figure_only_quantitative_mechanism_values_not_fabricated",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "summary": "Mechanism and hemolysis figure trends were reviewed locally; exact hidden numeric series were not invented beyond source text and visually supported bins.",
+      "source_locators": [
+        "xml:fig=3",
+        "xml:fig=4",
+        "xml:fig=5",
+        "xml:fig=8"
+      ]
+    },
+    {
+      "code": "no_supplementary_assets_in_local_packet",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "summary": "The OA/local package contains XML, PDF, and figures but no separate supplementary files; review is bounded to obtainable local materials.",
+      "source_locators": [
+        "paper_packets/doi__10.3390_ijms18020339/extracted/supplementary_index.json"
+      ]
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": []
+}

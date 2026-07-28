@@ -1,0 +1,202 @@
+{
+  "paper_id": "doi__10.1007_s12602-025-10542-1",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "reviewed_at": "2026-05-01T14:26:41Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "path": "papers/doi__10.1007_s12602-025-10542-1/source/paper.xml",
+      "coverage": "article identifiers, Table 1 sequences, Tables 3-6 activity/toxicity matrices, mechanism sections/figures, and supplementary declaration"
+    },
+    "paper_pdf": {
+      "status": "reviewed_text_extraction",
+      "path": "papers/doi__10.1007_s12602-025-10542-1/source/paper.pdf",
+      "coverage": "PDF text used for cytotoxicity IC50, biofilm thresholds, mechanism/body-text cross-checks"
+    },
+    "oa_package": {
+      "status": "reviewed_inventory",
+      "path": "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/oa_package/local-APD6-pmc_package/PMC12999879",
+      "coverage": "article NXML/PDF, DOCX supplement, and figure images present"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_bounded",
+      "paths": [
+        "paper_packets/doi__10.1007_s12602-025-10542-1/raw/supplementary_original/local-APD6-12602_2025_10542_MOESM1_ESM.docx",
+        "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/supplementary_tables.json"
+      ],
+      "coverage": "DOCX was opened as OOXML; captions/media cover MALDI-TOF/RP-HPLC figures, with no structured activity table recovered"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "paths": [
+        "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "coverage": "APD6 and DBAASP linked rows for current DOI; no DRAMP activity rows in packet"
+    }
+  },
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": true,
+      "used": true,
+      "blocker": false,
+      "note": "DOCX opened as OOXML; no structured activity supplement tables were present."
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "activity_table6_repair",
+      "result": "pass",
+      "evidence": "144 Table 6 MIC/MBC rows generated from XML rowspans with condition labels."
+    },
+    {
+      "check": "activity_core_fields",
+      "result": "pass",
+      "evidence": "295 records have endpoint, raw_value, raw_unit, target species, and source_locator."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "status_counts={'sequence_modified_not_normalized': 311, 'source_verified': 9, 'source_conflict': 21}; non-source_verified rows carry conflict_context and database traceability."
+    },
+    {
+      "check": "supplementary_assets",
+      "result": "pass_with_caution",
+      "evidence": "DOCX supplementary file contains MALDI-TOF/RP-HPLC figure captions and media, no structured activity tables; no missing supplement value was fabricated."
+    },
+    {
+      "check": "mechanism_scope_guard",
+      "result": "pass",
+      "evidence": "Direct mechanism limited to LTA binding and membrane permeabilization/depolarization assays; computational/biofilm evidence not promoted."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 resolved by worker-2/4/6 repair; final review has no rework_targets."
+    },
+    {
+      "check": "worker6_re_review_message_bus_reconciliation",
+      "result": "pass",
+      "evidence": "Fresh worker-6 re-review reopened the handoff packet, source-derived packet artifacts, local XML/PDF/DOCX/database paths, quality_feedback, and workflow context; the remaining mismatch is a stale workflow_context open ticket, not a paper-evidence blocker."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database_record_identity": {
+      "decision": "accepted_with_cautions",
+      "rationale": "APD6/DBAASP identities and assay rows were checked against Table 1 plus primary activity tables/text. Terminal -NH2 markers absent from normalized database sequence fields and figure-only/approximate values are preserved as cautions.",
+      "accepted_status_counts": {
+        "sequence_modified_not_normalized": 311,
+        "source_verified": 9,
+        "source_conflict": 21
+      }
+    },
+    "layer_2_activity_toxicity_evidence": {
+      "decision": "accepted_with_cautions",
+      "rationale": "Worker-2 repaired the rowspanned Table 6 condition matrix and corrected entity/target/value parsing for Tables 3-5. Exact source text was used for IC50 and biofilm threshold rows; image-only values were not invented.",
+      "record_counts": {
+        "total_activity_records": 295,
+        "by_endpoint": {
+          "HC50": 9,
+          "IC50": 2,
+          "MBC": 133,
+          "MBEC": 2,
+          "MBIC": 2,
+          "MIC": 147
+        }
+      }
+    },
+    "layer_3_mechanism_ontology": {
+      "decision": "accepted_with_scope_guard",
+      "rationale": "Mechanism evidence is source-located. Direct mechanism is limited to LTA binding and membrane permeabilization/depolarization assays; simulation and biofilm results remain supporting/phenotypic."
+    },
+    "supplementary_materials": {
+      "decision": "accepted_with_extraction_limits",
+      "rationale": "OOXML inspection found MALDI-TOF/RP-HPLC supplementary figures, not activity tables. This does not block Table 6/database repair."
+    },
+    "final_adjudication": {
+      "decision": "accepted_with_cautions",
+      "rationale": "The blocking open ticket is resolved, strict source-review provenance is present, and remaining caveats are explicit nonblocking cautions."
+    }
+  },
+  "caution_findings": [
+    {
+      "scope": "database_terminal_modification",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized",
+      "note": "Primary Table 1 reports C-terminal -NH2 for most peptide sequences while APD6/DBAASP sequence rows store amino-acid cores."
+    },
+    {
+      "scope": "database_figure_only_values",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "BH2L HaCaT IC50 and some DBAASP approximate MBIC/MBEC rows could not be exactly recovered from text/tables and remain source_conflict."
+    },
+    {
+      "scope": "activity_summary_rows",
+      "severity": "caution",
+      "status": "excluded_non_assay_rows",
+      "note": "Table 3 GM summary rows and antibiotic control columns were excluded from AMP activity records."
+    },
+    {
+      "scope": "mechanism_scope",
+      "severity": "caution",
+      "status": "scope_guard",
+      "note": "Computational membrane simulation and biofilm/persister phenotypes are not promoted to direct molecular target claims."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Source-reviewed rework resolved the rowspanned Table 6 parsing gap and re-adjudicated APD6/DBAASP rows. The paper is publication-grade with explicit terminal-modification and figure-only value cautions; no blocking ticket remains.",
+  "checked_inputs": [
+    "rework_context/doi__10.1007_s12602-025-10542-1/handoff_context.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/packet_manifest.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/locators/locator_index.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extraction/extraction_status.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/pdf_text/12602_2025_Article_10542.txt",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/figure_captions.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/raw/supplementary_original/local-APD6-12602_2025_10542_MOESM1_ESM.docx",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/database/database_source_manifest.json",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1007_s12602-025-10542-1/database/linked_literature_records.jsonl",
+    "papers/doi__10.1007_s12602-025-10542-1/source/paper.xml",
+    "papers/doi__10.1007_s12602-025-10542-1/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "paper_id": "doi__10.3390_md14120228",
+  "generated_at": "2026-05-09T11:53:30Z",
+  "reviewed_at": "2026-05-09T11:53:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-6 re-review reopened the handoff packet, primary XML/PDF text, DOC supplement, and linked database JSONL rows. Table 1/2 activity values were recovered, database rows were reconciled or preserved as explicit conflicts, and the original rework ticket is closed with cautions rather than hidden uncertainty.",
+  "checked_inputs": [
+    {
+      "path": "rework_context/doi__10.3390_md14120228/handoff_context.json",
+      "purpose": "message packet and bounded rework contract"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/packet_manifest.json",
+      "purpose": "packet/material status and source roots"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/locators/locator_index.json",
+      "purpose": "table and database locator index"
+    },
+    {
+      "path": "papers/doi__10.3390_md14120228/source/paper.xml",
+      "purpose": "primary article metadata, Table 1/2, synthesis and discussion sections"
+    },
+    {
+      "path": "papers/doi__10.3390_md14120228/source/paper.pdf",
+      "purpose": "primary PDF cross-check; pre-extracted text inspected"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/extracted/pdf_text/local-DBAASP-PMC5192465.txt",
+      "purpose": "methods text for activity assay conditions"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/extracted/xml_sections.json",
+      "purpose": "section text and table text cross-check"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/extracted/oa_package/local-DBAASP-PMC5192465/PMC5192465/marinedrugs-14-00228-s001.doc",
+      "purpose": "supplement checked with antiword/catdoc; contains Figure S1 and Table S1 only"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/database/linked_assay_records.jsonl",
+      "purpose": "linked DBAASP assay rows"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/database/linked_experiment_records.jsonl",
+      "purpose": "linked DBAASP/CAMP/dbAMP experiment rows"
+    },
+    {
+      "path": "paper_packets/doi__10.3390_md14120228/database/linked_literature_records.jsonl",
+      "purpose": "linked DBAASP literature rows"
+    }
+  ],
+  "tools_attempted": [
+    "jq for packet/final/rework JSON inspection",
+    "python xml.etree.ElementTree for primary XML table extraction",
+    "rg over XML/PDF text extracts for pharmacology/method sections",
+    "antiword and catdoc for marinedrugs-14-00228-s001.doc",
+    "file for supplementary DOC type confirmation",
+    "python JSONL parsing for linked database rows"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local source surfaces relevant to worker-2/4/6 blockers were opened; the DOC supplement does not contain extra activity/toxicity records."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 40,
+    "database_status_summary": {
+      "source_verified": 44,
+      "source_conflict": 2
+    },
+    "mechanism_claims": 3,
+    "supplement_checked": true,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains a complete-with-gaps packet structurally, but the gap relevant to this ticket was bounded manually: the DOC supplement was parsed and did not change activity/toxicity/mechanism evidence.",
+    "validator_contract": "Final artifacts are present with source locators and provenance; validator/semantic gates still require strict rerun before final closeout.",
+    "layer_1_database": "DBAASP assay/literature rows match the primary paper after row-level source review; CAMP/dbAMP aggregate text is preserved as source_conflict caution.",
+    "layer_2_activity_toxicity": "Primary Table 1/2 values for compounds 6 and 7 were converted into source-located activity rows with raw values, units, target species, assay conditions, and MIC units where applicable.",
+    "layer_3_mechanism": "No direct mechanism assay is reported; discussion mechanism statements are retained only as hypotheses.",
+    "publication_grade_review": "No blocking owner-layer issue remains after source-reviewed repair; remaining uncertainty is explicit caution-bearing curation."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_aggregate_rows_preserved_as_source_conflict",
+      "evidence_context": "CAMP/dbAMP aggregate text rows are linked to this paper but do not preserve exact row-level entity/target mapping; Table 1/2 primary rows are retained separately.",
+      "record_ids": [
+        "CAMP:CAMPSQ23247",
+        "dbAMP:dbAMP_27116"
+      ]
+    },
+    {
+      "caution_code": "source_taxon_spelling_variants",
+      "evidence_context": "The primary table/method text contains organism spelling variants; records use normalized species names with source labels retained."
+    },
+    {
+      "caution_code": "mechanism_hypothesis_not_direct_assay",
+      "evidence_context": "Discussion mechanism statements remain hypotheses; final ontology does not promote them to direct mechanism evidence."
+    },
+    {
+      "caution_code": "supplement_checked_no_activity_rows",
+      "evidence_context": "DOC supplement was parsed with antiword/catdoc and contains Figure S1/Table S1 physicochemical material, not additional activity/toxicity rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_pass": true,
+    "semantic_issue_count": 0,
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "semantic_report": "reports/doi__10.3390_md14120228.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_md14120228.publication_quality.json",
+    "gate_checked_at": "2026-05-09T11:56:36Z"
+  },
+  "unrecoverable_material_gaps": [],
+  "updated_at": "2026-05-09T11:56:36Z"
+}

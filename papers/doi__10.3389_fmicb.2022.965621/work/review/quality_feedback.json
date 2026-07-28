@@ -1,0 +1,59 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2022.965621",
+  "generated_at": "2026-05-06T21:43:18Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": true,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_only_exact_cytotoxicity_values_not_text_recoverable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2022.965621/raw/paper.xml",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/extracted/pdf_text/fmicb-13-965621.txt",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/raw/supplementary_original/local-DRAMP-Data_Sheet_1.DOCX",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/raw/oa_package/local-APD6-pmc_package.tar.gz:PMC9532841/Image_8.TIF",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/extracted/oa_package/local-APD6-pmc_package/PMC9532841/Image_8.TIF"
+      ],
+      "tools_attempted": [
+        "XML table/section parse",
+        "PDF text index search",
+        "DOCX OOXML document.xml table parse",
+        "tar package member inspection",
+        "file type inspection",
+        "TIFF file type inspection",
+        "native view_image attempt returned unsupported TIFF",
+        "PIL import/open check failed: Pillow not installed",
+        "local OCR/render command checks: tesseract, ImageMagick, GraphicsMagick, TIFF tools, ffmpeg, chafa unavailable"
+      ],
+      "why_unrecoverable": "The exact leukemia screening bar values are present only as a supplementary TIFF figure in local material; the TIFF path was verified, but the available local render/OCR surfaces in this session could not decode it (native image viewer does not support TIFF, Pillow is not installed, and tesseract/ImageMagick/TIFF utilities were unavailable). The DOCX text gives the caption plus Supplementary Table 2 but not those bar values.",
+      "impact": "DBAASP exact cytotoxicity screening rows remain source_conflict; final activity promotes only text-supported screening statements and Supplementary Table 2 Emax/EC50/hemolysis values.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "requested_table3_not_present_in_local_article_or_docx",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2022.965621/raw/paper.xml",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/extracted/xml_sections.json",
+        "paper_packets/doi__10.3389_fmicb.2022.965621/raw/supplementary_original/local-DRAMP-Data_Sheet_1.DOCX"
+      ],
+      "tools_attempted": [
+        "JATS table-wrap parse",
+        "PDF text search",
+        "DOCX OOXML table parse"
+      ],
+      "why_unrecoverable": "The primary XML declares two article tables and the DOCX contains two supplementary tables; no source-local Table 3 exists to extract.",
+      "impact": "The prior ticket request for Table 3 is treated as stale/mismatched context, not as a missing curation value.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "notes": "Worker-4/6 source-reviewed rework resolved the blocking provenance/database-adjudication ticket. Follow-up TIFF/tool checks confirmed figure-only exact values remain non-promoted cautions, not open rework."
+}

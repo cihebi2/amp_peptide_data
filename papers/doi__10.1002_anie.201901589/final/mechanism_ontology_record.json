@@ -1,0 +1,110 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1002_anie.201901589",
+  "doi": "10.1002/anie.201901589",
+  "run_id": "true_rework_queue_attempt_1_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "source_reacquired_final_mechanism_adjudication",
+  "generated_at": "2026-05-01T00:52:54Z",
+  "reviewed_at": "2026-05-01T00:52:54Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Active lugdunin analogues correlate antimicrobial activity with dissipation of S. aureus NCTC8325 membrane potential.",
+      "entity_scope": "lugdunin and selected active/inactive analogues tested in this paper",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "DiOC2(3) bacterial membrane-potential assay"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+        "locator": "xml:fig=3 and body paragraphs around Figure 3",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt:Figure S11 and membrane potential assay"
+        ]
+      },
+      "limitations": "Supports membrane-potential dissipation, not a specific protein target."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Lugdunin does not form large pores or gross membrane lesions under the tested conditions.",
+      "entity_scope": "lugdunin compound 1 compared with pore-forming or membrane-disrupting controls",
+      "evidence_class": "mechanism_exclusion",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+        "locator": "xml:fig=4 and adjacent body text",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt:Pore Formation and Carboxyfluorescein dequenching assay"
+        ]
+      },
+      "limitations": "Excludes large-pore/lesion behavior in the assayed contexts; does not exclude all possible membrane interactions."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Lugdunin promotes proton translocation across artificial POPC vesicles while maintaining membrane integrity.",
+      "entity_scope": "lugdunin compound 1 in pyranine/HPTS vesicle assays",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "pyranine/HPTS vesicle proton translocation assay",
+        "POPC vesicle fluorescence assay"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+        "locator": "xml:fig=5 and adjacent body text",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt:vesicle preparation and proton transport assay context"
+        ]
+      },
+      "limitations": "Directly supports proton transport in synthetic vesicles; carrier versus channel formation remains unresolved by the paper."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "SAR evidence supports the thiazolidine ring, Trp/Leu residues, and alternating D/L backbone as activity-critical motifs.",
+      "entity_scope": "Table 1 lugdunin analogues and active/inactive SAR comparisons",
+      "evidence_class": "supporting_sar_context",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+        "locator": "xml:table=1 and SAR paragraphs after Table 1",
+        "supplementary_sources": [
+          "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt:Table S3"
+        ]
+      },
+      "limitations": "SAR context supports mechanism interpretation but is not by itself a direct molecular target assay."
+    }
+  ],
+  "quality_controls": [
+    {
+      "check": "claim_ids",
+      "result": "pass",
+      "detail": "Every mechanism claim has a stable claim_id."
+    },
+    {
+      "check": "direct_assay_types",
+      "result": "pass",
+      "detail": "Direct mechanism claims list direct assay types."
+    },
+    {
+      "check": "source_locators",
+      "result": "pass",
+      "detail": "Every claim has XML and/or supplement locators."
+    },
+    {
+      "check": "scope_guard",
+      "result": "pass",
+      "detail": "Claims do not promote a specific protein target or unresolved carrier/channel distinction."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "mechanism_strength",
+      "severity": "caution",
+      "status": "accepted_with_scope_guard",
+      "note": "Mechanism is accepted for membrane potential/proton translocation evidence; the paper leaves carrier versus channel formation unresolved."
+    }
+  ]
+}

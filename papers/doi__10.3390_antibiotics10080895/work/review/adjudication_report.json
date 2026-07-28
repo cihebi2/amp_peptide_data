@@ -1,0 +1,89 @@
+{
+  "paper_id": "doi__10.3390_antibiotics10080895",
+  "generated_at": "2026-05-07T16:54:52Z",
+  "reviewed_at": "2026-05-07T16:54:52Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Source-reviewed rework repaired the activity table shape, database-row adjudication, and final worker-6 decision for Brevinin-2GUb analogues. The paper is publication-grade with cautions that database label conflicts and combined endpoint cells are preserved rather than normalized away.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics10080895/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics10080895/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics10080895/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics10080895/raw/paper.xml",
+    "paper_packets/doi__10.3390_antibiotics10080895/raw/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics10080895/extracted/pdf_text/antibiotics-10-00895.txt",
+    "paper_packets/doi__10.3390_antibiotics10080895/extracted/oa_package/local-DBAASP-PMC8388802/PMC8388802/antibiotics-10-00895-s001.zip",
+    "paper_packets/doi__10.3390_antibiotics10080895/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics10080895/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics10080895/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv",
+    "paper_packets/doi__10.3390_antibiotics10080895/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics10080895/extracted/archive_manifest.json"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "OA package contains antibiotics-10-00895-s001.zip with supplementary PDF; text was inspected for S1-S3 statistical support. No additional spreadsheets were present locally."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 184,
+    "derived_metrics_parsed": 7,
+    "activity_parser_artifacts_remaining": 0,
+    "database_status_summary": {
+      "source_conflict": 76,
+      "source_verified": 189
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_material_packet": "Packet manifest, locator index, XML, PDF text, OA package, supplementary zip/PDF, and database snapshots were reopened. Supplementary PDF contains figures/statistical tables rather than new activity value matrices; no external missing supplement is required for the repaired gate.",
+    "layer_2_activity_toxicity": "Worker-2 repair reconstructed Tables 3, 4, and 5 row-by-row, including MIC/MBC, HC50, IC50, and MBIC/MBEC evidence. Single unsplit cells remain combined endpoints with explicit notes instead of fabricated split values.",
+    "layer_3_database": "Worker-4 repair reconciled local DBAASP/CAMP/dbAMP-linked rows against Table 1 sequences and repaired activity rows. Source-supported rows are source_verified; unsupported or label-conflicting rows remain source_conflict with context.",
+    "layer_4_mechanism": "Worker-6 adjudication keeps mechanism evidence bounded to direct membrane permeability/time-kill assays, in vivo model activity, and structure-activity associations. No unsupported molecular target is promoted.",
+    "layer_5_review": "The prior open ticket is closed because the source review is now paper-specific, the final artifacts no longer contain open rework targets, and strict gates are expected to pass after rerun."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "combined_endpoint_cells_preserved",
+      "evidence_context": "Some MIC/MBC and MBIC/MBEC table cells contain a single value without a slash; these are preserved as combined endpoint cells and not split into fabricated MIC/MBC or MBIC/MBEC rows."
+    },
+    {
+      "caution_code": "database_name_label_conflict_preserved",
+      "evidence_context": "DBAASP descriptive name says Brevinin-2GUb (1-14) [D5K; T6,13K; E17K], but the local database sequence is the 19-residue tB2U-6K sequence and matches source Table 1 row 8; preserve as name-label caution."
+    },
+    {
+      "caution_code": "figure_curves_not_digitized",
+      "evidence_context": "Figures 4-9 and supplementary Tables S1-S3 were checked; exact curve-level values were not digitized, and final claims use only source-stated qualitative/summary evidence."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_tickets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "closed_at": "2026-05-07T16:54:52Z",
+      "closed_by": "codex_worker_2_4_6_re_review",
+      "closure_reason": "worker-2 activity table repair, worker-4 database reconciliation, and worker-6 source-reviewed final adjudication completed from local sources; strict gates rerun after this write."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "paper_id": "doi__10.3390_biom9110667",
+  "generated_at": "2026-05-08T16:08:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "worker": "worker-6",
+  "source_reviewed": true,
+  "extraction_scope": {
+    "owned_layer": "worker-6 final mechanism adjudication from available worker-5 scaffold plus source review",
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_biom9110667/handoff_context.json",
+      "paper_packets/doi__10.3390_biom9110667/packet_manifest.json",
+      "paper_packets/doi__10.3390_biom9110667/locators/locator_index.json",
+      "paper_packets/doi__10.3390_biom9110667/extraction/extraction_status.json",
+      "paper_packets/doi__10.3390_biom9110667/extraction/extraction_quality_report.json",
+      "papers/doi__10.3390_biom9110667/source/paper.xml",
+      "papers/doi__10.3390_biom9110667/source/paper.pdf",
+      "paper_packets/doi__10.3390_biom9110667/raw/supplementary_original/local-APD6-biomolecules-09-00667-s001.zip",
+      "paper_packets/doi__10.3390_biom9110667/extracted/pdf_text/biomolecules-09-00667.txt",
+      "paper_packets/doi__10.3390_biom9110667/extracted/figure_captions.json",
+      "paper_packets/doi__10.3390_biom9110667/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_biom9110667/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_biom9110667/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+    ],
+    "tools_attempted": [
+      "ElementTree XML table parser",
+      "pdftotext-derived packet text",
+      "unzip -l",
+      "xls2csv",
+      "DOCX OOXML text extraction",
+      "jq/jsonl inspection",
+      "csv module over merged database sequence/APD6 rows"
+    ]
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "The paper supports antimicrobial phenotype for synthetic dermaseptins and phylloseptin-SP1 by MIC assays, but those assays do not establish a direct molecular target.",
+      "entity_scope": "synthetic dermaseptins-SP2-SP5 and phylloseptin-SP1",
+      "evidence_class": "phenotypic_activity_not_direct_mechanism",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_biom9110667/source/paper.xml",
+        "locator": "xml:table=2; xml:sec=2.6; xml:sec=3.3"
+      },
+      "limitations": "MIC inhibition is activity evidence, not direct mechanism evidence."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "The paper discusses cationic/hydrophobic amphipathic peptides and membrane disruption as a literature-supported mechanism class for phylloseptins and dermaseptins.",
+      "entity_scope": "phylloseptin-SP1 and dermaseptins-SP2-SP5",
+      "evidence_class": "literature_supported_mechanism_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_biom9110667/source/paper.xml",
+        "locator": "xml:sec=4.3; xml:sec=4.4"
+      },
+      "limitations": "This paper does not run membrane permeabilization, microscopy, binding, or leakage assays for the reported peptides."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Supplementary structure tables and helical-wheel figures support amphipathic/alpha-helical structural context for the reported peptides.",
+      "entity_scope": "phylloseptin-SP1 and dermaseptins-SP2-SP5",
+      "evidence_class": "computed_or_predicted_structure_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3390_biom9110667/raw/supplementary_original/local-APD6-biomolecules-09-00667-s001.zip",
+        "locator": "supp:Supplementary Table 3.xls; supp:Supplementary Table 4.xls; xml:fig=6"
+      },
+      "limitations": "Predicted structural properties are context for plausible membrane activity, not direct mechanism proof."
+    }
+  ],
+  "semantic_quality_checks": {
+    "direct_mechanism_overclaim": false,
+    "claim_locators_present": true,
+    "mechanism_strength": "bounded_context_only"
+  }
+}

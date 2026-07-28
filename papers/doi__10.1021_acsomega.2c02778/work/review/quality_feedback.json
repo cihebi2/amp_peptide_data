@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-05-02T09:43:15Z",
+  "updated_at": "2026-06-22T08:59:51Z",
+  "paper_id": "doi__10.1021_acsomega.2c02778",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "source_review_summary": "Worker-6 non-dispatch final review repaired accepted mechanism evidence classes to the allowed ontology, confirmed closed rework state, preserved material/sequence/mechanism cautions, and left zero hard rework targets.",
+  "caution_findings": [
+    {
+      "scope": "supplementary_material",
+      "severity": "caution",
+      "status": "local_supporting_information_absent_nonblocking_for_accepted_claims",
+      "note": "The local packet and landed assets do not contain ao2c02778_si_001.pdf; exact sequence and supplemental activity curves were not used as accepted source evidence."
+    },
+    {
+      "scope": "database_sequence",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized",
+      "note": "APD6 AP03820 remains database-supported for the CP1(1-29) sequence; XML/PDF support the truncation label and Table 1 MBC values but not primary-exact sequence verification."
+    },
+    {
+      "scope": "mechanism",
+      "severity": "caution",
+      "status": "mechanism_not_fully_resolved",
+      "note": "NMR/DPC and DNA mobility-shift evidence support mechanism context, but the paper does not resolve a single antimicrobial killing pathway."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "local_supporting_information_pdf_absent",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1021_acsomega.2c02778/packet_manifest.json",
+        "paper_packets/doi__10.1021_acsomega.2c02778/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1021_acsomega.2c02778/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1021_acsomega.2c02778/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1021_acsomega.2c02778/raw",
+        "papers/doi__10.1021_acsomega.2c02778/source/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1021_acsomega.2c02778"
+      ],
+      "tools_attempted": [
+        "find",
+        "rg",
+        "jq",
+        "pdftotext-derived packet text already present"
+      ],
+      "why_unrecoverable": "The XML links the ACS supporting-information PDF ao2c02778_si_001.pdf, but no local packet raw folder, supplementary index, archive manifest, paper source folder, or landed asset folder contains the asset to parse.",
+      "impact": "Does not block the accepted Table 1 MBC rows or mechanism claims because those are supported by primary XML/PDF text and locators; it prevents primary-exact sequence verification and is preserved as sequence_modified_not_normalized.",
+      "owner_worker": "worker-2 + worker-4 + worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "latest_gate_results": {
+    "semantic_gate": {
+      "report": "reports/doi__10.1021_acsomega.2c02778.semantic_gate.json",
+      "passed": true,
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "report": "reports/doi__10.1021_acsomega.2c02778.publication_quality.json",
+      "generated_at_utc": "2026-06-22T08:59:20.994760+00:00",
+      "passed": true,
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 12,
+        "mechanism_claims": 3
+      }
+    },
+    "mechanism_vocabulary_check": {
+      "allowed_evidence_classes_only": true,
+      "classes_by_claim": {
+        "mech-001": "phenotype_supported",
+        "mech-002": "direct_mechanism",
+        "mech-003": "direct_mechanism"
+      }
+    },
+    "response_schema_valid": true,
+    "validated_at": "2026-06-22T08:59:51Z"
+  },
+  "mechanism_ontology_repair": {
+    "repaired_at": "2026-06-22T08:58:54Z",
+    "allowed_evidence_classes": [
+      "computational_only",
+      "direct_mechanism",
+      "inferred_mechanism",
+      "phenotype_supported",
+      "unknown_or_not_tested"
+    ],
+    "nonstandard_evidence_class_count_after_repair": 0
+  },
+  "gate_expectation": "strict semantic and publication-quality gates rerun after ontology repair and passed with zero semantic issues"
+}

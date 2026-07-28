@@ -1,0 +1,100 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1021_acsomega.2c02778",
+  "doi": "10.1021/acsomega.2c02778",
+  "run_id": "worker6_non_dispatch_final_review_20260622",
+  "generated_at": "2026-05-02T09:43:15Z",
+  "reviewed_at": "2026-06-22T08:58:54Z",
+  "worker": "worker-6 non-dispatch final review",
+  "role": "paper-adjudicator-review-worker final non-dispatch adjudication",
+  "protocol": "amp_three_layer_v2",
+  "source_reviewed": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "CP1 and CP1(1-29) retain similar bactericidal activity in Table 1, so the C-terminal Pro30/Arg31 deletion has limited effect on the measured MBC phenotype under the paper's assay conditions.",
+      "entity_scope": "CP1 (WT) and CP1 (1-29)",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "locator": "xml:sec=7:Comparison of the Activity of CP1 (WT) and CP1 (1-29);xml:table=1",
+        "source_path": "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.xml"
+      },
+      "limitations": "MBC values support phenotype comparison, not a standalone molecular target mechanism.",
+      "supporting_assay_types": [
+        "minimum bactericidal concentration assay"
+      ]
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "NMR in DPC micelles supports a long alpha-helical membrane-mimetic structure for CP1 and CP1(1-29), with DPC interaction over much of the peptide length.",
+      "entity_scope": "CP1 (WT) and CP1 (1-29) in DPC micelles",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "solution NMR in DPC micelles",
+        "cross-saturation solvent-exposure experiment"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=5:NMR Chemical Shift Assignment and Three-Dimensional Structure;xml:sec=6:NMR Analysis of the Terminal Region of CP1;xml:fig=3;xml:fig=4;xml:fig=5",
+        "source_path": "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.xml"
+      },
+      "limitations": "DPC micelles are a membrane-mimetic environment and do not by themselves prove bacterial membrane disruption in cells."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "The paper directly tests DNA binding by electrophoretic mobility shift assay; CP1 WT binds DNA more strongly than CP1(1-29), supporting DNA binding as a plausible contributor to antimicrobial activity.",
+      "entity_scope": "CP1 (WT), CP1 (1-29), and CaM-CP1 comparator",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "DNA electrophoretic mobility shift assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=7:Comparison of the Activity of CP1 (WT) and CP1 (1-29);xml:fig=6;xml:sec=13:DNA-Binding Experiments",
+        "source_path": "paper_packets/doi__10.1021_acsomega.2c02778/raw/paper.xml"
+      },
+      "limitations": "The authors state that many details of CP1-DNA binding remain unresolved; final curation should not overclaim DNA binding as the sole killing mechanism."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "mechanism",
+      "severity": "caution",
+      "status": "mechanism_not_fully_resolved",
+      "note": "NMR/DPC and DNA mobility-shift evidence support mechanism context, but the paper does not resolve a single antimicrobial killing pathway."
+    }
+  ],
+  "updated_at": "2026-06-22T08:58:54Z",
+  "evidence_class_ontology": [
+    "computational_only",
+    "direct_mechanism",
+    "inferred_mechanism",
+    "phenotype_supported",
+    "unknown_or_not_tested"
+  ],
+  "ontology_repair": {
+    "repaired_at": "2026-06-22T08:58:54Z",
+    "worker": "worker-6",
+    "allowed_evidence_classes": [
+      "computational_only",
+      "direct_mechanism",
+      "inferred_mechanism",
+      "phenotype_supported",
+      "unknown_or_not_tested"
+    ],
+    "nonstandard_evidence_class_count_after_repair": 0,
+    "repairs": [
+      {
+        "claim_id": "mech-001",
+        "old_evidence_class": "phenotypic_activity_comparison",
+        "new_evidence_class": "phenotype_supported",
+        "basis": "Table 1 MBC phenotype comparison, not molecular mechanism closure"
+      },
+      {
+        "claim_id": "mech-002",
+        "old_evidence_class": "structural_membrane_mimetic_evidence",
+        "new_evidence_class": "direct_mechanism",
+        "basis": "source-located NMR/DPC structural and solvent-exposure assays, with model-membrane limitation preserved"
+      }
+    ]
+  }
+}

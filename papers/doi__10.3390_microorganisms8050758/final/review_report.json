@@ -1,0 +1,102 @@
+{
+  "paper_id": "doi__10.3390_microorganisms8050758",
+  "reviewed_at": "2026-05-09T08:58:46Z",
+  "generated_at": "2026-05-09T08:58:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "database_rows": true,
+    "note": "Local XML/PDF, OA package images, supplementary PDF text, linked DBAASP rows, and merged sequence catalog were checked for the worker-4/worker-6 blockers."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_microorganisms8050758/handoff_context.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/packet_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/locators/locator_index.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_microorganisms8050758/extracted/supplementary_text/microorganisms-08-00758-s001.txt",
+    "paper_packets/doi__10.3390_microorganisms8050758/extracted/oa_package/local-DBAASP-PMC7285485/PMC7285485/microorganisms-08-00758-g002.jpg",
+    "paper_packets/doi__10.3390_microorganisms8050758/extracted/oa_package/local-DBAASP-PMC7285485/PMC7285485/microorganisms-08-00758-g005.jpg",
+    "papers/doi__10.3390_microorganisms8050758/source/paper.xml",
+    "papers/doi__10.3390_microorganisms8050758/source/paper.pdf",
+    "paper_packets/doi__10.3390_microorganisms8050758/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms8050758/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms8050758/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "sed",
+    "python xml.etree.ElementTree",
+    "pdftotext-derived local text already present in packet",
+    "visual inspection of local Figure 2 and Figure 5 images via view_image",
+    "python csv reader for merged sequence catalog"
+  ],
+  "summary": "Source-reviewed worker-4/worker-6 re-review resolved the framework-test blocker for KW-repeat peptides in this paper. Primary XML Table 1, Supplementary Table S1, Figure 5 text/caption, Figure 7/8 mechanism evidence, linked DBAASP rows, and merged sequence catalog support publication-grade acceptance with preserved database cautions rather than clean acceptance.",
+  "adjudication_summary": "Worker-6 accepts the paper with cautions after replacing framework-test final evidence with source-reviewed final artifacts and closing rwk-complete-test-0001.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP sequence identities for KW2, KW4, and KW5 agree with primary XML peptide synthesis and merged all_sequences.csv. Exact Table 1 MIC/toxicity rows are source-verified. MBIC90 and selected salt/pH or resistant-strain qualifier rows remain source_conflict, preserved as caution findings instead of forced to source_verified.",
+    "layer_2_activity_toxicity": "Final activity evidence now uses peptide names as entities, separates MIC from cytotoxicity/hemolysis, adds Supplementary Table S1, and records KW4 biofilm inhibition only as the source-supported >80% threshold at 25 µM.",
+    "layer_3_mechanism": "Mechanism is bounded to KW4 non-membranolytic action with direct RNA binding/cytosolic localization evidence and membrane-binding context; DNA binding remains inferred/proposed, not promoted to direct assay evidence.",
+    "review_layer": "The prior open rework ticket was addressed by source review of the requested XML, supplement, and database paths; no blocking or major owner-layer rework remains."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 46,
+    "database_record_audits": 33,
+    "database_status_summary": {
+      "source_verified": 23,
+      "source_conflict": 10
+    },
+    "mechanism_claims": 3,
+    "rework_ticket_closed": "rwk-complete-test-0001",
+    "open_rework_target_count": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved_not_blocking",
+      "evidence_context": "Five linked DBAASP assay/experiment claims remain source_conflict because local primary text/tables do not state exact MBIC90 or resistant-strain salt/pH qualifiers; primary-supported MIC, toxicity, biofilm threshold, and sequence rows were retained.",
+      "affected_records": [
+        "1846",
+        "175555",
+        "175560",
+        "175561",
+        "175562"
+      ]
+    },
+    {
+      "caution_code": "figure_only_exact_values_not_normalized",
+      "evidence_context": "Figure 2 and Figure 5 images were opened for source review, but exact chart-derived values were not fabricated into table-grade database values when source text gave only qualitative or threshold statements."
+    },
+    {
+      "caution_code": "supplement_pdf_text_only",
+      "evidence_context": "The only supplementary asset is a PDF; local text extraction yielded Table S1 and Figures S1-S2, with no spreadsheet tables to recover."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0,
+    "major_issue_count": 0
+  },
+  "unrecoverable_material_gaps": []
+}

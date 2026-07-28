@@ -1,0 +1,288 @@
+{
+  "adjudication_summary": "Source-reviewed repair recovered three peptide identities, six worker-2 activity/toxicity-context rows, nine database-row audits, and corrected mechanism framing; publication-grade remains blocked because exact primary numeric activity values are not locally recoverable.",
+  "caution_findings": [
+    {
+      "caution_code": "figure_only_activity_values",
+      "evidence_context": "Figure 4/5 support approximate activity/toxicity-context values, but no primary table or source data file was recovered."
+    },
+    {
+      "caution_code": "database_values_not_primary_exact",
+      "evidence_context": "Merged database rows report exact EC50/inhibition values, but these remain database annotations unless a primary numeric table is recovered."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1016_j.virol.2010.11.014/handoff_context.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.xml",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.pdf",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr4_lrg.jpg",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr5_lrg.jpg",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/mmc1.doc",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/database/database_source_manifest.json",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+  ],
+  "materials_exhausted": {
+    "figure_images": true,
+    "merged_database_rows": true,
+    "notes": "OA package contained mmc1.doc and figure images; no additional local supplementary spreadsheet/table with exact activity values was present.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1016_j.virol.2010.11.014",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All linked DBAASP/CAMP/dbAMP rows were reconciled to the three primary Table 2 peptide sequences when possible; exact database activity values remain source_conflict rather than source_verified exact primary-source values.",
+    "layer_2_activity_toxicity": "Worker-2 recovered source-located antiviral inhibition and MTT context rows from results text, Figure 4, Figure 5, and methods, marking figure-only values as approximate and not fabricating exact EC50/OD490 values.",
+    "layer_3_mechanism": "Worker-6 replaced automated keyword mechanism placeholders with source-located pAPN binding/entry-interference, TxxF motif hypothesis, and phage immunogenicity context without overclaiming direct structural mechanism.",
+    "publication_grade_decision": "Non-accepted because exact primary numeric activity values are unrecoverable locally and the open adjudication ticket blocks final approval."
+  },
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "exact_primary_activity_values_unrecoverable",
+      "owner_worker": "worker-2 + worker-6",
+      "reason": "Primary local material supports figure-level dose-response and 20 ug/ml maximum effect/context but does not provide exact tabular EC50 or OD490 values; graph-derived estimates remain approximate.",
+      "severity": "blocking"
+    },
+    {
+      "code": "database_exact_values_preserved_as_source_conflict",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "DBAASP/CAMP/dbAMP linked rows map to the three primary peptides, but exact activity values are database annotations not independently tabulated in the primary text/XML/PDF.",
+      "severity": "major"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "needs_targeted_rework",
+  "reviewed_at": "2026-05-02T02:36:52Z",
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1016_j.virol.2010.11.014/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-02T02:36:52Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "exact_primary_text_or_table_ec50_values_unrecoverable",
+      "layer": "review",
+      "omission_code": "unrecoverable_material_gap_exact_activity_values",
+      "owner_worker": "worker-6",
+      "paper_id": "doi__10.1016_j.virol.2010.11.014",
+      "qc_failure_reasons": [
+        {
+          "code": "exact_primary_activity_values_unrecoverable",
+          "owner_worker": "worker-2 + worker-6",
+          "reason": "Primary local material supports figure-level dose-response and 20 ug/ml maximum effect/context but does not provide exact tabular EC50 or OD490 values; graph-derived estimates remain approximate.",
+          "severity": "blocking"
+        },
+        {
+          "code": "database_exact_values_preserved_as_source_conflict",
+          "owner_worker": "worker-4 + worker-6",
+          "reason": "DBAASP/CAMP/dbAMP linked rows map to the three primary peptides, but exact activity values are database annotations not independently tabulated in the primary text/XML/PDF.",
+          "severity": "major"
+        }
+      ],
+      "reason": "The local XML/PDF and OA package contain Figure 4 curves and Figure 5 bar plots but no primary-source numeric data table for exact EC50, exact inhibition percentages at every concentration, or exact OD490 values. The merged database rows report EC50/percent-inhibition values, but those are database annotations rather than independent primary-source exact tables.",
+      "required_action": "Keep paper non-accepted unless a future source adds primary tabular EC50/inhibition/OD490 values; do not promote database-only exact values to source_verified.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.xml",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.pdf",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/xml_sections.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/figure_captions.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr4_lrg.jpg",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr5_lrg.jpg",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/mmc1.doc",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/database_source_manifest.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+      ],
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-codex-rereview-20260502-0001",
+      "unrecoverable_material_gaps": [
+        {
+          "blocks_publication_grade": true,
+          "gap_code": "exact_primary_text_or_table_ec50_values_unrecoverable",
+          "impact": "Peptide sequences, qualitative dose-response, 20 ug/ml maximum inhibitory/non-toxic context, and database cross-references are preserved, but exact database EC50 values cannot be upgraded to source_verified primary-text values; paper remains non-publication-grade under obtainable-only mode.",
+          "owner_worker": "worker-6",
+          "source_paths_checked": [
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.xml",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.pdf",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/pdf_text/main.txt",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/xml_sections.json",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/figure_captions.json",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr4_lrg.jpg",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr5_lrg.jpg",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/mmc1.doc",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_index.json",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_text.jsonl",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_tables.json",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/database/database_source_manifest.json",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_assay_records.jsonl",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_experiment_records.jsonl",
+            "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_literature_records.jsonl",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+          ],
+          "tools_attempted": [
+            "rg over XML/PDF extracted text for peptide names, EC50, inhibition, MTT, 20 ug/ml, and TGEV context",
+            "tar -tzf on OA package to enumerate embedded paper, figures, and mmc1.doc",
+            "antiword on mmc1.doc to recover Supplementary Figure 1 text",
+            "view_image on gr4_lrg.jpg and gr5_lrg.jpg to inspect figure-only activity/toxicity values",
+            "rg over merged_amp_corpus output for DBAASP/CAMP/dbAMP sequence and experiment mappings",
+            "jq/json inspection of packet manifest, locators, extraction status, database snapshots, and prior rework tickets"
+          ],
+          "why_unrecoverable": "The local XML/PDF and OA package contain Figure 4 curves and Figure 5 bar plots but no primary-source numeric data table for exact EC50, exact inhibition percentages at every concentration, or exact OD490 values. The merged database rows report EC50/percent-inhibition values, but those are database annotations rather than independent primary-source exact tables."
+        }
+      ],
+      "updated_at": "2026-05-02T02:36:52Z",
+      "worker": "worker-6"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_figure_only_values_policy": "blocked_for_exact_primary_values_no_fabrication",
+    "activity_rows_have_raw_values_units_targets_and_locators": true,
+    "activity_rows_parsed": 6,
+    "closed_or_superseded_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "database_conflicts_require_adjudication": "preserved_as_source_conflict_where_exact_values_are_database_only_or_graph_derived",
+    "database_status_summary": {
+      "source_conflict": 12
+    },
+    "mechanism_claims": 3,
+    "mechanism_overclaim_check": "pass_no_membrane_nucleic_acid_or_translation_overclaim_from_keyword_scaffold",
+    "open_rework_ticket_ids": [
+      "rwk-codex-rereview-20260502-0001"
+    ],
+    "unrecoverable_material_gaps": [
+      {
+        "blocks_publication_grade": true,
+        "gap_code": "exact_primary_text_or_table_ec50_values_unrecoverable",
+        "impact": "Peptide sequences, qualitative dose-response, 20 ug/ml maximum inhibitory/non-toxic context, and database cross-references are preserved, but exact database EC50 values cannot be upgraded to source_verified primary-text values; paper remains non-publication-grade under obtainable-only mode.",
+        "owner_worker": "worker-6",
+        "source_paths_checked": [
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.xml",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.pdf",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/pdf_text/main.txt",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/xml_sections.json",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/figure_captions.json",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr4_lrg.jpg",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr5_lrg.jpg",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/mmc1.doc",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_tables.json",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/database/database_source_manifest.json",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_literature_records.jsonl",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+        ],
+        "tools_attempted": [
+          "rg over XML/PDF extracted text for peptide names, EC50, inhibition, MTT, 20 ug/ml, and TGEV context",
+          "tar -tzf on OA package to enumerate embedded paper, figures, and mmc1.doc",
+          "antiword on mmc1.doc to recover Supplementary Figure 1 text",
+          "view_image on gr4_lrg.jpg and gr5_lrg.jpg to inspect figure-only activity/toxicity values",
+          "rg over merged_amp_corpus output for DBAASP/CAMP/dbAMP sequence and experiment mappings",
+          "jq/json inspection of packet manifest, locators, extraction status, database snapshots, and prior rework tickets"
+        ],
+        "why_unrecoverable": "The local XML/PDF and OA package contain Figure 4 curves and Figure 5 bar plots but no primary-source numeric data table for exact EC50, exact inhibition percentages at every concentration, or exact OD490 values. The merged database rows report EC50/percent-inhibition values, but those are database annotations rather than independent primary-source exact tables."
+      }
+    ]
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_images",
+    "database_snapshots"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "blocking_ticket_ids": [
+      "rwk-codex-rereview-20260502-0001"
+    ],
+    "publication_grade_ready": false,
+    "required_rework_count": 1
+  },
+  "summary": "Bounded source review repaired missing activity and database adjudication, but exact primary EC50/OD490 tables are absent locally; keep non-accepted with an unrecoverable material gap.",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "exact_primary_text_or_table_ec50_values_unrecoverable",
+      "impact": "Peptide sequences, qualitative dose-response, 20 ug/ml maximum inhibitory/non-toxic context, and database cross-references are preserved, but exact database EC50 values cannot be upgraded to source_verified primary-text values; paper remains non-publication-grade under obtainable-only mode.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.xml",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/raw/paper.pdf",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/xml_sections.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/figure_captions.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr4_lrg.jpg",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/gr5_lrg.jpg",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/oa_package/local-DBAASP-PMC7111919/PMC7111919/mmc1.doc",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/database_source_manifest.json",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1016_j.virol.2010.11.014/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF extracted text for peptide names, EC50, inhibition, MTT, 20 ug/ml, and TGEV context",
+        "tar -tzf on OA package to enumerate embedded paper, figures, and mmc1.doc",
+        "antiword on mmc1.doc to recover Supplementary Figure 1 text",
+        "view_image on gr4_lrg.jpg and gr5_lrg.jpg to inspect figure-only activity/toxicity values",
+        "rg over merged_amp_corpus output for DBAASP/CAMP/dbAMP sequence and experiment mappings",
+        "jq/json inspection of packet manifest, locators, extraction status, database snapshots, and prior rework tickets"
+      ],
+      "why_unrecoverable": "The local XML/PDF and OA package contain Figure 4 curves and Figure 5 bar plots but no primary-source numeric data table for exact EC50, exact inhibition percentages at every concentration, or exact OD490 values. The merged database rows report EC50/percent-inhibition values, but those are database annotations rather than independent primary-source exact tables."
+    }
+  ],
+  "updated_at": "2026-05-02T02:36:52Z",
+  "validator_contract_passed": true
+}

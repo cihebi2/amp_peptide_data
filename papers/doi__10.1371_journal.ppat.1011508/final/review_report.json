@@ -1,0 +1,80 @@
+{
+  "paper_id": "doi__10.1371_journal.ppat.1011508",
+  "reviewed_at": "2026-05-05T19:33:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "checked_paths": [
+      "papers/doi__10.1371_journal.ppat.1011508/source/paper.xml",
+      "papers/doi__10.1371_journal.ppat.1011508/source/paper.pdf",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.ppat.1011508/package/local-DBAASP-PMC10414684.tar.gz",
+      "paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_literature_records.jsonl"
+    ],
+    "note": "Bounded local review recovered the previously missing activity matrix from primary XML Table 7 and checked the OA tarball XLSX supplements; no remaining local-material blocker controls the worker-2/4/6 gates."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/extracted/pdf_text/ppat.1011508.txt",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.ppat.1011508/package/local-DBAASP-PMC10414684.tar.gz",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1371_journal.ppat.1011508/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 131,
+    "numeric_mic_rows": 59,
+    "inactive_at_highest_tested_rows": 72,
+    "database_record_status_summary": {
+      "database_only_no_primary_source": 2,
+      "source_conflict": 108,
+      "source_verified": 31
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP linked assay/experiment rows were matched to source Table 7 cells where available; exact value matches are retained, while target-label variants such as PAO1/PA01 and EMRSA/MRSA are preserved as source_conflict cautions rather than normalized away.",
+    "layer_2_activity_toxicity": "Worker-2 repair converted the Table 7 MIC matrix plus Table 3 target metadata into row-level records with endpoint, raw value, unit, target species/strain, method context, and XML locators. Slash cells are preserved as >512 µg/ml no-activity observations per the source footnote; blank control-not-applicable cells are excluded with summary.",
+    "layer_3_mechanism": "Final mechanism/context record was narrowed to source-supported computational prediction, MIC activity, and peptidomic detection context; no direct LPS/membrane/protein-synthesis mechanism is promoted from keyword hits.",
+    "worker_6_adjudication": "The previous open rework ticket is resolved by source-reviewed worker-2/4/6 artifacts. Remaining cautions are nonblocking preserved source/database label conflicts, not missing local material."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_label_variants_preserved",
+      "evidence_context": "Several linked DBAASP target labels differ from the primary-source Table 3/Table 7 text by strain punctuation/prefix or PAO1/PA01 spelling. These are retained as source_conflict database cautions with matched activity rows."
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism_assay",
+      "evidence_context": "The paper supports computational prediction, MIC activity, and peptidomic detection context but not direct molecular mechanism assays for LPS binding, membrane permeabilization, or protein-synthesis inhibition."
+    },
+    {
+      "caution_code": "database_only_rows_preserved",
+      "evidence_context": "Two linked DBAASP rows point to activity records that are not represented by a nonblank primary-source Table 7 cell; they remain database_only_no_primary_source and are not promoted to source_verified."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source re-review repaired the missing Table 7 activity matrix into row-level MIC evidence, reconciled linked database rows against primary-source locators, narrowed mechanism claims to supported context, and closed the prior worker-2/4/6 rework blocker with preserved cautions."
+}

@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1038_s41467-023-36994-z",
+  "doi": "10.1038/s41467-023-36994-z",
+  "reviewed_at": "2026-05-03T01:54:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml: primary table rows and article metadata reopened",
+    "paper_pdf: extracted text checked for table footnotes and mechanism context",
+    "oa_package: packet manifest checked; no package members were locally present",
+    "supplementary_assets: local landing HTML checked; actual supplement payloads were not locally recovered and were not needed for owner-layer values",
+    "merged_database_rows: DBAASP linked assay, experiment, and literature JSONL rows rechecked"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/database materials support the repaired worker-2/4/6 layers. Local supplementary payloads are landing pages only; this is retained as a nonblocking caution."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1038_s41467-023-36994-z/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-023-36994-z/raw/supplementary_original"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 363,
+    "activity_summary_rows_excluded": 10,
+    "activity_extraction_issues": 0,
+    "database_record_audits": 430,
+    "database_status_summary": {
+      "source_verified": 380,
+      "source_conflict": 50
+    },
+    "mechanism_claims": 1,
+    "open_rework_targets": 0,
+    "unrecoverable_blocking_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP linked assay/experiment rows were matched against source-backed Table 1/2 activity rows where possible. Exact matches are source_verified; value/axis mismatches remain source_conflict with row-level context rather than being smoothed over.",
+    "layer_2_activity_toxicity": "Primary XML Table 1 and Table 2 were parsed into endpoint/target/value/unit rows with locators. Table 2 Highly active/Improved summary rows were explicitly excluded as counts, not assay targets.",
+    "layer_3_mechanism": "Mechanism evidence is kept as computational membrane-association support from MD simulations, not direct_mechanism, because no direct wet-lab mechanism assay was recovered in the owned repair scope.",
+    "adjudication": "The prior open ticket is closed after source-reviewed worker-2/4/6 repair; remaining issues are cautions with no blocking rework target."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "evidence_context": "Some DBAASP assay rows do not exactly match the primary XML table value/axis for the mapped peptide and are retained as source_conflict in database_record_verification.json."
+    },
+    {
+      "caution_code": "supplementary_payloads_not_local",
+      "evidence_context": "Local supplementary assets are article landing HTML with external supplement links; owner-layer activity/database values were recoverable from XML/PDF/database rows."
+    },
+    {
+      "caution_code": "mechanism_is_computational_context",
+      "evidence_context": "Membrane association/penetration is supported by simulations and is not promoted to a direct wet-lab mechanism claim."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_payloads_not_locally_recovered",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41467-023-36994-z/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-023-36994-z/supplementary/landing-*.bin",
+        "paper_packets/doi__10.1038_s41467-023-36994-z/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41467-023-36994-z/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "HTML href extraction",
+        "rg over local landing HTML",
+        "supplementary_index/supplementary_tables review"
+      ],
+      "why_unrecoverable": "The local supplementary *.bin files are article HTML landing pages with external supplement links, not local PDF/XLSX payloads; obtainable-only mode did not chase external downloads.",
+      "impact": "Nonblocking for this owner-layer repair because primary XML/PDF tables contain the activity/toxicity values and linked DBAASP rows needed for worker-2/4 adjudication.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_count": 0
+  },
+  "adjudication_summary": "Source-reviewed rework repaired the activity table parse and database-row adjudication for doi__10.1038_s41467-023-36994-z. The paper is publication-grade with cautions: source conflicts are explicit, local supplementary payloads remain nonblocking, and mechanism claims are bounded to computational support."
+}

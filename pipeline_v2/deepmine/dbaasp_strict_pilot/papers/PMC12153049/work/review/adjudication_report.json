@@ -1,0 +1,357 @@
+{
+  "paper_id": "PMC12153049",
+  "artifact_role": "worker6_adjudication_report",
+  "reviewed_at": "2026-07-27T21:18:28Z",
+  "updated_at": "2026-07-27T21:18:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "validator_contract_passed": true,
+  "contracts_read": [
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md"
+  ],
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/extracted/supplementary_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/activity_toxicity_evidence.worker2.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/database_record_audit.worker4.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/analysis/mechanism_evidence.worker5.json"
+  ],
+  "runtime_open_ticket_ids_authoritative": [
+    "rwk-PMC12153049-campaign-r03-BF-PMC12153049-W2-ACTIVITY-TOXICITY-ROW-LEVEL-OMISSIONS",
+    "rwk-PMC12153049-campaign-r03-BF-PMC12153049-W4-DATABASE-FINAL-UNRECONCILED-BLOCKERS"
+  ],
+  "owner_response_prerequisite": {
+    "overall_pass": true,
+    "tickets": {
+      "rwk-PMC12153049-campaign-r03-BF-PMC12153049-W2-ACTIVITY-TOXICITY-ROW-LEVEL-OMISSIONS": true,
+      "rwk-PMC12153049-campaign-r03-BF-PMC12153049-W4-DATABASE-FINAL-UNRECONCILED-BLOCKERS": true
+    }
+  },
+  "adjudication_summary": "Accepted with cautions after current r03 repairs: the activity/toxicity final preserves row-level source-located records or documented exclusions for the requested figure and supplement surfaces; the database final preserves 12 DBAASP fallback candidates as unresolved/caution-only with authoritative ingest disabled; the mechanism final keeps evidence-strength boundaries and no hard rework target remains.",
+  "per_layer_decision_rationale": {
+    "activity_toxicity_evidence": "Accepted after rebuilding from the current worker-2 artifact and independently validating row fields, source-surface coverage, approximate status, documented exclusions, normalization consistency, and absence of disallowed non-activity table locators.",
+    "database_record_verification": "Accepted with cautions after rebuilding stale blocker metadata: all 12 candidate records remain unresolved_record, zero are source_verified, fallback rows are excluded from authoritative ingest, and authoritative_dbaasp_ingest_ready remains false.",
+    "mechanism_ontology": "Accepted with cautions after checking claim identifiers, evidence classes, source locators, and direct-assay requirements; no mechanism claim is promoted beyond its evidence class.",
+    "supplementary_extraction": "Accepted for downstream use because Table S1 and S14-S17 structures are present and approximate figure values remain marked approximate or source-located as exclusions.",
+    "rework_runtime": "The current runtime-open r03 tickets have owner repair_ready_for_adjudication responses and are being closed by fresh worker-6 terminal responses after final rebuild and strict gate reruns."
+  },
+  "semantic_quality_checks": {
+    "worker2_activity_toxicity_contract_pass": true,
+    "source_surface_coverage_has_no_unrepresented_material_surface": true,
+    "s14_s17_observation_or_exclusion_contract_pass": true,
+    "activity_toxicity_core_field_issue_count": 0,
+    "activity_toxicity_duplicate_observations": 0,
+    "activity_rows_with_disallowed_non_activity_table_citations": 0,
+    "activity_toxicity_concentration_contradictions": 0,
+    "normalization_status_issue_count": 0,
+    "database_final_stale_hard_blocker_fields_present": false,
+    "database_layer_authoritative_no_match_preserved_as_caution": true,
+    "fallback_rows_promoted_to_authoritative": false,
+    "mechanism_direct_claims_without_direct_assays": 0,
+    "mechanism_claim_field_issue_count": 0,
+    "paper_packet_final_mirrors_byte_identical": true,
+    "hard_rework_targets_remaining": 0,
+    "terminal_response_count_appended_by_worker6": 2,
+    "post_response_gate_rerun_required_and_planned": true
+  },
+  "ticket_contract_evidence": {
+    "ticket_id": "rwk-PMC12153049-campaign-r01-BF-PMC12153049-W2-SUPP-TOXICITY-SURFACE-COVERAGE-CONFLATION",
+    "paper_id": "PMC12153049",
+    "checked_at": "2026-07-27T21:18:28Z",
+    "checked_by": "worker-6",
+    "overall_contract_pass": true,
+    "owner_response_prerequisite": {
+      "pass": true,
+      "owner_worker": "worker-2",
+      "response_indices": [
+        16
+      ],
+      "required_response_status": "repair_ready_for_adjudication"
+    },
+    "surface_mapping_contract": {
+      "pass": true,
+      "expected": {
+        "S14": [
+          "PMC12153049-W2-TOX-001"
+        ],
+        "S15": [
+          "PMC12153049-W2-TOX-002"
+        ],
+        "S16": [
+          "PMC12153049-W2-TOX-007",
+          "PMC12153049-W2-TOX-008"
+        ],
+        "S17": [
+          "PMC12153049-W2-TOX-003",
+          "PMC12153049-W2-TOX-004",
+          "PMC12153049-W2-TOX-005",
+          "PMC12153049-W2-TOX-006"
+        ]
+      },
+      "computed_from_row_locators": {
+        "S14": [
+          "PMC12153049-W2-TOX-001"
+        ],
+        "S15": [
+          "PMC12153049-W2-TOX-002"
+        ],
+        "S16": [
+          "PMC12153049-W2-TOX-007",
+          "PMC12153049-W2-TOX-008"
+        ],
+        "S17": [
+          "PMC12153049-W2-TOX-003",
+          "PMC12153049-W2-TOX-004",
+          "PMC12153049-W2-TOX-005",
+          "PMC12153049-W2-TOX-006"
+        ]
+      },
+      "source_surface_coverage": {
+        "S14": [
+          "PMC12153049-W2-TOX-001"
+        ],
+        "S15": [
+          "PMC12153049-W2-TOX-002"
+        ],
+        "S16": [
+          "PMC12153049-W2-TOX-007",
+          "PMC12153049-W2-TOX-008"
+        ],
+        "S17": [
+          "PMC12153049-W2-TOX-003",
+          "PMC12153049-W2-TOX-004",
+          "PMC12153049-W2-TOX-005",
+          "PMC12153049-W2-TOX-006"
+        ]
+      },
+      "expected_source_locators": {
+        "S14": "supp:RA-015-D5RA02932E-s001.pdf:page=16:figure=S14",
+        "S15": "supp:RA-015-D5RA02932E-s001.pdf:page=17:figure=S15",
+        "S16": "supp:RA-015-D5RA02932E-s001.pdf:page=17:figure=S16",
+        "S17": "supp:RA-015-D5RA02932E-s001.pdf:page=18:figure=S17"
+      },
+      "pageless_surface_locator_matches": [],
+      "locator_index_presence_counts": {
+        "S14": 1,
+        "S15": 1,
+        "S16": 1,
+        "S17": 1
+      },
+      "supplement_surface_presence_counts": {
+        "S14": 57,
+        "S15": 65,
+        "S16": 123,
+        "S17": 85
+      }
+    },
+    "organ_he_contract": {
+      "pass": true,
+      "record_id": "PMC12153049-W2-TOX-009",
+      "has_s17_figure_locator": false,
+      "main_text_or_figure6_locators_present": [
+        "xml:caption:6",
+        "xml:fig:6",
+        "xml:p:22"
+      ]
+    },
+    "mirror_byte_identity": {
+      "activity_toxicity_evidence": true,
+      "database_record_verification": true,
+      "mechanism_ontology_record": true,
+      "review_report": true,
+      "mechanism_alias": true
+    },
+    "final_counts": {
+      "activity_records": 24,
+      "toxicity_records": 9,
+      "database_record_audits": 12,
+      "mechanism_claims": 6,
+      "review_rework_targets": 0
+    },
+    "preclose_gate_artifact_paths": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_packet_gate.preclose.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_semantic_gate.preclose.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_publication_gate.preclose.json"
+    },
+    "preclose_gate_results": {
+      "packet_return_code": 0,
+      "semantic_return_code": 0,
+      "publication_return_code": 0,
+      "packet_open_ticket_ids": [
+        "rwk-PMC12153049-campaign-r01-BF-PMC12153049-W2-SUPP-TOXICITY-SURFACE-COVERAGE-CONFLATION"
+      ],
+      "semantic_issue_count": 0,
+      "publication_risk_counts_empty": true
+    },
+    "postresponse_gate_artifact_paths": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_packet_gate.runtime_closure.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_semantic_gate.runtime_closure.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_publication_gate.runtime_closure.json"
+    },
+    "verified_artifact_paths": {
+      "activity_toxicity_evidence": {
+        "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/activity_toxicity_evidence.json",
+        "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/activity_toxicity_evidence.json"
+      },
+      "database_record_verification": {
+        "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/database_record_verification.json",
+        "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/database_record_verification.json"
+      },
+      "review_report": {
+        "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/review_report.json",
+        "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/review_report.json"
+      },
+      "mechanism_final": {
+        "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/mechanism_ontology_record.json",
+        "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_evidence.json",
+        "packet_ontology_mirror": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_ontology_record.json"
+      }
+    },
+    "review_status": "accepted_with_cautions",
+    "publication_grade": true
+  },
+  "caution_findings": [
+    {
+      "code": "no_authoritative_linked_database_rows",
+      "severity": "caution",
+      "affected_records": 12,
+      "status": "unresolved_record",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_article_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_assay_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_sequence_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/linked_literature_records.jsonl"
+      ],
+      "adjudication_boundary": "accepted_with_cautions only; authoritative DBAASP ingest remains false"
+    },
+    {
+      "code": "fallback_machine_rows_candidate_only",
+      "severity": "caution",
+      "affected_records": 12,
+      "status": "unresolved_record",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/database/dbaasp_machine_extracted_rows.jsonl"
+      ],
+      "adjudication_boundary": "not promoted to source_verified or authoritative ingest"
+    },
+    {
+      "code": "supplementary_figure_values_approximate_or_excluded",
+      "severity": "caution",
+      "affected_surfaces": [
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "adjudication_boundary": "approximate digitized values are retained as approximate; omitted source observations are source-located documented exclusions"
+    }
+  ],
+  "rework_targets": [],
+  "final_counts": {
+    "activity_records": 24,
+    "toxicity_records": 9,
+    "database_record_audits": 12,
+    "mechanism_claims": 6,
+    "review_rework_targets": 0
+  },
+  "gate_return_codes": {
+    "packet": 0,
+    "semantic": 0,
+    "publication": 0
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_packet_gate.runtime_closure.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_semantic_gate.runtime_closure.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_publication_gate.runtime_closure.json"
+  },
+  "verified_artifact_paths": {
+    "activity_toxicity_evidence": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/activity_toxicity_evidence.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/activity_toxicity_evidence.json"
+    },
+    "database_record_verification": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/database_record_verification.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/database_record_verification.json"
+    },
+    "review_report": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/review_report.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/review_report.json"
+    },
+    "mechanism_final": {
+      "paper_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/final/mechanism_ontology_record.json",
+      "packet_final": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_evidence.json",
+      "packet_ontology_mirror": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12153049/final/mechanism_ontology_record.json"
+    }
+  },
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "database_rows": true
+  },
+  "post_response_gate_summary": {
+    "packet": {
+      "return_code": 0,
+      "open_rework_ticket_count": 0,
+      "hard_finding_count": 0,
+      "paper_count": 1
+    },
+    "semantic": {
+      "return_code": 0,
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "paper_count": 1
+    },
+    "publication": {
+      "return_code": 0,
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "paper_count": 1
+    }
+  },
+  "post_response_gate_artifacts_newer_than_terminal_response": true,
+  "post_response_packet_open_rework_ticket_count": 0,
+  "worker6_runtime_ticket_closure": {
+    "ticket_id": "rwk-PMC12153049-campaign-r01-BF-PMC12153049-W2-SUPP-TOXICITY-SURFACE-COVERAGE-CONFLATION",
+    "closure_response_status": "pending_postresponse_gate_rerun",
+    "response_by": "worker-6",
+    "postresponse_gate_artifact_paths": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_packet_gate.runtime_closure.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_semantic_gate.runtime_closure.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12153049/work/review/worker6_publication_gate.runtime_closure.json"
+    }
+  },
+  "strict_gate": {
+    "required_rework_count": 0,
+    "postresponse_gate_required": true
+  },
+  "database_ingest_boundary": {
+    "authoritative_dbaasp_ingest_ready": false,
+    "linked_authoritative_rows_present": false,
+    "machine_fallback_rows_promoted_to_authoritative": false
+  }
+}

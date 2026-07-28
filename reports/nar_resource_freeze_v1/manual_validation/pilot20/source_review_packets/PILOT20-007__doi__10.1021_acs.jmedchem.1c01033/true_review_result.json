@@ -1,0 +1,209 @@
+{
+  "paper_id": "doi__10.1021_acs.jmedchem.1c01033",
+  "pilot_sample_id": "PILOT20-007",
+  "audit_record_id": "doi__10.1021_acs.jmedchem.1c01033:database_audit:239",
+  "reviewed_at": "2026-06-22T04:01:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "low",
+  "best_effort_limits": [
+    {
+      "code": "runtime_model_effort_not_proven",
+      "impact": "The packet instructions require proof that this reviewer ran as gpt-5.5 with xhigh reasoning. Local env, process args, and `omx hud --json` did not expose a verifiable current model or reasoning-effort setting. Per the prompt, the formal decision is therefore `unverifiable_best_effort` even though the source evidence was reviewed."
+    },
+    {
+      "code": "material_queue_status_contains_gaps",
+      "impact": "The packet remains `material_extracted_with_gaps`; this did not block the sampled row because XML, PDF text, OA package, Table 1 image, SI CSV, and linked database snapshots were locally available and inspected."
+    }
+  ],
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1021_acs.jmedchem.1c01033",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_source_reviewed_accepted_with_cautions",
+    "surfaces_verified": {
+      "paper_xml": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/raw/paper.xml",
+          "papers/doi__10.1021_acs.jmedchem.1c01033/source/paper.xml"
+        ]
+      },
+      "paper_pdf": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/raw/paper.pdf",
+          "papers/doi__10.1021_acs.jmedchem.1c01033/source/paper.pdf",
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/pdf_text/jm1c01033.txt"
+        ]
+      },
+      "oa_package": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/raw/oa_package/local-DBAASP-PMC8389922.tar.gz",
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_0014.jpg",
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_si_002.csv"
+        ]
+      },
+      "supplementary_original": {
+        "exists": false,
+        "gap_context": "raw/supplementary_original absent; extraction_errors.jsonl records a caution. OA package contains SI PDF and SI CSV, and the sampled row depends on Table 1/SI CSV rather than missing raw supplementary files."
+      },
+      "database_rows": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1021_acs.jmedchem.1c01033/database/linked_literature_records.jsonl"
+        ],
+        "sampled_locator": "database:linked_experiment_records.jsonl:row=132"
+      }
+    },
+    "material_blocking": false
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "dbAMP:dbAMP_32907",
+    "release_row_status": "source_conflict",
+    "sample_final_record_status": "source_conflict",
+    "release_matches_sample_final_record": true,
+    "status_justified": true,
+    "primary_source_support": {
+      "supported_bacterial_mic_values_for_peptide_24": [
+        "Staphylococcus aureus ATCC 25923 MIC 3.12 uM",
+        "Staphylococcus epidermidis ATCC 12228 MIC 1.56 uM",
+        "Bacillus megaterium Bm11 MIC 1.56 uM",
+        "Escherichia coli ATCC 25922 MIC 25 uM",
+        "Pseudomonas aeruginosa ATCC 27853 MIC >100 uM",
+        "Acinetobacter baumannii ATCC 19606 MIC 3.12 uM"
+      ],
+      "locators": [
+        "xml:table=1:graphic=jm1c01033_0014.jpg:peptide=24",
+        "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_si_002.csv:row=peptide 24",
+        "pdf_text:jm1c01033.txt:Table 1 caption and MIC methods"
+      ]
+    },
+    "conflict_preserved": {
+      "reason": "The linked dbAMP row includes Candida MIC/MFC entries and aggregate text not supported by local primary Table 1, XML/PDF assay text, or the OA SI CSV for peptide 24.",
+      "unsupported_entries_spot_checked": [
+        "Candida albicans ATCC 90028 MIC/MFC",
+        "Candida parapsilosis DSM 5784 MIC/MFC",
+        "Candida auris DSM 21092 MIC/MFC",
+        "Candida glabrata DSM 11226 MIC/MFC"
+      ],
+      "local_candida_search_result": "Candida terms were found in background/reference text, not as peptide 24 assay rows in XML/PDF/OA CSV surfaces."
+    },
+    "source_locator_support_for_conflict": [
+      "papers/doi__10.1021_acs.jmedchem.1c01033/final/database_record_verification.json:record_audits[source_id=dbAMP:dbAMP_32907]",
+      "paper_packets/doi__10.1021_acs.jmedchem.1c01033/database/linked_experiment_records.jsonl:line=132",
+      "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/release_row.json",
+      "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/sample_final_record.json"
+    ],
+    "would_confirm_if_model_proven": "accepted_with_cautions_confirmed"
+  },
+  "layer2_activity_toxicity_review": {
+    "spot_check_scope": "Peptide 24 Table 1 MIC rows plus database-only Candida conflict claims relevant to the sampled dbAMP aggregate row.",
+    "activity_rows_source_backed": true,
+    "hard_activity_failures_found": false,
+    "peptide_24_final_activity_rows": {
+      "count": 6,
+      "endpoint": "MIC",
+      "raw_unit": "uM",
+      "targets": [
+        "S. aureus ATCC 25923",
+        "S. epidermidis ATCC 12228",
+        "B. megaterium Bm11",
+        "E. coli ATCC 25922",
+        "P. aeruginosa ATCC 27853",
+        "A. baumannii ATCC 19606"
+      ],
+      "source_locator_pattern": "xml:table=1:graphic=jm1c01033_0014.jpg:peptide=24:target=*"
+    },
+    "semantic_checks": {
+      "generic_endpoint_rows_found": 0,
+      "missing_raw_value_unit_target_or_locator_rows_found": 0,
+      "candida_rows_promoted_to_final_activity": 0
+    },
+    "locators_checked": [
+      "papers/doi__10.1021_acs.jmedchem.1c01033/final/activity_toxicity_evidence.json:activity_records[entity=24]",
+      "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_0014.jpg",
+      "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_si_002.csv",
+      "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/pdf_text/jm1c01033.txt"
+    ]
+  },
+  "layer3_mechanism_review": {
+    "spot_check_scope": "Paper-level mechanism final, because the sampled dbAMP row is primarily an activity/database-conflict row.",
+    "mechanism_claim_count": 4,
+    "direct_mechanism_claims_have_direct_assay_types": true,
+    "required_fields_present": true,
+    "overclaiming_found": false,
+    "review_notes": "The final mechanism artifact classifies peptide 12 membrane-fluidity/leakage evidence as direct mechanism with Laurdan GP and ANTS/DPX liposome leakage assays, and keeps time-kill/biofilm and structural observations as non-direct context rather than molecular target claims.",
+    "locators_checked": [
+      "papers/doi__10.1021_acs.jmedchem.1c01033/final/mechanism_ontology_record.json",
+      "xml:table=3 + xml:fig=8:Figure 6 + xml:sec=2.9",
+      "xml:sec=2.10:Activity against MRSA ATCC and Time Kill Assay",
+      "xml:sec=2.11:Antibiofilm Activity",
+      "xml:table=2 + xml:fig=12:Figure 10"
+    ]
+  },
+  "worker6_adjudication": {
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "existing_rework_targets": 0,
+    "source_review_assessment_before_model_gate": "accepted_with_cautions_confirmed",
+    "formal_decision_reason": "The sampled row and relevant layer evidence can be source-reviewed locally and no repairable sampled-row hard defect was found, but the prompt requires `unverifiable_best_effort` when the reviewer cannot prove the active model and reasoning effort.",
+    "rework_ticket_written": false,
+    "open_rework_targets_after_review": []
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "caution_code": "runtime_model_effort_not_proven",
+      "evidence_context": "Local env/process/HUD checks did not expose a verifiable current model or reasoning-effort setting for this reviewer."
+    },
+    {
+      "caution_code": "source_conflict_preserved",
+      "evidence_context": "dbAMP:dbAMP_32907 contains primary-supported bacterial MICs plus unsupported Candida/MFC entries; source_conflict is justified and should not be promoted to source_verified."
+    },
+    {
+      "caution_code": "material_extracted_with_gaps",
+      "evidence_context": "Raw supplementary_original is absent and extraction_errors.jsonl records a caution, but the sampled row was reviewable from XML/PDF/OA Table 1 image/SI CSV and linked database rows."
+    },
+    {
+      "caution_code": "packet_manifest_test_scope_note",
+      "evidence_context": "packet_manifest.json contains a historical test-scope note, so source evidence rather than packet status was used as the basis for this review."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-007__doi__10.1021_acs.jmedchem.1c01033/true_review_result.schema.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/packet_manifest.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extraction/extraction_errors.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/database/linked_experiment_records.jsonl",
+    "papers/doi__10.1021_acs.jmedchem.1c01033/final/database_record_verification.json",
+    "papers/doi__10.1021_acs.jmedchem.1c01033/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1021_acs.jmedchem.1c01033/final/mechanism_ontology_record.json",
+    "papers/doi__10.1021_acs.jmedchem.1c01033/final/review_report.json",
+    "papers/doi__10.1021_acs.jmedchem.1c01033/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/raw/paper.xml",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/raw/paper.pdf",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/xml_sections.json",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/pdf_text/jm1c01033.txt",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_0014.jpg",
+    "paper_packets/doi__10.1021_acs.jmedchem.1c01033/extracted/oa_package/local-DBAASP-PMC8389922/PMC8389922/jm1c01033_si_002.csv"
+  ]
+}

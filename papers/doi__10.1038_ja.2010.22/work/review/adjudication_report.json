@@ -1,0 +1,96 @@
+{
+  "paper_id": "doi__10.1038_ja.2010.22",
+  "reviewed_at": "2026-05-02T13:15:01Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "office_extraction": {
+      "antiword": "NIHMS181676-supplement-1.doc checked; stereochemistry/NMR supplement only"
+    },
+    "landed_supplementary_bins": "HTML landing pages inspected by file/rg; no recoverable XLSX/PDF activity supplement found locally",
+    "unavailable_sources": []
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_ja.2010.22/handoff_context.json",
+    "paper_packets/doi__10.1038_ja.2010.22/packet_manifest.json",
+    "paper_packets/doi__10.1038_ja.2010.22/locators/locator_index.json",
+    "paper_packets/doi__10.1038_ja.2010.22/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_ja.2010.22/extraction/extraction_quality_report.json",
+    "papers/doi__10.1038_ja.2010.22/source/paper.xml",
+    "papers/doi__10.1038_ja.2010.22/source/paper.pdf",
+    "paper_packets/doi__10.1038_ja.2010.22/extracted/pdf_text/nihms181676.txt",
+    "paper_packets/doi__10.1038_ja.2010.22/extracted/oa_package/local-DBAASP-PMC2889693/PMC2889693/nihms181676.nxml",
+    "paper_packets/doi__10.1038_ja.2010.22/extracted/oa_package/local-DBAASP-PMC2889693/PMC2889693/NIHMS181676-supplement-1.doc",
+    "paper_packets/doi__10.1038_ja.2010.22/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_ja.2010.22/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_ja.2010.22/database/linked_experiment_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_ja.2010.22/supplementary/landing-*.bin"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 14,
+    "table2_mic_rows_source_reviewed": 13,
+    "toxicity_rows_source_reviewed": 1,
+    "database_record_rows_reviewed": 29,
+    "database_status_summary": {
+      "source_conflict": 2,
+      "source_verified": 27
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All linked DBAASP rows were rechecked. Bacterial MIC rows are tied to Table 2 locators; the HeLa toxicity note is tied to source cytotoxicity sections; one S. pyogenes target qualifier remains preserved as a cautionary source_conflict rather than normalized away.",
+    "layer_2_activity_toxicity": "The final activity artifact retains all source-located Table 2 MIC rows with units and adds the source-supported HeLa cytotoxicity statement. No additional recoverable activity table was found in the local supplement.",
+    "layer_3_mechanism": "Automated pending mechanism notes were replaced with bounded mechanism context: streptogramin/protein-synthesis class context is indirect, and time-kill evidence is phenotypic rather than direct target proof.",
+    "worker_6_final_gate": "The original rework ticket was satisfied by source-reviewed database reconciliation and final adjudication; remaining caveats are nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_qualifier_conflict_preserved",
+      "record_rows": [
+        "linked_assay_records.jsonl:row=7",
+        "linked_experiment_records.jsonl:row=7"
+      ],
+      "evidence_context": "Primary source supports S. pyogenes M1 strain 5448 with MIC 8 mg/L; DBAASP adds the M1T1 qualifier not found in local primary material."
+    },
+    {
+      "caution_code": "nonribosomal_depsipeptide_no_linear_sequence_snapshot",
+      "record_rows": [
+        "all DBAASP:DBAASPN_22152 rows"
+      ],
+      "evidence_context": "Local database snapshot has no linked sequence row. Etamycin identity is source-reviewed from chemical structure/NMR/stereochemistry evidence rather than a linear peptide sequence."
+    },
+    {
+      "caution_code": "supplement_landing_bins_not_activity_tables",
+      "evidence_context": "The ten landed supplementary .bin files are HTML landing pages. The recoverable OA supplement DOC was opened with antiword and contains chemical/stereochemical support, not additional MIC/toxicity tables."
+    },
+    {
+      "caution_code": "mechanism_is_indirect_context",
+      "evidence_context": "Protein-synthesis inhibition is discussed as presumed streptogramin-class context; direct molecular mechanism assays are absent in local material."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/worker-6 re-review resolved the prior framework-test blocker by reopening local XML/PDF/OA supplement/database snapshots, repairing DBAASP row adjudication, removing stale automated mechanism notes, and preserving narrow source-conflict cautions without leaving blocking rework open.",
+  "adjudication_report_type": "worker_6_source_reviewed_adjudication",
+  "review_status_before_rework": "needs_targeted_rework",
+  "review_status_after_rework": "accepted_with_cautions"
+}

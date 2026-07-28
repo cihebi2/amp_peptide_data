@@ -1,0 +1,94 @@
+{
+  "adjudication_summary": "Source-reviewed re-review resolved the blocking worker-2, worker-4, and worker-6 ticket for thanatin in DOI 10.1038/s41467-019-11503-3. The paper is publication-grade with cautions: local MOESM supplement files are absent/represented only by HTML landing pages, but the recorded AMP activity, DBAASP row adjudication, toxicity context, and mechanism claims are all supported by primary XML/PDF evidence.",
+  "caution_findings": [
+    {
+      "code": "local_supplement_assets_are_html_landing_pages",
+      "finding": "The local supplementary_original assets are duplicated Nature HTML landing pages, not the XML-referenced MOESM PDF/XLSX files. Owner-layer activity/database/mechanism values used for final curation are supported by primary XML/PDF text, so this is not an unresolved gate-relevant missing value.",
+      "severity": "caution"
+    },
+    {
+      "code": "xml_references_supplementary_tables_not_local",
+      "finding": "Supplementary Tables 1-4 and Source Data are referenced by the article but not available as local PDF/XLSX assets. No final activity/database value was fabricated from those absent files; exact figure series remain non-digitized.",
+      "severity": "caution"
+    },
+    {
+      "code": "requested_table_3_not_present",
+      "finding": "The rework ticket requested Tables 1/2/3, but the primary XML exposes two table-wraps. Table 1 and Table 2 were re-reviewed; no primary XML Table 3 exists.",
+      "severity": "caution"
+    },
+    {
+      "code": "packet_linked_sequence_records_empty",
+      "finding": "The local database packet has zero linked_sequence_records. Sequence/name/modification identity for Thanatin was verified from primary XML synthesis/introduction text, while DBAASP assay rows were matched to primary-source activity/FIC locators.",
+      "severity": "caution"
+    },
+    {
+      "code": "source_data_workbook_not_digitized",
+      "finding": "The Source Data XLSX named in the article is not present locally. Final mechanism claims rely on primary XML text and figure captions; exact plotted numeric series were not converted into standalone activity records.",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.1038_s41467-019-11503-3/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-019-11503-3/database/linked_literature_records.jsonl"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Owner-layer repair reopened packet manifest, locator index, raw XML/PDF, extracted PDF text, figure captions, supplementary index/original assets, packet database JSONL, and final/work artifacts. Local supplementary assets are HTML landing pages, so absent MOESM files were treated as nonblocking cautions because primary XML/PDF supports the final recorded values.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1038_s41467-019-11503-3",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked DBAASP assay/experiment/literature rows against primary XML Table 1, Table 2, synthesis text, and article metadata. All linked rows are source_verified for locally present row fields; missing linked_sequence_records is preserved as a caution.",
+    "layer_2_activity_toxicity": "Worker-2 repaired the previous zero-row activity artifact: 10 thanatin MIC rows, 14 thanatin+carbapenem FICI rows, and 3 explicit toxicity/safety observations are locator-backed from primary XML/PDF text.",
+    "layer_3_mechanism": "Worker-6 adjudicated direct mechanisms from primary XML result sections and figure captions without promoting absent Source Data numeric series into unsupported exact values."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-02T10:32:57Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_raw_values_and_units": true,
+    "activity_rows_have_source_locators": true,
+    "activity_rows_parsed": 27,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "database_status_summary": {
+      "source_verified": 31
+    },
+    "mechanism_claims": 4,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gaps": [],
+    "worker2_repair": "Table 1 MIC and Table 2 FIC rows extracted with primary XML locators.",
+    "worker4_repair": "All 31 linked DBAASP/literature rows adjudicated source_verified for fields present in packet rows, with cautions for absent linked sequence rows."
+  },
+  "source_review_depth": {
+    "database_jsonl_rows": true,
+    "figure_caption_review": true,
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "pdf_text_review": true,
+    "supplementary_assets": true
+  },
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

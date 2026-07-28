@@ -1,0 +1,116 @@
+{
+  "paper_id": "doi__10.3390_molecules23020329",
+  "reviewed_at": "2026-05-09T18:17:29Z",
+  "generated_at": "2026-05-09T18:17:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened XML/NXML, PDF text, OA package archive, supplementary ZIP/DOCX captions, local figure files, packet locator/index/status artifacts, and linked database JSONL. Exact image-only supplementary time-course values were not digitized because they do not change the worker-2/4/6 gate result."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules23020329/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules23020329/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules23020329/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules23020329/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules23020329/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/pdf_text/molecules-23-00329.txt",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/pdf_text/local-DBAASP-PMC6017431.txt",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/oa_package/local-DBAASP-PMC6017431/PMC6017431/molecules-23-00329-s001.zip",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/oa_package/local-DBAASP-PMC6017431/PMC6017431/molecules-23-00329-s001.zip::Role of cationic side chains in the antimicrobial activity of C18G - SUPPLEMENTARY INFORMATION.docx",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/oa_package/local-DBAASP-PMC6017431/PMC6017431/molecules-23-00329-g001.jpg",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/oa_package/local-DBAASP-PMC6017431/PMC6017431/molecules-23-00329-g004.jpg",
+    "paper_packets/doi__10.3390_molecules23020329/extracted/oa_package/local-DBAASP-PMC6017431/PMC6017431/molecules-23-00329-g005.jpg",
+    "papers/doi__10.3390_molecules23020329/source/paper.xml",
+    "papers/doi__10.3390_molecules23020329/source/paper.pdf",
+    "paper_packets/doi__10.3390_molecules23020329/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules23020329/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23020329/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules23020329/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 51,
+    "table2_mic_mbc_records": 50,
+    "database_record_audits": 107,
+    "database_status_summary": {
+      "source_conflict": 11,
+      "source_verified": 96
+    },
+    "mechanism_claims": 4,
+    "open_rework_target_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_report": "reports/doi__10.3390_molecules23020329.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_molecules23020329.publication_quality.json"
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains distinct from final review: extraction status is material_extracted_with_gaps because supplementary assets are figure/DOCX based, but the worker-2/4/6-owned analysis blockers were source-reviewed from obtainable local material.",
+    "validator_contract": "Packet/final/work artifacts are structurally present; this is not treated as sufficient without semantic/publication gate evidence.",
+    "layer_1_database": "Worker-4 matched DBAASP/CAMP/dbAMP rows to primary Table 1, Table 2, Figure 5B/text, and article metadata. Supported rows are source_verified; exact non-C18G hemolysis values and conflicting dbAMP summaries remain source_conflict.",
+    "layer_2_activity_toxicity": "Worker-2 recovered all Table 2 MIC/MBC rows with uM units, target species/strains, method locators, and n.d./censored values preserved. Only the text-supported C18G hemolysis value is promoted as a primary activity/toxicity row.",
+    "layer_3_mechanism": "Worker-6 bounded final mechanism claims to membrane binding/permeabilization and low hemolysis context from XML/PDF/figures/supplement captions; no unsupported intracellular target is asserted.",
+    "publication_grade_review": "The ticket remains open because strict gates still fail after bounded source-reviewed repair."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved_not_smoothed",
+      "severity": "caution",
+      "evidence_context": "source_conflict rows remain for non-C18G exact hemolysis annotations and unsupported/ambiguous dbAMP summary rows.",
+      "record_count": 11
+    },
+    {
+      "caution_code": "noncanonical_residue_not_normalized",
+      "severity": "caution",
+      "evidence_context": "O is kept as ornithine and X as diaminopropionic acid for C18G-Orn/C18G-Dap; no one-letter standard amino-acid normalization was applied."
+    },
+    {
+      "caution_code": "figure_only_supplement_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Supplemental figures S1-S3 were opened through the local ZIP/DOCX path and used as qualitative mechanism context, not as fabricated numeric rows."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "summary": "Worker-2/4/6 source-reviewed rework recovered Table 2 MIC/MBC rows, reconciled database rows while preserving conflicts, replaced generic adjudication with paper-specific review provenance, and kept material/validator/semantic/publication layers separate.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "gate_evidence": {
+      "semantic_gate_report": "reports/doi__10.3390_molecules23020329.semantic_gate.json",
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_report": "reports/doi__10.3390_molecules23020329.publication_quality.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "gate_verified_at": "2026-05-09T18:17:29Z"
+    }
+  }
+}

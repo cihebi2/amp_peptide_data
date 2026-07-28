@@ -1,0 +1,103 @@
+{
+  "ticket_id": "pilot20-012-rwk-001",
+  "paper_id": "doi__10.2174_1381612822666161027120518",
+  "owner_worker": "worker-5_mechanism_ontology_extractor",
+  "action_taken": "repair_ready",
+  "files_to_update_or_review": [
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_repair": "Rewrite mechanism_claims[*].evidence_class to standard ontology values only, preserving claim_id, claim_text, entity_scope, source_locator, and limitations.",
+      "claim_class_mapping": [
+        {
+          "claim_id": "mech-001",
+          "current_evidence_class": "phenotype_activity_context",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Antimicrobial activity is supported by radial diffusion MIC phenotype data in xml:sec=3.4 and xml:table=2, not by a direct molecular mechanism assay."
+        },
+        {
+          "claim_id": "mech-002",
+          "current_evidence_class": "toxicity_selectivity_context",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Hemolysis and HD50/MIC selectivity are phenotype/toxicity context in xml:sec=3.5 and xml:table=3, not direct lipid-binding or membrane-disruption closure."
+        },
+        {
+          "claim_id": "mech-003",
+          "current_evidence_class": "immunomodulatory_cell_phenotype",
+          "recommended_evidence_class": "phenotype_supported",
+          "basis": "Chemotaxis is a cell phenotype supported by xml:sec=3.6 and the Fig. 2 caption; exact figure values remain untabulated locally."
+        },
+        {
+          "claim_id": "mech-004",
+          "current_evidence_class": "mechanism_hypothesis_context",
+          "recommended_evidence_class": "inferred_mechanism",
+          "basis": "Discussion language frames cationic clustering, macrocyclization, and electroporation as mechanistic context, while explicitly noting that the data did not permit mechanism-of-killing conclusions."
+        }
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_review": "Worker-6 should re-adjudicate after the mechanism ontology repair and preserve accepted_with_cautions only if no open rework targets remain.",
+      "cautions_to_preserve": [
+        "sequence_modified_not_normalized",
+        "no_direct_molecular_mechanism_assay",
+        "material_extracted_with_gaps packet provenance caution"
+      ]
+    }
+  ],
+  "source_inputs_checked": [
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/true_review_result.json",
+      "checked_for": "prior source-review decision, layer-3 defect, suggested ontology mapping, and worker-6 follow-up requirement"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-012__doi__10.2174_1381612822666161027120518/rework_ticket.json",
+      "checked_for": "ticket scope, requested outputs, required locators, and blocked gates"
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/final/mechanism_evidence.json",
+      "checked_for": "current claim IDs, claim text, source locators, limitation notes, and invalid custom evidence_class labels"
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/final/review_report.json",
+      "checked_for": "existing adjudication status and cautions that must remain worker-6 owned"
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/xml_sections.json",
+      "checked_locators": [
+        "xml:sec=3.4:Antimicrobial Activity",
+        "xml:sec=3.5:Hemolytic Activity and Membranolytic Selectivity",
+        "xml:sec=3.6:Chemotaxis",
+        "xml:sec=4:Discussion",
+        "xml:sec=2.10:Antimicrobial Assay",
+        "xml:sec=2.11:Hemolytic Assays",
+        "xml:sec=2.12:Chemotaxis Assays"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/locators/locator_index.json",
+      "checked_locators": [
+        "xml:table=2",
+        "xml:table=3"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/figure_captions.json",
+      "checked_locators": [
+        "xml:fig=3:Fig. (2)"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.2174_1381612822666161027120518/extracted/pdf_text/CPD-23-2131.txt",
+      "checked_for": "PDF text corroboration around antimicrobial activity, hemolysis/selectivity, chemotaxis, discussion, and absence of direct mechanism-of-killing closure"
+    }
+  ],
+  "remaining_gaps": [
+    "Canonical mechanism_evidence.json still needs the ontology-only repair in a repair task; this dispatch pass did not edit the final artifact.",
+    "No direct membrane permeabilization, pore-formation, lipid-binding, target-binding, or other direct molecular mechanism assay was located in the checked local packet material.",
+    "Worker-6 must re-adjudicate review_report.json after repair and must preserve sequence_modified_not_normalized and no_direct_molecular_mechanism_assay cautions.",
+    "Chemotaxis support remains figure-level phenotype evidence; exact plotted values are not tabulated in the local material and should not be fabricated."
+  ],
+  "worker6_followup_required": true
+}

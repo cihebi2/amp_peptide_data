@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.1038_s41598-023-45875-w",
+  "reviewed_at": "2026-05-03T06:39:14Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Source-reviewed owner-layer rework recovered primary CATH-2 MIC and hemolysis rows, reconciled DBAASP/APD6 database rows, and bounded mechanism claims to CD, MD simulation, and docking evidence from local materials.",
+  "adjudication_summary": "Source-reviewed owner-layer rework recovered primary CATH-2 MIC and hemolysis rows, reconciled DBAASP/APD6 database rows, and bounded mechanism claims to CD, MD simulation, and docking evidence from local materials.",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-023-45875-w/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extracted/pdf_text/41598_2023_Article_45875.txt",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-023-45875-w/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "source_review_depth": {
+    "paper_xml": "Opened XML-derived article metadata, Table 3, CATH-2 sequence section, antimicrobial/hemolysis results, mechanism sections, and assay methods.",
+    "paper_pdf": "Opened extracted article PDF text as a cross-check for the same result/method surfaces.",
+    "oa_package": "Opened packet manifest/archive manifest and OA-package-derived XML/PDF/supplementary member inventory.",
+    "supplementary_assets": "Opened supplementary index and parsed XLSX tables; supplements support AMP annotation/sequence context but do not add additional MIC/toxicity endpoints beyond the primary article rows.",
+    "merged_database_rows": "Opened packet linked APD6/DBAASP JSONL rows plus merged APD6/DBAASP sequence and activity CSV rows for AP03617 and DBAASPR_21503."
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local materials were sufficient for worker-2/4/6 owner-layer repair; no unrecoverable material gap remains for the originally failing gates."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 4,
+    "activity_rows_have_endpoint_raw_value_target_locator": true,
+    "mic_like_rows_have_units": true,
+    "database_status_summary": {
+      "source_verified": 10,
+      "source_conflict": 1
+    },
+    "source_conflicts_preserved": [
+      "APD6:AP03617 hemolysis 2% text conflicts with primary/DBAASP 22%"
+    ],
+    "mechanism_claims": 3,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay/experiment rows match primary MIC and hemolysis values and strain/target labels. APD6 AP03617 supports the sequence and converted MIC values, but its hemolysis percentage conflicts with primary text and is retained as source_conflict.",
+    "layer_2_activity_toxicity": "Recovered three MIC rows and one hemolysis row with raw value, unit, target species/strain, assay conditions, source locators, and linked database provenance.",
+    "layer_3_mechanism": "Mechanism evidence is bounded: CD spectroscopy is direct structural evidence, while membrane/TLR4 claims are computational modeling/docking context only.",
+    "review_layer": "The original ticket rwk-complete-test-0001 is closed because the missing activity rows, database conflict adjudication, and worker-6 source-reviewed adjudication were repaired from local materials."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_hemolysis_percentage_conflict_preserved",
+      "evidence_context": "APD6 AP03617 entry text reports 2% hemolysis, while primary XML and DBAASP report 22% hemolysis at 62.89 µM; final activity uses the primary/DBAASP value and preserves APD6 as source_conflict."
+    },
+    {
+      "caution_code": "mic_ug_ml_values_are_database_or_converted_context",
+      "evidence_context": "Primary article reports MIC in µM; APD6 reports 75/90/100 µg/ml, which matches conversion using the paper/database molecular weight. Final rows keep µM as raw primary values and store µg/ml as alternate values."
+    },
+    {
+      "caution_code": "mechanism_computational_claims_not_direct_wet_lab",
+      "evidence_context": "MD simulation and TLR4-MD2 docking are retained as computational mechanism context, not direct wet-lab mechanism evidence."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_gate_rerun_required": false,
+    "publication_quality_gate_rerun_required": false,
+    "semantic_gate_passed": true,
+    "publication_quality_gate_passed": true,
+    "semantic_gate_report": "reports/doi__10.1038_s41598-023-45875-w.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.1038_s41598-023-45875-w.publication_quality.json"
+  },
+  "post_gate_verified_at": "2026-05-03T06:41:21Z"
+}

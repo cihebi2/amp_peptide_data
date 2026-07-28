@@ -1,0 +1,126 @@
+{
+  "ticket_id": "pilot20-017-rwk-20260622-001",
+  "paper_id": "doi__10.1038_s41467-023-42434-9",
+  "owner_worker": "worker-5_mechanism_ontology_extractor",
+  "action_taken": "repair_ready",
+  "files_to_update_or_review": [
+    {
+      "path": "papers/doi__10.1038_s41467-023-42434-9/final/mechanism_ontology_record.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_repair": "Replace non-canonical mechanism_claims[].evidence_class values with AMP three-layer ontology values only. Preserve assay or subtype detail in a separate subtype/supporting_assay field or in limitations, not as the top-level evidence_class.",
+      "claim_class_mapping": [
+        {
+          "claim_id": "mech-001",
+          "current_evidence_class": "computational_model",
+          "recommended_evidence_class": "computational_only",
+          "subtype_detail_to_preserve": "molecular_dynamics_membrane_simulation",
+          "direct_assay_types_recommendation": [],
+          "basis": "Fig. 3 and article text describe MD simulations of AMP interactions with model bacterial inner membrane and human plasma membrane systems. This is computational support only and should not be promoted to a direct mechanism assay."
+        },
+        {
+          "claim_id": "mech-002",
+          "current_evidence_class": "phenotypic_resistance_assay",
+          "recommended_evidence_class": "phenotype_supported",
+          "subtype_detail_to_preserve": "serial_passage_daily_MIC_resistance_assay",
+          "direct_assay_types_recommendation": [],
+          "basis": "Fig. 5a and article text describe 21-day serial passage/daily MIC resistance tracking for six AMPs compared with imipenem. This supports a resistance phenotype, not direct molecular target assignment."
+        },
+        {
+          "claim_id": "mech-003",
+          "current_evidence_class": "direct_mechanism",
+          "recommended_evidence_class": "direct_mechanism",
+          "subtype_detail_to_preserve": "propidium_iodide_uptake_and_phase_contrast_microscopy",
+          "direct_assay_types_recommendation": [
+            "propidium iodide uptake",
+            "phase-contrast microscopy"
+          ],
+          "basis": "Fig. 5c-d and Methods lines 1587-1607 directly describe PI plate-reader fluorescence and microscopy on AMP-treated E. coli at 4x MIC. Keep this as direct mechanism evidence for membrane permeabilization context only."
+        },
+        {
+          "claim_id": "mech-004",
+          "current_evidence_class": "contextual_mechanism_assay",
+          "recommended_evidence_class": "phenotype_supported",
+          "subtype_detail_to_preserve": "nano_flow_cytometry_OMV_release_context_assay",
+          "direct_assay_types_recommendation": [],
+          "basis": "Fig. 5b and article text describe OMV release quantification at quarter-MIC. The source states none of the six broad-band AMPs significantly increased OMV release compared with untreated E. coli, while polymyxin B was the only significantly different group, so this remains contextual phenotype/stress-response evidence rather than direct AMP mechanism closure."
+        }
+      ]
+    },
+    {
+      "path": "papers/doi__10.1038_s41467-023-42434-9/final/review_report.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_review": "Worker-6 should re-adjudicate after the mechanism ontology repair and only then confirm publication-grade status for this pilot20 sample.",
+      "cautions_to_preserve": [
+        "APD6 AP03779 linked_experiment_records entry text remains database_only_no_primary_source.",
+        "APD6/DBAASP broad-pathogen Fig. 4b database values should not be promoted unless independently matched to primary-source structured rows.",
+        "Mechanism claims should not assign a single molecular receptor or target beyond the PI/microscopy membrane-permeability context."
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41467-023-42434-9/analysis/mechanism_evidence.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_repair": "If the packet analysis copy is refreshed before canonical final refresh, apply the same canonical class mapping listed for mechanism_ontology_record.json."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41467-023-42434-9/final/mechanism_evidence.json",
+      "dispatch_pass_status": "not_edited",
+      "recommended_repair": "If the packet final copy is refreshed before canonical final refresh, apply the same canonical class mapping listed for mechanism_ontology_record.json."
+    }
+  ],
+  "source_inputs_checked": [
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/true_review_result.json",
+      "checked_for": "prior true source-review decision, affected layer-3 claims, source locator sufficiency, and worker-6 follow-up requirement"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/rework_ticket.json",
+      "checked_for": "ticket scope, requested outputs, required locators, allowed evidence_class values, and caution-preservation requirement"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-008-PILOT20-017-worker-5/dispatch_packet.json",
+      "checked_for": "expected owner response path and dispatch-only completion scope"
+    },
+    {
+      "path": "papers/doi__10.1038_s41467-023-42434-9/final/mechanism_ontology_record.json",
+      "checked_for": "current claim IDs, claim text, source locators, limitations, direct_assay_types, and non-canonical evidence_class values"
+    },
+    {
+      "path": "papers/doi__10.1038_s41467-023-42434-9/final/review_report.json",
+      "checked_for": "existing accepted_with_cautions review status and cautions requiring worker-6 re-adjudication after layer-3 repair"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/figure_captions.json",
+      "checked_locators": [
+        "xml:fig=3:Fig. 3",
+        "xml:fig=5:Fig. 5"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_Article_42434.txt",
+      "checked_locators": [
+        "article text lines 305-331 for MD simulation interpretation",
+        "article text lines 438-460 for resistance, PI/microscopy, and OMV interpretation",
+        "pdf:Fig. 3 caption lines 708-719",
+        "pdf:Fig. 5 caption lines 1331-1346",
+        "pdf:Methods:Mode of action assay and microscopy using propidium iodide lines 1587-1607",
+        "pdf:Methods:Outer membrane vesicle release lines 1614-1630"
+      ]
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/material_inventory.json",
+      "checked_for": "packet material status and whether missing primary material blocks the targeted ontology mapping"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/source_locator_hints.json",
+      "checked_for": "APD6 AP03779 conflict context and database-only caution to preserve for worker-6"
+    }
+  ],
+  "remaining_gaps": [
+    "Canonical final files under papers/doi__10.1038_s41467-023-42434-9/final/ were intentionally not edited in this dispatch pass.",
+    "No mechanism-critical source material is missing for this targeted ontology repair; the required Fig. 3, Fig. 5, and PI/microscopy methods locators are present locally.",
+    "Worker-6 final adjudication remains required before publication-grade confirmation; worker-5 is not marking acceptance.",
+    "The APD6 AP03779 database_only_no_primary_source caution is outside worker-5 ownership and must remain unchanged in worker-6 review.",
+    "The repaired mechanism ontology must not promote MD simulation, resistance-passage phenotype, or OMV stress-response context to a single molecular target or receptor claim."
+  ],
+  "worker6_followup_required": true
+}

@@ -1,0 +1,127 @@
+{
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review closes the framework-test ticket with accepted_with_cautions while preserving D-Lys notation, mixed-reference database rows, and figure-only quantitative cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "d_lys_sequence_modified_not_normalized",
+      "evidence_context": "HPA3NT3-A2D is source-supported as AKRLKKLAKKIWKWK-NH2 with d-Lys residues at positions 2,5,6,9,10,15; database lowercase-k notation is preserved rather than normalized."
+    },
+    {
+      "caution_code": "database_mixed_prior_reference_dramp04664",
+      "evidence_context": "DRAMP04664 combines current DOI metadata with prior PMID 22982494 antibacterial/antifungal/human-RBC assertions; current paper verifies HPA3NT3-A2 identity and selected bacterial MIC context only."
+    },
+    {
+      "caution_code": "figure_only_toxicity_points_not_fabricated",
+      "evidence_context": "Figure 1 supports toxicity trends and Results 2.1 gives selected 250 μM values; linked database non-250 exact bar values remain source_conflict because local text/tables do not recover them exactly."
+    },
+    {
+      "caution_code": "database_condition_dimension_collapsed",
+      "evidence_context": "Many DBAASP MIC rows omit Table 2 buffer/ionic-condition dimensions or collapse PBEL strains; source locators and cautions preserve that limitation."
+    },
+    {
+      "caution_code": "no_declared_supplementary_assets",
+      "evidence_context": "OA package, XML, extraction status, and supplementary index were checked; no supplementary assets/tables are declared for this paper, so there is no supplement-derived blocker to chase."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms21165632/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms21165632/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms21165632/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms21165632/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms21165632/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms21165632/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms21165632/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms21165632/raw/oa_package/local-DBAASP-PMC7460559.tar.gz",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/pdf_text/ijms-21-05632.txt",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms21165632/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms21165632/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165632/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165632/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165632/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165632/database/database_source_manifest.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/unique_literature_sources.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "closed_rework_tickets": [
+    {
+      "closed_at": "2026-05-08T14:18:27Z",
+      "closed_by": "codex_cli_re_review_worker_4_6",
+      "closure_reason": "Original full_source_review_not_completed/database_conflicts ticket repaired by source-reviewed worker-4/6 pass and strict semantic/publication gates passed.",
+      "ticket_id": "rwk-complete-test-0001"
+    }
+  ],
+  "doi": "10.3390/ijms21165632",
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package members, extracted text/tables/figure captions, absence of declared supplementary files, linked DBAASP/DRAMP snapshots, and merged sequence/literature/experiment rows were checked. Figure-only exact bar/curve coordinates are not fabricated; unsupported database values remain cautions.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3390_ijms21165632",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP/DRAMP rows were rechecked against primary Table 1 sequences, Tables 2/3 MIC values, Results 2.1 toxicity prose, and merged database snapshots. D-Lys notation, mixed-reference DRAMP text, and figure-only values are preserved as cautions/conflicts.",
+    "layer_2_activity_toxicity": "Final activity records now use peptide/comparator entities rather than parser placeholder entities and preserve Table 2/Table 3 MICs plus source-text toxicity values with units and locators.",
+    "layer_3_mechanism": "Mechanism output separates prior literature context from direct CD/SUV stability/resistance assays; figure-only numeric points are not fabricated.",
+    "material_packet": "Material packet remains material_extracted_with_gaps because no supplementary files were declared; XML/PDF/OA package material is sufficient for the reviewed claims.",
+    "publication_grade_review": "Accepted with cautions only after the owner-worker source review closed the concrete ticket and before strict gates are rerun; if gates fail, quality feedback must be reopened.",
+    "validator_contract": "Structural validator readiness is separate from semantic acceptance; this repair replaces the framework-test final review with source-reviewed worker-4/6 artifacts."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-08T14:18:27Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_records": 128,
+    "database_record_audits": 189,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 70,
+      "source_conflict": 44,
+      "source_verified": 75
+    },
+    "mechanism_claims": 4,
+    "strict_gate": {
+      "open_rework_ticket_ids": [],
+      "publication_quality_pass": true,
+      "publication_report": "reports/doi__10.3390_ijms21165632.publication_quality.json",
+      "publication_returncode": 0,
+      "publication_risk_counts": {},
+      "required_rework_count": 0,
+      "semantic_issue_count": 0,
+      "semantic_issues": [],
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_report": "reports/doi__10.3390_ijms21165632.semantic_gate.json",
+      "semantic_returncode": 0
+    },
+    "supplementary_assets_declared": false
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_ticket_ids": [],
+    "publication_quality_pass": true,
+    "publication_quality_report": "reports/doi__10.3390_ijms21165632.publication_quality.json",
+    "required_rework_count": 0,
+    "semantic_issue_count": 0,
+    "semantic_report": "reports/doi__10.3390_ijms21165632.semantic_gate.json"
+  },
+  "summary": "Source-reviewed worker-4/6 re-review closes the framework-test ticket with accepted_with_cautions while preserving D-Lys notation, mixed-reference database rows, and figure-only quantitative cautions.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

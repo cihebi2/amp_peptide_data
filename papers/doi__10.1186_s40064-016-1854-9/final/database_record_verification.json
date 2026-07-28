@@ -1,0 +1,191 @@
+{
+  "artifact_type": "database_record_verification",
+  "paper_id": "doi__10.1186_s40064-016-1854-9",
+  "doi": "10.1186/s40064-016-1854-9",
+  "run_id": "codex_worker246_rereview_20260503",
+  "worker": "worker-4",
+  "role": "paper-database-record-auditor",
+  "protocol": "amp_three_layer_v2",
+  "generated_at": "2026-05-03T05:35:25Z",
+  "reviewed_at": "2026-05-03T05:35:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "database_row_counts": {
+    "packet_linked_literature_records": 1,
+    "packet_linked_assay_records": 0,
+    "packet_linked_dramp_activity_records": 0,
+    "packet_linked_experiment_records": 0,
+    "packet_linked_sequence_records": 0,
+    "merged_apd6_sequence_rows_checked": 1,
+    "merged_apd6_activity_rows_checked": 1,
+    "merged_literature_rows_checked": 1
+  },
+  "record_audits": [
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:APD6:AP02766",
+      "source_id": "AP02766",
+      "sequence_key": "APD6:AP02766",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "Enhancing the antimicrobial activity of Sus scrofa lysozyme by N-terminal fusion of a sextuple unique homologous peptide",
+      "database_claim": "APD6 literature link asserts AP02766 belongs to the lysozyme antimicrobial paper while the packet DOI resolves to a different SOD paper.",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "database_sequence_source": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:APD6:AP02766",
+        "database_sequence_length": 128,
+        "primary_source_sequence_status": "not_present_in_local_primary_article",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+          "locator": "xml:article-meta;xml:sec=Cloning and plasmid construction",
+          "primary_source_statement": "Local primary source is SODSs/rSODSs construction from Sulfolobus solfataricus and Geobacillus NTD, not Sus scrofa lysozyme APD6:AP02766."
+        }
+      },
+      "conflict_context": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article.",
+      "review_notes": "Do not mark source_verified. DOI/PMID/title enrichment mismatch makes this a source_conflict for this paper packet."
+    },
+    {
+      "audit_id": "all_sequences.csv:APD6:AP02766",
+      "source_id": "AP02766",
+      "sequence_key": "APD6:AP02766",
+      "source_table": "merged_amp_corpus/output/sequences/all_sequences.csv",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_subject": "S. scrofa lysozyme antimicrobial protein record; length 128 aa; organism Sus scrofa",
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "database:APD6:AP02766"
+      },
+      "sequence_check": {
+        "database_sequence_length": 128,
+        "primary_source_sequence_status": "not_present_in_local_primary_article",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+          "locator": "xml:sec=Cloning and plasmid construction;xml:fig=1",
+          "primary_source_statement": "The article reports SODSs and NTD-fused rSODSs proteins; it does not report a Sus scrofa lysozyme AP02766 sequence."
+        }
+      },
+      "source_organism_check": {
+        "database_organism": "Sus scrofa",
+        "primary_article_organisms": [
+          "Sulfolobus solfataricus",
+          "Geobacillus thermodenitrificans NG80-2",
+          "E. coli BL21(DE3) expression host"
+        ],
+        "status": "conflict"
+      },
+      "conflict_context": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article.",
+      "review_notes": "Sequence is database-supported but not primary-source-supported for this DOI; preserve as source_conflict."
+    },
+    {
+      "audit_id": "all_experimental_records.csv:APD6:AP02766",
+      "source_id": "AP02766",
+      "sequence_key": "APD6:AP02766",
+      "source_table": "merged_amp_corpus/output/experiments/all_experimental_records.csv",
+      "status": "database_only_no_primary_source",
+      "layer1_status": "database_only_no_primary_source",
+      "database_subject": "APD6 AP02766 activity text",
+      "database_measure": "Anti-Gram+ & Gram-; assay_text=Unknown; no measure_value; no unit",
+      "matched_activity_record_id": "",
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "locator": "database:APD6:AP02766"
+      },
+      "citation_traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv",
+        "locator": "database:APD6:AP02766"
+      },
+      "conflict_context": "Database activity text is not a primary assay row and belongs to the APD6 lysozyme record, not the local SOD paper. No MIC/MBC/toxicity target/value/unit can be recovered locally.",
+      "review_notes": "Preserve as database-only provenance. Do not convert to primary AMP activity evidence."
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 2,
+    "database_only_no_primary_source": 1
+  },
+  "caution_findings": [
+    {
+      "caution_code": "apd6_literature_enrichment_mismatch",
+      "severity": "blocking",
+      "evidence_context": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "apd6_ap02766_literature_and_sequence_conflict_with_primary_article",
+      "source_paths_checked": [
+        "rework_context/doi__10.1186_s40064-016-1854-9/handoff_context.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/packet_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/locators/locator_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/analysis/analysis_status.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.pdf",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/xml_sections.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/figure_captions.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/database_source_manifest.json",
+        "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+      ],
+      "tools_attempted": [
+        "jq/sed inspection of packet, final, work, and report JSON artifacts",
+        "rg over paper XML, extracted PDF text, figure captions, supplementary landing pages, and database snapshots",
+        "file over raw PDF and supplementary landing assets",
+        "pdftotext-derived publisher PDF text inspection from packet/extracted/pdf_text/landing-1.txt",
+        "Python csv.DictReader spot checks for APD6:AP02766 in merged sequence, experiment, and literature outputs",
+        "No OCR or office extraction attempted because the local supplementary assets are HTML landing/support pages and no DOCX/XLSX/PDF supplement file is present in the local packet or landed asset manifest"
+      ],
+      "why_unrecoverable": "APD6:AP02766 is a Sus scrofa lysozyme antimicrobial database record. Merged APD6 literature rows retain the APD title/raw PMID 28034616 for a J Biotechnol lysozyme paper, while the local DOI/PMID/PMCID resolve to the SpringerPlus SOD article with PMID 27026935. The APD sequence, organism, activity label, and claimed antimicrobial targets are not present in the local primary article.",
+      "impact": "worker-4 cannot source-verify APD6:AP02766 against this local DOI; the database row remains source_conflict/database_only_no_primary_source and cannot support publication-grade acceptance for this paper.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": true,
+      "next_action": "preserve_conflict_and_do_not_promote_to_source_verified"
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1186_s40064-016-1854-9/handoff_context.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/packet_manifest.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/analysis/analysis_status.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.xml",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/raw/paper.pdf",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/database/database_source_manifest.json",
+    "paper_packets/doi__10.1186_s40064-016-1854-9/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s40064-016-1854-9/asset_manifest.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+  ]
+}

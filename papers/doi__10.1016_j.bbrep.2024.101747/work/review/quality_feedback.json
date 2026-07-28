@@ -1,0 +1,62 @@
+{
+  "paper_id": "doi__10.1016_j.bbrep.2024.101747",
+  "generated_at": "2026-05-02T03:21:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "bounded_rework_result": {
+    "status": "resolved_after_targeted_source_review",
+    "attempt_count": 2,
+    "max_rework_attempts": 3,
+    "updated_at": "2026-05-02T03:21:29Z",
+    "note": "The previous parser/table-shape and database-conflict blockers were resolved from local XML Table 1/2/3 plus linked database JSONL rows; no blocking unrecoverable material gap remains."
+  },
+  "source_paths_checked": [
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/raw/paper.xml",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/raw/paper.pdf",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1016_j.bbrep.2024.101747/raw/oa_package",
+    "papers/doi__10.1016_j.bbrep.2024.101747/source",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1016_j.bbrep.2024.101747",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "tools_attempted": [
+    "xml.etree.ElementTree XML table inspection",
+    "rg source search over XML/PDF text/database rows",
+    "jq JSON artifact inspection",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "unrecoverable_material_gaps": [],
+  "caution_findings": [
+    {
+      "caution_code": "apd6_database_only_partial_match",
+      "severity": "caution",
+      "evidence_context": "APD6 AP04700 text-level IC50 annotation matches the primary K4K20K27S4 Table 3 value, but no structured APD6 sequence/name row was locally linked; retained as database_only_no_primary_source."
+    },
+    {
+      "caution_code": "no_supplementary_assets_available",
+      "severity": "caution",
+      "evidence_context": "Packet and landed source inventory contain XML/PDF/OA package members but no separate supplementary assets or supplementary tables."
+    },
+    {
+      "caution_code": "mechanism_inference_bounded",
+      "severity": "caution",
+      "evidence_context": "Antiviral mechanism is bounded to phenotypic pre-incubation/FACS evidence and author inference; direct envelope-damage assays were not present locally."
+    }
+  ]
+}

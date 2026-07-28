@@ -1,0 +1,98 @@
+{
+  "paper_id": "doi__10.1038_srep35019",
+  "reviewed_at": "2026-05-03T06:10:35Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "table3_requested_but_absent_from_local_xml_pdf": true,
+    "note": "Bounded source recovery opened the local XML/PDF, OA package extraction, supplementary PDF text/index, Figure 4 captions/text, and linked database snapshots. No remaining blocking rework target is required; preserved conflicts are caution-level final outcomes."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_srep35019/handoff_context.json",
+    "paper_packets/doi__10.1038_srep35019/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep35019/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep35019/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep35019/extraction/extraction_quality_report.json",
+    "papers/doi__10.1038_srep35019/source/paper.xml",
+    "papers/doi__10.1038_srep35019/source/paper.pdf",
+    "paper_packets/doi__10.1038_srep35019/extracted/pdf_text/srep35019.txt",
+    "paper_packets/doi__10.1038_srep35019/extracted/supplementary_text/srep35019-s1.txt",
+    "paper_packets/doi__10.1038_srep35019/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_srep35019/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep35019/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep35019/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep35019/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_srep35019/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 105,
+    "table2_mic_rows": 93,
+    "toxicity_hemolysis_rows": 12,
+    "database_record_audits": 334,
+    "database_status_summary": {
+      "source_conflict": 213,
+      "source_verified": 118,
+      "database_only_no_primary_source": 3
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "open_rework_ticket_ids_after_response": [],
+    "database_conflict_marker_repair_at": "2026-05-03T06:10:35Z"
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 audit was rebuilt row-by-row. Table 1 provides sequence/name/source locators; Table 2 supports MIC rows; Figure 4/text supports toxicity/hemolysis only at qualitative or explicitly stated values. Unsupported database exact values are preserved as source_conflict/database_only_no_primary_source.",
+    "layer_2_activity_toxicity": "Final activity artifact was rebuilt from the primary Table 2 peptide-by-target MIC matrix for Saha-CATH3/5/6 and source text/Figure 4 for A549 and hemolysis outcomes. Antibiotic control values were excluded from AMP final rows.",
+    "layer_3_mechanism": "Mechanism claims are not promoted to direct_mechanism; the source supports antimicrobial phenotype and inferred cathelicidin membrane/contextual immune roles only.",
+    "worker_6_review": "The prior blocking ticket was resolved by source-reviewed adjudication and durable artifact rewrites; no blocking or major QC failure remains."
+  },
+  "adjudication_summary": "Source-reviewed re-adjudication completed for the Tasmanian devil cathelicidin paper. Primary material supports six mature peptide sequences, the Table 2 MIC matrix for Saha-CATH3/5/6, and Figure 4/text toxicity summaries. Cross-database conflicts were preserved rather than smoothed, leaving the paper accepted with cautions but publication-grade under obtainable-only local evidence.",
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "Database rows with under-specified DRAMP activity, database-only broad category flags, APD6 later DFTD text, or figure-only exact hemolysis percentages remain source_conflict/database_only_no_primary_source instead of source_verified.",
+      "affected_status_counts": {
+        "source_conflict": 213,
+        "database_only_no_primary_source": 3
+      }
+    },
+    {
+      "caution_code": "no_table3_local_source",
+      "severity": "caution",
+      "evidence_context": "The rework request mentioned Table 3, but local XML/PDF extraction exposes Table 1 and Table 2 only; toxicity/hemolysis evidence is in Figure 4/source text and supplementary methods."
+    },
+    {
+      "caution_code": "no_direct_mechanism_assay",
+      "severity": "caution",
+      "evidence_context": "Mechanism claims are kept as inferred/contextual because local material does not contain a direct membrane or immunomodulatory assay for the devil peptides."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_tickets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "closed_at": "2026-05-03T06:08:48Z",
+      "owner_worker": "worker-4 + worker-6",
+      "closure_status": "closed_by_source_reviewed_repair",
+      "response_path": "paper_packets/doi__10.1038_srep35019/rework/rework_responses.jsonl"
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

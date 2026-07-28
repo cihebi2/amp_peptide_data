@@ -1,0 +1,50 @@
+{
+  "cleared_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "generated_at": "2026-05-07T17:06:25Z",
+  "issue_count": 0,
+  "paper_id": "doi__10.3390_antibiotics11070952",
+  "qc_failure_reasons": [],
+  "review_notes": "Prior worker-4/6 blockers were resolved by source-reviewing local XML/PDF, supplementary PDF Figure S5/Table S2, Figure 2, APD6/DBAASP linked rows, and merged APD6 sequence snapshots.",
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "status": "cleared_after_worker4_worker6_source_review",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "apd6_s_enteritidis_values_not_in_local_primary_material",
+      "impact": "APD6 free-text rows remain source_conflict; final activity curation does not promote S. enteritidis values.",
+      "owner_worker": "worker-4 + worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics11070952/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics11070952/extracted/pdf_text/antibiotics-11-00952.txt",
+        "paper_packets/doi__10.3390_antibiotics11070952/extracted/oa_package/local-APD6-pmc_package/PMC9312091/antibiotics-11-00952-s001.zip::antibiotics-1786730-supplementary.pdf",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+      ],
+      "tools_attempted": [
+        "rg",
+        "pdftotext -layout",
+        "manual supplementary Figure S5 inspection"
+      ],
+      "why_unrecoverable": "The paper-local XML/PDF/supplement reports E. coli, S. aureus, and pig red blood cell assays; S. enteritidis appears only in APD6 free-text comments."
+    },
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "supplementary_figure_s5_values_are_chart_ranges_not_data_table",
+      "impact": "Final rows preserve only chart-supported MIC/MBC/HC50 ranges and do not invent replicate-level exact values.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics11070952/extracted/oa_package/local-APD6-pmc_package/PMC9312091/antibiotics-11-00952-s001.zip::antibiotics-1786730-supplementary.pdf",
+        "paper_packets/doi__10.3390_antibiotics11070952/extracted/oa_package/local-DBAASP-PMC9312091/PMC9312091/antibiotics-11-00952-g002.jpg"
+      ],
+      "tools_attempted": [
+        "unzip -p",
+        "pdftotext -layout",
+        "pdftoppm -png",
+        "manual local figure inspection"
+      ],
+      "why_unrecoverable": "The local supplement provides Figure S5 as a plotted figure, not a spreadsheet table of replicate-level values."
+    }
+  ]
+}

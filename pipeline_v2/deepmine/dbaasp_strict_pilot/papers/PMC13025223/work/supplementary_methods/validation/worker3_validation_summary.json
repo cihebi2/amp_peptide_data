@@ -1,0 +1,111 @@
+{
+  "validated_at": "2026-07-27T08:28:21.929611Z",
+  "strict_allow_flags_used": false,
+  "json_syntax": [
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/supplementary_evidence.json",
+      "valid": true
+    },
+    {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13025223/analysis/supplementary_evidence.worker3.json",
+      "valid": true
+    }
+  ],
+  "single_paper_manifest_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/worker3_single_paper_manifest.json",
+  "commands": [
+    {
+      "name": "check_two_queue_packets",
+      "returncode": 2,
+      "stdout_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_two_queue_packets.worker3.single_manifest.stdout.log",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_two_queue_packets.worker3.single_manifest.stderr.log",
+      "manifest_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/worker3_single_paper_manifest.json",
+      "packet_root": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets"
+    },
+    {
+      "name": "semantic_three_layer_gate",
+      "returncode": 1,
+      "stdout_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/semantic_three_layer_gate.worker3.json",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/semantic_three_layer_gate.worker3.stderr.log"
+    },
+    {
+      "name": "check_three_layer_publication_quality",
+      "returncode": 2,
+      "stdout_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_three_layer_publication_quality.worker3.stdout.log",
+      "stderr_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_three_layer_publication_quality.worker3.stderr.log"
+    }
+  ],
+  "packet_gate": {
+    "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_two_queue_packets.worker3.single_manifest.json",
+    "summary": {
+      "exists": true,
+      "bytes": 1535,
+      "type": "dict",
+      "keys": [
+        "analysis_status_counts",
+        "hard_finding_count",
+        "hard_finding_papers",
+        "material_status_counts",
+        "open_rework_ticket_count",
+        "packet_root",
+        "paper_count",
+        "results",
+        "total_extraction_error_count",
+        "total_locator_count"
+      ],
+      "hard_finding_papers_count": 1,
+      "issue_like_counts": {
+        "hard_finding_papers": 1,
+        "hard_findings": 1
+      }
+    }
+  },
+  "semantic_gate": {
+    "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/semantic_three_layer_gate.worker3.json",
+    "summary": {
+      "exists": true,
+      "bytes": 864,
+      "type": "dict",
+      "keys": [
+        "failed_papers",
+        "paper_count",
+        "publication_grade_fail_count",
+        "publication_grade_pass_count",
+        "results"
+      ],
+      "issue_like_counts": {
+        "failed_papers": 1,
+        "issues": 4
+      }
+    }
+  },
+  "publication_quality_gate": {
+    "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_three_layer_publication_quality.worker3.json",
+    "issues_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13025223/work/supplementary_methods/validation/check_three_layer_publication_quality.worker3.issues.json",
+    "summary": {
+      "exists": true,
+      "bytes": 1443,
+      "type": "dict",
+      "keys": [
+        "counts",
+        "generated_at_utc",
+        "issue_log_counts",
+        "manifest",
+        "paper_count",
+        "publication_grade_pass",
+        "review_status",
+        "risk_counts",
+        "risk_examples"
+      ],
+      "issue_like_counts": {
+        "issue_log_counts": 0,
+        "risk_counts": 1,
+        "risk_examples": 1
+      }
+    },
+    "issues_summary": {
+      "exists": false,
+      "bytes": 0
+    }
+  },
+  "interpretation": "Worker-3 JSON is syntactically valid. Corrected single-paper packet gate plus semantic/publication gates are nonterminal whole-paper diagnostics unless all layers and worker-6 adjudication pass strictly."
+}

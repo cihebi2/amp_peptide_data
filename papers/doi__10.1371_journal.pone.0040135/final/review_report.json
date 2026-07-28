@@ -1,0 +1,169 @@
+{
+  "caution_findings": [
+    {
+      "affected_rows": [
+        "database:linked_assay_records:row=18",
+        "database:linked_assay_records:row=37",
+        "database:linked_experiment_records:row=18",
+        "database:linked_experiment_records:row=37"
+      ],
+      "caution_code": "p1369_database_organism_label_conflict",
+      "evidence_context": "Primary Methods identify P1369 as methicillin-resistant coagulase-negative Staphylococcus, while some DBAASP/dbAMP rows label it Staphylococcus aureus."
+    },
+    {
+      "affected_rows": [
+        "database:linked_experiment_records:row=46"
+      ],
+      "caution_code": "apd6_kn2_7_hc50_conflict_preserved",
+      "evidence_context": "APD6 AP04543 aggregates source-supported Kn2-7 rows but its HC50 wording conflicts with the primary Figure 1D/Results HC50 value; not normalized away."
+    },
+    {
+      "affected_rows": [
+        "database:linked_experiment_records:row=54",
+        "database:linked_experiment_records:row=55"
+      ],
+      "caution_code": "dbamp_cross_paper_aggregate_tail_preserved",
+      "evidence_context": "dbAMP rows contain source-supported 2012 MIC subsets plus unsupported/cross-paper target and cell-line values; unsupported tails remain source_conflict."
+    },
+    {
+      "caution_code": "figure_only_values_not_overfit",
+      "evidence_context": "Figure 1A/C/D and Figures 4-7 were used only for source-supported sequence/screening/hemolysis/mechanism context; exact graph-only bar or curve point values were not invented."
+    },
+    {
+      "caution_code": "supplementary_assets_no_structured_tables",
+      "evidence_context": "Local supplementary files are HTML/image captures with no parsed spreadsheet or table; they did not change activity/toxicity/mechanism/database conclusions."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0040135/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/pdf_text/pone.0040135.txt",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/supplementary_tables.json",
+    "papers/doi__10.1371_journal.pone.0040135/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0040135/source/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0040135/extracted/oa_package/local-APD6-pmc_package/PMC3390344/pone.0040135.g001.jpg",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0040135/supplementary/landing-1.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0040135/supplementary/landing-6.bin",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0040135/supplementary/landing-8.bin"
+  ],
+  "generated_at": "2026-05-03T03:18:17Z",
+  "materials_exhausted": {
+    "known_missing_or_blocked_materials": [],
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+    "merged_database_rows": {
+      "available": true,
+      "blocker": false,
+      "used": true
+    },
+    "oa_package": {
+      "available": true,
+      "blocker": false,
+      "used": true
+    },
+    "paper_pdf": {
+      "available": true,
+      "blocker": false,
+      "used": true
+    },
+    "paper_xml": {
+      "available": true,
+      "blocker": false,
+      "used": true
+    },
+    "source_review_gap_remaining": false,
+    "supplementary_assets": {
+      "available": true,
+      "blocker": false,
+      "note": "Local landed supplementary assets are HTML/image captures and no structured supplementary table was recoverable or needed after XML/PDF/Figure 1 review.",
+      "used": true
+    }
+  },
+  "paper_id": "doi__10.1371_journal.pone.0040135",
+  "per_layer_decision_rationale": {
+    "final_decision": "The previous full_source_review_not_completed and database_conflicts_require_adjudication blockers are closed; acceptance is with cautions, not clean acceptance.",
+    "layer_1_database": "DBAASP row-level MIC and HC50 records were rematched to primary Tables 1-2 and Figure 1D; P1369 organism-label conflict, APD6 HC50 conflict, and dbAMP aggregated cross-paper tails remain source_conflict/database-only cautions.",
+    "layer_2_activity_toxicity": "Existing Table 1/2 MIC rows were retained with target classes corrected for clinical bacterial isolates, and HC50 hemolysis rows were added from primary Figure 1D/Results text.",
+    "layer_3_mechanism": "Framework pending mechanism placeholders were replaced with bounded source-reviewed CD, enzyme-release/time-kill/TEM, and BLI/LTA-LPS competition claims without fabricating graph-only values.",
+    "supplementary_materials": "Local supplementary assets were typed and indexed; no structured supplementary table or spreadsheet was recoverable, and this is nonblocking because XML/PDF/OA/database evidence resolves the owner-layer ticket."
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T03:18:17Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_records": 57,
+    "activity_rows_have_raw_values_units_targets_and_locators": true,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "database_conflicts_require_adjudication": "resolved_by_worker4_source_review_with_conflicts_preserved",
+    "database_status_summary": {
+      "database_only_no_primary_source": 4,
+      "source_conflict": 20,
+      "source_verified": 85
+    },
+    "hc50_rows_source_reviewed": 2,
+    "mechanism_claims": 3,
+    "mechanism_overclaim_check": "pass_direct_claims_have_assay_types_and_limitations",
+    "open_rework_ticket_ids": [],
+    "source_conflict_contexts_present": true,
+    "supplementary_exhaustion": "pass_local_assets_checked_no_structured_assay_supplement",
+    "unrecoverable_material_gaps": []
+  },
+  "source_review_depth": {
+    "merged_database_rows": {
+      "coverage": "DBAASP/APD6/DRAMP/CAMP/dbAMP linked rows reconciled against primary Tables 1-2, Figure 1, Methods strain identity, and article metadata",
+      "paths": [
+        "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0040135/database/linked_literature_records.jsonl"
+      ],
+      "status": "reviewed"
+    },
+    "oa_package": {
+      "coverage": "OA NXML/PDF and Figure 1 image used for peptide sequences, screening MIC bars, and hemolysis context",
+      "path": "paper_packets/doi__10.1371_journal.pone.0040135/extracted/oa_package/local-APD6-pmc_package/PMC3390344",
+      "status": "reviewed_inventory_and_figures"
+    },
+    "paper_pdf": {
+      "coverage": "PDF text cross-check for HC50, MIC tables, mechanism prose, and methods",
+      "path": "papers/doi__10.1371_journal.pone.0040135/source/paper.pdf",
+      "status": "reviewed_text_extraction"
+    },
+    "paper_xml": {
+      "coverage": "article metadata, abstract, Results, Tables 1-2, Figure 1 captions, mechanism sections, methods, and discussion",
+      "path": "papers/doi__10.1371_journal.pone.0040135/source/paper.xml",
+      "status": "reviewed_primary_full_text"
+    },
+    "supplementary_assets": {
+      "coverage": "Local supplementary assets were file-typed; no structured supplementary spreadsheet/table changed the source-supported activity, database, or mechanism conclusion",
+      "paths": [
+        "paper_packets/doi__10.1371_journal.pone.0040135/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0040135/extracted/supplementary_tables.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0040135/supplementary"
+      ],
+      "status": "reviewed_exhausted_nonblocking"
+    }
+  },
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_ticket_ids": [],
+    "required_rework_count": 0
+  },
+  "summary": "Worker-4/worker-6 re-review reopened packet/source/database artifacts, repaired scaffold database adjudication errors, preserved unresolved database conflicts as cautions, and closed rwk-complete-test-0001 after strict source-reviewed QC.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

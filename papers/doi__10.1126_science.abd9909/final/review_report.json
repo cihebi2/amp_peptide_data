@@ -1,0 +1,80 @@
+{
+  "adjudication_summary": "Bounded local re-review repaired source-locator-backed activity evidence, preserved database conflicts, and exhausted available local packet/OA/database materials. Acceptance is with cautions, subject to strict gate results.",
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "evidence_context": "source_conflict rows retained in database_record_verification.json"
+    },
+    {
+      "caution_code": "no_local_toxicity_endpoint_rows",
+      "evidence_context": "toxicity_records is empty after bounded local source check"
+    },
+    {
+      "caution_code": "supplementary_structured_tables_not_recovered",
+      "evidence_context": "supplementary table/index packet artifacts contain no local rows/assets"
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.1126_science.abd9909/packet_manifest.json",
+    "paper_packets/doi__10.1126_science.abd9909/locators/locator_index.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/xml_sections.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/figure_captions.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/pdf_text/370_426.txt",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/oa_package/local-DBAASP-PMC7857403/PMC7857403/370_426.nxml",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/oa_package/local-DBAASP-PMC7857403/PMC7857403/370_426.pdf",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/oa_package/local-DRAMP-32907861/PMC7857403/370_426.nxml",
+    "paper_packets/doi__10.1126_science.abd9909/extracted/oa_package/local-DRAMP-32907861/PMC7857403/370_426.pdf",
+    "paper_packets/doi__10.1126_science.abd9909/database/database_source_manifest.json",
+    "paper_packets/doi__10.1126_science.abd9909/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1126_science.abd9909/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1126_science.abd9909/analysis/mechanism_evidence.json"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "all_local_materials_named_in_handoff": true
+  },
+  "paper_id": "doi__10.1126_science.abd9909",
+  "per_layer_decision_rationale": {
+    "worker_2_activity_toxicity": "Local primary-source IC50/EC50 activity rows are present with species, target class, value, unit, and locators. No toxicity endpoint row was locally recovered.",
+    "worker_4_database_records": "Database conflict rows remain source_conflict/database provenance; source_verified rows retain locator-bearing provenance. No database-only activity annotation was promoted.",
+    "worker_5_mechanism": "Mechanism artifact remains cautious and is not promoted to direct mechanism beyond its recorded evidence class.",
+    "worker_6_adjudication": "All locally available packet/source/database materials named in the handoff were checked sufficiently for this bounded repair; acceptance is with cautions if strict gates pass."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-06-20T17:01:02Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_records_present": true,
+    "activity_records_have_core_fields": true,
+    "database_only_activity_rows_promoted": false,
+    "database_conflicts_preserved": true,
+    "toxicity_rows_required_for_acceptance": false,
+    "local_oa_package_checked": true,
+    "merged_database_rows_checked": true,
+    "strict_gate_rerun_required": false,
+    "activity_target_species_fields_present": true,
+    "materials_exhausted_surface_keys_present": true
+  },
+  "source_review_depth": [
+    "xml_sections: local XML-derived section locators checked for activity endpoints",
+    "pdf_text: local extracted PDF text checked for endpoint corroboration",
+    "oa_package: local OA package XML/PDF members checked through packet extraction paths",
+    "supplementary_materials: local supplementary index/table artifacts checked; no structured local rows recovered",
+    "merged_database_rows: linked database snapshot/audit artifacts checked; conflicts preserved and no database-only activity row promoted",
+    "database_rows: source_verified database rows retain locator-bearing provenance; source_conflict rows remain conflicts"
+  ],
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "materials_exhausted_all": true
+}

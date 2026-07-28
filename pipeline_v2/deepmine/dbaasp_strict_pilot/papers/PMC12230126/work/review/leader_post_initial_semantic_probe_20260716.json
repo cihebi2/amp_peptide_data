@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-07-16T06:38:13.487471+00:00",
+  "paper_id": "PMC12230126",
+  "finding_status": "targeted_rework_required_despite_zero_gates",
+  "initial_gate_state": {
+    "packet": 0,
+    "semantic": 0,
+    "publication": 0,
+    "acceptance_ready": true
+  },
+  "findings": [
+    {
+      "code": "final_layer_model_provenance_mismatch",
+      "severity": "blocking",
+      "actual_activity_review_model": "gpt-5.6-sol (runtime configured; required gpt-5.5/xhigh model gate not directly controllable by worker)",
+      "actual_activity_reasoning_effort": "high",
+      "expected": "gpt-5.5/xhigh from canonical worker-2 run report",
+      "database_final_has_review_model": false,
+      "database_final_has_reasoning_effort": false
+    },
+    {
+      "code": "figure_digitization_provenance_not_propagated_to_final",
+      "severity": "blocking",
+      "fig5_treatment_row_count": 12,
+      "missing_calibration_or_uncertainty_record_count": 12,
+      "missing_record_ids": [
+        "fig5A-cfu-survival-60min-7uM",
+        "fig5A-cfu-survival-60min-15uM",
+        "fig5B-cfu-survival-60min-7uM",
+        "fig5B-cfu-survival-60min-15uM",
+        "fig5C-cfu-survival-60min-7uM",
+        "fig5C-cfu-survival-60min-15uM",
+        "fig5D-cfu-survival-60min-7uM",
+        "fig5D-cfu-survival-60min-15uM",
+        "fig5E-cfu-survival-60min-7uM",
+        "fig5E-cfu-survival-60min-15uM",
+        "fig5F-cfu-survival-60min-7uM",
+        "fig5F-cfu-survival-60min-15uM"
+      ],
+      "worker3_source": "packets/PMC12230126/analysis/supplementary_evidence.worker3.json"
+    },
+    {
+      "code": "source_text_values_overwritten_by_figure_estimates",
+      "severity": "blocking",
+      "text_backed_expected_values": {
+        "fig5A-cfu-survival-60min-7uM": "about 40",
+        "fig5A-cfu-survival-60min-15uM": "almost complete growth limitation; digitized approximately 0",
+        "fig5C-cfu-survival-60min-7uM": "60",
+        "fig5C-cfu-survival-60min-15uM": "20",
+        "fig5D-cfu-survival-60min-7uM": "no activity; digitized approximately 98",
+        "fig5D-cfu-survival-60min-15uM": "no activity; digitized approximately 101",
+        "fig5E-cfu-survival-60min-7uM": "85",
+        "fig5E-cfu-survival-60min-15uM": "70",
+        "fig5F-cfu-survival-60min-7uM": "80",
+        "fig5F-cfu-survival-60min-15uM": "50"
+      },
+      "current_final_values": {
+        "fig5A-cfu-survival-60min-7uM": "44",
+        "fig5A-cfu-survival-60min-15uM": "0",
+        "fig5C-cfu-survival-60min-7uM": "62",
+        "fig5C-cfu-survival-60min-15uM": "20",
+        "fig5D-cfu-survival-60min-7uM": "98",
+        "fig5D-cfu-survival-60min-15uM": "101",
+        "fig5E-cfu-survival-60min-7uM": "85",
+        "fig5E-cfu-survival-60min-15uM": "70",
+        "fig5F-cfu-survival-60min-7uM": "82",
+        "fig5F-cfu-survival-60min-15uM": "53"
+      },
+      "required_reconciliation": "source-text value is primary when explicitly reported; calibrated figure estimate is secondary and marked approximate"
+    },
+    {
+      "code": "predicted_disulfide_surface_dropped",
+      "severity": "blocking",
+      "actual_reported_disulfides": null,
+      "source": "Supplementary Figure S6, page 9, explicitly labels putative disulfide-bond localization",
+      "required_boundary": "record predicted/putative structural annotation; do not promote to experimentally verified exact bridge mapping"
+    },
+    {
+      "code": "final_layer_adjudication_metadata_incomplete",
+      "severity": "blocking",
+      "activity_fields": {
+        "review_status": null,
+        "publication_grade": null,
+        "reviewed_at": "2026-07-16T05:25:42.212895+00:00",
+        "review_model": "gpt-5.6-sol (runtime configured; required gpt-5.5/xhigh model gate not directly controllable by worker)",
+        "reasoning_effort": "high"
+      },
+      "database_fields": {
+        "review_status": null,
+        "publication_grade": null,
+        "reviewed_at": null,
+        "review_model": null,
+        "reasoning_effort": null
+      },
+      "mechanism_fields": {
+        "review_status": null,
+        "publication_grade": null,
+        "reviewed_at": null,
+        "review_model": "gpt-5.5",
+        "reasoning_effort": "xhigh"
+      },
+      "review_report_fields": {
+        "review_status": "accepted_with_cautions",
+        "publication_grade": true,
+        "reviewed_at": "2026-07-16T06:29:47Z",
+        "review_model": "gpt-5.5",
+        "reasoning_effort": "xhigh"
+      }
+    }
+  ],
+  "required_rerun_order": [
+    "worker-2",
+    "worker-4",
+    "worker-6"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "paper_id": "pmid__24781647",
+  "reviewed_at": "2026-05-10T16:54:40Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML, PDF-derived text, OA figure images, supplementary inventory/captions/TIF handles, and linked database rows were reopened. Exact graph-point digitization and exact mature sequence extraction were not promoted beyond source-supported evidence."
+  },
+  "checked_inputs": [
+    "rework_context/pmid__24781647/handoff_context.json",
+    "paper_packets/pmid__24781647/packet_manifest.json",
+    "paper_packets/pmid__24781647/locators/locator_index.json",
+    "paper_packets/pmid__24781647/extraction/extraction_status.json",
+    "paper_packets/pmid__24781647/extraction/extraction_quality_report.json",
+    "papers/pmid__24781647/source/paper.xml",
+    "papers/pmid__24781647/source/paper.pdf",
+    "paper_packets/pmid__24781647/raw/paper.xml",
+    "paper_packets/pmid__24781647/raw/paper.pdf",
+    "paper_packets/pmid__24781647/raw/oa_package/local-DRAMP-24781647.tar.gz",
+    "paper_packets/pmid__24781647/extracted/xml_sections.json",
+    "paper_packets/pmid__24781647/extracted/pdf_text/pone.0096222.txt",
+    "paper_packets/pmid__24781647/extracted/pdf_text/local-DRAMP-24781647.txt",
+    "paper_packets/pmid__24781647/extracted/figure_captions.json",
+    "paper_packets/pmid__24781647/extracted/supplementary_index.json",
+    "paper_packets/pmid__24781647/extracted/supplementary_tables.json",
+    "paper_packets/pmid__24781647/extracted/supplementary_text.jsonl",
+    "paper_packets/pmid__24781647/extracted/archive_manifest.json",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.g002.jpg",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.g003.jpg",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.g007.jpg",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.s001.tif",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.s002.tif",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.s003.tif",
+    "paper_packets/pmid__24781647/extracted/oa_package/local-DRAMP-24781647/PMC4004548/pone.0096222.s004.tif",
+    "paper_packets/pmid__24781647/database/database_source_manifest.json",
+    "paper_packets/pmid__24781647/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/pmid__24781647/database/linked_experiment_records.jsonl",
+    "paper_packets/pmid__24781647/database/linked_literature_records.jsonl",
+    "paper_packets/pmid__24781647/database/linked_sequence_records.jsonl",
+    "paper_packets/pmid__24781647/database/linked_assay_records.jsonl",
+    ".miaobi-paper-review/workflows/pmid__24781647/workflow_context.json",
+    ".miaobi-paper-review/workflows/pmid__24781647/state_executions.jsonl",
+    ".miaobi-paper-review/workflows/pmid__24781647/chat_messages.jsonl",
+    ".miaobi-paper-review/workflows/pmid__24781647/agent_logs.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 7,
+    "database_status_summary": {
+      "source_conflict": 10,
+      "source_verified": 2
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "source_conflicts_preserved": 10,
+    "quality_feedback_issue_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Database entries are not smoothed into clean verification: citation links are verified, while APD6/DRAMP/dbAMP activity labels remain source_conflict because the primary paper supports B. subtilis-specific growth inhibition and does not support broad Gram-positive activity as written.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 7 source-supported rows from XML methods/results and article Figures 2, 3, and 7; rows preserve concentrations, target species/strain or host-cell target, conditions, and locators without treating database-only annotations as primary assay rows.",
+    "layer_3_mechanism": "Worker-6 replaced placeholder mechanism notes with source-located direct assay classes for bacteriostatic antibacterial action, secreted Sil neutralization, and host innate immune suppression while preserving limits on receptor and exact figure values.",
+    "publication_grade_decision": "Accepted with cautions only after the original blocking ticket was resolved, source conflicts were preserved, and strict semantic/publication gates passed."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_scope_overbroad",
+      "evidence_context": "Primary paper supports rSil activity against B. subtilis 1.460 and no apparent effect on other tested bacteria; database rows label activity as Gram-positive/Anti-Gram+.",
+      "affected_records": [
+        "APD6:AP02399",
+        "DRAMP:DRAMP18327",
+        "dbAMP:dbAMP_01538"
+      ]
+    },
+    {
+      "caution_code": "database_sequence_not_primary_text_verified",
+      "evidence_context": "Primary XML/PDF text reports 101-aa Sil and supplementary sequence/alignment figures, while database rows provide a 76-aa sequence; the database sequence is preserved but not promoted to clean source_verified.",
+      "affected_records": [
+        "DRAMP:DRAMP18327"
+      ]
+    },
+    {
+      "caution_code": "figure_values_not_digitized_as_exact",
+      "evidence_context": "Primary figures support dose/concentration and qualitative or relative outcomes; exact OD600/CFU/bar heights are not tabulated locally and were not fabricated."
+    }
+  ],
+  "rework_targets": [],
+  "resolved_rework_targets": [
+    {
+      "ticket_id": "rwk-complete-test-0001",
+      "resolved_at": "2026-05-10T16:54:40Z",
+      "resolution": "worker-2 recovered source-supported activity rows; worker-4 preserved database conflicts; worker-6 completed source-reviewed adjudication and reran gates."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "summary": "Sil/rSil curation is source-reviewed and accepted with cautions: the primary paper supports B. subtilis-specific bacteriostatic activity and host immunomodulation, while broad database target labels and database-only sequence assertions remain explicitly caution-bearing rather than normalized away."
+}

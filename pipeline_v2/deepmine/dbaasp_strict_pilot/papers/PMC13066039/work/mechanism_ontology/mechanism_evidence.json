@@ -1,0 +1,346 @@
+{
+  "artifact": "mechanism_evidence",
+  "artifact_role": "source_reviewed_worker5_mechanism_ontology",
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/figure_captions.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/pdf_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/supplementary_tables.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/dbaasp_machine_extracted_rows.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/linked_article_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/linked_assay_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/linked_sequence_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/linked_literature_records.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/analysis/activity_safe_candidate_handoff.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/mechanism_source_scan.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/xml_locator_map.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/mechanism_source_facts.worker5.json"
+  ],
+  "direct_mechanism_assay_assessment": {
+    "direct_assay_types_supported": [
+      "SEM",
+      "intracellular protein leakage assay",
+      "cell permeability/leakage assay"
+    ],
+    "not_supported_as_direct": [
+      "MIC/growth inhibition",
+      "ROS alone",
+      "charge/cationic/physicochemical characterization",
+      "discussion-only mechanism language",
+      "DBAASP fallback rows",
+      "binding-assay false-positive terms",
+      {
+        "item": "non-retained microscopy modality not promoted to direct mechanism",
+        "reason": "not retained as a direct assay type for claim PMC13066039-W5-MECH-001 after packet-locator review"
+      },
+      {
+        "item": "bacteria morphology observation as separate direct assay type",
+        "reason": "retained as claim context only; SEM is the direct assay type"
+      }
+    ]
+  },
+  "evidence_class_counts": {
+    "direct_mechanism": 2,
+    "inferred_mechanism": 1,
+    "phenotype_supported": 2
+  },
+  "excluded_or_nonpromoted_evidence": [
+    {
+      "item": "DBAASP Codex fallback rows",
+      "reason": "candidate machine evidence only; no authoritative linked DBAASP rows present for mechanism verification"
+    },
+    {
+      "item": "MIC/antimicrobial activity",
+      "reason": "phenotype-supported only; not a direct mechanism assay"
+    },
+    {
+      "item": "ROS level analysis",
+      "reason": "cellular stress phenotype under worker ontology; not direct mechanism closure by itself"
+    },
+    {
+      "item": "physicochemical characterization/discussion terms",
+      "reason": "inferred mechanism context only"
+    },
+    {
+      "item": "SPR/binding term hits",
+      "reason": "reviewed as false positives or insufficiently source-located to a binding assay; no direct binding claim made"
+    },
+    {
+      "item": "biosafety/hemolysis/cytotoxicity sections",
+      "reason": "toxicity/safety evidence, not antimicrobial mechanism evidence"
+    }
+  ],
+  "lane": "mechanism_ontology_extractor",
+  "machine_candidate_evidence_boundary": {
+    "candidate_artifact_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/dbaasp_machine_extracted_rows.jsonl",
+    "candidate_row_count": 3,
+    "database_locator": "database:dbaasp_machine_extracted_rows.jsonl",
+    "dbaasp_machine_extracted_rows_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/dbaasp_machine_extracted_rows.jsonl",
+    "linked_authoritative_rows_present": false,
+    "worker5_use": "candidate phenotype context only; not source-verified mechanism evidence"
+  },
+  "material_status_snapshot": {
+    "known_missing_or_blocked_materials": [],
+    "locator_count": 126,
+    "material_queue_status": "material_extracted_complete",
+    "packet_version": "dbaasp_strict_pilot_v1",
+    "rework_requests_open_for_worker5": []
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC13066039-W5-MECH-001",
+      "claim_text": "SEM morphology evidence at the checked Fig. 6/result locators supports a direct bacterial surface/envelope-disruption claim for the paper-local nisin-loaded pectin-based AgNP bioconjugates.",
+      "direct_assay_types": [
+        "SEM"
+      ],
+      "entity_scope": "nisin-loaded pectin-based silver nanoparticle (AgNP) bioconjugates in paper-local bacterial mechanism assays",
+      "evidence_class": "direct_mechanism",
+      "limitation_notes": [
+        "Only SEM morphology support is retained for this direct claim; no separate additional electron-microscopy modality was promoted from the checked packet locators."
+      ],
+      "limitations": "Direct microscopy supports morphology/cell-envelope damage only; it does not identify a specific molecular target or binding interaction.",
+      "source_locator": "xml:fig:6",
+      "source_review_verification": "verified from packet XML locator map plus mechanism term-category scan; not derived from DBAASP fallback rows",
+      "supporting_source_locators": [
+        "xml:sec:21",
+        "xml:sec:22",
+        "xml:fig:6",
+        "xml:p:15",
+        "xml:p:37",
+        "xml:caption:6"
+      ]
+    },
+    {
+      "claim_id": "PMC13066039-W5-MECH-002",
+      "claim_text": "Paper-local intracellular protein leakage evidence supports treatment-associated bacterial cell leakage or permeability loss for the nisin-loaded pectin-based AgNP bioconjugates.",
+      "direct_assay_types": [
+        "intracellular protein leakage assay",
+        "cell permeability/leakage assay"
+      ],
+      "entity_scope": "nisin-loaded pectin-based silver nanoparticle (AgNP) bioconjugates in paper-local bacterial cell leakage/permeability assays",
+      "evidence_class": "direct_mechanism",
+      "limitations": "Direct leakage/permeability support is retained as cell-envelope integrity evidence; it is not promoted to a resolved molecular target mechanism.",
+      "source_locator": "xml:fig:7",
+      "source_review_verification": "verified from packet XML mechanism methods/results locators and leakage/permeability term scan; not copied from machine extraction",
+      "supporting_source_locators": [
+        "xml:sec:13",
+        "xml:sec:21",
+        "xml:sec:23",
+        "xml:p:39",
+        "xml:p:40",
+        "xml:p:41",
+        "xml:fig:7",
+        "xml:caption:7"
+      ]
+    },
+    {
+      "claim_id": "PMC13066039-W5-MECH-003",
+      "claim_text": "ROS level analysis is source-local cellular stress phenotype evidence associated with the treatment, but it is not promoted to a direct molecular mechanism claim.",
+      "direct_assay_types": [],
+      "entity_scope": "ROS/cellular stress readout in paper-local antimicrobial mechanism assays for nisin-loaded pectin-based AgNP bioconjugates",
+      "evidence_class": "phenotype_supported",
+      "limitations": "ROS is classified as phenotype-supported mechanism context under the worker ontology; it does not by itself close a direct antimicrobial target or pathway.",
+      "source_locator": "xml:sec:13",
+      "source_review_verification": "verified from packet XML mechanism methods/results locator roles and ROS term-category scan",
+      "supporting_source_locators": [
+        "xml:sec:13",
+        "xml:sec:21",
+        "xml:sec:23",
+        "xml:fig:7"
+      ]
+    },
+    {
+      "claim_id": "PMC13066039-W5-MECH-004",
+      "claim_text": "MIC/antimicrobial activity evidence supports an antimicrobial growth phenotype, not a mechanism; DBAASP fallback rows remain candidate machine evidence only.",
+      "direct_assay_types": [],
+      "entity_scope": "paper-local antimicrobial activity section plus three DBAASP Codex fallback candidate rows for nisin-related records",
+      "evidence_class": "phenotype_supported",
+      "limitations": "MIC/activity and fallback database rows are not direct mechanism evidence and are kept separate from source-reviewed mechanism claims.",
+      "source_locator": "xml:sec:20",
+      "source_review_verification": "verified as phenotype-only from packet activity locator roles and worker-2 safe handoff counts; machine rows are boundary-scoped candidate evidence",
+      "supporting_source_locators": [
+        "xml:sec:10",
+        "xml:sec:20",
+        "xml:fig:4",
+        "database:dbaasp_machine_extracted_rows.jsonl"
+      ]
+    },
+    {
+      "claim_id": "PMC13066039-W5-MECH-005",
+      "claim_text": "Physicochemical characterization and mechanism-discussion language around AgNP bioconjugates is retained as inferred mechanism context only.",
+      "direct_assay_types": [],
+      "entity_scope": "physicochemical characterization/discussion context for nisin-loaded pectin-based AgNP bioconjugates",
+      "evidence_class": "inferred_mechanism",
+      "limitations": "Charge/cationic/characterization/discussion context is not direct mechanism evidence and is not promoted above inferred mechanism.",
+      "source_locator": "xml:sec:19",
+      "source_review_verification": "verified from packet XML locator roles and inference-term scan; no computational-only or binding-assay mechanism claim is made",
+      "supporting_source_locators": [
+        "xml:sec:19",
+        "xml:sec:21",
+        "xml:p:30"
+      ]
+    }
+  ],
+  "paper_id": "PMC13066039",
+  "protocol": "amp_three_layer_v2",
+  "publication_grade_claim": "not_claimed_by_worker5_owner_repair_pending_worker6_adjudication",
+  "quality_checks": {
+    "all_claims_have_claim_id": true,
+    "all_claims_have_claim_text": true,
+    "all_claims_have_entity_scope": true,
+    "all_claims_have_evidence_class": true,
+    "all_claims_have_source_locator": true,
+    "claim_text_unsupported_microscopy_token_scan": "passed",
+    "direct_assay_type_source_support_scan": "passed",
+    "direct_claims_have_direct_assay_types": true,
+    "machine_candidate_boundary_preserved": "passed",
+    "reasoning_effort_exact": true,
+    "recursive_project_source_locator_count": 0,
+    "recursive_project_source_locator_scan": "passed",
+    "review_model_exact": true,
+    "unsupported_tem_removed_from_bacterial_morphology_claim": true
+  },
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "reviewed_at": "2026-07-27T10:29:32Z",
+  "source_locator_resolution_issues": [],
+  "source_review_depth": {
+    "figure_captions": {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/figure_captions.json",
+      "reviewed": true
+    },
+    "merged_database_rows": {
+      "fallback_machine_candidate_rows": 3,
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0
+      },
+      "reviewed": true,
+      "source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/database/database_source_manifest.json"
+    },
+    "paper_pdf_text": {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/pdf_text.jsonl",
+      "reviewed": true,
+      "role": "cross-surface term-category scan; no PDF passages copied"
+    },
+    "paper_xml": {
+      "locator_map_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/xml_locator_map.worker5.json",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/raw/paper.xml",
+      "reviewed": true
+    },
+    "pdf_tables": {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/pdf_tables.json",
+      "reviewed": true,
+      "table_count": 0
+    },
+    "supplementary_assets": {
+      "file_count": 0,
+      "impact": "no supplementary mechanism assets to review in packet",
+      "index_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/supplementary_index.json",
+      "reviewed": true
+    },
+    "xml_sections": {
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13066039/extracted/xml_sections.json",
+      "reviewed": true,
+      "term_scan_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/mechanism_source_scan.worker5.json"
+    }
+  },
+  "source_reviewed_claims_complete_for_available_packet": true,
+  "source_reviewed_complete": true,
+  "status_reason": "worker-5 source-reviewed repair ready for worker-6 adjudication; direct morphology claim is SEM-only and source locators are primary packet/database locators only",
+  "strict_scope": {
+    "checkout_only": true,
+    "database_fallback_boundary": "DBAASP Codex fallback rows are candidate machine evidence only and are not used as source-verified mechanism evidence",
+    "internet_used": false,
+    "paper_id_only": "PMC13066039"
+  },
+  "targeted_rework_needed": false,
+  "targeted_rework_targets": [],
+  "unresolved_blockers": [],
+  "validation": {
+    "gate_diagnostics": {
+      "artifact_field_validation": {
+        "claim_count": 5,
+        "direct_claim_count": 2,
+        "required_worker5_claim_fields_present": true,
+        "status": "pass"
+      },
+      "diagnostic_outputs": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/packet_gate_worker5.stdout",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/packet_gate_worker5.stderr",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/semantic_gate_worker5.stdout",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/semantic_gate_worker5.stderr",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/publication_gate_worker5.stdout",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/publication_gate_worker5.stderr"
+      ],
+      "packet_gate": {
+        "exit_code": 2,
+        "hard_findings": [
+          "missing_final_files"
+        ],
+        "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/packet_gate_worker5.json",
+        "worker5_interpretation": "diagnostic failure reflects downstream final files absent; packet files and material extraction are present"
+      },
+      "publication_gate": {
+        "exit_code": 2,
+        "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/publication_gate_worker5.json",
+        "risk_codes": [
+          "missing_final_file"
+        ],
+        "worker5_interpretation": "publication-grade pass is false because final review/activity/database/mechanism final files are not assembled/adjudicated"
+      },
+      "semantic_gate": {
+        "exit_code": 1,
+        "hard_issue_codes": [
+          "missing_review_report",
+          "missing_activity_records",
+          "missing_database_record_verification"
+        ],
+        "json_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13066039/work/mechanism_ontology/semantic_gate_worker5.json",
+        "worker5_interpretation": "diagnostic failure reflects missing downstream/adjudication and other-layer final artifacts; worker-5 mechanism claim-field validation passed separately"
+      }
+    },
+    "json_written_by": "worker-5",
+    "post_repair_recursive_project_source_locator_count": 0,
+    "post_repair_unsupported_direct_assay_types_removed": true,
+    "rework_response_required": true,
+    "runtime_open_ticket_ids_assigned_to_worker5": [
+      "rwk-PMC13066039-campaign-r01-worker5-recursive-mechanism-locator-and-unsupported-direct-a"
+    ]
+  },
+  "worker": "worker-5",
+  "worker5_repair_audit": {
+    "claim_text_repair": {
+      "claim_id": "PMC13066039-W5-MECH-001",
+      "retained_direct_assay_types": [
+        "SEM"
+      ],
+      "source_locators_checked": [
+        "xml:p:15",
+        "xml:p:37",
+        "xml:fig:6",
+        "xml:caption:6"
+      ],
+      "unsupported_assay_token_removed": true
+    },
+    "reasoning_effort": "xhigh",
+    "recursive_source_locator_repair": {
+      "project_path_source_locator_count": 0,
+      "source_locator_policy": "mechanism source locators are primary XML/PDF/packet/database locator IDs only"
+    },
+    "repaired_at": "2026-07-27T10:28:30Z",
+    "response_status": "repair_ready_for_adjudication",
+    "review_model": "gpt-5.5",
+    "runtime_open_ticket_count": 2,
+    "runtime_ticket_ids_recorded_in": "packet rework/rework_responses.jsonl",
+    "source_text_omitted": true
+  }
+}

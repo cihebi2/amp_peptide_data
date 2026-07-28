@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.3390_ph8030483",
+  "generated_at": "2026-05-09T18:36:44Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": {
+    "source_paths_checked": [
+      "paper_packets/doi__10.3390_ph8030483/packet_manifest.json",
+      "paper_packets/doi__10.3390_ph8030483/locators/locator_index.json",
+      "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ph8030483/raw/paper.xml",
+      "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ph8030483/raw/paper.pdf",
+      "paper_packets/doi__10.3390_ph8030483/extracted/pdf_text/pharmaceuticals-08-00483.txt",
+      "paper_packets/doi__10.3390_ph8030483/extracted/supplementary_text/pharmaceuticals-08-00483-s001.txt",
+      "paper_packets/doi__10.3390_ph8030483/extracted/oa_package/local-DBAASP-PMC4588179/PMC4588179/pharmaceuticals-08-00483-s001.pdf",
+      "paper_packets/doi__10.3390_ph8030483/database/database_source_manifest.json",
+      "paper_packets/doi__10.3390_ph8030483/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_ph8030483/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_ph8030483/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+    ],
+    "tools_attempted": [
+      "jq over packet/final/rework JSON artifacts",
+      "rg over local XML/PDF/supplement/database extracts",
+      "sed over pre-extracted pdftotext outputs",
+      "CSV lookup in merged all_sequences.csv and sequence_literature_links.csv",
+      "no OCR attempted because XML/PDF/supplement text contained the relevant tables and captions"
+    ],
+    "bounded_scope_note": "Worker-6 adjudication replaced automated mechanism locator placeholders with source-bounded claims; no figure digitization was needed for the gate because tabulated activity endpoints carry the quantitative values."
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "β-peptide hydrophobicity is inversely associated with MIC in planktonic Candida assays; this is a structure-activity relationship, not a direct molecular target claim.",
+      "entity_scope": "β-peptides 1-8 in planktonic Candida assays",
+      "evidence_class": "structure_activity_correlation",
+      "source_locator": {
+        "locator": [
+          "xml:sec=2.2",
+          "xml:sec=2.3",
+          "xml:table=2",
+          "supp:Table S2"
+        ],
+        "source_path": "source/paper.xml; source/supplementary/pharmaceuticals-08-00483-s001.pdf"
+      },
+      "limitations": "Correlation is source-supported; it is not promoted to a direct mechanism."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Cell-wall removal did not materially change β-peptide activity against C. albicans in the source spheroplast comparison, supporting membrane-disruption context only.",
+      "entity_scope": "β-peptides 1, 4, and 5 in C. albicans yeast/spheroplast assays",
+      "evidence_class": "indirect_mechanism_context",
+      "source_locator": {
+        "locator": [
+          "xml:sec=2.4",
+          "xml:fig=4"
+        ],
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "The paper references membrane disruption from prior work and uses cell-wall/spheroplast context here; no new direct membrane-disruption endpoint is curated as direct_mechanism."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "β-peptides show weak disruption of existing Candida biofilms but source-supported prevention of biofilm formation, with stronger prevention for more hydrophobic peptides.",
+      "entity_scope": "C. albicans, C. glabrata, C. parapsilosis, and C. tropicalis biofilm assays",
+      "evidence_class": "phenotypic_biofilm_activity",
+      "source_locator": {
+        "locator": [
+          "xml:sec=2.5",
+          "xml:sec=2.6",
+          "xml:sec=2.7",
+          "supp:Table S4",
+          "supp:Table S5"
+        ],
+        "source_path": "source/paper.xml; source/supplementary/pharmaceuticals-08-00483-s001.pdf"
+      },
+      "limitations": "Biofilm activity is phenotypic; the evidence is not a direct molecular mechanism."
+    }
+  ],
+  "mechanism_summary": "Mechanism layer is publication-usable with cautions: source-supported structure-activity and phenotypic biofilm findings are retained, while membrane-disruption language is kept contextual and not promoted to direct_mechanism."
+}

@@ -1,0 +1,92 @@
+{
+  "artifact_type": "database_record_verification",
+  "paper_id": "doi__10.1371_journal.pone.0229417",
+  "generated_at": "2026-05-05T19:18:16Z",
+  "reviewed_at": "2026-05-05T19:18:16Z",
+  "worker": "worker-4 + worker-6",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Source-reviewed reconciliation of linked APD6 experiment/literature rows against primary Table 3 peptide identity, InfA1 purification/activity text, S2 activity table, and paper metadata.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP03620",
+      "sequence_key": "APD6:AP03620",
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "matched_activity_record_id": "doi__10.1371_journal.pone.0229417-modified-infa1-3963da-s-pneumoniae-66405-qualitative",
+      "database_subject": "APD6 linked InfA1/InfA2 entry text for this paper",
+      "database_measure": "qualitative anti-Gram+/S. pneumoniae activity; no row-level assay value or unit in database row",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0229417/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=3:rows=8-9"
+        },
+        "primary_sequence_or_identity_verified": "predicted InfA1/InfA2 table identity supported; active anti-pneumococcal form is modified/not normalized",
+        "paper_table_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=3:rows=8-9"
+        },
+        "active_form_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=26:Purification, mass spectrometry and amino acid sequencing of the anti-pneumococcal bacteriocin secreted by S. infantarius LP90"
+        }
+      },
+      "review_notes": "Primary source supports the InfA1/InfA2 identity and qualitative anti-pneumococcal activity, but the active peptide is a 3963 Da modified InfA1 form while the predicted/unmodified InfA1 mass is not the active normalized form; APD6 lacks row-level assay values and no linked sequence row was present in the packet.",
+      "conflict_context": "Preserved as sequence_modified_not_normalized: database text can be tied to this paper and Table 3 identity, but primary source explicitly distinguishes the modified active InfA1 form from the predicted/unmodified form and does not provide APD-style exact activity values.",
+      "conflict_flags": [
+        "active_modified_mass_differs_from_predicted_sequence_mass",
+        "database_row_lacks_exact_assay_value",
+        "linked_sequence_record_absent"
+      ]
+    },
+    {
+      "source_id": "APD6:AP03620",
+      "sequence_key": "APD6:AP03620",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "database_subject": "Biochemical, genetic and transcriptional characterization of multibacteriocin production by the anti-pneumococcal dairy strain Streptococcus infantarius LP90.",
+      "database_measure": "literature metadata link",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0229417/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "primary_literature_identity_verified": true
+      },
+      "review_notes": "APD6 literature row DOI/PMID/PMCID match the primary paper metadata; this verifies the citation link only and does not override the sequence-modification caution on the linked experiment row.",
+      "conflict_context": ""
+    }
+  ],
+  "status_summary": {
+    "sequence_modified_not_normalized": 1,
+    "source_verified": 1
+  },
+  "unrecoverable_material_gaps": []
+}

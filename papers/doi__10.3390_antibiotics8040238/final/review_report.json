@@ -1,0 +1,106 @@
+{
+  "paper_id": "doi__10.3390_antibiotics8040238",
+  "reviewed_at": "2026-05-07T15:49:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Opened XML, PDF text, OA package archive, supplementary 7z/DOCX contents, Figure 3 image, and linked DBAASP rows. No source-relevant local material remains unchecked for the worker-4/6 blocker."
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-4/6 re-review resolved rwk-complete-test-0001 by source-reviewing all linked DBAASP assay/experiment/literature rows against primary Table 1, Figure 3, peptide-design text, article metadata, and the recovered supplementary DOCX figure archive. The paper is publication-grade with explicit cautions; no blocking or major rework target remains open.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics8040238/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics8040238/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics8040238/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics8040238/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics8040238/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_antibiotics8040238/source/paper.xml",
+    "papers/doi__10.3390_antibiotics8040238/source/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics8040238/extracted/pdf_text/antibiotics-08-00238.txt",
+    "paper_packets/doi__10.3390_antibiotics8040238/extracted/oa_package/local-DBAASP-PMC6963856/PMC6963856/antibiotics-08-00238-g003.jpg",
+    "paper_packets/doi__10.3390_antibiotics8040238/extracted/oa_package/local-DBAASP-PMC6963856/PMC6963856/antibiotics-08-00238-s001.7z",
+    "paper_packets/doi__10.3390_antibiotics8040238/extracted/oa_package/local-DBAASP-PMC6963856/PMC6963856/antibiotics-08-00238-s001.7z::Supplemental figures/SUPPLEMENTAL FIGURE 1.docx",
+    "paper_packets/doi__10.3390_antibiotics8040238/extracted/oa_package/local-DBAASP-PMC6963856/PMC6963856/antibiotics-08-00238-s001.7z::Supplemental figures/SUPPLEMENTAL FIGURE 2.docx",
+    "paper_packets/doi__10.3390_antibiotics8040238/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics8040238/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics8040238/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 22,
+    "activity_missing_core_fields": 0,
+    "database_records_reviewed": 42,
+    "database_status_summary": {
+      "source_verified": 42
+    },
+    "database_unresolved_records": 0,
+    "mechanism_claims": 4,
+    "direct_mechanism_claims": 0,
+    "open_rework_targets": 0,
+    "supplementary_tables_affecting_activity_or_mechanism": 0,
+    "source_review_gap_remaining": false
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 40 linked DBAASP assay/experiment rows and 2 literature rows were reconciled to primary-source locators. ND/>250 and missing linked sequence snapshots are preserved as cautions, not blockers.",
+    "layer_2_activity_toxicity": "Final worker-6 activity layer now preserves all Table 1 MIC/MHC values, including ND cases, and the hemolysis rows needed to reconcile DBAASP Figure 3 entries.",
+    "layer_3_mechanism": "Automated pending-review mechanism notes were replaced by source-reviewed computational/SAR/protease-prediction claims without direct-mechanism overclaiming.",
+    "worker_6_gate": "Open rework target rwk-complete-test-0001 is closed because the source-reviewed owner layers are repaired and no unrecoverable local gap blocks publication-grade status."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_sequence_snapshot",
+      "severity": "caution",
+      "status": "source_verified_from_primary_paper_not_database_sequence_row",
+      "record": "DBAASP:DBAASPS_14272 and DBAASP:DBAASPR_14273",
+      "note": "The packet has no linked_sequence_records rows; worker-4 verified peptide names, substitutions, and sequences from the primary XML section 4.2 and kept this provenance explicit."
+    },
+    {
+      "scope": "database_nd_threshold_normalization",
+      "severity": "caution",
+      "status": "source_verified_with_source_raw_value_preserved",
+      "record": "WT MIC rows for S. aureus ATCC29213, S. aureus ATCC43300, and B. cereus ATCC11778",
+      "note": "DBAASP encodes source ND at maximum 250 μM as >250 μM. Final activity rows preserve ND and carry the source footnote rather than fabricating an exact MIC."
+    },
+    {
+      "scope": "paper_internal_strain_label",
+      "severity": "caution",
+      "status": "table_and_database_agree_methods_text_differs",
+      "record": "B. cereus ATCC11778 activity rows",
+      "note": "Table 1 and DBAASP use ATCC11778; the methods prose has a different terminal digit. The curated rows follow the table/database target and preserve the caution."
+    },
+    {
+      "scope": "supplementary_archive",
+      "severity": "caution",
+      "status": "recovered_figure_only_docx_assets",
+      "record": "antibiotics-08-00238-s001.7z",
+      "note": "The OA package supplementary archive was opened with 7zz and OOXML text extraction. It contains Figure S1/S2 DOCX files, not structured activity/toxicity tables."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "computational_model_not_direct_mechanism",
+      "record": "mechanism_ontology_record.json",
+      "note": "MD, hydrogen-bond, and cleavage-prediction claims remain computational/inferred evidence classes; no direct wet mechanism claim is asserted."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": []
+}

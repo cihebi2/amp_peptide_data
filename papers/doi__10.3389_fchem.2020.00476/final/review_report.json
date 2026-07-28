@@ -1,0 +1,175 @@
+{
+  "paper_id": "doi__10.3389_fchem.2020.00476",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "reviewed_at": "2026-05-05T19:13:04Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "path": "papers/doi__10.3389_fchem.2020.00476/source/paper.xml",
+      "coverage": "article metadata, sequence/modification results, antimicrobial/hemolysis/cell viability sections, mechanism sections, and figure captions"
+    },
+    "paper_pdf": {
+      "status": "reviewed_packet_text",
+      "path": "papers/doi__10.3389_fchem.2020.00476/source/paper.pdf",
+      "text_path": "paper_packets/doi__10.3389_fchem.2020.00476/extracted/pdf_text/landing-1.txt",
+      "coverage": "PDF text cross-check for primary sequence, MIC/MBC references, IC50/HC50/LDH results, and figure captions"
+    },
+    "oa_package": {
+      "status": "reviewed_inventory_and_reused_primary_members",
+      "path": "paper_packets/doi__10.3389_fchem.2020.00476/extracted/oa_package",
+      "coverage": "OA package contains primary nxml/pdf, figures, and Data_Sheet_1.DOCX; duplicate APD6/DRAMP package copies agree on the relevant assets"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_docx_table_and_landing_assets",
+      "paths": [
+        "paper_packets/doi__10.3389_fchem.2020.00476/extracted/oa_package/local-APD6-pmc_package/PMC7291860/Data_Sheet_1.DOCX",
+        "paper_packets/doi__10.3389_fchem.2020.00476/raw/supplementary_original/local-DRAMP-Data_Sheet_1.DOCX",
+        "paper_packets/doi__10.3389_fchem.2020.00476/raw/supplementary_original/landing-1.bin"
+      ],
+      "coverage": "DOCX Supplementary Table 2 parsed for MIC/MBC values; landing bin files are publisher HTML duplicates and do not add assay tables"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "paths": [
+        "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv"
+      ],
+      "coverage": "APD6 AP04839 and DRAMP DRAMP32284 sequence, activity, and literature rows reviewed against primary source evidence"
+    }
+  },
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_but_analysis_repaired_from_obtainable_local_sources",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": true,
+      "used": true,
+      "blocker": false,
+      "note": "DOCX table parsed manually during worker-2/6 re-review."
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false,
+    "unrecoverable_material_gaps": []
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "22 rows now have endpoint, raw value, unit where required, target species/strain, conditions, and source locators."
+    },
+    {
+      "check": "supplementary_table_recovery",
+      "result": "pass",
+      "evidence": "Paper-local DOCX Supplementary Table 2 was reopened and parsed for seven MIC/MBC pairs."
+    },
+    {
+      "check": "database_record_status_and_conflicts",
+      "result": "pass_with_cautions",
+      "evidence": "Five linked APD6/DRAMP rows reviewed; status_counts={'source_conflict': 2, 'sequence_modified_not_normalized': 1, 'source_verified': 2}. Terminal amidation and APD6 free-text conflicts are preserved."
+    },
+    {
+      "check": "mechanism_claim_contract",
+      "result": "pass_with_cautions",
+      "evidence": "4 mechanism claims carry claim_id, evidence class, source locator, and direct assay types where direct_mechanism is used."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is answered in rework_responses.jsonl and no final rework target remains open."
+    },
+    {
+      "check": "unrecoverable_material_gaps",
+      "result": "pass",
+      "evidence": "No blocking local material gap remains for worker-2, worker-4, or worker-6 after bounded repair."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database": "accepted_with_cautions: APD6 and DRAMP links match the paper and sequence core, primary evidence supports activity values, but APD6/DRAMP terminal-modification and APD6 free-text conflicts are preserved rather than normalized.",
+    "layer_2_activity_toxicity": "accepted: worker-2 recovered MIC/MBC from the paper-local DOCX Supplementary Table 2 and IC50/HC50/LDH values from XML/PDF primary text with locators and units.",
+    "layer_3_mechanism": "accepted_with_cautions: membrane disruption and apoptosis claims are source-located to CD, LDH, morphology, flow cytometry, TUNEL, and IHC evidence; exact image-only bar values were not fabricated.",
+    "layer_1_database_record_identity": {
+      "decision": "accepted_with_cautions",
+      "status_summary": {
+        "source_conflict": 2,
+        "sequence_modified_not_normalized": 1,
+        "source_verified": 2
+      }
+    },
+    "layer_2_activity_toxicity_evidence": {
+      "decision": "accepted",
+      "record_count": 22
+    },
+    "layer_3_mechanism_ontology": {
+      "decision": "accepted_with_cautions",
+      "claim_count": 4
+    }
+  },
+  "adjudication_summary": "Bounded re-review repaired the paper-specific blockers: DOCX Supplementary Table 2 supplies MIC/MBC rows, primary XML/PDF text supplies IC50/HC50/LDH and sequence/amidation evidence, and APD6/DRAMP conflicts are preserved as cautions. The paper is publication-grade with cautions because supported values are source-located and no worker-2/4/6 blocking ticket remains.",
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fchem.2020.00476/handoff_context.json",
+    "paper_packets/doi__10.3389_fchem.2020.00476/packet_manifest.json",
+    "paper_packets/doi__10.3389_fchem.2020.00476/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fchem.2020.00476/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fchem.2020.00476/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fchem.2020.00476/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.3389_fchem.2020.00476/extracted/oa_package/local-APD6-pmc_package/PMC7291860/Data_Sheet_1.DOCX",
+    "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2020.00476/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_terminal_modification_conflict_preserved",
+      "evidence_context": "Primary source verifies Dermaseptin-PP-NH2, while DRAMP metadata marks C-terminal modification as Free and APD6 stores only the unmodified core sequence.",
+      "affected_records": [
+        "DRAMP:DRAMP32284",
+        "APD6:AP04839"
+      ]
+    },
+    {
+      "caution_code": "apd6_comment_mixed_provenance",
+      "evidence_context": "APD6 free text includes source-supported values and unsupported/cross-literature statements; only primary-source-supported values were promoted into final activity rows.",
+      "affected_records": [
+        "APD6:AP04839"
+      ]
+    },
+    {
+      "caution_code": "figure_exact_values_not_digitized",
+      "evidence_context": "For hemolysis/LDH/mechanism figures, the final artifacts preserve textual numeric summaries and qualitative figure-caption support without inventing exact bar heights."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": []
+}

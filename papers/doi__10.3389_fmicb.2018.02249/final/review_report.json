@@ -1,0 +1,108 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2018.02249",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "reviewed_at": "2026-05-06T21:32:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figures_tables": true,
+    "note": "Owner-layer repair consumed local XML, extracted PDF text, figure captions, supplementary HTML/bin captures, and linked database snapshots. No external supplement was required or chased beyond local material."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmicb.2018.02249/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/raw/supplementary_original/landing-*.bin",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.02249/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 9,
+    "database_status_summary": {
+      "source_verified": 19,
+      "source_conflict": 2
+    },
+    "mechanism_claims": 3,
+    "generic_activity_endpoints": 0,
+    "mic_like_rows_missing_units": 0,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains a separate structural layer and still records nonblocking extraction gaps for local supplementary HTML/bin captures; XML/PDF/database material was sufficient for worker-2/4/6 owner-layer repair.",
+    "validator_contract": "Structural packet/final files are present; this repair changes semantic/source-reviewed content rather than material packet membership.",
+    "layer_1_database": "DBAASP assay and literature rows now match primary-source sequence/activity/toxicity locators; CAMP/dbAMP summary rows preserve source-context conflicts as cautions.",
+    "layer_2_activity_toxicity": "Seven Table 1 MIC rows and two toxicity rows were rebuilt with endpoint, value, unit, target, conditions, and source locators.",
+    "layer_3_mechanism": "Mechanism claims were narrowed to PI/CFDA/confocal membrane evidence, gel retardation DNA binding, and structural context without graph-value fabrication.",
+    "worker_6_adjudication": "The original blocking ticket is closed only after source-supported activity recovery, database reconciliation, and paper-specific provenance; acceptance remains with cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_summary_source_context_preserved",
+      "severity": "caution",
+      "evidence_context": "CAMP/dbAMP summary rows match the primary paper MIC sequence/value surface but carry database source/activity labels that are not equivalent to the primary native-ES purification/PTM context; retained as source_conflict rows.",
+      "affected_record_count": 2
+    },
+    {
+      "caution_code": "sequence_modification_not_flattened",
+      "severity": "caution",
+      "evidence_context": "Primary paper reports both MASCOT TPFLLVGTQIDLR and a PEAKS PTM-bearing variant; database matching uses the unmodified MASCOT sequence while preserving the modification caveat."
+    },
+    {
+      "caution_code": "supplementary_assets_not_distinct_tables",
+      "severity": "caution",
+      "evidence_context": "Local supplementary .bin assets were opened/classified as HTML captures; no local spreadsheet, office document, or PDF supplement supplied additional activity values beyond XML/PDF Table 1 and results text."
+    },
+    {
+      "caution_code": "mechanism_figure_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Mechanism claims are source-reviewed qualitatively from text and figure captions; exact graph/histogram values were not fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_pass": true,
+    "gate_reports": {
+      "semantic": "reports/doi__10.3389_fmicb.2018.02249.semantic_gate.json",
+      "publication_quality": "reports/doi__10.3389_fmicb.2018.02249.publication_quality.json"
+    }
+  },
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review recovered row-level Sarconesin MIC/toxicity evidence from local XML/PDF text, reconciled linked database rows while preserving database-source cautions, and closes the complete-test ticket as accepted_with_cautions rather than accepted_clean.",
+  "gate_rerun_at": "2026-05-06T21:34:08Z"
+}

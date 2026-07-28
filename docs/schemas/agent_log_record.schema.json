@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/agent_log_record.schema.json",
+  "title": "Miaobi Agent Log Record",
+  "type": "object",
+  "required": ["record_type", "workflow_id", "paper_id", "level", "category", "message", "created_at"],
+  "additionalProperties": true,
+  "properties": {
+    "record_type": { "const": "agent_log" },
+    "workflow_id": { "type": "string" },
+    "paper_id": { "type": "string" },
+    "state": { "type": "string" },
+    "level": { "type": "string", "enum": ["debug", "info", "warning", "error"] },
+    "category": { "type": "string" },
+    "message": { "type": "string" },
+    "path_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

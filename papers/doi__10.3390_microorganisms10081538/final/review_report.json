@@ -1,0 +1,144 @@
+{
+  "paper_id": "doi__10.3390_microorganisms10081538",
+  "reviewed_at": "2026-05-09T09:07:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML, PDF text, OA package members, supplementary ZIP/PDF text, linked DBAASP JSONL rows, and merged sequence/experiment/literature exports were reopened for this bounded worker-4/6 re-review."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_microorganisms10081538/handoff_context.json",
+    "paper_packets/doi__10.3390_microorganisms10081538/packet_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms10081538/locators/locator_index.json",
+    "paper_packets/doi__10.3390_microorganisms10081538/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_microorganisms10081538/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_microorganisms10081538/source/paper.xml",
+    "papers/doi__10.3390_microorganisms10081538/source/paper.pdf",
+    "paper_packets/doi__10.3390_microorganisms10081538/extracted/pdf_text/microorganisms-10-01538.txt",
+    "paper_packets/doi__10.3390_microorganisms10081538/extracted/oa_package/local-DBAASP-PMC9412426/PMC9412426/microorganisms-10-01538-s001.zip",
+    "paper_packets/doi__10.3390_microorganisms10081538/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms10081538/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms10081538/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "adjudication_summary": "Worker-4/6 re-review source-verified the DBAASP antimicrobial rows, preserved the P4 macrophage exact cytotoxicity percentage as a nonblocking source_conflict, retained terminal modification caveats for P4/nScr, and closed the prior framework-test rework ticket with publication-grade cautions.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP B. subtilis/E. coli activity rows and literature links match primary Table 1/article metadata. P4 macrophage exact 82% cytotoxicity is not tabulated locally and remains source_conflict; P4/nScr N-acetylation and C-amidation are preserved from primary methods/supplement rather than silently normalized.",
+    "layer_2_activity_toxicity": "Final activity evidence keeps four antimicrobial Table 1 outcomes plus source-supported macrophage toxicity/non-toxicity statements; exact figure-only percentages are not fabricated.",
+    "layer_3_mechanism": "Mechanism output is limited to phenotype/discussion-supported CRAC/sterol and cationic-lipid context, with no direct mechanism overclaim.",
+    "layer_4_publication_grade_review": "No blocking or major worker-4/6 issue remains; nonblocking limitations are recorded as cautions and unrecoverable_material_gaps with blocks_publication_grade=false."
+  },
+  "semantic_quality_checks": {
+    "activity_records_final": 6,
+    "database_status_summary": {
+      "source_conflict": 2,
+      "source_verified": 12
+    },
+    "database_audit_rows": 14,
+    "mechanism_claims": 2,
+    "source_conflicts_preserved": 2,
+    "unrecoverable_material_gaps_nonblocking": 2,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_issue_count": 0,
+    "publication_quality_risk_count": 0,
+    "publication_quality_pass": true
+  },
+  "caution_findings": [
+    {
+      "caution_code": "p4_macrophage_exact_database_percent_source_conflict",
+      "evidence_context": "DBAASP exact 82% cytotoxicity is not promoted because local XML/PDF/supplement text only supports qualitative cytotoxicity at 50 µM and a broad morphology-based range.",
+      "record_ids": [
+        "DBAASP:DBAASPS_19628 assay 18465"
+      ]
+    },
+    {
+      "caution_code": "terminal_modifications_must_be_preserved",
+      "evidence_context": "Primary methods state Ac- and -NH2 terminal modifications for P4 and nScr; merged DBAASP sequence catalog stores the residue strings only.",
+      "record_ids": [
+        "DBAASP:DBAASPS_19628",
+        "DBAASP:DBAASPS_19629"
+      ]
+    },
+    {
+      "caution_code": "mechanism_context_not_direct_assay",
+      "evidence_context": "Mechanism claims are source-supported as phenotype/discussion context and are not labeled direct_mechanism."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_4_exact_cytotoxicity_percent_not_tabulated",
+      "source_paths_checked": [
+        "papers/doi__10.3390_microorganisms10081538/source/paper.xml",
+        "papers/doi__10.3390_microorganisms10081538/source/paper.pdf",
+        "paper_packets/doi__10.3390_microorganisms10081538/extracted/oa_package/local-DBAASP-PMC9412426/PMC9412426/microorganisms-10-01538-g004.jpg",
+        "paper_packets/doi__10.3390_microorganisms10081538/extracted/oa_package/local-DBAASP-PMC9412426/PMC9412426/microorganisms-10-01538-s001.zip"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF text",
+        "unzip -p supplementary PDF",
+        "pdftotext",
+        "OA figure inventory review"
+      ],
+      "why_unrecoverable": "The local XML/PDF/supplement text and Figure 4 caption support qualitative cytotoxicity at 50 µM but do not provide a tabulated exact 82% cytotoxicity value; recovering the exact percentage would require chart digitization/unstated source data.",
+      "impact": "The DBAASP exact P4 macrophage percentage remains a nonblocking source_conflict caution; final activity preserves only source-supported qualitative toxicity.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "supplementary_numeric_source_tables_absent",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_microorganisms10081538/extracted/oa_package/local-DBAASP-PMC9412426/PMC9412426/microorganisms-10-01538-s001.zip",
+        "paper_packets/doi__10.3390_microorganisms10081538/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_microorganisms10081538/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "unzip -l",
+        "unzip -p",
+        "pdftotext",
+        "supplementary index/table JSON inspection"
+      ],
+      "why_unrecoverable": "The local supplementary ZIP contains a PDF with Figures S1/S2 and Table S1 sequence/mass information, but no machine-readable source-data table or spreadsheet for exact figure measurements.",
+      "impact": "Final mechanism remains qualitative/contextual and final activity avoids fabricated exact figure values.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "updated_at": "2026-05-09T09:09:49Z",
+  "gate_results": {
+    "semantic_report": "reports/doi__10.3390_microorganisms10081538.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_report": "reports/doi__10.3390_microorganisms10081538.publication_quality.json",
+    "publication_grade_pass": true,
+    "publication_risk_counts": {}
+  }
+}

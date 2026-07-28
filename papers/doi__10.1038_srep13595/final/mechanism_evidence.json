@@ -1,0 +1,114 @@
+{
+  "paper_id": "doi__10.1038_srep13595",
+  "generated_at": "2026-05-03T21:57:06Z",
+  "reviewed_at": "2026-05-03T21:57:06Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed final mechanism ontology from primary XML/PDF evidence; automated pending-review locator notes were replaced with adjudicated, assay-bounded mechanism claims.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-tnfri-selective-binding",
+      "claim_text": "RMP16 is adjudicated as a TNFRI-selective TNF-derived peptide because primary SPR/ITC and radioligand competition data show much stronger TNFRI than TNFRII engagement.",
+      "entity_scope": "RMP16",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SPR",
+        "ITC",
+        "[125I]TNF α competitive displacement"
+      ],
+      "source_locator": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1",
+          "evidence_summary": "KD values for hTNFRI/hTNFRII"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=5:RMP16 inhibited proliferation of multiple tumor cells; xml:fig=2:Figure 2E",
+          "evidence_summary": "Competition IC50 values"
+        }
+      ],
+      "limitations": "TNFRI selectivity is directly supported; downstream cellular effects are in DU145/HUVEC models, not antimicrobial MIC assays."
+    },
+    {
+      "claim_id": "mech-002-caspase-apoptosis",
+      "claim_text": "RMP16 induces DU145 apoptosis through caspase-dependent markers in the primary DU145 assays.",
+      "entity_scope": "RMP16 in DU145 cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "DAPI staining",
+        "Annexin V-FITC/PI flow cytometry",
+        "MTT",
+        "Western blot for caspase-8/caspase-3 cleavage"
+      ],
+      "source_locator": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=6:RMP16 significantly induced apoptosis for Du145 cell"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=3:Figure 3"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        }
+      ],
+      "limitations": "Mechanism is cancer-cell apoptosis; it must not be generalized to antibacterial membrane disruption."
+    },
+    {
+      "claim_id": "mech-003-g0g1-arrest",
+      "claim_text": "RMP16 blocks DU145 cell-cycle progression with increased G0/G1 fraction and reduced S/G2-M fractions, with P21/P27 and cyclin/E2F1 changes reported.",
+      "entity_scope": "RMP16 in DU145 cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "PI flow cytometry",
+        "Western blot for cell-cycle proteins"
+      ],
+      "source_locator": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=6:RMP16 significantly induced apoptosis for Du145 cell"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=5:Figure 5"
+        }
+      ],
+      "limitations": "Gene-chip details are discussed qualitatively; final record keeps the source-reported cell-cycle measurements rather than inferring a broader pathway."
+    },
+    {
+      "claim_id": "mech-004-antiangiogenesis",
+      "claim_text": "RMP16 inhibits tumor angiogenesis and CAM neovascularization in primary in-vivo/ex-vivo assays.",
+      "entity_scope": "RMP16 in DU145 xenograft and chick CAM models",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "CD31 immunohistochemistry microvessel density",
+        "chick chorioallantoic membrane branch-point assay"
+      ],
+      "source_locator": [
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=9:RMP16 inhibited tumor angiogenesis and neovascularization"
+        },
+        {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=7:Figure 7"
+        }
+      ],
+      "limitations": "Antiangiogenesis is supported in tumor/CAM models; it is not an antimicrobial mechanism claim."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "not_antimicrobial_mechanism",
+      "evidence_context": "The primary paper is an antitumor/TNF-receptor study. No antimicrobial MIC or membrane-disruption assay is present locally."
+    }
+  ]
+}

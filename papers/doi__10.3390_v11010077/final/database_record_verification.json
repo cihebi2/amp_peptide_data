@@ -1,0 +1,968 @@
+{
+  "paper_id": "doi__10.3390_v11010077",
+  "generated_at": "2026-05-10T18:36:43Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4/worker-6 source-reviewed audit of linked DBAASP/DRAMP assay, experiment, activity, and literature rows against primary XML/PDF results, OA figures, packet database snapshots, and merged sequence/experiment catalogs.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_v11010077/handoff_context.json",
+    "paper_packets/doi__10.3390_v11010077/packet_manifest.json",
+    "paper_packets/doi__10.3390_v11010077/locators/locator_index.json",
+    "paper_packets/doi__10.3390_v11010077/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_v11010077/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_v11010077/source/paper.xml",
+    "papers/doi__10.3390_v11010077/source/paper.pdf",
+    "paper_packets/doi__10.3390_v11010077/raw/paper.xml",
+    "paper_packets/doi__10.3390_v11010077/raw/paper.pdf",
+    "paper_packets/doi__10.3390_v11010077/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt",
+    "paper_packets/doi__10.3390_v11010077/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_v11010077/extracted/oa_package/local-DBAASP-PMC6356695/PMC6356695/viruses-11-00077-g001.jpg",
+    "paper_packets/doi__10.3390_v11010077/extracted/oa_package/local-DBAASP-PMC6356695/PMC6356695/viruses-11-00077-g002.jpg",
+    "paper_packets/doi__10.3390_v11010077/extracted/oa_package/local-DBAASP-PMC6356695/PMC6356695/viruses-11-00077-g003.jpg",
+    "paper_packets/doi__10.3390_v11010077/extracted/oa_package/local-DBAASP-PMC6356695/PMC6356695/viruses-11-00077-g004.jpg",
+    "paper_packets/doi__10.3390_v11010077/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_v11010077/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_v11010077/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_v11010077/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_v11010077/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_v11010077/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dramp_activity_text_records.csv"
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 6,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 7,
+    "linked_literature_records": 4,
+    "linked_sequence_records": 0
+  },
+  "status_summary": {
+    "source_conflict": 14,
+    "source_verified": 4
+  },
+  "primary_source_evidence": {
+    "peptide_identity": "Section 2.1 identifies LL-37, temporin-SHa, [K3]SHa, and temporin-Tb; Introduction states SHa is 13 residues and C-terminally amidated and [K3]SHa is Ser3Lys.",
+    "cytotoxicity": "Section 3.1/Figure 1 source-verifies LL-37 80% viability at 5 µM, SHa 77% at 20 µM, and [K3]SHa 74% at 10 µM.",
+    "antiviral_replication": "Section 3.2/Figure 2 source-verifies LL-37 94% reduction at 2.5 µM, SHa 52% at 10 µM, [K3]SHa 48% at 2.5 µM and 57% at 5 µM.",
+    "virucidal_assay": "Section 3.4/Figure 4 source-verifies SHa 99.4% infectious-titer reduction after 10 µM pre-incubation.",
+    "database_sequence_context": "Merged sequence catalogs provide exact sequences for linked records; exact sequence strings are not all embedded in this article, so affected assay/activity rows remain source_conflict with context."
+  },
+  "record_audits": [
+    {
+      "sequence_key": "DBAASP:DBAASPR_764",
+      "source_id": "DBAASP:DBAASPR_764",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 1,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "18457"
+      },
+      "peptide_name": "Human Cathelicidin, CAP-18, hCAP-18, LL-37",
+      "primary_name": "LL-37",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "20% Cytotoxicity",
+      "database_value": "5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
+        "database_length": 37,
+        "primary_identity_support": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-ll37-5um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_764",
+      "source_id": "DBAASP:DBAASPR_764",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 2,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "154229"
+      },
+      "peptide_name": "Human Cathelicidin, CAP-18, hCAP-18, LL-37",
+      "primary_name": "LL-37",
+      "database_subject": "HSV-1",
+      "database_measure": "IC90 REP",
+      "database_value": "2.5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
+        "database_length": 37,
+        "primary_identity_support": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-ll37-2p5um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_2204",
+      "source_id": "DBAASP:DBAASPR_2204",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 3,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "18448"
+      },
+      "peptide_name": "Temporin-SHa, Temporin-1Sa",
+      "primary_name": "temporin-SHa",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "23% Cytotoxicity",
+      "database_value": "20",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLSGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-sha-20um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_2204",
+      "source_id": "DBAASP:DBAASPR_2204",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 4,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "154206"
+      },
+      "peptide_name": "Temporin-SHa, Temporin-1Sa",
+      "primary_name": "temporin-SHa",
+      "database_subject": "HSV-1",
+      "database_measure": "IC50 REP",
+      "database_value": "10",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLSGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-sha-10um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPS_8203",
+      "source_id": "DBAASP:DBAASPS_8203",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 5,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "18449"
+      },
+      "peptide_name": "Temporin-1Sa [S3K]",
+      "primary_name": "[K3]SHa",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "26% Cytotoxicity",
+      "database_value": "10",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-k3sha-10um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPS_8203",
+      "source_id": "DBAASP:DBAASPS_8203",
+      "source_table": "linked_assay_records.jsonl",
+      "source_row_index": 6,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_assay_records.jsonl",
+        "source_record_id": "154207"
+      },
+      "peptide_name": "Temporin-1Sa [S3K]",
+      "primary_name": "[K3]SHa",
+      "database_subject": "HSV-1",
+      "database_measure": "IC50 REP",
+      "database_value": "2.5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-k3sha-2p5um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DRAMP:DRAMP31333",
+      "source_id": "DRAMP:DRAMP31333",
+      "source_table": "linked_dramp_activity_records.jsonl",
+      "source_row_index": 1,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_dramp_activity_records.jsonl",
+        "source_record_id": "DRAMP31333"
+      },
+      "peptide_name": "Temporin-Sha[K3]",
+      "primary_name": "[K3]SHa",
+      "database_subject": "[Ref.30669255]HSV-1:inhibition of HSV-1 replication in human keratinocytes(48% inhibition at 2.5 µM,57% inhibition at 5 µM).",
+      "database_measure": "Antimicrobial, Antiviral",
+      "database_value": "",
+      "database_unit": "",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa is the synthetic lysine-at-position-3 analog; DRAMP exact sequence is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa is the synthetic lysine-at-position-3 analog; DRAMP exact sequence is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-k3sha-2p5um-hsv1-reduction",
+          "doi__10.3390_v11010077-fig2-k3sha-5um-hsv1-reduction",
+          "doi__10.3390_v11010077-fig1-k3sha-10um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_activity_label_broader_than_primary_antiviral_assay"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_764",
+      "source_id": "DBAASP:DBAASPR_764",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 1,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "18457"
+      },
+      "peptide_name": "LL-37",
+      "primary_name": "LL-37",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "20% Cytotoxicity",
+      "database_value": "5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
+        "database_length": 37,
+        "primary_identity_support": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-ll37-5um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_764",
+      "source_id": "DBAASP:DBAASPR_764",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 2,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "154229"
+      },
+      "peptide_name": "LL-37",
+      "primary_name": "LL-37",
+      "database_subject": "HSV-1",
+      "database_measure": "IC90 REP",
+      "database_value": "2.5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES",
+        "database_length": 37,
+        "primary_identity_support": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names LL-37 as a 37-residue human cathelicidin and purchased synthetic peptide; exact sequence is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-ll37-2p5um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_2204",
+      "source_id": "DBAASP:DBAASPR_2204",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 3,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "18448"
+      },
+      "peptide_name": "temporin-SHa",
+      "primary_name": "temporin-SHa",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "23% Cytotoxicity",
+      "database_value": "20",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLSGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-sha-20um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_2204",
+      "source_id": "DBAASP:DBAASPR_2204",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 4,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "154206"
+      },
+      "peptide_name": "temporin-SHa",
+      "primary_name": "temporin-SHa",
+      "database_subject": "HSV-1",
+      "database_measure": "IC50 REP",
+      "database_value": "10",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLSGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper names temporin-SHa as 13-residue, C-terminally amidated SHa; exact residue string is not embedded in this article"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-sha-10um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPS_8203",
+      "source_id": "DBAASP:DBAASPS_8203",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 5,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "18449"
+      },
+      "peptide_name": "[K3]SHa",
+      "primary_name": "[K3]SHa",
+      "database_subject": "Human Primary Epidermal Keratinocytes (HEK)",
+      "database_measure": "26% Cytotoxicity",
+      "database_value": "10",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig1-k3sha-10um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_cytotoxicity_percent_matches_source_by_subtracting_cell_viability_from_100"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPS_8203",
+      "source_id": "DBAASP:DBAASPS_8203",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 6,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "154207"
+      },
+      "peptide_name": "[K3]SHa",
+      "primary_name": "[K3]SHa",
+      "database_subject": "HSV-1",
+      "database_measure": "IC50 REP",
+      "database_value": "2.5",
+      "database_unit": "µM",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa substitutes serine at position 3 with lysine and gives MW 1421.86; exact full residue string is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-k3sha-2p5um-hsv1-reduction"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_endpoint_label_is_database_inhibition_category_not_primary_ic_curve"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DRAMP:DRAMP31333",
+      "source_id": "DRAMP:DRAMP31333",
+      "source_table": "linked_experiment_records.jsonl",
+      "source_row_index": 7,
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_experiment_records.jsonl",
+        "source_record_id": "general_amps:DRAMP31333"
+      },
+      "peptide_name": "[K3]SHa",
+      "primary_name": "[K3]SHa",
+      "database_subject": "[Ref.30669255]HSV-1:inhibition of HSV-1 replication in human keratinocytes(48% inhibition at 2.5 µM,57% inhibition at 5 µM).",
+      "database_measure": "Antimicrobial, Antiviral",
+      "database_value": "",
+      "database_unit": "",
+      "sequence_check": {
+        "status": "database_sequence_preserved_primary_article_identity_partial",
+        "database_sequence": "FLKGIVGMLGKLF",
+        "database_length": 13,
+        "primary_identity_support": "paper states [K3]SHa is the synthetic lysine-at-position-3 analog; DRAMP exact sequence is database-supported",
+        "source_locator": {
+          "locator": "xml:sec=3:2.1; xml:sec=1:1. Introduction",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "database_sequence_catalog": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "primary_source_statement": "paper states [K3]SHa is the synthetic lysine-at-position-3 analog; DRAMP exact sequence is database-supported"
+        }
+      },
+      "activity_check": {
+        "status": "primary_activity_or_toxicity_source_reviewed_with_database_context",
+        "primary_source_locator": {
+          "locator": "xml:sec=13:3.1; xml:sec=14:3.2; xml:sec=16:3.4; xml:fig=1; xml:fig=2; xml:fig=4",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "supporting_text_path": "paper_packets/doi__10.3390_v11010077/extracted/pdf_text/viruses-11-00077.txt"
+        },
+        "matched_activity_record_ids": [
+          "doi__10.3390_v11010077-fig2-k3sha-2p5um-hsv1-reduction",
+          "doi__10.3390_v11010077-fig2-k3sha-5um-hsv1-reduction",
+          "doi__10.3390_v11010077-fig1-k3sha-10um-hek-viability"
+        ]
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_flags": [
+        "primary_article_does_not_embed_exact_database_sequence_string",
+        "database_activity_label_broader_than_primary_antiviral_assay",
+        "database_no_hemolysis_statement_is_database_absence_not_primary_hemolysis_assay"
+      ],
+      "conflict_context": "Primary article source-verifies the named peptide, assay context, concentration, and reported HSV-1/cytotoxicity outcome where matched, but exact database sequence strings are not all embedded in this article and some database endpoint labels are database-curated summaries. The row is preserved as source_conflict rather than promoted to fully source_verified.",
+      "review_notes": "Source-supported activity/toxicity values are linked to worker-2 rows; database-only sequence/label precision is retained as a caution."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_2204",
+      "source_id": "DBAASP:DBAASPR_2204",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_index": 1,
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_literature_records.jsonl",
+        "source_record_id": "DBAASPR_2204",
+        "database": "DBAASP"
+      },
+      "peptide_name": "temporin-SHa",
+      "database_subject": "Comparison of Anti-Viral Activity of Frog Skin Anti-Microbial Peptides Temporin-Sha and [K³]SHa to LL-37 and Temporin-Tb against Herpes Simplex Virus Type 1.",
+      "database_measure": "literature DOI/PMID/PMCID link",
+      "sequence_check": {
+        "status": "not_a_sequence_claim_literature_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "primary_source_statement": "Article metadata matches DOI 10.3390/v11010077 and PMID 30669255; this row verifies citation traceability, not peptide sequence."
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/title and is source-verified as citation traceability only."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPR_764",
+      "source_id": "DBAASP:DBAASPR_764",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_index": 2,
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_literature_records.jsonl",
+        "source_record_id": "DBAASPR_764",
+        "database": "DBAASP"
+      },
+      "peptide_name": "LL-37",
+      "database_subject": "Comparison of Anti-Viral Activity of Frog Skin Anti-Microbial Peptides Temporin-Sha and [K³]SHa to LL-37 and Temporin-Tb against Herpes Simplex Virus Type 1.",
+      "database_measure": "literature DOI/PMID/PMCID link",
+      "sequence_check": {
+        "status": "not_a_sequence_claim_literature_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "primary_source_statement": "Article metadata matches DOI 10.3390/v11010077 and PMID 30669255; this row verifies citation traceability, not peptide sequence."
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/title and is source-verified as citation traceability only."
+    },
+    {
+      "sequence_key": "DBAASP:DBAASPS_8203",
+      "source_id": "DBAASP:DBAASPS_8203",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_index": 3,
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_literature_records.jsonl",
+        "source_record_id": "DBAASPS_8203",
+        "database": "DBAASP"
+      },
+      "peptide_name": "[K3]SHa",
+      "database_subject": "Comparison of Anti-Viral Activity of Frog Skin Anti-Microbial Peptides Temporin-Sha and [K³]SHa to LL-37 and Temporin-Tb against Herpes Simplex Virus Type 1.",
+      "database_measure": "literature DOI/PMID/PMCID link",
+      "sequence_check": {
+        "status": "not_a_sequence_claim_literature_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "primary_source_statement": "Article metadata matches DOI 10.3390/v11010077 and PMID 30669255; this row verifies citation traceability, not peptide sequence."
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/title and is source-verified as citation traceability only."
+    },
+    {
+      "sequence_key": "DRAMP:DRAMP31333",
+      "source_id": "DRAMP:DRAMP31333",
+      "source_table": "linked_literature_records.jsonl",
+      "source_row_index": 4,
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.3390_v11010077/database/linked_literature_records.jsonl",
+        "source_record_id": "DRAMP31333",
+        "database": "DRAMP"
+      },
+      "peptide_name": "[K3]SHa",
+      "database_subject": "Comparison of Anti-Viral Activity of Frog Skin Anti-Microbial Peptides Temporin-Sha and [K³]SHa to LL-37 and Temporin-Tb against Herpes Simplex Virus Type 1.",
+      "database_measure": "literature DOI/PMID/PMCID link",
+      "sequence_check": {
+        "status": "not_a_sequence_claim_literature_link_only",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+          "primary_source_statement": "Article metadata matches DOI 10.3390/v11010077 and PMID 30669255; this row verifies citation traceability, not peptide sequence."
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.3390_v11010077/source/paper.xml",
+        "doi": "10.3390/v11010077",
+        "pmid": "30669255",
+        "pmcid": "PMC6356695"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches the selected paper DOI/PMID/title and is source-verified as citation traceability only."
+    }
+  ]
+}

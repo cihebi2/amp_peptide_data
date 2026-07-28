@@ -1,0 +1,91 @@
+{
+  "paper_id": "doi__10.1021_acs.langmuir.0c02135",
+  "generated_at": "2026-05-02T07:45:13Z",
+  "review_status": "source_reviewed_accepted_with_cautions",
+  "extraction_scope": "Worker-6 source-reviewed mechanism ontology from primary XML/PDF/SI locators; no unsupported cell-wall or protein-target mechanism was promoted.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "C12/C14/C16-fXXL penetrate bacterial-model lipid monolayers and change molecular ordering in Langmuir monolayer experiments.",
+      "entity_scope": "C12-fXXL, C14-fXXL, C16-fXXL in POPE/DPPG/POPG and POPG/DPPG/CL monolayers",
+      "evidence_class": "direct_model_membrane_assay",
+      "direct_assay_types": [
+        "surface pressure-area isotherms",
+        "maximum insertion pressure analysis"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1; xml:table=2; xml:fig=2:Figure 1; xml:fig=4:Figure 3"
+      },
+      "limitations": "Model monolayer evidence supports membrane interaction; it is not a direct bacterial-cell molecular target assay."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "AFM supported-bilayer experiments support membrane thinning/fluidization after lipopeptide exposure, stronger in Gram-positive lipid-film mimics.",
+      "entity_scope": "model lipid bilayers exposed to C12/C14/C16-fXXL",
+      "evidence_class": "direct_model_membrane_assay",
+      "direct_assay_types": [
+        "AFM morphology",
+        "bilayer thickness time course"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:fig=5:Figure 4; xml:fig=6:Figure 5; xml:sec=3.2"
+      },
+      "limitations": "Model bilayer data are mechanistic support for membrane activity but do not identify a specific protein/cell-wall target."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "Biological activity is strongest against Gram-positive staphylococci in Table 3, while C14-fXXL shows strong growth-inhibition dynamics in selected growth curves.",
+      "entity_scope": "MIC Table 3 and bacterial growth Figures 6-7",
+      "evidence_class": "phenotype_supported_activity_context",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3; xml:fig=7:Figure 6; xml:fig=8:Figure 7; xml:sec=3.3"
+      },
+      "limitations": "Growth inhibition supports antimicrobial phenotype; exact curve point values were not digitized beyond prose/table values."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "model_membrane_not_cell_target",
+      "evidence_context": "Membrane-active mechanism is supported by model membrane monolayer/bilayer assays plus phenotype, not direct bacterial-cell target identification.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1; xml:table=2; xml:fig=4:Figure 3; xml:fig=6:Figure 5"
+      }
+    },
+    {
+      "caution_code": "figure_curve_exact_points_not_digitized",
+      "evidence_context": "Figures 6-8 provide image/curve evidence; final artifacts retain table/prose values and do not invent exact curve points.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:fig=7:Figure 6; xml:fig=8:Figure 7; xml:fig=9:Figure 8"
+      }
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure8_exact_hemolysis_points_not_tabulated",
+      "source_paths_checked": [
+        "papers/doi__10.1021_acs.langmuir.0c02135/source/paper.xml",
+        "paper_packets/doi__10.1021_acs.langmuir.0c02135/extracted/pdf_text/la0c02135.txt",
+        "paper_packets/doi__10.1021_acs.langmuir.0c02135/extracted/figure_captions.json",
+        "paper_packets/doi__10.1021_acs.langmuir.0c02135/extracted/oa_package/local-DBAASP-PMC7660941/PMC7660941/la0c02135_0009.jpg",
+        "paper_packets/doi__10.1021_acs.langmuir.0c02135/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1021_acs.langmuir.0c02135/database/linked_experiment_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF text",
+        "ElementTree table extraction",
+        "figure caption and local OA image review",
+        "linked DBAASP/CAMP row reconciliation"
+      ],
+      "why_unrecoverable": "Local primary material contains Figure 8 as a plotted image plus caption/prose, but no embedded data table for exact database hemolysis percentages at 10 and 50 ug/mL. Exact graph points were not digitized or promoted to source_verified.",
+      "impact": "Exact DBAASP hemolysis percentage rows remain source_conflict; supported toxicity prose/range records are retained and the paper is accepted_with_cautions rather than accepted_clean.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

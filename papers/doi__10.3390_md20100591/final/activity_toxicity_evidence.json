@@ -1,0 +1,154 @@
+{
+  "paper_id": "doi__10.3390_md20100591",
+  "generated_at": "2026-05-09T08:46:33Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-2/6 source-reviewed activity-toxicity repair from local XML/PDF prose, Figure 3/4 captions/images, supplementary ZIP inventory, and linked DBAASP rows. Only primary-supported values are final activity rows; database-only exact non-AGS IC50 values are preserved in database audit conflicts.",
+  "source_tables_checked": [
+    {
+      "source_path": "source/paper.xml",
+      "locator": "xml:sec=4:2. Results and Discussion"
+    },
+    {
+      "source_path": "source/paper.xml",
+      "locator": "xml:sec=12:3.7. Cell Proliferation Assay"
+    },
+    {
+      "source_path": "source/paper.xml",
+      "locator": "xml:fig=3:Figure 3"
+    },
+    {
+      "source_path": "source/paper.xml",
+      "locator": "xml:fig=4:Figure 4"
+    },
+    {
+      "source_path": "source/paper.xml",
+      "locator": "xml:fig=5:Figure 5"
+    },
+    {
+      "source_path": "paper_packets/doi__10.3390_md20100591/extracted/oa_package/local-DBAASP-PMC9604837/PMC9604837/marinedrugs-20-00591-s001.zip",
+      "locator": "supplementary zip member: marinedrugs-1892090-supplementary.pdf"
+    }
+  ],
+  "activity_records": [
+    {
+      "record_id": "doi__10.3390_md20100591-compound1-ags-ic50",
+      "entity": "Phaeosphamide A (compound 1)",
+      "endpoint": "IC50",
+      "raw_value": "5.14",
+      "raw_unit": "µM",
+      "normalization_status": "direct",
+      "evidence_ladder": "primary_text_cell_proliferation_assay",
+      "target": {
+        "class": "mammalian tumor cell line",
+        "species": "Homo sapiens AGS gastric adenocarcinoma cell line",
+        "strain": "AGS",
+        "source_label": "AGS human gastric adenocarcinoma cells"
+      },
+      "assay_conditions": {
+        "assay": "CCK8 cell proliferation assay",
+        "seed_density": "5 × 10^3 cells per well",
+        "incubation": "72 h compound exposure plus 2 h CCK8 development",
+        "replicates": "n = 6",
+        "positive_control": "doxorubicin",
+        "method_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:3.7. Cell Proliferation Assay"
+        }
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2. Results and Discussion; xml:fig=4:Figure 4"
+      },
+      "linked_database_rows": [
+        "database:linked_assay_records:row=1",
+        "database:linked_experiment_records:row=1"
+      ]
+    },
+    {
+      "record_id": "doi__10.3390_md20100591-compound1-five-cell-line-ic50-range",
+      "entity": "Phaeosphamide A (compound 1)",
+      "endpoint": "IC50",
+      "raw_value": "5.14-66.38",
+      "raw_unit": "µM",
+      "normalization_status": "direct_range_from_primary_text",
+      "evidence_ladder": "primary_abstract_and_results_range",
+      "target": {
+        "class": "mammalian tumor cell-line panel",
+        "species": "Homo sapiens and Mus musculus tumor cell-line panel",
+        "strain": "AGS, BEL-7402, HepG2, B16, BIU87",
+        "source_label": "five tumor cell lines evaluated for cytotoxicity"
+      },
+      "assay_conditions": {
+        "assay": "CCK8 cell proliferation assay",
+        "seed_density": "5 × 10^3 cells per well",
+        "incubation": "72 h compound exposure plus 2 h CCK8 development",
+        "replicates": "n = 6",
+        "positive_control": "doxorubicin",
+        "method_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=12:3.7. Cell Proliferation Assay"
+        }
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta:abstract; xml:sec=4:2. Results and Discussion"
+      },
+      "limitations": "Primary local text gives the five-cell-line IC50 range but does not map every target-specific exact IC50 value; target-specific database values beyond AGS are handled in database_record_verification as source_conflict."
+    }
+  ],
+  "extraction_issues": [],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_zip_contains_spectra_only_no_activity_tables",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_md20100591/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/archive_manifest.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/oa_package/local-DBAASP-PMC9604837/PMC9604837/marinedrugs-20-00591-s001.zip"
+      ],
+      "tools_attempted": [
+        "packet supplementary index review",
+        "OA archive member listing",
+        "unzip -l for supplementary ZIP",
+        "pdftotext over supplementary PDF",
+        "rg for activity/toxicity terms in supplementary PDF text"
+      ],
+      "why_unrecoverable": "The only local supplementary member is a PDF of HRESIMS, NMR, ROESY, and Marfey chromatogram figures; no activity, toxicity, or database-reconciliation table is present locally.",
+      "impact": "No supplementary activity/toxicity rows were added; primary XML/PDF prose and figures remain the source surface for activity and mechanism evidence.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "non_ags_target_specific_ic50_values_not_primary_source_mapped",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_md20100591/extracted/xml_sections.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/pdf_text/marinedrugs-20-00591.txt",
+        "paper_packets/doi__10.3390_md20100591/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/oa_package/local-DBAASP-PMC9604837/PMC9604837/marinedrugs-20-00591-g003.jpg",
+        "paper_packets/doi__10.3390_md20100591/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_md20100591/database/linked_experiment_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg over XML/PDF extracted text",
+        "figure caption review",
+        "manual image inspection of Figure 3",
+        "database JSONL reconciliation"
+      ],
+      "why_unrecoverable": "The primary article gives an exact AGS IC50 and an overall five-line IC50 range, while local Figure 3 is a 20 µM inhibition-rate bar chart without machine-readable target-specific IC50 values for BIU87, BEL-7402, HepG2, or B16.",
+      "impact": "DBAASP target-specific non-AGS IC50 values are preserved as source_conflict/database-only exact annotations; final activity rows use only the primary-supported AGS exact value and the primary-supported panel range.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "parser_quality_control": {
+    "issue_count": 0,
+    "rejects_property_or_model_tables": true,
+    "requires_target_entity_value_matrix": true,
+    "strict_endpoint_matching": true,
+    "source_review_repaired_parser_empty_rows": true
+  }
+}

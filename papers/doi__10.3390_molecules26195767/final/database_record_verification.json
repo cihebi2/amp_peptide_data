@@ -1,0 +1,213 @@
+{
+  "paper_id": "doi__10.3390_molecules26195767",
+  "doi": "10.3390/molecules26195767",
+  "pmid": "34641308",
+  "generated_at": "2026-05-09T16:28:17Z",
+  "worker_owner": "worker-4",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Source-reviewed worker-4 re-adjudication of linked DRAMP rows against XML Table 1, results text, methods, and worker-2 activity record act-cori-ht29-ic50-72h.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "DRAMP:DRAMP32346",
+      "source_table": "general_amps.txt",
+      "sequence_key": "DRAMP:DRAMP32346",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "act-cori-ht29-ic50-72h",
+      "database_subject": "Tumor cells: HT-29 (IC50=114.9±1.5 µM)",
+      "database_measure": "Antimicrobial, Anticancer",
+      "database_name": "C-ori",
+      "database_sequence": "VTFVLIAAK",
+      "source_verified_components": {
+        "name": true,
+        "sequence": true,
+        "source_organism": true,
+        "citation": true,
+        "anticancer_ht29_ic50": true
+      },
+      "conflict_flags": [
+        "database_antimicrobial_activity_not_supported_by_local_primary_source"
+      ],
+      "conflict_context": "The primary paper supports C-ori sequence VTFVLIAAK, C. militaris pepsinized origin, DOI/PMID citation, and HT-29 anticancer IC50 114.9 ± 1.5 µM; the DRAMP activity label also says Antimicrobial, which is not tested or source-supported in the local primary materials.",
+      "sequence_check": {
+        "database_sequence": "VTFVLIAAK",
+        "source_sequence": "VTFVLIAAK",
+        "agreement": "matches_primary_table",
+        "source_locator": {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:table=1:row=5",
+          "note": "C-ori sequence row."
+        }
+      },
+      "name_check": {
+        "database_name": "C-ori",
+        "source_name": "C-ori",
+        "agreement": "matches_primary_table_and_results"
+      },
+      "modification_check": {
+        "database_modifications": "N-terminal Free; C-terminal Free; stereochemistry L",
+        "primary_source_modifications": "No terminal modification stated for C-ori; source describes synthesized selected peptides but does not state amidation/lipidation/cyclization.",
+        "status": "no_conflicting_modification_found"
+      },
+      "source_organism_check": {
+        "database_source": "Cordyceps militaris",
+        "primary_source": "Cordyceps militaris putative pepsinized peptidome",
+        "agreement": "matches_primary_source"
+      },
+      "activity_check": {
+        "primary_activity_record_id": "act-cori-ht29-ic50-72h",
+        "primary_endpoint": "IC50",
+        "primary_target": "HT-29",
+        "primary_value": "114.9 ± 1.5 µM",
+        "unsupported_database_component": "Antimicrobial"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:article-meta",
+        "note": "Primary source DOI and PMID match the linked DRAMP literature row."
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules26195767/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records:row=1"
+      },
+      "review_notes": "Preserved as source_conflict rather than source_verified because one database activity label component, antimicrobial, is not supported by the paper, while the anticancer HT-29 IC50 component is source-matched."
+    },
+    {
+      "source_id": "DRAMP:DRAMP32346",
+      "source_table": "linked_experiment_records.jsonl",
+      "sequence_key": "DRAMP:DRAMP32346",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "act-cori-ht29-ic50-72h",
+      "database_subject": "Tumor cells: HT-29 (IC50=114.9±1.5 µM)",
+      "database_measure": "Antimicrobial, Anticancer",
+      "source_verified_components": {
+        "citation": true,
+        "target": true,
+        "endpoint_value_unit": true,
+        "sequence_traceable_via_dramp_activity_row": true
+      },
+      "conflict_flags": [
+        "experiment_activity_text_includes_antimicrobial_without_primary_assay_support"
+      ],
+      "conflict_context": "The linked experiment row target text and IC50 match the primary source C-ori HT-29 result, but the broad Antimicrobial label is database-only for this local paper.",
+      "sequence_check": {
+        "database_sequence_key": "DRAMP:DRAMP32346",
+        "source_locator": {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:table=1:row=5",
+          "note": "C-ori sequence row used to reconcile DRAMP32346."
+        }
+      },
+      "activity_check": {
+        "primary_activity_record_id": "act-cori-ht29-ic50-72h",
+        "primary_endpoint": "IC50",
+        "primary_target": "HT-29",
+        "primary_value": "114.9 ± 1.5 µM"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules26195767/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "review_notes": "Conflict is narrowed to the unsupported antimicrobial label; anticancer value is matched to worker-2 activity record."
+    },
+    {
+      "source_id": "DRAMP:DRAMP32346",
+      "source_table": "linked_literature_records.jsonl",
+      "sequence_key": "DRAMP:DRAMP32346",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "database_subject": "Virtual Screening for Biomimetic Anti-Cancer Peptides from Cordyceps militaris Putative Pepsinized Peptidome and Validation on Colon Cancer Cell Line",
+      "database_measure": "literature link",
+      "source_verified_components": {
+        "doi": true,
+        "pmid": true,
+        "title": true,
+        "year": true
+      },
+      "conflict_context": "",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:article-meta",
+          "note": "Literature row verifies citation metadata, not a separate sequence claim."
+        }
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules26195767/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "review_notes": "Literature link matches primary article DOI 10.3390/molecules26195767, PMID 34641308, title, and year."
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 2,
+    "source_verified": 1
+  },
+  "conflict_preservation_summary": "Two DRAMP rows are intentionally kept as source_conflict because their anticancer HT-29 IC50 component is primary-source matched but their antimicrobial activity label is database-only for this paper.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules26195767/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules26195767/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules26195767/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules26195767/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/analysis_status.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/adjudication_report.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/local-DRAMP-34641308.txt",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/molecules-26-05767.txt",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules26195767/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules26195767/raw/oa_package/local-DRAMP-34641308.tar.gz",
+    "paper_packets/doi__10.3390_molecules26195767/raw/supplementary_original/local-DRAMP-molecules-26-05767-s001.zip",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767.nxml",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g004.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g005.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g006.jpg",
+    "papers/doi__10.3390_molecules26195767/source/paper.xml",
+    "papers/doi__10.3390_molecules26195767/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules26195767/supplementary/local-DRAMP-molecules-26-05767-s001.zip"
+  ],
+  "tools_attempted": [
+    "required worker skill files read",
+    "handoff_context.json review",
+    "jq JSON artifact review",
+    "xml.etree.ElementTree XML table and figure parsing",
+    "rg over XML/PDF text for activity and database terms",
+    "pdftotext on zipped supplementary PDF through unzip pipe",
+    "view_image inspection of Figures 3-6",
+    "linked DRAMP JSONL row inspection"
+  ],
+  "unrecoverable_material_gaps": []
+}

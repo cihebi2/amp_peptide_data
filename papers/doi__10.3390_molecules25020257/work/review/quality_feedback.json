@@ -1,0 +1,175 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 5,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-09T16:12:13Z"
+  },
+  "database_repair_status": {
+    "artifact_paths": [
+      "paper_packets/doi__10.3390_molecules25020257/analysis/database_record_audit.json",
+      "papers/doi__10.3390_molecules25020257/final/database_record_verification.json"
+    ],
+    "status_summary": {
+      "source_conflict": 10,
+      "source_verified": 436
+    },
+    "worker_4_repaired": true
+  },
+  "generated_at": "2026-05-09T16:08:01Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.3390_molecules25020257",
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "activity_table_matrix_misparsed",
+      "owner_worker": "worker-2",
+      "reason": "Current final activity rows do not preserve the source table matrix axes from XML Tables 3/4; target species/entity fields are scientifically wrong even though raw cells and locators exist.",
+      "severity": "blocking"
+    },
+    {
+      "code": "supplementary_table_s2_absent_from_local_package",
+      "owner_worker": "worker-3",
+      "reason": "The article references Table S2, but local OA/supplement materials contain no recoverable Table S2 asset after bounded inspection.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.3390_molecules25020257/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "blocked_missing_primary_material",
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.3390_molecules25020257/final/activity_toxicity_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-09T16:08:01Z",
+      "failing_object": "activity_toxicity_evidence.activity_records",
+      "failure_code": "activity_table_matrix_misparsed",
+      "layer": "activity_toxicity",
+      "omission_code": "activity_target_entity_matrix_axis_error",
+      "owner_worker": "worker-2",
+      "paper_id": "doi__10.3390_molecules25020257",
+      "reason": "Worker-6 source review found current final activity rows use table headers or peptide names as target species/entity values; e.g. Table 3 MIC rows should map peptide code/name to SA/PA/CA target columns and Table 4 rows to E1/S/K/A/E2 targets.",
+      "required_action": "Rebuild activity_toxicity_evidence from XML Tables 3 and 4 with peptide code/name as entity, organism headers as target species/strain, endpoint MIC or HC50, raw value and unit preserved, SI kept as table context, and source locators retained per cell.",
+      "severity": "blocking",
+      "source_locators_to_check": [
+        "xml:table=3",
+        "xml:table=4"
+      ],
+      "source_paths_to_check": [
+        "papers/doi__10.3390_molecules25020257/source/paper.xml",
+        "paper_packets/doi__10.3390_molecules25020257/locators/locator_index.json",
+        "paper_packets/doi__10.3390_molecules25020257/extracted/xml_sections.json"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-worker2-activity-matrix-20260509",
+      "worker": "worker-2"
+    },
+    {
+      "artifact_path": "papers/doi__10.3390_molecules25020257/work/supplementary_methods/supplementary_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-09T16:08:01Z",
+      "failing_object": "supplementary_material.Table_S2",
+      "failure_code": "supplementary_table_s2_absent_from_local_package",
+      "layer": "supplementary_material",
+      "omission_code": "local_supplement_asset_missing_table_s2",
+      "owner_worker": "worker-3",
+      "paper_id": "doi__10.3390_molecules25020257",
+      "reason": "The local OA package contains paper XML/PDF, figures, and molecules-25-00257-s001.pdf only. The parsed local supplement exposes Table S1 and Figures S1-S9 but not the article-referenced Table S2; no spreadsheet/office/archive member for Table S2 exists in the local packet.",
+      "required_action": "Do not retry local extraction blindly. Reopen only if a new local/external Table S2 asset is supplied; otherwise preserve this as an unrecoverable material gap and keep the paper non-accepted.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.3390_molecules25020257/source/supplementary/molecules-25-00257-s001.pdf",
+        "paper_packets/doi__10.3390_molecules25020257/extracted/supplementary_text/molecules-25-00257-s001.txt",
+        "paper_packets/doi__10.3390_molecules25020257/raw/oa_package/local-DBAASP-PMC7024302.tar.gz",
+        "paper_packets/doi__10.3390_molecules25020257/extracted/oa_package/local-DBAASP-PMC7024302/PMC7024302"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-material-supp-table-s2-unrecoverable-20260509",
+      "unrecoverable_material_gap": {
+        "blocks_publication_grade": true,
+        "gap_code": "supplementary_table_s2_absent_from_local_package",
+        "impact": "Full supplementary activity table values beyond the main-text Tables 3/4 cannot be claimed from local material; current curation must stay non-publication-grade until an external/local Table S2 asset is supplied or the controller accepts obtainable-only blocking status.",
+        "next_action": "record_and_continue",
+        "owner_worker": "worker-3",
+        "source_paths_checked": [
+          "papers/doi__10.3390_molecules25020257/source/supplementary/molecules-25-00257-s001.pdf",
+          "paper_packets/doi__10.3390_molecules25020257/extracted/supplementary_text/molecules-25-00257-s001.txt",
+          "paper_packets/doi__10.3390_molecules25020257/raw/oa_package/local-DBAASP-PMC7024302.tar.gz",
+          "paper_packets/doi__10.3390_molecules25020257/extracted/oa_package/local-DBAASP-PMC7024302/PMC7024302"
+        ],
+        "tools_attempted": [
+          "pdfinfo",
+          "rg over extracted supplementary text",
+          "tar -tzf OA package member listing",
+          "ElementTree XML table parse"
+        ],
+        "why_unrecoverable": "The local OA package contains paper XML/PDF, figures, and molecules-25-00257-s001.pdf only. The parsed local supplement exposes Table S1 and Figures S1-S9 but not the article-referenced Table S2; no spreadsheet/office/archive member for Table S2 exists in the local packet."
+      },
+      "worker": "worker-3"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplementary_table_s2_absent_from_local_package",
+      "impact": "Full supplementary activity table values beyond the main-text Tables 3/4 cannot be claimed from local material; current curation must stay non-publication-grade until an external/local Table S2 asset is supplied or the controller accepts obtainable-only blocking status.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-3",
+      "source_paths_checked": [
+        "papers/doi__10.3390_molecules25020257/source/supplementary/molecules-25-00257-s001.pdf",
+        "paper_packets/doi__10.3390_molecules25020257/extracted/supplementary_text/molecules-25-00257-s001.txt",
+        "paper_packets/doi__10.3390_molecules25020257/raw/oa_package/local-DBAASP-PMC7024302.tar.gz",
+        "paper_packets/doi__10.3390_molecules25020257/extracted/oa_package/local-DBAASP-PMC7024302/PMC7024302"
+      ],
+      "tools_attempted": [
+        "pdfinfo",
+        "rg over extracted supplementary text",
+        "tar -tzf OA package member listing",
+        "ElementTree XML table parse"
+      ],
+      "why_unrecoverable": "The local OA package contains paper XML/PDF, figures, and molecules-25-00257-s001.pdf only. The parsed local supplement exposes Table S1 and Figures S1-S9 but not the article-referenced Table S2; no spreadsheet/office/archive member for Table S2 exists in the local packet."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules25020257",
+        "paper_packets/doi__10.3390_molecules25020257/database",
+        "paper_packets/doi__10.3390_molecules25020257/extracted",
+        "paper_packets/doi__10.3390_molecules25020257/locators",
+        "paper_packets/doi__10.3390_molecules25020257/raw",
+        "papers/doi__10.3390_molecules25020257/final",
+        "papers/doi__10.3390_molecules25020257/source",
+        "papers/doi__10.3390_molecules25020257/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "paper_id": "doi__10.1084_jem.143.6.1540",
+  "artifact_type": "database_record_verification",
+  "generated_at": "2026-05-03T06:00:18Z",
+  "reviewed_at": "2026-05-03T06:00:18Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 re-review of APD6-linked experiment and literature rows against local XML/PDF/OA package text and merged APD6 sequence/activity/literature outputs.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "source_paths_checked": [
+    "paper_packets/doi__10.1084_jem.143.6.1540/raw/paper.xml",
+    "paper_packets/doi__10.1084_jem.143.6.1540/extracted/pdf_text/je14361540.txt",
+    "paper_packets/doi__10.1084_jem.143.6.1540/extracted/pdf_text/local-APD6-paper.txt",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/database_source_manifest.json",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_sequence_records.jsonl",
+    "papers/doi__10.1084_jem.143.6.1540/source/paper.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/unique_literature_sources.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "pdftotext-derived packet text",
+    "manual row reconciliation"
+  ],
+  "record_audits": [
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:APD6:AP01204",
+      "sequence_key": "APD6:AP01204",
+      "source_id": "APD6:AP01204",
+      "source_record_id": "AP01204",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "APD6",
+      "peptide_name_database": "Streptococcin A-FF22 (ScnA, SA; SA-FF22; Streptococcin A-M49 also noted by APD6)",
+      "paper_short_name": "streptococcin A-FF22 (SA)",
+      "status": "database_only_no_primary_source",
+      "layer1_status": "database_only_no_primary_source",
+      "database_measure": "Anti-Gram+ entry text with broad activity spectrum, production conditions, sequence note, and MOA note",
+      "database_subject": "Transduction of bacteriocin determinants in group A streptococci.",
+      "matched_activity_record_id": "doi__10.1084_jem.143.6.1540:pdf:m_luteus:inhibition_zone_presence",
+      "matched_activity_record_ids": [
+        "doi__10.1084_jem.143.6.1540:pdf:m_luteus:inhibition_zone_presence"
+      ],
+      "source_locator": [
+        {
+          "kind": "primary_pdf_text",
+          "path": "paper_packets/doi__10.1084_jem.143.6.1540/extracted/pdf_text/je14361540.txt",
+          "locator": "pdf_text:je14361540.txt:lines=17-20; lines=79-84; lines=183-187",
+          "supports": [
+            "paper-specific SA name/context",
+            "qualitative M. luteus indicator assay for SA-positive transductants",
+            "SA selection concentration contexts"
+          ]
+        },
+        {
+          "kind": "database_snapshot",
+          "path": "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records:row=1",
+          "supports": [
+            "APD6 linked entry text and citation association"
+          ]
+        },
+        {
+          "kind": "merged_sequence_catalog",
+          "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "locator": "all_sequences.csv:row=1205",
+          "supports": [
+            "database sequence/name/source fields for APD6:AP01204 only; not primary-paper sequence evidence"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "partial_primary_source_support_for_qualitative_indicator_assay_only",
+        "primary_source_supported_activity_record_id": "doi__10.1084_jem.143.6.1540:pdf:m_luteus:inhibition_zone_presence",
+        "database_activity_scope_status": "broader_APD6_target_spectrum_not_in_1976_primary_source",
+        "primary_source_locator": {
+          "locator": "pdf_text:je14361540.txt:lines=79-84; lines=183-187",
+          "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/extracted/pdf_text/je14361540.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "GKNGVFKTISHECHLNTWAFLATCCS",
+        "database_sequence_locator": {
+          "locator": "all_sequences.csv:row=1205",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+        },
+        "primary_source_locator": {
+          "locator": "pdf_text:je14361540.txt:lines=17-20; references lines=371-376",
+          "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/extracted/pdf_text/je14361540.txt",
+          "supports": [
+            "1976 paper names SA-FF22 and cites earlier production/mode-of-action papers, but does not report amino-acid sequence"
+          ]
+        },
+        "primary_source_support": "The 1976 paper does not provide the APD6 amino-acid sequence, residue modifications, terminal chemistry, or broad APD6 target list; APD6 itself notes sequence was reported in a later 1993 paper."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_primary_pdf",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "source_verified_for_FF22_group_A_streptococcus_context_only",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/raw/paper.xml",
+        "doi": "10.1084/jem.143.6.1540",
+        "pmid": "775015",
+        "pmcid": "PMC2190209"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_experiment_records.jsonl",
+        "source_record_id": "AP01204",
+        "database": "APD6"
+      },
+      "conflict_flags": [
+        "apd6_entry_text_exceeds_1976_primary_source_scope",
+        "sequence_and_modification_claims_database_or_later_literature_only",
+        "broad_target_spectrum_not_recovered_from_local_1976_material"
+      ],
+      "conflict_context": "No contradiction was found in the 1976 paper, but the linked APD6 row contains later or database-only sequence, modification, broad-spectrum, and MOA statements that are not supported by the local primary source; these are preserved as database_only_no_primary_source rather than promoted to source_verified.",
+      "review_notes": "Worker-4 re-review recovered only the paper-supported SA name, M. luteus qualitative indicator assay, and citation link. The APD6 broad entry text remains a database-only annotation relative to this paper.",
+      "adjudication_decision": "qualitative_activity_source_supported_database_identity_and_broader_activity_database_only"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:APD6:AP01204",
+      "sequence_key": "APD6:AP01204",
+      "source_id": "APD6:AP01204",
+      "source_record_id": "AP01204",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "APD6",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_measure": "",
+      "database_subject": "Transduction of bacteriocin determinants in group A streptococci.",
+      "matched_activity_record_id": "",
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/raw/paper.xml",
+        "doi": "10.1084/jem.143.6.1540",
+        "pmid": "775015",
+        "pmcid": "PMC2190209"
+      },
+      "sequence_check": {
+        "status": "citation_link_only_not_sequence_verification",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/raw/paper.xml"
+        },
+        "primary_source_support": "This source_verified status applies only to the APD6 literature DOI/PMID/PMCID link, not to APD6 sequence or activity-spectrum fields."
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1084_jem.143.6.1540/database/linked_literature_records.jsonl",
+        "source_record_id": "AP01204",
+        "database": "APD6"
+      },
+      "identity_review": {
+        "citation_traceability": "source_verified",
+        "sequence_or_variant_identity": "not_claimed_by_this_literature_row"
+      },
+      "conflict_context": "Literature citation link is verified; APD6 peptide identity and broad activity annotations are adjudicated in the linked experiment row.",
+      "review_notes": "The DOI, PMID, PMCID, title, journal, and year match the local article metadata.",
+      "adjudication_decision": "literature_citation_source_verified_only"
+    }
+  ],
+  "status_summary": {
+    "database_only_no_primary_source": 1,
+    "source_verified": 1
+  },
+  "unrecoverable_material_gaps": []
+}

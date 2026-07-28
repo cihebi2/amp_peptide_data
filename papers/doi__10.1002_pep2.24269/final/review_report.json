@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.1002_pep2.24269",
+  "reviewed_at": "2026-05-01T10:31:42Z",
+  "generated_at": "2026-05-01T10:31:42Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Targeted worker-4/6 re-review reopened the paper XML/PDF, OA package supplement, locator index, and APD6/DBAASP rows; replaced the framework-test placeholder review with source-reviewed database adjudication and final activity/mechanism records; and closed rwk-complete-test-0001 with preserved cautions.",
+  "adjudication_summary": "Primary source Tables 1-5 verify YZ peptide sequences, C-terminal amidation, MIC/HC50 values, robustness conditions, and clinical-strain activity. YZ105 membrane targeting is supported by killing kinetics, PI permeabilization, membrane depolarization, and SEM. DBAASP biofilm MBIC90 endpoint wording remains a preserved source_conflict because the paper supports the 4 uM biofilm threshold but does not explicitly print the MBIC90 endpoint label.",
+  "checked_inputs": [
+    "rework_context/doi__10.1002_pep2.24269/handoff_context.json",
+    "paper_packets/doi__10.1002_pep2.24269/packet_manifest.json",
+    "paper_packets/doi__10.1002_pep2.24269/locators/locator_index.json",
+    "paper_packets/doi__10.1002_pep2.24269/extracted/xml_sections.json",
+    "paper_packets/doi__10.1002_pep2.24269/extracted/pdf_text/PEP2-114-e24269.txt",
+    "paper_packets/doi__10.1002_pep2.24269/extracted/supplementary_text/PEP2-114-e24269-s001.txt",
+    "paper_packets/doi__10.1002_pep2.24269/extracted/figure_captions.json",
+    "paper_packets/doi__10.1002_pep2.24269/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1002_pep2.24269/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1002_pep2.24269/database/linked_literature_records.jsonl",
+    "papers/doi__10.1002_pep2.24269/source/paper.xml",
+    "papers/doi__10.1002_pep2.24269/source/paper.pdf",
+    "papers/doi__10.1002_pep2.24269/source/supplementary/PEP2-114-e24269-s001.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ],
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Review reopened the handoff-listed packet/final/work artifacts, primary XML/PDF symlinks, OA package supplement PDF, parsed supplement text, and merged APD6/DBAASP rows. Landed supplementary .bin files are HTML landing pages; the actual OA supplement PDF was parsed."
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "No blocking material gap remains for worker-4/6 adjudication. The material packet still records earlier extraction-with-gaps status for landing-page .bin files, but the source-changing supplement PDF, XML, PDF text, figures, and database rows were sufficient for final review."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 55,
+    "database_snapshots": {
+      "linked_assay_records": 50,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 53,
+      "linked_literature_records": 8,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 2,
+      "source_verified": 109
+    },
+    "mechanism_claims": 4,
+    "suspicious_activity_rows": 0,
+    "generic_activity_endpoints": 0,
+    "missing_activity_locators": 0,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled all 111 linked APD6/DBAASP assay, text, and literature rows to source table/prose locators. 109 rows are source_verified; the two DBAASP biofilm endpoint rows are preserved as nonblocking source_conflict because the source supports the 4 uM biofilm threshold but does not explicitly print the MBIC90 endpoint label.",
+    "layer_2_activity_toxicity": "Final worker-6 activity output now captures source-backed MIC, HC50, medium-condition, clinical-strain, and biofilm records with raw values, units, targets, assay context, and locators. The earlier framework output only included three HC50-like rows and misused the selectivity index as a target.",
+    "layer_3_mechanism": "Final mechanism output replaces automated placeholder notes with source-reviewed YZ105 membrane-targeting claims: killing kinetics, PI permeabilization, depolarization, and SEM surface damage. Claims avoid overpromoting a single molecular target."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_biofilm_endpoint_label_derived",
+      "evidence_context": "DBAASP labels the YZ105 biofilm row MBIC90=4 uM; primary prose/figure support biofilm elimination at 4 uM or above but do not print an explicit MBIC90 table endpoint, so this row remains source_conflict with locator context."
+    },
+    {
+      "caution_code": "database_usa300_strain_label_variants",
+      "evidence_context": "Database rows alternate USA300 and USA300 LAC labels. Primary tables/captions use USA300 LAC for core MIC/killing and USA300 for biofilm/clinical contexts; final audit keeps row-specific locators instead of collapsing them."
+    },
+    {
+      "caution_code": "source_text_yz135_typo_preserved",
+      "evidence_context": "A source prose sentence appears to say YZ135 while surrounding tables/captions identify YZ105. Final records rely on table/caption locators and preserve the typo as a caution."
+    },
+    {
+      "caution_code": "material_packet_status_kept_separate",
+      "evidence_context": "Packet material status remains extracted-with-gaps because landed .bin files are HTML landing pages, but the actual OA supplement PDF was parsed and no worker-4/6 blocking source gap remains."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "decision": "accepted_with_cautions"
+  }
+}

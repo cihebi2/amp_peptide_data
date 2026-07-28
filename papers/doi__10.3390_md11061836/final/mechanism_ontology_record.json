@@ -1,0 +1,54 @@
+{
+  "paper_id": "doi__10.3390_md11061836",
+  "generated_at": "2026-05-09T10:36:01Z",
+  "reviewed_at": "2026-05-09T10:36:01Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 bounded mechanism adjudication from primary text, tables, and figure captions; direct bacterial target/mechanism is not overclaimed.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-phenotypic-antimicrobial-antibiofilm",
+      "entity_scope": "NRC-16",
+      "claim_text": "NRC-16 has source-supported antimicrobial MIC activity and antibiofilm MBIC activity in the paper, but those are phenotypic activity endpoints rather than a direct molecular target.",
+      "evidence_class": "phenotypic_activity",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=1;xml:table=2;xml:table=3;xml:sec=2.2"
+      },
+      "limitations": "No direct bacterial membrane permeabilization assay is reported for the clinical bacterial targets in these tables."
+    },
+    {
+      "claim_id": "mech-002-eukaryotic-membrane-noninteraction",
+      "entity_scope": "NRC-16",
+      "claim_text": "Model eukaryotic membrane assays support low interaction/permeation by NRC-16 relative to melittin.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "tryptophan fluorescence",
+        "calcein leakage",
+        "circular dichroism"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:abstract;xml:fig=3;xml:fig=4;xml:sec=2.4"
+      },
+      "limitations": "The direct assay surface is mammalian-model liposomes, not bacterial membranes."
+    },
+    {
+      "claim_id": "mech-003-cell-selectivity",
+      "entity_scope": "NRC-16",
+      "claim_text": "Cell-selectivity is supported by hRBC, HaCaT, and RAW264.7 assays showing non-hemolytic/non-cytotoxic limit behavior at the tested concentrations.",
+      "evidence_class": "toxicity_selectivity_context",
+      "direct_assay_types": [
+        "hemolysis assay",
+        "MTT cell viability assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=2.3;xml:fig=2"
+      },
+      "limitations": "Limit values are recorded; exact HC50/CC50 values are not reported locally."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

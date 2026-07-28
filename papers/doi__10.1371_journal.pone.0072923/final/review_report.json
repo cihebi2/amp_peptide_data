@@ -1,0 +1,105 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0072923",
+  "reviewed_at": "2026-05-03T16:54:02Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened handoff, packet manifest, locator index, extraction reports, XML/PDF text, figure captions, supplementary index/text/assets, packet database JSONL rows, and merged-output sequence/experiment/literature rows needed for worker-4/6 adjudication."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0072923/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/database_source_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0072923/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pone.0072923/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0072923/raw/supplementary_original",
+    "papers/doi__10.1371_journal.pone.0072923/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0072923/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 13,
+    "database_record_status_summary": {
+      "source_conflict": 5,
+      "source_verified": 13
+    },
+    "database_record_count": 18,
+    "mechanism_claims_source_reviewed": 4,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "table_count_reviewed": 2,
+    "requested_table3_present": false,
+    "supplementary_assets_checked": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled linked DBAASP/CAMP rows against primary sequence, Table 1 MIC rows, Figure 1 toxicity prose/caption, article metadata, and merged sequence/experiment rows. Source-supported rows are source_verified; S. aureus ATCC 2592 versus 09B2499 and composite CAMP ambiguity remain explicit source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-6 preserved source-supported LZ1 Table 1 MIC rows, Figure 1 toxicity/hemolysis upper bounds, and Table 2 in vivo P. acnes colonization values. Clindamycin comparator values were checked but not promoted as LZ1 AMP rows.",
+    "layer_3_mechanism": "Worker-6 replaced framework placeholders with bounded source-reviewed claims: antibacterial function, in vivo P. acnes efficacy, cytokine reduction, and non-promoted AMP membrane-context discussion.",
+    "supplementary_material": "Local supplementary-like assets do not contain structured activity/toxicity/mechanism tables; no unsupported external supplement chase remains relevant to this owner-layer gate.",
+    "publication_grade_review": "The previous full_source_review_not_completed and database_conflicts_require_adjudication blockers are closed. Remaining issues are explicit caution findings, not open blocking/major rework."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "s_aureus_target_label_conflict_preserved",
+      "evidence_context": "DBAASP/CAMP rows report S. aureus ATCC 2592 at MIC 2.3 µg/mL, while primary Table 1 reports S. aureus 09B2499 at 2.3 µg/mL and the methods mention ATCC 2592. The target-label conflict is preserved as source_conflict."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "Packet linked_sequence_records is empty; LZ1 sequence/modification was verified from primary paper methods plus merged sequence catalog rows."
+    },
+    {
+      "caution_code": "supplementary_assets_are_landing_html_not_structured_tables",
+      "evidence_context": "Nine supplementary-like local assets were reopened; they are HTML landing/redirect pages and no structured supplementary table was recoverable or needed to change the worker-4/6 gate result."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "evidence_context": "Figure 1 toxicity and Figure 3/5 efficacy information was curated from source text/captions and explicit prose values; exact plotted bar heights were not fabricated."
+    },
+    {
+      "caution_code": "table3_requested_but_not_present",
+      "evidence_context": "The rework ticket requested Table 1/2/3 reconciliation, but local XML/PDF text exposes two article tables. The absence of Table 3 was recorded rather than inventing a missing table."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_blocking_issue_count": 0
+  },
+  "adjudication_summary": "Worker-4/6 source review closed rwk-complete-test-0001 as accepted_with_cautions. LZ1 identity, database rows, activity/toxicity evidence, and mechanism claims are grounded in local XML/PDF/database materials; preserved conflicts are caution-level and explicit."
+}

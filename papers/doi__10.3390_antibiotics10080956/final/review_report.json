@@ -1,0 +1,165 @@
+{
+  "paper_id": "doi__10.3390_antibiotics10080956",
+  "reviewed_at": "2026-05-07T17:42:48Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "accepted_with_cautions after worker-4/6 source-reviewed rework; prior open ticket is closed and remaining database/mechanism/toxicity limitations are explicit nonblocking cautions.",
+  "adjudication_summary": "Worker-4 reconciled linked DRAMP/CAMP/dbAMP rows to primary Table 1, Figure 1, article metadata, PDF text, and supplementary PDF inventory. Worker-6 rebuilt final activity and mechanism outputs from source evidence, preserved database conflicts instead of smoothing them, and closed rwk-complete-test-0001 because no blocking owner-layer issue remains.",
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_antibiotics10080956/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/analysis/mechanism_evidence.json",
+    "papers/doi__10.3390_antibiotics10080956/source/paper.xml",
+    "papers/doi__10.3390_antibiotics10080956/source/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics10080956/extracted/pdf_text/antibiotics-10-00956.txt",
+    "paper_packets/doi__10.3390_antibiotics10080956/extracted/oa_package/local-DRAMP-34439006/PMC8389037/antibiotics-10-00956-g001.jpg",
+    "paper_packets/doi__10.3390_antibiotics10080956/raw/supplementary_original/local-DRAMP-antibiotics-10-00956-s001.zip",
+    "paper_packets/doi__10.3390_antibiotics10080956/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics10080956/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics10080956/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics10080956/database/linked_literature_records.jsonl"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": {
+      "exhausted": true,
+      "paths_checked": [
+        "papers/doi__10.3390_antibiotics10080956/source/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics10080956/raw/paper.xml"
+      ],
+      "evidence": "Article metadata, introduction, Table 1, Figure 1 captions/assets, MIC methods, CD/stability sections, and supplementary-material statement reviewed."
+    },
+    "paper_pdf": {
+      "exhausted": true,
+      "paths_checked": [
+        "papers/doi__10.3390_antibiotics10080956/source/paper.pdf",
+        "paper_packets/doi__10.3390_antibiotics10080956/raw/paper.pdf",
+        "paper_packets/doi__10.3390_antibiotics10080956/extracted/pdf_text/antibiotics-10-00956.txt"
+      ],
+      "evidence": "PDF text crosschecked Table 1, methods, results, and supplement statement."
+    },
+    "oa_package": {
+      "exhausted": true,
+      "paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics10080956/raw/oa_package/local-DRAMP-34439006.tar.gz",
+        "paper_packets/doi__10.3390_antibiotics10080956/extracted/oa_package/local-DRAMP-34439006/PMC8389037/antibiotics-10-00956.nxml",
+        "paper_packets/doi__10.3390_antibiotics10080956/extracted/oa_package/local-DRAMP-34439006/PMC8389037/antibiotics-10-00956-g001.jpg"
+      ],
+      "evidence": "OA package assets provide NXML and Figure 1 image used for sequence/modification adjudication."
+    },
+    "supplementary_assets": {
+      "exhausted": true,
+      "paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics10080956/raw/supplementary_original/local-DRAMP-antibiotics-10-00956-s001.zip",
+        "paper_packets/doi__10.3390_antibiotics10080956/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics10080956/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3390_antibiotics10080956/raw/supplementary_original/local-DRAMP-antibiotics-10-00956-s001.zip!antibiotics-1310705-supplementary.pdf"
+      ],
+      "tools_attempted": [
+        "unzip -l",
+        "unzip -p",
+        "pdftotext",
+        "rg"
+      ],
+      "evidence": "Supplementary PDF contains MS/HPLC/hydrolytic-stability materials and no additional MIC, cytotoxicity, hemolysis, or database rows affecting final activity adjudication."
+    },
+    "merged_database_rows": {
+      "exhausted": true,
+      "paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics10080956/database/database_source_manifest.json",
+        "paper_packets/doi__10.3390_antibiotics10080956/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics10080956/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics10080956/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics10080956/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics10080956/database/linked_sequence_records.jsonl"
+      ],
+      "evidence": "All linked DRAMP/CAMP/dbAMP rows present in packet database snapshots were adjudicated."
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 46 linked database/literature rows were reviewed. Source-supported DRAMP and literature rows are source_verified; CAMP/dbAMP taxon/value conflicts and the DRAMP29355 title typo are preserved as source_conflict cautions with source locators.",
+    "layer_2_activity_toxicity": "Final activity evidence was rebuilt from primary Table 1 as 110 peptide MIC rows plus 11 fluconazole control rows. No cytotoxicity/hemolysis values are claimed because the paper and linked database rows do not report them.",
+    "layer_3_mechanism": "Mechanism ontology is limited to prior Aurein1.2 membrane-context literature and current-paper CD/protease-stability assays. No direct membrane-disruption mechanism is asserted for the stapled analogues.",
+    "review_closeout": "The original rework ticket is closed because the worker-4 database adjudication and worker-6 source-reviewed final artifacts are now present; remaining limitations are cautions, not blocking rework."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "activity_rows_parsed": 110,
+    "control_rows_parsed": 11,
+    "activity_species_sentence_fragment_hits": 0,
+    "database_record_audits": 46,
+    "database_status_summary": {
+      "source_verified": 25,
+      "source_conflict": 21
+    },
+    "mechanism_claims": 3,
+    "mechanism_direct_claims_have_assays": true,
+    "open_rework_targets": 0,
+    "table1_activity_records": 110,
+    "unrecoverable_material_gaps": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_taxon_spelling_conflict",
+      "severity": "caution",
+      "evidence_context": "CAMP/dbAMP rows use C. crusei where primary Table 1 reports C. krusei.",
+      "resolution": "Rows are preserved as source_conflict with matched primary Table 1 cells."
+    },
+    {
+      "caution_code": "database_activity_value_conflict",
+      "severity": "caution",
+      "evidence_context": "CAMP/dbAMP Sau-5 and Sau-9 rows contain selected MIC values not supported by primary Table 1.",
+      "resolution": "Conflicting database assertions remain source_conflict; final activity uses primary Table 1 values."
+    },
+    {
+      "caution_code": "database_article_title_typo",
+      "severity": "caution",
+      "evidence_context": "DRAMP29355 activity/experiment rows have an Aurein title typo while PMID/table evidence matches this article.",
+      "resolution": "Affected activity/experiment rows are source_conflict; linked literature row remains source_verified."
+    },
+    {
+      "caution_code": "toxicity_not_reported",
+      "severity": "caution",
+      "evidence_context": "No local XML/PDF/supplement/database row provides cytotoxicity or hemolysis values.",
+      "resolution": "No toxicity values are fabricated or claimed."
+    },
+    {
+      "caution_code": "direct_mechanism_not_tested_for_sau_analogues",
+      "severity": "caution",
+      "evidence_context": "Current paper provides CD/stability/activity assays and prior native Aurein1.2 mechanism context, not direct membrane-disruption assays for Sau analogues.",
+      "resolution": "Mechanism claims are bounded to evidence class and limitations."
+    },
+    {
+      "caution_code": "supplementary_pdf_no_additional_activity_tables",
+      "severity": "caution",
+      "evidence_context": "Supplementary ZIP contains a PDF with MS/HPLC/hydrolytic-stability figures and no extra MIC/toxicity table.",
+      "resolution": "Supplement checked and treated as nonblocking for activity/database adjudication."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "strict_gate": {
+    "publication_grade_ready": true,
+    "required_rework_count": 0,
+    "open_rework_targets": 0,
+    "open_rework_ticket_ids": []
+  },
+  "unrecoverable_material_gaps": []
+}

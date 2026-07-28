@@ -1,0 +1,62 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0023417",
+  "generated_at": "2026-05-03T00:29:50Z",
+  "reviewed_at": "2026-05-03T00:29:50Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism ontology record with direct assay classes only where the primary paper provides assay evidence; no molecular target is overclaimed.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-antibacterial-growth-inhibition",
+      "claim_text": "asCATH1 and asCATH2 have direct antibacterial growth-inhibition activity against V. anguillarum and E. coli in broth microdilution, but little or no activity against Y. ruckeri at the tested range.",
+      "entity_scope": "asCATH1 and asCATH2",
+      "evidence_class": "direct_activity_assay",
+      "direct_assay_types": [
+        "broth_microdilution_growth_inhibition",
+        "OD600 growth readout"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=5:Antibacterial properties of Atlantic salmon cathelicidins and LL-37;xml:table=1;xml:fig=3"
+      },
+      "limitations": "This supports antimicrobial activity, not a resolved molecular killing mechanism."
+    },
+    {
+      "claim_id": "mech-host-cell-lysis-caution",
+      "claim_text": "asCATH1, unlike asCATH2, lysed Atlantic salmon erythrocytes in vitro; salmon serum strongly reduced the hemolytic effect at the highest tested concentration.",
+      "entity_scope": "asCATH1 primary; asCATH2 negative comparator",
+      "evidence_class": "direct_host_cell_assay",
+      "direct_assay_types": [
+        "erythrocyte_hemolysis_assay",
+        "OD405 released hemoglobin"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=6:Haemolytic activity of Atlantic salmon cathelicidins and LL-37;xml:fig=4"
+      },
+      "limitations": "Hemolysis is a host-cell toxicity/cytolysis caution; it should not be promoted to an in vivo antimicrobial mechanism."
+    },
+    {
+      "claim_id": "mech-il8-immunomodulation",
+      "claim_text": "Both asCATH1 and asCATH2 transiently increased IL-8 mRNA in Atlantic salmon peripheral blood leukocytes, supporting an immunomodulatory role; IL-1 beta and IL-18 were not differentially regulated.",
+      "entity_scope": "asCATH1 and asCATH2",
+      "evidence_class": "direct_immunomodulatory_expression_assay",
+      "direct_assay_types": [
+        "PBL_stimulation",
+        "quantitative_RT_PCR"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=7:Host immunomodulatory activities of Atlantic salmon cathelicidins;xml:fig=5"
+      },
+      "limitations": "The paper shows expression response in PBLs, not receptor binding or downstream pathway mapping."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "mechanism_not_molecular_target",
+      "evidence_context": "Mechanism labels are bounded to growth inhibition, host-cell lysis context, and IL-8 expression response."
+    }
+  ]
+}

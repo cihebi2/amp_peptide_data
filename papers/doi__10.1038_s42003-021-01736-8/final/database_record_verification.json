@@ -1,0 +1,2992 @@
+{
+  "audit_scope": "Worker-4 source-reviewed all linked DBAASP/DRAMP rows against Table 1, Fig. 3, Supplementary Data 3, and article metadata; conflicts are preserved as cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_endpoint_label_normalization",
+      "evidence_context": "DBAASP IC90 REP rows are preserved as source_conflict because Table 1 reports percent inhibition at 10 µM, not a primary IC90 endpoint.",
+      "owner_worker": "worker-4",
+      "severity": "nonblocking"
+    },
+    {
+      "caution_code": "dbaasp_cytotoxicity_context",
+      "evidence_context": "DBAASP 'Not active' cell-line rows are preserved as source_conflict where database target_activity/cytotoxicity context is coarser than Fig. 3 source data.",
+      "owner_worker": "worker-4",
+      "severity": "nonblocking"
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "linked_sequence_records.jsonl is empty; peptide sequences are source-verified from paper Table 1 and linked DRAMP/DBAASP identity rows instead.",
+      "owner_worker": "worker-4",
+      "severity": "nonblocking"
+    },
+    {
+      "caution_code": "hemolysis_not_reported",
+      "evidence_context": "The primary paper reports Vero-E6/Calu-3 cytotoxicity but not hemolysis; no hemolysis value is fabricated.",
+      "owner_worker": "worker-6",
+      "severity": "nonblocking"
+    }
+  ],
+  "database_row_counts": {
+    "linked_assay_records": 12,
+    "linked_dramp_activity_records": 16,
+    "linked_experiment_records": 28,
+    "linked_literature_records": 7,
+    "linked_sequence_records": 0
+  },
+  "generated_at": "2026-05-03T11:43:02Z",
+  "paper_id": "doi__10.1038_s42003-021-01736-8",
+  "publication_grade": true,
+  "record_audits": [
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 1,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 2,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=11:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "91"
+      },
+      "review_notes": "Primary Table 1 reports 91% inhibition at 10 µM for P8; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 3,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-calu3-ic50",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=11:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "46"
+      },
+      "review_notes": "DBAASP 0.046 µM maps to Table 1 Calu-3 IC50 46 nM for P8.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 4,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7L,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+      "database_row_index": 5,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+      "database_row_index": 6,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=12:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "93"
+      },
+      "review_notes": "Primary Table 1 reports 93% inhibition at 10 µM for P9; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+      "database_row_index": 7,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-calu3-ic50",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=12:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "53"
+      },
+      "review_notes": "DBAASP 0.053 µM maps to Table 1 Calu-3 IC50 53 nM for P9.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+      "database_row_index": 8,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L]",
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 9,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 10,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=13:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "95"
+      },
+      "review_notes": "Primary Table 1 reports 95% inhibition at 10 µM for P10; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 11,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-calu3-ic50",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=13:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "42"
+      },
+      "review_notes": "DBAASP 0.042 µM maps to Table 1 Calu-3 IC50 42 nM for P10.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+      "database_row_index": 12,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": "ACE2 (19-45)[T2A,I3L,A7hY,N15M,A18L,F22L,S25L,S26A]",
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_assay_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 1,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 2,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 3,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 4,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 5,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50>1 ¦ÌM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 6,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 7,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 8,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 9,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 10,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 11,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 12,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 13,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=13",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 14,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=14",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 15,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=15",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 16,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_dramp_activity_records.jsonl:row=16",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 1,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": null,
+      "database_row_index": 2,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=11:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "91"
+      },
+      "review_notes": "Primary Table 1 reports 91% inhibition at 10 µM for P8; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": null,
+      "database_row_index": 3,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-calu3-ic50",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=11:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "46"
+      },
+      "review_notes": "DBAASP 0.046 µM maps to Table 1 Calu-3 IC50 46 nM for P8.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 4,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P8",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 5,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=5",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": null,
+      "database_row_index": 6,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=12:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "93"
+      },
+      "review_notes": "Primary Table 1 reports 93% inhibition at 10 µM for P9; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=6",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": null,
+      "database_row_index": 7,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-calu3-ic50",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=12:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "53"
+      },
+      "review_notes": "DBAASP 0.053 µM maps to Table 1 Calu-3 IC50 53 nM for P9.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=7",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 8,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P9",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=8",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "Source conflict: DBAASP reports a Vero-E6 cytotoxicity upper bound of 5 µM, while the primary source reports MTT and Annexin-V/PI toxicity testing at 0.1, 1, and 10 µM without an exact 5 µM row.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 9,
+      "database_subject": "Vero E6 cells",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "The no-toxicity conclusion is source-supported, but the database concentration granularity conflict is preserved rather than normalized.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=9",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP encodes the 10 µM Vero-E6 inhibition row as IC90 REP, but the primary article reports percent inhibition at 10 µM rather than an IC90 endpoint.",
+      "database": "DBAASP",
+      "database_measure": "IC90 REP",
+      "database_peptide_name": null,
+      "database_row_index": 10,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "viral_replication_inhibition",
+        "locator": "xml:table=1:row=13:column=% Inhibition of SARSCoV-2 replication at 10 μM",
+        "raw_unit": "%",
+        "raw_value": "95"
+      },
+      "review_notes": "Primary Table 1 reports 95% inhibition at 10 µM for P10; endpoint-label conflict is preserved.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=10",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "IC50 I",
+      "database_peptide_name": null,
+      "database_row_index": 11,
+      "database_subject": "SARS-CoV-2",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-calu3-ic50",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "primary_source_activity": {
+        "endpoint": "IC50",
+        "locator": "xml:table=1:row=13:column=IC50 (nM) Calu-3",
+        "raw_unit": "nM",
+        "raw_value": "42"
+      },
+      "review_notes": "DBAASP 0.042 µM maps to Table 1 Calu-3 IC50 42 nM for P10.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=11",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "DBAASP stores a Calu-3 'Not active up to 10 µM' row under target_activity; the primary source supports this as a cell-toxicity finding, not antiviral target activity.",
+      "database": "DBAASP",
+      "database_measure": "NA",
+      "database_peptide_name": null,
+      "database_row_index": 12,
+      "database_subject": "Human lung carcinoma Calu-3",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-calu-3-cytotoxicity",
+      "name_check": {
+        "database_name": null,
+        "primary_source_name": "P10",
+        "status": "mapped_to_table1_code"
+      },
+      "review_notes": "Preserved as a database field/context conflict, with the underlying non-cytotoxicity result supported by Fig. 3f and source data.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_organism_check": {
+        "database_source": "not explicitly organismal; synthetic ACE2-derived peptide",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=12",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 13,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=13",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 14,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=14",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 15,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=15",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 16,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Anti-SARS-CoV-2_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=16",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 17,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50>1 ¦ÌM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=17",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 18,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=18",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 19,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=19",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 20,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?¦ÌM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antimicrobial_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=20",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 21,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=21",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 22,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=22",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 23,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=23",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 24,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10?μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "Antiviral_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=24",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 25,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:54% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50>1 μM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P7-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P7",
+        "primary_source_name": "P7",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": null,
+        "locator": "xml:table=1:row=10",
+        "vero_e6_inhibition_10um_percent": "54"
+      },
+      "review_notes": "DRAMP DRAMP29206 maps to Table 1 peptide P7. Sequence verified against Table 1 row 10. P7 activity is retained as weaker/source-supported activity; no cytotoxicity result is promoted for P7.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P7",
+        "primary_source_sequence": "SALEE QYKTF LDKFL HELED LLYQL ALAL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFLHELEDLLYQLALAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=10:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=25",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 26,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:91% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=46 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P8-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P8",
+        "primary_source_name": "P8",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "46",
+        "locator": "xml:table=1:row=11",
+        "vero_e6_inhibition_10um_percent": "91"
+      },
+      "review_notes": "DRAMP DRAMP29207 maps to Table 1 peptide P8. Sequence verified against Table 1 row 11. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P8",
+        "primary_source_sequence": "SALEE QLKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQLKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=11:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=26",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 27,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:93% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=53 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P9-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P9",
+        "primary_source_name": "P9",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "53",
+        "locator": "xml:table=1:row=12",
+        "vero_e6_inhibition_10um_percent": "93"
+      },
+      "review_notes": "DRAMP DRAMP29208 maps to Table 1 peptide P9. Sequence verified against Table 1 row 12. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P9",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL SL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLSL",
+        "source_locator": {
+          "locator": "xml:table=1:row=12:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=27",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "Antimicrobial, Antiviral(SARS-CoV-2)",
+      "database_row_index": 28,
+      "database_subject": "[Ref.33580154]Virus:SARS-CoV-2:95% inhibition of replication in Vero-E6 cells at 10 μM;inhibition of replication in Calu-3 cells(IC50=42 nM).",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.1038_s42003-021-01736-8-P10-vero-e6-inhibition-10um",
+      "name_check": {
+        "database_name": "P10",
+        "primary_source_name": "P10",
+        "status": "source_verified"
+      },
+      "primary_source_activity": {
+        "calu3_ic50_nm": "42",
+        "locator": "xml:table=1:row=13",
+        "vero_e6_inhibition_10um_percent": "95"
+      },
+      "review_notes": "DRAMP DRAMP29209 maps to Table 1 peptide P10. Sequence verified against Table 1 row 13. Vero-E6 inhibition, Calu-3 IC50, and non-cytotoxicity statements are source-supported for this peptide.",
+      "sequence_check": {
+        "c_terminal_modification": "amidated",
+        "n_terminal_modification": "free",
+        "peptide_code": "P10",
+        "primary_source_sequence": "SALEE QYKTF LDKFM HELED LLYQL AL-NH2",
+        "sequence_normalized": "SALEEQYKTFLDKFMHELEDLLYQLAL",
+        "source_locator": {
+          "locator": "xml:table=1:row=13:column=Sequence",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        },
+        "source_organism": "synthetic construct derived from human ACE2 H1 helix"
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_organism_check": {
+        "database_source": "Synthetic construct",
+        "primary_source": "synthetic construct derived from human ACE2 H1 helix",
+        "status": "source_verified"
+      },
+      "source_table": "general_amps.txt",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=28",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "",
+      "database_row_index": 1,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_19258",
+      "source_id": "DBAASP:DBAASPS_19258",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=1",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "",
+      "database_row_index": 2,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_19259",
+      "source_id": "DBAASP:DBAASPS_19259",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=2",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DBAASP",
+      "database_measure": "",
+      "database_row_index": 3,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DBAASP:DBAASPS_19260",
+      "source_id": "DBAASP:DBAASPS_19260",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=3",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_row_index": 4,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DRAMP:DRAMP29206",
+      "source_id": "DRAMP:DRAMP29206",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=4",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_row_index": 5,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DRAMP:DRAMP29207",
+      "source_id": "DRAMP:DRAMP29207",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=5",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_row_index": 6,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DRAMP:DRAMP29208",
+      "source_id": "DRAMP:DRAMP29208",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=6",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    },
+    {
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+      },
+      "conflict_context": "",
+      "database": "DRAMP",
+      "database_measure": "",
+      "database_row_index": 7,
+      "database_subject": "Human ACE2 peptide-mimics block SARS-CoV-2 pulmonary cells infection.",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "review_notes": "Literature DOI/PMID/PMCID traceability matches the selected primary article metadata.",
+      "sequence_check": {
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml"
+        }
+      },
+      "sequence_key": "DRAMP:DRAMP29209",
+      "source_id": "DRAMP:DRAMP29209",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=7",
+        "source_path": "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl"
+      }
+    }
+  ],
+  "review_status": "accepted_with_cautions",
+  "source_paths_checked": [
+    "rework_context/doi__10.1038_s42003-021-01736-8/handoff_context.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/packet_manifest.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extraction/extraction_quality_report.json",
+    "papers/doi__10.1038_s42003-021-01736-8/source/paper.xml",
+    "papers/doi__10.1038_s42003-021-01736-8/source/paper.pdf",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/raw/paper.xml",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/pdf_text/42003_2021_Article_1736.txt",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_text/local-DRAMP-42003_2021_1736_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_text/local-DRAMP-42003_2021_1736_MOESM2_ESM.txt",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_text/local-DRAMP-42003_2021_1736_MOESM3_ESM.txt",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/extracted/supplementary_text/local-DRAMP-42003_2021_1736_MOESM7_ESM.txt",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/raw/supplementary_original/local-DRAMP-42003_2021_1736_MOESM4_ESM.docx",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/raw/supplementary_original/local-DRAMP-42003_2021_1736_MOESM5_ESM.docx",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/raw/supplementary_original/local-DRAMP-42003_2021_1736_MOESM6_ESM.xlsx",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s42003-021-01736-8/database/linked_sequence_records.jsonl",
+    "reports/doi__10.1038_s42003-021-01736-8.complete_message_test_report.json"
+  ],
+  "status_summary": {
+    "source_conflict": 18,
+    "source_verified": 45
+  },
+  "unrecoverable_material_gaps": []
+}

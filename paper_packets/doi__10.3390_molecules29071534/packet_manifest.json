@@ -1,0 +1,119 @@
+{
+  "analysis_queue_status": "analysis_accepted",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 38,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 39,
+      "linked_literature_records": 2,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.3390/molecules29071534",
+  "journal": "Molecules",
+  "known_missing_or_blocked_materials": [],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.3390_molecules29071534",
+  "pmcid": "PMC11013252",
+  "pmid": "38611812",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules29071534/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules29071534",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "Exploration of the Antibacterial and Anti-Inflammatory Activity of a Novel Antimicrobial Peptide Brevinin-1BW.",
+  "updated_at": "2026-05-09T16:39:34Z",
+  "year": "2024",
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "known_nonblocking_cautions": [
+    {
+      "scope": "database_biofilm_MBEC50",
+      "severity": "caution",
+      "status": "source_conflict",
+      "record": "DBAASP:DBAASPR_22201 assay 1843",
+      "note": "DBAASP reports MBEC50 at 6.25 μg/mL, but local XML/PDF text only states mature-biofilm clearance percentages/ranges and does not explicitly name that MBEC50 value.",
+      "source_context": [
+        {
+          "kind": "primary_xml_section",
+          "path": "paper_packets/doi__10.3390_molecules29071534/raw/paper.xml",
+          "locator": "xml:sec=9:2.5. Inhibition and Elimination of Biofilms by Brevinin-1BW"
+        }
+      ]
+    },
+    {
+      "scope": "database_taxon_name",
+      "severity": "caution",
+      "status": "source_conflict",
+      "record": "DBAASP assay 175191/175192",
+      "note": "Linked DBAASP rows use Enterobacter cloacae ATCC 700323 while the primary article labels Table 2/Methods target as E. hormaechei ATCC700323; values remain source-located.",
+      "source_context": [
+        {
+          "kind": "primary_xml_table",
+          "path": "paper_packets/doi__10.3390_molecules29071534/raw/paper.xml",
+          "locator": "xml:table=2:row=12"
+        }
+      ]
+    },
+    {
+      "scope": "database_measure_label",
+      "severity": "caution",
+      "status": "source_conflict",
+      "record": "DBAASP assay 21114/175206 and duplicated experiment rows",
+      "note": "Some database rows label non-erythrocyte CC50 cell-line results as hemolysis; final curation preserves the source Table 4 CC50 interpretation.",
+      "source_context": [
+        {
+          "kind": "primary_xml_table",
+          "path": "paper_packets/doi__10.3390_molecules29071534/raw/paper.xml",
+          "locator": "xml:table=4"
+        }
+      ]
+    },
+    {
+      "scope": "APD6_free_text_summary",
+      "severity": "caution",
+      "status": "source_conflict",
+      "record": "APD6:AP04231",
+      "note": "APD6 free-text summary is mostly source-supported but contains a unit typo for S. epidermidis; it remains conflict-preserved rather than clean.",
+      "source_context": [
+        {
+          "kind": "primary_xml_table",
+          "path": "paper_packets/doi__10.3390_molecules29071534/raw/paper.xml",
+          "locator": "xml:table=2:row=8"
+        }
+      ]
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "not_available_nonblocking",
+      "note": "No supplementary asset exists in the local package/landed manifest; all source-supported values used here come from article XML/PDF/OA package members and database rows."
+    }
+  ],
+  "codex_cli_rereview": {
+    "run_id": "codex_cli_rereview_worker2_4_6_20260509",
+    "reviewed_at": "2026-05-09T16:39:34Z",
+    "owner_workers": [
+      "worker-2",
+      "worker-4",
+      "worker-6"
+    ],
+    "outcome": "accepted_with_cautions",
+    "publication_grade": true,
+    "resolved_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  }
+}

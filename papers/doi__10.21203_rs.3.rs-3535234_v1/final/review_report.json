@@ -1,0 +1,125 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-3535234_v1",
+  "reviewed_at": "2026-05-05T17:41:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": {
+      "checked": true,
+      "result": "mis-staged RSS feed; not used as article-body evidence"
+    },
+    "paper_pdf": {
+      "checked": true,
+      "result": "primary activity, toxicity, sequence, methods, and mechanism-context source"
+    },
+    "oa_package": {
+      "checked": true,
+      "result": "no separate OA package members beyond local PDF/XML/supplement symlinks"
+    },
+    "supplementary_assets": {
+      "checked": true,
+      "result": "DOCX parsed for methods; .bin assets inspected as non-evidence HTML pages"
+    },
+    "merged_database_rows": {
+      "checked": true,
+      "result": "sequence and current-DOI experimental rows checked"
+    }
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.21203_rs.3.rs-3535234_v1/handoff_context.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/packet_manifest.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/locators/locator_index.json",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.xml",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.pdf",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-3.docx",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/supplementary_original/landing-4.bin",
+    "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 107,
+    "activity_rows_parsed": 107,
+    "database_records": 76,
+    "database_status_summary": {
+      "source_verified": 65,
+      "source_conflict": 11
+    },
+    "mechanism_claims": 3,
+    "source_conflicts_preserved": 11,
+    "unrecoverable_material_gaps": 0,
+    "database_conflict_markers": 11
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature links and current-DOI assay rows were reconciled against Table 2/3 and methods. S.aureus strain mismatches remain source_conflict with explicit conflict_flags/conflict_reason; no database assertion is promoted over the paper.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 42 C.acnes screen rows, 43 MIC rows, and 22 EC90 toxicity rows from PDF Tables 1/2 plus method support from PDF and supplementary DOCX.",
+    "layer_3_mechanism": "Worker-6 replaced the automated mechanism placeholder with bounded mechanism-context claims: background membrane rationale, computational property support, and toxicity context, without claiming direct killing mechanism.",
+    "publication_grade_review": "The prior rework ticket is closed because the gate-changing local evidence was recovered and remaining limitations are nonblocking cautions."
+  },
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review recovered the missing activity/toxicity matrix from the primary PDF, checked peptide identities against Table 3 and merged DBAASP rows, preserved the S.aureus strain conflict, and closed the rework ticket with cautions rather than a clean acceptance.",
+  "caution_findings": [
+    {
+      "caution_code": "paper_xml_misstaged_rss_not_article_body",
+      "severity": "caution",
+      "evidence_context": "The local paper.xml symlink opens a Research Square RSS feed rather than the article body. Source review therefore used the primary PDF text and supplementary DOCX as the controlling local sources.",
+      "source_paths": [
+        "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.xml",
+        "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/raw/paper.pdf"
+      ],
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "staphylococcus_aureus_strain_conflict_preserved",
+      "severity": "caution",
+      "evidence_context": "Merged DBAASP assay rows use S.aureus ATCC 29213 while the paper methods state S.aureus ATCC 25913. Matching MIC values are retained but those database rows stay source_conflict.",
+      "record_count": 11,
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "fk13_c_albicans_mic_not_reported",
+      "severity": "caution",
+      "evidence_context": "Table 2 reports '/' for FK13 against C.albicans. No missing MIC value was fabricated.",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-3535234_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf:page=4:table=2:row=FK13:column=C.albicans_MIC",
+        "text_lines": "193-420"
+      },
+      "blocks_publication_grade": false
+    },
+    {
+      "caution_code": "supplementary_bin_assets_are_browse_html",
+      "severity": "caution",
+      "evidence_context": "The three .bin supplementary assets are Research Square browse/search HTML, not source tables. The usable supplementary source is landing-3.docx, which supplies assay methods and supplementary figures.",
+      "blocks_publication_grade": false
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "remaining_hard_issue_count": 0
+  },
+  "unrecoverable_material_gaps": [],
+  "rework_response": {
+    "ticket_id": "rwk-complete-test-0001",
+    "status": "closed_after_codex_cli_rereview_refresh",
+    "closed_at": "2026-05-05T17:41:58Z",
+    "remaining_blocking_issues": 0
+  },
+  "updated_at": "2026-05-05T17:41:58Z"
+}

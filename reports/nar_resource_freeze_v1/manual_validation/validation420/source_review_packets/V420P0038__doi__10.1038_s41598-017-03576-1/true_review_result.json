@@ -1,0 +1,131 @@
+{
+  "paper_id": "doi__10.1038_s41598-017-03576-1",
+  "review_sample_id": "V420P0038",
+  "reviewed_at": "2026-06-25T10:31:53+08:00",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "accepted_with_cautions",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0153",
+      "audit_record_id": "doi__10.1038_s41598-017-03576-1:database_audit:231",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "Confirmed as a caution-preserving source_conflict, not as clean source_verified evidence. The linked DBAASP assay/experiment row reports G13P-Chr-1 human erythrocyte hemolysis as 8% at 40 uM, but reopened paper-local XML/PDF/supplementary text provides Figure 1 trend/caption and the hemolysis method, not an extractable numeric source table for the exact 8% value. Final activity evidence explicitly does not fabricate figure-only exact hemolysis percentages into source-verified activity rows.",
+      "locators_checked": [
+        "validation_samples.json: sample VAL0153",
+        "release_rows.json: audit_record_id doi__10.1038_s41598-017-03576-1:database_audit:231",
+        "sample_final_records.json: VAL0153 sample_final_record",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_experiment_records.jsonl:row=76",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_assay_records.jsonl:row=76",
+        "papers/doi__10.1038_s41598-017-03576-1/final/database_record_verification.json: traceability database:linked_experiment_records:row=76",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json: xml:sec=5",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json: xml:sec=21",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/figure_captions.json: xml:fig=1:Figure 1",
+        "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_3576_MOESM1_ESM.txt: Figure S2/table text review",
+        "papers/doi__10.1038_s41598-017-03576-1/final/activity_toxicity_evidence.json: parser_quality_control.figure_only_hemolysis_values_not_fabricated",
+        "papers/doi__10.1038_s41598-017-03576-1/final/review_report.json: semantic_quality_checks and caution_findings"
+      ],
+      "cautions": [
+        "DBAASP exact hemolysis percentage is preserved as database evidence and conflict context; it is not converted to a primary-source numeric activity row.",
+        "Primary source supports reduced/proline-selective hemolysis qualitatively and by Figure 1 but does not expose the exact 8% graph-derived value as extractable source-table text.",
+        "Packet material status remains complete-with-gaps for absent exact figure-derived source tables, but current final review closes that gap as nonblocking because the conflict is preserved rather than overclaimed."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "status": "complete_with_nonblocking_cautions",
+    "source_materials_reopened": [
+      "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/material_inventory.json",
+      "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/source_locator_hints.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/packet_manifest.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/raw/paper.xml",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/raw/paper.pdf",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/figure_captions.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_Article_3576.txt",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_3576_MOESM1_ESM.txt",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/archive_manifest.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_text.jsonl",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/supplementary_tables.json",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_literature_records.jsonl"
+    ],
+    "material_limits": [
+      "Local source material contains Figure 1 and hemolysis methods, but no source-data table or extractable primary text for exact DBAASP graph-derived hemolysis percentages.",
+      "Supplementary text includes Figure S2 for alanine/valine analog hemolysis; the sampled G13P-Chr-1 exact 8% value remains DBAASP/database-derived.",
+      "Historical packet rework request rwk-complete-test-0001 is present in rework_requests.jsonl but later rework responses and quality_feedback close it with no remaining open ticket."
+    ],
+    "blocked_missing_primary_material": false,
+    "unverifiable_best_effort": false
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "layer_1_database_identity_status": "confirmed_with_caution",
+    "layer_1_summary": "The sampled audit record remains source_conflict with citation traceability to xml:article-meta and peptide identity evidence for G13P-Chr-1 in xml:table=2:row=4. The DBAASP hemolysis exact value has database-row traceability but lacks a primary-source numeric table locator, so preserving source_conflict is correct.",
+    "layer_2_activity_toxicity_status": "confirmed_with_caution",
+    "layer_2_summary": "Source-reviewed activity rows in the final activity artifact use primary XML Tables 3-6 for extractable row-level records. The sampled hemolysis percentage is not in the accepted activity table and is explicitly flagged as figure-only/exact values not fabricated.",
+    "layer_3_mechanism_status": "not_applicable_to_sampled_value_but_checked",
+    "layer_3_summary": "Mechanism ontology file contains four source-located direct_mechanism claims with claim_id, claim_text, source_locator, and direct_assay_types. No mechanism evidence-class defect affects this sampled activity-value conflict row.",
+    "semantic_quality_summary": {
+      "review_report_status": "accepted_with_cautions",
+      "review_report_publication_grade": true,
+      "review_report_rework_targets": 0,
+      "source_conflicts_preserved": 22,
+      "activity_rows_source_reviewed": 186,
+      "mechanism_claims_source_reviewed": 4,
+      "semantic_issue_count": 0,
+      "publication_quality_pass": true
+    },
+    "decision_rationale": "The validation row is a correct caution-preserving source_conflict. A hard rework ticket would be required if the final release marked the exact 8% hemolysis value as source_verified or fabricated it into primary activity evidence; it does neither."
+  },
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "caution_code": "database_hemolysis_exact_percentages_source_conflict",
+      "evidence_context": "DBAASP reports exact G13P-Chr-1 human erythrocyte hemolysis percentages, including 8% at 40 uM, but local primary material exposes only Figure 1 trend/caption and hemolysis method text. The release preserves this as source_conflict."
+    },
+    {
+      "caution_code": "figure_only_hemolysis_values_not_fabricated",
+      "evidence_context": "Final activity/toxicity evidence explicitly records that figure-only exact hemolysis values were not fabricated into source-verified rows."
+    },
+    {
+      "caution_code": "historical_packet_test_scope_note",
+      "evidence_context": "Packet manifest retains an earlier workflow-test note and material_extracted_with_gaps status, but current final review, quality feedback, and rework responses show no open rework targets after source-reviewed repair."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0038__doi__10.1038_s41598-017-03576-1/true_review_result.schema.json",
+    "papers/doi__10.1038_s41598-017-03576-1/final/database_record_verification.json",
+    "papers/doi__10.1038_s41598-017-03576-1/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41598-017-03576-1/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41598-017-03576-1/final/review_report.json",
+    "papers/doi__10.1038_s41598-017-03576-1/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/extracted/pdf_text/41598_2017_3576_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_s41598-017-03576-1/rework/rework_responses.jsonl",
+    "reports/doi__10.1038_s41598-017-03576-1.semantic_gate.json",
+    "reports/doi__10.1038_s41598-017-03576-1.publication_quality.json"
+  ]
+}

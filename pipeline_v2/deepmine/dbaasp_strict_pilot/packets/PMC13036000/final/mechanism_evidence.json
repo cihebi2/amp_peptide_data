@@ -1,0 +1,292 @@
+{
+  "analysis_can_resume": true,
+  "artifact": "mechanism_ontology_record",
+  "caution_findings": [
+    {
+      "code": "no_authoritative_dbaasp_linked_rows",
+      "evidence": "database_no_match_audit",
+      "impact": "Accepted only as paper-local source-reviewed curation; authoritative DBAASP ingest remains false.",
+      "layer": "database"
+    },
+    {
+      "code": "repaired_analysis_tickets_preserved",
+      "evidence": "activity_ticket_contract_audit",
+      "impact": "Two analysis-owned repair tickets remain preserved in packet rework history; worker-6 did not close another lane ticket.",
+      "layer": "activity_toxicity"
+    }
+  ],
+  "checked_inputs": [
+    {
+      "checked": true,
+      "finding": "packet exists for PMC13036000",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/packet_manifest.json",
+      "role": "packet_manifest"
+    },
+    {
+      "checked": true,
+      "finding": "JATS XML inspected; 237 section/paragraph locators",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/raw/paper.xml",
+      "role": "paper_xml"
+    },
+    {
+      "checked": true,
+      "finding": "PDF text inspected; 21 pages",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/raw/paper.pdf",
+      "role": "paper_pdf"
+    },
+    {
+      "checked": true,
+      "finding": "single DOCX supplement indexed; no supplementary tables extracted",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/raw/supplementary_original/11671_2026_4489_MOESM1_ESM.docx",
+      "role": "supplementary_assets"
+    },
+    {
+      "checked": true,
+      "finding": "source locators used for title, methods, activity table, cytotoxicity, and mechanism statements",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/extracted/xml_sections.json",
+      "role": "xml_sections"
+    },
+    {
+      "checked": true,
+      "finding": "PDF page locators used to cross-check Table 1 and Fig. 6/7 text",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/extracted/pdf_text.jsonl",
+      "role": "pdf_text"
+    },
+    {
+      "checked": true,
+      "finding": "supplement confirms figure-only IC50/photo assets; no AMP sequence table",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/extracted/supplementary_text.jsonl",
+      "role": "supplementary_text"
+    },
+    {
+      "checked": true,
+      "finding": "authoritative linked row counts are zero",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/database/database_source_manifest.json",
+      "role": "database_manifest"
+    },
+    {
+      "checked": true,
+      "finding": "local authoritative DOI/PMID/PMCID/title checks found no stable DBAASP/merged link",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/database/authoritative_match_report.json",
+      "role": "authoritative_match_report"
+    },
+    {
+      "checked": true,
+      "finding": "zero fallback candidate rows; machine evidence not used as primary source",
+      "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/database/dbaasp_machine_extracted_rows.jsonl",
+      "role": "dbaasp_machine_rows"
+    }
+  ],
+  "direct_mechanism_assay_assessment": {
+    "direct_assay_types_observed": [
+      "CAT enzyme activity assay",
+      "SOD enzyme activity assay"
+    ],
+    "direct_claim_scope_limit": "cell-line antioxidant-marker response after SeNP treatment, not bacterial or AMP peptide mechanism",
+    "direct_mechanism_claims_present": true,
+    "not_promoted_to_direct": [
+      "agar diffusion antibacterial phenotype",
+      "discussion-only membrane/ROS antibacterial mechanism",
+      "database-negative AMP identity finding"
+    ]
+  },
+  "evidence_class_summary": {
+    "computational_only": 0,
+    "direct_mechanism": 1,
+    "inferred_mechanism": 1,
+    "phenotype_supported": 2,
+    "unknown_or_not_tested": 1
+  },
+  "machine_candidate_evidence_boundary": {
+    "candidate_row_count": 0,
+    "source_record_links_present": false,
+    "worker6_use": "not used as primary evidence"
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC13036000-MECH-001",
+      "claim_text": "SeNP antibacterial effect is supported by inhibition-zone phenotypes against six Gram-positive/Gram-negative bacteria at 15 mg mL-1.",
+      "direct_assay_types": [],
+      "entity_scope": "Aloe vera leaf extract-mediated selenium nanoparticles (SeNPs)",
+      "evidence_class": "phenotype_supported",
+      "limitation_notes": "Agar diffusion phenotype does not establish molecular antimicrobial mechanism and is not AMP peptide evidence.",
+      "source_locator": "xml:table-wrap:1",
+      "supporting_locators": [
+        "xml:p:56",
+        "xml:p:59",
+        "xml:p:66",
+        "pdf:page=12"
+      ]
+    },
+    {
+      "claim_id": "PMC13036000-MECH-002",
+      "claim_text": "Bacterial oxidative damage, membrane permeability disruption, respiration effects, and enzyme inhibition are discussed as possible SeNP antibacterial mechanisms.",
+      "direct_assay_types": [],
+      "entity_scope": "Aloe vera leaf extract-mediated selenium nanoparticles (SeNPs)",
+      "evidence_class": "inferred_mechanism",
+      "limitation_notes": "The source passage cites prior studies; this paper did not directly assay bacterial membrane permeability, respiration, or dehydrogenase activity for its SeNP preparation.",
+      "source_locator": "xml:p:68",
+      "supporting_locators": [
+        "xml:sec:27"
+      ]
+    },
+    {
+      "claim_id": "PMC13036000-MECH-003",
+      "claim_text": "SeNP anticancer/cell-viability effect is phenotype-supported by MTT IC50 values for Caco2, MCF7, and WI38 cells.",
+      "direct_assay_types": [],
+      "entity_scope": "Aloe vera leaf extract-mediated selenium nanoparticles (SeNPs)",
+      "evidence_class": "phenotype_supported",
+      "limitation_notes": "MTT/viability data support cytotoxic phenotype and selectivity context, not AMP identity.",
+      "source_locator": "xml:p:80",
+      "supporting_locators": [
+        "xml:p:83",
+        "xml:fig:6",
+        "pdf:page=15"
+      ]
+    },
+    {
+      "claim_id": "PMC13036000-MECH-004",
+      "claim_text": "CAT and SOD enzyme activities decreased in treated Caco2 and MCF7 cell lines, supporting an oxidative-stress-related cellular response.",
+      "direct_assay_types": [
+        "CAT enzyme activity assay",
+        "SOD enzyme activity assay"
+      ],
+      "entity_scope": "Aloe vera leaf extract-mediated selenium nanoparticles (SeNPs)",
+      "evidence_class": "direct_mechanism",
+      "limitation_notes": "Direct assay is limited to cancer-cell antioxidant markers after SeNP treatment; it is not a direct antimicrobial-peptide mechanism assay.",
+      "source_locator": "xml:p:88",
+      "supporting_locators": [
+        "xml:fig:7",
+        "xml:caption:8",
+        "pdf:page=16"
+      ]
+    },
+    {
+      "claim_id": "PMC13036000-MECH-005",
+      "claim_text": "No antimicrobial peptide sequence, peptide modification, or AMP-specific mechanism was found in the paper-local XML/PDF/supplement or linked database snapshots.",
+      "direct_assay_types": [],
+      "entity_scope": "AMP/DBAASP peptide identity for PMC13036000",
+      "evidence_class": "unknown_or_not_tested",
+      "limitation_notes": "This is a negative AMP-identity finding, not a claim that the SeNP paper lacks biological activity.",
+      "source_locator": "xml:article-title:1",
+      "supporting_locators": [
+        "database:authoritative_match_report:row_counts_zero",
+        "database:dbaasp_machine_extracted_rows:0",
+        "supp:11671_2026_4489_MOESM1_ESM.docx"
+      ]
+    }
+  ],
+  "paper_id": "PMC13036000",
+  "paper_metadata": {
+    "doi": "10.1186/s11671-026-04489-7",
+    "journal": "Discover Nano",
+    "pmcid": "PMC13036000",
+    "pmid": "41910918",
+    "title": "Biosynthesis of selenium nanoparticles by Aloe vera leaf extract and its biomedical applications",
+    "year": "2026"
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_constraints": {
+    "database_rows_are_candidate_only": true,
+    "internet_browsing_used": false,
+    "paper_scope": "PMC13036000"
+  },
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T11:44:42.083165Z",
+  "rework_targets": [],
+  "semantic_qa": {
+    "activity_endpoints_are_concrete": true,
+    "activity_rows_have_core_fields": true,
+    "activity_toxicity_locators_resolve": true,
+    "analysis_status_source_reviewed_accepted": true,
+    "authoritative_dbaasp_ingest_ready": false,
+    "concentration_copies_consistent": true,
+    "database_machine_rows_kept_separate": true,
+    "database_no_match_not_promoted_to_source_verified": true,
+    "direct_mechanism_claims_have_direct_assay_types": true,
+    "expected_rework_contracts_checked": true,
+    "expected_rework_contracts_present": true,
+    "forbidden_table_sources_absent_from_activity_toxicity": true,
+    "internet_browsing_used": false,
+    "mechanism_claims_have_claim_ids_text_classes_and_locators": true,
+    "mechanism_claims_have_required_fields": true,
+    "mic_like_or_ic50_rows_have_units": true,
+    "nanoparticle_evidence_not_promoted_to_amp_identity": true,
+    "no_activity_toxicity_duplicate_observations": true,
+    "no_source_verified_records_emitted_without_linked_rows": true,
+    "normalization_status_and_values_consistent": true,
+    "open_analysis_tickets_have_repaired_resume_responses": true,
+    "open_rework_ticket_count": 0,
+    "packet_gate_strict_pass": true,
+    "packet_material_status_complete": true,
+    "paper_scope_limited_to_PMC13036000": true,
+    "publication_quality_gate_strict_pass": true,
+    "rework_targets_required": false,
+    "semantic_three_layer_gate_strict_pass": true,
+    "source_locators_present_for_activity_records": true,
+    "strict_gate_exit_zero": true,
+    "target_species_are_not_sentence_fragments": true
+  },
+  "source_reviewed": true,
+  "source_reviewed_complete": true,
+  "validator_contract_passed": true,
+  "worker6_locator_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/worker6_mechanism_locator_audit.json",
+  "worker6_terminal_adjudication": {
+    "adjudicated_at": "2026-07-15T08:51:50.112424Z",
+    "analysis_can_resume": true,
+    "final_counts": {
+      "activity_records": 8,
+      "caution_findings": 6,
+      "database_record_audits": 0,
+      "mechanism_claims": 5,
+      "open_rework_tickets_verified_for_closure": 2,
+      "rework_targets": 0,
+      "toxicity_records": 10
+    },
+    "gate_artifact_paths": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/packet_gate_PMC13036000.worker6_terminal.json",
+      "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/publication_quality_PMC13036000.worker6_terminal.json",
+      "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/semantic_gate_PMC13036000.worker6_terminal.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    },
+    "publication_grade": true,
+    "reasoning_effort": "xhigh",
+    "response_by": "worker-6",
+    "review_model": "gpt-5.5",
+    "review_status": "accepted_with_cautions",
+    "ticket_contract_evidence": {
+      "activity_ticket_contract_audit_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/work/review/worker6_activity_ticket_contract_audit.json",
+      "overall_contract_pass": true
+    },
+    "ticket_ids_verified": [
+      "rwk-PMC13036000-normalization-schema-001",
+      "rwk-PMC13036000-table1-viability-completeness-002"
+    ],
+    "validator_contract_passed": true,
+    "verified_artifact_paths": {
+      "activity_toxicity_evidence": {
+        "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/final/activity_toxicity_evidence.json",
+        "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/final/activity_toxicity_evidence.json"
+      },
+      "database_record_verification": {
+        "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/final/database_record_verification.json",
+        "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/final/database_record_verification.json"
+      },
+      "mechanism_ontology_record": {
+        "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/final/mechanism_ontology_record.json",
+        "packet_aligned_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/final/mechanism_evidence.json",
+        "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/final/mechanism_ontology_record.json"
+      },
+      "review_report": {
+        "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13036000/final/review_report.json",
+        "paper": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13036000/final/review_report.json"
+      }
+    }
+  }
+}

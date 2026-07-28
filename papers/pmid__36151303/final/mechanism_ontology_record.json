@@ -1,0 +1,108 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "pmid__36151303",
+  "doi": "10.1038/s41598-022-20236-1",
+  "pmid": "36151303",
+  "pmcid": "PMC9508196",
+  "run_id": "codex_cli_rereview_worker4_6_20260510T181850Z",
+  "worker": "worker-6_adjudicated_worker-5_scope",
+  "stage_id": "codex_cli_rereview_mechanism_adjudication",
+  "generated_at": "2026-05-10T18:21:46Z",
+  "reviewed_at": "2026-05-10T18:21:46Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 bounded final mechanism adjudication from primary XML/PDF methods/results, figure captions/images, and DOCX supplement captions; no unsupported intracellular molecular target is added.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-flow-membrane-permeabilization-depolarization",
+      "claim_text": "D-AP19 causes A. baumannii membrane permeabilization and depolarization in PI/BOX flow-cytometry assays at half-MIC and 1x MIC conditions.",
+      "entity_scope": "D-AP19 against Acinetobacter baumannii ATCC 19606",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "flow_cytometry_PI_permeabilization",
+        "flow_cytometry_BOX_membrane_depolarization"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/pmid__36151303/raw/paper.xml",
+        "locator": "xml:sec=24:D-AP19 induced bacterial membrane depolarization and permeabilization leading to cell death",
+        "figure_locator": "xml:fig=5:Figure 5"
+      },
+      "source_locators": [
+        {
+          "source_path": "paper_packets/pmid__36151303/raw/supplementary_original/local-DRAMP-41598_2022_20236_MOESM1_ESM.docx",
+          "locator": "supp:Figure S1/Figure S2 flow-cytometry controls"
+        }
+      ],
+      "limitations": "Supports membrane damage physiology; does not identify a single molecular binding target."
+    },
+    {
+      "claim_id": "mech-sem-tem-cell-envelope-disruption",
+      "claim_text": "SEM and TEM show D-AP19-treated A. baumannii with roughened/distorted membranes, blebbing, intracellular leakage, and ghost-cell morphology.",
+      "entity_scope": "D-AP19 against Acinetobacter baumannii ATCC 19606",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "scanning_electron_microscopy",
+        "transmission_electron_microscopy"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/pmid__36151303/raw/paper.xml",
+        "locator": "xml:sec=25:Ultrastructural evidence of D-AP19’s disruption and distortion of bacterial cell membranes",
+        "figure_locators": [
+          "xml:fig=6:Figure 6",
+          "xml:fig=7:Figure 7"
+        ]
+      },
+      "limitations": "Morphology supports envelope disruption but is not a biochemical target assay."
+    },
+    {
+      "claim_id": "mech-cd-membrane-mimic-alpha-helix-context",
+      "claim_text": "CD spectra support alpha-helical conformation for AP19/D-AP19 in membrane-mimetic SDS and TFE environments, providing structure-function context for membrane activity.",
+      "entity_scope": "AP19 and D-AP19",
+      "evidence_class": "structure_function_context",
+      "direct_assay_types": [
+        "circular_dichroism_in_membrane_mimics"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/pmid__36151303/raw/paper.xml",
+        "locator": "xml:sec=22:D-AP19 and its L-enantiomers formed an α-helical amphipathic conformation in membrane mimetic environments",
+        "figure_locator": "xml:fig=3:Figure 3"
+      },
+      "limitations": "CD conformation alone is context evidence and is not promoted to direct killing mechanism."
+    },
+    {
+      "claim_id": "phenotype-rapid-kill-low-resistance",
+      "claim_text": "D-AP19 shows rapid A. baumannii killing in time-kill assays and low resistance induction during serial passage, recorded as phenotype support rather than molecular mechanism.",
+      "entity_scope": "D-AP19 against Acinetobacter baumannii ATCC 19606",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [
+        "time_kill_kinetics",
+        "serial_passage_MIC_tracking"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/pmid__36151303/raw/paper.xml",
+        "locator": "xml:sec=23:D-AP19 exhibited rapid killing of A. baumannii",
+        "figure_locators": [
+          "xml:fig=4:Figure 4",
+          "xml:fig=8:Figure 8"
+        ]
+      },
+      "limitations": "Phenotype evidence supports rapid killing/low resistance tendency; no exact graph-only values are fabricated."
+    }
+  ],
+  "quality_controls": [
+    {
+      "check": "direct_mechanism_assay_types",
+      "result": "pass",
+      "detail": "Direct mechanism claims list flow cytometry or electron microscopy assay types."
+    },
+    {
+      "check": "bounded_interpretation",
+      "result": "pass",
+      "detail": "Mechanism is bounded to membrane damage/structure-function evidence and rapid-kill phenotype."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

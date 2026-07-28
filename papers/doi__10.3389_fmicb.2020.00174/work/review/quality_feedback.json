@@ -1,0 +1,77 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2020.00174",
+  "generated_at": "2026-05-06T20:40:25Z",
+  "status": "cleared_after_worker246_source_review",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_caution_codes": [
+    "database_control_column_misattribution_preserved",
+    "dbaasp_salt_context_collapsed",
+    "supplementary_landing_pages_not_data_tables",
+    "mechanism_intracellular_target_not_directly_assayed",
+    "figure_curve_exact_points_not_fabricated"
+  ],
+  "resolution_summary": "Worker-2 repaired Table 2 and rebuilt activity/toxicity rows; worker-4 reconciled DBAASP rows and preserved source_conflict rows; worker-6 rewrote final adjudication as accepted_with_cautions with no open rework targets.",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_curve_exact_point_values_not_text_recoverable",
+      "source_paths_checked": [
+        "papers/doi__10.3389_fmicb.2020.00174/source/paper.xml",
+        "papers/doi__10.3389_fmicb.2020.00174/source/paper.pdf",
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/figure_captions.json",
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/pdf_text/landing-1.txt"
+      ],
+      "tools_attempted": [
+        "xml table/text parser",
+        "rg",
+        "pdftotext-derived packet text"
+      ],
+      "why_unrecoverable": "Time-kill, membrane-probe, cytotoxicity, and intracellular-replication figures provide curves/bars but the local text extraction does not expose all underlying per-timepoint numeric series. Text-supported values and claims were recorded; missing curve internals were not invented.",
+      "impact": "Nonblocking: publication-grade conclusions use source-supported table values, textual exact values, and bounded figure-level qualitative claims rather than fabricated curve points.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "no_direct_intracellular_target_binding_assay",
+      "source_paths_checked": [
+        "papers/doi__10.3389_fmicb.2020.00174/source/paper.xml",
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/xml_sections.json",
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/figure_captions.json"
+      ],
+      "tools_attempted": [
+        "xml parser",
+        "rg"
+      ],
+      "why_unrecoverable": "The local primary article discusses cytoplasmic targets by analogy to Bac5/Bac7 literature but does not report a BSN-37 ribosome/protein-synthesis/binding assay.",
+      "impact": "Nonblocking when recorded as a mechanism limitation; direct mechanism claims remain restricted to membrane-integrity, permeability, and microscopy evidence.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "no_structured_supplementary_tables_local",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3389_fmicb.2020.00174/extracted/supplementary_text.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00174/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3389_fmicb.2020.00174/supplementary/landing-10.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "packet supplementary index"
+      ],
+      "why_unrecoverable": "The ten local supplementary .bin assets are duplicate Frontiers HTML landing pages rather than office/spreadsheet/PDF supplement tables. The packet has supplementary_table_count=0 and no structured supplementary values to extract.",
+      "impact": "Nonblocking: the primary XML/PDF contain the article tables, methods, figure captions, and text-supported activity/toxicity/mechanism claims used for final curation.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

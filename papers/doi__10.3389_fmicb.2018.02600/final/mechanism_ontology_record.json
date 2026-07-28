@@ -1,0 +1,76 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2018.02600",
+  "generated_at": "2026-05-06T16:13:53Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "worker-6 final mechanism adjudication from XML/PDF text and figure captions; worker-5 packet notes were not treated as acceptance evidence.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-assay-medium-dependence",
+      "claim_text": "NCR247 and NCR335 antimicrobial efficiency depends strongly on assay medium and method, with low-salt conditions improving apparent activity for the cationic NCR peptides.",
+      "entity_scope": "NCR247 and NCR335",
+      "evidence_class": "source_reviewed_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2018.02600/source/paper.xml",
+        "locator": "xml:abstract;xml:table=1-4;xml:sec=Results and Discussion",
+        "pdf_text_path": "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/pdf_text/fmicb-09-02600.txt"
+      },
+      "limitations": "This is assay-context interpretation, not a molecular target claim."
+    },
+    {
+      "claim_id": "mech-sem-membrane-disruption",
+      "claim_text": "Scanning electron microscopy at MIC/MBC supports membrane disruption and cell lysis morphology after NCR247/NCR335 treatment.",
+      "entity_scope": "NCR247 and NCR335 against E. coli, B. subtilis, and S. cerevisiae",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "scanning electron microscopy"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2018.02600/source/paper.xml",
+        "locator": "xml:fig=1;xml:fig=2;xml:sec=Scanning Electron Microscopy",
+        "figure_captions": "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/figure_captions.json"
+      },
+      "limitations": "SEM morphology supports membrane-damage interpretation but does not provide a quantitative MIC/MBC replacement."
+    },
+    {
+      "claim_id": "mech-sequence-disulfide-context",
+      "claim_text": "Figure 3 locates primary sequence and disulfide-bond context for NCR247 and NCR335 used in database identity adjudication.",
+      "entity_scope": "NCR247 and NCR335",
+      "evidence_class": "structural_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2018.02600/source/paper.xml",
+        "locator": "xml:fig=3:FIGURE 3",
+        "image_path": "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/oa_package/local-DBAASP-PMC6218624/PMC6218624/fmicb-09-02600-g003.jpg"
+      },
+      "limitations": "Used as identity/structure context only; no activity value is inferred from the figure."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "supplement_growth_curves_figure_only",
+      "evidence_context": "Supplementary Data Sheet 1 contains growth-curve figures but no structured exact numeric table in local extracted text."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_growth_curve_exact_points_not_structured_nonblocking",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/pdf_text/Data_Sheet_1.txt",
+        "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3389_fmicb.2018.02600/extracted/oa_package/local-DBAASP-PMC6218624/PMC6218624/Data_Sheet_1.PDF"
+      ],
+      "tools_attempted": [
+        "pdftotext-derived packet text review",
+        "supplementary_tables.json review"
+      ],
+      "why_unrecoverable": "Local supplement material provides figure captions/pages, not a machine-readable table of growth-curve data points.",
+      "impact": "No missing exact supplement curve point is needed to support final MIC/MBC/CE rows or bounded mechanism claims.",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "adjudication_summary": "Worker-6 independently verified the current worker-2 repair responses and rebuilt final mirrors for PMC12229353. Row/cell activity contracts, normalization, concentration copies, duplicate activity/toxicity boundaries, mechanism required fields, and the DBAASP authoritative-ingest boundary pass. The paper is accepted with cautions because linked authoritative DBAASP rows are absent; fallback rows remain candidate/database-only and authoritative ingest remains false.",
+  "artifact": "adjudication_report",
+  "authoritative_dbaasp_ingest_ready": false,
+  "caution_findings": [
+    {
+      "decision": "accepted_with_cautions_boundary_only; authoritative_dbaasp_ingest_ready remains false",
+      "evidence_context": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0,
+        "machine_candidate_rows": 36
+      },
+      "finding_code": "authoritative_dbaasp_linked_rows_absent",
+      "layer": "database",
+      "record_scope": "DBAASP fallback candidate rows only",
+      "severity": "caution"
+    },
+    {
+      "caution_id": "PMC12229353-DBAASP-NO-AUTH-LINKED-ROWS",
+      "evidence_context": {
+        "authoritative_dbaasp_ingest_ready": false,
+        "linked_row_counts": {
+          "linked_article_records": 0,
+          "linked_assay_records": 0,
+          "linked_literature_records": 0,
+          "linked_sequence_records": 0
+        },
+        "source_record_links_present": false
+      },
+      "finding": "Authoritative DBAASP linked article/assay/sequence/literature rows are absent in the local packet; Codex fallback rows remain candidate machine evidence only.",
+      "layer": "database",
+      "resolution": "Accepted with cautions for source-reviewed paper-local curation; not authoritative DBAASP ingest-ready.",
+      "severity": "caution"
+    },
+    {
+      "caution_id": "PMC12229353-FALLBACK-DB-STATUS-COUNTS",
+      "evidence_context": {
+        "status_counts": {
+          "sequence_modified_not_normalized": 1,
+          "unresolved_record": 2
+        }
+      },
+      "finding": "Fallback candidate identity groups remain non-source-verified under the strict layer-1 vocabulary.",
+      "layer": "database",
+      "resolution": "Preserved as unresolved/modified database-boundary statuses; not smoothed to source_verified.",
+      "severity": "caution"
+    },
+    {
+      "code": "full_publication_grade_not_claimed_by_worker5",
+      "impact": "Requires Worker-6 adjudication plus semantic and publication-quality gates."
+    },
+    {
+      "code": "machine_rows_candidate_only",
+      "impact": "Fallback DBAASP rows were not used as primary mechanism evidence."
+    },
+    {
+      "code": "non_direct_evidence_kept_separate",
+      "impact": "ROS, biofilm, and CD/structural evidence are not promoted to direct mechanism closure."
+    },
+    {
+      "caution_id": "PMC12229353-MECHANISM-EVIDENCE-STRENGTH",
+      "evidence_context": {
+        "mechanism_evidence_class_counts": {
+          "direct_mechanism": 4,
+          "inferred_mechanism": 1,
+          "phenotype_supported": 2
+        }
+      },
+      "finding": "Mechanism evidence classes are preserved by strength; inferred and phenotype-supported claims are not promoted to direct mechanism.",
+      "layer": "mechanism",
+      "resolution": "Accepted with ontology cautions and source locators.",
+      "severity": "caution"
+    },
+    {
+      "caution_id": "worker6-20260715-authoritative-dbaasp-ingest-false",
+      "decision": "accepted_with_cautions; authoritative_dbaasp_ingest_ready remains false",
+      "evidence_context": "authoritative_match_report row counts are zero; fallback rows remain candidate-only",
+      "finding_code": "authoritative_dbaasp_ingest_false",
+      "layer": "database",
+      "record_scope": "linked_authoritative_dbaasp_rows",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/packet_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/extracted/xml_sections.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/extracted/pdf_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/extracted/supplementary_index.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/extracted/supplementary_text.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/database/database_source_manifest.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/database/authoritative_match_report.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/analysis/activity_toxicity_evidence.worker2.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/analysis/database_record_audit.worker4.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/analysis/mechanism_evidence.worker5.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/rework/rework_requests.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12229353/rework/rework_responses.jsonl",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/worker6_strict_adjudication_rebuild_audit.20260715.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/worker6_row_cell_source_boundary_audit.20260715.json",
+    "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/worker6_gate_open_ticket_audit.20260715.json"
+  ],
+  "database_candidate_boundary": {
+    "authoritative_dbaasp_ingest_ready": false,
+    "fallback_rows_promoted_to_source_verified": false,
+    "linked_authoritative_row_counts": {
+      "linked_article_records": 0,
+      "linked_assay_records": 0,
+      "linked_literature_records": 0,
+      "linked_sequence_records": 0
+    }
+  },
+  "final_counts": {
+    "activity_records": 106,
+    "database_record_audits": 3,
+    "mechanism_claims": 7,
+    "review_rework_targets": 0,
+    "toxicity_records": 6
+  },
+  "layer_decisions": {
+    "activity_toxicity": "accepted_with_cautions_for_layer_only",
+    "database": "accepted_with_cautions_for_layer_only",
+    "mechanism": "accepted_with_cautions_for_layer_only",
+    "paper_terminal_status": "accepted_with_cautions"
+  },
+  "materials_exhausted": {
+    "database_rows": {
+      "inspected": true,
+      "linked_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0
+      },
+      "machine_candidate_row_count": 36,
+      "present": true
+    },
+    "extraction_errors": {
+      "count": 0,
+      "present": true
+    },
+    "known_missing_or_blocked_materials": [],
+    "material_queue_status": "material_extracted_complete",
+    "oa_package": {
+      "inspected": true,
+      "present": false,
+      "status": "not_present_in_packet_manifest"
+    },
+    "paper_pdf": {
+      "inspected": true,
+      "pdf_page_count": 13,
+      "present": true
+    },
+    "paper_xml": {
+      "inspected": true,
+      "locator_count": 177,
+      "present": true
+    },
+    "supplementary_assets": {
+      "inspected": true,
+      "present": true,
+      "supplementary_file_count": 1,
+      "supplementary_text_count": 1
+    }
+  },
+  "open_rework_ticket_count_at_review": 0,
+  "packet_rework_ticket_action": "terminal_worker6_closed_repaired_responses_appended",
+  "paper_id": "PMC12229353",
+  "per_layer_decision_rationale": {
+    "activity_toxicity_evidence": "Layer 2 final arrays match worker-2 repaired evidence, pass row/cell observation contracts, and contain no forbidden-table, duplicate, concentration, or normalization blockers.",
+    "database_record_verification": "Layer 1 remains source-reviewed with authoritative DBAASP ingest held false because linked authoritative rows are absent; fallback/database-only evidence is not promoted to source_verified.",
+    "mechanism_ontology": "Layer 3 remains source-reviewed with mechanism evidence classes preserved and no direct-mechanism overclaim introduced by this adjudication pass.",
+    "runtime_rework_closure": "All runtime-open tickets have evidence-bearing worker-2 nonterminal repair responses and passed worker-6 row/cell plus gate closure verification."
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T10:57:06Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "authoritative_dbaasp_ingest_boundary_preserved": true,
+    "concentration_copy_consistency_pass": true,
+    "duplicate_activity_toxicity_mirroring_absent": true,
+    "forbidden_non_assay_table_citations_absent": true,
+    "normalization_status_consistency_pass": true,
+    "owner_response_runtime_contract_pass": true,
+    "packet_gate_strict_pre_rework_pass": true,
+    "post_closure_packet_gate_pass": true,
+    "post_closure_publication_gate_pass": true,
+    "post_closure_semantic_gate_pass": true,
+    "publication_gate_strict_pre_rework_pass": true,
+    "row_cell_observation_contracts_pass": true,
+    "semantic_gate_strict_pre_rework_pass": true,
+    "terminal_response_schema_pass": true
+  },
+  "source_review_depth": {
+    "merged_database_rows": "authoritative linked-row snapshots checked; DBAASP machine fallback rows reviewed only as candidate evidence",
+    "oa_package": "not_present_as_packet_asset; absence nonblocking because XML/PDF/supplement/database packet complete",
+    "paper_pdf": "packet_pdf_text_available_and_counted",
+    "paper_xml": "opened_packet_extracted_sections_and_table_locators",
+    "rework_contracts": "all expected observation counts and cell observations independently checked against final rows",
+    "supplementary_assets": "supplementary index/text reviewed for availability; no row-level toxicity duplication accepted"
+  },
+  "source_reviewed": true,
+  "strict_gate": {
+    "post_closure_gate_artifacts": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.worker6.runtime_closure_20260715T105706Z.json",
+      "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_quality.worker6.runtime_closure_20260715T105706Z.json",
+      "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_three_layer_gate.worker6.runtime_closure_20260715T105706Z.json"
+    },
+    "pre_rework_passes": true,
+    "terminal_closure_gate_pass": true
+  },
+  "unresolved_blockers": [],
+  "validation_evidence": {
+    "authoritative_boundary_pass": true,
+    "concentration_mismatch_count": 0,
+    "duplicate_activity_toxicity_mirror_count": 0,
+    "duplicate_activity_toxicity_signature_count": 0,
+    "forbidden_table_records": 0,
+    "gate_artifact_paths": {
+      "packet": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/packet_gate.worker6.runtime_closure_20260715T105706Z.json",
+      "publication": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/publication_quality.worker6.runtime_closure_20260715T105706Z.json",
+      "semantic": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/semantic_three_layer_gate.worker6.runtime_closure_20260715T105706Z.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    },
+    "independent_contract_audit_path": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/review/worker6_independent_runtime_contract_audit.20260715.json",
+    "invalid_normalization_count": 0,
+    "owner_response_prerequisite_pass": true,
+    "post_closure_packet_open_rework_ticket_count": 0,
+    "post_closure_publication_risk_counts": {},
+    "post_closure_semantic_issue_count": 0,
+    "row_cell_contracts_pass": true,
+    "terminal_adjudication_response_appended": true,
+    "terminal_adjudication_response_blocker": null
+  },
+  "validator_contract_passed": true
+}

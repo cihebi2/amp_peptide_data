@@ -1,0 +1,130 @@
+{
+  "paper_id": "doi__10.21203_rs.3.rs-571433_v1",
+  "generated_at": "2026-05-05T18:50:29Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 rechecked the packet database rows against local PDF/HTML source evidence. The packet has one linked DBAASP literature row and no sequence/assay/activity rows; peptide identity is therefore adjudicated from primary source with a preserved sequence conflict.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 0,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "DBAASP:DBAASPR_19111",
+      "sequence_key": "DBAASP:DBAASPR_19111",
+      "source_table": "linked_literature_records.jsonl",
+      "database_subject": "Isolation, Characterization and Mode of Action of a Plant-Derived Antifungal Peptide, Cc-AFP1 Against Aspergillus Fumigatus",
+      "database_measure": "literature_link_only",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:landing-1.txt:1-23"
+      },
+      "sequence_check": {
+        "status": "not_applicable_literature_link",
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:1-23"
+        },
+        "primary_source_statement": "Linked DBAASP row is a literature record for DOI/title/year, not a peptide sequence or assay row."
+      },
+      "review_notes": "DOI/title/year are source-verified against the local PDF and Research Square article HTML. No linked DBAASP sequence or assay rows were present in the packet to verify as database facts.",
+      "matched_activity_record_id": "",
+      "conflict_context": ""
+    },
+    {
+      "source_id": "primary_pdf:Cc-AFP1",
+      "sequence_key": "Cc-AFP1",
+      "source_table": "primary_pdf_and_researchsquare_html",
+      "database_subject": "Cc-AFP1 peptide identity from primary article",
+      "database_measure": "sequence_identity",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:landing-1.txt:29-30; pdf_text:landing-1.txt:242-259"
+      },
+      "citation_traceability": {
+        "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+        "locator": "pdf_text:landing-1.txt:1-23"
+      },
+      "sequence_check": {
+        "status": "source_conflict",
+        "observed_sequences": [
+          {
+            "sequence": "RVCFRPVATYLGVCGVSGACRDHCVKLGSCVYKGPG",
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:landing-1.txt:29-30; pdf_text:landing-1.txt:242-244",
+            "context": "abstract and Edman/mass-spectrometry results"
+          },
+          {
+            "sequence": "RVCFRPVATYLGVCGVSGACRDRCVKLGSCVYKGPG",
+            "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+            "locator": "pdf_text:landing-1.txt:257-259",
+            "context": "Table 2 physicochemical features"
+          }
+        ],
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/pdf_text/landing-1.txt",
+          "locator": "pdf_text:landing-1.txt:29-30; pdf_text:landing-1.txt:242-259"
+        },
+        "primary_source_statement": "The primary PDF reports two different 36-aa Cc-AFP1 sequences; this conflict is preserved rather than normalized."
+      },
+      "review_notes": "No linked sequence_records, assay_records, experiment_records, or DRAMP activity records were present. The primary-source sequence discrepancy remains a source_conflict caution.",
+      "matched_activity_record_id": "act-mic-001",
+      "conflict_context": "Primary PDF/Research Square HTML abstract and mass-spectrometry/Edman section report RVCFRPVATYLGVCGVSGACRDHCVKLGSCVYKGPG, while Table 2 reports RVCFRPVATYLGVCGVSGACRDRCVKLGSCVYKGPG. Both are 36 aa; no local database sequence row resolves the H/R discrepancy.",
+      "conflict_flags": [
+        "primary_sequence_discrepancy",
+        "database_sequence_row_absent"
+      ]
+    }
+  ],
+  "status_summary": {
+    "source_verified": 1,
+    "source_conflict": 1
+  },
+  "unrecoverable_material_gaps": [],
+  "nonblocking_source_limitations": [
+    {
+      "code": "xml_sections_not_article_focused",
+      "severity": "caution",
+      "source_paths_checked": [
+        "papers/doi__10.21203_rs.3.rs-571433_v1/source/paper.xml",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/xml_sections.json"
+      ],
+      "finding": "The XML/derived xml_sections artifact is not a reliable focused article-section source for this DOI; the source-reviewed values were therefore taken from the paper PDF text and Research Square article HTML.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "supplementary_assets_are_html_not_tables",
+      "severity": "caution",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-3.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-1.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.21203_rs.3.rs-571433_v1/supplementary/landing-4.bin",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/extracted/supplementary_text.jsonl"
+      ],
+      "finding": "The three packet supplementary .bin assets are HTML pages, not local XLSX/DOCX/PDF supplementary data tables; no additional activity or toxicity tables were recoverable from them.",
+      "blocks_publication_grade": false
+    },
+    {
+      "code": "linked_database_rows_literature_only",
+      "severity": "caution",
+      "source_paths_checked": [
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/database/database_source_manifest.json",
+        "paper_packets/doi__10.21203_rs.3.rs-571433_v1/database/linked_literature_records.jsonl"
+      ],
+      "finding": "The packet contains one DBAASP linked literature row and zero linked sequence, assay, experiment, or DRAMP activity rows; database curation is therefore limited to DOI/title traceability plus primary-source peptide evidence.",
+      "blocks_publication_grade": false
+    }
+  ]
+}

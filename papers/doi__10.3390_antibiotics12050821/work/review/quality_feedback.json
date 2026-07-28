@@ -1,0 +1,62 @@
+{
+  "paper_id": "doi__10.3390_antibiotics12050821",
+  "generated_at": "2026-05-07T15:29:08Z",
+  "issue_count": 0,
+  "status": "cleared_after_worker4_worker6_source_review",
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "publication_grade_ready": true,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_zip_contains_figures_not_extra_activity_tables",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics12050821/extracted/oa_package/local-DBAASP-PMC10215143/PMC10215143/antibiotics-12-00821-s001.zip",
+        "/tmp/antibiotics12050821_supp_inspect/antibiotics-2360479-supplementary.pdf",
+        "paper_packets/doi__10.3390_antibiotics12050821/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics12050821/extracted/supplementary_tables.json"
+      ],
+      "tools_attempted": [
+        "unzip",
+        "file",
+        "pdftotext",
+        "rg"
+      ],
+      "why_unrecoverable": "The local supplementary ZIP contains one PDF with CD deconvolution figures; no supplementary activity, toxicity, sequence, or database table is present to extract.",
+      "impact": "Supplementary material does not change activity/toxicity/database adjudication; CD context is retained in mechanism cautions.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "figure_percent_hemolysis_exact_points_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics12050821/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_antibiotics12050821/extracted/oa_package/local-DBAASP-PMC10215143/PMC10215143/antibiotics-12-00821-g001.jpg",
+        "paper_packets/doi__10.3390_antibiotics12050821/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics12050821/database/linked_assay_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg",
+        "pdftotext",
+        "JSON database row comparison"
+      ],
+      "why_unrecoverable": "Exact percent hemolysis values at individual concentrations are figure-derived database rows; local text/table material provides HC50 values but not exact figure point tables.",
+      "impact": "HC50 values are source-verified from Table 3; percent-hemolysis database rows remain explicit source_conflict cautions.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "worker_response": {
+    "owner_workers": [
+      "worker-4",
+      "worker-6"
+    ],
+    "status": "closed_resolved_with_cautions",
+    "notes": "Worker-4/6 source review resolved the framework-test blocker; remaining database/source limitations are preserved as nonblocking cautions."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "paper_id": "doi__10.1186_s12866-023-03131-1",
+  "generated_at": "2026-05-03T09:38:52Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "status": "qc_passed_after_strict_gate_rerun",
+  "source_paths_checked": [
+    "rework_context/doi__10.1186_s12866-023-03131-1/handoff_context.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/packet_manifest.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/locators/locator_index.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extraction/extraction_status.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/pdf_text/12866_2023_Article_3131.txt",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/database/database_source_manifest.json",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/xml/remote-PMC10690985.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/xml/local-APD6-12866_2023_Article_3131.nxml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/pdf/landing-1.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/package/local-APD6-pmc_package.tar.gz",
+    "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/oa_package/local-APD6-pmc_package/PMC10690985/12866_2023_3131_Fig1_HTML.jpg",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/supplementary/local-APD6-12866_2023_3131_MOESM1_ESM.docx",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/supplementary",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv:APD6:AP03838",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv:APD6:AP03838"
+  ],
+  "tools_attempted": [
+    "jq JSON artifact review",
+    "rg over XML/PDF text/figure captions/database rows",
+    "pdftotext-derived packet text review",
+    "file over landed supplementary assets",
+    "OOXML document.xml extraction from DOCX",
+    "OA package member/image review including Fig. 1A",
+    "linked APD6 CSV/JSONL row reconciliation"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "host_toxicity_not_reported_in_local_sources",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/xml/remote-PMC10690985.xml",
+        "paper_packets/doi__10.1186_s12866-023-03131-1/extracted/pdf_text/landing-1.txt",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/supplementary/local-APD6-12866_2023_3131_MOESM1_ESM.docx",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_s12866-023-03131-1/supplementary"
+      ],
+      "tools_attempted": [
+        "rg toxicity/hemolysis/viability over XML/PDF text",
+        "OOXML text extraction from DOCX",
+        "file over supplementary .bin assets"
+      ],
+      "why_unrecoverable": "Local primary article and supplementary DOCX report antimicrobial, TEM, EIS, and purification evidence but no host hemolysis, mammalian-cell toxicity, or cytotoxicity assay results.",
+      "impact": "No host-toxicity row is asserted. This is a nonblocking absence because the previous worker-2 blocker was missing antimicrobial activity rows, which are now source-supported.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    }
+  ],
+  "notes": "The prior full_source_review_not_completed, database_conflicts_require_adjudication, and missing_activity_records blockers were resolved. Remaining cautions are source-located and nonblocking under obtainable-only review.",
+  "gate_evidence": {
+    "updated_at": "2026-05-03T09:38:52Z",
+    "semantic_gate_report": "reports/doi__10.1186_s12866-023-03131-1.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.1186_s12866-023-03131-1.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "activity_records": 8,
+    "mechanism_claims": 3
+  }
+}

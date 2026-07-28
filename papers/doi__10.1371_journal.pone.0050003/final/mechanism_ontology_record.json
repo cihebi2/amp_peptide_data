@@ -1,0 +1,95 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0050003",
+  "generated_at": "2026-05-03T05:47:11Z",
+  "extraction_scope": "Worker-6 source-bounded mechanism adjudication from primary XML/PDF text and figure/table locators. Claims are kept as mechanism context where the paper supports transcriptomic/pathway inference; exact supplementary gene rows from Table S1 remain unrecoverable locally.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-membrane-damage-sigmaW",
+      "claim_text": "Fusaricidin exposure is interpreted as membrane-damaging stress supported by rapid sigma W regulon induction, yuaFGI/ymcC response, and the paper-reported BacLight membrane-integrity context.",
+      "entity_scope": "fusaricidin/fusaricidins acting on Bacillus subtilis 168",
+      "evidence_class": "direct_mechanism_with_prior_assay_caution",
+      "direct_assay_types": [
+        "BacLight membrane integrity assay reported in article text",
+        "DNA microarray transcriptome profiling"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=s3b:Fusaricidin Rapidly Induced sigmaW Regulon in B. subtilis",
+        "source_path": "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+        "supporting_figures": [
+          "xml:fig=2",
+          "xml:fig=3"
+        ]
+      },
+      "limitations": "BacLight raw data are described in the paper text as prior-study support; the local packet does not contain the original underlying BacLight dataset."
+    },
+    {
+      "claim_id": "mech-002-growth-inhibition-exposure",
+      "claim_text": "Sub-MIC fusaricidin exposure slows B. subtilis 168 growth and is used to generate the transcriptomic time course at 5, 20, and 170 min.",
+      "entity_scope": "fusaricidin exposure in Bacillus subtilis 168",
+      "evidence_class": "primary_growth_and_transcriptome_context",
+      "direct_assay_types": [
+        "OD600/cell concentration growth monitoring",
+        "DNA microarray transcriptome profiling"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=s2b:Growth Conditions; xml:sec=s2c:RNA Preparation and Microarray Analyses; xml:sec=s3a; xml:fig=1",
+        "source_path": "papers/doi__10.1371_journal.pone.0050003/source/paper.xml"
+      },
+      "limitations": "The paper gives exposure concentrations and qualitative growth slowing, not an exact MIC or percent inhibition table."
+    },
+    {
+      "claim_id": "mech-003-metabolism-transport-oxidative-stress",
+      "claim_text": "The paper supports pathway-level responses involving amino/fatty-acid catabolism, repression of glucose decomposition/gluconeogenesis, nucleotide metabolism changes, cation transport, and oxidative stress/iron transport context.",
+      "entity_scope": "Bacillus subtilis 168 response to fusaricidin",
+      "evidence_class": "transcriptomic_pathway_context",
+      "direct_assay_types": [
+        "MIPS functional category analysis",
+        "T-profiler gene-group analysis",
+        "pathway figure interpretation"
+      ],
+      "source_locator": {
+        "locator": "xml:table=1; xml:table=2; xml:fig=4; xml:fig=5; xml:fig=6; xml:fig=7; xml:sec=s3c/s3d",
+        "source_path": "papers/doi__10.1371_journal.pone.0050003/source/paper.xml"
+      },
+      "limitations": "Exact per-gene Table S1 rows are not locally recoverable because the referenced XLSX is absent from local materials."
+    },
+    {
+      "claim_id": "mech-004-antibiotic-profile-comparison",
+      "claim_text": "Cluster comparisons in the article place fusaricidin transcriptome response closest to Fe-limitation among selected datasets and most similar to triclosan among the broader antibiotic set.",
+      "entity_scope": "comparative transcriptome profile for fusaricidin-treated Bacillus subtilis",
+      "evidence_class": "comparative_transcriptome_context",
+      "direct_assay_types": [
+        "cluster analysis of microarray profiles"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=s3d final comparison; xml:fig=8; xml:fig=9",
+        "source_path": "papers/doi__10.1371_journal.pone.0050003/source/paper.xml"
+      },
+      "limitations": "Figure-level exact similarity values are not extracted from local source; claim is bounded to the textual comparison and figure locators."
+    }
+  ],
+  "unrecoverable_mechanism_gaps": [
+    {
+      "gap_code": "supplementary_table_s1_gene_rows_not_local",
+      "source_paths_checked": [
+        "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0050003/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/supplementary",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/asset_manifest.csv"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "rg",
+        "find",
+        "unzip -l",
+        "strings",
+        "xxd"
+      ],
+      "why_unrecoverable": "The XML/PDF reference Table S1 as an XLSX, but the local paper tree contains HTML landing files and a Figure 1 TIFF; no .xlsx/s001 file was found in the local paper-specific landed/downloaded paths.",
+      "impact": "Exact Table S1 gene-level differential-expression rows at 20 and 170 min cannot be source-reviewed from local material.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": true
+    }
+  ]
+}

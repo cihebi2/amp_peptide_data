@@ -1,0 +1,119 @@
+{
+  "paper_id": "doi__10.3390_cimb47080673",
+  "reviewed_at": "2026-05-08T13:45:40Z",
+  "updated_at": "2026-05-08T13:48:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package/database rows were sufficient for worker-2/4/6 owner-layer repair; packet has no supplementary assets, so no external supplement was fabricated or chased."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_cimb47080673/handoff_context.json",
+    "paper_packets/doi__10.3390_cimb47080673/packet_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/locators/locator_index.json",
+    "paper_packets/doi__10.3390_cimb47080673/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_cimb47080673/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_cimb47080673/raw/paper.xml",
+    "paper_packets/doi__10.3390_cimb47080673/raw/paper.pdf",
+    "papers/doi__10.3390_cimb47080673/source/paper.xml",
+    "papers/doi__10.3390_cimb47080673/source/paper.pdf",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/pdf_text/cimb-47-00673.txt",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/pdf_text/local-DBAASP-PMC12412326.txt",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_cimb47080673/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_cimb47080673/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "xml.etree.ElementTree table/section extraction",
+    "rg over extracted PDF text",
+    "jq over packet manifest, locator index, database JSONL, supplementary indexes",
+    "archive manifest inspection for OA package members"
+  ],
+  "adjudication_summary": "Worker-2 recovered the missing MIC/cytotoxicity/toxicity evidence from primary XML/PDF text, worker-4 reconciled DBAASP/APD rows against source locators while preserving one APD conflict, and worker-6 closed the framework-only rework ticket with bounded mechanism cautions.",
+  "per_layer_decision_rationale": {
+    "material_packet": "Material remains material_extracted_with_gaps because no supplementary assets exist locally; this is kept separate from source-reviewed final acceptance.",
+    "validator_contract": "The structural contract was already present; acceptance is based on source-reviewed owner-layer repair and strict gate reruns, not validator success alone.",
+    "layer_1_database": "DBAASP assay/experiment/literature rows are source_verified where they match Table 3, Results Sections 3.5/3.6, and article metadata; APD6 AP05672 remains source_conflict for database-computed details not fully supported by primary rows.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt 20 source-supported records covering Table 3 MIC values, cancer-cell IC50 values, HDF toxicity, and HC50 hemolysis with units, targets, conditions, and locators.",
+    "layer_3_mechanism": "Mechanism claims are bounded: CAFLUX/Cyp1a1 is direct reporter evidence; membrane-disruption language is structural/contextual, not overclaimed as direct pore evidence.",
+    "publication_grade_review": "The previous blocking ticket is closed because gate-changing local values were recovered; remaining limitations are explicit cautions rather than open rework."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 20,
+    "database_status_summary": {
+      "source_verified": 30,
+      "source_conflict": 1
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "gate_evidence": {
+      "commands": {
+        "semantic": "python .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root . --manifest reports/doi__10.3390_cimb47080673.complete_message_test_manifest.json --json > reports/doi__10.3390_cimb47080673.semantic_gate.json",
+        "publication": "python .codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py --root . --manifest reports/doi__10.3390_cimb47080673.complete_message_test_manifest.json --json-out reports/doi__10.3390_cimb47080673.publication_quality.json"
+      },
+      "semantic_report": "reports/doi__10.3390_cimb47080673.semantic_gate.json",
+      "semantic_returncode": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_report": "reports/doi__10.3390_cimb47080673.publication_quality.json",
+      "publication_returncode": 0,
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "gates_ready": true,
+      "reran_at": "2026-05-08T13:48:30Z"
+    }
+  },
+  "caution_findings": [
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "evidence_context": "Supplementary indexes and OA package inventory show no separate supplementary tables/files; all recoverable gate-changing values came from XML/PDF text and figures."
+    },
+    {
+      "caution_code": "bacterial_strains_not_named",
+      "evidence_context": "The paper names bacterial species and source laboratory but not per-species strain identifiers; target strain fields preserve this missingness."
+    },
+    {
+      "caution_code": "apd6_computed_fields_source_conflict",
+      "evidence_context": "APD6 AP05672 includes database-computed sequence-analysis/molecular-weight text that is not fully primary-source-supported and differs from Table 1 molecular weight, so it remains source_conflict."
+    },
+    {
+      "caution_code": "mechanism_bounded_to_assay_strength",
+      "evidence_context": "Cyp1a1 CAFLUX reduction is source-supported; upstream AhR/membrane/apoptosis mechanisms remain hypotheses/context."
+    }
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": [],
+    "publication_grade_ready": true
+  }
+}

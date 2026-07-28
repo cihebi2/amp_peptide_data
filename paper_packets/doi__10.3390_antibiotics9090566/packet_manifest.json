@@ -1,0 +1,76 @@
+{
+  "analysis_queue_status": "analysis_accepted_with_cautions",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 28,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 29,
+      "linked_literature_records": 3,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.3390/antibiotics9090566",
+  "journal": "Antibiotics (Basel)",
+  "known_missing_or_blocked_materials": [],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.3390_antibiotics9090566",
+  "pmcid": "PMC7560174",
+  "pmid": "32887236",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_antibiotics9090566/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics9090566",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "Activity of Temporin A and Short Lipopeptides Combined with Gentamicin against Biofilm Formed by Staphylococcus aureus and Pseudomonas aeruginosa.",
+  "updated_at": "2026-05-07T16:58:14Z",
+  "year": "2020",
+  "nonblocking_material_limitations": [
+    {
+      "gap_code": "temporin_a_exact_sequence_not_embedded_in_local_primary_source",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9090566/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/xml_sections.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/pdf_text/antibiotics-09-00566.txt",
+        "paper_packets/doi__10.3390_antibiotics9090566/database/linked_sequence_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg sequence/name search",
+        "XML section inspection",
+        "linked_sequence_records.jsonl row count check"
+      ],
+      "why_unrecoverable": "Local primary XML/PDF names Temporin A and its source/background but does not embed its exact amino-acid sequence; linked_sequence_records is empty.",
+      "impact": "Database identity is curated as name/source/activity-value supported with a nonblocking exact-sequence caveat; no exact Temporin A sequence is fabricated.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "supplementary_assets_absent_locally",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3390_antibiotics9090566/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "jq supplementary index/table inspection",
+        "archive manifest inspection",
+        "wc supplementary text jsonl"
+      ],
+      "why_unrecoverable": "The OA package inventory contains article XML/PDF and figure images but no structured supplementary assets; supplementary text/table outputs are empty.",
+      "impact": "No supplementary table changes the worker-2/4/6 repair; source review relies on XML/PDF tables and linked database rows.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ]
+}

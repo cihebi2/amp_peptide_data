@@ -1,0 +1,57 @@
+{
+  "paper_id": "doi__10.1186_1471-2180-6-36",
+  "generated_at": "2026-05-03T15:50:10Z",
+  "status": "cleared_after_worker246_source_review",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_caution_codes": [
+    "database_target_list_exceeds_this_paper",
+    "terminal_tcc_identity_is_inferred",
+    "no_toxicity_assay_reported",
+    "external_original_figure_doc_not_local"
+  ],
+  "resolution_summary": "Worker-2 recovered Table 1/stability activity evidence; worker-4 preserved source_conflict/database-only database rows with paper-local context; worker-6 source-reviewed final adjudication and closed rwk-complete-test-0001.",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "no_toxicity_assay_reported",
+      "source_paths_checked": [
+        "papers/doi__10.1186_1471-2180-6-36/source/paper.xml",
+        "paper_packets/doi__10.1186_1471-2180-6-36/extracted/pdf_text/1471-2180-6-36.txt",
+        "paper_packets/doi__10.1186_1471-2180-6-36/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1186_1471-2180-6-36/database/linked_experiment_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg",
+        "jq"
+      ],
+      "why_unrecoverable": "No hemolysis/cytotoxicity/toxicity measurement is present in the local paper or linked packet rows.",
+      "impact": "Toxicity layer remains empty as a source-scope caution; activity and database layers are still controllable.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "external_original_figure_doc_not_local",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1186_1471-2180-6-36/extracted/oa_package/local-APD6-pmc_package/PMC1462995/1471-2180-6-36-1.jpg",
+        "paper_packets/doi__10.1186_1471-2180-6-36/raw/supplementary_original/landing-*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_1471-2180-6-36/supplementary/landing-*.bin"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "view_image"
+      ],
+      "why_unrecoverable": "Springer landing HTML links to an external authors' original DOC for Figure 1, but the local packet contains landing HTML only. The OA package already includes the Figure 1 JPG used for sequence review.",
+      "impact": "Nonblocking because the local OA figure image and XML/PDF text are sufficient for this paper's sequence/identity adjudication.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review recovered the Table 2 MIC/MBC rows, reconciled linked database rows with conflicts preserved, replaced automated mechanism placeholders with bounded source-reviewed contextual claims, and closes the prior targeted rework ticket with cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "database_graph_only_cytotoxicity_values_preserved_as_conflict",
+      "evidence_context": "DBAASP cytotoxic rows report exact killing percentages for HaCat cells; local source has Figure 5/prose but no exact tabulated numeric values, so they remain source_conflict rather than source_verified."
+    },
+    {
+      "caution_code": "dbamp_mixed_external_targets_not_promoted",
+      "evidence_context": "dbAMP row includes non-S. mutans organisms not supported by this paper; only the S. mutans Table 2 MIC/MBC subclaims are supported locally."
+    },
+    {
+      "caution_code": "figure4_figure5_exact_values_not_fabricated",
+      "evidence_context": "Figure 4/5 qualitative claims were checked, but exact graph-only percentages were not converted into numeric activity rows."
+    },
+    {
+      "caution_code": "supplementary_assets_do_not_change_activity_database_adjudication",
+      "evidence_context": "Landing HTML/image supplementary assets and OA package members were inventoried; no structured supplementary table/spreadsheet changed worker-2/4/6 conclusions."
+    },
+    {
+      "caution_code": "direct_d1_23_molecular_mechanism_not_assayed",
+      "evidence_context": "D1-23 antimicrobial and antibiofilm effects are source-supported phenotypes; the paper cites general defensin/CHX membrane mechanisms but does not directly assay a D1-23 molecular target or membrane-disruption mechanism."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.2147_ijn.s155245/handoff_context.json",
+    "paper_packets/doi__10.2147_ijn.s155245/packet_manifest.json",
+    "paper_packets/doi__10.2147_ijn.s155245/locators/locator_index.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extraction/extraction_status.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.2147_ijn.s155245/raw/paper.xml",
+    "paper_packets/doi__10.2147_ijn.s155245/raw/paper.pdf",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/pdf_text/ijn-13-3081.txt",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/xml_sections.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/figure_captions.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/archive_manifest.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/supplementary_index.json",
+    "paper_packets/doi__10.2147_ijn.s155245/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.2147_ijn.s155245/database/database_source_manifest.json",
+    "paper_packets/doi__10.2147_ijn.s155245/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.2147_ijn.s155245/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.2147_ijn.s155245/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.2147_ijn.s155245/database/linked_sequence_records.jsonl"
+  ],
+  "generated_at": "2026-05-06T03:14:05Z",
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local XML, PDF text, OA package archive members, landing/supplementary assets, figure captions/images inventory, and linked database JSONL rows were checked for owner worker-2/4/6 blockers.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.2147_ijn.s155245",
+  "per_layer_decision_rationale": {
+    "adjudication": "Open rework ticket rwk-complete-test-0001 is closable because the blocking activity/table parser issue and database reconciliation issue were repaired from local source material.",
+    "layer_1_database": "Worker-4 reconciled 11 linked rows: 6 source_verified and 5 source_conflict. Conflicts are graph-only cytotoxic exact values or mixed external-target database annotations, not unresolved blockers.",
+    "layer_2_activity_toxicity": "Worker-2 recovered four Table 2 MIC/MBC rows with raw ranges, units, target species/strain, method context, statistics, and source locators; no parser-missed activity-table blocker remains.",
+    "layer_3_mechanism": "Worker-6 replaced automated pending-review mechanism placeholders with source-located phenotypic antimicrobial, antibiofilm, toxicity/delivery-context, and explicit direct-MOA-gap claims; no direct D1-23 molecular mechanism is promoted."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T03:14:05Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_raw_units": true,
+    "activity_rows_have_source_locators": true,
+    "activity_rows_parsed": 4,
+    "database_snapshots": {
+      "linked_assay_records": 4,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 6,
+      "linked_literature_records": 1,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 5,
+      "source_verified": 6
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "publication_risk_counts": {},
+    "source_conflicts_preserved": 5,
+    "strict_gate_issue_count": 0,
+    "suspicious_target_string_hits": [],
+    "mechanism_pending_review_placeholders_removed": true,
+    "direct_d1_23_molecular_mechanism_claims": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "checked_after_repair": "2026-05-06T02:48:03Z",
+    "open_rework_ticket_count": 0,
+    "publication_quality_pass": true,
+    "publication_quality_report": "reports/doi__10.2147_ijn.s155245.publication_quality.json",
+    "publication_risk_counts": {},
+    "required_rework_count": 0,
+    "semantic_gate_report": "reports/doi__10.2147_ijn.s155245.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_pass": true
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

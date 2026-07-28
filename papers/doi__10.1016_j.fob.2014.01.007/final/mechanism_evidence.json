@@ -1,0 +1,113 @@
+{
+  "paper_id": "doi__10.1016_j.fob.2014.01.007",
+  "generated_at": "2026-05-02T02:26:25Z",
+  "reviewed_at": "2026-05-02T02:26:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-5 source-reviewed mechanism ontology repair from p53 binding/competition assays, p53 reporter assay, flow-cytometry cell-cycle evidence, immunoblot markers, and senescence assays in the local XML/PDF/figure captions.",
+  "checked_inputs": [
+    "rework_context/doi__10.1016_j.fob.2014.01.007/handoff_context.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.xml",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/raw/paper.pdf",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/database_source_manifest.json",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.fob.2014.01.007/database/linked_literature_records.jsonl"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-p53-binding-competition",
+      "claim_text": "WT1-pTj directly binds recombinant p53 and competes with WT1 protein for binding to p53 in source-reported ELISA assays.",
+      "entity_scope": "WT1-pTj peptide; recombinant p53 and WT1-p53 binding system",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "chemiluminescence_ELISA_recombinant_p53_binding",
+        "competitive_ELISA_WT1_p53_binding"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=11:Chemiluminescence ELISA (CL-ELISA); xml:sec=24:WT1-pTj enhances the transcriptional activity of p53; xml:fig=4:Fig. 4",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt:Fig. 4 and p53-binding result text",
+        "figure_image_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/oa_package/local-DRAMP-24490140/PMC3907745/gr4.jpg"
+      },
+      "limitations": "The binding and competition evidence is direct for recombinant p53/WT1-p53 interaction; it does not by itself prove every downstream cellular phenotype is exclusively p53 mediated."
+    },
+    {
+      "claim_id": "mech-002-p53-reporter-activation",
+      "claim_text": "WT1-pTj enhances p53-responsive transcriptional reporter activity in A2058 human melanoma cells relative to untreated/control peptide conditions.",
+      "entity_scope": "WT1-pTj-treated A2058 human melanoma cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "p53_responsive_luciferase_reporter_assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=12:Luciferase reporter assay; xml:sec=24:WT1-pTj enhances the transcriptional activity of p53; xml:fig=4:Fig. 4",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt:Fig. 4 caption/result text",
+        "figure_image_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/oa_package/local-DRAMP-24490140/PMC3907745/gr4.jpg"
+      },
+      "limitations": "Reporter activation supports p53 pathway activation in the tested cell context, but it is not a genome-wide endogenous target assay."
+    },
+    {
+      "claim_id": "mech-003-g2m-cell-cycle-arrest",
+      "claim_text": "WT1-pTj treatment is associated with A2058 cell-cycle redistribution consistent with G2/M arrest and changes in p53-associated downstream cell-cycle regulators.",
+      "entity_scope": "WT1-pTj-treated A2058 human melanoma cells",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "supporting_assay_types": [
+        "flow_cytometry_cell_cycle_analysis",
+        "western_blot_p53_phosphorylation_p21_p27_phospho_cdc2_cyclin_B1"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=15:Cell cycle analysis; xml:sec=16:Western blotting; xml:sec=25:WT1-pTj induces G2/M cell cycle arrest and senescence; xml:fig=5:Fig. 5",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt:Fig. 5 and G2/M result text",
+        "figure_image_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/oa_package/local-DRAMP-24490140/PMC3907745/gr5.jpg"
+      },
+      "limitations": "Cell-cycle and immunoblot evidence supports a p53-linked arrest phenotype, but it is not classified as a direct binding or target-engagement assay."
+    },
+    {
+      "claim_id": "mech-004-senescence-phenotype",
+      "claim_text": "WT1-pTj induces a senescence-associated phenotype in A2058 cells, supported by loss of colony regrowth after peptide removal, SA-beta-galactosidase positivity, and increased acidic vesicular/lysosomal staining.",
+      "entity_scope": "WT1-pTj-treated A2058 human melanoma cells",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "supporting_assay_types": [
+        "post_treatment_colony_regrowth_assay",
+        "SA_beta_galactosidase_staining",
+        "acridine_orange_acidic_vesicular_organelle_staining"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=13:SA-β-galactosidase activity; xml:sec=14:Lysosomal vacuolation observed with acridine orange; xml:sec=25:WT1-pTj induces G2/M cell cycle arrest and senescence; xml:fig=6:Fig. 6",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/pdf_text/main.txt:Fig. 6 and senescence result text",
+        "figure_image_path": "paper_packets/doi__10.1016_j.fob.2014.01.007/extracted/oa_package/local-DRAMP-24490140/PMC3907745/gr6.jpg"
+      },
+      "limitations": "The senescence finding is phenotype-supported; it should not be converted into a membrane-disruption, translation, nucleic-acid-binding, antimicrobial, or apoptosis mechanism claim."
+    }
+  ],
+  "caution_findings": [
+    {
+      "code": "p53_axis_not_generic_amp_mechanism",
+      "severity": "caution",
+      "finding": "The source supports a p53/WT1 interaction and senescence/cell-cycle mechanism for an anticancer peptide; it does not support generic antimicrobial membrane disruption, protein-synthesis inhibition, or nucleic-acid binding mechanisms."
+    },
+    {
+      "code": "phenotype_claims_separated_from_direct_binding",
+      "severity": "caution",
+      "finding": "G2/M arrest and senescence are recorded as phenotype-supported rather than direct molecular target-engagement claims."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

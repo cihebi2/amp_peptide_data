@@ -1,0 +1,102 @@
+{
+  "paper_id": "doi__10.3390_ph8030483",
+  "reviewed_at": "2026-05-09T18:36:44Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "linked_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "All local material relevant to worker-4/worker-6 blockers was reopened: XML, PDF text, OA package member list, supplementary PDF text, linked DBAASP rows, merged sequence/literature CSV rows, and previous final/work artifacts. No missing external supplement was chased because local text tables resolved the gate-relevant values."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_ph8030483/packet_manifest.json",
+    "paper_packets/doi__10.3390_ph8030483/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ph8030483/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ph8030483/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ph8030483/extracted/pdf_text/pharmaceuticals-08-00483.txt",
+    "paper_packets/doi__10.3390_ph8030483/extracted/supplementary_text/pharmaceuticals-08-00483-s001.txt",
+    "paper_packets/doi__10.3390_ph8030483/extracted/oa_package/local-DBAASP-PMC4588179/PMC4588179/pharmaceuticals-08-00483-s001.pdf",
+    "paper_packets/doi__10.3390_ph8030483/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ph8030483/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ph8030483/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ph8030483/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 126,
+    "database_record_audits": 122,
+    "database_status_summary": {
+      "source_conflict": 36,
+      "source_verified": 86
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material layer stays separate: packet status remains material_extracted_with_gaps because the automated supplementary table extractor did not structure PDF tables, but worker-6 reopened the local supplementary PDF text and recovered Tables S1-S5 for the owner-layer gate.",
+    "validator_contract": "Validator/packet artifacts exist and are structurally readable, but acceptance is based on this source-reviewed repair rather than framework file presence.",
+    "layer_1_database": "Worker-4 reconciled 122 linked DBAASP rows; endpoint-label conflicts are preserved as source_conflict with source locators, while MIC/HC50/literature rows are source_verified.",
+    "layer_2_activity_toxicity": "Worker-6 replaced scaffold rows with 126 source-supported activity/toxicity records from Table 2 and Supplement Tables S1-S5, preserving raw units and thresholds.",
+    "layer_3_mechanism": "Worker-6 bounded the mechanism layer to source-supported structure-activity and phenotypic biofilm claims; no direct mechanism overclaim remains.",
+    "publication_grade_review": "The original ticket is closed because source review resolved the blocking worker-4/worker-6 issues; remaining issues are explicit cautions and not open rework targets."
+  },
+  "adjudication_summary": "Worker-4/worker-6 re-review reopened the paper-local XML, PDF text, supplementary PDF text, OA package, linked DBAASP rows, and merged sequence/literature rows; it repaired the database audit, replaced scaffold activity rows, bounded mechanism claims, preserved endpoint and noncanonical-sequence cautions, and closed the targeted rework ticket as accepted_with_cautions.",
+  "summary": "Publication-grade with cautions after bounded source review: source-supported activity/database/mechanism evidence is recorded, endpoint-label conflicts are preserved, and no open rework target remains.",
+  "caution_findings": [
+    {
+      "caution_code": "endpoint_label_conflict_db_MBIC_vs_source_biofilm_formation_MIC",
+      "evidence_context": "DBAASP assay/experiment rows label biofilm-formation values as MBIC, while local Supplement Tables S4/S5 label the same source values as MIC for biofilm formation. Numeric values, units, targets, and peptide identities match; endpoint-vocabulary conflict is preserved in database audit rows.",
+      "affected_record_count": 36
+    },
+    {
+      "caution_code": "noncanonical_beta_peptide_sequence_not_normalized",
+      "evidence_context": "The paper describes β-residue compositions rather than canonical one-letter peptide sequences; merged DBAASP sequence rows use X placeholders. The final audit anchors identity to source Table 1 and does not fabricate canonical sequences.",
+      "affected_sequence_keys": [
+        "DBAASP:DBAASPS_24850",
+        "DBAASP:DBAASPS_24851",
+        "DBAASP:DBAASPS_24852",
+        "DBAASP:DBAASPS_24853",
+        "DBAASP:DBAASPS_24854",
+        "DBAASP:DBAASPS_24855"
+      ]
+    },
+    {
+      "caution_code": "material_packet_structured_supplement_tables_zero_but_text_recovered",
+      "evidence_context": "The generated supplementary table extractor reported zero structured supplementary tables, but the local supplementary PDF text contains Tables S1-S5 and these were reopened for adjudication."
+    },
+    {
+      "caution_code": "mechanism_bounded_not_direct",
+      "evidence_context": "Mechanism claims are bounded to structure-activity, cell-wall context, and phenotypic biofilm findings; no direct mechanism class is asserted."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  }
+}

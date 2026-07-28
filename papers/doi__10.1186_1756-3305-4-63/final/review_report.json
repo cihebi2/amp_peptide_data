@@ -1,0 +1,124 @@
+{
+  "adjudication_summary": "Worker-6 compared packet evidence, final artifacts, XML/PDF/OA material, HTML supplementary assets, and linked database rows; no blocking rework remains after cautioned repair.",
+  "caution_findings": [
+    {
+      "caution_code": "primary_text_table_staphylococcus_name_conflict",
+      "evidence_context": "Table 1 row label reads Staphylococcus luteus, while results/discussion and database rows describe a methicillin-resistant S. aureus clinical isolate with the same MIC/MMC values.",
+      "severity": "major_preserved_not_blocking",
+      "source_locators": [
+        "xml:table=1:row=8",
+        "xml:sec=7:Antimicrobial and hemolytic activities",
+        "pdf_text:lines=96-107,348-352"
+      ]
+    },
+    {
+      "caution_code": "exact_full_sequence_database_only_in_local_material",
+      "evidence_context": "Linked DRAMP rows contain exact 37-aa sequences, but local primary paper text/OA figures support only the one-residue Phe8/Arg8 difference and cysteine/structure labels.",
+      "severity": "caution",
+      "source_locators": [
+        "xml:fig=4:Figure 4",
+        "pdf_text:lines=134-136,379-386"
+      ]
+    },
+    {
+      "caution_code": "dbamp_extra_def1_targets_not_primary_source_supported",
+      "evidence_context": "dbAMP def1 row appends extra S. aureus strain MICs not found in the recovered primary paper; retained as source_conflict/database-only annotation.",
+      "severity": "caution",
+      "source_locators": [
+        "database:linked_experiment_records:row=38",
+        "xml:table=1"
+      ]
+    },
+    {
+      "caution_code": "staphylococcus_name_conflict_preserved",
+      "evidence_context": "Table row label and prose/database organism naming differ; values retained with caution."
+    },
+    {
+      "caution_code": "supplementary_assets_are_html_landing_pages",
+      "evidence_context": "Recovered supplementary_original landing*.bin files are HTML landing/support pages and yielded no separate supplementary activity tables."
+    },
+    {
+      "caution_code": "no_direct_mechanism_assay",
+      "evidence_context": "Mechanism language is bounded to literature context, structure-function inference, and phenotype."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1186_1756-3305-4-63/handoff_context.json",
+    "paper_packets/doi__10.1186_1756-3305-4-63/packet_manifest.json",
+    "paper_packets/doi__10.1186_1756-3305-4-63/locators/locator_index.json",
+    "paper_packets/doi__10.1186_1756-3305-4-63/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_1756-3305-4-63/extracted/pdf_text/1756-3305-4-63.txt",
+    "paper_packets/doi__10.1186_1756-3305-4-63/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_1756-3305-4-63/extracted/oa_package/local-DBAASP-PMC3102633/PMC3102633/1756-3305-4-63.nxml",
+    "paper_packets/doi__10.1186_1756-3305-4-63/extracted/oa_package/local-DBAASP-PMC3102633/PMC3102633/1756-3305-4-63.pdf",
+    "paper_packets/doi__10.1186_1756-3305-4-63/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.1186_1756-3305-4-63/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.1186_1756-3305-4-63/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_1756-3305-4-63/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_1756-3305-4-63/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1186_1756-3305-4-63/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1186_1756-3305-4-63/analysis/database_record_audit.json",
+    "papers/doi__10.1186_1756-3305-4-63/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1186_1756-3305-4-63/final/mechanism_ontology_record.json"
+  ],
+  "generated_at": "2026-05-03T03:01:09Z",
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local XML, PDF text, duplicate OA package NXML/PDF/images, HTML supplementary landing/support assets, and linked database rows were reopened. No separate recoverable supplementary PDF/XLSX/activity table was present in local material.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1186_1756-3305-4-63",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled DBAASP/DRAMP/CAMP/dbAMP rows. Table/prose-supported rows are source_verified; Staphylococcus naming, exact database sequences absent from primary text, and dbAMP extra def1 targets remain preserved cautions.",
+    "layer_2_activity_toxicity": "Worker-6 final activity file now captures all locally recoverable Table 1 MIC/MMC/no-effect values and hemolysis prose/Figure 1 values with locators and raw units.",
+    "layer_3_mechanism": "Mechanism claims are bounded to indirect literature context, structure-function inference, and negative phenotype evidence; no direct molecular mechanism is overclaimed.",
+    "material_packet": "Material packet is structurally complete enough for source review. Supplementary_original landing*.bin files are HTML article/support pages and add no separate activity tables; this is a nonblocking source-exhaustion finding.",
+    "publication_grade_review": "The original rework ticket is closed because the owner-layer source review is now complete and remaining uncertainty is explicit caution material, not an open blocking omission."
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "resolved_rework_tickets": [
+    {
+      "resolution": "source_reviewed_owner_layers_completed",
+      "resolved_at": "2026-05-03T03:01:09Z",
+      "ticket_id": "rwk-complete-test-0001"
+    }
+  ],
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T03:01:09Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 26,
+    "database_records_source_reviewed": 76,
+    "database_status_summary": {
+      "source_conflict": 11,
+      "source_verified": 65
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_ticket_count": 0,
+    "owner_layers_repaired": [
+      "worker-4",
+      "worker-6"
+    ],
+    "required_rework_count": 0
+  },
+  "summary": "Source-reviewed re-adjudication closes rwk-complete-test-0001 for this DOI. The paper is accepted_with_cautions because local material supports the main activity, database, and mechanism outputs while preserving primary/database conflicts and database-only exact sequence caveats.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

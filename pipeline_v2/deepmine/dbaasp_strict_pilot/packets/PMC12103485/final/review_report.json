@@ -1,0 +1,120 @@
+{
+  "adjudication_summary": "Worker-6 re-adjudicated the no-open runtime state for PMC12103485, preserved the authoritative DBAASP no-match boundary as a caution, verified the activity/toxicity and mechanism layers against strict contract checks, and found no hard rework targets.",
+  "artifact": "worker6_final_review_report",
+  "caution_findings": [
+    {
+      "caution_id": "caution-authoritative-dbaasp-no-linked-rows",
+      "category": "database_linkage_gap",
+      "status": "preserved_nonblocking_caution",
+      "linked_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "impact": "authoritative_dbaasp_ingest_ready_false; fallback rows remain candidate machine evidence only"
+    },
+    {
+      "caution_id": "caution-dbaasp-fallback-boundary",
+      "category": "machine_evidence_boundary",
+      "status": "preserved_nonblocking_caution",
+      "linked_row_counts": {
+        "dbaasp_machine_extracted_rows": 13,
+        "dbaasp_review_queue_rows": 0,
+        "dbaasp_empty_done_rows": 0,
+        "codex_exec_sessions": 0,
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_sequence_records": 0,
+        "linked_literature_records": 0
+      },
+      "impact": "DBAASP Codex fallback rows are not promoted to source_verified database ingest rows"
+    }
+  ],
+  "checked_inputs": {
+    "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/packet_manifest.json",
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/extracted/xml_sections.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/extracted/pdf_text.jsonl",
+    "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/extracted/supplementary_index.json",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/extracted/supplementary_text.jsonl",
+    "database_source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/database/database_source_manifest.json",
+    "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/database/authoritative_match_report.json",
+    "dbaasp_machine_extracted_rows": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/database/dbaasp_machine_extracted_rows.jsonl",
+    "worker2_activity": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/analysis/activity_toxicity_evidence.worker2.json",
+    "worker4_database": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/analysis/database_record_audit.worker4.json",
+    "worker5_mechanism": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/analysis/mechanism_evidence.worker5.json",
+    "rework_requests": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/rework/rework_requests.jsonl",
+    "rework_responses": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/rework/rework_responses.jsonl"
+  },
+  "final_artifacts": {
+    "database_record_verification": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/final/database_record_verification.json",
+    "activity_toxicity_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/final/activity_toxicity_evidence.json",
+    "mechanism_ontology_record": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/final/mechanism_ontology_record.json",
+    "review_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/final/review_report.json",
+    "packet_database_record_verification": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/final/database_record_verification.json",
+    "packet_activity_toxicity_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/final/activity_toxicity_evidence.json",
+    "packet_mechanism_evidence": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/final/mechanism_evidence.json",
+    "packet_review_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12103485/final/review_report.json"
+  },
+  "final_counts": {
+    "activity_records": 14,
+    "toxicity_records": 2,
+    "database_record_audits": 13,
+    "mechanism_claims": 5,
+    "review_rework_targets": 0
+  },
+  "gate_artifact_paths": {
+    "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/work/review/gate_packet_worker6_runtime.strict.json",
+    "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/work/review/gate_semantic_worker6_runtime.strict.json",
+    "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12103485/work/review/gate_publication_worker6_runtime.strict.json"
+  },
+  "machine_evidence_boundary": {
+    "dbaasp_codex_fallback_rows": "candidate_machine_evidence_only",
+    "source_verified_database_rows_from_fallback": 0,
+    "authoritative_dbaasp_ingest_ready": false
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "authoritative_dbaasp_linked_rows": false,
+    "authoritative_dbaasp_linked_rows_gap_is_nonblocking_caution": true
+  },
+  "paper_id": "PMC12103485",
+  "per_layer_decision_rationale": {
+    "database_record_verification": "accepted_with_cautions: local authoritative DBAASP linked article, assay, sequence, and literature rows remain absent; candidate fallback rows are retained only as machine evidence and authoritative ingest remains false.",
+    "activity_toxicity_evidence": "accepted_clean: source-located activity and toxicity arrays retain row-level locators, units, normalization status, and no unresolved ticket-contract defects in the strict gates.",
+    "mechanism_ontology": "accepted_clean: mechanism claims keep evidence class separation, direct assay type fields for direct claims, and source locators.",
+    "adjudication_runtime_closure": "accepted_with_cautions: runtime-open ticket list is empty; existing single terminal worker-6 closures are preserved and not duplicated."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T10:56:48Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_toxicity_contract_pass": true,
+    "database_no_match_boundary_preserved": true,
+    "mechanism_claim_shape_pass": true,
+    "hard_rework_target_count": 0,
+    "normalization_issue_count": 0,
+    "false_table_category_issue_count": 0,
+    "duplicate_activity_toxicity_cross_group_count": 0,
+    "nested_concentration_contradiction_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package_inventory",
+    "supplementary_assets_inventory",
+    "merged_database_rows",
+    "packet_locators",
+    "rework_ticket_contracts"
+  ],
+  "source_reviewed": true,
+  "validator_contract_passed": true
+}

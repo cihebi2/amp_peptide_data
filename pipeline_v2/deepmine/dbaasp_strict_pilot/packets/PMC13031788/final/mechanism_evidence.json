@@ -1,0 +1,234 @@
+{
+  "analysis_mirror_of": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/mechanism_ontology/mechanism_evidence.json",
+  "artifact_hash_sha256": "eeaf4a0932ba6425b3a48d6015cf38fd8c0c0fa89f267619a9b70dc0352b6846",
+  "authoritative_dbaasp_ingest_ready": false,
+  "authoritative_ingest_ready": false,
+  "caution_findings": [
+    {
+      "closed_no_match_response_with_analysis_can_resume": true,
+      "code": "authoritative_dbaasp_linked_rows_absent_closed_no_match",
+      "impact": "Publication-grade source review can be accepted with cautions, but authoritative DBAASP ingest remains false until real linked article/assay/sequence/literature rows exist.",
+      "linked_authoritative_row_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0
+      },
+      "severity": "caution"
+    }
+  ],
+  "downgraded_or_excluded_candidates": [
+    {
+      "candidate_id": "PMC13031788-W5-EXCL-001",
+      "candidate_type": "surface_plasmon_resonance_keyword_hit",
+      "decision": "not_promoted_to_mechanism_claim",
+      "reason": "The packet scan found SPR terminology only as a candidate source surface; worker-5 did not identify a locator-backed result claim requiring direct target-binding promotion.",
+      "source_locator": [
+        "xml:sec:40",
+        "xml:sec:41",
+        "pdf:page=29"
+      ]
+    },
+    {
+      "candidate_id": "PMC13031788-W5-EXCL-002",
+      "candidate_type": "database_or_machine_extraction_candidate",
+      "decision": "not_promoted_to_paper_local_mechanism_claim",
+      "reason": "DBAASP Codex fallback rows are candidate machine evidence only and are not source-reviewed mechanism evidence.",
+      "source_locator": [
+        "database:dbaasp_machine_extracted_rows.jsonl"
+      ]
+    }
+  ],
+  "evidence_class_summary": {
+    "computational_only_claims": 0,
+    "direct_mechanism_claims": 1,
+    "inferred_mechanism_claims": 1,
+    "phenotype_supported_claims": 1,
+    "unknown_or_not_tested_claims": 0
+  },
+  "finalized_at": "2026-07-15T11:25:40+00:00",
+  "finalized_by_worker": "worker-6",
+  "generated_at": "2026-07-09T02:43:17.025150+00:00",
+  "lane": "mechanism_ontology_extractor",
+  "machine_extraction_boundary": {
+    "boundary_note": "No DBAASP fallback row is treated as paper-local direct mechanism evidence.",
+    "dbaasp_candidate_rows_status": "candidate_machine_evidence_only",
+    "linked_authoritative_rows_status": "linked authoritative JSONL files are empty in this packet",
+    "used_for_mechanism_claims": false
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "PMC13031788-W5-MECH-001",
+      "claim_text": "SEM evidence supports peptide-associated bacterial cell-envelope or morphology disruption; it does not resolve a specific molecular target.",
+      "direct_assay_types": [
+        "scanning electron microscopy (SEM)"
+      ],
+      "entity_scope": {
+        "description": "Peptide-treated bacterial cells represented in the paper-local SEM result figures and captions.",
+        "scope_limit": "Exact peptide-target-condition pairings remain anchored to the cited locators and are not generalized to all activity rows.",
+        "scope_type": "paper_local_assay_scope"
+      },
+      "evidence_class": "direct_mechanism",
+      "limitations": [
+        "Direct morphology/cell-surface evidence only; no molecular target, binding partner, membrane potential, or permeability assay is promoted from this claim."
+      ],
+      "source_locator": [
+        "xml:p:31",
+        "xml:fig:2",
+        "xml:caption:3",
+        "xml:p:32",
+        "xml:fig:3",
+        "xml:caption:4",
+        "xml:p:33",
+        "xml:p:34",
+        "pdf:page=10",
+        "pdf:page=11"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_material"
+    },
+    {
+      "claim_id": "PMC13031788-W5-MECH-002",
+      "claim_text": "Time-kill evidence supports a bactericidal or time-dependent antimicrobial phenotype without direct mechanism closure.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "description": "Peptide and target combinations represented in the paper-local time-kill figure and associated result/method locators.",
+        "scope_limit": "Phenotype evidence is not treated as proof of membrane disruption or target binding.",
+        "scope_type": "paper_local_assay_scope"
+      },
+      "evidence_class": "phenotype_supported",
+      "limitations": [
+        "Time-kill is an antimicrobial phenotype assay; it is not classified as direct mechanism evidence under the strict ontology."
+      ],
+      "source_locator": [
+        "xml:sec:27",
+        "xml:sec:29",
+        "xml:p:57",
+        "xml:fig:10",
+        "xml:caption:15",
+        "xml:p:61",
+        "pdf:page=22",
+        "pdf:page=23"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_material"
+    },
+    {
+      "claim_id": "PMC13031788-W5-MECH-003",
+      "claim_text": "Hydrophobicity or structural-feature discussion is mechanism-relevant inference only and is not promoted to a direct mechanism.",
+      "direct_assay_types": [],
+      "entity_scope": {
+        "description": "Paper-local discussion and characterization of peptide physicochemical or structural features.",
+        "scope_limit": "Feature-based rationale is kept separate from direct assay evidence.",
+        "scope_type": "paper_level_feature_inference"
+      },
+      "evidence_class": "inferred_mechanism",
+      "limitations": [
+        "Hydrophobicity/structure terms are treated as inference or rationale; no direct mechanism endpoint is assigned from these locators."
+      ],
+      "source_locator": [
+        "xml:abstract:1",
+        "xml:p:2",
+        "xml:p:13",
+        "xml:p:45",
+        "xml:p:64",
+        "pdf:page=2",
+        "pdf:page=5",
+        "pdf:page=16",
+        "pdf:page=17",
+        "pdf:page=25"
+      ],
+      "source_review_status": "source_reviewed_from_packet_primary_material"
+    }
+  ],
+  "mirrors_work_artifact_hash_sha256": "eeaf4a0932ba6425b3a48d6015cf38fd8c0c0fa89f267619a9b70dc0352b6846",
+  "model_gate_note": "The worker followed the strict gpt-5.5/xhigh instructions available in the checkout, but this artifact does not claim terminal publication-grade status from model provenance alone.",
+  "needs_targeted_rework": false,
+  "paper_id": "PMC13031788",
+  "paper_review_status": "accepted_with_cautions",
+  "protocol": "amp_three_layer_v2_dbaasp_strict_pilot",
+  "publication_grade": true,
+  "publication_grade_claim": "worker6_source_reviewed_accepted_with_cautions",
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "rework_contract_audit": {
+    "not_applicable_to_layer": "activity rework contract audited in activity_toxicity_evidence"
+  },
+  "rework_targets": [],
+  "source_review_provenance": {
+    "checked_inputs": {
+      "database_source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/database/database_source_manifest.json",
+      "dbaasp_machine_candidate_rows": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/database/dbaasp_machine_extracted_rows.jsonl",
+      "figure_captions": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/figure_captions.json",
+      "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/packet_manifest.json",
+      "pdf_tables": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/pdf_tables.json",
+      "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/pdf_text.jsonl",
+      "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/supplementary_index.json",
+      "supplementary_tables": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/supplementary_tables.json",
+      "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/supplementary_text.jsonl",
+      "supplementary_workbook": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/raw/supplementary_original/41598_2025_34848_MOESM1_ESM.xlsx",
+      "worker2_activity_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/analysis/activity_safe_candidate_handoff.json",
+      "worker3_supplementary_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/analysis/supplementary_evidence.worker3.json",
+      "worker4_database_handoff": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/analysis/database_record_audit.worker4.json",
+      "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13031788/extracted/xml_sections.json"
+    },
+    "machine_database_hit_counts_by_category": {},
+    "mechanism_locator_hit_counts_by_category": {
+      "direct_binding_or_target": 3,
+      "direct_microscopy_morphology": 25,
+      "inferred_structure": 14,
+      "phenotype_time_kill": 10
+    },
+    "redacted_locator_scan_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/mechanism_ontology/source_scan.worker5.json",
+    "source_review_type": "paper_local_packet_reopen",
+    "source_surface_counts": {
+      "dbaasp_machine_rows": 35,
+      "figure_captions": 29,
+      "pdf_tables": 6,
+      "pdf_text": 30,
+      "supplementary_tables": 1,
+      "xml_sections": 157
+    },
+    "supplementary_observation": "supplementary_text.jsonl has no rows in this packet; the staged workbook was included in the locator scan and did not contribute accepted mechanism claims."
+  },
+  "source_reviewed": true,
+  "source_reviewed_complete": true,
+  "strict_quality_notes": [
+    "MIC/growth activity is not promoted to direct mechanism.",
+    "Time-kill evidence is preserved as phenotype_supported.",
+    "Hydrophobicity/structure rationale is preserved as inferred_mechanism.",
+    "SEM evidence is direct assay evidence but limited to morphology/cell-envelope effects rather than molecular target closure.",
+    "No wet-lab protocol, optimization, or experimental advice is included."
+  ],
+  "unresolved_blockers": [],
+  "validation_evidence": {
+    "check_three_layer_publication_quality": {
+      "artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/review/check_three_layer_publication_quality.worker6.latest.json",
+      "publication_grade_pass": true,
+      "risk_counts": {}
+    },
+    "check_two_queue_packets": {
+      "artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/review/check_two_queue_packets.worker6.latest.json",
+      "hard_finding_count": 0,
+      "open_rework_ticket_count": 0
+    },
+    "semantic_three_layer_gate": {
+      "artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/review/semantic_three_layer_gate.worker6.latest.json",
+      "issue_count": 0,
+      "publication_grade_fail_count": 0,
+      "publication_grade_pass_count": 1
+    },
+    "source_cell_verification_report": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/reports/PMC13031788_source_cell_verification_latest.json",
+    "source_surface_activity_acceptance_audit": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13031788/work/review/source_surface_activity_acceptance_audit.worker6.json",
+    "validated_at": "2026-07-15T11:25:40+00:00"
+  },
+  "validator_contract_passed": true,
+  "worker": "worker-5",
+  "worker5_original_reasoning_effort": "not_independently_provable_from_artifact",
+  "worker5_original_review_model": "codex_current_session",
+  "worker6_decision": {
+    "authoritative_dbaasp_ingest_ready": false,
+    "basis": "source-reviewed packet evidence with closed no-match authoritative row caution",
+    "publication_grade": true,
+    "review_status": "accepted_with_cautions"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "paper_id": "doi__10.3390_microorganisms12122648",
+  "reviewed_at": "2026-05-09T10:05:58Z",
+  "generated_at": "2026-05-09T10:05:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened local XML/PDF text, OA package archive manifest, zipped supplementary PDF via pdftotext, packet locator/status files, and linked DBAASP JSONL rows. No external source fetch or initial bootstrap reset was used."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_microorganisms12122648/handoff_context.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/packet_manifest.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/locators/locator_index.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_microorganisms12122648/extracted/pdf_text/microorganisms-12-02648.txt",
+    "paper_packets/doi__10.3390_microorganisms12122648/extracted/pdf_text/local-DBAASP-PMC11728142.txt",
+    "paper_packets/doi__10.3390_microorganisms12122648/extracted/oa_package/local-DBAASP-PMC11728142/PMC11728142/microorganisms-12-02648-s001.zip",
+    "paper_packets/doi__10.3390_microorganisms12122648/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms12122648/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_microorganisms12122648/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_microorganisms12122648/source/paper.xml",
+    "papers/doi__10.3390_microorganisms12122648/source/paper.pdf"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 15,
+    "mic_rows": 10,
+    "toxicity_or_biofilm_rows": 5,
+    "database_record_audits": 26,
+    "database_status_summary": {
+      "source_conflict": 6,
+      "source_verified": 20
+    },
+    "mechanism_claims": 3,
+    "open_rework_target_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "The material packet remains historically material_extracted_with_gaps because the automated supplement index missed the zipped supplementary PDF, but the relevant local supplementary PDF was reopened directly for this bounded repair.",
+    "validator_contract": "Required packet/final/work files are present and strict gates are used separately from structural validator readiness.",
+    "layer_1_database": "Worker-4 source-verified MIC, HaCaT, and literature rows where the primary XML/supplement supports them; DBAASP MBIC50 and hemolysis value mismatches are preserved as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 recovered MIC rows from Supplementary Table S2 plus biofilm, hemolysis, and HaCaT toxicity rows from XML/supplement locators, with units and target strains preserved.",
+    "layer_3_mechanism": "Worker-6 bounded mechanism to membrane-disruption assays and phenotypic biofilm/in-vivo contexts without promoting unsupported molecular targets.",
+    "publication_grade_review": "No blocking issue remains after source review; source conflicts are explicit cautions and no open rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_biofilm_endpoint_label_conflict",
+      "severity": "caution",
+      "evidence_context": "DBAASP labels two biofilm rows as MBIC50, while the paper source supports concentration-specific inhibition/eradication summaries rather than an explicit MBIC50 table.",
+      "record_count": 4
+    },
+    {
+      "caution_code": "database_hemolysis_value_conflict",
+      "severity": "caution",
+      "evidence_context": "DBAASP records <5% hemolysis at 512 ug/mL; reopened primary material supports <10% at 512 ug/mL and <5% at 64 ug/mL.",
+      "record_count": 2
+    },
+    {
+      "caution_code": "candida_auris_database_aggregation",
+      "severity": "caution",
+      "evidence_context": "DBAASP aggregates two Candida auris isolates; final activity rows keep isolate 55 and isolate 84 separate from Supplementary Table S2."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "summary": "Source-reviewed worker-2/4/6 repair recovered 15 local activity/toxicity rows, adjudicated 26 linked DBAASP rows with 6 preserved source conflicts, and closed the prior framework-test rework ticket only after strict gate evidence.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "gate_evidence": {
+      "semantic_gate_report": "reports/doi__10.3390_microorganisms12122648.semantic_gate.json",
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_report": "reports/doi__10.3390_microorganisms12122648.publication_quality.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "publication_generated_at_utc": "2026-05-09T10:05:58.635552+00:00",
+      "gate_verified_at": "2026-05-09T10:05:58Z"
+    }
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "paper_id": "doi__10.3390_molecules26195767",
+  "doi": "10.3390/molecules26195767",
+  "pmid": "34641308",
+  "title": "Virtual Screening for Biomimetic Anti-Cancer Peptides from Cordyceps militaris Putative Pepsinized Peptidome and Validation on Colon Cancer Cell Line",
+  "generated_at": "2026-05-09T16:28:17Z",
+  "worker_owner": "worker-2",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Source-reviewed worker-2 repair from XML results/methods, XML Table 1, PDF text, Figures 3-4 visual checks, Supplementary Figure S1/S2 PDF text, and linked DRAMP rows. Computational prediction rows are kept separate from in vitro activity rows.",
+  "activity_records": [
+    {
+      "record_id": "act-cori-ht29-ic50-72h",
+      "entity_id": "DRAMP:DRAMP32346",
+      "entity_name": "C-ori",
+      "entity_type": "Cordyceps militaris biomimetic anticancer peptide",
+      "sequence": "VTFVLIAAK",
+      "linked_database_ids": [
+        "DRAMP:DRAMP32346"
+      ],
+      "endpoint": "IC50",
+      "raw_value": "114.9 ± 1.5",
+      "raw_unit": "µM",
+      "normalization_status": "direct",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "strain_or_isolate": "non-metastatic colorectal cancer cell line",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_time": "72 h",
+        "concentration_range": "0-400 µM C-ori",
+        "vehicle_or_solvent": "DMSO stock at 100 mM; source does not state final DMSO percentage",
+        "cell_seeding": "2 x 10^5 cells/well in 96-well plates, 24 h preincubation",
+        "culture_conditions": "DMEM with 10% heat-inactivated FBS at 37 C under 5% CO2",
+        "readout": "absorbance at 570 nm after MTT incubation and DMSO crystal dissolution"
+      },
+      "replicate_statistics": "Figure 3 reports mean ± SD, n = 4 trials; statistical section says experiments were conducted at least three times with one-way ANOVA and Dunnett multiple comparisons.",
+      "source_value_status": "source_text_exact",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "primary_pdf_text",
+        "figure_caption",
+        "methods_section",
+        "linked_dramp_database_row"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=4:2.2",
+          "note": "Results text states the IC50 for C-ori against HT-29 at 72 h."
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/local-DRAMP-34641308.txt",
+          "locator": "pdf_text:lines=612-630",
+          "note": "PDF text extraction repeats the C-ori IC50 value."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=3:Figure 3",
+          "note": "Figure 3 shows C-ori HT-29 dose-response and caption gives n/statistics."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=11:4.3",
+          "note": "MTT assay method."
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/database/linked_dramp_activity_records.jsonl",
+          "locator": "database:linked_dramp_activity_records:row=1",
+          "note": "DRAMP target row reports the same HT-29 IC50."
+        }
+      ]
+    },
+    {
+      "record_id": "act-crds-ht29-no-effect",
+      "entity_name": "C-rds",
+      "entity_type": "redesigned Cordyceps militaris biomimetic anticancer peptide",
+      "sequence": "FTFVLLAAK",
+      "linked_database_ids": [],
+      "endpoint": "cell_viability_effect",
+      "raw_value": "no effect observed despite increases in time and dose",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_times": "24 h, 48 h, 72 h",
+        "concentration_range": "0-400 µM C-rds"
+      },
+      "replicate_statistics": "Figure 3 reports mean ± SD, n = 4 trials; exact bar values are figure-only and not digitized.",
+      "source_value_status": "source_text_qualitative",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "figure_caption",
+        "figure_visual_review"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=4:2.2",
+          "note": "Results text states C-rds showed no effect on HT-29."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=3:Figure 3",
+          "note": "Figure 3b shows C-rds HT-29 viability bars."
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+          "locator": "figure:3b"
+        }
+      ]
+    },
+    {
+      "record_id": "act-ctp-ori-ht29-no-effect",
+      "entity_name": "CTP-ori",
+      "entity_type": "Cordyceps militaris biomimetic toxic and cancer-cell-penetrating peptide candidate",
+      "sequence": "TTMICLTCAR",
+      "linked_database_ids": [],
+      "endpoint": "cell_viability_effect",
+      "raw_value": "no effect observed despite increases in time and dose",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_times": "24 h, 48 h, 72 h",
+        "concentration_range": "0-100 µM CTP-ori because source states limited peptide quantity"
+      },
+      "replicate_statistics": "Supplementary Figure S1 caption reports significance notation but exact bar values are figure-only and not digitized.",
+      "source_value_status": "source_text_qualitative",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "supplementary_pdf_text"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=4:2.2",
+          "note": "Results text states CTP-ori showed no effect on HT-29."
+        },
+        {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules26195767/supplementary/local-DRAMP-molecules-26-05767-s001.zip",
+          "locator": "supplement_pdf:Figure S1a",
+          "note": "Supplementary PDF was read through unzip + pdftotext; exact graph values are not tabulated."
+        }
+      ]
+    },
+    {
+      "record_id": "act-ctp-rds-ht29-no-effect",
+      "entity_name": "CTP-rds",
+      "entity_type": "redesigned Cordyceps militaris biomimetic toxic and cancer-cell-penetrating peptide candidate",
+      "sequence": "TTGICLTCCR",
+      "linked_database_ids": [],
+      "endpoint": "cell_viability_effect",
+      "raw_value": "no effect observed despite increases in time and dose",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_times": "24 h, 48 h, 72 h",
+        "concentration_range": "0-100 µM CTP-rds because source states limited peptide quantity"
+      },
+      "replicate_statistics": "Supplementary Figure S1 caption reports significance notation but exact bar values are figure-only and not digitized.",
+      "source_value_status": "source_text_qualitative",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "supplementary_pdf_text"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=4:2.2",
+          "note": "Results text states CTP-rds showed no effect on HT-29."
+        },
+        {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules26195767/supplementary/local-DRAMP-molecules-26-05767-s001.zip",
+          "locator": "supplement_pdf:Figure S1b",
+          "note": "Supplementary PDF was read through unzip + pdftotext; exact graph values are not tabulated."
+        }
+      ]
+    },
+    {
+      "record_id": "act-cori-fibroblast-no-effect",
+      "entity_id": "DRAMP:DRAMP32346",
+      "entity_name": "C-ori",
+      "entity_type": "Cordyceps militaris biomimetic anticancer peptide",
+      "sequence": "VTFVLIAAK",
+      "linked_database_ids": [
+        "DRAMP:DRAMP32346"
+      ],
+      "endpoint": "cell_viability_effect",
+      "raw_value": "no effect observed on human dermal fibroblasts",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "normal human dermal fibroblast cell",
+        "cell_line": "human dermal fibroblast cells",
+        "source_label": "human dermal fibroblast"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_times": "24 h, 48 h, 72 h",
+        "concentration_range": "0-400 µM C-ori"
+      },
+      "replicate_statistics": "Figure 3 reports mean ± SD, n = 4 trials; exact bar values are figure-only and not digitized.",
+      "source_value_status": "source_text_qualitative",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "figure_caption",
+        "figure_visual_review"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=4:2.2",
+          "note": "Results text states C-ori decreased HT-29 viability with no effect on human dermal fibroblasts."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=3:Figure 3",
+          "note": "Figure 3c shows C-ori fibroblast viability."
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+          "locator": "figure:3c"
+        }
+      ]
+    },
+    {
+      "record_id": "act-crds-fibroblast-no-effect",
+      "entity_name": "C-rds",
+      "entity_type": "redesigned Cordyceps militaris biomimetic anticancer peptide",
+      "sequence": "FTFVLLAAK",
+      "linked_database_ids": [],
+      "endpoint": "cell_viability_effect",
+      "raw_value": "no apparent fibroblast viability loss in Figure 3d; exact bar values not tabulated",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "normal human dermal fibroblast cell",
+        "cell_line": "human dermal fibroblast cells",
+        "source_label": "human dermal fibroblast"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_times": "24 h, 48 h, 72 h",
+        "concentration_range": "0-400 µM C-rds"
+      },
+      "replicate_statistics": "Figure 3 reports mean ± SD, n = 4 trials; exact bar values are figure-only and not digitized.",
+      "source_value_status": "source_figure_qualitative",
+      "evidence_ladder": [
+        "figure_caption",
+        "figure_visual_review"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=3:Figure 3",
+          "note": "Figure 3d shows C-rds fibroblast viability."
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+          "locator": "figure:3d"
+        }
+      ]
+    },
+    {
+      "record_id": "act-doxorubicin-ht29-ic50-range-comparator",
+      "entity_name": "doxorubicin",
+      "entity_type": "non-peptide comparator drug",
+      "sequence": null,
+      "linked_database_ids": [],
+      "endpoint": "IC50",
+      "raw_value": "0.04 to 12",
+      "raw_unit": "µM",
+      "normalization_status": "direct_range_preserved",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_time": "72 h",
+        "concentration_range": "0-0.25 µM doxorubicin in a two-fold manner"
+      },
+      "replicate_statistics": "Exact per-dose values are figure-only; source text gives IC50 range.",
+      "source_value_status": "source_text_range",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "methods_section",
+        "figure_caption"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=5:2.3",
+          "note": "Results text gives doxorubicin IC50 range."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=13:4.5",
+          "note": "Combination/doxorubicin method."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        }
+      ]
+    },
+    {
+      "record_id": "act-cori-doxorubicin-combination-ht29-72h",
+      "entity_name": "C-ori + doxorubicin",
+      "entity_type": "peptide plus comparator-drug combination",
+      "sequence": "VTFVLIAAK",
+      "linked_database_ids": [
+        "DRAMP:DRAMP32346"
+      ],
+      "endpoint": "cell_viability_combination_effect",
+      "raw_value": "slightly increased effect versus either agent alone",
+      "raw_unit": "qualitative_no_unit",
+      "normalization_status": "not_convertible",
+      "target": {
+        "species": "Homo sapiens",
+        "target_class": "colon cancer cell line",
+        "cell_line": "HT-29",
+        "source_label": "HT-29"
+      },
+      "assay_conditions": {
+        "assay": "MTT cell viability assay",
+        "incubation_time": "72 h",
+        "combination_range": "C-ori 0-400 µM plus doxorubicin 0-0.25 µM"
+      },
+      "replicate_statistics": "Figure 4 marks significance at p < 0.05 and p < 0.01; exact bar values are not tabulated.",
+      "source_value_status": "source_text_qualitative",
+      "evidence_ladder": [
+        "primary_xml_results_text",
+        "figure_caption",
+        "figure_visual_review"
+      ],
+      "source_locator": [
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:sec=5:2.3",
+          "note": "Results text describes the combination effect."
+        },
+        {
+          "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+          "locator": "xml:fig=4:Figure 4"
+        },
+        {
+          "source_path": "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g004.jpg",
+          "locator": "figure:4"
+        }
+      ]
+    }
+  ],
+  "prediction_records": [
+    {
+      "record_id": "pred-table1-ctp-ori",
+      "entity_name": "CTP-ori",
+      "group": "toxic and cancer cell-penetrating anticancer peptide",
+      "sequence": "TTMICLTCAR",
+      "endpoint": "anticancer_prediction_scores",
+      "prediction_values": {
+        "AntiCP_SVM_score": "1.05",
+        "iACP_RF_probability": "0.997",
+        "MLACP_RF_ACP": "0.515",
+        "MLACP_SVM_ACP": "0.766"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:table=1:row=3"
+      },
+      "source_value_status": "source_table_exact"
+    },
+    {
+      "record_id": "pred-table1-ctp-rds",
+      "entity_name": "CTP-rds",
+      "group": "toxic and cancer cell-penetrating anticancer peptide redesigned variant",
+      "sequence": "TTGICLTCCR",
+      "endpoint": "anticancer_prediction_scores",
+      "prediction_values": {
+        "AntiCP_SVM_score": "1.58",
+        "iACP_RF_probability": "0.997",
+        "MLACP_RF_ACP": "0.538",
+        "MLACP_SVM_ACP": "0.674"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:table=1:row=4"
+      },
+      "source_value_status": "source_table_exact"
+    },
+    {
+      "record_id": "pred-table1-c-ori",
+      "entity_name": "C-ori",
+      "group": "anticancer peptide",
+      "sequence": "VTFVLIAAK",
+      "endpoint": "anticancer_prediction_scores",
+      "prediction_values": {
+        "AntiCP_SVM_score": "1.28",
+        "iACP_RF_probability": "0.875",
+        "MLACP_RF_ACP": "0.558",
+        "MLACP_SVM_ACP": "0.787"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:table=1:row=5"
+      },
+      "source_value_status": "source_table_exact"
+    },
+    {
+      "record_id": "pred-table1-c-rds",
+      "entity_name": "C-rds",
+      "group": "anticancer peptide redesigned variant",
+      "sequence": "FTFVLLAAK",
+      "endpoint": "anticancer_prediction_scores",
+      "prediction_values": {
+        "AntiCP_SVM_score": "1.62",
+        "iACP_RF_probability": "0.943",
+        "MLACP_RF_ACP": "0.506",
+        "MLACP_SVM_ACP": "0.541"
+      },
+      "source_locator": {
+        "source_path": "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "locator": "xml:table=1:row=6"
+      },
+      "source_value_status": "source_table_exact"
+    }
+  ],
+  "activity_record_count": 8,
+  "prediction_record_count": 4,
+  "parser_quality_control": {
+    "issue_count": 0,
+    "former_issue_codes_closed": [
+      "activity_table_shape_not_supported",
+      "no_supported_activity_rows_extracted"
+    ],
+    "rejects_property_or_model_tables_as_in_vitro_activity": true,
+    "table1_handling": "Table 1 prediction scores were extracted as prediction_records, not converted into experimental activity rows.",
+    "qualitative_rows_have_no_unit_rationale": true
+  },
+  "residual_source_limitations": [
+    {
+      "limitation_code": "figure3_figure4_exact_bar_values_not_tabulated",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "impact": "C-ori IC50 and qualitative no-effect/combination claims are source-supported; exact per-bar viability percentages are not invented from plotted figures.",
+      "source_paths_checked": [
+        "papers/doi__10.3390_molecules26195767/source/paper.xml",
+        "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/local-DRAMP-34641308.txt",
+        "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+        "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g004.jpg"
+      ]
+    },
+    {
+      "limitation_code": "supplementary_ctp_exact_bar_values_not_tabulated",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false,
+      "impact": "Supplementary Figure S1/S2 PDF provides figure-level support but no extractable table; source text supports no-effect calls for CTP-ori/CTP-rds on HT-29.",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules26195767/supplementary/local-DRAMP-molecules-26-05767-s001.zip"
+      ]
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules26195767/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules26195767/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules26195767/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules26195767/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/analysis_status.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_molecules26195767/analysis/adjudication_report.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/local-DRAMP-34641308.txt",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/pdf_text/molecules-26-05767.txt",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_molecules26195767/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules26195767/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules26195767/raw/oa_package/local-DRAMP-34641308.tar.gz",
+    "paper_packets/doi__10.3390_molecules26195767/raw/supplementary_original/local-DRAMP-molecules-26-05767-s001.zip",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767.nxml",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g003.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g004.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g005.jpg",
+    "paper_packets/doi__10.3390_molecules26195767/extracted/oa_package/local-DRAMP-34641308/PMC8510206/molecules-26-05767-g006.jpg",
+    "papers/doi__10.3390_molecules26195767/source/paper.xml",
+    "papers/doi__10.3390_molecules26195767/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_molecules26195767/supplementary/local-DRAMP-molecules-26-05767-s001.zip"
+  ],
+  "tools_attempted": [
+    "required worker skill files read",
+    "handoff_context.json review",
+    "jq JSON artifact review",
+    "xml.etree.ElementTree XML table and figure parsing",
+    "rg over XML/PDF text for activity and database terms",
+    "pdftotext on zipped supplementary PDF through unzip pipe",
+    "view_image inspection of Figures 3-6",
+    "linked DRAMP JSONL row inspection"
+  ]
+}

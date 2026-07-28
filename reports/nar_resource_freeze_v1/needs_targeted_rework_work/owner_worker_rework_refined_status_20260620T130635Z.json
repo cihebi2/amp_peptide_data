@@ -1,0 +1,737 @@
+{
+  "accepted_count": 4,
+  "accepted_sample_audit_manifest_path": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_accepted_sample_audit.json",
+  "blocked_or_infrastructure_count": 7,
+  "clean_initial_pass_count": 0,
+  "completion_claim": "refined_status_interpretation_not_blanket_publication_grade_clean_acceptance",
+  "followup_queue_catalog": {
+    "infra_recovery": {
+      "default_next_action": "retry_after_infrastructure_stabilization",
+      "meaning": "Infrastructure/API/bootstrap/runtime failures that should be retried outside the paper-quality lane."
+    },
+    "owner_context_rework_needed": {
+      "default_next_action": "build_more_specific_owner_context_then_retry",
+      "meaning": "Quality gates remain unresolved after bounded rework and need more specific owner context."
+    },
+    "parser_manual_extraction_needed": {
+      "default_next_action": "repair_table_parser_or_manual_extract_then_retry",
+      "meaning": "Activity/table extraction blockers that need parser repair or manual/vision fallback."
+    },
+    "safe_prompt_rework_needed": {
+      "default_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "meaning": "Owner-worker review was interrupted by model prompt/content safety restrictions; retry with a minimized, non-operational paper-evidence prompt or route to manual review."
+    },
+    "source_staging_needed": {
+      "default_next_action": "stage_missing_source_or_digitize_chart_then_retry",
+      "meaning": "Missing external supplement or figure/chart exact-value blockers that require source staging or digitization."
+    },
+    "watchdog_retry": {
+      "default_next_action": "retry_with_longer_watchdog_or_narrower_owner_prompt",
+      "meaning": "Owner-worker watchdog timeouts that need a longer watchdog or a narrower prompt."
+    }
+  },
+  "followup_queue_manifest_paths": {
+    "infra_recovery": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_infra_recovery.json",
+    "owner_context_rework_needed": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_owner_context_rework_needed.json",
+    "parser_manual_extraction_needed": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_parser_manual_extraction_needed.json",
+    "safe_prompt_rework_needed": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_safe_prompt_rework_needed.json",
+    "source_staging_needed": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_source_staging_needed.json",
+    "watchdog_retry": "reports/nar_resource_freeze_v1/needs_targeted_rework_work/followup_queues/owner_worker_rework_20260620T130635Z_watchdog_retry.json"
+  },
+  "generated_at": "2026-06-20T13:40:20Z",
+  "paper_count": 11,
+  "papers": [
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [],
+      "lane": 1,
+      "paper_id": "doi__10.1038_ncomms4067",
+      "post_rework_acceptance": true,
+      "qc_codes": [],
+      "recommended_next_action": "sample_audit_only",
+      "refined_category": "accepted_after_rework",
+      "refined_evidence_codes": [
+        "missing_activity_records",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "strict_gates_passed_after_single_rework",
+      "refined_reason_summary": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "refined_status": "accepted_after_rework_attempt1",
+      "refined_worker_reason_codes": [],
+      "result_category": "accepted",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 1,
+      "paper_id": "doi__10.1093_infdis_jiv325",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "missing_activity_records",
+        "no_supported_activity_rows_extracted",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 2
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 1,
+      "paper_id": "doi__10.3390_v11010056",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "activity_extraction_requires_worker2_rework",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "activity_extraction_requires_worker2_rework",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "missing_activity_records",
+        "no_supported_activity_rows_extracted",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_nonzero_exit",
+        "obtainable_only_source_gap_documented"
+      ],
+      "lane": 2,
+      "paper_id": "doi__10.1038_s41422-020-0305-x",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "missing_activity_records",
+        "no_supported_activity_rows_extracted",
+        "obtainable_only_source_gap_documented",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "supplementary_assets_indexed_landing_pages_only"
+      ],
+      "lane": 2,
+      "paper_id": "doi__10.1099_jgv.0.001453",
+      "post_rework_acceptance": true,
+      "qc_codes": [],
+      "recommended_next_action": "sample_audit_only",
+      "refined_category": "accepted_after_rework",
+      "refined_evidence_codes": [
+        "missing_activity_records",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade",
+        "supplementary_assets_indexed_landing_pages_only"
+      ],
+      "refined_reason_code": "strict_gates_passed_after_single_rework",
+      "refined_reason_summary": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "refined_status": "accepted_after_rework_attempt1",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "accepted",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [],
+      "lane": 3,
+      "paper_id": "doi__10.1038_s41467-021-21825-w",
+      "post_rework_acceptance": true,
+      "qc_codes": [],
+      "recommended_next_action": "sample_audit_only",
+      "refined_category": "accepted_after_rework",
+      "refined_evidence_codes": [
+        "missing_activity_records",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "strict_gates_passed_after_single_rework",
+      "refined_reason_summary": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "refined_status": "accepted_after_rework_attempt1",
+      "refined_worker_reason_codes": [],
+      "result_category": "accepted",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 3,
+      "paper_id": "doi__10.1126_science.abd9909",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_api_or_network_error",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "missing_activity_records",
+        "no_supported_activity_rows_extracted",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [],
+      "lane": 4,
+      "paper_id": "doi__10.1073_pnas.2210990119",
+      "post_rework_acceptance": true,
+      "qc_codes": [],
+      "recommended_next_action": "sample_audit_only",
+      "refined_category": "accepted_after_rework",
+      "refined_evidence_codes": [
+        "missing_activity_records",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "strict_gates_passed_after_single_rework",
+      "refined_reason_summary": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "refined_status": "accepted_after_rework_attempt1",
+      "refined_worker_reason_codes": [],
+      "result_category": "accepted",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_interrupted",
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 4,
+      "paper_id": "doi__10.1371_journal.pone.0080050",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_worker_interrupted",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "no_supported_activity_rows_extracted"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_worker_interrupted",
+        "codex_worker_nonzero_exit",
+        "database_conflicts_require_adjudication",
+        "full_source_review_not_completed",
+        "missing_activity_records",
+        "no_supported_activity_rows_extracted",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 5,
+      "paper_id": "doi__10.1080_22221751.2021.1937329",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_worker_nonzero_exit",
+        "direct_mechanism_without_assay",
+        "invalid_review_status",
+        "missing_activity_records",
+        "missing_rework_targets_for_hard_gate_issues",
+        "missing_target_species",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade",
+        "suspicious_target_species"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "direct_mechanism_without_assay",
+        "invalid_review_status",
+        "missing_activity_records",
+        "missing_rework_targets_for_hard_gate_issues",
+        "missing_target_species",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    },
+    {
+      "attempt_count": 1,
+      "clean_initial_gate_pass": false,
+      "gap_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "lane": 5,
+      "paper_id": "doi__10.3390_v11010031",
+      "post_rework_acceptance": false,
+      "qc_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "recommended_next_action": "retry_with_policy_safe_minimized_context_or_manual_queue",
+      "refined_category": "infrastructure_model_policy_blocked",
+      "refined_evidence_codes": [
+        "codex_worker_nonzero_exit",
+        "invalid_review_status",
+        "missing_activity_records",
+        "missing_rework_targets_for_hard_gate_issues",
+        "missing_target_species",
+        "open_rework_targets",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "refined_reason_code": "codex_prompt_safety_restriction_with_open_quality_gates",
+      "refined_reason_summary": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "refined_status": "blocked_model_prompt_safety_restriction_quality_gates_open",
+      "refined_worker_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "result_category": "infrastructure_failed",
+      "result_status": "infrastructure_codex_worker_failed",
+      "retryability": "defer_to_infrastructure_recovery_queue",
+      "semantic_issue_codes": [
+        "invalid_review_status",
+        "missing_activity_records",
+        "missing_rework_targets_for_hard_gate_issues",
+        "missing_target_species",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_infra_reason_codes": [
+        "codex_worker_nonzero_exit"
+      ],
+      "worker_infra_retry_count": 0
+    }
+  ],
+  "post_rework_acceptance_count": 4,
+  "recommended_next_action_counts": {
+    "retry_with_policy_safe_minimized_context_or_manual_queue": 7,
+    "sample_audit_only": 4
+  },
+  "refined_category_counts": {
+    "accepted_after_rework": 4,
+    "infrastructure_model_policy_blocked": 7
+  },
+  "refined_status_counts": {
+    "accepted_after_rework_attempt1": 4,
+    "blocked_model_prompt_safety_restriction_quality_gates_open": 7
+  },
+  "result_status_counts": {
+    "accepted_after_rework": 4,
+    "infrastructure_codex_worker_failed": 7
+  },
+  "source_lane_summaries": [
+    {
+      "generated_at": "2026-06-20T13:34:12Z",
+      "lane": 1,
+      "ok": true,
+      "paper_count": 3,
+      "path": "reports/true_rework_queue_needs_targeted_owner_remaining11_lane01_20260620T130635Z_latest.json",
+      "result_status_counts": {
+        "accepted_after_rework": 1,
+        "infrastructure_codex_worker_failed": 2
+      },
+      "terminal_status_counts": {
+        "accepted_after_rework": 1,
+        "blocked_after_best_effort": 2
+      }
+    },
+    {
+      "generated_at": "2026-06-20T13:19:16Z",
+      "lane": 2,
+      "ok": true,
+      "paper_count": 2,
+      "path": "reports/true_rework_queue_needs_targeted_owner_remaining11_lane02_20260620T130635Z_latest.json",
+      "result_status_counts": {
+        "accepted_after_rework": 1,
+        "infrastructure_codex_worker_failed": 1
+      },
+      "terminal_status_counts": {
+        "accepted_after_rework": 1,
+        "blocked_after_best_effort": 1
+      }
+    },
+    {
+      "generated_at": "2026-06-20T13:21:27Z",
+      "lane": 3,
+      "ok": true,
+      "paper_count": 2,
+      "path": "reports/true_rework_queue_needs_targeted_owner_remaining11_lane03_20260620T130635Z_latest.json",
+      "result_status_counts": {
+        "accepted_after_rework": 1,
+        "infrastructure_codex_worker_failed": 1
+      },
+      "terminal_status_counts": {
+        "accepted_after_rework": 1,
+        "blocked_after_best_effort": 1
+      }
+    },
+    {
+      "generated_at": "2026-06-20T13:21:56Z",
+      "lane": 4,
+      "ok": true,
+      "paper_count": 2,
+      "path": "reports/true_rework_queue_needs_targeted_owner_remaining11_lane04_20260620T130635Z_latest.json",
+      "result_status_counts": {
+        "accepted_after_rework": 1,
+        "infrastructure_codex_worker_failed": 1
+      },
+      "terminal_status_counts": {
+        "accepted_after_rework": 1,
+        "blocked_after_best_effort": 1
+      }
+    },
+    {
+      "generated_at": "2026-06-20T13:27:10Z",
+      "lane": 5,
+      "ok": true,
+      "paper_count": 2,
+      "path": "reports/true_rework_queue_needs_targeted_owner_remaining11_lane05_20260620T130635Z_latest.json",
+      "result_status_counts": {
+        "infrastructure_codex_worker_failed": 2
+      },
+      "terminal_status_counts": {
+        "blocked_after_best_effort": 2
+      }
+    }
+  ],
+  "source_lane_summary_count": 5,
+  "status_catalog": {
+    "accepted_after_rework_attempt1": {
+      "category": "accepted_after_rework",
+      "meaning": "One owner-worker re-review repaired the paper and strict gates passed.",
+      "next_action": "sample_audit_only"
+    },
+    "accepted_after_rework_attempt1_with_infra_retry": {
+      "category": "accepted_after_rework_with_infra_noise",
+      "meaning": "One owner-worker re-review eventually passed after transient Codex/API/process retry noise.",
+      "next_action": "sample_audit_plus_infra_log_check"
+    },
+    "accepted_after_rework_multi_attempt": {
+      "category": "accepted_after_rework",
+      "meaning": "More than one bounded rework attempt was needed before strict gates passed.",
+      "next_action": "targeted_sample_audit"
+    },
+    "accepted_after_rework_multi_attempt_with_infra_retry": {
+      "category": "accepted_after_rework_with_infra_noise",
+      "meaning": "Multiple rework attempts plus transient infra retries were needed before strict gates passed.",
+      "next_action": "targeted_sample_audit_plus_infra_log_check"
+    },
+    "accepted_clean_initial_gate_pass": {
+      "category": "accepted_clean",
+      "meaning": "Strict gates already passed before owner-worker rework.",
+      "next_action": "none"
+    },
+    "blocked_model_prompt_safety_restriction_quality_gates_open": {
+      "category": "infrastructure_model_policy_blocked",
+      "meaning": "Codex owner-worker hit a model prompt/content safety restriction while strict scientific gates remained open; this is not proof that source material is absent.",
+      "next_action": "retry_with_policy_safe_minimized_context_or_manual_queue"
+    },
+    "blocked_parser_gap_activity_table": {
+      "category": "blocked_parser_or_manual_extraction_gap",
+      "meaning": "Activity/toxicity rows are present or expected but unsafe under current parser/table handling.",
+      "next_action": "retry_with_worker2_table_shape_or_manual_vision_fallback"
+    },
+    "blocked_process_timeout_1800s_retryable": {
+      "category": "blocked_process_timeout",
+      "meaning": "Owner-worker hit the 1800s watchdog; this is retryable and not proof that material is absent.",
+      "next_action": "retry_with_longer_watchdog_or_narrower_prompt"
+    },
+    "blocked_process_timeout_retryable": {
+      "category": "blocked_process_timeout",
+      "meaning": "Owner-worker hit the configured watchdog; this is retryable and not proof that material is absent.",
+      "next_action": "retry_with_longer_watchdog_or_narrower_prompt"
+    },
+    "blocked_quality_gate_rework_cap_unresolved": {
+      "category": "blocked_quality_gate_unresolved",
+      "meaning": "Strict gates remained blocked after the bounded obtainable-only rework cap.",
+      "next_action": "retry_only_with_more_specific_owner_context"
+    },
+    "blocked_source_gap_figure_chart_exact_value": {
+      "category": "blocked_source_gap",
+      "meaning": "Remaining exact values are figure/chart-only or not safely promotable from local structured material.",
+      "next_action": "retry_only_with_digitization_or_external_source"
+    },
+    "blocked_source_gap_missing_external_supplement": {
+      "category": "blocked_source_gap",
+      "meaning": "A specific supplementary source/table is absent or only present as a non-data placeholder.",
+      "next_action": "retry_only_after_source_staging"
+    },
+    "blocked_worker_nonzero_strict_gates_open": {
+      "category": "infrastructure_worker_nonzero_with_quality_gates_open",
+      "meaning": "Codex owner-worker exited non-zero and strict gates still failed after bounded best-effort review; inspect worker logs before treating this as a scientific blocker.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_initial_queue_failed": {
+      "category": "infrastructure_failed",
+      "meaning": "Initial workflow/bootstrap failed before owner-worker review could run.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_api_or_network": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex/API/network-like failures exhausted the configured infra retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_mixed": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Multiple infrastructure failure families exhausted the configured retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_paper_runtime": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Per-paper controller/runtime exceptions exhausted the configured retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_worker_interrupted": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex worker interruption exhausted the configured infra retry cap.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "infrastructure_retry_exhausted_worker_nonzero_exit": {
+      "category": "infrastructure_retry_exhausted",
+      "meaning": "Codex worker exited non-zero until the configured infra retry cap was exhausted.",
+      "next_action": "defer_to_infrastructure_recovery_queue"
+    },
+    "unclassified_queue_status": {
+      "category": "unclassified",
+      "meaning": "No refined rule matched this queue result.",
+      "next_action": "inspect_result_payload"
+    }
+  },
+  "terminal_status_counts": {
+    "accepted_after_rework": 4,
+    "blocked_after_best_effort": 7
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "adjudication_summary": "Source-reviewed adjudication accepts PMC13054752 with cautions: layer 2 now contains the repaired 13 row table-cell activity set, layer 1 preserves empty linked DBAASP evidence and candidate-only fallback rows, and layer 3 remains mechanism-reviewed without open hard rework targets.",
+  "artifact": "final/review_report.json",
+  "authoritative_ingest_ready": false,
+  "caution_findings": [
+    {
+      "evidence_context": {
+        "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+        "linked_row_total": 0,
+        "source_record_links_present": false
+      },
+      "finding_id": "PMC13054752-CAUTION-DBAASP-LINKED-ROWS-ABSENT",
+      "impact": "Accepted with cautions only; fallback rows are not source_verified DBAASP ingest rows.",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Authoritative linked DBAASP rows are absent in the local snapshot; authoritative ingest remains false."
+    },
+    {
+      "evidence_context": {
+        "candidate_rows_path": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl",
+        "machine_candidate_row_count": 16
+      },
+      "finding_id": "PMC13054752-CAUTION-MACHINE-FALLBACK-BOUNDARY",
+      "impact": "Human/source-reviewed paper evidence remains separate from machine extraction.",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "DBAASP Codex fallback rows were retained as candidate machine evidence and not promoted to authoritative/source-verified database rows."
+    },
+    {
+      "evidence_context": {
+        "linked_row_counts": {
+          "linked_article_records": 0,
+          "linked_assay_records": 0,
+          "linked_literature_records": 0,
+          "linked_sequence_records": 0
+        },
+        "machine_candidate_rows": 16
+      },
+      "finding_id": "caution-authoritative-zero-linked-rows",
+      "impact": "authoritative_ingest_ready remains false",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Local authoritative DBAASP/merged linked-row snapshots are empty for this paper; fallback rows are not promoted to authoritative ingest."
+    },
+    {
+      "evidence_context": {
+        "status_counts": {
+          "source_conflict": 3,
+          "unresolved_record": 13
+        }
+      },
+      "finding_id": "caution-layer1-unresolved-or-conflict-statuses",
+      "impact": "accepted with cautions only",
+      "layer": "database",
+      "severity": "caution",
+      "summary": "Layer-1 records remain unresolved/source-conflict rather than source-verified, preserving database-only uncertainty."
+    },
+    {
+      "adjudication": "Durable no-match/empty linked-row evidence is preserved; candidate DBAASP fallback rows remain machine evidence only and are not promoted to authoritative ingest.",
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_article_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_assay_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_sequence_records.jsonl",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/linked_literature_records.jsonl"
+      ],
+      "severity": "caution"
+    },
+    {
+      "adjudication": "Fallback rows are retained only as candidate machine evidence pending real linked DBAASP rows.",
+      "code": "machine_candidate_rows_not_authoritative",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/dbaasp_machine_extracted_rows.jsonl"
+      ],
+      "severity": "caution"
+    },
+    {
+      "evidence_context": {
+        "mechanism_claim_count": 5,
+        "worker5_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/mechanism_evidence.worker5.json"
+      },
+      "finding_id": "PMC13054752-CAUTION-NO-DIRECT-MECHANISM-PROMOTION",
+      "impact": "Mechanism layer remains ontology-limited rather than overclaimed.",
+      "layer": "mechanism",
+      "severity": "caution",
+      "summary": "Mechanism claims retain worker-5 evidence classes; no claim is promoted beyond its source-backed evidence strength."
+    },
+    {
+      "evidence_context": {
+        "evidence_class_counts": {
+          "inferred_mechanism": 1,
+          "phenotype_supported": 3,
+          "unknown_or_not_tested": 1
+        },
+        "mechanism_claims": 5
+      },
+      "finding_id": "caution-no-direct-mechanism-claims",
+      "impact": "mechanism accepted with evidence-strength limits",
+      "layer": "mechanism",
+      "severity": "caution",
+      "summary": "Mechanism ontology preserves non-direct evidence classes and does not promote claims to direct mechanism."
+    }
+  ],
+  "checked_inputs": {
+    "authoritative_match_report": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/authoritative_match_report.json",
+    "database_manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/database/database_source_manifest.json",
+    "packet_manifest": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/packet_manifest.json",
+    "pdf_text": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/pdf_text.jsonl",
+    "rework_requests": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/rework/rework_requests.jsonl",
+    "rework_responses": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/rework/rework_responses.jsonl",
+    "supplementary_index": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/supplementary_index.json",
+    "supplementary_text": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/supplementary_text.jsonl",
+    "worker2_current_artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/activity_toxicity_evidence.worker2.json",
+    "worker4_artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/database_record_audit.worker4.json",
+    "worker5_artifact": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/analysis/mechanism_evidence.worker5.json",
+    "xml_sections": "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC13054752/extracted/xml_sections.json"
+  },
+  "checkout_only": true,
+  "internet_browsing_used": false,
+  "materials_exhausted": {
+    "database_rows": true,
+    "merged_database_rows": {
+      "evidence": "packet-local source review",
+      "status": "reviewed_or_gap_documented"
+    },
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true,
+    "unresolved_primary_material_gap": false
+  },
+  "paper_id": "PMC13054752",
+  "per_layer_decision_rationale": {
+    "activity_toxicity_evidence": "Accepted with cautions after rebuilding from the current worker-2 artifact and independently checking the 13 activity observations, exact cell locators, evidence kind counts, normalization, duplicate separation, and absence of toxicity rows.",
+    "database_record_verification": "Accepted with cautions because linked authoritative DBAASP rows are empty but durable no-match evidence is present; fallback DBAASP Codex rows remain machine candidates and authoritative ingest is false.",
+    "mechanism_ontology_record": "Accepted with cautions; mechanism claims remain evidence-classed from packet-local source review and do not promote inferred or computational evidence beyond their class.",
+    "review_rework_state": "No hard rework targets remain after the current runtime-open ticket contracts are verified and final mirrors are rebuilt."
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T12:44:51Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_final_rebuilt_from_current_worker2_artifact": true,
+    "activity_records": 13,
+    "authoritative_ingest_ready": false,
+    "database_record_audits": 16,
+    "machine_fallback_rows_promoted_to_authoritative": false,
+    "mechanism_claims": 5,
+    "owner_nonterminal_responses_present": true,
+    "required_non_table_corrobation_locators_added": true,
+    "review_rework_targets": 0,
+    "runtime_open_ticket_ids": [
+      "rwk-PMC13054752-current-worker2-contract-003",
+      "rwk-PMC13054752-normalization-schema-001",
+      "rwk-PMC13054752-table2-identity-scalar-normalization-002"
+    ],
+    "source_locators_trimmed_to_exact_required_cells": true,
+    "toxicity_records": 0
+  },
+  "source_review_depth": {
+    "current_worker2_artifact_reopened": true,
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "source_reviewed": true,
+  "stop_condition": "accepted_with_cautions only after strict packet, semantic, and publication gates pass without allow flags and terminal worker-6 responses close all runtime-open tickets.",
+  "strict_gate": {
+    "final_counts": {
+      "activity_records": 13,
+      "database_record_audits": 16,
+      "mechanism_claims": 5,
+      "review_rework_targets": 0,
+      "toxicity_records": 0
+    },
+    "publication_grade": true,
+    "required_rework_count": 0,
+    "review_status": "accepted_with_cautions",
+    "runtime_open_ticket_ids_before_worker6_terminal_response": [
+      "rwk-PMC13054752-current-worker2-contract-003",
+      "rwk-PMC13054752-normalization-schema-001",
+      "rwk-PMC13054752-table2-identity-scalar-normalization-002"
+    ],
+    "validator_contract_passed": true
+  },
+  "summary": "Worker-6 rebuilt the activity/toxicity final from the current worker-2 repair artifact, verified the three runtime-open ticket contracts, preserved absent authoritative DBAASP linked rows as a caution, and accepted the packet with cautions rather than promoting fallback machine rows to authoritative ingest.",
+  "unresolved_blockers": [],
+  "updated_at": "2026-07-15T12:48:02Z",
+  "validation_evidence": {
+    "cell_locator_trimmed_to_ticket_required_cells_at": "2026-07-15T12:46:48Z",
+    "gate_artifact_paths_planned": {
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/worker6_packet_gate_terminal.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/worker6_publication_gate_terminal.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/worker6_semantic_gate_terminal.json"
+    },
+    "pre_terminal_contract_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC13054752/work/review/worker6_terminal_contract_audit.json",
+    "required_non_table_locators_added_at": "2026-07-15T12:48:02Z"
+  },
+  "validator_contract_passed": true
+}

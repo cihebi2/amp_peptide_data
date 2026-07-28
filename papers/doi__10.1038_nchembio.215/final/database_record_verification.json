@@ -1,0 +1,950 @@
+{
+  "paper_id": "doi__10.1038_nchembio.215",
+  "generated_at": "2026-05-02T05:53:45Z",
+  "reviewed_at": "2026-05-02T05:53:45Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 re-review of DBAASP Cyclosporin A linked assay/experiment/literature rows against primary XML/PDF/supplement text plus merged database sequence rows.",
+  "database_row_counts": {
+    "linked_assay_records": 4,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 4,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "source_paths_checked": [
+    "paper_packets/doi__10.1038_nchembio.215/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_nchembio.215/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_nchembio.215/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_nchembio.215/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+    "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-2.txt",
+    "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+    "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+    "paper_packets/doi__10.1038_nchembio.215/raw/paper.pdf",
+    "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/nihms-131531.nxml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/unique_literature_sources.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "file",
+    "pdftotext-derived packet text",
+    "antiword",
+    "manual row reconciliation"
+  ],
+  "record_audits": [
+    {
+      "audit_id": "linked_assay_records.jsonl:row1:DBAASP:DBAASPN_15677:172385",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172385",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum 3D7",
+      "database_concentration": "0.63",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:3D7:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:3D7:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1074",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum 3D7 IC50 value 0.63 µM"
+          ]
+        },
+        {
+          "kind": "primary_xml_section",
+          "path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+          "locator": "xml:sec=3:Discovery of potential antimalarial compounds; xml:sec=11:In vitro drug assays",
+          "supports": [
+            "screening context, IC50 endpoint, parasite proliferation assay methods"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.63",
+        "primary_source_value": "0.63",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1074",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_assay_records.jsonl",
+        "source_record_id": "172385",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "Primary supplementary material supports the Cyclosporin A IC50 assay value for this parasite line, but the primary paper does not provide the DBAASP encoded sequence/terminal modification/source-organism identity; those identity fields remain database-only and are preserved as a source_conflict caution rather than promoted to source_verified.",
+      "review_notes": "Worker-4 re-review resolved the prior unmatched activity problem for this assay row while preserving the database-only identity limitation required by the source-review contract.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row2:DBAASP:DBAASPN_15677:172386",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172386",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum Dd2",
+      "database_concentration": "0.71",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:Dd2:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:Dd2:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1079",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum Dd2 IC50 value 0.71 µM"
+          ]
+        },
+        {
+          "kind": "primary_xml_section",
+          "path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+          "locator": "xml:sec=3:Discovery of potential antimalarial compounds; xml:sec=11:In vitro drug assays",
+          "supports": [
+            "screening context, IC50 endpoint, parasite proliferation assay methods"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.71",
+        "primary_source_value": "0.71",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1079",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_assay_records.jsonl",
+        "source_record_id": "172386",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "Primary supplementary material supports the Cyclosporin A IC50 assay value for this parasite line, but the primary paper does not provide the DBAASP encoded sequence/terminal modification/source-organism identity; those identity fields remain database-only and are preserved as a source_conflict caution rather than promoted to source_verified.",
+      "review_notes": "Worker-4 re-review resolved the prior unmatched activity problem for this assay row while preserving the database-only identity limitation required by the source-review contract.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row3:DBAASP:DBAASPN_15677:172387",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172387",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum W2",
+      "database_concentration": "0.47",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:W2:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:W2:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1085",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum W2 IC50 value 0.47 µM"
+          ]
+        },
+        {
+          "kind": "primary_xml_section",
+          "path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+          "locator": "xml:sec=3:Discovery of potential antimalarial compounds; xml:sec=11:In vitro drug assays",
+          "supports": [
+            "screening context, IC50 endpoint, parasite proliferation assay methods"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.47",
+        "primary_source_value": "0.47",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1085",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_assay_records.jsonl",
+        "source_record_id": "172387",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "Primary supplementary material supports the Cyclosporin A IC50 assay value for this parasite line, but the primary paper does not provide the DBAASP encoded sequence/terminal modification/source-organism identity; those identity fields remain database-only and are preserved as a source_conflict caution rather than promoted to source_verified.",
+      "review_notes": "Worker-4 re-review resolved the prior unmatched activity problem for this assay row while preserving the database-only identity limitation required by the source-review contract.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_assay_records.jsonl:row4:DBAASP:DBAASPN_15677:172388",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172388",
+      "source_table": "linked_assay_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum HB3",
+      "database_concentration": "0.83",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:HB3:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:HB3:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1083",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum HB3 IC50 value 0.83 µM"
+          ]
+        },
+        {
+          "kind": "primary_xml_section",
+          "path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+          "locator": "xml:sec=3:Discovery of potential antimalarial compounds; xml:sec=11:In vitro drug assays",
+          "supports": [
+            "screening context, IC50 endpoint, parasite proliferation assay methods"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.83",
+        "primary_source_value": "0.83",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1083",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_assay_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_assay_records.jsonl",
+        "source_record_id": "172388",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "Primary supplementary material supports the Cyclosporin A IC50 assay value for this parasite line, but the primary paper does not provide the DBAASP encoded sequence/terminal modification/source-organism identity; those identity fields remain database-only and are preserved as a source_conflict caution rather than promoted to source_verified.",
+      "review_notes": "Worker-4 re-review resolved the prior unmatched activity problem for this assay row while preserving the database-only identity limitation required by the source-review contract.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row1:DBAASP:DBAASPN_15677:172385",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172385",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum 3D7",
+      "database_concentration": "0.63",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:3D7:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:3D7:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1074",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum 3D7 IC50 value 0.63 µM"
+          ]
+        },
+        {
+          "kind": "database_snapshot",
+          "path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records.jsonl:row=1",
+          "supports": [
+            "DBAASP assay row carried into merged experiment snapshot"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.63",
+        "primary_source_value": "0.63",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1074",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+        "source_record_id": "172385",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "The experiment snapshot value matches the primary supplementary table, but the DBAASP sequence/structural identity remains database-only for this paper and is therefore preserved as a source_conflict caution.",
+      "review_notes": "Worker-4 re-review matched the assay row to Supplementary Table 6 and retained the identity limitation instead of flattening it into source_verified.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row2:DBAASP:DBAASPN_15677:172386",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172386",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum Dd2",
+      "database_concentration": "0.71",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:Dd2:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:Dd2:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1079",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum Dd2 IC50 value 0.71 µM"
+          ]
+        },
+        {
+          "kind": "database_snapshot",
+          "path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records.jsonl:row=2",
+          "supports": [
+            "DBAASP assay row carried into merged experiment snapshot"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.71",
+        "primary_source_value": "0.71",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1079",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=2",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+        "source_record_id": "172386",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "The experiment snapshot value matches the primary supplementary table, but the DBAASP sequence/structural identity remains database-only for this paper and is therefore preserved as a source_conflict caution.",
+      "review_notes": "Worker-4 re-review matched the assay row to Supplementary Table 6 and retained the identity limitation instead of flattening it into source_verified.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row3:DBAASP:DBAASPN_15677:172387",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172387",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum W2",
+      "database_concentration": "0.47",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:W2:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:W2:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1085",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum W2 IC50 value 0.47 µM"
+          ]
+        },
+        {
+          "kind": "database_snapshot",
+          "path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records.jsonl:row=3",
+          "supports": [
+            "DBAASP assay row carried into merged experiment snapshot"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.47",
+        "primary_source_value": "0.47",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1085",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=3",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+        "source_record_id": "172387",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "The experiment snapshot value matches the primary supplementary table, but the DBAASP sequence/structural identity remains database-only for this paper and is therefore preserved as a source_conflict caution.",
+      "review_notes": "Worker-4 re-review matched the assay row to Supplementary Table 6 and retained the identity limitation instead of flattening it into source_verified.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_experiment_records.jsonl:row4:DBAASP:DBAASPN_15677:172388",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASP:DBAASPN_15677",
+      "source_record_id": "172388",
+      "source_table": "linked_experiment_records.jsonl",
+      "database": "DBAASP",
+      "peptide_name_database": "Cyclosporin A",
+      "paper_short_name": "Cyclosporin A",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "database_measure": "IC50",
+      "database_subject": "Plasmodium falciparum HB3",
+      "database_concentration": "0.83",
+      "database_unit": "µM",
+      "matched_activity_record_id": "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:HB3:IC50",
+      "matched_activity_record_ids": [
+        "doi__10.1038_nchembio.215:supp-table6:cyclosporin-a:HB3:IC50"
+      ],
+      "source_locator": [
+        {
+          "kind": "supplementary_pdf_text",
+          "path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1083",
+          "supports": [
+            "Cyclosporin A name",
+            "Plasmodium falciparum HB3 IC50 value 0.83 µM"
+          ]
+        },
+        {
+          "kind": "database_snapshot",
+          "path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+          "locator": "database:linked_experiment_records.jsonl:row=4",
+          "supports": [
+            "DBAASP assay row carried into merged experiment snapshot"
+          ]
+        }
+      ],
+      "activity_check": {
+        "status": "source_verified_for_activity_value",
+        "database_value": "0.83",
+        "primary_source_value": "0.83",
+        "unit": "µM",
+        "value_match": true,
+        "source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1083",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt"
+        }
+      },
+      "sequence_check": {
+        "status": "database_sequence_present_but_not_primary_source_verified",
+        "database_sequence": "XXXVXAaXXXX",
+        "database_name": "Cyclosporin A",
+        "database_synthesis_type": "Nonribosomal",
+        "database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=22009",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DBAASP sequence key, encoded sequence string, name, synthesis type, PDB/PubChem metadata"
+          ]
+        },
+        "cross_database_sequence_locator": {
+          "locator": "merged_sequences:all_sequences.csv:row=62313",
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "supports": [
+            "DRAMP cross-database Cyclosporin A sequence/source summary for the same encoded sequence"
+          ]
+        },
+        "primary_source_locator": {
+          "locator": "supp:NIHMS131531-supplement-1.pdf:Supplementary Table 6:lines=1070-1088",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/extracted/pdf_text/NIHMS131531-supplement-1.txt",
+          "source_pdf_path": "paper_packets/doi__10.1038_nchembio.215/extracted/oa_package/local-DBAASP-PMC2784992/PMC2784992/NIHMS131531-supplement-1.pdf",
+          "supports": [
+            "primary paper supplement confirms Cyclosporin A name and IC50 values, not peptide sequence or structural identity"
+          ]
+        },
+        "primary_source_support": "Name and IC50 activity values are source-supported; the primary paper does not provide the DBAASP encoded sequence, terminal modifications, source organism, or structural identity fields."
+      },
+      "identity_review": {
+        "sequence_or_variant_identity": "database_only_no_primary_source",
+        "name_or_synonym": "source_verified_name_in_supplement",
+        "terminal_or_noncanonical_modifications": "database_only_no_primary_source",
+        "source_organism_or_origin": "database_only_no_primary_source",
+        "citation_traceability": "source_verified"
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_experiment_records.jsonl:row=4",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_experiment_records.jsonl",
+        "source_record_id": "172388",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [
+        "primary_source_lacks_dbaasp_sequence_or_structure_identity",
+        "database_sequence_identity_only_recovered_from_merged_database_rows"
+      ],
+      "conflict_context": "The experiment snapshot value matches the primary supplementary table, but the DBAASP sequence/structural identity remains database-only for this paper and is therefore preserved as a source_conflict caution.",
+      "review_notes": "Worker-4 re-review matched the assay row to Supplementary Table 6 and retained the identity limitation instead of flattening it into source_verified.",
+      "adjudication_decision": "activity_value_source_verified_identity_source_conflict_preserved"
+    },
+    {
+      "audit_id": "linked_literature_records.jsonl:row1:DBAASP:DBAASPN_15677",
+      "sequence_key": "DBAASP:DBAASPN_15677",
+      "source_id": "DBAASPN_15677",
+      "source_table": "linked_literature_records.jsonl",
+      "database": "DBAASP",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "database_subject": "Genetic mapping of targets mediating differential chemical phenotypes in Plasmodium falciparum.",
+      "database_measure": "literature_link",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "literature_link_only_sequence_not_asserted",
+        "source_locator": {
+          "locator": "xml:article-meta",
+          "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+          "supports": [
+            "DOI/PMID/PMCID match for the paper citation"
+          ]
+        }
+      },
+      "citation_traceability": {
+        "locator": "xml:article-meta",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/raw/paper.xml",
+        "doi": "10.1038/nchembio.215",
+        "pmid": "19734910",
+        "pmcid": "PMC2784992"
+      },
+      "traceability": {
+        "locator": "database:linked_literature_records.jsonl:row=1",
+        "source_path": "paper_packets/doi__10.1038_nchembio.215/database/linked_literature_records.jsonl",
+        "database": "DBAASP"
+      },
+      "conflict_flags": [],
+      "conflict_context": "",
+      "review_notes": "Literature link matches DOI/PMID/PMCID and selected paper title.",
+      "adjudication_decision": "source_verified_literature_traceability"
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 8,
+    "source_verified": 1
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_identity_database_only_no_primary_sequence",
+      "evidence_context": "The primary supplement source-verifies Cyclosporin A IC50 values for 3D7, Dd2, W2, and HB3 matching DBAASP rows; the DBAASP encoded sequence/structure identity is only found in merged database sequence rows, not the primary paper.",
+      "affected_layer": "database_record_audit",
+      "status_counts": {
+        "source_conflict": 8,
+        "source_verified": 1
+      }
+    }
+  ]
+}

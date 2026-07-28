@@ -1,0 +1,147 @@
+{
+  "adjudication_summary": "Complete framework test reached final adjudication and correctly stopped at needs_targeted_rework instead of publication-grade acceptance.",
+  "caution_findings": [
+    {
+      "caution_code": "framework_test_not_publication_grade",
+      "evidence_context": "Pipeline exercised real material and gates, but terminal result is rework-required."
+    }
+  ],
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms222111869/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms222111869/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms222111869/extracted/supplementary_text.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms222111869/database/database_source_manifest.json"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Exhausted enough for framework test inventory; publication-grade curation still requires targeted source-review rework.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3390_ijms222111869",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Initial database snapshots and one source sequence locator are present, but full linked-record reconciliation is not complete.",
+    "layer_2_activity_toxicity": "Supported activity/toxicity tables were parsed with units and locators where possible; unsupported activity-bearing tables and supplement/prose reconciliation remain rework.",
+    "layer_3_mechanism": "Direct mechanism categories are source-located, but figure/method-level quantitative details remain rework."
+  },
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "full_source_review_not_completed",
+      "owner_worker": "worker-6",
+      "reason": "The framework test inventories real material but does not complete worker-6 source-reviewed adjudication.",
+      "severity": "blocking"
+    },
+    {
+      "code": "database_conflicts_require_adjudication",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "Linked database rows include source_conflict/database-only cases that must be preserved or resolved by source review.",
+      "severity": "major"
+    },
+    {
+      "code": "no_supported_activity_rows_extracted",
+      "owner_worker": "worker-2",
+      "reason": "No parser-supported activity/toxicity rows were extracted; worker must inspect XML/PDF/prose/figures/supplements before acceptance.",
+      "severity": "major"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "needs_targeted_rework",
+  "reviewed_at": "2026-05-08T13:36:50Z",
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.3390_ijms222111869/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-08T13:36:50Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "full_source_review_not_completed",
+      "layer": "review",
+      "omission_context": [],
+      "paper_id": "doi__10.3390_ijms222111869",
+      "qc_failure_reasons": [
+        {
+          "code": "full_source_review_not_completed",
+          "owner_worker": "worker-6",
+          "reason": "The framework test inventories real material but does not complete worker-6 source-reviewed adjudication.",
+          "severity": "blocking"
+        },
+        {
+          "code": "database_conflicts_require_adjudication",
+          "owner_worker": "worker-4 + worker-6",
+          "reason": "Linked database rows include source_conflict/database-only cases that must be preserved or resolved by source review.",
+          "severity": "major"
+        },
+        {
+          "code": "no_supported_activity_rows_extracted",
+          "owner_worker": "worker-2",
+          "reason": "No parser-supported activity/toxicity rows were extracted; worker must inspect XML/PDF/prose/figures/supplements before acceptance.",
+          "severity": "major"
+        }
+      ],
+      "reason": "The framework test parsed real XML/package/database evidence, but did not complete human-level row-by-row database reconciliation, supported/unsupported activity-table repair, supplement table extraction, or figure-level mechanism quantification.",
+      "requested_by": "complete_message_test_adjudicator",
+      "requested_outputs": [
+        {
+          "asset": "source/paper.xml",
+          "need": "Complete Table 1/2/3 row reconciliation against database records.",
+          "required_locators": [
+            "xml:table=1",
+            "xml:table=2",
+            "xml:table=3"
+          ]
+        },
+        {
+          "asset": "source/supplementary/",
+          "need": "Complete supplement PDF/XLSX extraction and decide whether it changes activity/toxicity/mechanism evidence.",
+          "required_locators": [
+            "supp:*"
+          ]
+        }
+      ],
+      "required_action": "Assign a real worker-4/5/6 source-reviewed pass; rerun semantic and publication-quality gates after rework.",
+      "rework_context_expected_fields": [
+        "historical_artifacts",
+        "omission_codes",
+        "owner_worker_skill_paths",
+        "gate_failures",
+        "previous_outputs"
+      ],
+      "rework_context_packet_required": true,
+      "severity": "blocking",
+      "source_evidence_to_check": [
+        "source/paper.xml",
+        "source/supplementary/",
+        "packet/database/*.jsonl"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001",
+      "worker": "worker-6"
+    }
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 0,
+    "database_snapshots": {
+      "linked_assay_records": 0,
+      "linked_dramp_activity_records": 16,
+      "linked_experiment_records": 16,
+      "linked_literature_records": 4,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims": 1
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "validator_contract_passed": true
+}

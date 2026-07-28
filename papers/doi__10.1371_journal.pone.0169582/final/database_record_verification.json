@@ -1,0 +1,153 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0169582",
+  "generated_at": "2026-05-06T01:39:49Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "audit_scope": "Worker-4 rechecked linked APD6 rows against primary XML, S1 DOCX sequence supplement, packet database JSONL, and merged APD6 CSV rows.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 1,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP03171",
+      "sequence_key": "APD6:AP03171",
+      "source_table": "peptides.csv / linked_experiment_records.jsonl",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "doi__101371_journalpone0169582-trx-stomoxynzh1-table4-ecoli-mic; doi__101371_journalpone0169582-trx-stomoxynzh1-table4-saureus-mic",
+      "database_subject": "APD6 AP03171 StomoxynZH1 entry linked to this paper",
+      "database_measure": "APD6 entry text reports anti-Gram-positive/Gram-negative activity and bacterial MIC ranges for Trx-stomoxynZH1; primary Table 4 also reports fungal MIC thresholds not represented as structured APD6 assay rows.",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0169582/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/local-APD6-pone.0169582.s001.docx",
+          "locator": "S1 File StomoxynZH1 amino-acid sequence lines parsed from DOCX",
+          "supplementary_sources": [
+            {
+              "source_path": "source/paper.xml",
+              "locator": "xml:table=3:rows=7-8"
+            },
+            {
+              "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+              "locator": "APD6:AP03171"
+            }
+          ]
+        },
+        "primary_sequence_or_identity_verified": "S1 File amino-acid sequence and Table 3 StomoxynZH1 size support APD6 AP03171 identity; no terminal modification was reported.",
+        "name_agreement": "source_verified",
+        "source_organism_agreement": "source_verified",
+        "modification_check": "no source-reported chemical modification; assayed entity is a Trx fusion protein"
+      },
+      "activity_check": {
+        "primary_activity_locator": [
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:table=4:rows=2-5"
+          },
+          {
+            "source_path": "source/paper.xml",
+            "locator": "xml:sec=14:Antimicrobial assay"
+          }
+        ],
+        "database_activity_status": "partially_source_verified_with_scope_caution",
+        "notes": "The bacterial MIC ranges in APD6 match primary Table 4; APD6 does not carry structured rows for the two fungal MIC thresholds, so final activity rows are sourced from primary Table 4."
+      },
+      "review_notes": "Source review resolves the previous database-only blocker for AP03171 identity and bacterial MIC values, while preserving a nonblocking source conflict: the APD6 free-text similarity percentage differs from the source Table 3/Discussion similarity statements and should not overwrite the primary-source values.",
+      "conflict_context": "source_conflict_preserved: APD6 AP03171 is linked to the correct paper and supported for sequence/name/source organism/citation and bacterial MIC ranges, but the database free-text similarity percentage is not an exact match to the source-local similarity values; database text also omits the two fungal MIC thresholds.",
+      "conflict_flags": [
+        "database_similarity_percentage_differs_from_primary_source",
+        "database_activity_scope_omits_fungal_table4_rows",
+        "linked_sequence_record_absent_but_merged_sequence_row_reviewed"
+      ]
+    },
+    {
+      "source_id": "APD6:AP03171",
+      "sequence_key": "APD6:AP03171",
+      "source_table": "linked_literature_records.jsonl",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "database_subject": "APD6 literature link for DOI/PMID/PMCID",
+      "database_measure": "",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0169582/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta DOI/PMID/PMCID"
+        },
+        "primary_sequence_or_identity_verified": "Literature link matches this paper DOI, PMID, and PMCID."
+      },
+      "review_notes": "APD6 literature row is source-verified for paper identity and citation traceability.",
+      "conflict_context": "",
+      "conflict_flags": []
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 1,
+    "source_verified": 1
+  },
+  "source_paths_checked": [
+    "rework_context/doi__10.1371_journal.pone.0169582/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extraction/extraction_quality_report.json",
+    "papers/doi__10.1371_journal.pone.0169582/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0169582/source/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/pdf_text/pone.0169582.txt",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/local-APD6-pone.0169582.s001.docx",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-10.s001",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-9.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-1.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-2.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-3.0169582",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-4.0",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-5.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-7.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/raw/supplementary_original/landing-8.bin",
+    "paper_packets/doi__10.1371_journal.pone.0169582/database/database_source_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0169582/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0169582/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/priority_p1_direct_pdf.csv"
+  ],
+  "tools_attempted": [
+    "jq/json inspection of handoff, manifest, locator, status, prior analysis, final, and QC artifacts",
+    "ElementTree parsing of JATS XML tables, source sections, and Table 4 MIC rows",
+    "rg over source XML and extracted PDF text for Trx-stomoxynZH1 activity, MIC, sequence, method, and mechanism context",
+    "file -L type inspection of all paper-local supplementary assets",
+    "OOXML document.xml parsing of S1 DOCX sequence supplement",
+    "archive manifest review of PMC OA package members",
+    "linked APD6 JSONL and merged CSV row reconciliation for AP03171",
+    "semantic_three_layer_gate.py strict rerun",
+    "check_three_layer_publication_quality.py strict rerun"
+  ]
+}

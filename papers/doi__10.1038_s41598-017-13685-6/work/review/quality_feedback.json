@@ -1,0 +1,153 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 2,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-05T12:24:41Z"
+  },
+  "generated_at": "2026-05-05T12:11:20Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.1038_s41598-017-13685-6",
+  "qc_failure_reasons": [
+    {
+      "code": "supplementary_dataset_pdf_not_local",
+      "owner_worker": "worker-6",
+      "reason": "The primary XML/PDF references Supplementary Dataset 1 / MOESM1 PDF for supplementary Tables S1-S4 and figures, but the actual PDF is absent from the paper-local packet and landed assets; local supplementary landing-*.bin files are publisher HTML pages.",
+      "severity": "blocking",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-13685-6/supplementary",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/database/linked_assay_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ]
+    },
+    {
+      "code": "database_rows_preserved_database_only_no_primary_source",
+      "owner_worker": "worker-4 + worker-6",
+      "reason": "DBAASP MBC/MFC/MEC and detailed percent-hemolysis rows were preserved as database_only_no_primary_source/source_conflict because the exact local supplementary evidence is unavailable; supported main-table MIC, SC50, IC95, and IC50 rows were extracted separately.",
+      "severity": "major",
+      "status_summary": {
+        "database_only_no_primary_source": 160,
+        "source_conflict": 194,
+        "source_verified": 69
+      }
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41598-017-13685-6/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "resolved_issues": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-017-13685-6/final/activity_toxicity_evidence.json",
+      "code": "activity_table_shape_not_supported",
+      "evidence": "Table 6 parsed into SC50 hemolysis rows with µM units and Homo sapiens erythrocyte target.",
+      "owner_worker": "worker-2",
+      "status": "resolved"
+    },
+    {
+      "code": "full_source_review_not_completed",
+      "evidence": "Worker-6 source review completed and documented the unrecoverable local supplementary gap instead of accepting the paper.",
+      "owner_worker": "worker-6",
+      "status": "resolved_as_bounded_source_review_completed_nonaccepted"
+    }
+  ],
+  "rework_context_packet_required": true,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1038_s41598-017-13685-6/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-05T12:11:20Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "supplementary_dataset_pdf_not_local",
+      "layer": "review",
+      "omission_context": [
+        {
+          "code": "supplementary_pdf_absent_local_landing_pages_only",
+          "impact": "Database MFC/MBC/MEC rows and detailed percent-hemolysis rows appear to rely on supplementary tables/figures that cannot be source-verified locally; main XML/PDF activity Tables 4-7 were still recovered and preserved.",
+          "owner_worker": "worker-6",
+          "reason": "The primary XML points to 41598_2017_13685_MOESM1_ESM.pdf, but that PDF is not present under the paper-local packet or landed-assets tree; the ten local supplementary landing-*.bin files are HTML article pages, not the supplementary dataset PDF."
+        }
+      ],
+      "paper_id": "doi__10.1038_s41598-017-13685-6",
+      "required_action": "Provide or recover the actual Supplementary Dataset 1 PDF locally, then rerun worker-4/6 source review for supplementary-only database rows; do not infer those values from DBAASP alone.",
+      "severity": "blocking",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/paper.xml associated-data href=41598_2017_13685_MOESM1_ESM.pdf",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/supplementary_original/landing-*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-13685-6/supplementary/landing-*.bin"
+      ],
+      "target_queue": "material_extraction",
+      "ticket_id": "rwk-codex-rereview-20260505-0001",
+      "worker": "worker-6"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "supplementary_dataset_pdf_not_local",
+      "impact": "Database MFC/MBC/MEC rows and detailed percent-hemolysis rows appear to rely on supplementary tables/figures that cannot be source-verified locally; main XML/PDF activity Tables 4-7 were still recovered and preserved.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/paper.pdf",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-13685-6/supplementary",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/database/linked_assay_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+      ],
+      "tools_attempted": [
+        "xml.etree.ElementTree table/media parsing",
+        "pdftotext/pdf_text grep",
+        "file on landed supplementary assets",
+        "find for 41598_2017_13685_MOESM1_ESM.pdf",
+        "rg over landed paper assets",
+        "csv/jsonl structured parsing"
+      ],
+      "why_unrecoverable": "The primary XML points to 41598_2017_13685_MOESM1_ESM.pdf, but that PDF is not present under the paper-local packet or landed-assets tree; the ten local supplementary landing-*.bin files are HTML article pages, not the supplementary dataset PDF."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-017-13685-6",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/database",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/extracted",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/locators",
+        "paper_packets/doi__10.1038_s41598-017-13685-6/raw",
+        "papers/doi__10.1038_s41598-017-13685-6/final",
+        "papers/doi__10.1038_s41598-017-13685-6/source",
+        "papers/doi__10.1038_s41598-017-13685-6/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "paper_id": "doi__10.26181_13211579.v3",
+  "reviewed_at": "2026-05-05T21:17:07Z",
+  "updated_at": "2026-05-05T21:17:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Primary XML/PDF, OA package members, DOCX supplement, duplicate landing HTML assets, and linked database JSONL rows were checked for the owner-layer blocker."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.26181_13211579.v3/handoff_context.json",
+    "paper_packets/doi__10.26181_13211579.v3/packet_manifest.json",
+    "paper_packets/doi__10.26181_13211579.v3/locators/locator_index.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/xml_sections.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/figure_captions.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/pdf_text/fmicb-10-00795.txt",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/fmicb-10-00795-g001.jpg",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/fmicb-10-00795-g004.jpg",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/Table_1.docx",
+    "paper_packets/doi__10.26181_13211579.v3/database/database_source_manifest.json",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq JSON inspection",
+    "ElementTree XML table/caption extraction",
+    "pdftotext/rg PDF text search",
+    "unzip OOXML document.xml extraction for Table_1.docx",
+    "file/md5 inspection of landing-*.bin supplementary HTML duplicates",
+    "local image review of Figure 1 and Figure 4"
+  ],
+  "adjudication_summary": "Worker-4/6 re-review reconciled ZmD32 and NaD1 Table 1 rows against local primary material, preserved graph-derived and broad database-label conflicts as cautions, and found no remaining owner-layer blocker requiring another rework ticket.",
+  "summary": "Source-reviewed accepted-with-cautions: Table 1 database activity rows are repaired, comparator/database-only conflicts are explicit, and the recovered supplement does not change the AMP activity or mechanism conclusion.",
+  "per_layer_decision_rationale": {
+    "material_packet_ready": "Material packet remains complete-with-gaps because supplemental landing assets include duplicate HTML and one DOCX Table S1; the checked DOCX is structural-statistics support and not an activity table.",
+    "validator_contract_ready": "Required final artifacts are present and parseable; linked database row counts are preserved.",
+    "layer_1_database": "DBAASP ZmD32 and NaD1 target-activity rows were reconciled against primary Table 1; APD6/DRAMP identity rows were checked against Figure 1/article metadata; figure-only and broad-label database claims remain source_conflict cautions.",
+    "layer_2_activity_toxicity": "Final activity table now preserves every non-NA Table 1 IC50 value with raw units/locators and records NA conditions separately; figure-only toxicity/biofilm claims are summarized without fabricated exact table rows.",
+    "layer_3_mechanism": "Final mechanism file keeps direct lipid-binding and CFU killing evidence separate from author hypotheses about cell-wall access and salt tolerance.",
+    "publication_grade_review": "No blocking or major owner-layer issue remains after bounded local source review; remaining issues are explicit cautions."
+  },
+  "semantic_quality_checks": {
+    "activity_records_final": 36,
+    "not_assessed_conditions_final": 8,
+    "database_record_audits": 95,
+    "database_status_summary": {
+      "source_conflict": 20,
+      "source_verified": 75
+    },
+    "mechanism_claims_final": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "source_conflicts_preserved": 20
+  },
+  "caution_findings": [
+    {
+      "caution_code": "comparator_database_record_present",
+      "severity": "caution",
+      "evidence_context": "DBAASP:DBAASPR_1955 is NaD1 comparator evidence in this paper, not the focal ZmD32 AMP record; source-supported comparator rows are retained with this label."
+    },
+    {
+      "caution_code": "figure_only_exact_toxicity_values",
+      "severity": "caution",
+      "evidence_context": "Several human-cell toxicity database percentages are graph-derived from Figure 4 and not tabulated as exact primary-source values; they remain source_conflict/database cautions rather than normalized source_verified table rows."
+    },
+    {
+      "caution_code": "broad_database_activity_label_conflict",
+      "severity": "caution",
+      "evidence_context": "DRAMP/CAMP/dbAMP aggregate labels include broad anticancer or combined activity statements; primary source supports antimicrobial activity and low/toxicity assay context but not all broad database labels as positive source claims."
+    },
+    {
+      "caution_code": "supplementary_table_not_activity_changing",
+      "severity": "caution",
+      "evidence_context": "The recovered DOCX supplement is Table S1 for NMR structure statistics; it does not add activity/toxicity/database values beyond primary Table 1 and figure captions."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "publication_grade_ready": true,
+    "semantic_gate_ready": true
+  }
+}

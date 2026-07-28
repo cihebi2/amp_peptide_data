@@ -1,0 +1,192 @@
+{
+  "paper_id": "doi__10.1038_s41467-025-60051-6",
+  "review_sample_id": "V420P0035",
+  "reviewed_at": "2026-06-25T02:17:40Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0048",
+      "audit_record_id": "doi__10.1038_s41467-025-60051-6:database_audit:3",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "The sampled APD6 row is source-backed at layer 1: linked_literature_records row 3 maps APD6:AP05588 to DOI 10.1038/s41467-025-60051-6, PMID 40645962, and PMCID PMC12254355; paper.xml article metadata confirms the same DOI/PMID/PMCID; the final database record cites Supplementary Table 2 row UniprotKB-4 with primary sequence LKLKSILGKLGVIL and no reported terminal/D-amino-acid/cyclization/lipidation/disulfide modification. Layer 2 context is also row-level and source-located for this peptide, with 11 MIC rows plus CC50 and HC50 rows carrying units, targets, and source-data or supplementary-table locators. The row is not accepted cleanly because the paper-level accepted mechanism artifact contains a non-standard evidence_class value, which is a hard rework condition under the validation420 prompt.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/validation_samples.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/release_rows.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/sample_final_records.json",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/source_locator_hints.json",
+        "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_literature_records.jsonl:row=3",
+        "papers/doi__10.1038_s41467-025-60051-6/source/paper.xml:article-meta doi=10.1038/s41467-025-60051-6;pmid=40645962;pmcid=PMC12254355",
+        "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/pdf_text/41467_2025_60051_MOESM1_ESM.txt:Supplementary Table 2;UniprotKB-4;LKLKSILGKLGVIL",
+        "papers/doi__10.1038_s41467-025-60051-6/final/database_record_verification.json:record source_id=APD6:AP05588",
+        "papers/doi__10.1038_s41467-025-60051-6/final/activity_toxicity_evidence.json:entity.source_label=UniprotKB-4",
+        "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json:mechanism_claims[2]"
+      ],
+      "cautions": [
+        "Paper final review status is accepted_with_cautions, not accepted_clean.",
+        "Global database-alias conflicts are preserved in the paper-level database audit, although the sampled APD6:AP05588 row itself is source_verified.",
+        "Figure 2a source-data value 80 is interpreted as >64 uM in activity rows based on the reported 1-64 uM dilution range.",
+        "Very large CC50/HC50 nonlinear-regression values are preserved raw rather than capped.",
+        "Accepted mechanism output uses non-standard evidence_class supporting_context for mech-secondary-structure-membrane-context; this requires targeted rework."
+      ],
+      "rework_target_ids": [
+        "V420P0035-rwk-001"
+      ],
+      "layer_checks": {
+        "layer_1_database_identity": {
+          "decision": "confirmed",
+          "source_id": "APD6:AP05588",
+          "primary_source_label": "UniprotKB-4",
+          "primary_source_sequence": "LKLKSILGKLGVIL",
+          "status": "source_verified",
+          "rationale": "Database literature linkage, article metadata, and Supplementary Table 2 label/sequence locator support the row."
+        },
+        "layer_2_activity_toxicity": {
+          "decision": "confirmed_with_caution",
+          "records_observed_for_entity": {
+            "MIC": 11,
+            "CC50": 1,
+            "HC50": 1
+          },
+          "rationale": "Associated UniprotKB-4 activity/toxicity rows carry concrete endpoints, raw values, raw units, targets, assay context, and source locators; cautions about >64 uM interpretation and raw regression values remain preserved."
+        },
+        "layer_3_mechanism": {
+          "decision": "needs_targeted_rework",
+          "rationale": "The accepted mechanism artifact includes evidence_class supporting_context, outside the allowed ontology vocabulary."
+        }
+      }
+    }
+  ],
+  "material_review": {
+    "local_only": true,
+    "packet_dir": "paper_packets/doi__10.1038_s41467-025-60051-6",
+    "material_inventory_path": "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/material_inventory.json",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_accepted_with_cautions",
+    "known_missing_or_blocked_materials": [],
+    "extraction_error_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "materials_checked": [
+      "paper_packets/doi__10.1038_s41467-025-60051-6/packet_manifest.json",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/extraction/extraction_status.json",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/extraction/extraction_quality_report.json",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/locators/locator_index.json",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_experiment_records.jsonl",
+      "papers/doi__10.1038_s41467-025-60051-6/source/paper.xml",
+      "papers/doi__10.1038_s41467-025-60051-6/source/paper.pdf",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/pdf_text/41467_2025_60051_MOESM1_ESM.txt",
+      "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/supplementary_tables.json",
+      "papers/doi__10.1038_s41467-025-60051-6/final/database_record_verification.json",
+      "papers/doi__10.1038_s41467-025-60051-6/final/activity_toxicity_evidence.json",
+      "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json",
+      "papers/doi__10.1038_s41467-025-60051-6/final/review_report.json",
+      "papers/doi__10.1038_s41467-025-60051-6/work/review/quality_feedback.json"
+    ],
+    "material_limits": [
+      "Packet status still says material_extracted_with_gaps from the message-transfer test history, but the manifest lists no known missing/blocking materials and the reviewed row's source locators were available locally.",
+      "The current validation did not browse the web and did not modify canonical paper final artifacts."
+    ]
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "paper_level_rationale": "The sampled APD6 source_verified database row is confirmed with preserved cautions. The paper cannot be accepted in this validation pass because a paper-level accepted mechanism artifact violates the required evidence-class ontology.",
+    "previous_review_report_status": "accepted_with_cautions",
+    "previous_review_report_publication_grade": true,
+    "previous_gate_reports_checked": [
+      "reports/doi__10.1038_s41467-025-60051-6.semantic_gate.json",
+      "reports/doi__10.1038_s41467-025-60051-6.publication_quality.json"
+    ],
+    "semantic_quality_observation": "Prior reports marked the paper as publication-grade pass, but they did not catch the non-standard mechanism evidence_class supporting_context.",
+    "layer_1_database": "Sampled APD6:AP05588 row is confirmed source_verified from local database linkage, article metadata, and Supplementary Table 2 sequence evidence.",
+    "layer_2_activity_toxicity": "UniprotKB-4 has row-level MIC/CC50/HC50 evidence with raw units and source locators; no row-level activity hard failure was found for the sampled entity.",
+    "layer_3_mechanism": "Hard failure: mechanism_claims[2].evidence_class is supporting_context, which is outside direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, and unknown_or_not_tested.",
+    "hard_failures": [
+      {
+        "failure_code": "non_standard_mechanism_evidence_class",
+        "artifact_path": "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json",
+        "failing_object": "mechanism_claims[2]",
+        "observed_value": "supporting_context",
+        "required_action": "Reclassify the secondary-structure membrane-context claim into the standard ontology, or move it out of mechanism_claims as contextual support, then rerun the strict semantic/publication gate."
+      }
+    ]
+  },
+  "rework_targets": [
+    {
+      "target_id": "V420P0035-rwk-001",
+      "worker": "worker-5",
+      "target_queue": "analysis",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json",
+      "failing_object": "mechanism_claims[2]",
+      "failure_code": "non_standard_mechanism_evidence_class",
+      "reason": "Accepted mechanism output uses evidence_class supporting_context, which is not in the standard mechanism ontology.",
+      "source_evidence_to_check": [
+        "papers/doi__10.1038_s41467-025-60051-6/source/paper.xml::Secondary structure studies;Fig2b-e",
+        "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json::mechanism_claims[2]",
+        "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/supplementary_tables.json::Figure 2b-e source-data sheets"
+      ],
+      "required_action": "Replace supporting_context with one of the allowed evidence classes or remove the contextual CD claim from mechanism_claims; preserve limitation notes and rerun strict semantic/publication quality checks.",
+      "acceptance_check": "No mechanism claim uses an evidence_class outside direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_alias_conflicts_preserved",
+      "evidence_context": "Paper-level final review reports 440 linked database audit rows as source_conflict because database peptide names or aliases differ from primary VEP labels even when sequence/activity values are source-supported."
+    },
+    {
+      "caution_code": "figure2a_inactive_code_interpreted",
+      "evidence_context": "Figure 2a source-data value 80 is represented as >64 uM based on the reported 1-64 uM method range; raw context is preserved in activity rows."
+    },
+    {
+      "caution_code": "extreme_regression_fit_values_preserved_raw",
+      "evidence_context": "Very large CC50/HC50 nonlinear-regression values in Supplementary Table 3 are preserved raw rather than normalized or capped."
+    },
+    {
+      "caution_code": "prior_gate_missed_mechanism_vocabulary_defect",
+      "evidence_context": "Prior local semantic/publication reports passed this paper, but the accepted mechanism artifact still contains non-standard evidence_class supporting_context."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0035__doi__10.1038_s41467-025-60051-6/true_review_result.schema.json",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/pdf_text/41467_2025_60051_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41467-025-60051-6/extracted/supplementary_tables.json",
+    "papers/doi__10.1038_s41467-025-60051-6/source/paper.xml",
+    "papers/doi__10.1038_s41467-025-60051-6/source/paper.pdf",
+    "papers/doi__10.1038_s41467-025-60051-6/final/database_record_verification.json",
+    "papers/doi__10.1038_s41467-025-60051-6/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41467-025-60051-6/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41467-025-60051-6/final/review_report.json",
+    "papers/doi__10.1038_s41467-025-60051-6/work/review/quality_feedback.json",
+    "reports/doi__10.1038_s41467-025-60051-6.semantic_gate.json",
+    "reports/doi__10.1038_s41467-025-60051-6.publication_quality.json"
+  ]
+}

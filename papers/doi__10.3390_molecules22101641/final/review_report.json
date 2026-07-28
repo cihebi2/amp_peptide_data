@@ -1,0 +1,100 @@
+{
+  "paper_id": "doi__10.3390_molecules22101641",
+  "doi": "10.3390/molecules22101641",
+  "pmid": "28961215",
+  "title": "Antibacterial Synthetic Peptides Derived from Bovine Lactoferricin Exhibit Cytotoxic Effect against MDA-MB-468 and MDA-MB-231 Breast Cancer Cell Lines",
+  "reviewed_at": "2026-05-09T16:29:50Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened packet manifest, locator index, primary XML/PDF/PDF text, OA package NXML/figures, supplementary indexes (empty), and linked DRAMP database JSONL. No local supplementary files or tables were present."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules22101641/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules22101641/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules22101641/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules22101641/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules22101641/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules22101641/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules22101641/raw/paper.pdf",
+    "paper_packets/doi__10.3390_molecules22101641/raw/oa_package/local-DRAMP-28961215.tar.gz",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/pdf_text/local-DRAMP-28961215.txt",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/pdf_text/molecules-22-01641.txt",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules22101641/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_molecules22101641/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules22101641/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_molecules22101641/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules22101641/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules22101641/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules22101641/database/linked_sequence_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 72,
+    "activity_rows_source_supported": 72,
+    "database_record_status_summary": {
+      "source_verified": 18,
+      "sequence_modified_not_normalized": 4,
+      "source_conflict": 8
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled all linked DRAMP activity/experiment/literature rows against primary Table 1 constructs, Table 2 IC50 values, and article metadata. Verified rows, modified-not-normalized tetramer constructs, and source conflicts are separated.",
+    "layer_2_activity_toxicity": "Worker-2 recovered every primary Table 2 value into 72 MIC/MBC/IC50 rows with target, unit, assay method, and locator fields. Supplement indexes are empty, so no supplement activity rows were added.",
+    "layer_3_mechanism": "Worker-6 replaced framework placeholders with phenotype-supported antibacterial/cytotoxic claims and literature-context limitations, without promoting a direct molecular mechanism.",
+    "publication_grade_review": "Prior blocking issues are closed: Table 2 is parsed, DRAMP conflicts are preserved, and no open rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_activity_value_conflict_preserved",
+      "evidence_context": "DRAMP32112 reports MDA-MB-231 IC50 as 7 uM, while primary XML Table 2 reports 27 uM for LfcinB (20-30)cyc."
+    },
+    {
+      "caution_code": "dramp_sequence_name_conflicts_preserved",
+      "evidence_context": "Several 20-30 family DRAMP sequences omit the leading R present in the primary Table 1 constructs; affected rows remain source_conflict."
+    },
+    {
+      "caution_code": "modified_tetramer_sequences_not_normalized",
+      "evidence_context": "Tetramer-linked DRAMP rows with cysteine/Ahx precursor notation are retained as sequence_modified_not_normalized rather than silently normalized to a full tetramer."
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "evidence_context": "Supplementary index, tables, and text files are empty; the OA package contains the article NXML/PDF and figures only."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 source-reviewed rework closed the prior complete-message ticket: Table 2 now has source-located activity/toxicity rows, linked DRAMP rows are adjudicated with conflicts preserved, and worker-6 final review is accepted_with_cautions.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_report": "reports/doi__10.3390_molecules22101641.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_molecules22101641.publication_quality.json"
+  }
+}

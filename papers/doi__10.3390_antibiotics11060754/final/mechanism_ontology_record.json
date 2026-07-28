@@ -1,0 +1,88 @@
+{
+  "paper_id": "doi__10.3390_antibiotics11060754",
+  "generated_at": "2026-05-07T16:35:58Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from XML sections and figure captions; no unsupported pathway hypotheses promoted.",
+  "mechanism_claim_count": 3,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-sgordonii-cell-wall-damage",
+      "claim_text": "KR-12-3 treatment is associated with S. gordonii cell-wall deformation/corrugation/damage in SEM imaging at 1x MIC for 4 h.",
+      "entity_scope": "KR-12-3 against Streptococcus gordonii",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "SEM morphology after peptide treatment"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3390_antibiotics11060754/raw/paper.xml",
+        "locator": "xml:sec=16:3.4; xml:fig=3"
+      },
+      "limitations": "SEM morphology supports membrane/cell-wall damage context but does not by itself define a molecular target."
+    },
+    {
+      "claim_id": "mech-biofilm-adhesion-gene-downregulation",
+      "claim_text": "KR-12-3 reduced S. gordonii biofilm/adhesion context and significantly downregulated sspA/sspB adhesion gene expression.",
+      "entity_scope": "KR-12-3 against S. gordonii biofilm formation",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "crystal violet biofilm assay",
+        "CLSM biofilm imaging",
+        "RT-qPCR for sspA/sspB"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3390_antibiotics11060754/raw/paper.xml",
+        "locator": "xml:sec=15:3.3; xml:sec=17:3.5; xml:fig=2; xml:fig=4"
+      },
+      "limitations": "The paper supports adhesion-gene downregulation and biofilm phenotype; it does not prove a direct binding target."
+    },
+    {
+      "claim_id": "mech-anti-inflammatory-il6-il8",
+      "claim_text": "At 20 µg/mL, KR-12-3 reduced LPS-induced IL-6/IL-8 protein production and related gene expression in RAW264.7 cells.",
+      "entity_scope": "KR-12-3 and KR-12 in LPS-stimulated RAW264.7 macrophage model",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "ELISA cytokine assay",
+        "RT-qPCR for IL-6/IL-8 expression"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.3390_antibiotics11060754/raw/paper.xml",
+        "locator": "xml:sec=10:2.8; xml:sec=19:3.7; xml:fig=6"
+      },
+      "limitations": "JAK/STAT3, MAPK, AP-1, JNK, and NF-kB pathway language in discussion is hypothesis/context; it is not promoted to direct pathway proof."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "source_paths_checked": [
+    "paper_packets/doi__10.3390_antibiotics11060754/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/pdf_text/local-DBAASP-PMC9220503.txt",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11060754/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/raw/paper.xml",
+    "paper_packets/doi__10.3390_antibiotics11060754/raw/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics11060754/raw/oa_package/local-APD6-pmc_package.tar.gz",
+    "paper_packets/doi__10.3390_antibiotics11060754/raw/oa_package/local-DBAASP-PMC9220503.tar.gz",
+    "paper_packets/doi__10.3390_antibiotics11060754/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics11060754/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11060754/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11060754/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11060754/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics11060754/rework/rework_requests.jsonl",
+    "papers/doi__10.3390_antibiotics11060754/source/paper.xml",
+    "papers/doi__10.3390_antibiotics11060754/source/paper.pdf",
+    "papers/doi__10.3390_antibiotics11060754/source/supplementary/"
+  ],
+  "tools_attempted": [
+    "jq for packet/final JSON inspection",
+    "rg over extracted PDF text and paper.xml for KR-12/KR-12-3/MIC/MBC/cytotoxicity locators",
+    "tar -tzf over both local OA package archives to verify package members and absence of supplements",
+    "XML table/section/figure locator review from extracted packet JSON and paper.xml"
+  ]
+}

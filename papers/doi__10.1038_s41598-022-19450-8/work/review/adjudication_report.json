@@ -1,0 +1,190 @@
+{
+  "paper_id": "doi__10.1038_s41598-022-19450-8",
+  "generated_at": "2026-05-03T01:28:38Z",
+  "reviewed_at": "2026-05-03T01:28:38Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "adjudication_summary": "Worker-2 recovered row-level activity/toxicity evidence from Table 1 and Figures 5, 8, 9, and 10; worker-4 reviewed DBAASP linked rows against Figure 6/8/9/10 and preserved target/unit/interpolation conflicts; worker-6 closed rwk-complete-test-0001 after strict gate-ready artifacts were written.",
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-022-19450-8/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-022-19450-8/raw/paper.pdf",
+    "papers/doi__10.1038_s41598-022-19450-8/source/paper.xml",
+    "papers/doi__10.1038_s41598-022-19450-8/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-022-19450-8/supplementary/landing-1.bin"
+  ],
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_owner_layer_rework_resolved",
+    "known_missing_or_blocked_materials": [
+      {
+        "material": "MOESM1 DOCX supplementary information",
+        "local_status": "not present locally; only Nature HTML landing pages link to remote DOCX",
+        "blocker": false,
+        "reason_nonblocking": "The worker-2/4/6 gate-changing values were recovered from local XML/PDF figures/text and database snapshots."
+      }
+    ],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": true,
+      "used": "indexed_html_checked",
+      "blocker": false
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false
+  },
+  "semantic_quality_checks": [
+    {
+      "check": "worker_2_activity_rows",
+      "result": "pass",
+      "evidence": "45 activity/toxicity records recovered with endpoint/raw_value/raw_unit/target/source_locator core fields."
+    },
+    {
+      "check": "worker_4_database_conflicts",
+      "result": "pass_with_cautions",
+      "evidence": "21 linked DBAASP rows reviewed; status_counts={'source_verified': 3, 'source_conflict': 18}; conflicts have explicit context."
+    },
+    {
+      "check": "worker_6_source_review_depth",
+      "result": "pass",
+      "evidence": "Handoff, packet manifest, locator index, XML/PDF text, rendered PDF figures, supplementary index/text, and database JSONL rows were reopened."
+    },
+    {
+      "check": "mechanism_scope",
+      "result": "pass_with_scope_guard",
+      "evidence": "Direct mechanism retained only for SEM membrane/cell-envelope damage; computational and antibiofilm claims are not promoted to direct mechanism."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 resolved by this owner-layer re-review; final rework_targets is empty."
+    },
+    {
+      "check": "unsupported_values",
+      "result": "pass_with_cautions",
+      "evidence": "Missing local MOESM1 DOCX and unlabeled Fig. 10b exact values are documented as nonblocking local-material limits; no unsupported values were fabricated."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "layer_1_database_record_identity": {
+      "decision": "accepted_with_cautions",
+      "rationale": "DBAASP peptide identity and DOI linkage are source-reviewed against primary Figure 6/MALDI text. Exact assay values are matched to local figures where printed; target/unit/interpolated IC50 conflicts remain visible as source_conflict rows instead of being normalized away.",
+      "accepted_status_counts": {
+        "source_verified": 3,
+        "source_conflict": 18
+      },
+      "preserved_conflicts": [
+        "K. pneumoniae ATCC 70063 vs database ATCC 700603",
+        "bovine RBC primary method vs database human erythrocytes",
+        "DBAASP IC50 interpolation values not primary text-table values"
+      ]
+    },
+    "layer_2_activity_toxicity_evidence": {
+      "decision": "accepted_with_cautions",
+      "rationale": "Activity/toxicity rows now have concrete endpoints, raw values, raw units, targets, assay context, and locators. Figure-derived exact values were read from local rendered PDF figures; unlabeled Fig. 10b cell-viability bar values were not invented.",
+      "record_counts": {
+        "inhibition_zone": 4,
+        "MIC": 1,
+        "percent_growth_inhibition": 24,
+        "IC50": 6,
+        "percent_biofilm_inhibition": 8,
+        "percent_hemolysis": 1,
+        "cell_viability": 1
+      },
+      "total_activity_records": 45
+    },
+    "layer_3_mechanism_ontology": {
+      "decision": "accepted_with_scope_guard",
+      "rationale": "SEM morphology supports direct membrane/cell-envelope damage only in the tested P. aeruginosa setting; computational alpha-helix context and antibiofilm activity are kept as non-direct/supporting evidence.",
+      "mechanism_claim_count": 4
+    },
+    "supplementary_materials": {
+      "decision": "accepted_with_local_material_limit",
+      "rationale": "No local DOCX/XLSX/PDF supplement was present beyond HTML landing copies. Because the owner-layer blocker was resolved from local XML/PDF/database evidence, this remains a documented caution rather than an open rework target."
+    },
+    "final_adjudication": {
+      "decision": "accepted_with_cautions",
+      "rationale": "No blocking/major issue or open rework target remains after this bounded re-review; preserved conflicts are explicit cautions."
+    }
+  },
+  "caution_findings": [
+    {
+      "scope": "database_record_annotation",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "DBAASP:DBAASPR_16530 linked assay rows",
+      "note": "Most linked activity rows are source-supported by local figures/text but carry database abstractions, target-label differences, or ppm vs ug/mL wording; conflicts are preserved instead of forced to source_verified.",
+      "conflict_flags": [
+        "database_interpolated_ic50_not_primary_text_table",
+        "target_label_conflicts",
+        "unit_wording_conflict"
+      ]
+    },
+    {
+      "scope": "target_label",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "Klebsiella pneumoniae rows",
+      "note": "Primary Figure 8/9 captions use K. pneumoniae ATCC 70063, while DBAASP linked rows use ATCC 700603."
+    },
+    {
+      "scope": "toxicity_target_label",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "DBAASP hemolysis row 18676",
+      "note": "Primary method says bovine red blood cells; database target says human erythrocytes. Final activity row follows the primary-source bovine RBC method and database audit preserves the conflict."
+    },
+    {
+      "scope": "supplementary_materials",
+      "severity": "caution",
+      "status": "local_material_limit_nonblocking",
+      "record": "MOESM1 DOCX link",
+      "note": "Local supplementary assets are indexed Nature HTML landing copies linking to a remote DOCX; no local DOCX/XLSX/PDF supplementary table file exists. Activity/toxicity/database blockers were resolved from article XML/PDF figures and packet database rows without external fetching."
+    },
+    {
+      "scope": "cell_viability_values",
+      "severity": "caution",
+      "status": "exact_unlabeled_figure_values_not_invented",
+      "record": "Figure 10b",
+      "note": "Figure 10b bars do not print exact viability percentages; final row records the primary qualitative non-toxic/control-level conclusion and does not invent per-bar values."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": []
+}

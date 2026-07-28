@@ -1,0 +1,170 @@
+{
+  "paper_id": "doi__10.1016_j.csbj.2023.11.031",
+  "review_sample_id": "V420P0009",
+  "reviewed_at": "2026-06-25T01:02:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "needs_targeted_rework",
+  "decision_basis": "The sampled DBAASP MIC row is source-backed by local database, Table 1 sequence, and Table 2 activity locators, but the paper cannot be accepted in this validation pass because accepted mechanism/final-state outputs still contain non-standard mechanism evidence classes and stale final/packet-state inconsistencies.",
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0400",
+      "audit_record_id": "doi__10.1016_j.csbj.2023.11.031:database_audit:142",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "Confirmed for the sampled row: release/database audit row 142 is DBAASP:DBAASPS_21717, MIC 2 uM, Staphylococcus aureus ATCC 6538, matched to activity record doi__10.1016_j.csbj.2023.11.031-table2-r6-c2-mic. The linked database JSONL row 142 carries the same sequence key, target, MIC value, and unit. The final activity record resolves the primary source as 9L10L, MIC 2 uM, Table 2 row 6 column 2, with raw unit preserved and the target normalized to Staphylococcus aureus ATCC 6538. Table 1 row 6 supplies the 9L10L sequence context. This supports source_verified for this row, but not clean acceptance because linked_sequence_records.jsonl is empty/database sequence snapshot is unavailable and the paper-level final artifacts retain cautions and hard mechanism-output defects.",
+      "locators_checked": [
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/validation_samples.json::VAL0400",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/release_rows.json::doi__10.1016_j.csbj.2023.11.031:database_audit:142",
+        "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv::rg line 7009",
+        "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_assay_records.jsonl::line 142",
+        "papers/doi__10.1016_j.csbj.2023.11.031/final/database_record_verification.json::matched_activity_record_id=doi__10.1016_j.csbj.2023.11.031-table2-r6-c2-mic",
+        "papers/doi__10.1016_j.csbj.2023.11.031/final/activity_toxicity_evidence.json::record_id=doi__10.1016_j.csbj.2023.11.031-table2-r6-c2-mic",
+        "paper_packets/doi__10.1016_j.csbj.2023.11.031/locators/locator_index.json::xml:table=1:row=6",
+        "paper_packets/doi__10.1016_j.csbj.2023.11.031/locators/locator_index.json::xml:table=2:row=6",
+        "papers/doi__10.1016_j.csbj.2023.11.031/source/paper.xml::article-meta"
+      ],
+      "cautions": [
+        "Paper-level review status is accepted_with_cautions, not accepted_clean.",
+        "linked_sequence_records.jsonl has zero rows and the database sequence snapshot is unavailable; final row relies on primary Table 1 sequence context for 9L10L.",
+        "The paper contains preserved source_conflict rows outside this sampled source_verified MIC row.",
+        "Paper-level hard rework targets exist for mechanism/final-state artifacts, but they do not contradict the sampled MIC row evidence."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_status_for_sampled_row": "sufficient_with_cautions",
+    "primary_material_checked": [
+      "papers/doi__10.1016_j.csbj.2023.11.031/source/paper.xml",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/raw/paper.xml",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/raw/paper.pdf",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/locators/locator_index.json",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_literature_records.jsonl"
+    ],
+    "material_limits": [
+      "Packet manifest is stale relative to later analysis status: it still reports analysis_needs_analysis_rework and open ticket rwk-complete-test-0001, while analysis_status and rework_responses report the ticket closed.",
+      "linked_sequence_records.jsonl is empty, so sequence support for the sampled row comes from primary Table 1 rather than a database sequence snapshot.",
+      "Older final/mechanism_evidence.json under papers/ remains a placeholder-style mechanism file with non-standard classes."
+    ],
+    "blocked_missing_primary_material": false
+  },
+  "worker6_adjudication": {
+    "source_reviewed": true,
+    "layer1_database_identity_status": "sample_confirmed_with_caution",
+    "layer1_rationale": "The sampled source_verified database audit has database-row traceability, article citation traceability, primary Table 1 sequence context, and a matched primary Table 2 activity row. The absent linked sequence snapshot is a caution, not a row-level blocker.",
+    "layer2_activity_toxicity_status": "sample_confirmed",
+    "layer2_rationale": "The matched activity row has concrete endpoint MIC, raw value 2, raw unit uM, target class/species/strain, assay context, evidence ladder primary_source_xml_table, and source locator xml:table=2:row=6:column=2:MIC.",
+    "layer3_mechanism_status": "needs_targeted_rework",
+    "layer3_rationale": "Mechanism is not needed to verify the sampled MIC row, but accepted paper-level mechanism outputs contain evidence classes outside the allowed ontology: papers/final/mechanism_evidence.json uses mechanism_context_pending_review, and papers/final/mechanism_ontology_record.json plus packet/final/mechanism_evidence.json use phenotypic_activity_with_mechanistic_context. The validation prompt defines non-standard mechanism evidence classes in accepted outputs as a hard failure.",
+    "paper_level_rationale": "Because hard mechanism/final-state failures remain in accepted outputs, the paper-level validation result is needs_targeted_rework even though the sampled row itself is source-backed."
+  },
+  "rework_targets": [
+    {
+      "target_id": "V420P0009-rwk-001",
+      "ticket_id": "V420P0009-rwk-001",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5/mechanism_ontology_worker",
+      "severity": "blocking",
+      "reason": "Accepted mechanism outputs contain non-standard evidence_class values instead of the allowed ontology vocabulary.",
+      "requested_outputs": [
+        {
+          "artifact": "papers/doi__10.1016_j.csbj.2023.11.031/final/mechanism_ontology_record.json",
+          "need": "Reclassify mech-003 using an allowed evidence class such as phenotype_supported, or split the claim into standard ontology claims while preserving source locator and limitations."
+        },
+        {
+          "artifact": "paper_packets/doi__10.1016_j.csbj.2023.11.031/final/mechanism_evidence.json",
+          "need": "Mirror the corrected standard ontology class set in the packet final mechanism artifact."
+        },
+        {
+          "artifact": "papers/doi__10.1016_j.csbj.2023.11.031/final/mechanism_evidence.json",
+          "need": "Remove, supersede, or rewrite the placeholder mechanism_context_pending_review claims so no final accepted mechanism artifact contains non-standard mechanism classes."
+        }
+      ],
+      "blocks": [
+        "publication_grade_acceptance",
+        "mechanism_ontology_record",
+        "validation420_true_source_review"
+      ],
+      "created_at": "2026-06-25T01:02:31Z"
+    },
+    {
+      "target_id": "V420P0009-rwk-002",
+      "ticket_id": "V420P0009-rwk-002",
+      "target_queue": "adjudication",
+      "owner_worker": "worker-6/adjudicator_review",
+      "severity": "major",
+      "reason": "Final review and analysis_status claim accepted_with_cautions with no open targets, but packet_manifest still reports analysis_needs_analysis_rework/open ticket/test-scope terminal nonacceptance. This stale state must be reconciled after mechanism repair.",
+      "requested_outputs": [
+        {
+          "artifact": "paper_packets/doi__10.1016_j.csbj.2023.11.031/packet_manifest.json",
+          "need": "Update analysis_queue_status, open_rework_ticket_ids, known missing/blocking status, and test_scope so the packet manifest agrees with the repaired final state."
+        },
+        {
+          "artifact": "papers/doi__10.1016_j.csbj.2023.11.031/final/review_report.json",
+          "need": "Re-adjudicate after mechanism vocabulary repair and record any remaining cautions without claiming clean acceptance."
+        }
+      ],
+      "blocks": [
+        "final_review_report_consistency",
+        "validation420_true_source_review"
+      ],
+      "created_at": "2026-06-25T01:02:31Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "linked_sequence_records_absent",
+      "evidence_context": "Packet database snapshot has zero linked_sequence_records rows; sampled row sequence support is primary Table 1 row 6 rather than a database sequence snapshot."
+    },
+    {
+      "caution_code": "accepted_with_cautions_not_clean",
+      "evidence_context": "Final review_report.json and release row report accepted_with_cautions; source_conflict rows outside the sampled row are intentionally preserved."
+    },
+    {
+      "caution_code": "packet_manifest_stale_relative_to_final_status",
+      "evidence_context": "packet_manifest.json reports analysis_needs_analysis_rework and open rwk-complete-test-0001, while rework_responses.jsonl and analysis_status.json report the ticket closed and accepted with cautions."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0009__doi__10.1016_j.csbj.2023.11.031/true_review_result.schema.json",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+    "papers/doi__10.1016_j.csbj.2023.11.031/final/database_record_verification.json",
+    "papers/doi__10.1016_j.csbj.2023.11.031/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1016_j.csbj.2023.11.031/final/mechanism_evidence.json",
+    "papers/doi__10.1016_j.csbj.2023.11.031/final/mechanism_ontology_record.json",
+    "papers/doi__10.1016_j.csbj.2023.11.031/final/review_report.json",
+    "papers/doi__10.1016_j.csbj.2023.11.031/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/extraction/extraction_errors.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/analysis/analysis_status.json",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/rework/rework_responses.jsonl",
+    "paper_packets/doi__10.1016_j.csbj.2023.11.031/final/mechanism_evidence.json",
+    "reports/doi__10.1016_j.csbj.2023.11.031.semantic_gate.json",
+    "reports/doi__10.1016_j.csbj.2023.11.031.publication_quality.json"
+  ]
+}

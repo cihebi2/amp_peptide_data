@@ -1,0 +1,202 @@
+{
+  "paper_id": "doi__10.1177_1178636120933635",
+  "generated_at": "2026-05-03T08:22:10Z",
+  "audit_scope": "Worker-4 source-reviewed APD6 linked packet rows against primary XML/PDF evidence and cross-checked merged APD6/DBAASP/dbAMP rows. Source conflicts are preserved rather than normalized.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 2,
+    "linked_literature_records": 2,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP03237",
+      "source_table": "peptides.csv",
+      "source_record_id": "AP03237",
+      "sequence_key": "APD6:AP03237",
+      "peptide_name": "TRP1-TINF",
+      "database_subject": "TRP1-TINF (tachykinin-related peptides I from T. infestans)",
+      "database_measure": "APD6 summary: active against M. luteus (32 μM) and P. aeruginosa (64 μM).",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1177_1178636120933635/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "database_sequence": "GPSGFLGMR",
+        "primary_source_sequence": "GPSGFLGMR",
+        "sequence_agreement": true,
+        "source_locator": {
+          "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+          "locator": "xml:sec=21:Peptide identification",
+          "note": "Primary text reports TRP1-TINF sequence GPSGFLGMR."
+        },
+        "modification_note": "Activity tables are synthetic-peptide assays; the primary sequence identity remains GPSGFLGMR. Table 4 synthetic degradation notation is treated as caution context, not silent normalization."
+      },
+      "matched_activity_record_ids": [
+        "doi__10.1177_1178636120933635-table2-r4-c2-TRP1-TINF-MIC-poor broth nutrient medium-Micrococcus_luteus",
+        "doi__10.1177_1178636120933635-table2-r13-c1-TRP1-TINF-MIC-Muller-Hinton medium-Pseudomonas_aeruginosa",
+        "doi__10.1177_1178636120933635-table2-r13-c2-TRP1-TINF-MIC-poor broth nutrient medium-Pseudomonas_aeruginosa"
+      ],
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "APD6 sequence/name/source citation and the cited 32/64 μM activity summary are supported by the primary peptide-identification text plus Table 2/prose.",
+      "conflict_context": "caution: Table 4 degradation notation uses a norleucine symbol for the synthetic degradation assay, but APD6 natural sequence identity is source-supported and not normalized."
+    },
+    {
+      "source_id": "APD6:AP03238",
+      "source_table": "peptides.csv",
+      "source_record_id": "AP03238",
+      "sequence_key": "APD6:AP03238",
+      "peptide_name": "TRP2-TINF",
+      "database_subject": "APD6 row label says TRP1-TINF while describing tachykinin-related peptide II from T. infestans.",
+      "database_measure": "APD6 summary: active against E. coli and P. aeruginosa (45 μM).",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1177_1178636120933635/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "database_sequence": "APAAGFFGMR",
+        "primary_source_sequence": "APAAGFFGMR",
+        "sequence_agreement": true,
+        "source_locator": {
+          "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+          "locator": "xml:sec=21:Peptide identification",
+          "note": "Primary text reports TRP2-TINF sequence APAAGFFGMR."
+        },
+        "modification_note": "Synthetic TRP2-TINF activity assays changed methionine to norleucine, producing the APAAGFFGNR assay material; this modification is preserved and not silently applied to the database sequence."
+      },
+      "matched_activity_record_ids": [
+        "doi__10.1177_1178636120933635-table3-r13-c1-TRP2-TINF synthetic norleucine analog-MIC-Muller-Hinton medium-Pseudomonas_aeruginosa",
+        "doi__10.1177_1178636120933635-table3-r13-c2-TRP2-TINF synthetic norleucine analog-MIC-poor broth nutrient medium-Pseudomonas_aeruginosa",
+        "doi__10.1177_1178636120933635-table3-r14-c2-TRP2-TINF synthetic norleucine analog-MIC-poor broth nutrient medium-Escherichia_coli"
+      ],
+      "primary_source_values": [
+        {
+          "target": "Pseudomonas aeruginosa",
+          "medium": "MH",
+          "value": "164 (0.18)",
+          "locator": "xml:table=3:row=13:column=1"
+        },
+        {
+          "target": "Pseudomonas aeruginosa",
+          "medium": "PB",
+          "value": "82 (0.09)",
+          "locator": "xml:table=3:row=13:column=2"
+        },
+        {
+          "target": "Escherichia coli",
+          "medium": "PB",
+          "value": "82 (0.09)",
+          "locator": "xml:table=3:row=14:column=2"
+        },
+        {
+          "target": "Pseudomonas aeruginosa and Escherichia coli",
+          "medium": "abstract summary",
+          "value": "45 μM",
+          "locator": "xml:abstract"
+        }
+      ],
+      "name_check": {
+        "database_label_conflict": "APD6 text says TRP1-TINF while the source peptide and sequence are TRP2-TINF."
+      },
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "review_notes": "AP03238 remains caution-bearing: the source supports TRP2 sequence identity, but the APD6 exact 45 μM summary follows abstract prose and conflicts with Table 3/DBAASP tabular values; synthetic norleucine substitution also prevents silent natural-sequence activity normalization.",
+      "conflict_context": "source_conflict: APD6 45 μM abstract-level summary vs Table 3 82/164 μM values and synthetic APAAGFFGNR assay material; database label TRP1 vs source TRP2."
+    },
+    {
+      "source_id": "APD6:AP03237",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "AP03237-literature",
+      "sequence_key": "APD6:AP03237",
+      "peptide_name": "TRP1-TINF",
+      "database_subject": "Two Tachykinin-Related Peptides with Antimicrobial Activity Isolated from Triatoma infestans Hemolymph",
+      "database_measure": "literature DOI/PMID/PMCID linkage",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1177_1178636120933635/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "sequence_agreement": true
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Literature DOI, PMID, PMCID, title, and year match the primary article metadata.",
+      "conflict_context": ""
+    },
+    {
+      "source_id": "APD6:AP03238",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "AP03238-literature",
+      "sequence_key": "APD6:AP03238",
+      "peptide_name": "TRP2-TINF",
+      "database_subject": "Two Tachykinin-Related Peptides with Antimicrobial Activity Isolated from Triatoma infestans Hemolymph",
+      "database_measure": "literature DOI/PMID/PMCID linkage",
+      "traceability": {
+        "source_path": "paper_packets/doi__10.1177_1178636120933635/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=2"
+      },
+      "citation_traceability": {
+        "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "papers/doi__10.1177_1178636120933635/source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "sequence_agreement": true
+      },
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "review_notes": "Literature DOI, PMID, PMCID, title, and year match the primary article metadata.",
+      "conflict_context": ""
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 1,
+    "source_verified": 3
+  },
+  "merged_database_cross_checks": {
+    "apd6_activity_rows_checked": [
+      "APD6:AP03237",
+      "APD6:AP03238"
+    ],
+    "dbaasp_sequence_rows_checked": [
+      "DBAASP:DBAASPR_16099",
+      "DBAASP:DBAASPR_16100"
+    ],
+    "dbaasp_assay_rows_checked": 56,
+    "dbamp_rows_checked": [
+      "dbAMP:dbAMP_20479",
+      "dbAMP:dbAMP_20481"
+    ],
+    "cross_check_summary": "Merged DBAASP/dbAMP rows preserve source Table 2/3 values such as TRP2-TINF 82/164 μM; they support keeping APD6 AP03238 as source_conflict instead of converting the 45 μM abstract summary into a table value."
+  },
+  "source_inputs_checked": [
+    "papers/doi__10.1177_1178636120933635/source/paper.xml",
+    "paper_packets/doi__10.1177_1178636120933635/extracted/pdf_text/local-APD6-paper.txt",
+    "paper_packets/doi__10.1177_1178636120933635/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1177_1178636120933635/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+  ]
+}

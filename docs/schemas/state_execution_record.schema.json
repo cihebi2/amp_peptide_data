@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/state_execution_record.schema.json",
+  "title": "Miaobi State Execution Record",
+  "type": "object",
+  "required": [
+    "record_type",
+    "workflow_id",
+    "paper_id",
+    "state",
+    "role",
+    "provider",
+    "model",
+    "status",
+    "started_at",
+    "finished_at",
+    "artifact_refs",
+    "created_at"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "record_type": { "const": "state_execution" },
+    "workflow_id": { "type": "string" },
+    "paper_id": { "type": "string" },
+    "state": { "type": "string" },
+    "role": { "type": "string" },
+    "provider": { "type": "string" },
+    "model": { "type": "string" },
+    "reasoning_effort": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["started", "completed", "failed", "blocked", "needs_rework", "skipped"]
+    },
+    "attempt": { "type": "integer", "minimum": 0 },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "duration_ms": { "type": "integer", "minimum": 0 },
+    "output_summary": { "type": "string" },
+    "artifact_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rework_ticket_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

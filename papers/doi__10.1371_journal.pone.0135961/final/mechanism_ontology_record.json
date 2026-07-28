@@ -1,0 +1,80 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0135961",
+  "generated_at": "2026-05-06T00:57:41Z",
+  "reviewed_at": "2026-05-06T00:57:41Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "worker-6 source-reviewed mechanism adjudication; framework placeholder claims replaced with bounded source-specific mechanism evidence.",
+  "source_paths_checked": [
+    "rework_context/doi__10.1371_journal.pone.0135961/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/extracted/pdf_text/pone.0135961.txt",
+    "paper_packets/doi__10.1371_journal.pone.0135961/extracted/oa_package/local-DBAASP-PMC4744035/PMC4744035/pone.0135961.s001.doc",
+    "paper_packets/doi__10.1371_journal.pone.0135961/database/database_source_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0135961/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0135961/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0135961/database/linked_literature_records.jsonl",
+    "papers/doi__10.1371_journal.pone.0135961/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0135961/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0135961/supplementary/landing-1.bin..landing-10.bin"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "file",
+    "antiword",
+    "xml.etree.ElementTree",
+    "database JSONL row matcher",
+    "pre-extracted pdftotext text review",
+    "supplementary HTML/file inventory review"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-lps-binding-peptoid1",
+      "claim_text": "Peptoid 1 has direct source support for LPS binding/DPX displacement; this supports outer-membrane interaction context but is not broadened to a complete killing mechanism.",
+      "entity_scope": "Peptoid 1",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "dansyl polymyxin B displacement LPS binding assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=11:LPS binding activity of peptoid 1"
+      },
+      "limitations": "Direct evidence is limited to LPS binding/displacement and affinity ordering; downstream membrane disruption or intracellular killing is mechanistic context, not separately proven here."
+    },
+    {
+      "claim_id": "mech-qaar-charge-shape-context",
+      "claim_text": "QSAR descriptors provide source-supported structure/activity context connecting charge and molecular-shape descriptors with antimicrobial activity predictions.",
+      "entity_scope": "screened peptoid library",
+      "evidence_class": "structure_activity_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=5:QSAR modeling; xml:fig=2:Fig 2"
+      },
+      "limitations": "QSAR supports design/activity association only; it is not classified as a direct antimicrobial mechanism assay."
+    },
+    {
+      "claim_id": "mech-in-vivo-efficacy-not-mode",
+      "claim_text": "Murine infection data support in vivo efficacy of peptoid 1, while mode-of-action claims remain bounded to efficacy and LPS-binding evidence.",
+      "entity_scope": "Peptoid 1",
+      "evidence_class": "phenotype_supported",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=12:In vivo biocompatibility and S. aureus clearance of peptoid 1; xml:fig=3:Fig 3"
+      },
+      "limitations": "In vivo CFU/mortality effects are not converted into a direct molecular mechanism claim."
+    }
+  ],
+  "mechanism_quality_control": {
+    "placeholder_claims_removed": true,
+    "direct_mechanism_claims_have_assay_types": true,
+    "no_host_immune_modulation_overclaim": true
+  }
+}

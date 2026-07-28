@@ -1,0 +1,50 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2021.693725",
+  "generated_at": "2026-05-06T20:46:11Z",
+  "issue_count": 0,
+  "status": "cleared_after_worker4_worker6_source_review",
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "cleared_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure3_non_2v_exact_cc50_values_not_text_recoverable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/pdf_text/fmicb-12-693725.txt",
+        "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/oa_package/local-DRAMP-34220785/PMC8245773/fmicb-12-693725-g003.jpg",
+        "paper_packets/doi__10.3389_fmicb.2021.693725/raw/paper.pdf"
+      ],
+      "tools_attempted": [
+        "rg/pdftotext-derived text review",
+        "file image inspection",
+        "PaddleOCR CLI probe"
+      ],
+      "why_unrecoverable": "The local text supports a 5-10 mg/L CC50 range for non-2V brevibacillins, but not the exact per-compound database CC50 values; the local PaddleOCR module is unavailable for bounded figure-table OCR.",
+      "impact": "Non-2V exact database CC50 rows are preserved as source_conflict instead of source_verified.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "supplementary_table3_brevibacillin_mic_grid_partially_text_recovered",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2021.693725/raw/supplementary_original/local-DRAMP-Data_Sheet_1.DOC",
+        "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/supplementary_text.jsonl"
+      ],
+      "tools_attempted": [
+        "antiword",
+        "catdoc",
+        "strings"
+      ],
+      "why_unrecoverable": "The Word DOC exposes Table 3 title and FICI values through strings fallback, but not every MIC concentration-grid cell in clean table form.",
+      "impact": "Brevibacillin Table 3 FICI rows are retained with strings locators; unsupported concentration-grid cells are not fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "review_notes": "Worker-4/6 source review completed against current local XML/PDF/DOC/database materials. Remaining source conflicts are explicit cautions and do not require another open ticket."
+}

@@ -1,0 +1,94 @@
+{
+  "paper_id": "doi__10.1021_acsomega.2c02203",
+  "reviewed_at": "2026-06-20T09:09:12Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade_decision": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "oa_package",
+    "supplementary_pdf_text",
+    "linked_database_rows",
+    "locator_index"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf_text": true,
+    "oa_package": true,
+    "supplementary_pdf_text": true,
+    "supplementary_tables": true,
+    "merged_database_rows": true,
+    "linked_sequence_rows_available": false,
+    "note": "Local material was sufficient to repair Table 1 EC50 rows and qualitative toxicity/mechanism claims. Exact peptide sequence strings/DBAASP sequence-position identity were not present locally and are preserved as nonblocking database cautions."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 6,
+    "table_1_ec50_rows": 4,
+    "toxicity_rows_source_reviewed": 2,
+    "database_snapshots": {
+      "linked_assay_records": 19,
+      "linked_experiment_records": 19,
+      "linked_literature_records": 4,
+      "linked_sequence_records": 0,
+      "linked_dramp_activity_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 38,
+      "source_verified": 4
+    },
+    "database_source_conflicts_preserved_as_cautions": true,
+    "mechanism_claims": 2,
+    "direct_mechanism_overclaim": false,
+    "open_rework_targets": 0,
+    "generic_activity_endpoints_present": false,
+    "missing_activity_records": false,
+    "database_only_activity_as_primary": false
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP literature links are source-verified to article metadata. Assay rows are matched to XML Table 1 EC50 values or source-supported qualitative toxicity at 1 mg/mL, but exact peptide sequence/position identity is not in local primary material, so assay rows remain source_conflict cautions rather than fully source_verified identity records.",
+    "layer_2_activity_toxicity": "Worker-2 repaired the unsupported Table 1 shape into four EC50 rows with raw mg/mL values, ug/mL normalized comparisons, Vero E6/SARS-CoV-2 target context, CIs, assay conditions, and source locators. Qualitative toxicity evidence was captured without fabricating figure-only numeric rows.",
+    "layer_3_mechanism": "Mechanism record separates phenotypic antiviral activity from computational docking; no direct experimental mechanism is claimed."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1021_acsomega.2c02203/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/raw/paper.xml",
+    "papers/doi__10.1021_acsomega.2c02203/source/paper.xml",
+    "papers/doi__10.1021_acsomega.2c02203/source/paper.pdf",
+    "paper_packets/doi__10.1021_acsomega.2c02203/extracted/pdf_text/ao2c02203.txt",
+    "paper_packets/doi__10.1021_acsomega.2c02203/extracted/pdf_text/ao2c02203_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.2c02203/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/extracted/pdf_tables.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02203/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02203/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02203/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.2c02203/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsomega.2c02203/analysis/mechanism_evidence.json"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "sequence_identity_not_primary_sequence_resolved",
+      "severity": "caution",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "No local sequence rows or primary-text peptide sequences were found; database assay rows preserve source_conflict status for sequence identity while source-supported assay values are recorded."
+    },
+    {
+      "caution_code": "figure_only_numeric_values_not_fabricated",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-6",
+      "evidence_context": "Figures provide additional toxicity/plaque/viability outcomes, but only Table 1 provides row-level EC50 values. Qualitative and prose percentages were recorded only where local text supports them."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Source re-review repaired the prior Table 1 activity blocker, cross-matched DBAASP assay values against local primary XML/prose/SI material, and closed rwk-complete-test-0001. The paper is publication-grade with cautions: exact peptide sequence identity is not recoverable from local primary materials, and figure-only numeric values were not invented."
+}

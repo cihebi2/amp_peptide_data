@@ -1,0 +1,109 @@
+{
+  "paper_id": "doi__10.3390_ijms21186952",
+  "reviewed_at": "2026-05-08T16:30:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Source-reviewed re-review completed for RiLK1: the database layer now verifies source-supported DBAASP/CAMP rows, preserves the DRAMP sequence conflict, and final adjudication accepts the paper with explicit cautions rather than hiding unsupported database categories.",
+  "adjudication_summary": "Worker-4 and worker-6 re-review closed the full_source_review_not_completed ticket by reopening XML, PDF text, supplement text, figure locators, and linked database snapshots. The paper is publication-grade with cautions because recoverable source-supported values are recorded and non-exact database rows remain marked as conflicts.",
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.3390_ijms21186952/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/locators/locator_index.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms21186952/xml/local-DBAASP-PMC7555028.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_ijms21186952/pdf/local-DBAASP-PMC7555028.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/extracted/figure_captions.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/extracted/supplementary_text/ijms-21-06952-s001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/database/linked_dramp_activity_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_ijms21186952/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, one PDF supplement text, figure captions/images, and packet-linked database snapshots were sufficient for obtainable-only adjudication; no missing external material is required for the remaining cautions."
+  },
+  "semantic_quality_checks": {
+    "activity_records_final": 29,
+    "database_record_audits": 68,
+    "database_status_summary": {
+      "source_conflict": 25,
+      "source_verified": 42,
+      "sequence_modified_not_normalized": 1
+    },
+    "mechanism_claims_final": 3,
+    "supplementary_assets_checked": 1,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP target-activity rows and literature rows were source verified; DRAMP sequence mismatch and non-exact cytotoxicity categories are preserved as source_conflict; CAMP terminal modification remains sequence_modified_not_normalized.",
+    "layer_2_activity_toxicity": "Final activity/toxicity rows use source-supported Table 5 bacterial values, section/Figure 7 antifungal outcomes, section/Figure 8/supplement morphology evidence, and BALB 3T3 viability values; unsupported database-only numeric cytotoxicity categories are not promoted.",
+    "layer_3_mechanism": "Mechanism is limited to indirect membrane-mimetic conformational context and phenotype-level antimicrobial activity; no direct molecular mechanism is overclaimed.",
+    "layer_4_material_packet": "Material packet remains distinct from final adjudication; local source assets were sufficient for obtainable-only review and no unrecoverable material gap blocks this paper."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_sequence_name_conflict_preserved",
+      "severity": "major_caution",
+      "evidence_context": "DRAMP29087 is linked to this paper and its activity text is mostly source-supported, but the DRAMP sequence field does not match the primary RiLK1 sequence; it remains source_conflict, not source_verified."
+    },
+    {
+      "caution_code": "database_cytotoxicity_endpoint_not_exact",
+      "severity": "caution",
+      "evidence_context": "DBAASP cytotoxicity rows encode a numeric 0% category; source-supported final toxicity rows use morphology/no-alteration and BALB 3T3 viability endpoints instead."
+    },
+    {
+      "caution_code": "camp_terminal_modification_preserved_with_caution",
+      "severity": "caution",
+      "evidence_context": "CAMP RiLK1 sequence/activity match local source, but C-terminal NH2 is not independently explicit for RiLK1 in the local primary text and is retained as sequence_modified_not_normalized."
+    },
+    {
+      "caution_code": "mechanism_indirect_not_direct",
+      "severity": "caution",
+      "evidence_context": "CD/fluorescence support membrane-mimetic conformational context; no direct pore/permeabilization or molecular target assay is reported in local material."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "publication_grade_candidate": true,
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "acceptance_boundary": "Accepted with cautions only because all remaining issues are preserved source conflicts or scope cautions, not blocking missing values."
+  },
+  "gate_results": {
+    "status": "passed",
+    "semantic_report": "reports/doi__10.3390_ijms21186952.post_repair.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_pass": true,
+    "publication_quality_report": "reports/doi__10.3390_ijms21186952.post_repair.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "rerun_at": "2026-05-08T16:32:54Z"
+  }
+}

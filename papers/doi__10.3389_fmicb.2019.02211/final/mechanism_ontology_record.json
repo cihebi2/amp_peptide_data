@@ -1,0 +1,77 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2019.02211",
+  "generated_at": "2026-05-06T21:35:20Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "worker-6 final mechanism adjudication from XML/PDF text and figure captions; packet worker-5 scaffold was treated as prior evidence only.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-pxmor-apullulans-membrane-damage",
+      "claim_text": "Px-Mor treatment of A. pullulans at 30 μM for 3 h is reported to cause morphological alteration, membrane disruption, and unclear cytoplasmic contents in SEM/TEM observations.",
+      "entity_scope": "Px-Mor against Aureobasidium pullulans mycelia/spores",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "scanning electron microscopy",
+        "transmission electron microscopy"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2019.02211/source/paper.xml",
+        "locator": "xml:sec=Effect of Px-Mor on A. pullulans Morphology; xml:fig=6; xml:fig=7"
+      },
+      "limitations": "Microscopy supports membrane/cell-structure disruption for A. pullulans morphology; it is not a quantitative killing mechanism assay for every Table 1 target."
+    },
+    {
+      "claim_id": "mech-moricin-alpha-helical-context",
+      "claim_text": "Px-Mor is interpreted as a moricin/cecropin-type alpha-helical antimicrobial peptide; the paper discusses N-terminal amphipathic and C-terminal hydrophobic regions by homology to moricins.",
+      "entity_scope": "Px-Mor mature peptide and analogues",
+      "evidence_class": "structural_inference_context",
+      "direct_assay_types": [],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2019.02211/source/paper.xml",
+        "locator": "xml:sec=Sequence Characteristics of Full-Length Px-Mor; xml:fig=1; supp:Supplementary Figure S1"
+      },
+      "limitations": "This is structural/contextual evidence and is not promoted to direct mechanism for all organisms."
+    },
+    {
+      "claim_id": "mech-immune-expression-context",
+      "claim_text": "Px-Mor expression is reported across P. xylostella life stages and immune tissues and is induced after microbial challenge, supporting an immune-response role.",
+      "entity_scope": "Px-Mor gene expression in Plutella xylostella",
+      "evidence_class": "expression_context",
+      "direct_assay_types": [
+        "RT-qPCR"
+      ],
+      "source_locator": {
+        "source_path": "papers/doi__10.3389_fmicb.2019.02211/source/paper.xml",
+        "locator": "xml:sec=Px-Mor Expression Patterns in P. xylostella; xml:sec=The Relative Expression of Px-Mor Upon Infection With Different Microorganisms; xml:fig=3; xml:fig=4"
+      },
+      "limitations": "Expression induction is not direct antimicrobial activity and is kept separate from Table 1 MIC rows."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "mechanism_scope_limited_to_microscopy_and_structural_context",
+      "evidence_context": "Final mechanism claims do not overextend SEM/TEM A. pullulans findings to every bacterial/fungal Table 1 target."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_structure_drawings_not_text_extractable_nonblocking",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3389_fmicb.2019.02211/extracted/oa_package/local-APD6-pmc_package/PMC6797621/Table_1.docx",
+        "paper_packets/doi__10.3389_fmicb.2019.02211/extracted/oa_package/local-DBAASP-PMC6797621/PMC6797621/Table_1.docx",
+        "paper_packets/doi__10.3389_fmicb.2019.02211/extracted/supplementary_index.json"
+      ],
+      "tools_attempted": [
+        "zipfile OOXML table parse",
+        "file",
+        "rg landing HTML"
+      ],
+      "why_unrecoverable": "Supplementary Table S1 structure cells are embedded drawing/chemical-structure content and are blank in the OOXML text stream; names/accessions/pI/charge/MW/species are text-recovered.",
+      "impact": "No activity, toxicity, database status, or mechanism decision depends on the unrecovered structure drawings; C-terminal amidation is supported by main-text synthesis methods.",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

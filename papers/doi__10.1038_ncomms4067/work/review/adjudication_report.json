@@ -1,0 +1,90 @@
+{
+  "adjudication_summary": "Source re-review repaired the empty activity layer and reconciled linked database rows against the paper XML/PDF text, Table 2 image, supplement text, and database snapshots. The paper is accepted with cautions: several database entries over-assign mutant identity or unsupported variant values, so those rows are preserved as source_conflict instead of being smoothed into source_verified.",
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "evidence_context": "Primary source supports HR2P/HR2P-M1/HR2P-M2 activity values, but these database rows mix mutant identities, unsupported variant values, or a cell-line qualifier not stated for cytotoxicity. They remain source_conflict and are not promoted to source_verified.",
+      "record_ids": [
+        "DRAMP:DRAMP29982",
+        "CAMP:CAMPSQ23822",
+        "dbAMP:dbAMP_28710",
+        "DBAASP:DBAASPS_15168 HEK293T/ACE2 cytotoxicity rows"
+      ]
+    },
+    {
+      "caution_code": "table2_graphic_only_manual_review",
+      "evidence_context": "Table 2 has no structured XML rows and is represented as an OA package image; exact HR2P, HR2P-M1, and HR2P-M2 sequences and IC50 values were manually read from the listed table image."
+    },
+    {
+      "caution_code": "censored_cytotoxicity_endpoint",
+      "evidence_context": "Primary source reports no significant cytotoxicity up to 1000 uM and SI >1667; exact CC50 is not available locally and is recorded as a censored/no-effect toxicity row."
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.1038_ncomms4067/handoff_context.json",
+    "paper_packets/doi__10.1038_ncomms4067/packet_manifest.json",
+    "paper_packets/doi__10.1038_ncomms4067/locators/locator_index.json",
+    "papers/doi__10.1038_ncomms4067/source/paper.xml",
+    "paper_packets/doi__10.1038_ncomms4067/extracted/pdf_text/41467_2014_Article_BFncomms4067.txt",
+    "paper_packets/doi__10.1038_ncomms4067/extracted/pdf_text/41467_2014_BFncomms4067_MOESM272_ESM.txt",
+    "paper_packets/doi__10.1038_ncomms4067/extracted/oa_package/local-DRAMP-24473083/PMC7091805/41467_2014_Article_BFncomms4067_Figa_HTML.jpg",
+    "paper_packets/doi__10.1038_ncomms4067/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_ncomms4067/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_ncomms4067/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_ncomms4067/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_ncomms4067/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_ncomms4067/database/linked_literature_records.jsonl"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows_from_packet": true,
+    "note": "Local material was sufficient to repair activity rows, database reconciliation, and final adjudication. Remaining database disagreements are preserved as source_conflict cautions, not open material gaps.",
+    "oa_package": true,
+    "paper_pdf_text": true,
+    "paper_xml": true,
+    "supplementary_assets": true,
+    "table2_graphic": true
+  },
+  "paper_id": "doi__10.1038_ncomms4067",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP activity rows for HR2P/HR2P-M1 and literature links were reconciled to primary-source locators. DRAMP activity rows, CAMP, dbAMP, and HEK293T/ACE2 cytotoxicity qualifier rows that mix identities or unsupported values remain explicit source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 recovered primary-source activity/toxicity rows from Results prose, Figure 6, Supplementary Figure S2, Methods, and graphic-only Table 2; database-only text was not treated as primary evidence.",
+    "layer_3_mechanism": "Mechanism is accepted at source-supported strength: HR2P blocks viral entry/fusion through HR1/HR2 six-helix-bundle targeting, with optimization and toxicity context kept separate from unsupported antimicrobial/permeabilization claims.",
+    "review": "Worker-6 closed the previous full_source_review_not_completed ticket after direct source review and preserved unresolved database disagreements as cautions rather than open rework."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-06-20T13:18:06Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_core_fields": true,
+    "activity_rows_parsed": 8,
+    "database_conflicts_preserved": true,
+    "database_snapshots": {
+      "linked_assay_records": 6,
+      "linked_dramp_activity_records": 1,
+      "linked_experiment_records": 9,
+      "linked_literature_records": 3,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_conflict": 6,
+      "source_verified": 13
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "oa_package_table_image",
+    "supplementary_pdf_text",
+    "linked_database_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

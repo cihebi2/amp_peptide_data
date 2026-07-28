@@ -1,0 +1,107 @@
+{
+  "paper_id": "doi__10.1038_s41598-021-97821-3",
+  "reviewed_at": "2026-05-03T21:34:27Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded best-effort recovery opened XML/PDF/PDF text/OA package inventory/figure captions/database JSONL and checked landed supplementary landing-*.bin files. Remaining uncertainties are conflict-preserving database cautions, not open material gaps."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1038_s41598-021-97821-3/handoff_context.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/raw/paper.xml",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/raw/paper.pdf",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extracted/pdf_text/41598_2021_Article_97821.txt",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41598-021-97821-3/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-021-97821-3/supplementary/landing-*.bin"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 102,
+    "activity_records_source_reviewed": true,
+    "database_snapshots": {
+      "linked_assay_records": 63,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 85,
+      "linked_literature_records": 14,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "source_verified": 122,
+      "source_conflict": 40
+    },
+    "database_conflicts_preserved": 40,
+    "mechanism_claims": 3,
+    "rework_targets_open": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked every linked database JSONL row against Table 1 identity, Table 2 MIC values, Table 3 toxicity/hemolysis endpoints, article metadata, and database-row provenance. Exact row matches are source_verified; unit/label/aggregate-entry conflicts are preserved as source_conflict with context.",
+    "layer_2_activity_toxicity": "Worker-6 replaced the earlier parser-shaped final activity table with source-reviewed Table 2 and Table 3 records. Raw values, units, target strains, salt subcolumns, endpoint definitions, and XML locators are explicit.",
+    "layer_3_mechanism": "Mechanism evidence is limited to phenotypic rapid-kill/resistance data plus discussion-level membrane-perturbation inference. No direct mechanism assay is overclaimed.",
+    "layer_4_final_adjudication": "The original blocking ticket is closed because the owner-layer source review is complete and all remaining issues are preserved nonblocking cautions, with no unrecoverable material gap or open rework target."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_toxicity_measure_label_conflict",
+      "record_id": "DBAASP hemolytic_cytotoxic rows for CaD23/CaD2/CaD21/CaD22",
+      "evidence_context": "Several database rows label IC50/Imax cell-viability values as cell death, cytotoxicity, or killing; primary Table 3 endpoint semantics are preserved in the source-reviewed audit."
+    },
+    {
+      "caution_code": "aggregate_database_entry_text_unit_context",
+      "record_id": "CAMP/dbAMP entry_activity rows",
+      "evidence_context": "Aggregate database text flattens Table 2 values and sometimes labels µg/ml values as microM; these rows remain source_conflict with Table 2 locators rather than source_verified."
+    },
+    {
+      "caution_code": "database_sequence_snapshot_absent",
+      "record_id": "linked_sequence_records.jsonl",
+      "evidence_context": "No linked sequence snapshot was present; primary-source Table 1 sequences and peptide-name mappings were used for identity evidence, with database sequence comparison marked unavailable."
+    },
+    {
+      "caution_code": "supplementary_assets_are_landing_html",
+      "record_id": "landing-1.bin through landing-10.bin",
+      "evidence_context": "Local supplementary .bin assets are duplicate HTML article landing pages, not spreadsheets/PDF supplement tables; XML/PDF/OA package contain the recoverable values used here."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Source-reviewed re-adjudication repaired the database and final-review layers for CaD23/related hybrid peptides. Table values and database conflicts are now traceable to local XML/PDF/package/database evidence; remaining cautions are preserved without blocking publication-grade acceptance.",
+  "analysis_status": "analysis_accepted_with_cautions",
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "owner_workers": [
+    "worker-4",
+    "worker-6"
+  ],
+  "database_conflict_summary": {
+    "database_toxicity_label_conflicts": 14,
+    "database_mic_value_conflicts": 4,
+    "aggregate_entry_text_conflicts": 22,
+    "sequence_snapshot_gap_caution": "linked_sequence_records.jsonl is empty; Table 1 primary source sequences are used for source identity evidence while preserving database-row provenance."
+  }
+}

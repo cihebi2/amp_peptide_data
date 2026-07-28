@@ -1,0 +1,103 @@
+{
+  "paper_id": "doi__10.3390_md23080330",
+  "reviewed_at": "2026-05-09T10:28:22Z",
+  "generated_at": "2026-05-09T10:28:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_details": {
+      "zip_members_checked": [
+        "Supplementary Figure S1.tif",
+        "Supplementary Figure S2.tif",
+        "Supplementary Figure S3-wb origin.jpg",
+        "Supplementary Table S1.pdf",
+        "Supplementary Table S2.xlsx",
+        "Supplementary Tabls S3.pdf"
+      ],
+      "publication_grade_effect": "Supplementary files support screening/expression context and do not add unrecorded MIC/MBC or hemolysis rows."
+    }
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Source-reviewed rework reconciled the rAfRgly1 Table 1 activity matrix, APD6/DBAASP linked rows, mature-sequence locator, hemolysis result, and mechanism evidence; remaining database negative-limit discrepancies are preserved as cautions, not blockers.",
+  "adjudication_summary": "Worker-6 closes the targeted rework ticket after worker-4 database conflict preservation and final source-reviewed adjudication.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md23080330/handoff_context.json",
+    "paper_packets/doi__10.3390_md23080330/packet_manifest.json",
+    "paper_packets/doi__10.3390_md23080330/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md23080330/raw/paper.xml",
+    "paper_packets/doi__10.3390_md23080330/raw/paper.pdf",
+    "paper_packets/doi__10.3390_md23080330/extracted/pdf_text/marinedrugs-23-00330.txt",
+    "paper_packets/doi__10.3390_md23080330/raw/supplementary_original/local-APD6-marinedrugs-23-00330-s001.zip",
+    "paper_packets/doi__10.3390_md23080330/extracted/oa_package/local-APD6-pmc_package/PMC12387859/marinedrugs-23-00330-g001.jpg",
+    "paper_packets/doi__10.3390_md23080330/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md23080330/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md23080330/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 19,
+    "database_status_summary": {
+      "source_verified": 32,
+      "source_conflict": 5
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "supplementary_assets_checked": 6,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP positive MIC/MBC and hemolysis rows match primary Table 1, Figure 8 and methods; APD6/DBAASP mature sequence matches Figure 1C; database negative-limit overstatements are retained as source_conflict cautions.",
+    "layer_2_activity_toxicity": "Final activity was rebuilt from the rAfRgly1 columns only, with MIC/MBC units restored from methods/table context and negative MIC/MBC limits separated.",
+    "layer_3_mechanism": "Membrane disruption is supported by direct binding, LDH, PI and SEM assays; DNA binding is retained as an in vitro secondary interaction with limitations.",
+    "worker_6_final": "Open framework-test ticket is closed because the final review is paper-specific, source-reviewed and gate-clean."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_negative_limit_source_conflict",
+      "severity": "caution",
+      "affected_records": [
+        "DBAASP:DBAASPR_24406:Acinetobacter sp. L32",
+        "DBAASP:DBAASPR_24406:Vibrio harveyi ATCC 43516",
+        "APD6:AP05669:entry_text"
+      ],
+      "evidence_context": "Primary source separates no MIC inhibition at 64 uM from no MBC activity at 256 uM; database prose overstates a unified no-activity limit."
+    },
+    {
+      "caution_code": "mature_sequence_not_full_precursor",
+      "severity": "caution",
+      "affected_records": [
+        "APD6:AP05669",
+        "DBAASP:DBAASPR_24406"
+      ],
+      "evidence_context": "Primary article reports a 97-residue AfRgly1 precursor; database records store the 75-residue mature sequence after the signal peptide."
+    }
+  ],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "semantic_gate_expected": "pass",
+    "publication_quality_expected": "pass"
+  }
+}

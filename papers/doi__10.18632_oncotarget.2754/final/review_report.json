@@ -1,0 +1,75 @@
+{
+  "paper_id": "doi__10.18632_oncotarget.2754",
+  "reviewed_at": "2026-05-06T00:23:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "Opened handoff packet, XML/PDF text, Table 1, Figure 1 image, figure captions, supplementary PDF text, and linked DBAASP rows. No unsupported exact values were fabricated from figure-only panels."
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Source-reviewed rework recovered the blocked Table 1 activity/toxicity rows, matched the linked DBAASP activity rows to HPRP-A2 primary-source values, preserved the sequence modification caution, and closed the open rework ticket with no remaining blocking issue.",
+  "checked_inputs": [
+    "rework_context/doi__10.18632_oncotarget.2754/handoff_context.json",
+    "paper_packets/doi__10.18632_oncotarget.2754/packet_manifest.json",
+    "paper_packets/doi__10.18632_oncotarget.2754/locators/locator_index.json",
+    "paper_packets/doi__10.18632_oncotarget.2754/extracted/xml_sections.json",
+    "paper_packets/doi__10.18632_oncotarget.2754/extracted/pdf_text/oncotarget-06-1769.txt",
+    "paper_packets/doi__10.18632_oncotarget.2754/extracted/supplementary_text/oncotarget-06-1769-s001.txt",
+    "paper_packets/doi__10.18632_oncotarget.2754/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.18632_oncotarget.2754/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.18632_oncotarget.2754/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 8,
+    "activity_rows_have_raw_value_unit_target_locator": true,
+    "database_status_summary": {
+      "source_verified": 7,
+      "sequence_modified_not_normalized": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "previous_issue_codes_closed": [
+      "missing_activity_records",
+      "publication_grade_not_true",
+      "review_status_not_publication_grade",
+      "full_source_review_not_completed",
+      "database_conflicts_require_adjudication"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked DBAASP HPRP-A2 assay rows match Table 1 values and article metadata. The merged sequence catalog core sequence matches the source, while Ac/NH2 terminal modifications and all-D context remain explicitly cautioned as sequence_modified_not_normalized.",
+    "layer_2_activity_toxicity": "Worker-2 manual source review recovered eight peptide IC50/MHC rows from Table 1 with units, targets, incubation times, assay context, and XML/PDF locators.",
+    "layer_3_mechanism": "Worker-6 final review converted prior locator notes into bounded mechanism claims for membrane uptake/disruption, apoptosis/caspases, and xenograft efficacy context without inventing figure-only exact values.",
+    "adjudication": "The original rework ticket is closed because its concrete worker-2, worker-4, and worker-6 blockers were repaired from local source material."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "Primary source Figure 1 supports Ac-FKKLKKLFSKLWNWK-amide and the paper describes HPRP-A2 as all-D; local DBAASP merged sequence catalog records the core sequence only."
+    },
+    {
+      "caution_code": "figure_only_quantitation_not_transcribed",
+      "evidence_context": "Figure 2/Supplementary Figure S1 support synergy and Q-threshold interpretation, but exact plotted values are not available as source tables and were not fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": []
+}

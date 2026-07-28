@@ -1,0 +1,236 @@
+{
+  "paper_id": "doi__10.1038_s41467-024-51933-2",
+  "review_sample_id": "V420P0034",
+  "reviewed_at": "2026-06-25T02:17:06Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "final_decision": "needs_targeted_rework",
+  "decision_basis": [
+    "The sampled DBAASP MIC row is source-backed by primary XML Table 1, PDF text, linked DBAASP assay row 56, and the final activity/database artifacts.",
+    "The paper cannot be accepted because an open hard rework target remains for absent local MOESM/source-data supplementary materials.",
+    "The final mechanism ontology also contains non-standard evidence_class values and needs analysis rework before any publication-grade acceptance."
+  ],
+  "sample_row_decisions": [
+    {
+      "sample_id": "VAL0382",
+      "audit_record_id": "doi__10.1038_s41467-024-51933-2:database_audit:56",
+      "row_decision": "confirmed_with_caution",
+      "evidence_summary": "DBAASP source_id DBAASPS_22758 / assay_id 179728 reports MIC 46.88 ug/ml for Staphylococcus aureus ATCC BAA-1717. Primary XML Table 1 row 12 identifies T1-9 as RWIKIWFQWRRWKWKK and gives 46.88 in the MRSA/S. aureus ATCC BAA-1717 MIC column with SEM 22.10; PDF text extraction also contains the T1-9 row, sequence, and 46.88 values. The final database audit preserves source_verified status with traceability to linked_assay_records row 56 and the final activity row doi__10.1038_s41467-024-51933-2-table1-r12-c10-MIC preserves endpoint, raw value, unit, target, SEM, and XML locator.",
+      "locators_checked": [
+        "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv:rg_line=23580",
+        "paper_packets/doi__10.1038_s41467-024-51933-2/database/linked_assay_records.jsonl:row=56",
+        "paper_packets/doi__10.1038_s41467-024-51933-2/database/linked_experiment_records.jsonl:row=56",
+        "papers/doi__10.1038_s41467-024-51933-2/source/paper.xml:xml:table=1:row=12:column=10",
+        "papers/doi__10.1038_s41467-024-51933-2/source/paper.pdf:pdftotext_lines=937,1177,1179,1197",
+        "papers/doi__10.1038_s41467-024-51933-2/final/database_record_verification.json:record_audits[source_record_id=179728]",
+        "papers/doi__10.1038_s41467-024-51933-2/final/activity_toxicity_evidence.json:record_id=doi__10.1038_s41467-024-51933-2-table1-r12-c10-MIC",
+        "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/source_locator_hints.json:VAL0382"
+      ],
+      "cautions": [
+        "The packet release_row_locator says tsv_row=22925, but direct audit_record_id lookup in the release TSV resolves the sampled row at physical line 23580; judgement used the stable audit_record_id.",
+        "The release TSV row leaves database_value, primary_source_value, primary_source_unit, and source_locator columns blank even though the final audit/activity artifacts and primary XML support 46.88 ug/ml. This is a release-field caution, not a failure of the sampled row's source evidence.",
+        "The paper-level review_status is needs_targeted_rework and publication_grade is false because source-data-dependent supplementary materials are absent locally.",
+        "Global DBAASP conflicts for other source_ids are preserved in the paper final; this sampled MIC row is not one of those conflict rows."
+      ],
+      "rework_target_ids": []
+    }
+  ],
+  "material_review": {
+    "material_inventory_reopened": true,
+    "packet_manifest_status": {
+      "material_queue_status": "material_extracted_with_gaps",
+      "analysis_queue_status": "analysis_needs_analysis_rework",
+      "packet_version": "v001-complete-message-test",
+      "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance"
+    },
+    "available_materials_checked": [
+      "paper XML is available through papers/.../source/paper.xml and packet raw/paper.xml",
+      "paper PDF is available through papers/.../source/paper.pdf and packet raw/paper.pdf",
+      "linked DBAASP assay, experiment, and literature rows are available under paper_packets/.../database/",
+      "final database, activity, mechanism, and review artifacts are present under papers/.../final/"
+    ],
+    "material_gaps": [
+      {
+        "gap_code": "supplementary_source_data_not_locally_landed",
+        "status": "blocking_for_publication_grade",
+        "evidence": "The landed supplementary files are landing-1.bin through landing-10.bin; file inspection identifies them as HTML documents rather than the declared MOESM PDF/DOCX/XLSX/ZIP/source-data assets.",
+        "affected_claims": [
+          "exact hemolysis/cytotoxicity bins and source-data-dependent values",
+          "publication-grade final approval"
+        ],
+        "not_affected": [
+          "sampled Table 1 MIC row VAL0382"
+        ]
+      },
+      {
+        "gap_code": "oa_package_absent",
+        "status": "paper_level_caution",
+        "evidence": "packet raw/oa_package is absent; XML/PDF/database evidence was sufficient for the sampled Table 1 MIC row."
+      }
+    ]
+  },
+  "worker6_adjudication": {
+    "review_role": "worker-6/adjudicator_review",
+    "prior_review_status": "needs_targeted_rework",
+    "prior_publication_grade": false,
+    "validator_contract_passed": true,
+    "layer_decisions": {
+      "layer_1_database_identity": {
+        "decision": "sample_confirmed_with_caution",
+        "rationale": "The sampled source_verified database audit row has linked database traceability, article metadata citation traceability, source-located sequence agreement, source_verified name/modification checks, and matched activity row doi__10.1038_s41467-024-51933-2-table1-r12-c10-MIC."
+      },
+      "layer_2_activity_toxicity": {
+        "decision": "sample_confirmed",
+        "rationale": "The matched final activity row preserves MIC, raw value 46.88, raw unit ug/mL, T1-9 sequence, S. aureus ATCC BAA-1717/MRSA target, SEM 22.10, and XML Table 1 locator. The MIC method text reports serial twofold dilutions in ug/mL and incubation/OD600 conditions."
+      },
+      "layer_3_mechanism_ontology": {
+        "decision": "paper_level_needs_analysis_rework",
+        "rationale": "Mechanism evidence is not needed to confirm the sampled MIC row. However, the final mechanism ontology contains evidence_class values phenotypic_activity_context and computational_support_context, which are outside the required ontology vocabulary and must be repaired before publication-grade acceptance."
+      },
+      "review_layer": {
+        "decision": "needs_targeted_rework",
+        "rationale": "The sampled row is source-backed, but paper-level open hard rework targets and mechanism vocabulary defects prevent accepted_clean or accepted_with_cautions."
+      }
+    },
+    "semantic_quality_checks": [
+      {
+        "check": "sampled_mic_source_locator",
+        "result": "pass",
+        "evidence": "XML Table 1 row 12 column 10 and final activity row identify the sampled MIC."
+      },
+      {
+        "check": "database_row_reconciliation",
+        "result": "pass_with_caution",
+        "evidence": "linked_assay_records row 56 and final database audit match the primary source; the release TSV value fields are blank."
+      },
+      {
+        "check": "supplementary_material_exhaustion",
+        "result": "fail_paper_level",
+        "evidence": "Local supplementary assets are HTML landing pages and true MOESM/source-data files are absent."
+      },
+      {
+        "check": "mechanism_ontology_vocabulary",
+        "result": "fail_paper_level",
+        "evidence": "Two mechanism claims use non-standard evidence_class values."
+      }
+    ]
+  },
+  "rework_targets": [
+    {
+      "ticket_id": "V420P0034-rwk-001",
+      "target_queue": "material_extraction",
+      "owner_worker": "worker-3",
+      "secondary_owner_worker": "worker-6",
+      "severity": "blocking",
+      "reason": "True MOESM/source-data supplementary files are absent locally; landing-*.bin files are HTML pages, so exact source-data-dependent hemolysis/cytotoxicity values and publication-grade final approval remain blocked.",
+      "requested_outputs": [
+        {
+          "asset": "paper_packets/doi__10.1038_s41467-024-51933-2/raw/supplementary_original/",
+          "need": "Recover or explicitly prove absence of the declared MOESM/source-data files, including 41467_2024_51933_MOESM1_ESM.pdf, MOESM3_ESM.docx, MOESM4-7_ESM.xlsx, MOESM8_ESM.zip, and MOESM10_ESM.xlsx.",
+          "required_locators": [
+            "supp:41467_2024_51933_MOESM1_ESM.pdf",
+            "supp:41467_2024_51933_MOESM4_ESM.xlsx",
+            "supp:41467_2024_51933_MOESM8_ESM.zip"
+          ]
+        }
+      ],
+      "blocks": [
+        "publication_grade_ready",
+        "source_data_dependent_toxicity_or_hemolysis_claims",
+        "final_approval"
+      ],
+      "created_at": "2026-06-25T02:17:06Z",
+      "existing_ticket_id": "rwk-complete-test-0001"
+    },
+    {
+      "ticket_id": "V420P0034-rwk-002",
+      "target_queue": "analysis",
+      "owner_worker": "worker-5",
+      "secondary_owner_worker": "worker-6",
+      "severity": "major",
+      "reason": "papers/doi__10.1038_s41467-024-51933-2/final/mechanism_ontology_record.json uses non-standard evidence_class values phenotypic_activity_context and computational_support_context. Required vocabulary is direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested.",
+      "requested_outputs": [
+        {
+          "asset": "papers/doi__10.1038_s41467-024-51933-2/final/mechanism_ontology_record.json",
+          "need": "Reclassify mechanism claims to the approved ontology while preserving source locators and limitations; likely replacements are phenotype_supported for resistance/biofilm phenotypic context and computational_only for MD-only support.",
+          "required_locators": [
+            "xml:sec=8:deepAMP-design AMPs reduce antibiotic resistances;xml:fig=5:Fig. 5",
+            "xml:sec=7:Mechanism-of-Action of AMPs designed by deepAMP;xml:sec=30:Molecular dynamics simulations of peptide T1-2 with a model membrane"
+          ]
+        }
+      ],
+      "blocks": [
+        "mechanism_ontology_record",
+        "publication_grade_ready"
+      ],
+      "created_at": "2026-06-25T02:17:06Z"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "sampled_row_release_field_gap",
+      "evidence_context": "The release TSV row for audit_record_id doi__10.1038_s41467-024-51933-2:database_audit:56 has blank database_value and primary_source_value columns even though source/final/database evidence supports MIC 46.88 ug/ml."
+    },
+    {
+      "caution_code": "sampled_row_locator_mismatch",
+      "evidence_context": "Packet release_row_locator says tsv_row=22925; direct lookup by audit_record_id finds the release TSV row at physical line 23580."
+    },
+    {
+      "caution_code": "paper_non_publication_grade",
+      "evidence_context": "Existing final review_report has review_status needs_targeted_rework, publication_grade false, and an open rework target."
+    },
+    {
+      "caution_code": "supplementary_source_data_gap",
+      "evidence_context": "Local supplementary assets are HTML landing pages; declared source-data/MOESM files are absent."
+    },
+    {
+      "caution_code": "mechanism_class_vocabulary_gap",
+      "evidence_context": "Final mechanism ontology uses phenotypic_activity_context and computational_support_context, which are not approved mechanism evidence classes."
+    },
+    {
+      "caution_code": "other_database_conflicts_preserved",
+      "evidence_context": "The paper final preserves non-sampled DBAASP sequence/source-data conflicts; these must not be smoothed into source_verified."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/validation_samples.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/release_rows.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/sample_final_records.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/packet_manifest.json",
+    "reports/nar_resource_freeze_v1/manual_validation/validation420/source_review_packets/V420P0034__doi__10.1038_s41467-024-51933-2/true_review_result.schema.json",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/database/linked_literature_records.jsonl",
+    "papers/doi__10.1038_s41467-024-51933-2/source/paper.xml",
+    "papers/doi__10.1038_s41467-024-51933-2/source/paper.pdf",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/extracted/pdf_text.jsonl",
+    "papers/doi__10.1038_s41467-024-51933-2/final/database_record_verification.json",
+    "papers/doi__10.1038_s41467-024-51933-2/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41467-024-51933-2/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41467-024-51933-2/final/review_report.json",
+    "papers/doi__10.1038_s41467-024-51933-2/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_s41467-024-51933-2/rework/rework_responses.jsonl",
+    "reports/doi__10.1038_s41467-024-51933-2.semantic_gate.json",
+    "reports/doi__10.1038_s41467-024-51933-2.publication_quality.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41467-024-51933-2/supplementary/"
+  ]
+}

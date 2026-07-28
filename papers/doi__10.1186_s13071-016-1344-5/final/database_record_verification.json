@@ -1,0 +1,106 @@
+{
+  "paper_id": "doi__10.1186_s13071-016-1344-5",
+  "generated_at": "2026-05-03T19:32:25Z",
+  "artifact_type": "worker4_database_record_audit",
+  "audit_scope": "Worker-4 reopened the packet database row, merged APD6/DRAMP sequence/activity rows, and paper-local XML/PDF evidence.",
+  "database_row_counts": {
+    "linked_assay_records": 0,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 0,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0
+  },
+  "record_audits": [
+    {
+      "source_id": "APD6:AP02751",
+      "sequence_key": "APD6:AP02751",
+      "source_table": "linked_literature_records.jsonl",
+      "layer1_status": "source_conflict",
+      "status": "source_conflict",
+      "database_measure": "APD6/AP02751 antiviral literature linkage",
+      "database_subject": "HEdefensin, 51 aa, hemolymph Haemaphysalis longicornis",
+      "matched_activity_record_id": "",
+      "traceability": {
+        "locator": "database:linked_literature_records:row=1",
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1186_s13071-016-1344-5/database/linked_literature_records.jsonl"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta",
+        "paper_doi": "10.1186/s13071-016-1344-5",
+        "paper_pmid": "26830840",
+        "paper_pmcid": "PMC4736483"
+      },
+      "sequence_check": {
+        "status": "source_conflict",
+        "database_sequence": "EEESEVAHLRVRRGFGCPLNQGACHRHCRSIRRRGGYCSGIIKQTCTCYRN",
+        "paper_sequences": [
+          {
+            "name": "longicin P1",
+            "sequence": "QDDESDVPHVRVRRG",
+            "source_locator": "xml:sec=6:Peptides"
+          },
+          {
+            "name": "longicin P4",
+            "sequence": "SIGRRGGYCAGIIKQTCTCYR",
+            "source_locator": "xml:sec=6:Peptides"
+          }
+        ],
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=6:Peptides",
+          "primary_source_statement": "The selected paper reports chemically synthesized longicin P1 and P4 sequences; it does not report the AP02751 HEdefensin sequence."
+        }
+      },
+      "name_check": {
+        "status": "source_conflict",
+        "database_name": "HEdefensin",
+        "paper_entities": [
+          "longicin P1",
+          "longicin P4",
+          "full-length longicin"
+        ],
+        "source_locator": "xml:sec=6:Peptides"
+      },
+      "source_organism_check": {
+        "status": "partial_context_only",
+        "database_source": "hemolymph, Haemaphysalis longicornis",
+        "paper_source": "longicin from midgut epithelium of Haemaphysalis longicornis; synthetic partial analogs tested",
+        "source_locator": "xml:abstract; xml:sec=Background; xml:sec=6:Peptides"
+      },
+      "conflict_context": "The packet links APD6 AP02751/HEdefensin literature to this DOI, but paper-local primary sources support longicin P1/P4 antiviral assays. Merged APD6/DRAMP rows show AP02751/DRAMP18423 belong to HEdefensin and PMID 27871830/Dev Comp Immunol 2017, while this article is PMID 26830840/Parasites & Vectors 2016. Longicin P4 source-supported activity is preserved in worker-2 rows; the AP02751 HEdefensin sequence is not promoted as source-verified for this paper.",
+      "review_notes": "Preserved as source_conflict after worker-4 source review; do not normalize HEdefensin into longicin P4 or use the database-only AP02751 sequence as a primary-source row."
+    }
+  ],
+  "paper_local_sequence_evidence": [
+    {
+      "entity": "longicin P1",
+      "sequence": "QDDESDVPHVRVRRG",
+      "length": 15,
+      "molecular_weight": "1764.8",
+      "pI": "5.43",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=6:Peptides"
+      }
+    },
+    {
+      "entity": "longicin P4",
+      "sequence": "SIGRRGGYCAGIIKQTCTCYR",
+      "length": 21,
+      "molecular_weight": "2306.7",
+      "pI": "9.50",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=6:Peptides"
+      }
+    }
+  ],
+  "status_summary": {
+    "source_conflict": 1
+  },
+  "source_review_notes": {
+    "source_conflict": "APD6 AP02751/HEdefensin is linked to this packet but does not match the longicin P1/P4 primary-source entities in this paper.",
+    "database_only_no_primary_source": "No linked sequence/activity JSONL rows were present for this packet; external merged rows were used only to explain the AP02751 conflict."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "adjudication_summary": "Worker-2 recovered all 15 source-supported MIC rows from Table 1, worker-4 matched linked DBAASP assay/experiment rows while preserving peptide identity cautions, and worker-6 accepts the paper with explicit cautions rather than open rework.",
+  "caution_findings": [
+    {
+      "affected_records": 30,
+      "caution_code": "database_name_sequence_identity_conflict_preserved",
+      "evidence_context": "DBAASP activity rows match Table 1 values after unit conversion, but the packet has no linked sequence rows and the peptide name includes Tensin; final database status therefore preserves source_conflict instead of over-verifying identity."
+    },
+    {
+      "caution_code": "direct_mechanism_not_assayed",
+      "evidence_context": "Primary source supports antimicrobial phenotype and structural characterization, while membrane mechanism discussion remains literature-context only."
+    },
+    {
+      "caution_code": "toxicity_not_reported",
+      "evidence_context": "No hemolysis/cytotoxicity endpoint was found in local XML, PDF text, supplementary DOCX/PDF, or linked DBAASP rows; this is absence of a toxicity claim, not a missing activity-table value."
+    },
+    {
+      "caution_code": "activity_prose_table_unit_discrepancy_preserved",
+      "evidence_context": "For P. expansum CMPG 136, Table 1 and linked DBAASP rows support 20 mg/ml while nearby prose says 20 mg/l; final activity/database rows follow the table/database value and retain the mismatch as a source caution."
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fmicb.2018.01030/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extracted/oa_package/local-DBAASP-PMC5985324/PMC5985324/fmicb-09-01030.nxml",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extracted/pdf_text/fmicb-09-01030.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extracted/oa_package/local-DBAASP-PMC5985324/PMC5985324/Table_1.docx",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extracted/oa_package/local-DBAASP-PMC5985324/PMC5985324/Presentation_1.pdf",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/extracted/pdf_text/Presentation_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2018.01030/database/linked_literature_records.jsonl"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local obtainable materials were sufficient to resolve the activity blocker; supplements add structure/isoform context and no extra activity/toxicity rows.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3389_fmicb.2018.01030",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Thirty linked DBAASP assay/experiment rows were reconciled to Table 1 values/targets after mg/ml to µg/ml conversion and retained as source_conflict because packet database identity lacks linked sequence rows and uses the Tensin/Milkisin C name.",
+    "layer_2_activity_toxicity": "All 15 Table 1 MIC rows were recovered with endpoint, value, mg/ml unit, target species/strain, assay method, and source locators. The P. expansum prose/table unit discrepancy is preserved as a caution. Toxicity endpoints were not reported locally.",
+    "layer_3_mechanism": "Primary source supports antimicrobial phenotype and cyclic lipopeptide structure; direct membrane mechanism and isoform-specific activity remain cautions, not unsupported direct_mechanism claims."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-06T17:13:56Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_source_locators": true,
+    "activity_rows_have_units": true,
+    "activity_rows_parsed": 15,
+    "database_status_summary": {
+      "source_conflict": 30,
+      "source_verified": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_ticket_ids": [],
+    "required_rework_count": 0,
+    "resolved_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "validator_contract_passed": true
+}

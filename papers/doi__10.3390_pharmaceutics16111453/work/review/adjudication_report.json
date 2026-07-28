@@ -1,0 +1,112 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics16111453",
+  "reviewed_at": "2026-05-09T19:20:25Z",
+  "generated_at": "2026-05-09T19:20:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "figure_image_manual_review"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "image_figures": true,
+    "note": "No external unsupported supplement chase remains; the local OA package zip supplied the supplementary PDF and Figure 3 supplied the activity/toxicity matrix."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_pharmaceutics16111453/handoff_context.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/packet_manifest.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/locators/locator_index.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/pdf_text/local-DBAASP-PMC11597323.txt",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/oa_package/local-DBAASP-PMC11597323/PMC11597323/pharmaceutics-16-01453-g003.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/oa_package/local-DBAASP-PMC11597323/PMC11597323/pharmaceutics-16-01453-g004.jpg",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/extracted/oa_package/local-DBAASP-PMC11597323/PMC11597323/pharmaceutics-16-01453-s001.zip",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_pharmaceutics16111453/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_pharmaceutics16111453/source/paper.xml",
+    "papers/doi__10.3390_pharmaceutics16111453/source/paper.pdf"
+  ],
+  "tools_attempted": [
+    "jq over handoff, packet, final, and database JSON/JSONL artifacts",
+    "rg over paper XML, extracted PDF text, package members, and database rows",
+    "pdftotext -layout over the supplementary PDF inside pharmaceutics-16-01453-s001.zip",
+    "manual visual inspection of Figure 3 image for MIC/toxicity matrix support",
+    "semantic_three_layer_gate.py --paper-id doi__10.3390_pharmaceutics16111453 --json",
+    "check_three_layer_publication_quality.py --manifest reports/doi__10.3390_pharmaceutics16111453.complete_message_test_manifest.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 86,
+    "activity_record_count_by_endpoint": {
+      "MIC": 80,
+      "hemolysis_or_cytotoxicity_limit": 6
+    },
+    "database_status_summary": {
+      "source_verified": 175
+    },
+    "mechanism_claims": 3,
+    "source_paths_checked_count": 16
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 source-verified the linked DBAASP assay/experiment/literature rows against article metadata, Figure 3, methods, and Supplementary Table S2; duplicate database snapshots are preserved as caution context.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 86 source-located activity/toxicity rows from the linked DBAASP assay snapshot and reconciled them to Figure 3a/c/d and methods. MIC-like rows have units; database row 184696 unit was repaired from the Figure 3a µM caption.",
+    "layer_3_mechanism": "Worker-6 bounded mechanism claims to source-backed LptA/LPS-envelope resistance context for Rip-2 and ONPG membrane-permeability support for Rip-3/Rip-4, with structural context kept separate.",
+    "publication_grade_review": "The prior framework-test ticket is closed only after strict semantic and publication-quality gates pass."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "figure_matrix_values_reconciled_with_database_rows",
+      "severity": "caution",
+      "evidence_context": "The local XML/PDF text does not expose Figure 3a as a structured table; values were reconciled from the local Figure 3 image plus linked DBAASP rows rather than parser output alone."
+    },
+    {
+      "caution_code": "duplicate_dbaasp_surfaces_preserved",
+      "severity": "caution",
+      "evidence_context": "linked_assay_records.jsonl and linked_experiment_records.jsonl duplicate the same 86 DBAASP assay rows; database audit keeps both with traceability."
+    },
+    {
+      "caution_code": "mechanism_not_overclaimed",
+      "severity": "caution",
+      "evidence_context": "Rip-3/Rip-4 membrane damage is supported, but the paper says specific membrane or intracellular targets cannot be excluded."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-2/4/6 re-review recovered source-supported activity/toxicity rows, source-verified linked database rows, bounded mechanism claims, and cleared the original source-review blocker with cautions.",
+  "summary": "Source-reviewed rework of doi__10.3390_pharmaceutics16111453 across worker-2, worker-4, and worker-6 owned layers.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "gate_evidence": {
+      "semantic_gate_report": "reports/doi__10.3390_pharmaceutics16111453.semantic_gate.json",
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_report": "reports/doi__10.3390_pharmaceutics16111453.publication_quality.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "gate_verified_at": "2026-05-09T19:20:25Z"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "adjudication_summary": "PMC11531597 final artifacts were rebuilt from current owner-lane source-reviewed artifacts. The remaining findings are cautions only: authoritative DBAASP linked rows are absent, fallback/database-only rows are not ingest-ready, and Figure 6 toxicity measurements remain approximate digitized values with calibration and uncertainty metadata preserved.",
+  "artifact": "worker6_adjudication_report",
+  "authoritative_database_ingest_ready": false,
+  "caution_findings": [
+    {
+      "code": "authoritative_dbaasp_linked_rows_absent",
+      "layer": "database",
+      "note": "Linked authoritative DBAASP article/assay/sequence/literature rows remain absent; fallback machine rows are not promoted to authoritative ingest-ready.",
+      "severity": "caution"
+    },
+    {
+      "code": "figure6_digitized_values_are_approximate",
+      "layer": "activity_toxicity",
+      "note": "Figure 6 toxicity values are digitized approximations with calibration metadata and uncertainty/status preserved.",
+      "severity": "caution"
+    },
+    {
+      "code": "database_only_or_unresolved_fallback_rows_preserved",
+      "layer": "database",
+      "note": "Database-only/unresolved fallback rows remain separated from source-verified primary evidence.",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": {
+    "authoritative_match_report": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/authoritative_match_report.json",
+    "database_source_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/database/database_source_manifest.json",
+    "packet_manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/packet_manifest.json",
+    "pdf_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/pdf_text.jsonl",
+    "rework_requests": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/rework/rework_requests.jsonl",
+    "rework_responses": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/rework/rework_responses.jsonl",
+    "supplementary_index": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/supplementary_index.json",
+    "supplementary_text": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/supplementary_text.jsonl",
+    "worker2_activity_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/analysis/activity_toxicity_evidence.worker2.json",
+    "worker3_figure6_digitization": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/figure6_hemolysis_digitization.json",
+    "worker4_database_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/analysis/database_record_audit.worker4.json",
+    "worker5_mechanism_artifact": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/analysis/mechanism_evidence.worker5.json",
+    "xml_sections": "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC11531597/extracted/xml_sections.json"
+  },
+  "final_counts": {
+    "activity_records": 30,
+    "database_record_audits": 27,
+    "mechanism_claims": 6,
+    "review_rework_targets": 0,
+    "toxicity_records": 12
+  },
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "PMC11531597",
+  "per_layer_decision_rationale": {
+    "activity_toxicity_evidence": "Accepted with cautions after worker-6 rebuild: table-cell activity records remain source-located and Figure 6 toxicity observations are present with approximate digitization status, locators, calibration, and role fields.",
+    "database_record_verification": "Accepted with cautions: source-reviewed worker-4 audit preserves unresolved/database-only fallback rows and does not mark authoritative DBAASP ingest-ready without linked authoritative rows.",
+    "mechanism_ontology": "Accepted with cautions: worker-5 claims remain source-located and evidence-class bounded without promoting inferred/computational context to direct mechanism.",
+    "rework_ticket_contracts": "Owner repair responses are present for worker-2 and worker-3; terminal closure still depends on fresh strict post-response gates."
+  },
+  "post_worker6_gate_results": {
+    "gate_artifact_paths": {
+      "manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC11531597_acceptance_manifest.json",
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_packet.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_publication.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_semantic.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    },
+    "packet_open_rework_ticket_count": 0,
+    "publication_risk_count": 0,
+    "semantic_issue_count": 0,
+    "status": "strict_pass_terminal_reports_refreshed",
+    "updated_at": "2026-07-15T10:23:53Z"
+  },
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "rebuild_evidence": {
+    "current_contract_artifact_audit": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_current_contract_artifact_audit.json",
+    "merge_stats": {
+      "figure_observations_seen": 12,
+      "missing_observation_matches": 0,
+      "toxicity_records_seen": 12,
+      "toxicity_records_updated": 12
+    }
+  },
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-07-15T10:23:53Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "database_fallback_rows_not_authoritative_ingest_ready": true,
+    "figure6_non_table_observation_contract_aligned": true,
+    "materials_exhausted": true,
+    "mechanism_claims_evidence_class_bounded": true,
+    "non_activity_tables_rejected": true,
+    "source_review_depth_complete": true,
+    "strict_gates_pending_after_rebuild": true,
+    "table_cell_contract_checked": true,
+    "toxicity_figure6_records_have_role_value_unit_locator_status_calibration": true
+  },
+  "source_review_depth": {
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "source_reviewed": true,
+  "strict_gate": {
+    "gate_artifact_paths": {
+      "manifest": "pipeline_v2/deepmine/dbaasp_strict_pilot/manifests/dbaasp_strict_pilot_PMC11531597_acceptance_manifest.json",
+      "packet": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_packet.json",
+      "publication": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_publication.json",
+      "semantic": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11531597/work/review/worker6_terminal_semantic.json"
+    },
+    "gate_return_codes": {
+      "packet": 0,
+      "publication": 0,
+      "semantic": 0
+    },
+    "packet_open_rework_ticket_count": 0,
+    "publication_risk_count": 0,
+    "semantic_issue_count": 0,
+    "status": "strict_pass_terminal_reports_refreshed",
+    "updated_at": "2026-07-15T10:23:53Z"
+  },
+  "ticket_contract_evidence": {
+    "activity_records": 30,
+    "assigned_ticket_ids": [
+      "rwk-PMC11531597-worker2-activity-001",
+      "rwk-PMC11531597-exact-table-cell-contract-002",
+      "rwk-PMC11531597-figure6-hemolysis-digitization-003"
+    ],
+    "figure6_non_table_observation_contract_aligned": true,
+    "figure6_observations_merged": 12,
+    "hard_rework_targets_remaining": 0,
+    "overall_contract_pass": "pending_fresh_strict_gates",
+    "owner_response_prerequisite_pass": true,
+    "toxicity_records": 12
+  },
+  "validator_contract_passed": true
+}

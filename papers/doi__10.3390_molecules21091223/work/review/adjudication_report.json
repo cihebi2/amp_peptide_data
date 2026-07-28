@@ -1,0 +1,107 @@
+{
+  "paper_id": "doi__10.3390_molecules21091223",
+  "reviewed_at": "2026-05-09T16:50:10Z",
+  "generated_at": "2026-05-09T16:50:10Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_assets_note": "No local supplementary files were present in packet/source inventory; local supplementary indexes were checked."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/raw/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/oa_package/local-DBAASP-PMC6273456/PMC6273456/molecules-21-01223.nxml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/oa_package/local-DBAASP-PMC6273456/PMC6273456/molecules-21-01223-g001.jpg",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/oa_package/local-DBAASP-PMC6273456/PMC6273456/molecules-21-01223-g004.jpg",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/pdf_text/molecules-21-01223.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_molecules21091223/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+  ],
+  "tools_attempted": [
+    "xml.etree.ElementTree table/section extraction",
+    "pdftotext text recovery",
+    "rg source/database lookup",
+    "local OA package image inspection for Figure 1/Figure 4",
+    "JSONL linked database row reconciliation"
+  ],
+  "summary": "Source-reviewed worker-2/4/6 re-review resolved the Table 3 MBEC extraction blocker, reconciled linked DBAASP rows to Tables 1/2, preserved CAMP/dbAMP entry-level conflicts, and replaced automated mechanism notes with source-located adjudication.",
+  "adjudication_summary": "Publication-grade acceptance is with cautions: all gate-critical local values were recovered, no unsupported values were fabricated, and remaining database notation/entry conflicts are explicitly preserved.",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 21,
+    "activity_extraction_issue_count": 0,
+    "table_3_mbec_recovered": true,
+    "database_status_summary": {
+      "source_verified": 13,
+      "source_conflict": 2
+    },
+    "mechanism_claims": 3,
+    "unrecoverable_material_gap_count": 0,
+    "open_rework_target_count": 0,
+    "source_conflicts_preserved": 2
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP rows for AMP38 MIC/FICi and literature linkage are source-reconciled to Tables 1/2 and article metadata; CAMP/dbAMP entry-level rows are preserved as source_conflict because they include non-paper targets or mixed-publication values.",
+    "layer_2_activity_toxicity": "Table 1 AMP38 MICs, Table 2 FICi values, Table 3 MBEC values, source figure concentration conditions, and toxicity/cytotoxicity values are recorded with raw values, units, targets, conditions, and locators.",
+    "layer_3_mechanism": "TEM supports a direct membrane/envelope morphology claim; carbapenem-entry synergy remains a phenotype-supported inference, and biofilm eradication remains an activity phenotype rather than a molecular mechanism claim.",
+    "final_adjudication": "No blocking/major QC issue remains after bounded local source review; cautions are not hidden and do not block publication-grade artifact acceptance."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_entry_level_conflicts_preserved",
+      "owner_worker": "worker-4",
+      "evidence_context": "CAMP/dbAMP entry-level AMP38 rows cite this PMID/DOI but mix or list target activity values not present in this paper; these remain source_conflict records, not source-verified paper assay rows.",
+      "record_ids": [
+        "CAMP:CAMPSQ23182",
+        "dbAMP:dbAMP_31835"
+      ]
+    },
+    {
+      "caution_code": "modified_sequence_not_plain_text_normalized",
+      "owner_worker": "worker-4 + worker-6",
+      "evidence_context": "The paper supports AMP38 as a chemically modified cyclolipopeptide through Figure 1 and synthesis text; database one-letter X/f/c notation is preserved as database notation and not silently normalized."
+    },
+    {
+      "caution_code": "l929_cytotoxicity_data_not_shown",
+      "owner_worker": "worker-2 + worker-6",
+      "evidence_context": "The local article reports the L-929 upper tested concentration qualitatively with data not shown; no numeric cytotoxicity series is fabricated."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "semantic_gate_expected": "pass",
+    "publication_quality_expected": "pass"
+  },
+  "packet_analysis_status": "analysis_accepted_with_cautions",
+  "final_artifacts_ready": true
+}

@@ -1,0 +1,202 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0050003",
+  "reviewed_at": "2026-05-03T05:47:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "blocked_missing_primary_material",
+  "publication_grade": false,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Bounded worker-2/4/6 re-review recovered primary-source fusaricidin exposure/growth rows, preserved DRAMP/dbAMP database conflicts without false source verification, and replaced generic mechanism notes with source-bounded claims. Final publication-grade approval remains blocked because local materials do not contain the referenced Table S1 XLSX needed for complete supplementary gene-row review.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1371_journal.pone.0050003/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0050003/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0050003/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0050003/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1371_journal.pone.0050003/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0050003/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original",
+    "paper_packets/doi__10.1371_journal.pone.0050003/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0050003/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0050003/database/linked_literature_records.jsonl",
+    "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0050003/source/paper.pdf"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": "not_present_in_packet; raw/oa_package and source package paths checked",
+    "supplementary_assets": "checked local symlinked supplementary_original files, landed asset manifest, metadata, file signatures, unzip, and strings; Table S1 XLSX absent",
+    "merged_database_rows": true,
+    "note": "Local material is exhausted for worker-2/4/6 repair. Missing XLSX is recorded as an unrecoverable material gap rather than being fabricated."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 3,
+    "activity_missing_core_fields": 0,
+    "database_records_reviewed": 48,
+    "database_status_summary": {
+      "source_conflict": 44,
+      "database_only_no_primary_source": 4
+    },
+    "database_source_conflicts_preserved": 44,
+    "database_only_no_primary_source": 4,
+    "mechanism_claims": 4,
+    "open_rework_targets": 1,
+    "unrecoverable_material_gaps": 1,
+    "source_review_gap_remaining": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "All 48 linked database rows were rechecked against paper-local XML/PDF and database snapshots. DRAMP/dbAMP activity rows remain source_conflict because the paper does not provide individual A-D sequence/modification/activity rows; citation-only rows are database_only_no_primary_source rather than source_verified.",
+    "layer_2_activity_toxicity": "Worker-2 repair now records three source-supported exposure/growth/membrane-context rows with endpoint, raw value, unit, target species/strain, assay context, and source locators. No exact MIC value is fabricated.",
+    "layer_3_mechanism": "Mechanism claims are bounded to main-text/XML evidence for membrane damage, sigma W response, growth inhibition, pathway regulation, and comparative transcriptome context. Exact Table S1 gene rows remain unrecoverable locally.",
+    "worker_6_final_gate": "The original generic rework ticket is answered with concrete repairs, but final approval remains blocked by the documented missing local supplementary XLSX."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_records_not_source_verified_from_this_paper",
+      "evidence_context": "DRAMP/dbAMP rows are preserved as source_conflict/database_only_no_primary_source because exact sequences/activity values are not embedded in the 2012 primary article."
+    },
+    {
+      "caution_code": "activity_rows_are_exposure_context_not_mic_table",
+      "evidence_context": "Primary source supports sub-MIC exposure and growth inhibition; it does not report exact MIC/MBC values."
+    }
+  ],
+  "qc_failure_reasons": [
+    {
+      "code": "unrecoverable_supplementary_table_s1_xlsx_not_local",
+      "owner_worker": "worker-6",
+      "severity": "blocking",
+      "reason": "The local packet/source tree lacks the Table S1 XLSX referenced by the primary XML; exact supplementary gene-level values cannot be source-reviewed after bounded local recovery."
+    }
+  ],
+  "rework_targets": [
+    {
+      "ticket_id": "rwk-codex-rereview-20260503-unrecoverable-s1",
+      "paper_id": "doi__10.1371_journal.pone.0050003",
+      "created_at": "2026-05-03T05:47:11Z",
+      "worker": "worker-6",
+      "owner_worker": "worker-6",
+      "target_queue": "adjudication",
+      "layer": "review",
+      "artifact_path": "papers/doi__10.1371_journal.pone.0050003/final/review_report.json",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "unrecoverable_supplementary_table_s1_xlsx_not_local",
+      "omission_code": "supplementary_table_s1_xlsx_not_local",
+      "severity": "blocking",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "reason": "Worker-2 and worker-4 repair recovered source-supported exposure rows and preserved database conflicts, but local material cannot support exact Table S1 XLSX gene rows required for fully source-reviewed mechanism adjudication.",
+      "required_action": "Keep paper non-accepted; do not rerun bootstrap. Controller may advance after recording the unrecoverable local material gap, or external/source acquisition is required outside obtainable-only mode.",
+      "source_paths_to_check": [
+        "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0050003/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-10.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-3.0050003",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-4.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-5.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-6.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-8.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-9.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/metadata.json"
+      ],
+      "requested_outputs": [
+        {
+          "asset": "source/paper.xml and PDF text",
+          "need": "Already checked for activity, database, and mechanism values; no additional local action for Table S1 is available.",
+          "required_locators": [
+            "xml:sec=s4:Supporting Information",
+            "xml:media=pone.0050003.s001.xlsx"
+          ]
+        }
+      ],
+      "unrecoverable_material_gaps": [
+        {
+          "gap_code": "supplementary_table_s1_xlsx_not_local",
+          "source_paths_checked": [
+            "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+            "paper_packets/doi__10.1371_journal.pone.0050003/extracted/pdf_text/landing-1.txt",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-1.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-10.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-2.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-3.0050003",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-4.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-5.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-6.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-8.bin",
+            "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-9.bin",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/asset_manifest.csv",
+            "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/metadata.json"
+          ],
+          "tools_attempted": [
+            "file -L",
+            "rg",
+            "find paper-specific landed/downloaded paths",
+            "unzip -l",
+            "strings",
+            "xxd",
+            "pdf text index review"
+          ],
+          "why_unrecoverable": "The primary XML points to pone.0050003.s001.xlsx, but local materials do not contain that XLSX. The only asset_manifest supplementary entry is landing-5.bin, and strings/file identify it as Figure 1 TIFF metadata rather than Table S1. The other local supplementary files are HTML/landing material, not spreadsheet content.",
+          "impact": "Supplementary Table S1 exact gene rows and values cannot be source-reviewed; final review must remain non-publication-grade under obtainable-only mode.",
+          "owner_worker": "worker-6",
+          "related_material_owner": "worker-3",
+          "blocks_publication_grade": true,
+          "next_action": "record_and_continue"
+        }
+      ]
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_table_s1_xlsx_not_local",
+      "source_paths_checked": [
+        "papers/doi__10.1371_journal.pone.0050003/source/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0050003/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-10.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-2.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-3.0050003",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-4.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-5.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-6.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-8.bin",
+        "paper_packets/doi__10.1371_journal.pone.0050003/raw/supplementary_original/landing-9.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0050003/metadata.json"
+      ],
+      "tools_attempted": [
+        "file -L",
+        "rg",
+        "find paper-specific landed/downloaded paths",
+        "unzip -l",
+        "strings",
+        "xxd",
+        "pdf text index review"
+      ],
+      "why_unrecoverable": "The primary XML points to pone.0050003.s001.xlsx, but local materials do not contain that XLSX. The only asset_manifest supplementary entry is landing-5.bin, and strings/file identify it as Figure 1 TIFF metadata rather than Table S1. The other local supplementary files are HTML/landing material, not spreadsheet content.",
+      "impact": "Supplementary Table S1 exact gene rows and values cannot be source-reviewed; final review must remain non-publication-grade under obtainable-only mode.",
+      "owner_worker": "worker-6",
+      "related_material_owner": "worker-3",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 1,
+    "blocking_issue_count": 1,
+    "publication_grade_ready": false,
+    "reason": "supplementary_table_s1_xlsx_not_local"
+  }
+}

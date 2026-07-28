@@ -1,0 +1,117 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1016_j.isci.2024.110404",
+  "doi": "10.1016/j.isci.2024.110404",
+  "run_id": "codex_rereview_20260502_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "codex_rereview_mechanism_adjudication",
+  "generated_at": "2026-05-02T04:03:31Z",
+  "reviewed_at": "2026-05-02T04:03:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism ontology constraints from primary text/Figures 4-7 and supplement Figure S1; PI/nucleic-acid wording is retained only as readout context.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "TC-14 directly increases bacterial membrane permeability in E. coli, A. baumannii, P. aeruginosa, and S. aureus as measured by propidium-iodide fluorescence after peptide addition.",
+      "entity_scope": "TC-14",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide fluorescence membrane-permeabilization assay"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1016_j.isci.2024.110404/raw/paper.xml",
+        "locator": "xml:sec=TC-14 kills bacteria by inducing membrane permeabilization and rupture; xml:fig=5:Figure 4",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt:lines 292-299,354-356"
+      },
+      "limitations": "PI binds DNA/RNA after membrane entry; the assay supports membrane permeability, not a nucleic-acid molecular target."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "TC-14 treatment causes membrane disruption, content leakage, cytoplasmic clear zones, and cell lysis morphology in P. aeruginosa and S. aureus by SEM/TEM imaging.",
+      "entity_scope": "TC-14",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "scanning electron microscopy",
+        "transmission electron microscopy"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1016_j.isci.2024.110404/raw/paper.xml",
+        "locator": "xml:sec=TC-14 kills bacteria by inducing membrane permeabilization and rupture; xml:fig=6:Figure 5",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt:lines 321-327,393-395"
+      },
+      "limitations": "Morphology supports membrane/cell-envelope disruption but does not identify a specific molecular receptor."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "TC-14 has bactericidal kinetic evidence at 5 x MIC against A. baumannii and S. aureus, with A. baumannii eradicated by 180 min and S. aureus reduced by more than 99% by 180 min under the reported assay.",
+      "entity_scope": "TC-14",
+      "evidence_class": "direct_activity_assay_not_mechanism",
+      "direct_assay_types": [
+        "time-kill CFU assay"
+      ],
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1016_j.isci.2024.110404/raw/paper.xml",
+        "locator": "xml:sec=TC-14 shows medium killing rate and low propensity to induce resistance; xml:fig=7:Figure 6",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt:lines 330-341"
+      },
+      "limitations": "Bactericidal kinetics constrain activity and resistance interpretation but do not by themselves prove molecular mechanism."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "TC-14 shows in vivo skin-wound efficacy against S. aureus and A. baumannii infection models, but this is pharmacodynamic efficacy rather than a separate molecular mechanism.",
+      "entity_scope": "TC-14",
+      "evidence_class": "in_vivo_efficacy_not_mechanism",
+      "source_locator": {
+        "source_path": "paper_packets/doi__10.1016_j.isci.2024.110404/raw/paper.xml",
+        "locator": "xml:sec=TC-14 shows therapeutic potential against skin infection; xml:fig=8:Figure 7",
+        "pdf_text_locator": "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt:lines 359-368"
+      },
+      "limitations": "No host immunomodulatory mechanism is assigned from these efficacy data."
+    }
+  ],
+  "semantic_quality_checks": {
+    "direct_mechanism_overclaim": "absent",
+    "nucleic_acid_overclaim": "absent; PI/nucleic acid wording is assay readout context only",
+    "source_locators_present": true,
+    "mechanism_status": "direct membrane-permeabilization and membrane-rupture evidence with bounded kinetics/in-vivo context"
+  },
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "plasma_pseudomonas_timecourse_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/mmc1.txt",
+        "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.isci.2024.110404/raw/paper.xml"
+      ],
+      "tools_attempted": [
+        "sed",
+        "rg",
+        "xml.etree.ElementTree section review",
+        "manual supplement table parsing"
+      ],
+      "why_unrecoverable": "The method mentions evaluating P. aeruginosa during the plasma assay, but local Table S2/text only tabulates A. baumannii and S. aureus time-course MIC values.",
+      "impact": "No P. aeruginosa plasma time-course rows were fabricated; Table S2-supported rows remain recorded.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "figure_exact_point_values_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/main.txt",
+        "paper_packets/doi__10.1016_j.isci.2024.110404/extracted/pdf_text/mmc1.txt",
+        "paper_packets/doi__10.1016_j.isci.2024.110404/raw/oa_package"
+      ],
+      "tools_attempted": [
+        "sed",
+        "rg",
+        "figure caption and text review"
+      ],
+      "why_unrecoverable": "Figure 3, Figure 4, Figure 5, Figure 6, Figure 7, Figure S1, and Figure S2 provide plotted/image evidence; exact graph point values beyond prose/table values are not present in local text tables.",
+      "impact": "Only text/table-supported values are curated; mechanism/toxicity/effect claims are bounded to qualitative or prose-reported values.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ]
+}

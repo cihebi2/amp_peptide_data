@@ -1,0 +1,83 @@
+{
+  "paper_id": "doi__10.1155_2024_2205864",
+  "reviewed_at": "2026-05-03T07:16:57Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML, PDF text/page image, OA package DOCX supplement, packet database JSONL, and merged sequence/experiment rows were checked. No blocking source gap remains for obtainable-only publication-grade curation."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/database/linked_literature_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1155_2024_2205864/source/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1155_2024_2205864/source/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/extracted/pdf_text/IJI2024-2205864.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1155_2024_2205864/extracted/oa_package/local-APD6-pmc_package/PMC10799709/2205864.f1.docx",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 100,
+    "mechanism_claims_source_reviewed": 4,
+    "database_record_status_summary": {
+      "database_only_no_primary_source": 16,
+      "source_conflict": 30,
+      "source_verified": 138
+    },
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Sequence identities for DRS-DA2NEQ/DRS-DA2N were verified from Figure 1/PDF text and local merged database rows. Exact table-backed DBAASP MIC/MBC/leukocyte LC50 rows are source_verified; target identifier conflicts and figure-only exact percentages are preserved as source_conflict or database_only_no_primary_source.",
+    "layer_2_activity_toxicity": "Final activity rows were rebuilt from source Tables 1-4 with raw values, target labels, units, and locators. Figure-only exact percentages were not fabricated into final source-supported rows.",
+    "layer_3_mechanism": "Mechanism claims were rewritten from CD/NMR, membrane disruption, bacterial permeabilization, LUV leakage, and in vivo peritonitis evidence with direct assay types where applicable.",
+    "supplementary_material": "OA package DOCX supplement was opened and parsed; it contains supplementary figures and NMR statistics but no additional antimicrobial spreadsheet/table that changes source-supported activity rows."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "table2_unit_label_conflict_preserved",
+      "evidence_context": "Table 2 header renders as pM in XML/PDF while methods, results prose, and database rows use micromolar; final activity rows preserve the conflict in unit_source_note."
+    },
+    {
+      "caution_code": "source_text_unclear_value_not_normalized",
+      "evidence_context": "K. rhizophila DRS-DA2NEQ MBC is printed as 1.s in XML/PDF; database rows carrying 1.6 are retained as source_conflict."
+    },
+    {
+      "caution_code": "database_target_identifier_conflicts_preserved",
+      "evidence_context": "DBAASP rows with ATCC 25923 vs source ATCC 6538 and ATCC 29473 vs source ATGG 29473 remain source_conflict rather than being silently normalized."
+    },
+    {
+      "caution_code": "database_only_figure_quantitation_preserved",
+      "evidence_context": "Exact DBAASP hemolysis/cytotoxicity percentages without textual/table primary values are kept as database_only_no_primary_source with figure/caption context."
+    },
+    {
+      "caution_code": "supplementary_docx_recovered",
+      "evidence_context": "The OA package contains 2205864.f1.docx with Figures S1-S7 and Table S1; it was parsed and did not add additional antimicrobial table values."
+    }
+  ],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 re-review completed a source-grounded database reconciliation and final adjudication for DRS-DA2. The paper is publication-grade with cautions because unresolved database rows are explicitly labeled and no blocking rework target remains."
+}

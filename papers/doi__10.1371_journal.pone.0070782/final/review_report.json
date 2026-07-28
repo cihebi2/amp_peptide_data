@@ -1,0 +1,98 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0070782",
+  "reviewed_at": "2026-05-03T16:08:19Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened handoff, packet manifest, locator index, extraction status/quality, XML/PDF text, OA-package members, supplementary index/text/landing assets/TIFF captions, packet database JSONL rows, and merged-output database rows needed for worker-4/6 adjudication."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1371_journal.pone.0070782/handoff_context.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/xml_sections.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/pdf_text/pone.0070782.txt",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/figure_captions.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/database_source_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0070782/raw/supplementary_original",
+    "papers/doi__10.1371_journal.pone.0070782/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0070782/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 86,
+    "database_record_status_summary": {
+      "source_conflict": 25,
+      "source_verified": 162
+    },
+    "database_record_count": 187,
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "table2_leishmania_rows_recovered_from_pdf_text": true,
+    "supplementary_assets_checked": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled linked DBAASP/APD6/DRAMP plus packet-linked CAMP/dbAMP rows against primary Table 1 sequences, Table 2/3 values, PDF-text Leishmania rows, article DOI/PMID/PMCID, and merged-output rows. Source-supported rows are source_verified; the PLS-S5 DBAASP alias mismatch remains source_conflict with context.",
+    "layer_2_activity_toxicity": "Worker-6 preserved all locally supported Table 2 MIC/IC50 and Table 3 LC50/IC50 rows, including ND/NA without fabricating numeric values.",
+    "layer_3_mechanism": "Worker-6 replaced framework placeholders with source-reviewed direct membrane permeabilization/time-kill claims and bounded model-membrane/computational context.",
+    "supplementary_material": "Supplementary TIFF captions support peptide identification by MALDI-TOF/MS-MS; no structured supplement table changes activity/toxicity/database conclusions.",
+    "publication_grade_review": "No blocking/major owner-layer issue or open rework ticket remains; preserved conflicts are caution-level and explicit."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_3899_alias_conflict_preserved",
+      "evidence_context": "DBAASP:DBAASPR_3899 carries Phyllin/Medusin aliases while the current primary paper labels the matching sequence and Table 2 activity as PLS-S5; the row is retained as source_conflict rather than silently renamed."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "The packet has zero linked_sequence_records rows; peptide identity was verified from primary Table 1 and linked database/merged-output rows instead of a packet sequence snapshot."
+    },
+    {
+      "caution_code": "xml_table2_parser_omitted_leishmania_block",
+      "evidence_context": "The source XML/table extraction omitted the Table 2 Leishmania IC50 block; the same primary-paper values were recovered from local PDF text lines 449-493 and preserved in final activity rows."
+    },
+    {
+      "caution_code": "supplementary_assets_no_structured_tables",
+      "evidence_context": "Supplementary assets were checked as HTML landings plus two TIFF supporting figures; XML captions identify Figure S1/S2 as MALDI-TOF/MS-MS support for peptide identification, not additional activity/toxicity tables."
+    },
+    {
+      "caution_code": "mechanism_curves_not_digitized",
+      "evidence_context": "Figure curves for time-kill, membrane leakage, CD, and DSC were source-reviewed qualitatively without inventing exact plotted time-series values."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_blocking_issue_count": 0
+  },
+  "adjudication_summary": "Worker-4/6 source review closed rwk-complete-test-0001. The paper is accepted_with_cautions: peptide identity, Table 2/Table 3 activity/toxicity rows, database linkage, and mechanism claims are source-reviewed from local material; the remaining PLS-S5 database-alias conflict and absent linked_sequence_records snapshot are explicit nonblocking cautions."
+}

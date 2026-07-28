@@ -1,0 +1,140 @@
+{
+  "paper_id": "doi__10.1186_1471-2164-11-187",
+  "generated_at": "2026-05-03T09:47:32Z",
+  "reviewed_at": "2026-05-03T09:47:32Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Reopened packet manifest, locator index, local source XML/PDF/PDF text, extracted figure captions, supplementary landing-page assets, and linked DBAASP/CAMP database rows. Publisher DOC supplement links were visible in local HTML but DOC files were not present; core activity/database evidence needed for this gate was recoverable from primary XML/PDF."
+  },
+  "checked_inputs": [
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    "rework_context/doi__10.1186_1471-2164-11-187/handoff_context.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/packet_manifest.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/locators/locator_index.json",
+    "papers/doi__10.1186_1471-2164-11-187/source/paper.xml",
+    "paper_packets/doi__10.1186_1471-2164-11-187/raw/paper.xml",
+    "papers/doi__10.1186_1471-2164-11-187/source/paper.pdf",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/xml_sections.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/figure_captions.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1186_1471-2164-11-187/extracted/supplementary_text.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1186_1471-2164-11-187/supplementary/landing-1.bin",
+    "paper_packets/doi__10.1186_1471-2164-11-187/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1186_1471-2164-11-187/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1186_1471-2164-11-187/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "file",
+    "python xml.etree.ElementTree",
+    "manual source-row reconstruction from XML/PDF text",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 9,
+    "toxicity_rows_parsed": 0,
+    "activity_endpoint_counts": {
+      "LC": 9
+    },
+    "database_record_audit_count": 28,
+    "database_status_summary": {
+      "source_conflict": 20,
+      "database_only_no_primary_source": 6,
+      "source_verified": 2
+    },
+    "database_activity_reconciliation": "source_supported_activity_values_with_identity_and_taxon_conflicts_preserved",
+    "database_activity_match_summary": {
+      "matched_assay_or_experiment_rows": 20,
+      "database_only_or_qualitative_no_value_rows": 6,
+      "linked_literature_rows": 2,
+      "unmatched_assay_or_experiment_rows": 0
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0,
+    "strict_gate": {
+      "semantic_issue_count": 0,
+      "publication_risk_counts": {},
+      "gate_decision": "passed_after_source_reviewed_worker_2_4_6_repair"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 matched linked DBAASP/CAMP activity values to primary Table 1 or Figure 4C/prose where local material supports them. Rows remain source_conflict when database sequence identity, target strain, Bacillus species specificity, or taxonomy spelling exceeds the primary local evidence; database-only NA rows are preserved with qualitative no-effect context.",
+    "layer_2_activity_toxicity": "Worker-2 replaced the zero-row parser output with nine source-located LC records: seven pronavicin rows from Table 1 and two nasonin-1 rows from Figure 4C/prose. No toxicity endpoint is locally reported as a numeric table row.",
+    "layer_3_mechanism": "Worker-6 replaces mechanism placeholders with bounded claims: the paper supports antibacterial phenotype and structural/background context, not direct molecular mechanism assays.",
+    "worker_2_activity_repair": "Complete for obtainable local material; primary values and units are preserved without fabricating missing strain detail.",
+    "worker_4_database_record_audit": "Complete for linked rows; conflicts are explicit and nonblocking after source-supported activity reconciliation.",
+    "worker_6_final_adjudication": "The prior rework ticket is closed because no blocking worker-2/4/6 issue remains; final status is accepted_with_cautions rather than clean acceptance."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_identity_source_conflict_preserved",
+      "evidence_context": "Activity values from DBAASP/CAMP rows are reconciled to primary Table 1 or Figure 4C, but normalized database sequence/terminal-modification rows are not locally present; source_conflict remains the appropriate layer-1 status for activity-linked records.",
+      "affected_layer": "database",
+      "status_counts": {
+        "source_conflict": 20,
+        "database_only_no_primary_source": 6,
+        "source_verified": 2
+      }
+    },
+    {
+      "caution_code": "target_taxon_granularity_preserved",
+      "evidence_context": "Primary source uses Bacillus sp., E. coli, and Stenotrophomonus spelling in places where databases supply more specific or normalized labels; final rows preserve the primary labels and database audit records the differences.",
+      "affected_layer": "activity/database"
+    },
+    {
+      "caution_code": "mechanism_not_directly_tested",
+      "evidence_context": "The paper directly measures antibacterial phenotype by inhibition-zone assays but does not directly test a molecular killing mechanism for pronavicin or nasonin-1.",
+      "affected_layer": "mechanism"
+    },
+    {
+      "caution_code": "supplementary_doc_links_not_local_nonblocking",
+      "evidence_context": "Local supplementary files are publisher HTML/link pages and no DOC tables were present in the packet; core activity and database-gate values are recoverable from XML/PDF, so no blocking material gap remains.",
+      "affected_layer": "material_packet"
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed worker-2/4/6 re-review repaired the missing activity layer from primary Table 1 and Figure 4C, reconciled linked DBAASP/CAMP rows while preserving sequence/taxon cautions, and replaced framework-test adjudication with paper-specific accepted_with_cautions output.",
+  "summary": "Source-reviewed worker-2/4/6 re-review repaired the prior non-publication-grade state for this Nasonia AMP genomics paper. The paper is accepted_with_cautions: all locally supported LC activity values are recorded, database activity rows are reconciled to primary evidence, and unresolved sequence/taxon/mechanism-scope limits remain visible as cautions rather than open rework.",
+  "updated_at": "2026-05-03T09:49:48Z",
+  "gate_evidence": {
+    "validated_at": "2026-05-03T09:49:48Z",
+    "semantic_report": "reports/doi__10.1186_1471-2164-11-187.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "publication_report": "reports/doi__10.1186_1471-2164-11-187.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_returncode": 0,
+    "gate_decision": "passed_after_source_reviewed_worker_2_4_6_repair"
+  }
+}

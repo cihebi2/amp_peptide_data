@@ -1,0 +1,129 @@
+{
+  "adjudication_summary": "Source-reviewed final review reconciles Table 1 identity, Table 2 MIC rows, figure-level biofilm/cytotoxicity/mechanism evidence, OA package DOCX, and APD6/DBAASP linked rows.",
+  "caution_findings": [
+    {
+      "affected_record_ids": [
+        "1847",
+        "1848",
+        "21222",
+        "175768",
+        "175773",
+        "1847",
+        "1848",
+        "21222",
+        "175768",
+        "175773",
+        "AP04848"
+      ],
+      "caution_code": "source_conflict_database_values_preserved",
+      "evidence_context": "Conflicts are explicit row-level curation outcomes, not open material-recovery blockers.",
+      "record_count": 11
+    },
+    {
+      "caution_code": "figure_level_exact_values_not_backfilled",
+      "evidence_context": "Figure-only or approximate cytotoxicity/biofilm values were not fabricated as exact source values."
+    },
+    {
+      "caution_code": "anti_sepsis_claim_bounded",
+      "evidence_context": "Lipid A binding is source-supported; anti-sepsis utility remains proposed/future-facing."
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.3389_fchem.2022.1000765/raw/paper.xml",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/pdf_text/fchem-10-1000765.txt",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/raw/oa_package/local-DBAASP-PMC9713011.tar.gz:PMC9713011/DataSheet1.docx",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/raw/supplementary_original/*.bin",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3389_fchem.2022.1000765/analysis/adjudication_report.json",
+    "papers/doi__10.3389_fchem.2022.1000765/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3389_fchem.2022.1000765/final/database_record_verification.json",
+    "papers/doi__10.3389_fchem.2022.1000765/final/mechanism_ontology_record.json"
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "generated_at": "2026-05-05T20:32:01Z",
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "source_paths_checked": [
+      "paper_packets/doi__10.3389_fchem.2022.1000765/raw/paper.xml",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/raw/paper.pdf",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/pdf_text/fchem-10-1000765.txt",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/xml_sections.json",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/extracted/figure_captions.json",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/raw/oa_package/local-DBAASP-PMC9713011.tar.gz:PMC9713011/DataSheet1.docx",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/raw/supplementary_original/*.bin",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3389_fchem.2022.1000765/database/linked_literature_records.jsonl"
+    ],
+    "supplementary_assets": true,
+    "supplementary_docx_review": "OA package DataSheet1.docx checked through OOXML; it contributes HPLC-spectrum context only and no activity/database table values.",
+    "tools_attempted": [
+      "xml.etree.ElementTree over raw JATS XML",
+      "pdftotext-derived packet text review",
+      "tar member listing and DOCX OOXML word/document.xml parse",
+      "file type inspection of supplementary landing assets",
+      "JSONL linked database row audit",
+      "strict semantic_three_layer_gate.py rerun",
+      "strict check_three_layer_publication_quality.py rerun"
+    ]
+  },
+  "paper_id": "doi__10.3389_fchem.2022.1000765",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 adjudicated 35 linked rows; source_conflict rows are preserved with source/database locators instead of being treated as clean verified rows.",
+    "layer_2_activity_toxicity": "Worker-6 final activity evidence keeps source-supported MIC, biofilm, bactericidal, pyoverdine, and HaCaT toxicity values with raw units and locators; unsupported exact database values remain cautions in database audit.",
+    "layer_3_mechanism": "Worker-6 final mechanism evidence distinguishes direct Sytox/CFU/ESI-MS evidence from prediction and phenotype-only claims.",
+    "material_packet": "Packet material remains structurally complete-with-gaps because landed supplementary assets include HTML landing files, but the OA package DOCX was opened and contains no activity/database table that changes the owner-layer decision.",
+    "publication_grade_review": "Blocking strict gate failure remains; paper is not accepted.",
+    "validator_contract": "Structural packet/final files are present; validator readiness is kept separate from publication-grade acceptance."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-05T20:32:01Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_record_count": 21,
+    "database_status_summary": {
+      "source_conflict": 11,
+      "source_verified": 24
+    },
+    "mechanism_claim_count": 5,
+    "open_rework_ticket_count": 0,
+    "semantic_gate": {
+      "publication_quality_pass": true,
+      "publication_report": "reports/doi__10.3389_fchem.2022.1000765.publication_quality.json",
+      "publication_returncode": 0,
+      "publication_risk_counts": {},
+      "semantic_issue_codes": [],
+      "semantic_issue_count": 0,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_report": "reports/doi__10.3389_fchem.2022.1000765.semantic_gate.json",
+      "semantic_returncode": 0
+    }
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "summary": "Worker-4/6 source re-review attempted but strict gates still require targeted rework.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

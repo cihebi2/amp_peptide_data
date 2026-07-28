@@ -1,0 +1,126 @@
+{
+  "paper_id": "doi__10.1002_advs.202516470",
+  "reviewed_at": "2026-05-01T10:13:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figure_image_review": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Owner-layer rework consumed the local XML/PDF/OA package, Figure 3/Figure 5 images, supplement PDF text for Tables S6-S7, and linked APD6/DBAASP rows. No external or destructive acquisition was needed."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1002_advs.202516470/handoff_context.json",
+    "paper_packets/doi__10.1002_advs.202516470/packet_manifest.json",
+    "paper_packets/doi__10.1002_advs.202516470/locators/locator_index.json",
+    "paper_packets/doi__10.1002_advs.202516470/extraction/extraction_status.json",
+    "paper_packets/doi__10.1002_advs.202516470/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/xml_sections.json",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/figure_captions.json",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/pdf_text/ADVS-13-e16470.txt",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/pdf_text/local-DBAASP-PMC12904036.txt",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/supplementary_text/ADVS-13-e16470-s001.txt",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/oa_package/local-APD6-pmc_package/PMC12904036/ADVS-13-e16470-g002.jpg",
+    "paper_packets/doi__10.1002_advs.202516470/extracted/oa_package/local-APD6-pmc_package/PMC12904036/ADVS-13-e16470-g004.jpg",
+    "paper_packets/doi__10.1002_advs.202516470/database/database_source_manifest.json",
+    "paper_packets/doi__10.1002_advs.202516470/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1002_advs.202516470/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1002_advs.202516470/database/linked_experiment_records.jsonl",
+    "papers/doi__10.1002_advs.202516470/source/paper.xml",
+    "papers/doi__10.1002_advs.202516470/source/paper.pdf"
+  ],
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_verified": 119
+    },
+    "activity_rows_parsed": 98,
+    "figure3_mic_rows": 77,
+    "toxicity_threshold_rows": 21,
+    "activity_rows_have_raw_values_and_units": true,
+    "activity_rows_have_source_locators": true,
+    "mechanism_claims": 4,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked linked APD6/DBAASP literature, assay, and APD6 entry-text rows against article metadata, Table 1 peptide sequences, Figure 3, and Supplementary Tables S6-S7. Previously open source_conflict/database-only blockers are resolved as source_verified with explicit traceability and cautions for APD6 compressed/typo labels.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 98 row-level records: 77 MIC matrix values from Figure 3 and 21 EC50/MHC/CC50 toxicity thresholds from Figure 3 plus Supplementary Tables S6-S7. All rows retain raw values, units, targets, methods, and locators.",
+    "layer_3_mechanism": "Worker-6 accepts mechanism evidence only for source-backed model-membrane assays: liposome leakage, TIRF photobleaching oligomerization, and single-channel bilayer pore formation for 615/623/1304. The final record avoids intact-cell target overclaim.",
+    "adjudication": "The blocking rework ticket rwk-complete-test-0001 is closed after source-reviewed owner-layer repair; acceptance remains accepted_with_cautions because figure-embedded values and database label cautions remain."
+  },
+  "adjudication_summary": "Source-reviewed rework repaired the missing activity rows, re-adjudicated APD6/DBAASP rows, and replaced framework-test mechanism/review placeholders. The paper is publication-grade accepted_with_cautions, with no open rework targets or unrecoverable gaps after bounded local recovery.",
+  "summary": "Source-reviewed owner-layer repair recovered Figure 3/S6/S7 activity-toxicity evidence, source-verified linked database rows, and bounded mechanism claims to model membrane assays.",
+  "caution_findings": [
+    {
+      "code": "figure3_values_are_image_embedded",
+      "severity": "caution",
+      "finding": "MIC matrix values are embedded in Figure 3 image rather than an XML table; rows were manually verified against the local figure image and database rows were used only as a traceability cross-check.",
+      "source": "xml:fig=3:Figure 3; ADVS-13-e16470-g002.jpg"
+    },
+    {
+      "code": "s_hominis_text_strain_mismatch",
+      "severity": "caution",
+      "finding": "Narrative text line for peptide 58 says S. hominis ATCC 27842, while Figure 3, methods strain list, and linked database rows use S. hominis ATCC 27844; row-level curation follows the Figure 3/methods/database strain label and preserves this caution.",
+      "affected_record": "doi__10.1002_advs.202516470-fig3-58-mic-staphylococcus-hominis-atcc-27844"
+    },
+    {
+      "code": "apd6_entry_text_spelling_and_range_compression",
+      "severity": "caution",
+      "finding": "APD6 entry text uses abbreviated/compressed organism ranges and misspells S. hominis in comments; Figure 3 and methods provide the curation labels used in final activity rows.",
+      "affected_records": [
+        "APD6:AP06295",
+        "APD6:AP06296",
+        "APD6:AP06297",
+        "APD6:AP06298",
+        "APD6:AP06299",
+        "APD6:AP06300",
+        "APD6:AP06301"
+      ]
+    },
+    {
+      "code": "linked_experiment_assay_mirror_not_duplicated",
+      "severity": "caution",
+      "finding": "linked_experiment_records contains a 98-row mirror of linked_assay_records plus seven APD6 entry rows; final audit avoids duplicating mirrored assay rows while retaining row counts and traceability."
+    },
+    {
+      "code": "mechanism_model_membrane_only",
+      "severity": "caution",
+      "finding": "Direct mechanism support is from model membrane/liposome/bilayer assays; final curation does not claim a specific intact-cell molecular target or pore stoichiometry in bacteria."
+    },
+    {
+      "code": "pore_formation_subset_only",
+      "severity": "caution",
+      "finding": "Source-supported pore-forming subset is peptides 615, 623, and 1304; all seven are not promoted to pore-forming peptides."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_expected": "pass_after_repair",
+    "publication_quality_expected": "pass_after_repair"
+  }
+}

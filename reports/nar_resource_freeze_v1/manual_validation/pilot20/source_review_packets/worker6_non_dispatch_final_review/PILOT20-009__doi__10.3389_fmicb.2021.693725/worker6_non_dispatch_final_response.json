@@ -1,0 +1,164 @@
+{
+  "paper_id": "doi__10.3389_fmicb.2021.693725",
+  "pilot_sample_id": "PILOT20-009",
+  "audit_record_id": "doi__10.3389_fmicb.2021.693725:database_audit:217",
+  "reviewed_at": "2026-06-22T08:57:00Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "final_decision": "accepted_with_cautions",
+  "files_updated": [
+    "papers/doi__10.3389_fmicb.2021.693725/final/mechanism_ontology_record.json",
+    "papers/doi__10.3389_fmicb.2021.693725/final/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2021.693725/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3389_fmicb.2021.693725/final/mechanism_evidence.json",
+    "papers/doi__10.3389_fmicb.2021.693725/final/review_report.json",
+    "paper_packets/doi__10.3389_fmicb.2021.693725/final/review_report.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/worker6_non_dispatch_final_review/PILOT20-009__doi__10.3389_fmicb.2021.693725/worker6_non_dispatch_final_response.json"
+  ],
+  "qc_summary": {
+    "readjudicated_decision_input": "needs_targeted_rework",
+    "readjudication_reason_code_input": "worker6_text_mentions_rework",
+    "original_true_review_decision": "unverifiable_best_effort",
+    "true_review_source_outcome": "accepted_with_cautions_confirmed",
+    "model_provenance_resolution": "This runner command/header is treated as gpt-5.5 xhigh provenance per prompt; the prior model self-proof blocker is not carried as hard rework.",
+    "mechanism_ontology_repair": {
+      "safe_to_repair": true,
+      "allowed_classes_enforced": [
+        "computational_only",
+        "direct_mechanism",
+        "inferred_mechanism",
+        "phenotype_supported",
+        "unknown_or_not_tested"
+      ],
+      "post_repair_classes": [
+        "phenotype_supported",
+        "unknown_or_not_tested"
+      ],
+      "normalized_claim_ids": [
+        "mech-001",
+        "mech-003"
+      ]
+    },
+    "source_material_status": {
+      "material_queue_status": "material_extracted_with_gaps",
+      "analysis_queue_status": "analysis_accepted_with_cautions",
+      "known_missing_or_blocked_materials": [],
+      "open_rework_ticket_ids": [],
+      "nonblocking_unrecoverable_gap_count": 2
+    },
+    "semantic_result": {
+      "hard_rework_targets": 0,
+      "publication_grade": true,
+      "validator_contract_passed": true,
+      "source_conflicts_preserved": 124,
+      "activity_rows_source_reviewed": 101,
+      "mechanism_claims": 3
+    },
+    "preserved_cautions": [
+      {
+        "caution_code": "source_conflicts_preserved",
+        "severity": "caution",
+        "evidence_context": "Linked database rows include aggregate sequence, toxicity, and activity claims beyond exact primary-text verification; these remain source_conflict or sequence_modified_not_normalized rather than being smoothed to source_verified.",
+        "blocks_publication_grade": false
+      },
+      {
+        "caution_code": "toxicity_value_conflict",
+        "severity": "caution",
+        "evidence_context": "CAMP row 113 carries HC50 = 25.1 +/- 0.1 mg/L for CAMPSQ13698/Brevibacillin, while the paper text/final toxicity evidence reports Brevibacillin HC50 as 18.8 +/- 0.5 mg/L.",
+        "blocks_publication_grade": false
+      },
+      {
+        "caution_code": "material_packet_with_nonblocking_gaps",
+        "severity": "caution",
+        "evidence_context": "Packet material status remains material_extracted_with_gaps and the packet manifest has a historical test-scope note, but XML, PDF, OA package inventory, DOC supplement text, locators, and database snapshots were locally present and sufficient for bounded source review.",
+        "blocks_publication_grade": false
+      },
+      {
+        "caution_code": "nonblocking_figure_exact_value_gap",
+        "severity": "caution",
+        "evidence_context": "Exact non-2V CC50 values are not promoted from local text; source-supported ranges/values are used and exact database-value conflicts remain source_conflict.",
+        "blocks_publication_grade": false
+      },
+      {
+        "caution_code": "supplementary_table3_partial_text_recovery",
+        "severity": "caution",
+        "evidence_context": "The DOC supplement exposes Table 3 title/FICI evidence via text fallbacks, but not every concentration-grid cell in clean table form; unsupported cells are not fabricated.",
+        "blocks_publication_grade": false
+      },
+      {
+        "caution_code": "mechanism_ontology_labels_repaired",
+        "severity": "caution",
+        "evidence_context": "Two local mechanism context labels were normalized to unknown_or_not_tested because the claim text and locators support context only, not direct antimicrobial mechanism closure.",
+        "blocks_publication_grade": false
+      }
+    ],
+    "validation_evidence": {
+      "json_syntax": "jq empty passed for edited mechanism, review_report, and response JSON files",
+      "response_schema": "jsonschema.validate passed against worker6_non_dispatch_final_response.schema.json",
+      "allowed_mechanism_classes": {
+        "passed": true,
+        "classes_seen": [
+          "phenotype_supported",
+          "unknown_or_not_tested"
+        ],
+        "invalid_classes": []
+      },
+      "semantic_three_layer_gate": {
+        "command": "python3 .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root . --paper-id doi__10.3389_fmicb.2021.693725 --json",
+        "returncode": 0,
+        "publication_grade_pass_count": 1,
+        "publication_grade_fail_count": 0,
+        "issue_count": 0
+      },
+      "publication_quality_gate": {
+        "command": "python3 .codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py --root . --manifest reports/doi__10.3389_fmicb.2021.693725.complete_message_test_manifest.json --json-out /tmp/doi__10.3389_fmicb.2021.693725.publication_quality.post_worker6.final.json",
+        "returncode": 0,
+        "publication_grade_pass": true,
+        "risk_counts": {}
+      }
+    }
+  },
+  "remaining_blockers": [],
+  "worker6_followup": {
+    "status": "no_owner_dispatch_required",
+    "hard_rework_targets": [],
+    "unrecoverable_material_gaps": [
+      {
+        "gap_code": "figure3_non_2v_exact_cc50_values_not_text_recoverable",
+        "source_paths_checked": [
+          "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/pdf_text/fmicb-12-693725.txt",
+          "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/oa_package/local-DRAMP-34220785/PMC8245773/fmicb-12-693725-g003.jpg",
+          "paper_packets/doi__10.3389_fmicb.2021.693725/raw/paper.pdf"
+        ],
+        "tools_attempted": [
+          "rg/pdftotext-derived text review",
+          "file image inspection",
+          "PaddleOCR CLI probe"
+        ],
+        "why_unrecoverable": "The local text supports a 5-10 mg/L CC50 range for non-2V brevibacillins, but not the exact per-compound database CC50 values; the local PaddleOCR module was unavailable in the prior bounded figure-table OCR attempt.",
+        "impact": "Non-2V exact database CC50 rows are preserved as source_conflict instead of source_verified.",
+        "owner_worker": "worker-6",
+        "blocks_publication_grade": false,
+        "next_action": "record_and_continue"
+      },
+      {
+        "gap_code": "supplementary_table3_brevibacillin_mic_grid_partially_text_recovered",
+        "source_paths_checked": [
+          "paper_packets/doi__10.3389_fmicb.2021.693725/raw/supplementary_original/local-DRAMP-Data_Sheet_1.DOC",
+          "paper_packets/doi__10.3389_fmicb.2021.693725/extracted/supplementary_text.jsonl"
+        ],
+        "tools_attempted": [
+          "antiword",
+          "catdoc",
+          "strings"
+        ],
+        "why_unrecoverable": "The Word DOC exposes Table 3 title and FICI values through strings fallback, but not every MIC concentration-grid cell in clean table form.",
+        "impact": "Brevibacillin Table 3 FICI rows are retained with strings locators; unsupported concentration-grid cells are not fabricated.",
+        "owner_worker": "worker-6",
+        "blocks_publication_grade": false,
+        "next_action": "record_and_continue"
+      }
+    ],
+    "acceptance_check": "Mechanism finals use only the five allowed evidence classes; review reports show accepted_with_cautions, publication_grade true, zero rework_targets, preserved cautions, and worker-6 gpt-5.5/xhigh provenance."
+  }
+}

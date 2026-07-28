@@ -1,0 +1,96 @@
+{
+  "caution_findings": [
+    {
+      "caution_code": "database_strain_conflicts_preserved",
+      "evidence_context": "DBAASP-linked rows using Klebsiella pneumoniae ATCC 43816 and Enterococcus faecium NTCC 12697 conflict with primary source ATCC CRM 43861 and NCTC 12697. Values are retained but those rows remain source_conflict.",
+      "owner_worker": "worker-4 + worker-6",
+      "record_count": 30,
+      "severity": "caution"
+    },
+    {
+      "caution_code": "figure_only_cytotoxicity_percent_classes_not_exact_source_values",
+      "evidence_context": "DBAASP percent-cytotoxicity classes at 100 μM are not exact numeric table values in local XML/PDF; Figure 8 is graphical and Table 6 gives IC50/N.I. endpoints. These rows remain source_conflict, not fabricated source_verified values.",
+      "owner_worker": "worker-4 + worker-6",
+      "record_count": 12,
+      "severity": "caution"
+    },
+    {
+      "caution_code": "supplementary_pdf_contains_identity_figures_only",
+      "evidence_context": "The local supplementary ZIP contains a PDF with RP-HPLC purity and MALDI-TOF spectra figures for the five peptides; it does not add extractable activity/toxicity tables.",
+      "owner_worker": "worker-6",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.3390_pharmaceutics16050597/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/pdf_text/pharmaceutics-16-00597.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/figure_captions.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/supplementary_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/supplementary_text.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/oa_package/local-DBAASP-PMC11125039/PMC11125039/pharmaceutics-16-00597.nxml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/oa_package/local-DBAASP-PMC11125039/PMC11125039/pharmaceutics-16-00597.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/extracted/oa_package/local-DBAASP-PMC11125039/PMC11125039/pharmaceutics-16-00597-s001.zip",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics16050597/database/linked_literature_records.jsonl"
+  ],
+  "doi": "10.3390/pharmaceutics16050597",
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Bounded local review exhausted the XML/NXML, extracted PDF text, OA package, supplementary ZIP PDF text, locator index, and linked DBAASP JSONL rows relevant to worker-4/6 blockers.",
+    "oa_package": true,
+    "paper_pdf": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.3390_pharmaceutics16050597",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled 215 linked DBAASP assay/experiment/literature rows. Source-verified rows match Tables 1-6/article metadata; 42 rows remain source_conflict for strain typo/conflict or figure-only percent cytotoxicity classes and are preserved as cautions.",
+    "layer_2_activity_toxicity": "Worker-6 final activity/toxicity file records all source-supported Table 3 Ki, Table 4 MIC/MBC, Table 5 HC20, and Table 6 IC50/N.I. values with raw units and locators. Figure-only percent cytotoxicity values were not fabricated.",
+    "layer_3_mechanism": "Mechanism claims are bounded to direct assays actually present locally: trypsin inhibition, SYTOX membrane permeability, time-kill/in vivo antibacterial phenotypes, and Annexin V/PI apoptosis. No unsupported molecular target is inferred.",
+    "layer_4_review": "The prior framework-only review ticket is closed by this source-reviewed worker-4/6 pass; remaining issues are nonblocking cautions, not open rework targets."
+  },
+  "pmcid": "PMC11125039",
+  "pmid": "38794259",
+  "publication_grade": true,
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-09T18:14:11Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_final": 119,
+    "database_record_audits": 215,
+    "database_status_summary": {
+      "source_conflict": 42,
+      "source_verified": 173
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "decision": "accepted_with_cautions_after_source_review",
+    "open_rework_ticket_ids": [],
+    "required_rework_count": 0
+  },
+  "summary": "Source-reviewed worker-4/6 re-review completed for the Pharmaceutics 2024 Kunitz-derived OSTI peptide paper. Primary Tables 1-6 and the supplementary ZIP were reopened; database rows are now verified where exact source support exists and conflicts remain explicit where DBAASP strain labels or figure-only percent classes are not exact source-table values.",
+  "title": "An Effective Modification Strategy to Build Multifunctional Peptides Based on a Trypsin Inhibitory Peptide of the Kunitz Family.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

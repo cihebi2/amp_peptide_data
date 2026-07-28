@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.1038_srep20823",
+  "adjudication_summary": "Source re-review recovered the missing worker-2 Figure 1 activity/toxicity rows, converted the DBAASP linked rows from unresolved conflicts to source-verified records with primary locators, and replaced the scaffold mechanism note with source-bounded worker-6 final mechanism adjudication. No blocking rework remains.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1038_srep20823/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep20823/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep20823/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep20823/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_srep20823/raw/paper.xml",
+    "paper_packets/doi__10.1038_srep20823/raw/paper.pdf",
+    "paper_packets/doi__10.1038_srep20823/extracted/pdf_text/landing-1.txt",
+    "paper_packets/doi__10.1038_srep20823/extracted/pdf_text/srep20823.txt",
+    "paper_packets/doi__10.1038_srep20823/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_srep20823/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-f1.jpg",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-f2.jpg",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-f3.jpg",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-f4.jpg",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-f5.jpg",
+    "paper_packets/doi__10.1038_srep20823/extracted/oa_package/local-DBAASP-PMC4748414/PMC4748414/srep20823-s1.pdf",
+    "paper_packets/doi__10.1038_srep20823/extracted/supplementary_text/srep20823-s1.txt",
+    "paper_packets/doi__10.1038_srep20823/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_srep20823/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_srep20823/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_srep20823/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep20823/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep20823/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 19,
+    "activity_rows_source_reviewed": 19,
+    "database_status_summary": {
+      "source_verified": 9,
+      "source_conflict": 0,
+      "database_only_no_primary_source": 0,
+      "sequence_modified_not_normalized": 0,
+      "unresolved_record": 0
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP current-paper assay/experiment/literature rows now match the primary sequence, Figure 1 IC50/hemolysis evidence, and article metadata. K562 remains explicitly non-numeric/undetectable, not fabricated.",
+    "layer_2_activity_toxicity": "Figure 1A embedded IC50 table, Figure 1E hemolysis plot, primary results text, and Figure 5 in vivo text support the recovered activity/toxicity rows. Supplement S1/S2 adds image context but no structured table.",
+    "layer_3_mechanism": "Necrosis/membrane disruption is supported by direct assays; apoptosis is preserved as negative evidence and cell-cycle arrest as phenotypic context."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_omits_terminal_amide_in_residue_string",
+      "severity": "caution",
+      "evidence_context": "Primary paper reports PFWRIRIRR-NH2. DBAASP all_sequences stores PFWRIRIRR while the peptide name and source paper identify LF11-322/PFR; terminal amidation is explicitly recorded rather than silently normalized."
+    },
+    {
+      "caution_code": "k562_ic50_is_undetectable_not_numeric",
+      "severity": "caution",
+      "evidence_context": "Figure 1A marks K562 IC50 as infinity/undetectable and DBAASP records NA; no numeric K562 IC50 was invented."
+    },
+    {
+      "caution_code": "figure_only_non_tabulated_values_not_reconstructed",
+      "severity": "caution",
+      "owner_worker": "worker-2 + worker-6",
+      "evidence_context": "Exact IC50 values were visible in Figure 1A and recorded. Other graph-only percentages without table values remain qualitative or text-supported only."
+    }
+  ],
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-03T00:58:26Z",
+  "rework_targets": [],
+  "source_reviewed": true,
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_gate_expected": "pass"
+  },
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true,
+  "summary": "Source re-review recovered the missing worker-2 Figure 1 activity/toxicity rows, converted the DBAASP linked rows from unresolved conflicts to source-verified records with primary locators, and replaced the scaffold mechanism note with source-bounded worker-6 final mechanism adjudication. No blocking rework remains."
+}

@@ -1,0 +1,112 @@
+{
+  "paper_id": "doi__10.3390_molecules28124779",
+  "reviewed_at": "2026-05-09T19:07:57Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-4/6 re-review rebuilt the database and final adjudication from local XML/PDF/OA package, the recovered supplementary PDF, and linked DBAASP rows. Table 4 supports nine MIC rows; the prior open ticket is closed with sequence/name cautions preserved.",
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_molecules28124779/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules28124779/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules28124779/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules28124779/extracted/oa_package/local-DBAASP-PMC10301653/PMC10301653/molecules-28-04779.nxml",
+    "paper_packets/doi__10.3390_molecules28124779/extracted/oa_package/local-DBAASP-PMC10301653/PMC10301653/molecules-28-04779.pdf",
+    "paper_packets/doi__10.3390_molecules28124779/extracted/oa_package/local-DBAASP-PMC10301653/PMC10301653/molecules-28-04779-s001.zip",
+    "paper_packets/doi__10.3390_molecules28124779/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules28124779/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules28124779/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "details": [
+      "Opened packet manifest, locator index, XML sections, raw/local XML, PDF text, OA package members, supplement ZIP inventory, supplement PDF text, and linked DBAASP rows.",
+      "Supplementary PDF contains spectra/chromatograms/NMR chemical shift comparisons, not additional MIC/toxicity/mechanism assays."
+    ]
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "local_tools_attempted": [
+      "jq",
+      "rg",
+      "unzip -l",
+      "unzip -p",
+      "pdfinfo",
+      "pdftotext -layout",
+      "semantic_three_layer_gate.py",
+      "check_three_layer_publication_quality.py"
+    ]
+  },
+  "semantic_quality_checks": {
+    "activity_rows": 9,
+    "database_status_summary": {
+      "source_verified": 8,
+      "source_conflict": 6
+    },
+    "mechanism_claims": 2,
+    "semantic_gate": {
+      "publication_grade_pass_count": 1,
+      "publication_grade_fail_count": 0,
+      "report": "reports/doi__10.3390_molecules28124779.semantic_gate.json"
+    },
+    "publication_quality_gate": {
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "report": "reports/doi__10.3390_molecules28124779.publication_quality.json"
+    }
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Packet is structurally present; recovered the hidden s001 supplementary PDF from the OA package ZIP and verified it does not add antimicrobial values.",
+    "validator_contract": "Required packet/final/work artifacts are present; validator status remains separate from source-reviewed publication status.",
+    "layer_1_database": "DBAASP MIC rows match primary Table 4 values and citation metadata. Cyclopurpuracin A/B database collapse and reversed-sequence linearization are retained as cautions.",
+    "layer_2_activity_toxicity": "Table 4 matrix was manually repaired into nine peptide MIC records with raw values, units, organism targets, and locators.",
+    "layer_3_mechanism": "No direct antimicrobial mechanism assay is present; MIC phenotype and chemical cyclisation rationale are separated.",
+    "publication_grade_review": "No blocking issue remains after source review; cautions are explicit and no open rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_collapses_cyclopurpuracin_A_B",
+      "evidence_context": "Primary Table 4 reports Cyclopurpuracin A and B separately with identical MIC values; DBAASP linked rows use one Cyclopurpuracin record.",
+      "affected_records": [
+        "DBAASP:DBAASPR_21324"
+      ]
+    },
+    {
+      "caution_code": "reversed_sequence_linearization_not_text_extracted",
+      "evidence_context": "Primary Table 4 supports reversed cyclopurpuracin MIC=500 ug/mL for all three organisms, but the exact PVPSGIFG database linearization is not text-extracted from local XML/PDF.",
+      "affected_records": [
+        "DBAASP:DBAASPS_21325"
+      ]
+    },
+    {
+      "caution_code": "no_direct_antimicrobial_mechanism_assay",
+      "evidence_context": "The paper reports weak MIC phenotype only; Figure 2 is a chemical cyclisation rationale."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  }
+}

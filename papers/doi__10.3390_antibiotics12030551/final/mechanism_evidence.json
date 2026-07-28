@@ -1,0 +1,90 @@
+{
+  "paper_id": "doi__10.3390_antibiotics12030551",
+  "generated_at": "2026-05-07T15:06:03Z",
+  "extraction_scope": {
+    "worker": "worker-6 final mechanism adjudication from worker-5 surfaces",
+    "source_reviewed": true,
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_antibiotics12030551/handoff_context.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/packet_manifest.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/locators/locator_index.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/extracted/xml_sections.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/extracted/pdf_text/antibiotics-12-00551.txt",
+      "paper_packets/doi__10.3390_antibiotics12030551/extracted/figure_captions.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/extracted/supplementary_index.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/extracted/supplementary_tables.json",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12030551/xml/local-APD6-antibiotics-12-00551.nxml",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12030551/pdf/local-DBAASP-PMC10044245.pdf",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12030551/supplementary/local-APD6-antibiotics-12-00551-s001.zip",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12030551/package/local-APD6-pmc_package.tar.gz",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12030551/package/local-DBAASP-PMC10044245.tar.gz",
+      "paper_packets/doi__10.3390_antibiotics12030551/database/database_source_manifest.json",
+      "paper_packets/doi__10.3390_antibiotics12030551/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_antibiotics12030551/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_antibiotics12030551/database/linked_literature_records.jsonl"
+    ],
+    "notes": "Mechanism claims were bounded to direct local assays and phenotype context; no database-only or inferred target was promoted."
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-immunomodulatory-pbmnc-cytokines",
+      "claim_text": "RP556 and R10 were tested in LPS-stimulated human PBMNC cultures; RP556 increased IL-10 and had a smaller TNF-alpha increase, while R10 reduced TNF-alpha/IL-10 responses in the reported conditions.",
+      "entity_scope": "RP556 and R10",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "PBMNC viability assay",
+        "TNF-alpha ELISA",
+        "IL-10 ELISA"
+      ],
+      "mechanism_category": "host_immunomodulation_context",
+      "limitations": "This is cytokine modulation in human PBMNC culture, not an in vivo wound-healing or antibacterial killing mechanism.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=7:2.5. Immunomodulatory Activity;xml:fig=4:Figure 4"
+      }
+    },
+    {
+      "claim_id": "mech-002-fitc-membrane-localization",
+      "claim_text": "FITC-labeled RP556 localized at the E. coli cell membrane, and R10 was reported to behave similarly in the confocal microscopy experiment.",
+      "entity_scope": "RP556 and R10",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "FITC labeling",
+        "confocal microscopy"
+      ],
+      "mechanism_category": "bacterial_membrane_localization",
+      "limitations": "The authors note that FITC labeling could alter physicochemical properties, so this supports membrane localization rather than a fully resolved killing model.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=8:2.6. Localization of AMPs in Membranes;xml:fig=5:Figure 5"
+      }
+    },
+    {
+      "claim_id": "mech-003-langmuir-gram-negative-model-membrane",
+      "claim_text": "Langmuir-Blodgett monolayer experiments showed RP556 and R10 intercalated into the Gram-negative model membrane and slightly reduced collapse pressure.",
+      "entity_scope": "RP556 and R10",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Langmuir-Blodgett compression isotherm"
+      ],
+      "mechanism_category": "model_membrane_interaction",
+      "limitations": "The monolayer model is a membrane model system; it should not be over-promoted to a complete intact-cell mechanism.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=8:2.6. Localization of AMPs in Membranes;xml:table=5;xml:fig=6:Figure 6"
+      }
+    },
+    {
+      "claim_id": "mech-004-antibacterial-phenotype-with-no-single-target",
+      "claim_text": "The paper reports MIC-based antibacterial phenotype across ESKAPE-related bacteria and C. acnes, but does not identify a single intracellular molecular target.",
+      "entity_scope": "all tested peptides; strongest broad-spectrum emphasis on RP556 and R10",
+      "evidence_class": "phenotype_context",
+      "mechanism_category": "antibacterial_activity_without_single_target_resolution",
+      "limitations": "Preserve as phenotype/context evidence; do not convert MIC tables into a direct molecular target claim.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2.2. Antibacterial Activity;xml:table=2"
+      }
+    }
+  ]
+}

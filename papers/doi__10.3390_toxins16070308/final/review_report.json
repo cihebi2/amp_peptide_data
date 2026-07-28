@@ -1,0 +1,120 @@
+{
+  "paper_id": "doi__10.3390_toxins16070308",
+  "reviewed_at": "2026-05-10T17:01:32Z",
+  "generated_at": "2026-05-10T17:01:32Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Supplement zip was opened locally and its PDF text was inspected; no additional spreadsheet assets were present."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_toxins16070308/handoff_context.json",
+    "paper_packets/doi__10.3390_toxins16070308/packet_manifest.json",
+    "paper_packets/doi__10.3390_toxins16070308/locators/locator_index.json",
+    "paper_packets/doi__10.3390_toxins16070308/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_toxins16070308/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_toxins16070308/extracted/pdf_text/toxins-16-00308.txt",
+    "paper_packets/doi__10.3390_toxins16070308/extracted/oa_package/local-DBAASP-PMC11281518/PMC11281518/toxins-16-00308-s001.zip",
+    "papers/doi__10.3390_toxins16070308/source/paper.xml",
+    "papers/doi__10.3390_toxins16070308/source/paper.pdf",
+    "paper_packets/doi__10.3390_toxins16070308/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_toxins16070308/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_toxins16070308/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "tools_attempted": [
+    "jq JSON artifact inspection",
+    "rg over XML/PDF text/database snapshots",
+    "ElementTree XML Table 1 parse",
+    "unzip -p supplementary zip piped to pdftotext",
+    "CSV lookup in merged DBAASP sequence catalog",
+    "JSONL row-by-row database reconciliation"
+  ],
+  "adjudication_summary": "Worker-4/6 re-review matched DBAASP-linked rows to paper-local Table 1, Figure 7, article metadata, the supplementary peptide-sequence table, and merged DBAASP sequence rows. Publication-grade acceptance is with cautions because preserved database conflicts and modified-sequence rows remain explicit but no longer require open rework.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay/experiment rows were row-reconciled against Table 1/Figure 7. Exact source matches are source_verified; unit/value/strain/threshold conflicts remain source_conflict with concrete context. Literature-only modified -K sequence rows are sequence_modified_not_normalized.",
+    "layer_2_activity_toxicity": "Final activity/toxicity rows were rebuilt from source Table 1 and Figure 7 text with source units and locators; N.D. cells are not fabricated as activity values.",
+    "layer_3_mechanism": "Final mechanism claims are bounded to CD context and membrane model permeabilization assays; no receptor or intracellular target is overclaimed.",
+    "worker_6_publication_grade_decision": "Prior framework-test rework ticket is closed because source review replaced scaffold conclusions; remaining conflicts are caution-level and recoverable local materials were exhausted."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 72,
+    "database_record_audits": 156,
+    "database_status_summary": {
+      "source_conflict": 22,
+      "source_verified": 130,
+      "sequence_modified_not_normalized": 4
+    },
+    "mechanism_claims": 2,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gap_count": 0,
+    "validator_contract": "Structural artifacts are present; this review distinguishes structural readiness from semantic publication-grade source review."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_source_conflicts_preserved",
+      "severity": "caution",
+      "evidence_context": "22 assay/experiment rows have source-reviewed database conflicts, mostly swapped MIC/MBC values, unit mismatches, one strain mismatch, or an over-specific hemolysis threshold.",
+      "record_ids": [
+        "23124",
+        "190111",
+        "190116",
+        "23129",
+        "190170",
+        "190171",
+        "190189",
+        "190198",
+        "190199",
+        "23131",
+        "190213",
+        "23124"
+      ]
+    },
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "severity": "caution",
+      "evidence_context": "4 literature-linked DBAASP sequence rows are modified -K monomer/intermediate rows; they are preserved as modified rather than collapsed into the assayed dimers.",
+      "record_ids": [
+        "DBAASPS_24056",
+        "DBAASPS_24058",
+        "DBAASPS_24061",
+        "DBAASPS_24064"
+      ]
+    },
+    {
+      "caution_code": "figure_exact_values_limited_to_text_supported_values",
+      "severity": "caution",
+      "evidence_context": "Figure 7 text supports <10% hemolysis at 512 µg/mL for p-MtII/p-ACL/p-AppK and HC50 approximately 45 µg/mL for p-EM-2; exact <5% database thresholds are not promoted to source-verified values."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  }
+}

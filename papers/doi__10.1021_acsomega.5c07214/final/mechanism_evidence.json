@@ -1,0 +1,98 @@
+{
+  "paper_id": "doi__10.1021_acsomega.5c07214",
+  "generated_at": "2026-05-02T12:07:31Z",
+  "reviewed_at": "2026-05-02T12:07:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from XML DMS probing, docking, figure captions, SI PDF, and MSA XLSX; no unsupported membrane/permeabilization mechanism is promoted.",
+  "source_paths_checked": [
+    "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/pdf_text/ao5c07214.txt",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/pdf_text/ao5c07214_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/oa_package/local-APD6-pmc_package/PMC12529121/ao5c07214_si_002.xlsx",
+    "paper_packets/doi__10.1021_acsomega.5c07214/extracted/figure_captions.json"
+  ],
+  "tools_attempted": [
+    "jq over packet/final/status JSON",
+    "rg over raw XML, extracted PDF text, SI text, and packet database JSONL",
+    "sed/nl source-window reopening for XML Table 1, MIC methods, DMS/docking sections, and JSONL rows",
+    "unzip -l plus Python zipfile/xml parsing for ao5c07214_si_002.xlsx",
+    "Python csv scan for exact APD6/DBAASP sequence and assay rows in merged corpus outputs"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "Onc19 and selected truncated/disubstituted Onc variants interact with E. coli 23S rRNA PTC/P-site nucleotides in cells, supported by reduced DMS reactivity at A2058/A2059 and A2451-related residues.",
+      "entity_scope": "Onc19, Onc15, Onc15 P4K,L7R, and Onc14 P4K,L7R as tested in the paper",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "in cellulo DMS probing of 23S rRNA"
+      ],
+      "mechanism_target": {
+        "molecule": "bacterial 23S rRNA",
+        "regions": [
+          "peptidyl transferase center",
+          "P site/H89/H92 context"
+        ]
+      },
+      "source_locator": {
+        "locator": "xml:sec=2.2:Onc Variant Interactions with PTC Nucleotides; xml:fig=3:3",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "supports": [
+          "DMS protection pattern and Figure 3 caption"
+        ]
+      },
+      "limitations": "DMS probing reports direct or indirect nucleotide protection in cells; it does not by itself quantify killing mechanism for every peptide variant."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "Docking/modeling supports a ribosome-targeting PrAMP mechanism for Onc14 P4K,L7R, including a Lys4 interaction near P-site tRNA A76 and potential interference with P-site tRNA movement.",
+      "entity_scope": "Onc14 P4K,L7R computational model",
+      "evidence_class": "computational_modeling_support",
+      "direct_assay_types": [],
+      "mechanism_target": {
+        "molecule": "ribosomal PTC/P-site tRNA interface",
+        "model_structures": [
+          "4Z8C",
+          "1VY4",
+          "6O9J"
+        ]
+      },
+      "source_locator": {
+        "locator": "xml:sec=2.3:Molecular Docking of Onc Variants; xml:fig=4:4",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "supports": [
+          "docking result and Figure 4 caption"
+        ]
+      },
+      "limitations": "Computational docking is supportive context and is not promoted above the DMS evidence."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "MSA and structural visualization indicate that many rRNA residues near the docked Onc14 P4K,L7R binding region are conserved across bacterial 23S rRNAs.",
+      "entity_scope": "23S rRNA conservation context for ribosome-targeted PrAMP development",
+      "evidence_class": "sequence_conservation_context",
+      "direct_assay_types": [],
+      "mechanism_target": {
+        "molecule": "bacterial 23S rRNA"
+      },
+      "source_locator": {
+        "locator": "xml:sec=2.5:MSA of Bacterial 23S rRNA; xml:fig=6:6; xml:fig=7:7",
+        "source_path": "paper_packets/doi__10.1021_acsomega.5c07214/raw/paper.xml",
+        "supports": [
+          "MSA conservation and Figure 6/7 captions"
+        ],
+        "supplementary_sources": [
+          "paper_packets/doi__10.1021_acsomega.5c07214/extracted/oa_package/local-APD6-pmc_package/PMC12529121/ao5c07214_si_002.xlsx"
+        ]
+      },
+      "limitations": "Conservation supports target relevance but is not an independent activity or toxicity endpoint."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "no_membrane_disruption_claim_promoted",
+      "evidence_context": "Introduction mentions uptake/permeation context for PrAMPs, but this paper tests ribosome/rRNA interactions; no direct membrane damage assay was found in local materials."
+    }
+  ]
+}

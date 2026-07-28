@@ -1,0 +1,424 @@
+{
+  "adjudication_summary": "May 2 re-review reconfirmed the bounded repair: Table S5 MIC rows and matching database MIC rows remain source-reviewed, but Figure 4 exact HEK293/HepG2 cytotoxicity percentages are not locally recoverable from XML/PDF/caption/image/supplement/database material. The paper stays needs_targeted_rework and non-publication-grade with the Figure 4 unrecoverable ticket open.",
+  "artifact_type": "review_report",
+  "caution_findings": [
+    {
+      "note": "The prior 29-row Table 1 extraction collapsed duplicate MIC values; repaired activity evidence now contains 40 source-located Table 1 MIC rows plus 336 source-located Table S5 MIC rows.",
+      "scope": "activity_table_parser",
+      "severity": "major",
+      "status": "repaired"
+    },
+    {
+      "note": "Database MIC rows matching Supplementary Table S5 are source-verified; database toxicity/killing rows are preserved as conflicts rather than promoted from Figure 4 image-only evidence.",
+      "scope": "database_record_adjudication",
+      "severity": "major",
+      "status": "source_conflict_preserved"
+    },
+    {
+      "note": "Open analysis/adjudication rework remains; final acceptance is refused.",
+      "scope": "publication_grade",
+      "severity": "blocking",
+      "status": "needs_targeted_rework"
+    },
+    {
+      "caution_code": "table_s5_structured_from_supplement_pdf_text",
+      "evidence_context": "336 MIC rows added from Supplementary Table S5 with raw mg/L values preserved."
+    },
+    {
+      "caution_code": "figure4_exact_cytotoxicity_values_unrecoverable",
+      "evidence_context": "Figure 4 image/caption supports the assay but not exact database percentages; source_conflict preserved."
+    }
+  ],
+  "checked_inputs": [
+    {
+      "decision": "loaded",
+      "paths": [
+        ".codex/skills/paper-body-table-worker/SKILL.md",
+        ".codex/skills/paper-database-record-auditor/SKILL.md",
+        ".codex/skills/paper-adjudicator-review-worker/SKILL.md"
+      ],
+      "stage": "worker_skills"
+    },
+    {
+      "decision": "used",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/packet_manifest.json",
+      "stage": "packet_manifest"
+    },
+    {
+      "decision": "used",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/locators/locator_index.json",
+      "stage": "locator_index"
+    },
+    {
+      "decision": "reparsed_authoritative_table1",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+      "stage": "primary_xml_table1"
+    },
+    {
+      "decision": "reviewed_and_structured_table_s5",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+      "stage": "supplementary_text"
+    },
+    {
+      "decision": "used_for_worker4_reclassification",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_literature_records.jsonl"
+      ],
+      "stage": "database_snapshots"
+    },
+    {
+      "decision": "kept_open_with_refined_response",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/rework/rework_requests.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/rework/rework_responses.jsonl"
+      ],
+      "stage": "prior_rework"
+    },
+    {
+      "decision": "confirmed_table_s5_repair_and_figure4_unrecoverable_blocker",
+      "paths": [
+        ".codex/skills/paper-body-table-worker/SKILL.md",
+        ".codex/skills/paper-database-record-auditor/SKILL.md",
+        ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+        "rework_context/doi__10.1002_cbic.202100609/handoff_context.json",
+        "paper_packets/doi__10.1002_cbic.202100609/packet_manifest.json",
+        "paper_packets/doi__10.1002_cbic.202100609/locators/locator_index.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extraction/extraction_status.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl",
+        "papers/doi__10.1002_cbic.202100609/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1002_cbic.202100609/final/database_record_verification.json",
+        "papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json"
+      ],
+      "reviewed_at": "2026-05-01T01:30:12Z",
+      "stage": "single_paper_re_review_current_worker"
+    },
+    {
+      "decision": "strict gates rerun; kept non-accepted because active Figure 4 exact-value gap remains unrecoverable from local material",
+      "paths": [
+        "reports/doi__10.1002_cbic.202100609.codex_re_review_20260501T014143Z.semantic_gate.json",
+        "reports/doi__10.1002_cbic.202100609.codex_re_review_20260501T014143Z.publication_quality.json",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+      ],
+      "reviewed_at": "2026-05-01T01:44:02Z",
+      "stage": "single_paper_re_review_gate_rerun"
+    }
+  ],
+  "final_layer_outputs_ready": false,
+  "latest_gate_results": {
+    "gate_decision": "failed_expected_open_unrecoverable_rework_ticket",
+    "publication_quality_pass": false,
+    "publication_quality_report": "reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.publication_quality.json",
+    "publication_returncode": 2,
+    "publication_risk_counts": {
+      "open_rework_targets": 1
+    },
+    "reviewed_at": "2026-05-02T01:36:24Z",
+    "semantic_issue_codes": [
+      "review_status_not_publication_grade",
+      "publication_grade_not_true"
+    ],
+    "semantic_issue_count": 2,
+    "semantic_publication_grade_fail_count": 1,
+    "semantic_publication_grade_pass_count": 0,
+    "semantic_report": "reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.semantic_gate.json",
+    "semantic_returncode": 1
+  },
+  "materials_exhausted": {
+    "merged_database_rows": {
+      "coverage": "314 database MIC audit rows source-verified against Table S5; cytotoxicity exact percentages retained as conflicts",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_literature_records.jsonl"
+      ],
+      "status": "reviewed_with_preserved_cytotoxicity_conflicts"
+    },
+    "oa_package": {
+      "coverage": "Figure 4 image member identified as CBIC-23-0-g001.jpg",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package",
+      "status": "reviewed_figure_assets"
+    },
+    "paper_pdf": {
+      "coverage": "article text and Figure 4 caption/method cross-check",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+      "status": "reviewed_via_packet_text"
+    },
+    "paper_xml": {
+      "coverage": "article metadata, methods, Table 1 MIC matrix, Figure 4 caption and method context",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+      "status": "reviewed_primary_xml"
+    },
+    "supplementary_assets": {
+      "coverage": "Supplementary Table S5 parsed into 336 MIC rows",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt"
+      ],
+      "status": "source_reviewed_structured"
+    }
+  },
+  "open_rework_ticket_ids": [
+    "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003"
+  ],
+  "paper_id": "doi__10.1002_cbic.202100609",
+  "per_layer_decision_rationale": {
+    "final_adjudication": "Worker-6 refuses final approval while the Figure 4 exact-value blocker remains open as blocked_unrecoverable_after_bounded_attempt.",
+    "layer_1_database": "Worker-4/6 re-review preserves 415 source_verified rows, including Table 1 and 314 database MIC rows reconciled against Supplementary Table S5. Cytotoxicity and killing percentage rows remain source_conflict because Figure 4 lacks exact source-quantified values.",
+    "layer_2_activity_toxicity": "Worker-2 repair completed primary XML Table 1 as 40 MIC rows and Supplementary Table S5 as 336 MIC rows. Only Figure 4 exact HepG2/HEK293 cytotoxicity percentages remain blocked by unrecoverable local material, so the paper is not accepted.",
+    "layer_3_mechanism": "Mechanism artifact remains context-level and was not promoted to publication-grade final acceptance during this owner-layer repair.",
+    "worker_2_activity_toxicity": "Primary Table 1 rows are retained and Supplementary Table S5 is structured into row-level MIC evidence. Figure 4 exact cytotoxicity percentages were not promoted because only image/caption/method evidence is locally available.",
+    "worker_4_database_record_audit": "Matching database MIC rows are source_verified against Supplementary Table S5. Cytotoxicity/killing rows remain source_conflict because exact Figure 4 values cannot be source-verified from local material.",
+    "worker_6_final_adjudication": "The paper remains needs_targeted_rework/publication_grade=false under the bounded unrecoverable-gap rule."
+  },
+  "protocol": "batch4_true_rereview_owner_layers_worker2_worker4_worker6",
+  "publication_grade": false,
+  "qc_failure_reasons": [
+    {
+      "code": "supplementary_table_s5_structured_after_repair",
+      "owner_worker": "worker-2",
+      "reason": "Supplementary Table S5 was recovered from the local supplement PDF text and structured into 336 row-level MIC records covering 48 peptides across seven bacterial strains.",
+      "severity": "resolved"
+    },
+    {
+      "code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+      "owner_worker": "worker-2",
+      "reason": "Figure 4 is available locally as an image bar chart plus caption/method text, but no structured primary source table provides exact HepG2/HEK293 percentages; exact database percentages cannot be source-promoted without fabrication.",
+      "severity": "blocking"
+    },
+    {
+      "code": "cytotoxicity_database_rows_remain_source_conflict",
+      "owner_worker": "worker-4",
+      "reason": "Database MIC rows matching Supplementary Table S5 were source-verified, but HEK293/HepG2 cytotoxicity/killing rows remain source_conflict because exact Figure 4 percentages are not locally recoverable.",
+      "severity": "major"
+    },
+    {
+      "code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+      "owner_worker": "worker-6",
+      "reason": "Bounded source recovery exhausted local materials for the remaining Figure 4 exact-value gap, so worker-6 must keep the paper non-publication-grade and non-accepted.",
+      "severity": "blocking"
+    }
+  ],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "needs_targeted_rework",
+  "reviewed_at": "2026-05-02T01:36:24Z",
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1002_cbic.202100609/final/activity_toxicity_evidence.json",
+      "blocks": [
+        "publication_grade_ready",
+        "database_source_verified_promotion"
+      ],
+      "failure_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+      "layer": "activity_toxicity",
+      "omission_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+      "required_action": "Do not promote database HEK293/HepG2 exact percentages unless a structured primary source table or validated manual digitization becomes available; current local materials are exhausted.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+      ],
+      "status": "blocked_unrecoverable_after_bounded_attempt",
+      "target_queue": "analysis",
+      "ticket_id": "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003",
+      "worker": "worker-2"
+    },
+    {
+      "artifact_path": "papers/doi__10.1002_cbic.202100609/final/database_record_verification.json",
+      "blocks": [
+        "publication_grade_ready"
+      ],
+      "failure_code": "cytotoxicity_database_rows_remain_source_conflict",
+      "layer": "database_record_audit",
+      "omission_code": "cytotoxicity_database_rows_remain_source_conflict",
+      "required_action": "Preserve cytotoxicity/killing rows as source_conflict/database-only evidence; do not source_verify exact percentages from Figure 4 image-only local material.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml"
+      ],
+      "status": "blocked_unrecoverable_after_bounded_attempt",
+      "target_queue": "analysis",
+      "ticket_id": "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003",
+      "worker": "worker-4"
+    },
+    {
+      "artifact_path": "papers/doi__10.1002_cbic.202100609/final/review_report.json",
+      "blocks": [
+        "final_approval"
+      ],
+      "failure_code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+      "layer": "review",
+      "omission_code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+      "required_action": "Keep review_status=needs_targeted_rework and publication_grade=false because the remaining Figure 4 exact-value gap blocks source-reviewed publication-grade acceptance.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "papers/doi__10.1002_cbic.202100609/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1002_cbic.202100609/final/database_record_verification.json",
+        "papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json"
+      ],
+      "status": "blocked_unrecoverable_after_bounded_attempt",
+      "target_queue": "adjudication",
+      "ticket_id": "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003",
+      "worker": "worker-6"
+    }
+  ],
+  "role": "adjudicator review",
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 376,
+    "activity_target_species_and_units": {
+      "evidence": "376 activity rows now have endpoint, raw value, unit, target species, and source locator; Table S5 contributed 336 structured MIC rows.",
+      "result": "pass"
+    },
+    "database_mic_reconciliation": {
+      "evidence": "314 matching database MIC audit rows are source_verified against Supplementary Table S5; MIC conflicts from the S5 gap are resolved.",
+      "result": "pass"
+    },
+    "database_mic_rows_source_verified_against_table_s5": 314,
+    "database_status_summary": {
+      "source_conflict": 139,
+      "source_verified": 415
+    },
+    "figure4_cytotoxicity_exact_values": {
+      "evidence": "Figure 4 is available as image/caption/method material only; exact HEK293/HepG2 database percentages were not promoted.",
+      "result": "fail_unrecoverable_local_material"
+    },
+    "figure4_exact_percent_values_promoted": false,
+    "final_acceptance": {
+      "evidence": "Open blocked_unrecoverable rework target keeps review_status=needs_targeted_rework and publication_grade=false.",
+      "result": "fail_expected"
+    },
+    "latest_single_paper_re_review": {
+      "active_rework_ticket_ids": [
+        "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003"
+      ],
+      "activity_rows_parsed": 376,
+      "database_status_summary": {
+        "source_conflict": 139,
+        "source_verified": 415
+      },
+      "figure4_exact_percent_values_promoted": false,
+      "publication_grade": false,
+      "publication_quality_report": "reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.publication_quality.json",
+      "publication_risk_counts": {
+        "open_rework_targets": 1
+      },
+      "result": "blocked_unrecoverable_local_material",
+      "reviewed_at": "2026-05-02T01:36:24Z",
+      "semantic_issue_codes": [
+        "review_status_not_publication_grade",
+        "publication_grade_not_true"
+      ],
+      "semantic_report": "reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.semantic_gate.json",
+      "table_s5_activity_rows_added": 336
+    },
+    "table_s5_activity_rows_added": 336,
+    "table_s5_peptide_rows": 48,
+    "table_s5_structuring": {
+      "evidence": "Supplementary Table S5 is represented as 48 peptide rows by 7 bacterial target columns.",
+      "result": "pass"
+    },
+    "unrecoverable_gap_count": 1
+  },
+  "source_review_depth": {
+    "merged_database_rows": {
+      "coverage": "314 database MIC audit rows source-verified against Table S5; cytotoxicity exact percentages retained as conflicts",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_literature_records.jsonl"
+      ],
+      "status": "reviewed_with_preserved_cytotoxicity_conflicts"
+    },
+    "oa_package": {
+      "coverage": "Figure 4 image member identified as CBIC-23-0-g001.jpg",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package",
+      "status": "reviewed_figure_assets"
+    },
+    "paper_pdf": {
+      "coverage": "article text and Figure 4 caption/method cross-check",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+      "status": "reviewed_via_packet_text"
+    },
+    "paper_xml": {
+      "coverage": "article metadata, methods, Table 1 MIC matrix, Figure 4 caption and method context",
+      "path": "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+      "status": "reviewed_primary_xml"
+    },
+    "supplementary_assets": {
+      "coverage": "Supplementary Table S5 parsed into 336 MIC rows",
+      "paths": [
+        "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt"
+      ],
+      "status": "source_reviewed_structured"
+    }
+  },
+  "source_reviewed": true,
+  "summary": "Single-paper re-review reconfirmed the bounded repair: Supplementary Table S5 MIC rows and matching database MIC rows are source-reviewed, but Figure 4 exact HEK293/HepG2 cytotoxicity percentages are not locally recoverable from XML/PDF/caption/image/supplement/database material. The paper stays needs_targeted_rework and non-publication-grade with the Figure 4 unrecoverable ticket open.",
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+      "impact": "Cytotoxicity database exact-percent rows remain source_conflict; publication-grade acceptance remains blocked after bounded best-effort repair.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-2",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+        "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+        "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+      ],
+      "tools_attempted": [
+        "rg over packet XML/PDF text/figure captions/supplement text",
+        "local Figure 4 raster file inspection with file/identify",
+        "supplementary PDF text/Table S5 review",
+        "linked DBAASP/DRAMP database row reconciliation",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py"
+      ],
+      "why_unrecoverable": "Local primary material contains Figure 4 as a bar-chart image plus caption/method text, but no source table or embedded data with exact HepG2/HEK293 percentages. Exact database percentages cannot be source-promoted without a structured primary source table or validated manual digitization."
+    }
+  ],
+  "updated_at": "2026-05-02T01:36:24Z",
+  "validator_contract_passed": true,
+  "worker": "worker-6"
+}

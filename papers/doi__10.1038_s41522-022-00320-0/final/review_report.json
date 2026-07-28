@@ -1,0 +1,83 @@
+{
+  "paper_id": "doi__10.1038_s41522-022-00320-0",
+  "reviewed_at": "2026-05-03T07:43:58Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML, PDF text, OA package figures/NXML/PDF, supplementary PDF text, HTML landing assets, and packet APD6/DBAASP/DRAMP database JSONL rows were checked. Remaining unsupported database values are caution labels, not blocking material gaps."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.1038_s41522-022-00320-0/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/database/linked_dramp_activity_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/database/linked_literature_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41522-022-00320-0/source/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1038_s41522-022-00320-0/source/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extracted/pdf_text/41522_2022_Article_320.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extracted/supplementary_text/local-DRAMP-41522_2022_320_MOESM1_ESM.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extracted/archive_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1038_s41522-022-00320-0/extracted/supplementary_index.json",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41522-022-00320-0/supplementary/landing-*.bin"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 59,
+    "mechanism_claims_source_reviewed": 4,
+    "database_record_status_summary": {
+      "database_only_no_primary_source": 4,
+      "source_conflict": 10,
+      "source_verified": 80
+    },
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 re-reviewed every linked APD6/DBAASP/DRAMP row. Source-supported Table 2 MIC and Supplementary Table 6 toxicity rows are source_verified; exact MBEC50 values, DRAMP broad Anticancer labels, and mismatching HG4 unit/Pseudomonas rows are preserved as cautions.",
+    "layer_2_activity_toxicity": "Worker-6 rebuilt final activity rows from HG2/HG4 peptide cells only, excluding comparator antibiotics and keeping raw values, units, targets, methods, and locators.",
+    "layer_3_mechanism": "Worker-6 replaced pending framework mechanism notes with source-reviewed direct/supporting mechanism claims for membrane permeabilization, TEM damage, lipid interaction, ATP depletion, and transcriptomics.",
+    "supplementary_material": "The supplementary PDF was parsed and used for linear-HG2, toxicity, and lipid-interaction cautions; no spreadsheet/office supplement was present locally."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_only_biofilm_mbec_values",
+      "evidence_context": "DBAASP MBEC50 24/40 ug/ml rows are not exact-source recoverable from local XML/PDF/supplement text; final activity keeps qualitative source-supported biofilm reduction and database audit preserves exact values as database_only_no_primary_source."
+    },
+    {
+      "caution_code": "dramp_anticancer_overbroad_label",
+      "evidence_context": "DRAMP labels HG2/HG4 as Anticancer, but local primary source supports safety/cytotoxicity assays rather than an anticancer efficacy claim."
+    },
+    {
+      "caution_code": "dbaasp_hg4_unit_and_pseudomonas_conflicts",
+      "evidence_context": "HG4 A. baumannii DBAASP unit is micromolar while source Table 2 uses micrograms per milliliter; selected HG4 Pseudomonas database values/groupings do not fully match source Table 2."
+    },
+    {
+      "caution_code": "supplementary_landing_bins_checked",
+      "evidence_context": "landing-*.bin local assets are HTML landing pages; the relevant supplementary PDF text was parsed and used for Tables 5-7 and supplementary figures."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 source review closed rwk-complete-test-0001. The paper is publication-grade with cautions because source-supported HG2/HG4 values are extracted and unsupported database conflicts remain explicit rather than normalized."
+}

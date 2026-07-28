@@ -1,0 +1,163 @@
+{
+  "adjudication_summary": "Worker-6 source-reviewed adjudication replaced the framework-only result: primary XML/PDF/figure evidence supports recoverable MIC, IC50, haemolysis-threshold, sequence, and mechanism/toxicity claims; database conflicts are explicit cautions rather than hidden blockers.",
+  "caution_findings": [
+    {
+      "caution_code": "no_structured_activity_tables",
+      "evidence_context": "The local XML has no table-wrap/table nodes and pdf_tables.json has no extracted tables; activity/toxicity values come from primary prose, figures, figure captions, and linked database rows.",
+      "resolution": "Worker-2 records use XML/PDF section locators and figure locators instead of fabricated Table 1/2/3 locators.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "dbaasp_ic50_cell_line_swap",
+      "evidence_context": "Linked DBAASP rows assign 2.32 µM to MDA-MB-435S and 18.9 µM to U251MG, while the primary XML/PDF/Figure 3 assigns 18.99 µM to MB435/MDA-MB-435S and 2.32 µM to U251MG.",
+      "resolution": "Primary-source values are used in final activity rows; affected database rows remain source_conflict.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "candida_strain_label_conflict",
+      "evidence_context": "Primary methods/DBAASP use NCYC 1467, while the figure caption and CAMP row use NCPF 1467 for C. albicans.",
+      "resolution": "Species and MIC are retained; strain discrepancy is preserved in target notes/database cautions.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "hemolysis_exact_percentages_database_derived",
+      "evidence_context": "Primary text supports haemolysis at 16 mg/L and above and Figure 5C shows the dose-response, but exact percentages are present as linked DBAASP/database values rather than XML/PDF table values.",
+      "resolution": "Exact percentages are retained in toxicity records with database provenance and not treated as machine-readable primary table rows.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "evidence_context": "source/supplementary is empty, supplementary_index.json reports no assets, and OA packages contain article XML/PDF/figures but no separate supplement tables/spreadsheets.",
+      "resolution": "No supplement-derived claims are made; this is not left as an open material rework ticket because the relevant source-supported activity/database/mechanism facts are obtainable from primary XML/PDF/figures/database rows.",
+      "severity": "caution"
+    }
+  ],
+  "checked_inputs": [
+    "rework_context/doi__10.3390_biom9060242/handoff_context.json",
+    "paper_packets/doi__10.3390_biom9060242/packet_manifest.json",
+    "paper_packets/doi__10.3390_biom9060242/locators/locator_index.json",
+    "paper_packets/doi__10.3390_biom9060242/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_biom9060242/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_biom9060242/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_biom9060242/extracted/pdf_text/biomolecules-09-00242.txt",
+    "paper_packets/doi__10.3390_biom9060242/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_biom9060242/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_biom9060242/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_biom9060242/extracted/archive_manifest.json",
+    "papers/doi__10.3390_biom9060242/source/paper.xml",
+    "papers/doi__10.3390_biom9060242/source/paper.pdf",
+    "papers/doi__10.3390_biom9060242/source/supplementary",
+    "paper_packets/doi__10.3390_biom9060242/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_biom9060242/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_biom9060242/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_biom9060242/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_biom9060242/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+  ],
+  "closed_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "materials_exhausted": {
+    "paper_xml": {
+      "evidence": "Article metadata, methods, results sections 3.4/3.5/3.7/3.8/3.9, figure captions, and sequence section were reopened.",
+      "exhausted": true,
+      "paths_checked": [
+        "papers/doi__10.3390_biom9060242/source/paper.xml",
+        "paper_packets/doi__10.3390_biom9060242/raw/paper.xml",
+        "paper_packets/doi__10.3390_biom9060242/extracted/xml_sections.json"
+      ]
+    },
+    "paper_pdf": {
+      "evidence": "pdftotext output and PDF-linked figure text were reviewed for MIC, IC50, LDH, apoptosis, and haemolysis values.",
+      "exhausted": true,
+      "paths_checked": [
+        "papers/doi__10.3390_biom9060242/source/paper.pdf",
+        "paper_packets/doi__10.3390_biom9060242/extracted/pdf_text/biomolecules-09-00242.txt",
+        "paper_packets/doi__10.3390_biom9060242/extracted/pdf_text/local-DBAASP-PMC6627297.txt"
+      ]
+    },
+    "oa_package": {
+      "evidence": "Three local OA package archives were inventoried/extracted; all contain the same article XML/PDF and five figure image pairs.",
+      "exhausted": true,
+      "paths_checked": [
+        "paper_packets/doi__10.3390_biom9060242/extracted/archive_manifest.json",
+        "paper_packets/doi__10.3390_biom9060242/extracted/oa_package/local-APD6-pmc_package",
+        "paper_packets/doi__10.3390_biom9060242/extracted/oa_package/local-DBAASP-PMC6627297",
+        "paper_packets/doi__10.3390_biom9060242/extracted/oa_package/local-DRAMP-31234333"
+      ]
+    },
+    "supplementary_assets": {
+      "evidence": "No local supplementary files/tables exist in source/supplementary, supplementary_index.json, supplementary_tables.json, or OA package manifests.",
+      "exhausted": true,
+      "paths_checked": [
+        "papers/doi__10.3390_biom9060242/source/supplementary",
+        "paper_packets/doi__10.3390_biom9060242/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_biom9060242/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_biom9060242/extracted/supplementary_text.jsonl"
+      ]
+    },
+    "merged_database_rows": {
+      "evidence": "Packet-linked DBAASP/DRAMP/literature rows plus merged APD6/CAMP/sequence catalog rows were checked and reconciled or preserved as conflicts.",
+      "exhausted": true,
+      "paths_checked": [
+        "paper_packets/doi__10.3390_biom9060242/database/database_source_manifest.json",
+        "paper_packets/doi__10.3390_biom9060242/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_biom9060242/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3390_biom9060242/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.3390_biom9060242/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+      ]
+    }
+  },
+  "paper_id": "doi__10.3390_biom9060242",
+  "per_layer_decision_rationale": {
+    "material_packet": "Material remains material_extracted_with_gaps because no separate supplementary assets/tables exist, but XML/PDF/OA figures/database rows are sufficient for the owner-layer repair.",
+    "validator_contract": "Structural packet/final artifacts are present; validator success is not treated as publication-grade proof by itself.",
+    "layer_1_database": "DBAASP/DRAMP/literature and merged APD6/CAMP sequence/activity rows were reconciled; matching MIC/H460/HCT116 rows are source_verified while IC50 cell-line swaps, graph-only haemolysis percentages, and CAMP erythrocyte/strain discrepancies remain source_conflict cautions.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt primary-source MIC and IC50 records with endpoint, raw value/unit, target, conditions, and locators; toxicity records keep source-supported haemolysis threshold plus database-provenance exact percentages.",
+    "layer_3_mechanism": "Worker-6 replaced placeholder mechanism notes with bounded direct/supporting claims for identity, structure context, MIC activity, LDH membrane damage, non-apoptotic death evidence, and haemolysis toxicity.",
+    "publication_grade_review": "No blocking owner-layer issue or open rework target remains after strict gates."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-05-08T12:55:50Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "activity_rows_parsed": 7,
+    "activity_species_sentence_fragment_hits": 0,
+    "database_record_audits": 34,
+    "database_status_summary": {
+      "source_conflict": 17,
+      "source_verified": 17
+    },
+    "mechanism_claims": 6,
+    "mechanism_direct_claims_have_assays": true,
+    "open_rework_targets": 0,
+    "toxicity_records": 7,
+    "unrecoverable_material_gaps": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "source_reviewed": true,
+  "strict_gate": {
+    "open_rework_targets": 0,
+    "publication_grade_ready": true,
+    "required_rework_count": 0
+  },
+  "summary": "LFB owner-layer re-review is accepted with cautions: source-supported MIC/IC50 and mechanism/toxicity claims are recorded, database conflicts are preserved, and no local supplementary assets exist to chase.",
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}

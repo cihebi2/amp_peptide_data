@@ -1,0 +1,3845 @@
+{
+  "paper_id": "doi__10.26181_13211579.v3",
+  "generated_at": "2026-05-05T21:17:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 bounded source-reviewed database reconciliation against primary XML/PDF/figures/supplement and linked APD6/DBAASP/DRAMP rows; conflicts are preserved instead of normalized away.",
+  "database_row_counts": {
+    "linked_assay_records": 43,
+    "linked_dramp_activity_records": 1,
+    "linked_experiment_records": 47,
+    "linked_literature_records": 4,
+    "linked_sequence_records": 0
+  },
+  "status_summary": {
+    "source_conflict": 20,
+    "source_verified": 75
+  },
+  "conflict_flag_summary": {
+    "figure_only_exact_value": 8,
+    "table1_match_absent_or_subject_mismatch": 6,
+    "minor_text_database_numeric_difference": 2,
+    "table1_match_absent": 4,
+    "broad_database_activity_label": 1,
+    "database_activity_not_available": 1,
+    "aggregate_database_row": 2
+  },
+  "sequence_identity_summary": {
+    "ZmD32": "Source-reviewed against Figure 1D and Results text; APD6/DBAASP_13150/DRAMP ZmD32-family records trace to the focal peptide with cautions where database activity labels overreach.",
+    "NaD1": "DBAASP_1955 is source-reviewed as a comparator peptide included in Table 1/Figure 1/Figure 4, not as the focal ZmD32 record."
+  },
+  "source_paths_checked": [
+    "rework_context/doi__10.26181_13211579.v3/handoff_context.json",
+    "paper_packets/doi__10.26181_13211579.v3/packet_manifest.json",
+    "paper_packets/doi__10.26181_13211579.v3/locators/locator_index.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/xml_sections.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/figure_captions.json",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/pdf_text/fmicb-10-00795.txt",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/fmicb-10-00795-g001.jpg",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/fmicb-10-00795-g004.jpg",
+    "paper_packets/doi__10.26181_13211579.v3/extracted/oa_package/local-APD6-pmc_package/PMC6474387/Table_1.docx",
+    "paper_packets/doi__10.26181_13211579.v3/database/database_source_manifest.json",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "jq JSON inspection",
+    "ElementTree XML table/caption extraction",
+    "pdftotext/rg PDF text search",
+    "unzip OOXML document.xml extraction for Table_1.docx",
+    "file/md5 inspection of landing-*.bin supplementary HTML duplicates",
+    "local image review of Figure 1 and Figure 4"
+  ],
+  "unrecoverable_material_gaps": [],
+  "record_audits": [
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "11810",
+      "database_subject": "Human dermal fibroblasts",
+      "database_measure": "100% Killing at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=1"
+      },
+      "review_notes": "source conflict: NaD1 human-cell cytotoxicity exact database percentage is graph-derived and not tabulated as an exact primary-source value.",
+      "conflict_context": "source conflict: primary Figure 4 supports stronger NaD1 human-cell activity qualitatively/graphically, but the exact database percentage is not a table value.",
+      "conflict_flags": [
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "11811",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "1.5% Hemolysis at 50 µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=2"
+      },
+      "review_notes": "NaD1 hemolysis row is source-supported by Figure 4D/result text at 50 μM and remains a comparator toxicity row.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102880",
+      "database_subject": "Candida albicans ATCC 90028",
+      "database_measure": "IC50=1.6±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r2-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=3"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102881",
+      "database_subject": "Candida albicans ATCC 90029",
+      "database_measure": "IC50=>10µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=4"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102882",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=2.9±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=5"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102883",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=6"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102884",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=2.8±1.0µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=7"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102885",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=8"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102886",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=1.2±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=9"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102887",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=10"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102888",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.2±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=11"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102889",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=3.4±1.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=12"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102890",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.4±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=13"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102891",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=1.3±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=14"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102892",
+      "database_subject": "Fusarium graminearum PH-1",
+      "database_measure": "IC50=1.0±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r8-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=15"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102893",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=4.6±1.6µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=16"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102894",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=17"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102895",
+      "database_subject": "Staphylococcus aureus ATCC 9144",
+      "database_measure": "IC50=5.0±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r10-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=18"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102896",
+      "database_subject": "Bacillus subtilis",
+      "database_measure": "IC50=2.0±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r11-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=19"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102897",
+      "database_subject": "Pseudomonas aeruginosa PAO1",
+      "database_measure": "IC50=4.3±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r12-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=20"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102898",
+      "database_subject": "Human prostate adenocarcinoma PC-3",
+      "database_measure": "LC at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=21"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102899",
+      "database_subject": "Human histiocytic lymphoma U-937",
+      "database_measure": "LC at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=22"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "11812",
+      "database_subject": "Human dermal fibroblasts",
+      "database_measure": "30% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=23"
+      },
+      "review_notes": "source conflict: ZmD32 human-cell cytotoxicity exact database percentage is graph-derived and not tabulated as an exact primary-source value.",
+      "conflict_context": "source conflict: primary Figure 4 supports the qualitative toxicity trend, but exact database percent killing is not a primary table value.",
+      "conflict_flags": [
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "11813",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "1.7% Hemolysis at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=24"
+      },
+      "review_notes": "source conflict: primary text supports low ZmD32 hemolysis at 50 μM, but the database exact percentage differs from the text value/figure granularity.",
+      "conflict_context": "source conflict: Figure 4D/result text supports low hemolysis, but exact database percentage is not a table value and differs from prose-level value.",
+      "conflict_flags": [
+        "figure_only_exact_value",
+        "minor_text_database_numeric_difference"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102900",
+      "database_subject": "Candida albicans ATCC 90028",
+      "database_measure": "IC50=1.1±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r2-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=25"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102902",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=3.4±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=26"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102903",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=1.6±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=27"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102904",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=1.2±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=28"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102905",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=2.0±1.0µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=29"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102906",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=0.9±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=30"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102907",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=1.7±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=31"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102908",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.3±0.6µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=32"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102909",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.5±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=33"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102910",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.5±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=34"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102911",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.7±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=35"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102912",
+      "database_subject": "Fusarium graminearum PH-1",
+      "database_measure": "IC50=1.0±0.7µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r8-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=36"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102913",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=1±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=37"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102914",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=0.3±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=38"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102915",
+      "database_subject": "Staphylococcus aureus ATCC 9144",
+      "database_measure": "IC50=1.5±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r10-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=39"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102916",
+      "database_subject": "Bacillus subtilis",
+      "database_measure": "IC50=0.4±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r11-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=40"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102917",
+      "database_subject": "Pseudomonas aeruginosa PAO1",
+      "database_measure": "IC50=1.7±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r12-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=41"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102918",
+      "database_subject": "Human prostate adenocarcinoma PC-3",
+      "database_measure": "35% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=42"
+      },
+      "review_notes": "source conflict: ZmD32 target activity database row could not be matched exactly to Table 1.",
+      "conflict_context": "source conflict: database value/subject/condition does not exactly match a primary Table 1 row.",
+      "conflict_flags": [
+        "table1_match_absent"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_assay_records.jsonl",
+      "source_record_id": "102919",
+      "database_subject": "Human histiocytic lymphoma U-937",
+      "database_measure": "95% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records.jsonl:row=43"
+      },
+      "review_notes": "source conflict: ZmD32 target activity database row could not be matched exactly to Table 1.",
+      "conflict_context": "source conflict: database value/subject/condition does not exactly match a primary Table 1 row.",
+      "conflict_flags": [
+        "table1_match_absent"
+      ]
+    },
+    {
+      "source_id": "DRAMP:DRAMP35665",
+      "sequence_key": "DRAMP:DRAMP35665",
+      "source_table": "general_amps.txt",
+      "source_record_id": "DRAMP35665",
+      "database_subject": "Not available",
+      "database_measure": "Antimicrobial, Anticancer",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; DRAMP sequence agrees with the figure-reviewed mature peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_dramp_activity_records.jsonl",
+        "locator": "database:linked_dramp_activity_records.jsonl:row=1"
+      },
+      "review_notes": "source conflict: DRAMP sequence/name/literature linkage is supported, but the broad Anticancer activity label overstates the primary paper, which reports low human-cell activity rather than a positive anticancer conclusion.",
+      "conflict_context": "source conflict: source supports antimicrobial activity and low toxicity assays; broad DRAMP Anticancer label is preserved as database conflict.",
+      "conflict_flags": [
+        "broad_database_activity_label"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "11810",
+      "database_subject": "Human dermal fibroblasts",
+      "database_measure": "100% Killing at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=1"
+      },
+      "review_notes": "source conflict: NaD1 human-cell cytotoxicity exact database percentage is graph-derived and not tabulated as an exact primary-source value.",
+      "conflict_context": "source conflict: primary Figure 4 supports stronger NaD1 human-cell activity qualitatively/graphically, but the exact database percentage is not a table value.",
+      "conflict_flags": [
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "11811",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "1.5% Hemolysis at 50 µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=2"
+      },
+      "review_notes": "NaD1 hemolysis row is source-supported by Figure 4D/result text at 50 μM and remains a comparator toxicity row.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102880",
+      "database_subject": "Candida albicans ATCC 90028",
+      "database_measure": "IC50=1.6±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r2-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=3"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102881",
+      "database_subject": "Candida albicans ATCC 90029",
+      "database_measure": "IC50=>10µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=4"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102882",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=2.9±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=5"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102883",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=6"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102884",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=2.8±1.0µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=7"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102885",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=8"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102886",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=1.2±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=9"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102887",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=10"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102888",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.2±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=11"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102889",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=3.4±1.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=12"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102890",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.4±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=13"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102891",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=1.3±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=14"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102892",
+      "database_subject": "Fusarium graminearum PH-1",
+      "database_measure": "IC50=1.0±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r8-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=15"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102893",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=4.6±1.6µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=16"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102894",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=>10µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c4-NaD1-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=17"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102895",
+      "database_subject": "Staphylococcus aureus ATCC 9144",
+      "database_measure": "IC50=5.0±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r10-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=18"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102896",
+      "database_subject": "Bacillus subtilis",
+      "database_measure": "IC50=2.0±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r11-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=19"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102897",
+      "database_subject": "Pseudomonas aeruginosa PAO1",
+      "database_measure": "IC50=4.3±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r12-c3-NaD1-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=20"
+      },
+      "review_notes": "NaD1 comparator activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102898",
+      "database_subject": "Human prostate adenocarcinoma PC-3",
+      "database_measure": "LC at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=21"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102899",
+      "database_subject": "Human histiocytic lymphoma U-937",
+      "database_measure": "LC at 25 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D includes NaD1 as a comparator sequence; DBAASP:DBAASPR_1955 is a NaD1 comparator record, not the ZmD32 focal peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=22"
+      },
+      "review_notes": "source conflict: NaD1 comparator database row could not be matched exactly to Table 1 subject/value/condition.",
+      "conflict_context": "source conflict: database subject/value/condition does not exactly match a Table 1 NaD1 comparator row; preserve without normalization.",
+      "conflict_flags": [
+        "table1_match_absent_or_subject_mismatch"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "11812",
+      "database_subject": "Human dermal fibroblasts",
+      "database_measure": "30% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=23"
+      },
+      "review_notes": "source conflict: ZmD32 human-cell cytotoxicity exact database percentage is graph-derived and not tabulated as an exact primary-source value.",
+      "conflict_context": "source conflict: primary Figure 4 supports the qualitative toxicity trend, but exact database percent killing is not a primary table value.",
+      "conflict_flags": [
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "11813",
+      "database_subject": "Human erythrocytes",
+      "database_measure": "1.7% Hemolysis at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=24"
+      },
+      "review_notes": "source conflict: primary text supports low ZmD32 hemolysis at 50 μM, but the database exact percentage differs from the text value/figure granularity.",
+      "conflict_context": "source conflict: Figure 4D/result text supports low hemolysis, but exact database percentage is not a table value and differs from prose-level value.",
+      "conflict_flags": [
+        "figure_only_exact_value",
+        "minor_text_database_numeric_difference"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102900",
+      "database_subject": "Candida albicans ATCC 90028",
+      "database_measure": "IC50=1.1±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r2-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=25"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102902",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=3.4±0.5µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=26"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102903",
+      "database_subject": "Candida auris",
+      "database_measure": "IC50=1.6±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r3-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=27"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102904",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=1.2±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=28"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102905",
+      "database_subject": "Candida glabrata ATCC 90030",
+      "database_measure": "IC50=2.0±1.0µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r4-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=29"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102906",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=0.9±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=30"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102907",
+      "database_subject": "Candida krusei",
+      "database_measure": "IC50=1.7±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r5-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=31"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102908",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.3±0.6µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=32"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102909",
+      "database_subject": "Candida parapsilosis",
+      "database_measure": "IC50=1.5±0.4µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r6-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=33"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102910",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.5±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=34"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102911",
+      "database_subject": "Candida tropicalis ATCC 750",
+      "database_measure": "IC50=0.7±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r7-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=35"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102912",
+      "database_subject": "Fusarium graminearum PH-1",
+      "database_measure": "IC50=1.0±0.7µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r8-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=36"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102913",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=1±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=37"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102914",
+      "database_subject": "Escherichia coli",
+      "database_measure": "IC50=0.3±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r9-c2-ZmD32-100mM_NaCl-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=38"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102915",
+      "database_subject": "Staphylococcus aureus ATCC 9144",
+      "database_measure": "IC50=1.5±0.3µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r10-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=39"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102916",
+      "database_subject": "Bacillus subtilis",
+      "database_measure": "IC50=0.4±0.2µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r11-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=40"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102917",
+      "database_subject": "Pseudomonas aeruginosa PAO1",
+      "database_measure": "IC50=1.7±0.1µM",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "doi__10.26181_13211579.v3-table1-r12-c1-ZmD32-low_salt-IC50",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=41"
+      },
+      "review_notes": "ZmD32 target activity row matches primary XML Table 1 for subject, endpoint, value, unit, and salt/no-salt condition.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102918",
+      "database_subject": "Human prostate adenocarcinoma PC-3",
+      "database_measure": "35% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=42"
+      },
+      "review_notes": "source conflict: ZmD32 target activity database row could not be matched exactly to Table 1.",
+      "conflict_context": "source conflict: database value/subject/condition does not exactly match a primary Table 1 row.",
+      "conflict_flags": [
+        "table1_match_absent"
+      ]
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "assay_refs.csv",
+      "source_record_id": "102919",
+      "database_subject": "Human histiocytic lymphoma U-937",
+      "database_measure": "95% Killing at 50 µM",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; Results text links the mature sequence to Zea mays mRNA EU952861 and confirms mass/purification."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=43"
+      },
+      "review_notes": "source conflict: ZmD32 target activity database row could not be matched exactly to Table 1.",
+      "conflict_context": "source conflict: database value/subject/condition does not exactly match a primary Table 1 row.",
+      "conflict_flags": [
+        "table1_match_absent"
+      ]
+    },
+    {
+      "source_id": "APD6:AP03072",
+      "sequence_key": "APD6:AP03072",
+      "source_table": "peptides.csv",
+      "source_record_id": "AP03072",
+      "database_subject": "Salt-Tolerant Antifungal and Antibacterial Activities of the Corn Defensin ZmD32",
+      "database_measure": "NMR",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "APD6 ZmD32 identity is supported by article metadata, Figure 1 sequence/charge analysis, and Results sequence/purification text."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=44"
+      },
+      "review_notes": "APD6 ZmD32 identity/sequence-analysis literature row is supported by article metadata, Figure 1 sequence/charge analysis, Results purification/mass text, and PDB data availability.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DRAMP:DRAMP35665",
+      "sequence_key": "DRAMP:DRAMP35665",
+      "source_table": "general_amps.txt",
+      "source_record_id": "general_amps:DRAMP35665",
+      "database_subject": "Not available",
+      "database_measure": "Not available",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "Figure 1D gives the ZmD32 mature defensin alignment; DRAMP sequence agrees with the figure-reviewed mature peptide."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=45"
+      },
+      "review_notes": "source conflict: DRAMP general row has no target organism/activity values even though primary source contains Table 1 antimicrobial activity and Figure 4 toxicity context.",
+      "conflict_context": "source conflict: database row is literature/sequence linked but activity fields are not source-resolved in the row.",
+      "conflict_flags": [
+        "database_activity_not_available"
+      ]
+    },
+    {
+      "source_id": "CAMP:CAMPSQ19914",
+      "sequence_key": "CAMP:CAMPSQ19914",
+      "source_table": "camp_r4_export/data/sequences.csv",
+      "source_record_id": "CAMPSQ19914",
+      "database_subject": "Candida albicans ATCC 90028[IC50 = 1.1+-0.5 microM], Candida albicans ATCC 90028[IC50 = 3.0+-0.2 microM], Candida auris[IC50 = 3.4+-0.5 microM], Candida auris[IC50 = 1.6+-0.4 microM], Candida glabrata ATCC 90030[IC50 = 1.2+-0.4 microM], Candida glabrata ATCC 90030[IC50 = 2.0+-1.0 microM], Candida krusei[IC50 = 0.9+-0.1 microM], Candida krusei[IC50 = 1.7+-0.4 microM], Candida parapsilosis[IC50 = 1.3+-0.6 microM], Candida parapsilosis[IC50 = 1.5+-0.4 microM], Candida tropicalis ATCC 750[IC50 = 0.5+-0.1 microM], Candida tropicalis ATCC 750[IC50 = 0.7+-0.2 microM], Fusarium graminearum PH-1[IC50 = 1.0+-0.7 microM], Escherichia coli[IC50 = 1+-0.2 microM], Escherichia coli[IC50 = 0.3+-0.1 microM], Staphylococcus aureus ATCC 9144[IC50 = 1.5+-0.3 microM], Bacillus subtilis[IC50 = 0.4+-0.2 microM], Pseudomonas aeruginosa PAO1[IC50 = 1.7+-0.1 microM], Human prostate adenocarcinoma PC-3[30-40% Killing = 50 microM], Human histiocytic lymphoma U-937[90-100% Killing = 50 microM]",
+      "database_measure": "text",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "CAMP row describes ZmD32-like activity; exact sequence was checked against Figure 1D through linked row text where present."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=46"
+      },
+      "review_notes": "source conflict: row aggregates source-supported Table 1 antimicrobial values with figure-derived human-cell exact percentages; preserve as aggregate database conflict rather than marking fully source_verified.",
+      "conflict_context": "source conflict: Table 1 antimicrobial subset is source-supported, but aggregate row includes exact human-cell percentages not tabulated in primary source.",
+      "conflict_flags": [
+        "aggregate_database_row",
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "dbAMP:dbAMP_18495",
+      "sequence_key": "dbAMP:dbAMP_18495",
+      "source_table": "data/dbamp3_detail_basic.csv",
+      "source_record_id": "dbAMP_18495",
+      "database_subject": "Candida albicans ATCC 90028 (IC50=1.1±0.5μM)\nCandida albicans ATCC 90028 (IC50=3.0±0.2μM)\nCandida auris (IC50=3.4±0.5μM)\nCandida auris (IC50=1.6±0.4μM)\nCandida glabrata ATCC 90030 (IC50=1.2±0.4μM)\nCandida glabrata ATCC 90030 (IC50=2.0±1.0μM)\nCandida krusei (IC50=0.9±0.1μM)\nCandida krusei (IC50=1.7±0.4μM)\nCandida parapsilosis (IC50=1.3±0.6μM)\nCandida parapsilosis (IC50=1.5±0.4μM)\nCandida tropicalis ATCC 750 (IC50=0.5±0.1μM)\nCandida tropicalis ATCC 750 (IC50=0.7±0.2μM)\nFusarium graminearum PH-1 (IC50=1.0±0.7μM)\nEscherichia coli (IC50=1±0.2μM)\nEscherichia coli (IC50=0.3±0.1μM)\nStaphylococcus aureus ATCC 9144 (IC50=1.5±0.3μM)\nBacillus subtilis (IC50=0.4±0.2μM)\nPseudomonas aeruginosa PAO1 (IC50=1.7±0.1μM)\nHuman prostate adenocarcinoma PC-3 (35% Killing=50μM)\nHuman histiocytic lymphoma U-937 (95% Killing=50μM)",
+      "database_measure": "text",
+      "status": "source_conflict",
+      "layer1_status": "source_conflict",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:fig=1:Figure 1D",
+          "figure_locator": "xml:fig=1:Figure 1D",
+          "primary_source_statement": "dbAMP row describes ZmD32-like activity; exact sequence was checked against Figure 1D through linked row text where present."
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records.jsonl:row=47"
+      },
+      "review_notes": "source conflict: row aggregates source-supported Table 1 antimicrobial values with figure-derived human-cell exact percentages; preserve as aggregate database conflict rather than marking fully source_verified.",
+      "conflict_context": "source conflict: Table 1 antimicrobial subset is source-supported, but aggregate row includes exact human-cell percentages not tabulated in primary source.",
+      "conflict_flags": [
+        "aggregate_database_row",
+        "figure_only_exact_value"
+      ]
+    },
+    {
+      "source_id": "APD6:AP03072",
+      "sequence_key": "APD6:AP03072",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "AP03072",
+      "database_subject": "Salt-Tolerant Antifungal and Antibacterial Activities of the Corn Defensin ZmD32",
+      "database_measure": "",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=1"
+      },
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID and was checked against article metadata.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_13150",
+      "sequence_key": "DBAASP:DBAASPR_13150",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "DBAASPR_13150",
+      "database_subject": "Salt-Tolerant Antifungal and Antibacterial Activities of the Corn Defensin ZmD32.",
+      "database_measure": "",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=2"
+      },
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID and was checked against article metadata.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DBAASP:DBAASPR_1955",
+      "sequence_key": "DBAASP:DBAASPR_1955",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "DBAASPR_1955",
+      "database_subject": "Salt-Tolerant Antifungal and Antibacterial Activities of the Corn Defensin ZmD32.",
+      "database_measure": "",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        }
+      },
+      "name_check": {
+        "status": "source_verified_comparator",
+        "primary_name": "NaD1 comparator",
+        "database_name_context": "DBAASP row names NaD1; primary paper uses NaD1 as comparator."
+      },
+      "source_organism_check": {
+        "status": "source_verified_comparator",
+        "primary_source_organism": "Nicotiana alata comparator peptide NaD1"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=3"
+      },
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID and was checked against article metadata.",
+      "conflict_context": "",
+      "conflict_flags": []
+    },
+    {
+      "source_id": "DRAMP:DRAMP35665",
+      "sequence_key": "DRAMP:DRAMP35665",
+      "source_table": "linked_literature_records.jsonl",
+      "source_record_id": "DRAMP35665",
+      "database_subject": "Salt-Tolerant Antifungal and Antibacterial Activities of the Corn Defensin ZmD32",
+      "database_measure": "",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "status": "primary_source_locator_reviewed",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        }
+      },
+      "name_check": {
+        "status": "source_verified",
+        "primary_name": "ZmD32"
+      },
+      "source_organism_check": {
+        "status": "source_verified",
+        "primary_source_organism": "Zea mays"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.26181_13211579.v3/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records.jsonl:row=4"
+      },
+      "review_notes": "Literature link matches the selected paper DOI/PMID/PMCID and was checked against article metadata.",
+      "conflict_context": "",
+      "conflict_flags": []
+    }
+  ]
+}

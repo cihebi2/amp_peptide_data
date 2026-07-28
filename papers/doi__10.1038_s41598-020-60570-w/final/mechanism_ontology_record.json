@@ -1,0 +1,91 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1038_s41598-020-60570-w",
+  "doi": "10.1038/s41598-020-60570-w",
+  "worker": "worker-6",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "reviewed_at": "2026-05-03T11:58:02Z",
+  "generated_at": "2026-05-03T11:58:02Z",
+  "source_reviewed": true,
+  "review_status": "source_bounded_not_clean_acceptance",
+  "publication_grade": false,
+  "extraction_scope": "Worker-6 replaced automated placeholder mechanism notes with source-bounded claims from primary XML sections and figures; quantitative supplementary mechanism values remain unavailable locally.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "entity_scope": "L- and D-PLNC8 αβ in model lipid membranes and S. epidermidis ATCC 12228",
+      "claim_text": "Primary source supports rapid membrane permeabilization and lipid-bilayer disruption by PLNC8 αβ, including Sytox Green uptake, ATP release, and carboxyfluorescein liposome release evidence.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "carboxyfluorescein liposome release",
+        "Sytox Green uptake",
+        "ATP release/aggregation assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=17:Par23-Par24; xml:fig=2; xml:fig=3"
+      },
+      "limitations": "Mechanism is bounded to membrane permeabilization/disruption assays; exact supplementary Fig. S4/S6 values are not locally available."
+    },
+    {
+      "claim_id": "mech-002",
+      "entity_scope": "PLNC8 αβ-treated S. epidermidis",
+      "claim_text": "Primary source supports bacterial cell-wall/cell-membrane damage after PLNC8 αβ exposure by microscopy, with Sytox Green fluorescence and TEM/SEM morphology evidence.",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "fluorescence microscopy with Sytox Green",
+        "transmission electron microscopy",
+        "scanning electron microscopy"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=20:Par36-Par37; xml:fig=6"
+      },
+      "limitations": "The source describes structural damage and leakage; it does not establish a single molecular receptor target."
+    },
+    {
+      "claim_id": "mech-003",
+      "entity_scope": "PLNC8 αβ combined with glycopeptide and other antibiotics",
+      "claim_text": "Primary source supports an adjuvant/combination-effect mechanism context where PLNC8 αβ lowers antibiotic MIC/MBC values and may improve antibiotic access through membrane/cell-wall disruption.",
+      "evidence_class": "combination_activity_context",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=21:Par38-Par40; xml:table=4; xml:table=6; xml:sec=22:Par49-Par50"
+      },
+      "limitations": "Combination mechanism remains inferred from activity and permeability context; exact Supplementary Table S1 combination values are unavailable locally."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_table_s1_pdf_not_local",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41598-020-60570-w/raw/paper.xml",
+        "paper_packets/doi__10.1038_s41598-020-60570-w/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1038_s41598-020-60570-w/raw/supplementary_original",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-020-60570-w/supplementary/landing-1.bin",
+        "xml:media href=41598_2020_60570_MOESM1_ESM.pdf"
+      ],
+      "tools_attempted": [
+        "find",
+        "file",
+        "HTML href parser",
+        "XML media locator parse",
+        "supplementary_index.json",
+        "supplementary_text.jsonl",
+        "supplementary_tables.json"
+      ],
+      "why_unrecoverable": "Local supplementary files are duplicated article HTML landing pages that link to 41598_2020_60570_MOESM1_ESM.pdf; the actual MOESM PDF/Table S1 payload is not present in the packet, paper source tree, landed asset tree, or extracted supplementary tables.",
+      "impact": "Exact Supplementary Table S1 activity values for truncated peptide combinations with teicoplanin/rifampicin cannot be recovered from local material; worker-6 must leave publication-grade acceptance blocked under obtainable-only mode.",
+      "owner_worker": "worker-2",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "supplementary_mechanism_values_not_local",
+      "evidence_context": "Mechanism is accepted only as source-bounded context; missing supplement prevents clean publication-grade closure."
+    }
+  ]
+}

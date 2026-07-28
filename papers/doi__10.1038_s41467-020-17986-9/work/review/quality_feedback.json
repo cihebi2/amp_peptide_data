@@ -1,0 +1,67 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 2,
+    "max_rework_attempts": 5,
+    "note": "Owner-worker re-review recovered local primary-source activity/toxicity rows and preserved database conflicts as cautions.",
+    "result_reason_code": "activity_rows_recovered_database_conflicts_preserved",
+    "result_status": "repaired_source_review_complete",
+    "status": "accepted_with_cautions",
+    "updated_at": "2026-06-20T09:51:39Z"
+  },
+  "caution_findings": [
+    {
+      "caution_code": "source_data_archive_not_local",
+      "evidence_context": "Local Nature HTML landing page links MOESM4 source-data RAR, but no local RAR/archive member is present; exact Fig. 1 values were recovered from primary PDF/XML instead.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "dramp_p9r_mers_value_conflict",
+      "evidence_context": "DRAMP29177 aggregate row reports P9R MERS-CoV IC50 as 22 ug/ml, while primary Fig. 1c shows 2.2 ug/ml; preserved as source_conflict.",
+      "severity": "caution"
+    },
+    {
+      "caution_code": "mixed_reference_database_rows_preserved",
+      "evidence_context": "DRAMP/dbAMP aggregate rows mix this DOI with prior-reference values or unsupported annotations; source-supported rows are separated in activity evidence.",
+      "severity": "caution"
+    }
+  ],
+  "gate_validation": {
+    "publication_grade_pass": true,
+    "publication_issue_log_counts": {},
+    "publication_quality": "reports/doi__10.1038_s41467-020-17986-9.owner_worker.publication_quality.json",
+    "publication_risk_counts": {},
+    "semantic_failed_papers": [],
+    "semantic_gate": "reports/doi__10.1038_s41467-020-17986-9.owner_worker.semantic_gate.json",
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_publication_grade_pass_count": 1
+  },
+  "generated_at": "2026-06-20T09:53:17Z",
+  "issue_count": 0,
+  "nonblocking_material_gaps": [
+    {
+      "blocks_publication_grade": false,
+      "gap_code": "source_data_archive_not_local",
+      "impact": "No independent source-data recalculation; retain as caution.",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1038_s41467-020-17986-9/raw/supplementary_original/landing-1.bin",
+        "paper_packets/doi__10.1038_s41467-020-17986-9/raw/supplementary_original",
+        "paper_packets/doi__10.1038_s41467-020-17986-9/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "file",
+        "HTML link inspection",
+        "pdf page render",
+        "primary XML/PDF text review"
+      ],
+      "why_nonblocking": "Exact activity/toxicity values needed for the curated rows were visible in the local primary PDF/XML figure/prose."
+    }
+  ],
+  "paper_id": "doi__10.1038_s41467-020-17986-9",
+  "qc_failure_reasons": [],
+  "resolved_rework_targets": [
+    "rwk-complete-test-0001"
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": []
+}

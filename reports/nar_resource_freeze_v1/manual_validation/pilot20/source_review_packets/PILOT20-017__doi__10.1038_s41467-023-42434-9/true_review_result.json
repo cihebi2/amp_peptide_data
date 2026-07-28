@@ -1,0 +1,230 @@
+{
+  "paper_id": "doi__10.1038_s41467-023-42434-9",
+  "pilot_sample_id": "PILOT20-017",
+  "audit_record_id": "doi__10.1038_s41467-023-42434-9:database_audit:304",
+  "reviewed_at": "2026-06-22T04:21:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "needs_targeted_rework",
+  "confidence": "high",
+  "material_review": {
+    "material_inventory_reopened": true,
+    "packet_dir": "paper_packets/doi__10.1038_s41467-023-42434-9",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status": "analysis_accepted_with_cautions",
+    "model_provenance_check": {
+      "status": "supported_by_local_codex_config",
+      "config_path": "/root/.codex/config.toml",
+      "config_model": "gpt-5.5",
+      "config_model_reasoning_effort": "xhigh"
+    },
+    "surfaces_confirmed": {
+      "paper_xml": "paper_packets/doi__10.1038_s41467-023-42434-9/raw/paper.xml -> landed_assets xml/local-DBAASP-PMC10632401.xml",
+      "paper_pdf": "paper_packets/doi__10.1038_s41467-023-42434-9/raw/paper.pdf -> landed_assets pdf/landing-1.pdf",
+      "oa_package": "paper_packets/doi__10.1038_s41467-023-42434-9/raw/oa_package/local-APD6-pmc_package.tar.gz",
+      "oa_members": "article XML/PDF, MOESM1-3 PDFs, figures, and MOESM4 Source Data zip listed by tar",
+      "supplementary_original": "11 files present; landing-*.bin resolve as HTML landing pages, local-APD6-41467_2023_42434_MOESM4_ESM.zip is listable",
+      "database_snapshots": "database_source_manifest plus linked_experiment_records.jsonl, linked_assay_records.jsonl, linked_literature_records.jsonl present"
+    },
+    "material_gap_assessment": "Landing-page supplementary bin files are not primary evidence, but the required sequence and Table 10 activity/toxicity evidence for AP03779 are available locally from extracted MOESM1 Supplementary Information text; no missing-primary blocker for this sample.",
+    "packet_risk_notes": [
+      "packet_manifest retains a test_scope note, but later rework responses and final review artifacts report source-reviewed repair and closed ticket rwk-complete-test-0001",
+      "the validation_sample release_row_locator says tsv_row=22675, while audit-id lookup in the local release TSV finds this record at line 23330; the release_row.json content still matches the audit id"
+    ]
+  },
+  "layer1_database_record_review": {
+    "sampled_database": "APD6",
+    "sampled_source_id": "AP03779",
+    "sequence_key": "APD6:AP03779",
+    "release_row_checked": true,
+    "release_row_finding": "release_row.json and the local release TSV audit-id row preserve status database_only_no_primary_source for AP03779 linked_experiment_records.jsonl row 156.",
+    "sample_final_record_checked": true,
+    "final_record_locator": "papers/doi__10.1038_s41467-023-42434-9/final/database_record_verification.json::record_audits[303]",
+    "database_snapshot_locator": "paper_packets/doi__10.1038_s41467-023-42434-9/database/linked_experiment_records.jsonl:156",
+    "status_under_review": "database_only_no_primary_source",
+    "status_decision": "justified_for_sampled_entry_text_row",
+    "rationale": "The sampled APD6 row is an entry-text/narrative database record with assay_text Unknown, no structured database value/unit/subject fields, and no matched_activity_record_id. Its peptide sequence is source-located to MOESM1 Supplementary Table 5 row AMP #15, but its narrative activity/toxicity summary is database provenance, not a primary-source assay row.",
+    "primary_sequence_support": {
+      "sequence": "MEAFKKKPRLPLFKVKLTRFLERARGLGSYRIFEFFKKFGVKKFVSSLR",
+      "locator": "supp:41467_2023_42434_MOESM1_ESM.pdf:Supplementary Table 5 row AMP #15",
+      "source_path": "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_42434_MOESM1_ESM.txt"
+    },
+    "conflict_preservation": "A separate AP03779 literature/citation row is source_verified, but the sampled APD6 linked_experiment_records entry-text row remains database_only_no_primary_source; this distinction is correct and must not be collapsed into clean source_verified."
+  },
+  "layer2_activity_toxicity_review": {
+    "spot_check_scope": "AMP #15 source-backed primary activity/toxicity rows plus sampled APD6 entry-text row",
+    "primary_table_locator": "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_42434_MOESM1_ESM.txt:Supplementary Table 10:lines 1863-1984",
+    "method_locators": [
+      "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_Article_42434.txt:lines 1515-1547",
+      "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_Article_42434.txt:lines 1548-1586"
+    ],
+    "source_backed_rows_found": [
+      {
+        "record_id": "doi__10.1038_s41467-023-42434-9-supp-table10-amp15-ecoli",
+        "endpoint": "MIC",
+        "raw_value": "25.0",
+        "raw_unit": "uM",
+        "target_species": "Escherichia coli",
+        "strain": "MG1655",
+        "locator": "supp:41467_2023_42434_MOESM1_ESM.pdf:Supplementary Table 10 row AMP #15 column E. coli MIC"
+      },
+      {
+        "record_id": "doi__10.1038_s41467-023-42434-9-supp-table10-amp15-bsubtilis",
+        "endpoint": "MIC",
+        "raw_value": "0.8",
+        "raw_unit": "uM",
+        "target_species": "Bacillus subtilis",
+        "strain": "PY79",
+        "locator": "supp:41467_2023_42434_MOESM1_ESM.pdf:Supplementary Table 10 row AMP #15 column B. subtilis MIC"
+      },
+      {
+        "record_id": "doi__10.1038_s41467-023-42434-9-supp-table10-amp15-cc50",
+        "endpoint": "CC50",
+        "raw_value": "30.7",
+        "raw_unit": "uM",
+        "target_species": "Homo sapiens",
+        "strain": "HCT116 human colon cells",
+        "locator": "supp:41467_2023_42434_MOESM1_ESM.pdf:Supplementary Table 10 row AMP #15 column CC50"
+      },
+      {
+        "record_id": "doi__10.1038_s41467-023-42434-9-supp-table10-amp15-hc50",
+        "endpoint": "HC50",
+        "raw_value": "24.8",
+        "raw_unit": "uM",
+        "target_species": "Homo sapiens",
+        "strain": "human erythrocytes",
+        "locator": "supp:41467_2023_42434_MOESM1_ESM.pdf:Supplementary Table 10 row AMP #15 column HC50"
+      }
+    ],
+    "sampled_row_activity_decision": "The sampled APD6 entry-text row should stay database_only_no_primary_source; Table 10 rows represent primary evidence separately and should not be used to relabel the APD6 narrative entry-text row as source_verified.",
+    "hard_activity_defects_found_for_sample": false
+  },
+  "layer3_mechanism_review": {
+    "artifact_checked": "papers/doi__10.1038_s41467-023-42434-9/final/mechanism_ontology_record.json",
+    "mechanism_claim_count": 4,
+    "source_support_summary": "Claims have claim_id, claim_text, source_locator, and limitations. The direct PI/microscopy claim has direct_assay_types and a methods locator.",
+    "direct_mechanism_check": {
+      "claim_id": "mech-003",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide uptake",
+        "phase-contrast microscopy"
+      ],
+      "source_locator": "xml:fig=5:Fig. 5 plus pdf:Methods:Mode of action assay and microscopy using propidium iodide lines 1587-1607",
+      "decision": "direct assay support present"
+    },
+    "blocking_defect": {
+      "failure_code": "non_canonical_mechanism_evidence_class",
+      "affected_claims": [
+        {
+          "claim_id": "mech-001",
+          "current_evidence_class": "computational_model",
+          "expected_contract_class": "computational_only"
+        },
+        {
+          "claim_id": "mech-002",
+          "current_evidence_class": "phenotypic_resistance_assay",
+          "expected_contract_class": "phenotype_supported"
+        },
+        {
+          "claim_id": "mech-004",
+          "current_evidence_class": "contextual_mechanism_assay",
+          "expected_contract_class": "phenotype_supported or direct_mechanism only if justified by the source and direct-assay contract"
+        }
+      ],
+      "rationale": "The AMP three-layer contract restricts top-level mechanism evidence_class values to direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested. Three claims use local subtype labels as evidence_class values, so the existing final paper-level artifact cannot be confirmed without targeted ontology repair."
+    }
+  },
+  "worker6_adjudication": {
+    "role": "worker-6/adjudicator_review",
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "terminal_confirmation": "not_confirmed",
+    "decision_basis": "Sampled layer-1 APD6 database-only status is justified and layer-2 AMP #15 primary rows are source-backed, but layer-3 uses non-canonical mechanism evidence_class values in the final artifact.",
+    "if_layer3_repaired": "The sampled row can remain accepted_with_cautions_confirmed with the database-only caution preserved.",
+    "must_preserve_cautions": [
+      "APD6 AP03779 linked_experiment_records entry text remains database_only_no_primary_source.",
+      "APD6/DBAASP broad-pathogen Fig. 4b database values are not promoted unless matched to primary-source structured rows.",
+      "Mechanism claims should not assign a single molecular receptor/target beyond the PI/microscopy membrane-permeability context."
+    ]
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5/worker-6",
+      "target_queue": "analysis",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1038_s41467-023-42434-9/final/mechanism_ontology_record.json",
+      "failing_object": "mechanism_claims[0], mechanism_claims[1], mechanism_claims[3]",
+      "failure_code": "non_canonical_mechanism_evidence_class",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/figure_captions.json::xml:fig=3:Fig. 3",
+        "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/figure_captions.json::xml:fig=5:Fig. 5",
+        "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_Article_42434.txt:lines 1587-1607"
+      ],
+      "required_action": "Replace subtype-style evidence_class values with the contract ontology, preserving subtype details in a separate field or limitations note; rerun the mechanism/worker-6 gate.",
+      "acceptance_check": "All mechanism_claims[].evidence_class values are one of direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; direct_mechanism claims retain direct_assay_types and locators."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_only_entry_text_preserved",
+      "evidence_context": "APD6 AP03779 linked_experiment_records.jsonl row 156 is narrative entry text with no structured database value/unit/subject; keep database_only_no_primary_source."
+    },
+    {
+      "caution_code": "broad_pathogen_database_values_not_primary_rows",
+      "evidence_context": "APD6 comments include broad-pathogen MIC/HC50 values; these are database provenance unless independently matched to paper-local primary rows."
+    },
+    {
+      "caution_code": "material_packet_contains_landing_page_supplement_links",
+      "evidence_context": "landing-*.bin supplementary entries resolve as HTML landing pages, but evidence-critical MOESM1 text and Source Data zip are present locally."
+    },
+    {
+      "caution_code": "release_row_locator_drift",
+      "evidence_context": "validation_sample reports tsv_row=22675, while audit-id lookup finds the local TSV row at line 23330; content matches by audit_record_id."
+    }
+  ],
+  "best_effort_limits": [
+    "No web browsing was used, per instruction.",
+    "Source Data.xlsx inside MOESM4 was inventoried but not parsed because the sampled APD6 row is resolved from MOESM1 Supplementary Tables 5 and 10 plus database JSONL row 156.",
+    "The review is scoped to this sampled audit row and paper-level final artifacts needed to judge the row; it does not re-curate all 354 database_record_verification entries."
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-intake-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    "/root/.codex/config.toml",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-017__doi__10.1038_s41467-023-42434-9/true_review_result.schema.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/packet_manifest.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/figure_captions.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_Article_42434.txt",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/extracted/pdf_text/41467_2023_42434_MOESM1_ESM.txt",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/locators/locator_index.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/database/database_source_manifest.json",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_s41467-023-42434-9/database/linked_literature_records.jsonl",
+    "papers/doi__10.1038_s41467-023-42434-9/final/database_record_verification.json",
+    "papers/doi__10.1038_s41467-023-42434-9/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_s41467-023-42434-9/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_s41467-023-42434-9/final/review_report.json",
+    "papers/doi__10.1038_s41467-023-42434-9/work/review/quality_feedback.json",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+  ]
+}

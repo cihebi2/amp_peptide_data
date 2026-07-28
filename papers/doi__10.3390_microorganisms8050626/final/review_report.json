@@ -1,0 +1,79 @@
+{
+  "paper_id": "doi__10.3390_microorganisms8050626",
+  "reviewed_at": "2026-05-09T08:30:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded source recovery opened XML/PDF text, OA package supplement text, and linked APD6/DBAASP/DRAMP rows. Table 6 and Figure 3 values were recoverable locally."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/raw/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/raw/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/extracted/pdf_text/microorganisms-08-00626.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/extracted/supplementary_text/microorganisms-08-00626-s001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/database/linked_dramp_activity_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_microorganisms8050626/database/linked_experiment_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 428,
+    "table_6_rows_added": 96,
+    "toxicity_rows_added": 8,
+    "database_status_summary": {
+      "source_verified": 364,
+      "source_conflict": 8
+    },
+    "mechanism_claims": 4,
+    "open_rework_targets": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 reconciled linked DBAASP/APD6 rows against Tables 1-6 and Figure 3. DRAMP Anticancer labels are preserved as source_conflict where the primary source supports toxicity/NOEC rather than anticancer efficacy.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt target/entity/value rows from XML Tables 2-6, including the formerly omitted Table 6 polymyxin-derivative MIC matrix and Figure 3 hemolysis/HepG2 toxicity values.",
+    "layer_3_mechanism": "Worker-6 replaced generic locator notes with source-bounded mechanism claims around amidation/activity, colistin/polymyxin potentiation, resistance selection, and explicit limits on target inference."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp_anticancer_label_source_conflict",
+      "evidence_context": "DRAMP rows for EtCec1-NH2, EtCec2-NH2, EtCec3-NH2 and EtDip carry Anticancer labels; the primary paper supports HepG2 cytotoxicity/NOEC values but not anticancer efficacy.",
+      "affected_records": [
+        "DRAMP:DRAMP32275",
+        "DRAMP:DRAMP32276",
+        "DRAMP:DRAMP32277",
+        "DRAMP:DRAMP32278"
+      ]
+    },
+    {
+      "caution_code": "mechanism_scope_bounded",
+      "evidence_context": "Combination and resistance-selection assays support phenotypic mechanism inferences, but no exact molecular target is proven."
+    },
+    {
+      "caution_code": "source_spelling_normalized_with_locator",
+      "evidence_context": "The XML Table 2 row spells Micrococcus as 'Micrococus'; database rows were adjudicated against the located row without treating the spelling variant as a material blocker."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "publication_grade_ready": true,
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "adjudication_summary": "Source-reviewed rework recovered the Table 6 MIC matrix, Figure 3 toxicity values, and database-row adjudication needed for this DOI. The paper is publication-grade with cautions for database label overreach and bounded mechanism inference."
+}

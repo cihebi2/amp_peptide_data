@@ -1,0 +1,293 @@
+{
+  "paper_id": "doi__10.3390_molecules20033972",
+  "generated_at": "2026-05-09T12:25:11Z",
+  "reviewed_at": "2026-05-09T12:25:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "audit_scope": "Worker-4 source-reviewed all packet-linked DBAASP assay, experiment, literature rows plus the merged DBAASP sequence row needed to adjudicate sequence/name/modification traceability.",
+  "database_row_counts": {
+    "linked_assay_records": 2,
+    "linked_dramp_activity_records": 0,
+    "linked_experiment_records": 2,
+    "linked_literature_records": 1,
+    "linked_sequence_records": 0,
+    "merged_sequence_rows_checked": 1
+  },
+  "record_audits": [
+    {
+      "source_table": "merged_amp_corpus/output/sequences/all_sequences.csv",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "peptide_name": "MSI-78, Pexiganan",
+      "status": "sequence_modified_not_normalized",
+      "layer1_status": "sequence_modified_not_normalized",
+      "normalized_sequence": "GIGKFLKKAKKFGKAFVKILKK",
+      "sequence_length": 22,
+      "modification_check": {
+        "n_terminal": "not reported as modified in the current paper",
+        "c_terminal": "amidated (NH2) in the primary paper",
+        "database_export_note": "The merged DBAASP sequence row stores the unmodified residue string; the terminal amide is preserved here as a curation caution rather than silently normalizing it away."
+      },
+      "sequence_check": {
+        "agreement": "normalized residue string matches primary paper; C-terminal amide must be retained as modification evidence",
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3.1:Agents",
+          "primary_source_statement": "The primary article names pexiganan/MSI-78 as a 22 amino acid synthetic peptide and gives the residue series with C-terminal NH2."
+        },
+        "database_locator": {
+          "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "locator": "line:7268;sequence_key=DBAASP:DBAASPS_763"
+        }
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "locator": "line:7268;sequence_key=DBAASP:DBAASPS_763"
+      },
+      "conflict_context": "Source-supported terminal amidation is not represented in the merged normalized sequence string. This is a nonblocking sequence-modification caution because the exact primary modification locator is recorded.",
+      "review_notes": "Name, length, normalized sequence, synthetic source, and C-terminal NH2 were checked against section 3.1 and the merged DBAASP sequence row."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "database_record_id": "assay_id=58892",
+      "peptide_name": "MSI-78, Pexiganan",
+      "database_measure": "MIC",
+      "database_subject": "Helicobacter pylori",
+      "database_value": "4",
+      "database_unit": "ug/ml",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "table1-pexiganan-clinical-isolates-mic-4-ug-ml",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3.1:Agents",
+          "primary_source_statement": "The primary article names pexiganan/MSI-78 as a 22 amino acid synthetic peptide and gives the residue series with C-terminal NH2."
+        },
+        "agreement": "same pexiganan/MSI-78 entity as Table 1"
+      },
+      "activity_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1",
+          "primary_source_statement": "Table 1 reports pexiganan and PNP MIC values of 4 ug/mL for two clinical H. pylori isolates and ATCC 43504."
+        },
+        "agreement": "clinical gastric ulcer and gastric cancer H. pylori isolates both report pexiganan MIC 4 ug/mL"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules20033972/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "The database row aggregates the two clinical isolate rows from Table 1; the value, unit, organism context, DOI/PMID, and peptide identity are source-supported."
+    },
+    {
+      "source_table": "linked_assay_records.jsonl",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "database_record_id": "assay_id=58893",
+      "peptide_name": "MSI-78, Pexiganan",
+      "database_measure": "MIC",
+      "database_subject": "Helicobacter pylori ATCC 43504",
+      "database_value": "4",
+      "database_unit": "ug/ml",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "table1-pexiganan-atcc43504-mic-4-ug-ml",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3.1:Agents",
+          "primary_source_statement": "The primary article names pexiganan/MSI-78 as a 22 amino acid synthetic peptide and gives the residue series with C-terminal NH2."
+        },
+        "agreement": "same pexiganan/MSI-78 entity as Table 1"
+      },
+      "activity_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1",
+          "primary_source_statement": "Table 1 reports pexiganan and PNP MIC values of 4 ug/mL for two clinical H. pylori isolates and ATCC 43504."
+        },
+        "agreement": "ATCC 43504 row reports pexiganan MIC 4 ug/mL"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules20033972/database/linked_assay_records.jsonl",
+        "locator": "database:linked_assay_records:row=2"
+      },
+      "conflict_context": "",
+      "review_notes": "The database value, unit, ATCC strain label, DOI/PMID, and peptide identity are source-supported by Table 1 and article metadata."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "database_record_id": "source_record_id=58892",
+      "peptide_name": "MSI-78, Pexiganan",
+      "database_measure": "MIC",
+      "database_subject": "Helicobacter pylori",
+      "database_value": "4",
+      "database_unit": "ug/ml",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "table1-pexiganan-clinical-isolates-mic-4-ug-ml",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3.1:Agents",
+          "primary_source_statement": "The primary article names pexiganan/MSI-78 as a 22 amino acid synthetic peptide and gives the residue series with C-terminal NH2."
+        },
+        "agreement": "same pexiganan/MSI-78 entity as Table 1"
+      },
+      "activity_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1",
+          "primary_source_statement": "Table 1 reports pexiganan and PNP MIC values of 4 ug/mL for two clinical H. pylori isolates and ATCC 43504."
+        },
+        "agreement": "mirrors assay row 58892; primary Table 1 supports MIC 4 ug/mL for the clinical isolates"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules20033972/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Mirrored DBAASP experiment row reconciled to the same Table 1 clinical-isolate evidence as assay row 58892."
+    },
+    {
+      "source_table": "linked_experiment_records.jsonl",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "database_record_id": "source_record_id=58893",
+      "peptide_name": "MSI-78, Pexiganan",
+      "database_measure": "MIC",
+      "database_subject": "Helicobacter pylori ATCC 43504",
+      "database_value": "4",
+      "database_unit": "ug/ml",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "table1-pexiganan-atcc43504-mic-4-ug-ml",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:sec=3.1:Agents",
+          "primary_source_statement": "The primary article names pexiganan/MSI-78 as a 22 amino acid synthetic peptide and gives the residue series with C-terminal NH2."
+        },
+        "agreement": "same pexiganan/MSI-78 entity as Table 1"
+      },
+      "activity_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:table=1",
+          "primary_source_statement": "Table 1 reports pexiganan and PNP MIC values of 4 ug/mL for two clinical H. pylori isolates and ATCC 43504."
+        },
+        "agreement": "mirrors assay row 58893; primary Table 1 supports MIC 4 ug/mL for ATCC 43504"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules20033972/database/linked_experiment_records.jsonl",
+        "locator": "database:linked_experiment_records:row=2"
+      },
+      "conflict_context": "",
+      "review_notes": "Mirrored DBAASP experiment row reconciled to the same Table 1 ATCC 43504 evidence as assay row 58893."
+    },
+    {
+      "source_table": "linked_literature_records.jsonl",
+      "source_id": "DBAASPS_763",
+      "sequence_key": "DBAASP:DBAASPS_763",
+      "database_subject": "The synthetic antimicrobial peptide pexiganan and its nanoparticles (PNPs) exhibit the anti-helicobacter pylori activity in vitro and in vivo.",
+      "status": "source_verified",
+      "layer1_status": "source_verified",
+      "matched_activity_record_id": "",
+      "sequence_check": {
+        "source_locator": {
+          "source_path": "source/paper.xml",
+          "locator": "xml:article-meta"
+        },
+        "agreement": "article metadata DOI/PMID/PMCID match the linked DBAASP literature record"
+      },
+      "citation_traceability": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:article-meta"
+      },
+      "traceability": {
+        "source_path": "paper_packets/doi__10.3390_molecules20033972/database/linked_literature_records.jsonl",
+        "locator": "database:linked_literature_records:row=1"
+      },
+      "conflict_context": "",
+      "review_notes": "Literature link matches DOI 10.3390/molecules20033972, PMID 25738539, and PMCID PMC6272436."
+    }
+  ],
+  "status_summary": {
+    "source_verified": 5,
+    "sequence_modified_not_normalized": 1,
+    "source_conflict": 0,
+    "database_only_no_primary_source": 0,
+    "unresolved_record": 0
+  },
+  "caution_findings": [
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "severity": "caution",
+      "record_id": "DBAASP:DBAASPS_763",
+      "evidence_context": "The source article gives a C-terminal NH2 peptide, while the merged sequence row stores only the normalized residue string. The terminal amide is preserved in the audit and final review."
+    },
+    {
+      "caution_code": "packet_linked_sequence_rows_absent",
+      "severity": "caution",
+      "record_id": "DBAASP:DBAASPS_763",
+      "evidence_context": "The packet database snapshot has zero linked_sequence_records; worker-4 checked the merged all_sequences.csv row directly to resolve identity."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "source_paths_checked": [
+    "rework_context/doi__10.3390_molecules20033972/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules20033972/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules20033972/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules20033972/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules20033972/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules20033972/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules20033972/extracted/pdf_text/local-DBAASP-PMC6272436.txt",
+    "paper_packets/doi__10.3390_molecules20033972/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_molecules20033972/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules20033972/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_molecules20033972/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules20033972/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules20033972/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules20033972/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_molecules20033972/source/paper.xml",
+    "papers/doi__10.3390_molecules20033972/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+  ],
+  "tools_attempted": [
+    "jq",
+    "rg",
+    "sed",
+    "pdftotext-derived packet text",
+    "XML section/table locators",
+    "CSV/JSONL row lookup"
+  ]
+}

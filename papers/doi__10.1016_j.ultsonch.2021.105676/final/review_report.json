@@ -1,0 +1,125 @@
+{
+  "paper_id": "doi__10.1016_j.ultsonch.2021.105676",
+  "reviewed_at": "2026-05-02T02:12:41Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "figure_caption_and_pdf_text_review": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Owner-layer rework consumed local XML/PDF/OA package, XML sections/tables/figure captions, extracted PDF text, archive/supplement indexes, linked database snapshots, and merged DBAASP/CAMP/dbAMP sequence/activity rows. No local supplementary files exist for this paper."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1016_j.ultsonch.2021.105676/handoff_context.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/packet_manifest.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/locators/locator_index.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extraction/extraction_status.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/xml_sections.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/figure_captions.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/pdf_text/main.txt",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/pdf_text/local-DBAASP-PMC8326391.txt",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/oa_package/local-DBAASP-PMC8326391/PMC8326391/main.nxml",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/oa_package/local-DBAASP-PMC8326391/PMC8326391/main.pdf",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/database/database_source_manifest.json",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1016_j.ultsonch.2021.105676/database/linked_experiment_records.jsonl",
+    "papers/doi__10.1016_j.ultsonch.2021.105676/source/paper.xml",
+    "papers/doi__10.1016_j.ultsonch.2021.105676/source/paper.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_verified": 11
+    },
+    "activity_rows_parsed": 6,
+    "activity_rows_have_raw_values_and_units": true,
+    "activity_rows_have_source_locators": true,
+    "mechanism_claims": 4,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked all 11 linked database rows. DBAASP assay/literature rows source-verify against primary Table 2 and article metadata; CAMP/dbAMP entry-text rows are source-verified as compressed E. coli ultrasound/control MIC annotations rather than unresolved conflicts.",
+    "layer_2_activity_toxicity": "Worker-6 final activity rows preserve the six Table 2 MIC cells with raw units, target species, and ultrasound/control conditions. No hemolysis/cytotoxicity endpoint is reported in local material.",
+    "layer_3_mechanism": "Mechanism claims are bounded to source-backed membrane permeability, TEM morphology, author-interpreted sonoporation, and CD structural context; exact plotted figure series are not over-quantified.",
+    "adjudication": "The original framework-test blocker is closed after source-reviewed owner-layer repair. Acceptance is accepted_with_cautions because the packet lacks linked_sequence_records, no supplementary assets exist, and database entry-text rows compress conditions."
+  },
+  "adjudication_summary": "Source-reviewed worker-4/worker-6 re-review repaired the database conflict blocker, replaced framework-test mechanism/review placeholders, and confirmed no local supplementary asset or Table 3 exists. The paper is publication-grade accepted_with_cautions with no open rework targets after bounded local recovery.",
+  "summary": "TGH2 sequence and database rows are source-verified from local XML/PDF and merged database snapshots; final evidence preserves Table 2 MIC values and bounded membrane-permeability mechanism claims.",
+  "caution_findings": [
+    {
+      "code": "camp_dbamp_entry_text_compresses_two_conditions",
+      "severity": "caution",
+      "finding": "CAMP and dbAMP store the E. coli ultrasound/control MIC values in one entry-text field; final curation preserves two separate primary-source Table 2 activity rows and treats the entry-text rows as source-verified but compressed.",
+      "affected_records": [
+        "CAMP:CAMPSQ14120",
+        "dbAMP:dbAMP_33851"
+      ]
+    },
+    {
+      "code": "no_local_supplementary_assets",
+      "severity": "caution",
+      "finding": "The rework ticket requested supplementary PDF/XLSX extraction, but the local landed folder and OA package contain main XML/PDF plus figures only; supplementary_index is empty and extraction_errors records no supplementary assets. This is source exhaustion, not an unresolved missing value.",
+      "source": "paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/supplementary_index.json; paper_packets/doi__10.1016_j.ultsonch.2021.105676/extraction/extraction_errors.jsonl"
+    },
+    {
+      "code": "no_xml_table_3_present",
+      "severity": "caution",
+      "finding": "The ticket referenced Table 3, but primary XML/PDF contains two tables. Table 1 supports peptide-screening sequence context and Table 2 supports MIC values; mechanism evidence is in sections/figures rather than a third table.",
+      "source": "paper_packets/doi__10.1016_j.ultsonch.2021.105676/locators/locator_index.json; paper_packets/doi__10.1016_j.ultsonch.2021.105676/extracted/xml_sections.json"
+    },
+    {
+      "code": "figure_values_not_digitized",
+      "severity": "caution",
+      "finding": "Mechanism figures support trends and assays from captions/source text, but exact plotted conductivity/OD/time-kill numeric series were not digitized into activity records because no gate-relevant database/activity value depends on them.",
+      "source": "xml:fig=2-6; extracted/pdf_text/main.txt"
+    },
+    {
+      "code": "packet_linked_sequence_records_empty",
+      "severity": "caution",
+      "finding": "The packet has zero linked_sequence_records; sequence identity was verified from source XML and merged database sequence catalogs instead.",
+      "affected_records": [
+        "DBAASP:DBAASPS_19460"
+      ]
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_expected": "pass_after_repair",
+    "publication_quality_expected": "pass_after_repair"
+  }
+}

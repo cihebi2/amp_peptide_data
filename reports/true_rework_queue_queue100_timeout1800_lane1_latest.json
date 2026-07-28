@@ -1,0 +1,1693 @@
+{
+  "completion_claim": "queue_control_and_rework_execution_report_not_blanket_publication_grade_acceptance",
+  "dry_run": false,
+  "generated_at": "2026-05-02T03:55:41Z",
+  "max_rework_attempts": 3,
+  "ok": true,
+  "paper_ids": [
+    "doi__10.1002_cbic.202100609",
+    "doi__10.1002_cmdc.202200291",
+    "doi__10.1007_s00018-020-03755-w",
+    "doi__10.1007_s00253-020-10685-x",
+    "doi__10.1007_s12602-018-9501-0",
+    "doi__10.1016_j.bbrep.2024.101747",
+    "doi__10.1016_j.biomaterials.2013.01.075"
+  ],
+  "quality_control": {
+    "acceptance_requires": [
+      "open_rework_tickets=0",
+      "semantic gate pass",
+      "publication-quality gate pass",
+      "worker-6 source-reviewed acceptance"
+    ],
+    "no_infinite_loop": true,
+    "obtainable_only_mode": true,
+    "queue_start_policy": "start once; retries consume rework_context only",
+    "rich_result_status": "terminal_status remains backward-compatible; result_status/result_category/result_reason_code describe why the queue stopped",
+    "unrecoverable_policy": "record unrecoverable_material_gaps/blocked_after_best_effort and advance to next paper after cap"
+  },
+  "result_category_counts": {
+    "accepted": 4,
+    "blocked_source_gap": 3
+  },
+  "result_status_counts": {
+    "accepted_after_rework": 4,
+    "blocked_figure_chart_value_gap": 2,
+    "blocked_missing_external_supplement": 1
+  },
+  "results": [
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "blocked_after_best_effort": {
+            "gap": {
+              "blocks_publication_grade": true,
+              "gap_code": "obtainable_only_source_gap_documented",
+              "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+              "next_action": "record_and_continue",
+              "owner_worker": "worker-6",
+              "source_paths_checked": [
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_cbic.202100609",
+                "paper_packets/doi__10.1002_cbic.202100609/database",
+                "paper_packets/doi__10.1002_cbic.202100609/extracted",
+                "paper_packets/doi__10.1002_cbic.202100609/locators",
+                "paper_packets/doi__10.1002_cbic.202100609/raw",
+                "papers/doi__10.1002_cbic.202100609/final",
+                "papers/doi__10.1002_cbic.202100609/source",
+                "papers/doi__10.1002_cbic.202100609/work",
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+              ],
+              "tools_attempted": [
+                "codex_cli_owner_worker_attempts",
+                "semantic_three_layer_gate.py",
+                "check_three_layer_publication_quality.py",
+                "miaobi_message_bridge.py validate"
+              ],
+              "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+            },
+            "quality_feedback": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+            "source_gap_summary": {
+              "has_source_gap": true,
+              "source_gap_reasons": [
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "code": "supplementary_table_s5_structured_after_repair",
+                  "owner_worker": "worker-2",
+                  "reason": "Supplementary Table S5 was recovered from the local supplement PDF text and structured into 336 row-level MIC records covering 48 peptides across seven bacterial strains.",
+                  "severity": "resolved"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "owner_worker": "worker-2",
+                  "reason": "Figure 4 is available locally as an image bar chart plus caption/method text, but no structured primary source table provides exact HepG2/HEK293 percentages; exact database percentages cannot be source-promoted without fabrication.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "code": "cytotoxicity_database_rows_remain_source_conflict",
+                  "owner_worker": "worker-4",
+                  "reason": "Database MIC rows matching Supplementary Table S5 were source-verified, but HEK293/HepG2 cytotoxicity/killing rows remain source_conflict because exact Figure 4 percentages are not locally recoverable.",
+                  "severity": "major"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Bounded source recovery exhausted local materials for the remaining Figure 4 exact-value gap, so worker-6 must keep the paper non-publication-grade and non-accepted.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json",
+                  "code": "supplementary_table_s5_structured_after_repair",
+                  "owner_worker": "worker-2",
+                  "reason": "Supplementary Table S5 was recovered from the local supplement PDF text and structured into 336 row-level MIC records covering 48 peptides across seven bacterial strains.",
+                  "severity": "resolved"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json",
+                  "code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "owner_worker": "worker-2",
+                  "reason": "Figure 4 is available locally as an image bar chart plus caption/method text, but no structured primary source table provides exact HepG2/HEK293 percentages; exact database percentages cannot be source-promoted without fabrication.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json",
+                  "code": "cytotoxicity_database_rows_remain_source_conflict",
+                  "owner_worker": "worker-4",
+                  "reason": "Database MIC rows matching Supplementary Table S5 were source-verified, but HEK293/HepG2 cytotoxicity/killing rows remain source_conflict because exact Figure 4 percentages are not locally recoverable.",
+                  "severity": "major"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json",
+                  "code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Bounded source recovery exhausted local materials for the remaining Figure 4 exact-value gap, so worker-6 must keep the paper non-publication-grade and non-accepted.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json",
+                  "code": "supplementary_table_s5_structured_after_repair",
+                  "owner_worker": "worker-2",
+                  "reason": "Supplementary Table S5 was recovered from the local supplement PDF text and structured into 336 row-level MIC records covering 48 peptides across seven bacterial strains.",
+                  "severity": "resolved"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json",
+                  "code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "owner_worker": "worker-2",
+                  "reason": "Figure 4 is available locally as an image bar chart plus caption/method text, but no structured primary source table provides exact HepG2/HEK293 percentages; exact database percentages cannot be source-promoted without fabrication.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json",
+                  "code": "cytotoxicity_database_rows_remain_source_conflict",
+                  "owner_worker": "worker-4",
+                  "reason": "Database MIC rows matching Supplementary Table S5 were source-verified, but HEK293/HepG2 cytotoxicity/killing rows remain source_conflict because exact Figure 4 percentages are not locally recoverable.",
+                  "severity": "major"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json",
+                  "code": "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Bounded source recovery exhausted local materials for the remaining Figure 4 exact-value gap, so worker-6 must keep the paper non-publication-grade and non-accepted.",
+                  "severity": "blocking"
+                }
+              ],
+              "unrecoverable_material_gaps": [
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "impact": "Cytotoxicity database exact-percent rows remain source_conflict; publication-grade acceptance remains blocked after bounded best-effort repair.",
+                  "next_action": "record_and_continue",
+                  "owner_worker": "worker-2",
+                  "source_paths_checked": [
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+                  ],
+                  "tools_attempted": [
+                    "rg over packet XML/PDF text/figure captions/supplement text",
+                    "local Figure 4 raster file inspection with file/identify",
+                    "supplementary PDF text/Table S5 review",
+                    "linked DBAASP/DRAMP database row reconciliation",
+                    "semantic_three_layer_gate.py",
+                    "check_three_layer_publication_quality.py"
+                  ],
+                  "why_unrecoverable": "Local primary material contains Figure 4 as a bar-chart image plus caption/method text, but no source table or embedded data with exact HepG2/HEK293 percentages. Exact database percentages cannot be source-promoted without a structured primary source table or validated manual digitization."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "obtainable_only_source_gap_documented",
+                  "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+                  "next_action": "record_and_continue",
+                  "owner_worker": "worker-6",
+                  "source_paths_checked": [
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_cbic.202100609",
+                    "paper_packets/doi__10.1002_cbic.202100609/database",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted",
+                    "paper_packets/doi__10.1002_cbic.202100609/locators",
+                    "paper_packets/doi__10.1002_cbic.202100609/raw",
+                    "papers/doi__10.1002_cbic.202100609/final",
+                    "papers/doi__10.1002_cbic.202100609/source",
+                    "papers/doi__10.1002_cbic.202100609/work",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+                  ],
+                  "tools_attempted": [
+                    "codex_cli_owner_worker_attempt",
+                    "semantic_three_layer_gate.py",
+                    "check_three_layer_publication_quality.py",
+                    "paper-local packet/source/database inspection"
+                  ],
+                  "why_unrecoverable": "Obtainable-only mode preserved local source-supported evidence; the remaining exact Figure 4 cytotoxicity value blocker is not recoverable from local material and should not be fabricated."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "impact": "Cytotoxicity database exact-percent rows remain source_conflict; publication-grade acceptance remains blocked after bounded best-effort repair.",
+                  "next_action": "record_and_continue",
+                  "owner_worker": "worker-2",
+                  "source_paths_checked": [
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+                  ],
+                  "tools_attempted": [
+                    "rg over packet XML/PDF text/figure captions/supplement text",
+                    "local Figure 4 raster file inspection with file/identify",
+                    "supplementary PDF text/Table S5 review",
+                    "linked DBAASP/DRAMP database row reconciliation",
+                    "semantic_three_layer_gate.py",
+                    "check_three_layer_publication_quality.py"
+                  ],
+                  "why_unrecoverable": "Local primary material contains Figure 4 as a bar-chart image plus caption/method text, but no source table or embedded data with exact HepG2/HEK293 percentages. Exact database percentages cannot be source-promoted without a structured primary source table or validated manual digitization."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+                  "impact": "Cytotoxicity database exact-percent rows remain source_conflict; publication-grade acceptance remains blocked after bounded best-effort repair.",
+                  "next_action": "record_and_continue",
+                  "owner_worker": "worker-2",
+                  "source_paths_checked": [
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/paper.xml",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/pdf_text/CBIC-23-0.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DBAASP-PMC9306569/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/oa_package/local-DRAMP-34902208/PMC9306569/CBIC-23-0-g001.jpg",
+                    "paper_packets/doi__10.1002_cbic.202100609/raw/supplementary_original/local-DRAMP-CBIC-23-0-s001.pdf",
+                    "paper_packets/doi__10.1002_cbic.202100609/extracted/supplementary_text/CBIC-23-0-s001.txt",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1002_cbic.202100609/database/linked_dramp_activity_records.jsonl"
+                  ],
+                  "tools_attempted": [
+                    "rg over packet XML/PDF text/figure captions/supplement text",
+                    "local Figure 4 raster file inspection with file/identify",
+                    "supplementary PDF text/Table S5 review",
+                    "linked DBAASP/DRAMP database row reconciliation",
+                    "semantic_three_layer_gate.py",
+                    "check_three_layer_publication_quality.py"
+                  ],
+                  "why_unrecoverable": "Local primary material contains Figure 4 as a bar-chart image plus caption/method text, but no source table or embedded data with exact HepG2/HEK293 percentages. Exact database percentages cannot be source-promoted without a structured primary source table or validated manual digitization."
+                }
+              ]
+            }
+          },
+          "gate_after": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "after_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1002_cbic.202100609/handoff_context.json",
+            "failure_reason_count": 13,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "1002_cbic.202100609\",\n  \"context\": \"rework_context/doi__10.1002_cbic.202100609/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 13,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003",
+            "rwk-complete-test-0001",
+            "rwk-cbic202100609-source-table-s5-figure4-0002"
+          ],
+          "tickets_before": [
+            "rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003",
+            "rwk-complete-test-0001",
+            "rwk-cbic202100609-source-table-s5-figure4-0002"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T01:42:27Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1002_cbic.202100609/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T01:24:16Z",
+            "stderr_tail": "l_gate_refresh\",\n  \"updated_at\": \"2026-05-02T01:39:16Z\"\n}\n\nhook: PostToolUse\nhook: PostToolUse Completed\nhook: PreToolUse\nhook: PreToolUse Completed\nexec\n/bin/bash -lc 'cmp -s paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json papers/doi__10.1002_cbic.202100609/final/review_report.json; echo analysis_vs_paper_final=$?; cmp -s paper_packets/doi__10.1002_cbic.202100609/final/review_report.json papers/doi__10.1002_cbic.202100609/final/review_report.json; echo packet_final_vs_paper_final=$?' in /root/work/抗菌肽/数据库/batch/4-team\n succeeded in 0ms:\nanalysis_vs_paper_final=0\npacket_final_vs_paper_final=1\n\nhook: PostToolUse\nhook: PostToolUse Completed\ncodex\nOne consistency gap remains: the packet-level final review copy is still a separate, older-shaped JSON even though the paper final and packet adjudication now match. I’m aligning that worker-6 packet final report to the canonical paper final review so downstream readers don’t hit stale gate metadata.\nhook: PreToolUse\nhook: PreToolUse Completed\nexec\n/bin/bash -lc \"python - <<'PY'\nimport json\nfrom pathlib import Path\nsrc = Path('papers/doi__10.1002_cbic.202100609/final/review_report.json')\ndst = Path('paper_packets/doi__10.1002_cbic.202100609/final/review_report.json')\ndata = json.loads(src.read_text(encoding='utf-8'))\ndst.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + '\\\\n', encoding='utf-8')\nprint(dst)\nPY\njq empty paper_packets/doi__10.1002_cbic.202100609/final/review_report.json\ncmp -s paper_packets/doi__10.1002_cbic.202100609/final/review_report.json papers/doi__10.1002_cbic.202100609/final/review_report.json; echo packet_final_vs_paper_final=\"'$?' in /root/work/抗菌肽/数据库/batch/4-team\n succeeded in 0ms:\npaper_packets/doi__10.1002_cbic.202100609/final/review_report.json\npacket_final_vs_paper_final=0\n\nhook: PostToolUse\nhook: PostToolUse Completed\ncodex\nCompleted the one-paper re-review for `doi__10.1002_cbic.202100609`.\n\nI kept the paper non-accepted: `review_status=needs_targeted_rework`, `publication_grade=false`, active ticket `rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003`.\n\nUpdated:\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json)\n- [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json)\n- [adjudication_report.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json)\n- [analysis_status.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/analysis_status.json)\n- [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/rework/rework_responses.jsonl)\n- Message bus context updated and validated.\n\nValidation evidence:\n- Activity rows: `376`, suspicious target strings: `0`, missing core fields: `0`.\n- Database audit: `415 source_verified`, `139 source_conflict`, `0` source-verified rows missing locators.\n- Final semantic gate: [semantic_gate.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.semantic_gate.json), return code `1`, expected issues `review_status_not_publication_grade`, `publication_grade_not_true`.\n- Final publication gate: [publication_quality.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.publication_quality.json), return code `2`, `open_rework_targets=1`.\n- `miaobi_message_bridge.py validate` passed.\n\nThe remaining blocker is unchanged and documented as an unrecoverable local-material gap: Figure 4 has image/caption/method support, but no local structured primary table for exact HEK293/HepG2 percentages. I did not promote database-only exact percentages or fabricate values.\n\nNote: this directory is not a git repository, so there was no commit/status diff available.\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n499,368\n",
+            "stdout_tail": "Completed the one-paper re-review for `doi__10.1002_cbic.202100609`.\n\nI kept the paper non-accepted: `review_status=needs_targeted_rework`, `publication_grade=false`, active ticket `rwk-cbic202100609-figure4-exact-cytotoxicity-unrecoverable-0003`.\n\nUpdated:\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/final/review_report.json)\n- [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cbic.202100609/work/review/quality_feedback.json)\n- [adjudication_report.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/adjudication_report.json)\n- [analysis_status.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/analysis/analysis_status.json)\n- [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cbic.202100609/rework/rework_responses.jsonl)\n- Message bus context updated and validated.\n\nValidation evidence:\n- Activity rows: `376`, suspicious target strings: `0`, missing core fields: `0`.\n- Database audit: `415 source_verified`, `139 source_conflict`, `0` source-verified rows missing locators.\n- Final semantic gate: [semantic_gate.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.semantic_gate.json), return code `1`, expected issues `review_status_not_publication_grade`, `publication_grade_not_true`.\n- Final publication gate: [publication_quality.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.codex_re_review_20260502T013553Z.publication_quality.json), return code `2`, `open_rework_targets=1`.\n- `miaobi_message_bridge.py validate` passed.\n\nThe remaining blocker is unchanged and documented as an unrecoverable local-material gap: Figure 4 has image/caption/method support, but no local structured primary table for exact HEK293/HepG2 percentages. I did not promote database-only exact percentages or fabricate values.\n\nNote: this directory is not a git repository, so there was no commit/status diff available.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": true,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1002_cbic.202100609/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [
+        "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+        "obtainable_only_source_gap_documented"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cbic.202100609.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1002_cbic.202100609\",\n  \"counts\": {\n    \"chat\": 63,\n    \"state\": 53,\n    \"log\": 14,\n    \"artifact\": 141,\n    \"event\": 199\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-2",
+        "worker-4",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1002_cbic.202100609",
+      "qc_codes": [
+        "cytotoxicity_database_rows_remain_source_conflict",
+        "figure4_exact_cytotoxicity_percent_values_unrecoverable",
+        "final_adjudication_blocked_by_unrecoverable_figure4_gap",
+        "obtainable_only_source_gap_documented",
+        "supplementary_table_s5_structured_after_repair"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "blocked_source_gap",
+      "result_reason_code": "figure_or_chart_exact_value_unrecoverable",
+      "result_reason_summary": "Remaining exact values are figure/chart-only or not source-promotable from local structured material.",
+      "result_status": "blocked_figure_chart_value_gap",
+      "retryability": "retry_only_with_digitization_or_external_source",
+      "semantic_issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": true,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_after": {
+            "attempt": 1,
+            "passed": true,
+            "phase": "after_worker",
+            "publication_quality_pass": true,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 0,
+            "publication_risk_counts": {},
+            "semantic_fail_count": 0,
+            "semantic_issue_codes": [],
+            "semantic_pass_count": 1,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 0
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1002_cmdc.202200291/handoff_context.json",
+            "failure_reason_count": 10,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1002_cmdc.202200291/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "1002_cmdc.202200291\",\n  \"context\": \"rework_context/doi__10.1002_cmdc.202200291/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1002_cmdc.202200291/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 10,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-complete-test-0001"
+          ],
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T02:10:02Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1002_cmdc.202200291/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T01:42:27Z",
+            "stderr_tail": "ort.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/final/review_report.json), and [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/work/review/quality_feedback.json).\n\nOutcome: `accepted_with_cautions`, `publication_grade=true`. Activity now has `205` source-backed rows. Database audit has `394 source_verified` rows and `2 source_conflict` rows preserved for the A13 / *A. baumannii* DBAASP value conflict. No unrecoverable material gaps remain for the owned layers.\n\nValidation:\n- Semantic gate: `1/1` pass, `0` issues.\n- Publication QA: `publication_grade_pass=true`, `risk_counts={}`.\n- Message bus: `open_rework_tickets=[]`; `rwk-complete-test-0001` resolved in [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/rework/rework_responses.jsonl).\n- Repair summary written to [repair_report.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.codex_rereview_20260502.repair_report.json).\n\nThe original rework request row remains as historical queue context; the live workflow context and response log mark it closed.\n\n\ndiff --git a//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/analysis/analysis_status.json b//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/analysis/analysis_status.json\nindex 81ff0811a888403b76d1b0e7d056af25495733f1..5b46cf37ead6eed86167fcd53f8ce632fad74368\n--- a//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/analysis/analysis_status.json\n+++ b//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/analysis/analysis_status.json\n@@ -1,6 +1,6 @@\n {\n   \"paper_id\": \"doi__10.1002_cmdc.202200291\",\n-  \"status\": \"analysis_accepted_with_cautions\",\n+  \"status\": \"analysis_adjudicated_with_cautions\",\n   \"generated_at\": \"2026-05-02T01:58:27Z\",\n   \"activity_record_count\": 205,\n   \"activity_extraction_issue_count\": 0,\ndiff --git a//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/packet_manifest.json b//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/packet_manifest.json\nindex ed829d396ad36bb62a1d849433369c291a980ed9..d28e2112ccc014d9133f7256e016fb50f09452c3\n--- a//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/packet_manifest.json\n+++ b//root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/packet_manifest.json\n@@ -1,5 +1,5 @@\n {\n-  \"analysis_queue_status\": \"analysis_needs_analysis_rework\",\n+  \"analysis_queue_status\": \"analysis_adjudicated_with_cautions\",\n   \"database_snapshot_inputs\": {\n     \"database_source_manifest\": \"/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/database/database_source_manifest.json\",\n     \"row_counts\": {\n@@ -15,9 +15,7 @@\n   \"known_missing_or_blocked_materials\": [],\n   \"locator_index_path\": \"/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/locators/locator_index.json\",\n   \"material_queue_status\": \"material_extracted_with_gaps\",\n-  \"open_rework_ticket_ids\": [\n-    \"rwk-complete-test-0001\"\n-  ],\n+  \"open_rework_ticket_ids\": [],\n   \"packet_version\": \"v001-complete-message-test\",\n   \"paper_id\": \"doi__10.1002_cmdc.202200291\",\n   \"pmcid\": \"PMC9541320\",\n@@ -33,8 +31,8 @@\n     \"/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets\",\n     \"/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output\"\n   ],\n-  \"test_scope\": \"real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance\",\n+  \"test_scope\": \"real complete message-transfer workflow re-reviewed by Codex; terminal status is accepted_with_cautions after source-reviewed owner-layer repair\",\n   \"title\": \"Machine Learning Guided Discovery of Non-Hemolytic Membrane Disruptive Anticancer Peptides.\",\n-  \"updated_at\": \"2026-04-29T05:32:33Z\",\n+  \"updated_at\": \"2026-05-02T02:00:10Z\",\n   \"year\": \"2022\"\n }\n\nhook: Stop\nhook: Stop Completed\ntokens used\n625,702\n",
+            "stdout_tail": "Re-review complete for `doi__10.1002_cmdc.202200291`.\n\nUpdated the worker-2/4/6 artifacts, including [activity_toxicity_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/final/activity_toxicity_evidence.json), [database_record_verification.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/final/database_record_verification.json), [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/final/review_report.json), and [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_cmdc.202200291/work/review/quality_feedback.json).\n\nOutcome: `accepted_with_cautions`, `publication_grade=true`. Activity now has `205` source-backed rows. Database audit has `394 source_verified` rows and `2 source_conflict` rows preserved for the A13 / *A. baumannii* DBAASP value conflict. No unrecoverable material gaps remain for the owned layers.\n\nValidation:\n- Semantic gate: `1/1` pass, `0` issues.\n- Publication QA: `publication_grade_pass=true`, `risk_counts={}`.\n- Message bus: `open_rework_tickets=[]`; `rwk-complete-test-0001` resolved in [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_cmdc.202200291/rework/rework_responses.jsonl).\n- Repair summary written to [repair_report.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.codex_rereview_20260502.repair_report.json).\n\nThe original rework request row remains as historical queue context; the live workflow context and response log mark it closed.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1002_cmdc.202200291.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1002_cmdc.202200291\",\n  \"counts\": {\n    \"chat\": 29,\n    \"state\": 26,\n    \"log\": 6,\n    \"artifact\": 59,\n    \"event\": 88\n  }\n}\n"
+      },
+      "owner_workers": [],
+      "paper_id": "doi__10.1002_cmdc.202200291",
+      "qc_codes": [],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "accepted",
+      "result_reason_code": "strict_gates_passed",
+      "result_reason_summary": "Semantic gate, publication-quality gate, and ticket closure reached an accepted queue outcome.",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "blocked_after_best_effort": {
+            "gap": {
+              "blocks_publication_grade": true,
+              "gap_code": "obtainable_only_source_gap_documented",
+              "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+              "next_action": "record_and_continue",
+              "owner_worker": "worker-6",
+              "source_paths_checked": [
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w",
+                "paper_packets/doi__10.1007_s00018-020-03755-w/database",
+                "paper_packets/doi__10.1007_s00018-020-03755-w/extracted",
+                "paper_packets/doi__10.1007_s00018-020-03755-w/locators",
+                "paper_packets/doi__10.1007_s00018-020-03755-w/raw",
+                "papers/doi__10.1007_s00018-020-03755-w/final",
+                "papers/doi__10.1007_s00018-020-03755-w/source",
+                "papers/doi__10.1007_s00018-020-03755-w/work",
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+              ],
+              "tools_attempted": [
+                "codex_cli_owner_worker_attempts",
+                "semantic_three_layer_gate.py",
+                "check_three_layer_publication_quality.py",
+                "miaobi_message_bridge.py validate"
+              ],
+              "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+            },
+            "quality_feedback": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+            "source_gap_summary": {
+              "has_source_gap": true,
+              "source_gap_reasons": [
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "owner_worker": "worker-3",
+                  "reason": "Current bounded local recheck found no local DOC/DOCX/XLS/XLSX/archive/image supplementary file under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or DOI-scoped merged_amp_corpus surfaces; the available supplementary .bin files are Springer HTML pages pointing to an external DOCX not present locally.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "code": "worker6_publication_grade_blocked_by_unrecoverable_material_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Worker-6 must keep review_status=blocked_missing_primary_material and publication_grade=false while the worker-3 supplementary-primary-material ticket remains open.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "code": "bounded_rework_limit_reconfirmed",
+                  "owner_worker": "worker-6",
+                  "reason": "The paper remains beyond the bounded rework cap and the locally missing supplementary primary material remains unrecoverable; no unsupported value was fabricated.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                  "code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "owner_worker": "worker-3",
+                  "reason": "Current bounded local recheck found no local DOC/DOCX/XLS/XLSX/archive/image supplementary file under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or DOI-scoped merged_amp_corpus surfaces; the available supplementary .bin files are Springer HTML pages pointing to an external DOCX not present locally.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                  "code": "worker6_publication_grade_blocked_by_unrecoverable_material_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Worker-6 must keep review_status=blocked_missing_primary_material and publication_grade=false while the worker-3 supplementary-primary-material ticket remains open.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "code": "bounded_rework_limit_reconfirmed",
+                  "owner_worker": "worker-6",
+                  "reason": "The paper remains beyond the bounded rework cap and the locally missing supplementary primary material remains unrecoverable; no unsupported value was fabricated.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                  "code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "owner_worker": "worker-3",
+                  "reason": "Current bounded local recheck found no local DOC/DOCX/XLS/XLSX/archive/image supplementary file under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or DOI-scoped merged_amp_corpus surfaces; the available supplementary .bin files are Springer HTML pages pointing to an external DOCX not present locally.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                  "code": "worker6_publication_grade_blocked_by_unrecoverable_material_gap",
+                  "owner_worker": "worker-6",
+                  "reason": "Worker-6 must keep review_status=blocked_missing_primary_material and publication_grade=false while the worker-3 supplementary-primary-material ticket remains open.",
+                  "severity": "blocking"
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "code": "bounded_rework_limit_reconfirmed",
+                  "owner_worker": "worker-6",
+                  "reason": "The paper remains beyond the bounded rework cap and the locally missing supplementary primary material remains unrecoverable; no unsupported value was fabricated.",
+                  "severity": "blocking"
+                }
+              ],
+              "unrecoverable_material_gaps": [
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "impact": "The true Supplementary file1 DOCX cannot be source-reviewed locally; supplementary-dependent tables/figures remain uncertified, so publication-grade acceptance remains blocked.",
+                  "last_checked_at": "2026-05-02T02:18:15Z",
+                  "next_action": "external_source_needed_or_controller_accepts_nonpublication_blocked_gap",
+                  "owner_worker": "worker-3",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00018-020-03755-w/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_status.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_quality_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/activity_toxicity_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/database_record_audit.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/mechanism_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/supplementary_original/*.bin",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.xml",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_text.jsonl",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/supplementary_methods/supplementary_evidence.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/database_record_verification.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/supplementary/*.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/asset_manifest.csv",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/metadata.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets_current/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/*.csv"
+                  ],
+                  "tools_attempted": [
+                    "jq review of handoff packet, packet manifest, locators, extraction status, analysis outputs, final review, quality feedback, and rework JSONL",
+                    "find -L over packet raw, paper source, landed_assets, downloaded_assets, and landed_assets_current paper roots",
+                    "find exact MOESM/DOCX/XLS/XLSX/archive/image candidates under paper-local and merged_amp_corpus DOI-scoped roots",
+                    "rg --files over merged_amp_corpus with exact 18_2020_3755_MOESM1_ESM.docx search; no local match returned",
+                    "file -L over packet raw and landed supplementary assets",
+                    "ls -l symlink target inspection for packet supplementary_original assets",
+                    "rg MOESM/docx/ESM/supplementary over packet, paper source, landed, downloaded, and current roots",
+                    "HTML href inspection for Springer supplementary landing pages",
+                    "supplementary_index review",
+                    "supplementary_text review",
+                    "asset_manifest and metadata review",
+                    "database_record_audit status summary review",
+                    "office/archive/OCR tool applicability check: no local office/archive/image supplementary bytes existed to extract"
+                  ],
+                  "why_unrecoverable": "Current bounded Codex CLI re-review found no local DOC/DOCX/XLS/XLSX/archive/image supplementary bytes. The packet supplementary_original files are symlinks to landed .bin files whose file type is Springer HTML; those pages link to 18_2020_3755_MOESM1_ESM.docx, but exact-name and DOI-scoped local searches found no DOCX under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or merged_amp_corpus surfaces checked locally."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "bounded_rework_limit_reconfirmed",
+                  "impact": "Paper remains non-publication-grade and must stay blocked or await external/manual source recovery.",
+                  "last_checked_at": "2026-05-02T02:18:15Z",
+                  "next_action": "record_and_continue",
+                  "owner_worker": "worker-6",
+                  "source_paths_checked": [
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets_current/papers/doi__10.1007_s00018-020-03755-w",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/database",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/locators",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw",
+                    "papers/doi__10.1007_s00018-020-03755-w/final",
+                    "papers/doi__10.1007_s00018-020-03755-w/source",
+                    "papers/doi__10.1007_s00018-020-03755-w/work",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+                  ],
+                  "tools_attempted": [
+                    "codex_cli_owner_worker_recheck",
+                    "semantic_three_layer_gate.py",
+                    "check_three_layer_publication_quality.py"
+                  ],
+                  "why_unrecoverable": "The remaining material blocker was rechecked after the bounded rework cap; no new local primary supplementary material was recoverable, and publication gates must stay failing/nonaccepted."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "impact": "The true Supplementary file1 DOCX cannot be source-reviewed locally; supplementary-dependent tables/figures remain uncertified, so publication-grade acceptance remains blocked.",
+                  "last_checked_at": "2026-05-02T02:18:15Z",
+                  "next_action": "external_source_needed_or_controller_accepts_nonpublication_blocked_gap",
+                  "owner_worker": "worker-3",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00018-020-03755-w/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_status.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_quality_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/activity_toxicity_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/database_record_audit.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/mechanism_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/supplementary_original/*.bin",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.xml",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_text.jsonl",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/supplementary_methods/supplementary_evidence.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/database_record_verification.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/supplementary/*.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/asset_manifest.csv",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/metadata.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets_current/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/*.csv"
+                  ],
+                  "tools_attempted": [
+                    "jq review of handoff packet, packet manifest, locators, extraction status, analysis outputs, final review, quality feedback, and rework JSONL",
+                    "find -L over packet raw, paper source, landed_assets, downloaded_assets, and landed_assets_current paper roots",
+                    "find exact MOESM/DOCX/XLS/XLSX/archive/image candidates under paper-local and merged_amp_corpus DOI-scoped roots",
+                    "rg --files over merged_amp_corpus with exact 18_2020_3755_MOESM1_ESM.docx search; no local match returned",
+                    "file -L over packet raw and landed supplementary assets",
+                    "ls -l symlink target inspection for packet supplementary_original assets",
+                    "rg MOESM/docx/ESM/supplementary over packet, paper source, landed, downloaded, and current roots",
+                    "HTML href inspection for Springer supplementary landing pages",
+                    "supplementary_index review",
+                    "supplementary_text review",
+                    "asset_manifest and metadata review",
+                    "database_record_audit status summary review",
+                    "office/archive/OCR tool applicability check: no local office/archive/image supplementary bytes existed to extract"
+                  ],
+                  "why_unrecoverable": "Current bounded Codex CLI re-review found no local DOC/DOCX/XLS/XLSX/archive/image supplementary bytes. The packet supplementary_original files are symlinks to landed .bin files whose file type is Springer HTML; those pages link to 18_2020_3755_MOESM1_ESM.docx, but exact-name and DOI-scoped local searches found no DOCX under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or merged_amp_corpus surfaces checked locally."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "supplementary_moesm1_docx_missing_from_local_packet",
+                  "impact": "The true Supplementary file1 DOCX cannot be source-reviewed locally; supplementary-dependent tables/figures remain uncertified, so publication-grade acceptance remains blocked.",
+                  "last_checked_at": "2026-05-02T02:18:15Z",
+                  "next_action": "external_source_needed_or_controller_accepts_nonpublication_blocked_gap",
+                  "owner_worker": "worker-3",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00018-020-03755-w/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_status.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extraction/extraction_quality_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/activity_toxicity_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/database_record_audit.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/mechanism_evidence.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/analysis/adjudication_report.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.xml",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/raw/supplementary_original/*.bin",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.xml",
+                    "papers/doi__10.1007_s00018-020-03755-w/source/paper.pdf",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/pdf_text/landing-1.txt",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00018-020-03755-w/extracted/supplementary_text.jsonl",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/supplementary_methods/supplementary_evidence.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/review_report.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/final/database_record_verification.json",
+                    "papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/supplementary/*.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/asset_manifest.csv",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00018-020-03755-w/metadata.json",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/downloaded_assets/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets_current/papers/doi__10.1007_s00018-020-03755-w",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/*.csv"
+                  ],
+                  "tools_attempted": [
+                    "jq review of handoff packet, packet manifest, locators, extraction status, analysis outputs, final review, quality feedback, and rework JSONL",
+                    "find -L over packet raw, paper source, landed_assets, downloaded_assets, and landed_assets_current paper roots",
+                    "find exact MOESM/DOCX/XLS/XLSX/archive/image candidates under paper-local and merged_amp_corpus DOI-scoped roots",
+                    "rg --files over merged_amp_corpus with exact 18_2020_3755_MOESM1_ESM.docx search; no local match returned",
+                    "file -L over packet raw and landed supplementary assets",
+                    "ls -l symlink target inspection for packet supplementary_original assets",
+                    "rg MOESM/docx/ESM/supplementary over packet, paper source, landed, downloaded, and current roots",
+                    "HTML href inspection for Springer supplementary landing pages",
+                    "supplementary_index review",
+                    "supplementary_text review",
+                    "asset_manifest and metadata review",
+                    "database_record_audit status summary review",
+                    "office/archive/OCR tool applicability check: no local office/archive/image supplementary bytes existed to extract"
+                  ],
+                  "why_unrecoverable": "Current bounded Codex CLI re-review found no local DOC/DOCX/XLS/XLSX/archive/image supplementary bytes. The packet supplementary_original files are symlinks to landed .bin files whose file type is Springer HTML; those pages link to 18_2020_3755_MOESM1_ESM.docx, but exact-name and DOI-scoped local searches found no DOCX under packet, paper source, landed_assets, downloaded_assets, landed_assets_current, or merged_amp_corpus surfaces checked locally."
+                }
+              ]
+            }
+          },
+          "gate_after": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "after_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1007_s00018-020-03755-w/handoff_context.json",
+            "failure_reason_count": 9,
+            "owner_workers": [
+              "worker-3",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1007_s00018-020-03755-w/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": " \"context\": \"rework_context/doi__10.1007_s00018-020-03755-w/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1007_s00018-020-03755-w/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-3\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 9,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-20260501-worker3-supplement-docx-unrecoverable-after-bounded-repair",
+            "rwk-complete-test-0001",
+            "rwk-20260501-worker2-table3-activity-entity-coverage",
+            "rwk-20260501-worker3-supplement-docx-local-gap",
+            "rwk-20260501-worker5-mechanism-source-review"
+          ],
+          "tickets_before": [
+            "rwk-20260501-worker3-supplement-docx-unrecoverable-after-bounded-repair",
+            "rwk-complete-test-0001",
+            "rwk-20260501-worker2-table3-activity-entity-coverage",
+            "rwk-20260501-worker3-supplement-docx-local-gap",
+            "rwk-20260501-worker5-mechanism-source-review"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T02:20:08Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1007_s00018-020-03755-w/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T02:10:03Z",
+            "stderr_tail": "state-execution/artifact/chat/event layer, five_paper_true_rereview, doi__10.1002_cbic.202100151, doi__10.1002_cbic.202100609, doi__10.1002_advs.202205301, doi__10.1002_advs.202401793, doi__10.1002_cmdc.201900465, accepted_with_cautions, needs_targeted_rework\n    45\t\n    46\t## Reusable knowledge\n    47\t\n    48\t- The durable architecture split is clear in this checkout: workflow/control traffic now lives in the Miaobi-style context/state-execution/artifact/chat/event layer and JSONL message logs, while paper evidence still stays in `paper_packets/.../analysis/*.json`, `papers/.../final/*.json`, and `paper_packets/.../rework/*.jsonl` rather than being flattened into chat state [Task 1]\n    49\t- The implementation surface is already laid out and grep-friendly: `docs/PAPER_REVIEW_MECHANISM_V1.md`, `docs/MIAOBI_MESSAGE_TRANSFER_CONTRACT.md`, `docs/MIAOBI_MESSAGE_TRANSFER_IMPLEMENTATION_PLAN.md`, `docs/schemas/*.json`, `scripts/miaobi_message_bridge.py`, and `docs/workflow-templates/amp-paper-review-codex-claude.yaml` are the first files to inspect before redesigning this review loop again [Task 1]\n    50\t- Batch/4-team was bootstrapped from the proven local skill surface by copying `batch/2-team/.codex/skills` into `batch/4-team/.codex/skills`, so workflow questions here should start from the project-local copied skills plus the new message-transfer docs rather than from root-level generic guidance [Task 1]\n    51\t- The smoke-test and rereview runs validated the control plane without overclaiming paper outcomes: the message bridge and local web panel worked on `doi__10.1002_cbic.202100609`, and the later five-paper rereview ended with `doi__10.1002_advs.202205301` plus `doi__10.1002_cbic.202100151` as `accepted_with_cautions` while `doi__10.1002_cmdc.201900465`, `doi__10.1002_advs.202401793`, and `doi__10.1002_cbic.202100609` remained `needs_targeted_rework` [Task 1]\n    52\t- The retained report/evidence surface is wider than the mechanism docs alone: the rollout also wrote `reports/five_paper_true_rereview_*`, per-paper semantic/publication gate outputs, updated packet/final artifacts, and durable rework tickets, so future verification should read those artifacts before summarizing batch/4-team review quality [Task 1]\n\nhook: PostToolUse\nhook: PostToolUse Completed\ncodex\nRe-reviewed `doi__10.1007_s00018-020-03755-w` for worker-3/4/6 only. I left the paper non-accepted: `review_status=blocked_missing_primary_material`, `publication_grade=false`, with the worker-3 ticket still open for `supplementary_moesm1_docx_missing_from_local_packet`.\n\nUpdated the durable artifacts, mainly:\n- [supplementary_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/supplementary_methods/supplementary_evidence.json)\n- [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json)\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/final/review_report.json)\n- [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00018-020-03755-w/rework/rework_responses.jsonl)\n\nSource recovery result: local supplementary `.bin` files still inspect as Springer HTML landing pages, and exact local search found no `18_2020_3755_MOESM1_ESM.docx`. Worker-4 database status is retained as complete: `113 source_verified`, `28 source_conflict`.\n\nGate evidence:\n- Semantic gate: [report](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.codex_cli_rereview_20260502T101815Z.semantic_gate.json), return code `1`, `issue_count=2`.\n- Publication QA: [report](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.codex_cli_rereview_20260502T101815Z.publication_quality.json), return code `2`, `publication_grade_pass=false`, `open_rework_targets=1`.\n- JSON validation passed for 11 JSON files and all 11 JSONL response lines.\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n479,223\n",
+            "stdout_tail": "Re-reviewed `doi__10.1007_s00018-020-03755-w` for worker-3/4/6 only. I left the paper non-accepted: `review_status=blocked_missing_primary_material`, `publication_grade=false`, with the worker-3 ticket still open for `supplementary_moesm1_docx_missing_from_local_packet`.\n\nUpdated the durable artifacts, mainly:\n- [supplementary_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/supplementary_methods/supplementary_evidence.json)\n- [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/work/review/quality_feedback.json)\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00018-020-03755-w/final/review_report.json)\n- [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00018-020-03755-w/rework/rework_responses.jsonl)\n\nSource recovery result: local supplementary `.bin` files still inspect as Springer HTML landing pages, and exact local search found no `18_2020_3755_MOESM1_ESM.docx`. Worker-4 database status is retained as complete: `113 source_verified`, `28 source_conflict`.\n\nGate evidence:\n- Semantic gate: [report](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.codex_cli_rereview_20260502T101815Z.semantic_gate.json), return code `1`, `issue_count=2`.\n- Publication QA: [report](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.codex_cli_rereview_20260502T101815Z.publication_quality.json), return code `2`, `publication_grade_pass=false`, `open_rework_targets=1`.\n- JSON validation passed for 11 JSON files and all 11 JSONL response lines.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": true,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [
+        "bounded_rework_limit_reconfirmed",
+        "obtainable_only_source_gap_documented",
+        "supplementary_moesm1_docx_missing_from_local_packet"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00018-020-03755-w.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1007_s00018-020-03755-w\",\n  \"counts\": {\n    \"chat\": 34,\n    \"state\": 33,\n    \"log\": 8,\n    \"artifact\": 85,\n    \"event\": 120\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-3",
+        "worker-4",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1007_s00018-020-03755-w",
+      "qc_codes": [
+        "bounded_rework_limit_reconfirmed",
+        "obtainable_only_source_gap_documented",
+        "supplementary_moesm1_docx_missing_from_local_packet",
+        "worker4_database_reconciled_with_preserved_conflicts",
+        "worker6_publication_grade_blocked_by_unrecoverable_material_gap"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "blocked_source_gap",
+      "result_reason_code": "missing_external_supplement",
+      "result_reason_summary": "A specific supplementary source/table is absent or only represented by non-data landing/placeholder material.",
+      "result_status": "blocked_missing_external_supplement",
+      "retryability": "retry_only_after_source_staging",
+      "semantic_issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": false,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "blocked_after_best_effort": {
+            "gap": {
+              "blocks_publication_grade": true,
+              "gap_code": "obtainable_only_source_gap_documented",
+              "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+              "next_action": "record_and_continue",
+              "owner_worker": "worker-6",
+              "source_paths_checked": [
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x",
+                "paper_packets/doi__10.1007_s00253-020-10685-x/database",
+                "paper_packets/doi__10.1007_s00253-020-10685-x/extracted",
+                "paper_packets/doi__10.1007_s00253-020-10685-x/locators",
+                "paper_packets/doi__10.1007_s00253-020-10685-x/raw",
+                "papers/doi__10.1007_s00253-020-10685-x/final",
+                "papers/doi__10.1007_s00253-020-10685-x/source",
+                "papers/doi__10.1007_s00253-020-10685-x/work",
+                "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+              ],
+              "tools_attempted": [
+                "codex_cli_owner_worker_attempts",
+                "semantic_three_layer_gate.py",
+                "check_three_layer_publication_quality.py",
+                "miaobi_message_bridge.py validate"
+              ],
+              "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+            },
+            "quality_feedback": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/work/review/quality_feedback.json",
+            "source_gap_summary": {
+              "has_source_gap": true,
+              "source_gap_reasons": [],
+              "unrecoverable_material_gaps": [
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/work/review/quality_feedback.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "primary_sequence_not_embedded_for_database_identity",
+                  "impact": "Worker-4 database identity remains source_conflict/database-limited; worker-6 cannot mark the paper publication-grade from local material despite repaired activity rows.",
+                  "next_action": "external_source_needed",
+                  "owner_worker": "worker-4",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00253-020-10685-x/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/xml_sections.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_Article_10685.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_10685_MOESM1_ESM.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_tables.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_literature_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_sequence_records.jsonl",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.xml",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.pdf",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-1.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-10.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-2.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-3.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-4.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-5.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-6.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-7.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-8.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-9.bin"
+                  ],
+                  "tools_attempted": [
+                    "jq",
+                    "rg",
+                    "pdftotext-derived packet text",
+                    "xml.etree.ElementTree table extraction",
+                    "file command on landed supplementary .bin assets",
+                    "database JSONL row review"
+                  ],
+                  "why_unrecoverable": "The current paper states ID13 and DLP4 were expressed/purified as previously described, but the local XML/PDF/OA package does not embed the peptide sequence or modification record, and packet/database/linked_sequence_records.jsonl is empty. Linked DBAASP/CAMP activity rows therefore cannot be upgraded to exact source_verified peptide-identity records from local material alone."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/review_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "primary_sequence_not_embedded_for_database_identity",
+                  "impact": "Worker-4 database identity remains source_conflict/database-limited; worker-6 cannot mark the paper publication-grade from local material despite repaired activity rows.",
+                  "next_action": "external_source_needed",
+                  "owner_worker": "worker-4",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00253-020-10685-x/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/xml_sections.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_Article_10685.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_10685_MOESM1_ESM.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_tables.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_literature_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_sequence_records.jsonl",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.xml",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.pdf",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-1.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-10.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-2.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-3.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-4.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-5.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-6.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-7.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-8.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-9.bin"
+                  ],
+                  "tools_attempted": [
+                    "jq",
+                    "rg",
+                    "pdftotext-derived packet text",
+                    "xml.etree.ElementTree table extraction",
+                    "file command on landed supplementary .bin assets",
+                    "database JSONL row review"
+                  ],
+                  "why_unrecoverable": "The current paper states ID13 and DLP4 were expressed/purified as previously described, but the local XML/PDF/OA package does not embed the peptide sequence or modification record, and packet/database/linked_sequence_records.jsonl is empty. Linked DBAASP/CAMP activity rows therefore cannot be upgraded to exact source_verified peptide-identity records from local material alone."
+                },
+                {
+                  "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00253-020-10685-x/analysis/adjudication_report.json",
+                  "blocks_publication_grade": true,
+                  "gap_code": "primary_sequence_not_embedded_for_database_identity",
+                  "impact": "Worker-4 database identity remains source_conflict/database-limited; worker-6 cannot mark the paper publication-grade from local material despite repaired activity rows.",
+                  "next_action": "external_source_needed",
+                  "owner_worker": "worker-4",
+                  "source_paths_checked": [
+                    "rework_context/doi__10.1007_s00253-020-10685-x/handoff_context.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/packet_manifest.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/locators/locator_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/xml_sections.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_Article_10685.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/pdf_text/253_2020_10685_MOESM1_ESM.txt",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/figure_captions.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_index.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/extracted/supplementary_tables.json",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_assay_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_experiment_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_literature_records.jsonl",
+                    "paper_packets/doi__10.1007_s00253-020-10685-x/database/linked_sequence_records.jsonl",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.xml",
+                    "papers/doi__10.1007_s00253-020-10685-x/source/paper.pdf",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-1.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-10.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-2.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-3.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-4.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-5.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-6.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-7.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-8.bin",
+                    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1007_s00253-020-10685-x/supplementary/landing-9.bin"
+                  ],
+                  "tools_attempted": [
+                    "jq",
+                    "rg",
+                    "pdftotext-derived packet text",
+                    "xml.etree.ElementTree table extraction",
+                    "file command on landed supplementary .bin assets",
+                    "database JSONL row review"
+                  ],
+                  "why_unrecoverable": "The current paper states ID13 and DLP4 were expressed/purified as previously described, but the local XML/PDF/OA package does not embed the peptide sequence or modification record, and packet/database/linked_sequence_records.jsonl is empty. Linked DBAASP/CAMP activity rows therefore cannot be upgraded to exact source_verified peptide-identity records from local material alone."
+                }
+              ]
+            }
+          },
+          "gate_after": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "after_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1007_s00253-020-10685-x/handoff_context.json",
+            "failure_reason_count": 10,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1007_s00253-020-10685-x/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "\"context\": \"rework_context/doi__10.1007_s00253-020-10685-x/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1007_s00253-020-10685-x/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 10,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-complete-test-0001"
+          ],
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T02:38:01Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1007_s00253-020-10685-x/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T02:20:09Z",
+            "stderr_tail": " expired, a final idle write was missing, or commit instructions were impossible because `batch/2-team` was not a git repository [Task 3]\n   129\t- The manual deep-review checker is contract-focused, not publication-grade: the final retained team totals were `paper_count=100`, `contract_issue_count=0`, `manual_accepted_with_cautions=9`, `manual_needs_analysis_rework=66`, and `manual_needs_material_rework=25`, so a structurally clean shutdown still left most papers in content-rework states [Task 4]\n   130\t- The manual deep-review calibration run set a higher truth standard than checker-clean JSON alone: `doi__10.1002_cbic.202100609`, `doi__10.1007_s12602-018-9444-5`, `doi__10.1039_d4md00383g`, and `doi__10.1186_s12864-022-08310-4` could all return `issue_count=0` while remaining `manual_needs_analysis_rework` or `manual_needs_material_rework`; the accepted stop condition was checker-clean one-paper completion plus leader validation, not automatic publication-grade acceptance [Task 4]\n   131\t- The per-paper checker contract is concrete: `review_model=gpt-5.5`, `reasoning_effort=xhigh`, `manual_source_reviewed=true`, real `reviewed_at_start`/`reviewed_at_end` bracketing at least 300 seconds for non-blocked reviews, and sufficient `sources_opened` plus `source_locator_evidence` counts [Task 4]\n\nhook: PostToolUse\nhook: PostToolUse Completed\n  ✓ Reopen handoff packet, current artifacts, and gate/report surfaces\n  ✓ Inspect paper-local source materials and recover owned worker-2/4/6 evidence\n  ✓ Repair packet/final/work artifacts and append rework response/tickets\n  ✓ Rerun semantic/publication gates and iterate once if controllable\n  ✓ Report final status with evidence and remaining blockers\ncodex\nRe-reviewed `doi__10.1007_s00253-020-10685-x` and kept it non-accepted.\n\nUpdated the owner-layer artifacts under:\n- [activity_toxicity_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/activity_toxicity_evidence.json): now 34 source-located activity/toxicity records; previous missing activity blocker is repaired.\n- [database_record_verification.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/database_record_verification.json): 9 database rows preserved as `source_conflict`, 1 literature link `source_verified`.\n- [mechanism_ontology_record.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/mechanism_ontology_record.json): replaced placeholder mechanism notes with 4 bounded source-located claims.\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/review_report.json) and [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/work/review/quality_feedback.json): status is `blocked_missing_primary_material_after_re_review`.\n\nI appended an updated rework request and response in [rework_requests.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00253-020-10685-x/rework/rework_requests.jsonl) / [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00253-020-10685-x/rework/rework_responses.jsonl). Remaining blocker is `primary_sequence_not_embedded_for_database_identity`: the local primary paper and packet database do not contain an exact sequence/modification record for the linked DBAASP/CAMP peptide identity.\n\nGates rerun:\n- [semantic_gate.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.semantic_gate.json): fails intentionally with 2 review-layer issues only; `missing_activity_records` is gone.\n- [publication_quality.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.publication_quality.json): `publication_grade_pass=false`, `activity_records=34`, `mechanism_claims=4`, `open_rework_targets=1`.\n\nJSON validation passed for 19 JSON files; rework JSONL parses with 2 request lines and 3 response lines.\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n610,987\n",
+            "stdout_tail": "Re-reviewed `doi__10.1007_s00253-020-10685-x` and kept it non-accepted.\n\nUpdated the owner-layer artifacts under:\n- [activity_toxicity_evidence.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/activity_toxicity_evidence.json): now 34 source-located activity/toxicity records; previous missing activity blocker is repaired.\n- [database_record_verification.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/database_record_verification.json): 9 database rows preserved as `source_conflict`, 1 literature link `source_verified`.\n- [mechanism_ontology_record.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/mechanism_ontology_record.json): replaced placeholder mechanism notes with 4 bounded source-located claims.\n- [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/final/review_report.json) and [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1007_s00253-020-10685-x/work/review/quality_feedback.json): status is `blocked_missing_primary_material_after_re_review`.\n\nI appended an updated rework request and response in [rework_requests.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00253-020-10685-x/rework/rework_requests.jsonl) / [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1007_s00253-020-10685-x/rework/rework_responses.jsonl). Remaining blocker is `primary_sequence_not_embedded_for_database_identity`: the local primary paper and packet database do not contain an exact sequence/modification record for the linked DBAASP/CAMP peptide identity.\n\nGates rerun:\n- [semantic_gate.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.semantic_gate.json): fails intentionally with 2 review-layer issues only; `missing_activity_records` is gone.\n- [publication_quality.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.publication_quality.json): `publication_grade_pass=false`, `activity_records=34`, `mechanism_claims=4`, `open_rework_targets=1`.\n\nJSON validation passed for 19 JSON files; rework JSONL parses with 2 request lines and 3 response lines.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": true,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [
+        "obtainable_only_source_gap_documented",
+        "primary_sequence_not_embedded_for_database_identity"
+      ],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s00253-020-10685-x.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1007_s00253-020-10685-x\",\n  \"counts\": {\n    \"chat\": 23,\n    \"state\": 22,\n    \"log\": 3,\n    \"artifact\": 43,\n    \"event\": 66\n  }\n}\n"
+      },
+      "owner_workers": [
+        "worker-4 + worker-6",
+        "worker-6"
+      ],
+      "paper_id": "doi__10.1007_s00253-020-10685-x",
+      "qc_codes": [
+        "obtainable_only_source_gap_documented",
+        "primary_sequence_not_embedded_for_database_identity"
+      ],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "blocked_source_gap",
+      "result_reason_code": "figure_or_chart_exact_value_unrecoverable",
+      "result_reason_summary": "Remaining exact values are figure/chart-only or not source-promotable from local structured material.",
+      "result_status": "blocked_figure_chart_value_gap",
+      "retryability": "retry_only_with_digitization_or_external_source",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "blocked_after_best_effort",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": true,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_after": {
+            "attempt": 1,
+            "passed": true,
+            "phase": "after_worker",
+            "publication_quality_pass": true,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 0,
+            "publication_risk_counts": {},
+            "semantic_fail_count": 0,
+            "semantic_issue_codes": [],
+            "semantic_pass_count": 1,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 0
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1007_s12602-018-9501-0/handoff_context.json",
+            "failure_reason_count": 8,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1007_s12602-018-9501-0/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "-0\",\n  \"context\": \"rework_context/doi__10.1007_s12602-018-9501-0/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1007_s12602-018-9501-0/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 8,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-complete-test-0001"
+          ],
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T03:03:14Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1007_s12602-018-9501-0/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T02:38:01Z",
+            "stderr_tail": "cs/MIAOBI_MESSAGE_TRANSFER_CONTRACT.md`, `docs/MIAOBI_MESSAGE_TRANSFER_IMPLEMENTATION_PLAN.md`, `docs/schemas/*.json`, `scripts/miaobi_message_bridge.py`, and `docs/workflow-templates/amp-paper-review-codex-claude.yaml` are the first files to inspect before redesigning this review loop again [Task 1]\n    50\t- Batch/4-team was bootstrapped from the proven local skill surface by copying `batch/2-team/.codex/skills` into `batch/4-team/.codex/skills`, so workflow questions here should start from the project-local copied skills plus the new message-transfer docs rather than from root-level generic guidance [Task 1]\n    51\t- The smoke-test and rereview runs validated the control plane without overclaiming paper outcomes: the message bridge and local web panel worked on `doi__10.1002_cbic.202100609`, and the later five-paper rereview ended with `doi__10.1002_advs.202205301` plus `doi__10.1002_cbic.202100151` as `accepted_with_cautions` while `doi__10.1002_cmdc.201900465`, `doi__10.1002_advs.202401793`, and `doi__10.1002_cbic.202100609` remained `needs_targeted_rework` [Task 1]\n    52\t- The retained report/evidence surface is wider than the mechanism docs alone: the rollout also wrote `reports/five_paper_true_rereview_*`, per-paper semantic/publication gate outputs, updated packet/final artifacts, and durable rework tickets, so future verification should read those artifacts before summarizing batch/4-team review quality [Task 1]\n    53\t\n    54\t## Failures and how to do differently\n    55\t\n    56\t- symptom: a new message-transfer layer looks successful and gets reported as if the reviewed papers are all solved -> cause: control-plane validation is being conflated with evidence-layer acceptance -> fix: report the message bridge/web panel/control contract separately from the per-paper outcomes, and keep `accepted_with_cautions` versus `needs_targeted_rework` counts explicit [Task 1]\n    57\t- symptom: future agents redesign batch/4-team review flow from scratch -> cause: the implemented contract/docs/bridge files are not checked first -> fix: inspect the mechanism docs, schema set, bridge script, workflow template, and `reports/five_paper_true_rereview_*` outputs before proposing a new architecture [Task 1]\n    58\t- symptom: chat/message history starts to absorb scientific evidence or replace packet/final artifacts -> cause: Miaobi-style message passing is treated as the storage layer instead of the control plane -> fix: keep evidence in packet/final/rework files and use the message layer for workflow state, execution, artifacts, and event/chat coordination only [Task 1]\n\nhook: PostToolUse\nhook: PostToolUse Completed\ncodex\nRe-reviewed only `doi__10.1007_s12602-018-9501-0`; I did not rerun the initial workflow/bootstrap.\n\nRepaired the owned layers:\n- Worker-2 activity/toxicity: rebuilt Tables 2-5 into 312 source-row records: 65 MIC, 65 MBEC, 65 MBIC, 117 hemolysis rows.\n- Worker-4 database audit: reconciled 246 linked rows; 105 `source_verified`, 141 `source_conflict` preserved as cautions.\n- Worker-6 adjudication: closed `rwk-complete-test-0001`, cleared open rework targets, set final status to `accepted_with_cautions`.\n\nUpdated key artifacts:\n- `papers/doi__10.1007_s12602-018-9501-0/final/review_report.json`\n- `papers/doi__10.1007_s12602-018-9501-0/work/review/quality_feedback.json`\n- `paper_packets/doi__10.1007_s12602-018-9501-0/rework/rework_responses.jsonl`\n- packet/final activity, database, mechanism, adjudication, manifest, and latest report files.\n\nValidation:\n- Semantic gate: `publication_grade_pass_count=1`, `issue_count=0`.\n- Publication-quality gate: `publication_grade_pass=true`, `risk_counts={}`.\n- JSON validation passed for the touched JSON artifacts; rework JSONL parses with 3 records.\n\nThe paper is now publication-grade `accepted_with_cautions`, not clean-accepted; the cautions preserve database summary conflicts and nonblocking supplementary landing-page limitations.\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n529,703\n",
+            "stdout_tail": "Re-reviewed only `doi__10.1007_s12602-018-9501-0`; I did not rerun the initial workflow/bootstrap.\n\nRepaired the owned layers:\n- Worker-2 activity/toxicity: rebuilt Tables 2-5 into 312 source-row records: 65 MIC, 65 MBEC, 65 MBIC, 117 hemolysis rows.\n- Worker-4 database audit: reconciled 246 linked rows; 105 `source_verified`, 141 `source_conflict` preserved as cautions.\n- Worker-6 adjudication: closed `rwk-complete-test-0001`, cleared open rework targets, set final status to `accepted_with_cautions`.\n\nUpdated key artifacts:\n- `papers/doi__10.1007_s12602-018-9501-0/final/review_report.json`\n- `papers/doi__10.1007_s12602-018-9501-0/work/review/quality_feedback.json`\n- `paper_packets/doi__10.1007_s12602-018-9501-0/rework/rework_responses.jsonl`\n- packet/final activity, database, mechanism, adjudication, manifest, and latest report files.\n\nValidation:\n- Semantic gate: `publication_grade_pass_count=1`, `issue_count=0`.\n- Publication-quality gate: `publication_grade_pass=true`, `risk_counts={}`.\n- JSON validation passed for the touched JSON artifacts; rework JSONL parses with 3 records.\n\nThe paper is now publication-grade `accepted_with_cautions`, not clean-accepted; the cautions preserve database summary conflicts and nonblocking supplementary landing-page limitations.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1007_s12602-018-9501-0.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1007_s12602-018-9501-0\",\n  \"counts\": {\n    \"chat\": 23,\n    \"state\": 21,\n    \"log\": 3,\n    \"artifact\": 40,\n    \"event\": 63\n  }\n}\n"
+      },
+      "owner_workers": [],
+      "paper_id": "doi__10.1007_s12602-018-9501-0",
+      "qc_codes": [],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "accepted",
+      "result_reason_code": "strict_gates_passed",
+      "result_reason_summary": "Semantic gate, publication-quality gate, and ticket closure reached an accepted queue outcome.",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": true,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_after": {
+            "attempt": 1,
+            "passed": true,
+            "phase": "after_worker",
+            "publication_quality_pass": true,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 0,
+            "publication_risk_counts": {},
+            "semantic_fail_count": 0,
+            "semantic_issue_codes": [],
+            "semantic_pass_count": 1,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 0
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "missing_activity_records",
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1016_j.bbrep.2024.101747/handoff_context.json",
+            "failure_reason_count": 9,
+            "owner_workers": [
+              "worker-2",
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1016_j.bbrep.2024.101747/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "ext\": \"rework_context/doi__10.1016_j.bbrep.2024.101747/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1016_j.bbrep.2024.101747/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-2\",\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 9,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-complete-test-0001"
+          ],
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T03:28:42Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1016_j.bbrep.2024.101747/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T03:03:14Z",
+            "stderr_tail": "nce, bounded best effort, and controller entry point.\n   119\t- `[6]` `docs/workflow-templates/amp-paper-review-codex-claude.yaml:33-79,154-177,314-322` — queue policy, best-effort recovery, and final-approval handling.\n   120\t- `[7]` Updated worker skills: `.codex/skills/paper-body-table-worker/SKILL.md`, `.codex/skills/paper-supp-evidence-worker/SKILL.md`, `.codex/skills/paper-adjudicator-review-worker/SKILL.md`.\n   121\t- `[8]` Validation artifact: `reports/true_rework_queue_latest.json` from dry-run testing with `dry_run_rework_prompt_prepared=1` and no bootstrap retries.\n   122\t\n\nhook: PostToolUse\nhook: PostToolUse\nexec\n/bin/bash -lc \"jq '{activity_records:(.activity_records|length), review_status, publication_grade, record_counts}' papers/doi__10.1016_j.bbrep.2024.101747/final/activity_toxicity_evidence.json && jq '{status_summary, caution_count:(.caution_findings|length)}' papers/doi__10.1016_j.bbrep.2024.101747/final/database_record_verification.json && jq '{review_status, publication_grade, rework_targets:(.rework_targets|length), cautions:(.caution_findings|length), qc_failures:(.qc_failure_reasons|length)}' papers/doi__10.1016_j.bbrep.2024.101747/final/review_report.json && jq '{issue_count, qc_failure_reasons:(.qc_failure_reasons|length), rework_targets:(.rework_targets|length), status:.bounded_rework_result.status}' papers/doi__10.1016_j.bbrep.2024.101747/work/review/quality_feedback.json\" in /root/work/抗菌肽/数据库/batch/4-team\n succeeded in 0ms:\n{\n  \"activity_records\": 9,\n  \"review_status\": \"accepted_with_cautions\",\n  \"publication_grade\": true,\n  \"record_counts\": {\n    \"activity_records\": 9,\n    \"not_determined_rows_preserved\": 4,\n    \"table2_quantitative_rows\": 6,\n    \"table3_quantitative_ic50_rows\": 3\n  }\n}\n{\n  \"status_summary\": {\n    \"source_verified\": 22,\n    \"database_only_no_primary_source\": 1\n  },\n  \"caution_count\": 1\n}\n{\n  \"review_status\": \"accepted_with_cautions\",\n  \"publication_grade\": true,\n  \"rework_targets\": 0,\n  \"cautions\": 3,\n  \"qc_failures\": 0\n}\n{\n  \"issue_count\": 0,\n  \"qc_failure_reasons\": 0,\n  \"rework_targets\": 0,\n  \"status\": \"resolved_after_targeted_source_review\"\n}\n\nhook: PostToolUse\nhook: PostToolUse Completed\nhook: PostToolUse Completed\nhook: PostToolUse Completed\ncodex\nRe-review completed for `doi__10.1016_j.bbrep.2024.101747`.\n\nI repaired the worker-2/4/6 layers and left the final status as `accepted_with_cautions`, not `accepted_clean`. The prior blocker is resolved: XML Table 2/3 now yields 9 source-located activity/toxicity rows, the linked DBAASP rows are matched to primary-source table values, and the old ticket `rwk-complete-test-0001` is closed via `rework_responses.jsonl`.\n\nKey outputs updated:\n- [final activity](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/activity_toxicity_evidence.json)\n- [final database](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/database_record_verification.json)\n- [final review](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/review_report.json)\n- [quality feedback](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/work/review/quality_feedback.json)\n- [rework responses](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.bbrep.2024.101747/rework/rework_responses.jsonl)\n\nRemaining cautions are non-blocking: APD6 `AP04700` stays `database_only_no_primary_source`, no separate supplementary assets were available locally, and mechanism is bounded to phenotypic/inferred antiviral evidence rather than direct envelope-damage proof.\n\nVerification:\n- Semantic gate: `1/1` pass, `issue_count=0`\n- Publication QA: `publication_grade_pass=true`, `risk_counts={}`\n- Message bus validation: `ok=true`, open rework tickets `[]`\n- Latest complete report updated at [complete_message_test_report.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.complete_message_test_report.json)\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n543,277\n",
+            "stdout_tail": "Re-review completed for `doi__10.1016_j.bbrep.2024.101747`.\n\nI repaired the worker-2/4/6 layers and left the final status as `accepted_with_cautions`, not `accepted_clean`. The prior blocker is resolved: XML Table 2/3 now yields 9 source-located activity/toxicity rows, the linked DBAASP rows are matched to primary-source table values, and the old ticket `rwk-complete-test-0001` is closed via `rework_responses.jsonl`.\n\nKey outputs updated:\n- [final activity](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/activity_toxicity_evidence.json)\n- [final database](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/database_record_verification.json)\n- [final review](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/final/review_report.json)\n- [quality feedback](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.bbrep.2024.101747/work/review/quality_feedback.json)\n- [rework responses](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.bbrep.2024.101747/rework/rework_responses.jsonl)\n\nRemaining cautions are non-blocking: APD6 `AP04700` stays `database_only_no_primary_source`, no separate supplementary assets were available locally, and mechanism is bounded to phenotypic/inferred antiviral evidence rather than direct envelope-damage proof.\n\nVerification:\n- Semantic gate: `1/1` pass, `issue_count=0`\n- Publication QA: `publication_grade_pass=true`, `risk_counts={}`\n- Message bus validation: `ok=true`, open rework tickets `[]`\n- Latest complete report updated at [complete_message_test_report.json](/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.complete_message_test_report.json)\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.bbrep.2024.101747.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1016_j.bbrep.2024.101747\",\n  \"counts\": {\n    \"chat\": 21,\n    \"state\": 21,\n    \"log\": 2,\n    \"artifact\": 34,\n    \"event\": 58\n  }\n}\n"
+      },
+      "owner_workers": [],
+      "paper_id": "doi__10.1016_j.bbrep.2024.101747",
+      "qc_codes": [],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "accepted",
+      "result_reason_code": "strict_gates_passed",
+      "result_reason_summary": "Semantic gate, publication-quality gate, and ticket closure reached an accepted queue outcome.",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "missing_activity_records",
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    },
+    {
+      "accepted": true,
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "gate_after": {
+            "attempt": 1,
+            "passed": true,
+            "phase": "after_worker",
+            "publication_quality_pass": true,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.after_worker.publication_quality.json",
+            "publication_returncode": 0,
+            "publication_risk_counts": {},
+            "semantic_fail_count": 0,
+            "semantic_issue_codes": [],
+            "semantic_pass_count": 1,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+            "semantic_returncode": 0
+          },
+          "gate_before": {
+            "attempt": 1,
+            "passed": false,
+            "phase": "before_worker",
+            "publication_quality_pass": false,
+            "publication_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.before_worker.publication_quality.json",
+            "publication_returncode": 2,
+            "publication_risk_counts": {
+              "open_rework_targets": 1
+            },
+            "semantic_fail_count": 1,
+            "semantic_issue_codes": [
+              "publication_grade_not_true",
+              "review_status_not_publication_grade"
+            ],
+            "semantic_pass_count": 0,
+            "semantic_report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.before_worker.semantic_gate.json",
+            "semantic_returncode": 1
+          },
+          "rework_context_packet": {
+            "context": "rework_context/doi__10.1016_j.biomaterials.2013.01.075/handoff_context.json",
+            "failure_reason_count": 5,
+            "owner_workers": [
+              "worker-4",
+              "worker-6"
+            ],
+            "prompt": "rework_context/doi__10.1016_j.biomaterials.2013.01.075/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "stderr_tail": "",
+            "stdout_tail": "_10.1016_j.biomaterials.2013.01.075/handoff_context.json\",\n  \"prompt\": \"rework_context/doi__10.1016_j.biomaterials.2013.01.075/CODEX_REVIEW_PROMPT.md\",\n  \"owner_workers\": [\n    \"worker-4\",\n    \"worker-6\"\n  ],\n  \"failure_reason_count\": 5,\n  \"message_bus_update\": {\n    \"ok\": true,\n    \"commands\": [\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/artifacts.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/agent_logs.jsonl\",\n        \"stderr\": \"\"\n      },\n      {\n        \"returncode\": 0,\n        \"stdout\": \".miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/workflow_context.json\",\n        \"stderr\": \"\"\n      }\n    ]\n  }\n}\n"
+          },
+          "tickets_after": [
+            "rwk-complete-test-0001"
+          ],
+          "tickets_before": [
+            "rwk-complete-test-0001"
+          ],
+          "worker_result": {
+            "command": [
+              "codex",
+              "exec",
+              "--skip-git-repo-check",
+              "-C",
+              "/root/work/抗菌肽/数据库/batch/4-team",
+              "-m",
+              "gpt-5.5",
+              "-o",
+              "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.codex_last_message.md",
+              "-s",
+              "danger-full-access",
+              "-c",
+              "approval_policy=\"never\"",
+              "-"
+            ],
+            "finished_at": "2026-05-02T03:55:41Z",
+            "launched": true,
+            "output": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.true_rework_queue_attempt_1.codex_last_message.md",
+            "prompt": "rework_context/doi__10.1016_j.biomaterials.2013.01.075/CODEX_REVIEW_PROMPT.md",
+            "returncode": 0,
+            "started_at": "2026-05-02T03:28:43Z",
+            "stderr_tail": "      json.loads(line); count += 1\n    print('jsonl_valid', f, count)\nPY\" in /root/work/抗菌肽/数据库/batch/4-team\n succeeded in 0ms:\njson_valid 17\njsonl_valid paper_packets/doi__10.1016_j.biomaterials.2013.01.075/rework/rework_responses.jsonl 3\njsonl_valid .miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/chat_messages.jsonl 19\njsonl_valid .miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/state_executions.jsonl 18\n\nhook: PostToolUse\nexec\n/bin/bash -lc \"jq '{review_status,publication_grade,qc_failure_reasons,rework_targets,checks:.semantic_quality_checks}' papers/doi__10.1016_j.biomaterials.2013.01.075/final/review_report.json && jq '{issue_count,qc_failure_reasons,rework_targets,unrecoverable_material_gaps,bounded_rework_result}' papers/doi__10.1016_j.biomaterials.2013.01.075/work/review/quality_feedback.json && jq '{current_state,queue_status,gate_summary,open_rework_tickets}' .miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/workflow_context.json\" in /root/work/抗菌肽/数据库/batch/4-team\n succeeded in 0ms:\n{\n  \"review_status\": \"accepted_with_cautions\",\n  \"publication_grade\": true,\n  \"qc_failure_reasons\": [],\n  \"rework_targets\": [],\n  \"checks\": {\n    \"database_status_summary\": {\n      \"source_verified\": 57,\n      \"source_conflict\": 102,\n      \"database_only_no_primary_source\": 1\n    },\n    \"database_record_count\": 160,\n    \"activity_rows_parsed\": 9,\n    \"activity_rows_have_raw_values_units_targets_and_locators\": true,\n    \"mechanism_claims\": 3,\n    \"mechanism_claims_publication_grade\": true,\n    \"supplementary_assets_present\": false,\n    \"supplementary_absence_nonblocking\": true,\n    \"open_rework_ticket_ids\": [],\n    \"closed_rework_ticket_ids\": [\n      \"rwk-complete-test-0001\"\n    ],\n    \"unrecoverable_material_gaps\": []\n  }\n}\n{\n  \"issue_count\": 0,\n  \"qc_failure_reasons\": [],\n  \"rework_targets\": [],\n  \"unrecoverable_material_gaps\": [],\n  \"bounded_rework_result\": {\n    \"status\": \"resolved_after_source_review\",\n    \"attempt_count\": 2,\n    \"max_rework_attempts\": 3,\n    \"updated_at\": \"2026-05-02T03:44:25Z\",\n    \"note\": \"Worker-4/6 re-review closed rwk-complete-test-0001 after reopening local XML/PDF/OA/package/database materials and preserving nonblocking cautions.\"\n  }\n}\n{\n  \"current_state\": \"worker46_source_review_repair\",\n  \"queue_status\": {\n    \"analysis\": \"analysis_adjudicated_with_cautions\",\n    \"material\": \"material_extracted_with_gaps\"\n  },\n  \"gate_summary\": {\n    \"publication_grade_ready\": true,\n    \"semantic_gate_ready\": true,\n    \"structural_ready\": true,\n    \"validator_contract_ready\": true\n  },\n  \"open_rework_tickets\": []\n}\n\nhook: PostToolUse\nhook: PostToolUse Completed\nhook: PostToolUse Completed\nhook: PostToolUse Completed\ncodex\nCompleted the bounded re-review for `doi__10.1016_j.biomaterials.2013.01.075` without rerunning the initial bootstrap.\n\nUpdated the worker-4/6-owned surfaces, including [database_record_audit.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.biomaterials.2013.01.075/analysis/database_record_audit.json), [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.biomaterials.2013.01.075/final/review_report.json), [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.biomaterials.2013.01.075/work/review/quality_feedback.json), and [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.biomaterials.2013.01.075/rework/rework_responses.jsonl).\n\nResult: `accepted_with_cautions`, `publication_grade=true`, no open rework targets, no QC failures, no unrecoverable material gaps. Database audit now covers 160 linked rows: 57 `source_verified`, 102 `source_conflict`, 1 `database_only_no_primary_source`. The old ticket `rwk-complete-test-0001` is closed in packet/workflow state.\n\nValidation:\n`semantic_three_layer_gate.py`: pass, `issue_count=0`.\n`check_three_layer_publication_quality.py`: pass, `risk_counts={}`.\n\n\nhook: Stop\nhook: Stop Completed\ntokens used\n637,482\n",
+            "stdout_tail": "Completed the bounded re-review for `doi__10.1016_j.biomaterials.2013.01.075` without rerunning the initial bootstrap.\n\nUpdated the worker-4/6-owned surfaces, including [database_record_audit.json](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.biomaterials.2013.01.075/analysis/database_record_audit.json), [review_report.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.biomaterials.2013.01.075/final/review_report.json), [quality_feedback.json](/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1016_j.biomaterials.2013.01.075/work/review/quality_feedback.json), and [rework_responses.jsonl](/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1016_j.biomaterials.2013.01.075/rework/rework_responses.jsonl).\n\nResult: `accepted_with_cautions`, `publication_grade=true`, no open rework targets, no QC failures, no unrecoverable material gaps. Database audit now covers 160 linked rows: 57 `source_verified`, 102 `source_conflict`, 1 `database_only_no_primary_source`. The old ticket `rwk-complete-test-0001` is closed in packet/workflow state.\n\nValidation:\n`semantic_three_layer_gate.py`: pass, `issue_count=0`.\n`check_three_layer_publication_quality.py`: pass, `risk_counts={}`.\n\n\n",
+            "timed_out": false
+          }
+        }
+      ],
+      "blocked": false,
+      "bootstrap": {
+        "context": "/root/work/抗菌肽/数据库/batch/4-team/.miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075/workflow_context.json",
+        "reason": "existing_workflow_reused",
+        "report": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.complete_message_test_report.json",
+        "started": false
+      },
+      "gap_codes": [],
+      "manifest": "/root/work/抗菌肽/数据库/batch/4-team/reports/doi__10.1016_j.biomaterials.2013.01.075.complete_message_test_manifest.json",
+      "max_rework_attempts": 3,
+      "message_bus_validation": {
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"workflow_dir\": \".miaobi-paper-review/workflows/doi__10.1016_j.biomaterials.2013.01.075\",\n  \"counts\": {\n    \"chat\": 21,\n    \"state\": 19,\n    \"log\": 2,\n    \"artifact\": 35,\n    \"event\": 57\n  }\n}\n"
+      },
+      "owner_workers": [],
+      "paper_id": "doi__10.1016_j.biomaterials.2013.01.075",
+      "qc_codes": [],
+      "queue_policy": {
+        "advance_on_unrecoverable_gap": true,
+        "initial_queue_reused": true,
+        "initial_queue_started_once": false,
+        "obtainable_only_mode": true,
+        "retry_bootstrap_invocations": 0
+      },
+      "result_category": "accepted",
+      "result_reason_code": "strict_gates_passed",
+      "result_reason_summary": "Semantic gate, publication-quality gate, and ticket closure reached an accepted queue outcome.",
+      "result_status": "accepted_after_rework",
+      "retryability": "not_needed",
+      "semantic_issue_codes": [
+        "publication_grade_not_true",
+        "review_status_not_publication_grade"
+      ],
+      "terminal_status": "accepted_after_rework",
+      "watchdog_seconds": 1800,
+      "worker_returncodes": [
+        0
+      ],
+      "worker_timed_out": false
+    }
+  ],
+  "terminal_status_counts": {
+    "accepted_after_rework": 4,
+    "blocked_after_best_effort": 3
+  },
+  "test_type": "true_rework_queue_start_once_bounded_best_effort"
+}

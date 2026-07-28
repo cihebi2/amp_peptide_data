@@ -1,0 +1,98 @@
+{
+  "paper_id": "doi__10.3390_ijms23042060",
+  "generated_at": "2026-05-08T15:30:07Z",
+  "qc_status": "resolved_after_source_review_rework",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_cautions": [
+    {
+      "code": "database_source_conflicts_preserved",
+      "severity": "caution",
+      "count": 50,
+      "examples": [
+        {
+          "source_table": "linked_assay_records.jsonl",
+          "source_row_number": 1,
+          "sequence_key": "DBAASP:DBAASPR_1026",
+          "peptide_code": "TL",
+          "database_subject": "Vero cells",
+          "database_measure": "50% Cytotoxicity",
+          "database_value": "18.75",
+          "conflict_context": "source_conflict: database value 18.75 µM does not exactly match recovered primary-source value(s) ['19.61'] for TL CC50 Vero cells."
+        },
+        {
+          "source_table": "linked_assay_records.jsonl",
+          "source_row_number": 4,
+          "sequence_key": "DBAASP:DBAASPR_1026",
+          "peptide_code": "TL",
+          "database_subject": "Mink enteritis virus (MeV)",
+          "database_measure": "IC90 I",
+          "database_value": ">50",
+          "conflict_context": "source_conflict: database subject labels MeV as Mink enteritis virus, while the primary article tables/text use measles virus (MeV); value may match the MeV table but target identity is preserved as a conflict."
+        },
+        {
+          "source_table": "linked_assay_records.jsonl",
+          "source_row_number": 12,
+          "sequence_key": "DBAASP:DBAASPS_5505",
+          "peptide_code": "TL1",
+          "database_subject": "Mink enteritis virus (MeV)",
+          "database_measure": "IC90 I",
+          "database_value": ">50",
+          "conflict_context": "source_conflict: database subject labels MeV as Mink enteritis virus, while the primary article tables/text use measles virus (MeV); value may match the MeV table but target identity is preserved as a conflict."
+        },
+        {
+          "source_table": "linked_assay_records.jsonl",
+          "source_row_number": 28,
+          "sequence_key": "DBAASP:DBAASPS_10614",
+          "peptide_code": "TL2",
+          "database_subject": "Mink enteritis virus (MeV)",
+          "database_measure": "IC90 I",
+          "database_value": ">50",
+          "conflict_context": "source_conflict: database subject labels MeV as Mink enteritis virus, while the primary article tables/text use measles virus (MeV); value may match the MeV table but target identity is preserved as a conflict."
+        },
+        {
+          "source_table": "linked_assay_records.jsonl",
+          "source_row_number": 39,
+          "sequence_key": "DBAASP:DBAASPS_10615",
+          "peptide_code": "TL3",
+          "database_subject": "Mink enteritis virus (MeV)",
+          "database_measure": "IC90 I",
+          "database_value": ">50",
+          "conflict_context": "source_conflict: database subject labels MeV as Mink enteritis virus, while the primary article tables/text use measles virus (MeV); value may match the MeV table but target identity is preserved as a conflict."
+        }
+      ],
+      "resolution": "Conflicts are preserved in database_record_verification.json and do not block publication-grade acceptance because each has source/database traceability and does not overwrite primary table values."
+    },
+    {
+      "code": "database_only_rows_retained_as_provenance",
+      "severity": "caution",
+      "count": 2,
+      "resolution": "Rows linked to the article without exact primary-source value support are retained as database-only provenance and are not promoted to primary assay rows."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_ijms23042060/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms23042060/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms23042060/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms23042060/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms23042060/extracted/pdf_text/ijms-23-02060.txt",
+    "paper_packets/doi__10.3390_ijms23042060/raw/oa_package/local-DBAASP-PMC8878748.tar.gz",
+    "paper_packets/doi__10.3390_ijms23042060/raw/oa_package/local-DRAMP-35216177.tar.gz",
+    "paper_packets/doi__10.3390_ijms23042060/raw/supplementary_original/local-DRAMP-ijms-23-02060-s001.zip",
+    "paper_packets/doi__10.3390_ijms23042060/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms23042060/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms23042060/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms23042060/database/linked_literature_records.jsonl"
+  ],
+  "tools_attempted": [
+    "ElementTree parse of paper XML table-wrap elements",
+    "pdftotext -layout on supplementary PDF inside local ZIP",
+    "jq/jsonl inspection of linked DBAASP/DRAMP rows"
+  ]
+}

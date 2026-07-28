@@ -1,0 +1,254 @@
+{
+  "paper_id": "doi__10.1002_anie.201901589",
+  "generated_at": "2026-05-01T00:52:54Z",
+  "reviewed_at": "2026-05-01T00:52:54Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "status": "no_targeted_rework_required",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "remaining_open_rework_ticket_ids": [],
+  "checked_inputs": [
+    {
+      "path": "rework_context/doi__10.1002_anie.201901589/handoff_context.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/packet_manifest.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/locators/locator_index.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extraction/extraction_status.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extraction/extraction_quality_report.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.pdf",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/oa_package/local-DBAASP-PMC6618241/PMC6618241/ANIE-58-9234.nxml",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/oa_package/local-DBAASP-PMC6618241/PMC6618241/ANIE-58-9234.pdf",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/oa_package/local-DBAASP-PMC6618241/PMC6618241/ANIE-58-9234-s001.pdf",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/pdf_text/ANIE-58-9234.txt",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_tables.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/database/database_source_manifest.json",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/database/linked_assay_records.jsonl",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/database/linked_experiment_records.jsonl",
+      "decision": "used"
+    },
+    {
+      "path": "paper_packets/doi__10.1002_anie.201901589/database/linked_literature_records.jsonl",
+      "decision": "used"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+      "decision": "used"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+      "decision": "used"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+      "decision": "used"
+    },
+    {
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv",
+      "decision": "used"
+    }
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "34 source-located MIC rows; no missing endpoint/raw_value/raw_unit/target/source locator core fields."
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "result": "pass_with_cautions",
+      "evidence": "status_counts={\"source_verified\":84,\"source_conflict\":16,\"database_only_no_primary_source\":10}; conflicts are explicit and nonblocking."
+    },
+    {
+      "check": "mechanism_claim_contract",
+      "result": "pass_with_scope_guard",
+      "evidence": "4 claims; direct mechanism claims include assay types and locators."
+    },
+    {
+      "check": "blocking_semantic_risks_remaining",
+      "result": "pass",
+      "evidence": "No unresolved_record, open final rework target, or unrecoverable material blocker remains."
+    }
+  ],
+  "caution_findings": [
+    {
+      "scope": "linked_sequence_records",
+      "severity": "caution",
+      "status": "nonblocking_database_snapshot_gap",
+      "note": "The packet has no linked_sequence_records rows; sequence/name/modified cyclic notation was adjudicated from Table 1/Table S3 plus merged all_sequences.csv. Lowercase/D-amino-acid and X/Pra modified notation was preserved rather than normalized."
+    },
+    {
+      "scope": "non_dbaasp_experiment_rows",
+      "severity": "caution",
+      "status": "source_conflict_or_database_only_preserved",
+      "note": "CAMP/dbAMP text rows are retained as provenance but not promoted to primary activity evidence."
+    },
+    {
+      "scope": "database_record_annotation",
+      "severity": "caution",
+      "status": "source_conflict",
+      "note": "DBAASP rows are the source-reviewed current-paper linked rows. CAMP/dbAMP rows remain cautionary because they mix current-paper links with database text and, for natural lugdunin, older broad-spectrum values outside this 2019 paper.",
+      "conflict_flags": [
+        "CAMP/dbAMP text rows aggregate database annotations and are not current-paper row-level primary source records"
+      ]
+    },
+    {
+      "scope": "mechanism_strength",
+      "severity": "caution",
+      "status": "accepted_with_scope_guard",
+      "note": "Mechanism is accepted for membrane potential/proton translocation evidence; the paper leaves carrier versus channel formation unresolved."
+    },
+    {
+      "scope": "activity_table_scope",
+      "severity": "caution",
+      "status": "source_scope_limited",
+      "note": "The 2019 paper provides MIC activity rows and membrane/mechanism assays; no current-paper hemolysis/cytotoxicity table was recovered or invented."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "source_review_depth": {
+    "paper_xml": {
+      "status": "reviewed_primary_full_text",
+      "path": "paper_packets/doi__10.1002_anie.201901589/raw/paper.xml",
+      "coverage": "article identifiers, Table 1 MIC matrix, figure captions, SAR/proton-translocation mechanism text, and supplementary declaration reopened"
+    },
+    "paper_pdf": {
+      "status": "reviewed_text_extraction",
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/pdf_text/ANIE-58-9234.txt",
+      "coverage": "article PDF text checked against Table 1 and mechanism figure captions"
+    },
+    "oa_package": {
+      "status": "reviewed_inventory",
+      "path": "paper_packets/doi__10.1002_anie.201901589/extracted/oa_package/local-DBAASP-PMC6618241/PMC6618241",
+      "coverage": "article nxml/pdf, s001 PDF, and figure image members present"
+    },
+    "supplementary_assets": {
+      "status": "reviewed_exhausted_for_rework_scope",
+      "paths": [
+        "papers/doi__10.1002_anie.201901589/source/supplementary/ANIE-58-9234-s001.pdf",
+        "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_text/ANIE-58-9234-s001.txt",
+        "paper_packets/doi__10.1002_anie.201901589/extracted/supplementary_tables.json"
+      ],
+      "coverage": "MIC-assay method, Table S3, Figure S11, pore formation, vesicle preparation, and proton transport assay text checked; no spreadsheet supplement exists in this packet"
+    },
+    "merged_database_rows": {
+      "status": "reviewed",
+      "paths": [
+        "paper_packets/doi__10.1002_anie.201901589/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1002_anie.201901589/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1002_anie.201901589/database/linked_literature_records.jsonl",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv"
+      ],
+      "coverage": "Batch-4 packet assay/experiment/literature rows plus merged sequence and assay rows reviewed for DBAASP/CAMP/dbAMP conflicts"
+    }
+  },
+  "materials_exhausted": {
+    "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+    "known_missing_or_blocked_materials": [],
+    "open_rework_ticket_ids": [],
+    "paper_xml": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "paper_pdf": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "oa_package": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "supplementary_assets": {
+      "available": true,
+      "used": true,
+      "blocker": false,
+      "note": "single s001 PDF text was recovered; no structured supplementary spreadsheet exists in packet"
+    },
+    "merged_database_rows": {
+      "available": true,
+      "used": true,
+      "blocker": false
+    },
+    "source_review_gap_remaining": false
+  },
+  "latest_gate_results": {
+    "semantic_gate": {
+      "report": "reports/doi__10.1002_anie.201901589.codex_re_review_20260501T163116Z.semantic_gate.json",
+      "passed": true,
+      "publication_grade_pass": true,
+      "issue_count": 0,
+      "failed_papers": []
+    },
+    "publication_quality": {
+      "report": "reports/doi__10.1002_anie.201901589.codex_re_review_20260501T163116Z.publication_quality.json",
+      "passed": true,
+      "publication_grade_pass": true,
+      "risk_counts": {},
+      "review_status": {
+        "accepted_with_cautions": 1
+      },
+      "counts": {
+        "activity_records": 34,
+        "mechanism_claims": 4
+      }
+    }
+  },
+  "updated_at": "2026-05-01T16:32:52Z"
+}

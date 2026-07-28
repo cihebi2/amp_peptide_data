@@ -1,0 +1,145 @@
+{
+  "paper_id": "doi__10.3390_ijms21134578",
+  "doi": "10.3390/ijms21134578",
+  "pmcid": "PMC7369893",
+  "pmid": "32605123",
+  "reviewed_at": "2026-05-08T12:30:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "unavailable_sources": []
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local supplement search exhausted: packet and OA archive contain no supplementary assets; no external supplement was chased in obtainable-only mode."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms21134578/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms21134578/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms21134578/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms21134578/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms21134578/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_ijms21134578/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms21134578/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms21134578/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_ijms21134578/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms21134578/extracted/archive_manifest.json",
+    "papers/doi__10.3390_ijms21134578/source/paper.xml",
+    "papers/doi__10.3390_ijms21134578/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms21134578/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms21134578/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21134578/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21134578/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21134578/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21134578/database/linked_dramp_activity_records.jsonl",
+    ".miaobi-paper-review/workflows/doi__10.3390_ijms21134578/workflow_context.json",
+    ".miaobi-paper-review/workflows/doi__10.3390_ijms21134578/state_executions.jsonl",
+    ".miaobi-paper-review/workflows/doi__10.3390_ijms21134578/chat_messages.jsonl",
+    ".miaobi-paper-review/workflows/doi__10.3390_ijms21134578/agent_logs.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "table1_peptide_identity_rows_reviewed": 5,
+    "table2_mic_records": 48,
+    "table3_combination_records": 80,
+    "activity_records_total": 128,
+    "mechanism_claims": 4,
+    "database_record_audits": 125,
+    "database_status_summary": {
+      "source_verified": 65,
+      "source_conflict": 60
+    },
+    "open_rework_ticket_ids_after_repair": []
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Structural material status remains material_extracted_with_gaps because no supplementary assets exist locally, but XML/PDF/OA/package/database materials are sufficient for the gate-changing Tables 1-3 and mechanism captions.",
+    "validator_contract": "Required final files, source locators, review provenance, and non-empty evidence rows are present after repair.",
+    "database_record_audit": "Worker-4 reconciled all 125 linked DBAASP rows. FICI rows and literature rows source-verify; MIC rows preserve a source_conflict where the database snapshot lacks numeric MIC values but primary Table 2 values are captured.",
+    "activity_toxicity": "Worker-6 replaced the 12-row framework scaffold with all 128 primary XML Table 2/3 activity/synergy values. No toxicity table is present in local material.",
+    "mechanism_ontology": "Mechanism claims are limited to source-supported membrane permeabilization, vancomycin uptake, LPS-release attenuation, and a proposed synergy model; no exact figure values or unsupported peptidoglycan claim is fabricated.",
+    "publication_grade_review": "The prior full_source_review_not_completed/database_conflicts_require_adjudication ticket is closed; remaining limitations are explicit nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_mic_rows_missing_numeric_values",
+      "evidence_context": "DBAASP linked MIC rows store a label rather than numeric MIC values; primary Table 2 numeric values are preserved in final activity records and database rows are marked source_conflict with context.",
+      "record_scope": "linked_assay_records.jsonl and linked_experiment_records.jsonl MIC rows"
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_empty",
+      "evidence_context": "No linked_sequence_records rows were available locally; peptide identities rely on article Table 1 and DBAASP linked peptide names/source IDs.",
+      "record_scope": "DBAASP IDs DBAASPS_16041-16045"
+    },
+    {
+      "caution_code": "figure_values_qualitative_only",
+      "evidence_context": "Figure image/caption materials support mechanism classes but not exact machine-readable bar values; final claims avoid exact figure quantitation."
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "evidence_context": "Supplementary index and OA archive member list contain no supplementary files/tables; no supplementary-derived values were added."
+    }
+  ],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_ticket_ids": [],
+    "semantic_gate_required": true,
+    "semantic_gate_passed": true,
+    "publication_quality_gate_passed": true,
+    "semantic_report": "reports/doi__10.3390_ijms21134578.semantic_gate.json",
+    "publication_quality_report": "reports/doi__10.3390_ijms21134578.publication_quality.json"
+  },
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "no_supplementary_assets_declared_in_local_packet",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_ijms21134578/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/archive_manifest.json",
+        "paper_packets/doi__10.3390_ijms21134578/raw/oa_package/local-DBAASP-PMC7369893.tar.gz"
+      ],
+      "tools_attempted": [
+        "packet supplementary index",
+        "archive manifest review",
+        "OA package member listing"
+      ],
+      "why_unrecoverable": "The local packet/OA package contains XML, PDF, and image assets but no supplementary spreadsheet, office document, or supplementary table file.",
+      "impact": "No supplementary table values were available to add; primary XML Tables 1-3 cover the gate-changing peptide/activity data.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "figure_exact_numeric_values_not_machine_readable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_ijms21134578/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/oa_package/local-DBAASP-PMC7369893/PMC7369893/ijms-21-04578-g001.jpg",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/oa_package/local-DBAASP-PMC7369893/PMC7369893/ijms-21-04578-g003.jpg",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/oa_package/local-DBAASP-PMC7369893/PMC7369893/ijms-21-04578-g004.jpg",
+        "paper_packets/doi__10.3390_ijms21134578/extracted/oa_package/local-DBAASP-PMC7369893/PMC7369893/ijms-21-04578-g005.jpg"
+      ],
+      "tools_attempted": [
+        "XML figure caption review",
+        "OA image inventory review"
+      ],
+      "why_unrecoverable": "The local materials provide figure images/captions but no source-data table for exact bar heights or fluorescence/endotoxin numeric values.",
+      "impact": "Final mechanism claims are limited to qualitative/relative source-supported statements and do not depend on fabricated exact figure values.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "adjudication_summary": "Worker-4/6 re-review reopened the paper-local XML/PDF/OA package, figure captions, supplementary indexes, workflow context, and linked DBAASP rows. Tables 1-3 and database rows are now source-reviewed; rwk-complete-test-0001 is closed with cautions rather than blocking rework."
+}

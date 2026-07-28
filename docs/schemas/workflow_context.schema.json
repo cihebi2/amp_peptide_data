@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/workflow_context.schema.json",
+  "title": "Miaobi Paper Review Workflow Context",
+  "type": "object",
+  "required": [
+    "workflow_id",
+    "paper_id",
+    "paper_dir_name",
+    "packet_root",
+    "current_state",
+    "queue_status",
+    "gate_summary",
+    "open_rework_tickets",
+    "artifacts",
+    "created_at",
+    "updated_at"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "workflow_id": { "type": "string", "minLength": 1 },
+    "paper_id": { "type": "string", "minLength": 1 },
+    "paper_dir_name": { "type": "string", "minLength": 1 },
+    "packet_root": { "type": "string", "minLength": 1 },
+    "current_state": { "type": "string", "minLength": 1 },
+    "current_round": { "type": "string" },
+    "queue_status": {
+      "type": "object",
+      "required": ["material", "analysis"],
+      "properties": {
+        "material": { "type": "string" },
+        "analysis": { "type": "string" }
+      }
+    },
+    "gate_summary": {
+      "type": "object",
+      "required": [
+        "structural_ready",
+        "validator_contract_ready",
+        "semantic_gate_ready",
+        "publication_grade_ready"
+      ],
+      "properties": {
+        "structural_ready": { "type": "boolean" },
+        "validator_contract_ready": { "type": "boolean" },
+        "semantic_gate_ready": { "type": "boolean" },
+        "publication_grade_ready": { "type": "boolean" }
+      }
+    },
+    "open_rework_tickets": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "provider_policy": { "type": "object" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

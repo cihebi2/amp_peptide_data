@@ -1,0 +1,128 @@
+{
+  "paper_id": "doi__10.3390_molecules25092027",
+  "reviewed_at": "2026-05-09T16:45:10Z",
+  "generated_at": "2026-05-09T16:45:10Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, Supplementary Figure S1 PDF text, figure captions/images, packet database JSONL, and merged sequence/experiment exports were reopened. No unsupported external supplement chase remains."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules25092027/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules25092027/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules25092027/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules25092027/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules25092027/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/pdf_text/molecules-25-02027.txt",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/pdf_text/local-DBAASP-PMC7248785.txt",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/supplementary_text/molecules-25-02027-s001.txt",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_molecules25092027/extracted/supplementary_index.json",
+    "papers/doi__10.3390_molecules25092027/source/paper.xml",
+    "papers/doi__10.3390_molecules25092027/source/paper.pdf",
+    "papers/doi__10.3390_molecules25092027/source/oa_package",
+    "papers/doi__10.3390_molecules25092027/source/supplementary",
+    "paper_packets/doi__10.3390_molecules25092027/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25092027/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25092027/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25092027/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/camp_activity_text_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbamp_activity_text_records.csv"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 38,
+    "activity_endpoint_counts": {
+      "MIC": 12,
+      "MBC/MIC ratio": 12,
+      "selectivity index": 12,
+      "CC50": 2
+    },
+    "database_record_audits": 24,
+    "database_status_summary": {
+      "source_conflict": 23,
+      "source_verified": 1
+    },
+    "mechanism_claims": 4,
+    "open_rework_target_count": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet stays separate from final acceptance: the packet already contained XML/PDF/OA/supplement/database material, and worker-2 repaired the Table 1 row matrix from those local materials without rerunning bootstrap.",
+    "validator_contract": "Required packet/final/work files are present and strict gates were rerun after repair.",
+    "layer_1_database": "Worker-4 matched linked DBAASP/CAMP activity values to primary Table 1 where possible and preserved fraction-versus-single-fragment, sequence-variant, and E. coli strain conflicts as explicit nonblocking cautions.",
+    "layer_2_activity_toxicity": "Worker-2 replaced the empty scaffold with source-located Table 1 MIC, MBC/MIC ratio, CC50, and SI rows for Br-f and Br-p.",
+    "layer_3_mechanism": "Worker-6 bounded mechanism language to phenotypic antibacterial activity, theoretical BIOPEP permease-ligand context, antioxidant context, and qualitative biofilm/dressing context; no direct molecular target is claimed.",
+    "publication_grade_review": "No blocking or major owner-layer issue remains and the previous ticket is closed."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "assays_on_fraction_not_purified_single_peptide",
+      "severity": "caution",
+      "evidence_context": "Table 1 assays are for Br-f/Br-p peptide fractions; database rows index representative Burdock peptide sequence LRCDYGRFFASKSLYDPLKKRR."
+    },
+    {
+      "caution_code": "primary_source_sequence_variant",
+      "severity": "caution",
+      "evidence_context": "Abstract/Table 2/results support LRCDYGRFFASKSLYDPLKKRR, while the conclusion has LRCDYGRFFASKSLDPLKKRR; the database sequence is not silently normalized."
+    },
+    {
+      "caution_code": "ecoli_strain_conflict",
+      "severity": "caution",
+      "evidence_context": "Primary XML/PDF table and methods use E. coli ATCC 25992; linked DBAASP/CAMP/database rows use ATCC 25922."
+    },
+    {
+      "caution_code": "figure_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Figure 1, Figure 3, and Figure 5 are used for bounded context; exact figure-only values beyond source text/table values were not fabricated."
+    }
+  ],
+  "unrecoverable_material_gaps": [],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "summary": "Source-reviewed worker-2/4/6 repair recovered Table 1 activity/toxicity rows, reconciled linked database rows with preserved conflicts, and completed non-templated worker-6 adjudication from local XML/PDF/OA/supplement/database materials.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "gate_evidence": {
+      "semantic_gate_report": "reports/doi__10.3390_molecules25092027.semantic_gate.json",
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_report": "reports/doi__10.3390_molecules25092027.publication_quality.json",
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "publication_generated_at_utc": "2026-05-09T16:45:10.622526+00:00",
+      "gate_verified_at": "2026-05-09T16:45:10Z"
+    }
+  }
+}

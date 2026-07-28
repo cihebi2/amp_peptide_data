@@ -1,0 +1,129 @@
+{
+  "paper_id": "doi__10.3390_md17090488",
+  "generated_at": "2026-05-09T11:03:21Z",
+  "extraction_scope": {
+    "mode": "worker6_source_reviewed_mechanism_adjudication_from_local_sources",
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_md17090488/handoff_context.json",
+      "paper_packets/doi__10.3390_md17090488/packet_manifest.json",
+      "paper_packets/doi__10.3390_md17090488/locators/locator_index.json",
+      "paper_packets/doi__10.3390_md17090488/raw/paper.xml",
+      "paper_packets/doi__10.3390_md17090488/raw/paper.pdf",
+      "paper_packets/doi__10.3390_md17090488/extracted/pdf_text/marinedrugs-17-00488.txt",
+      "paper_packets/doi__10.3390_md17090488/extracted/supplementary_text/marinedrugs-17-00488-s001.txt",
+      "paper_packets/doi__10.3390_md17090488/extracted/oa_package/local-DBAASP-PMC6780696/PMC6780696/marinedrugs-17-00488-s001.pdf",
+      "paper_packets/doi__10.3390_md17090488/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_md17090488/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_md17090488/database/linked_literature_records.jsonl",
+      "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+    ],
+    "tools_attempted": [
+      "XML table-wrap parser for source Tables 1-3",
+      "pdftotext-derived primary PDF text line review",
+      "supplementary PDF text review for activity-changing tables",
+      "JSONL reconciliation of linked DBAASP assay/experiment/literature rows",
+      "merged sequence catalog lookup for DBAASP compact sequence keys"
+    ]
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-srta-direct-inhibition",
+      "claim_text": "Compounds 1-4 directly inhibit recombinant Staphylococcus aureus sortase A in the paper-local enzyme assay, with compound 2 the strongest of the four test compounds.",
+      "entity_scope": "compounds 1-4",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "recombinant Staphylococcus aureus sortase A fluorometric peptide-cleavage assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3;xml:sec=3.6.4;pdf_text:lines=857-863,1062-1068"
+      },
+      "linked_activity_record_ids": [
+        "doi__10.3390_md17090488-c1-srta-ic50",
+        "doi__10.3390_md17090488-c2-srta-ic50",
+        "doi__10.3390_md17090488-c3-srta-ic50",
+        "doi__10.3390_md17090488-c4-srta-ic50"
+      ],
+      "limitations": "The assay supports enzyme-target inhibition only; it does not demonstrate bacterial growth inhibition, and MIC rows remain inactive at the tested limit."
+    },
+    {
+      "claim_id": "mech-icl-weak-inhibition",
+      "claim_text": "Compound 2 weakly inhibits Candida albicans isocitrate lyase in the paper-local enzyme assay, while compounds 1, 3, and 4 are censored above the tested IC50 range.",
+      "entity_scope": "compounds 1-4; strongest ICL signal from compound 2",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "recombinant Candida albicans isocitrate lyase phenylhydrazine/glyoxylate absorbance assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=3;xml:sec=3.6.3;pdf_text:lines=857-863,1051-1061"
+      },
+      "linked_activity_record_ids": [
+        "doi__10.3390_md17090488-c1-icl-ic50",
+        "doi__10.3390_md17090488-c2-icl-ic50",
+        "doi__10.3390_md17090488-c3-icl-ic50",
+        "doi__10.3390_md17090488-c4-icl-ic50"
+      ],
+      "limitations": "The paper frames this as weak enzyme inhibition; no antifungal growth MIC below >128 µg/mL is reported for Candida albicans."
+    },
+    {
+      "claim_id": "mech-antimicrobial-inactivity-boundary",
+      "claim_text": "The source-reviewed antimicrobial phenotype for compounds 1-4 is inactivity at the tested MIC ceiling against the paper-listed bacterial and fungal strains.",
+      "entity_scope": "compounds 1-4 antimicrobial growth assays",
+      "evidence_class": "negative_activity_context",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:bioassay_prose;pdf_text:lines=829-836;xml:sec=3.6.1;xml:sec=3.6.2"
+      },
+      "linked_activity_record_ids": [
+        "doi__10.3390_md17090488-c1-mic-enterococcus-faecalis-atcc-19433",
+        "doi__10.3390_md17090488-c1-mic-enterococcus-faecium-atcc-19434",
+        "doi__10.3390_md17090488-c1-mic-staphylococcus-aureus-atcc-25923",
+        "doi__10.3390_md17090488-c1-mic-escherichia-coli-atcc-25922",
+        "doi__10.3390_md17090488-c1-mic-klebsiella-pneumoniae-atcc-10031",
+        "doi__10.3390_md17090488-c1-mic-salmonella-enterica-subsp--enterica-serovar-typhimurium-atcc-14028",
+        "doi__10.3390_md17090488-c1-mic-aspergillus-fumigatus-hic-6094",
+        "doi__10.3390_md17090488-c1-mic-candida-albicans-atcc-10231",
+        "doi__10.3390_md17090488-c1-mic-trichophyton-mentagrophytes-ifm-40996",
+        "doi__10.3390_md17090488-c1-mic-trichophyton-rubrum-nbrc-9185",
+        "doi__10.3390_md17090488-c2-mic-enterococcus-faecalis-atcc-19433",
+        "doi__10.3390_md17090488-c2-mic-enterococcus-faecium-atcc-19434",
+        "doi__10.3390_md17090488-c2-mic-staphylococcus-aureus-atcc-25923",
+        "doi__10.3390_md17090488-c2-mic-escherichia-coli-atcc-25922",
+        "doi__10.3390_md17090488-c2-mic-klebsiella-pneumoniae-atcc-10031",
+        "doi__10.3390_md17090488-c2-mic-salmonella-enterica-subsp--enterica-serovar-typhimurium-atcc-14028",
+        "doi__10.3390_md17090488-c2-mic-aspergillus-fumigatus-hic-6094",
+        "doi__10.3390_md17090488-c2-mic-candida-albicans-atcc-10231",
+        "doi__10.3390_md17090488-c2-mic-trichophyton-mentagrophytes-ifm-40996",
+        "doi__10.3390_md17090488-c2-mic-trichophyton-rubrum-nbrc-9185",
+        "doi__10.3390_md17090488-c3-mic-enterococcus-faecalis-atcc-19433",
+        "doi__10.3390_md17090488-c3-mic-enterococcus-faecium-atcc-19434",
+        "doi__10.3390_md17090488-c3-mic-staphylococcus-aureus-atcc-25923",
+        "doi__10.3390_md17090488-c3-mic-escherichia-coli-atcc-25922",
+        "doi__10.3390_md17090488-c3-mic-klebsiella-pneumoniae-atcc-10031",
+        "doi__10.3390_md17090488-c3-mic-salmonella-enterica-subsp--enterica-serovar-typhimurium-atcc-14028",
+        "doi__10.3390_md17090488-c3-mic-aspergillus-fumigatus-hic-6094",
+        "doi__10.3390_md17090488-c3-mic-candida-albicans-atcc-10231",
+        "doi__10.3390_md17090488-c3-mic-trichophyton-mentagrophytes-ifm-40996",
+        "doi__10.3390_md17090488-c3-mic-trichophyton-rubrum-nbrc-9185",
+        "doi__10.3390_md17090488-c4-mic-enterococcus-faecalis-atcc-19433",
+        "doi__10.3390_md17090488-c4-mic-enterococcus-faecium-atcc-19434",
+        "doi__10.3390_md17090488-c4-mic-staphylococcus-aureus-atcc-25923",
+        "doi__10.3390_md17090488-c4-mic-escherichia-coli-atcc-25922",
+        "doi__10.3390_md17090488-c4-mic-klebsiella-pneumoniae-atcc-10031",
+        "doi__10.3390_md17090488-c4-mic-salmonella-enterica-subsp--enterica-serovar-typhimurium-atcc-14028",
+        "doi__10.3390_md17090488-c4-mic-aspergillus-fumigatus-hic-6094",
+        "doi__10.3390_md17090488-c4-mic-candida-albicans-atcc-10231",
+        "doi__10.3390_md17090488-c4-mic-trichophyton-mentagrophytes-ifm-40996",
+        "doi__10.3390_md17090488-c4-mic-trichophyton-rubrum-nbrc-9185"
+      ],
+      "limitations": "This is a boundary claim preventing overstatement of antimicrobial activity; it is not a positive direct mechanism."
+    }
+  ],
+  "classification_summary": {
+    "direct_mechanism": 2,
+    "negative_activity_context": 1,
+    "overclaim_guard": "enzyme inhibition is kept separate from antimicrobial growth inhibition"
+  },
+  "unrecoverable_material_gaps": []
+}

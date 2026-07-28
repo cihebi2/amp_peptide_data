@@ -1,0 +1,96 @@
+{
+  "paper_id": "doi__10.3390_md17020127",
+  "reviewed_at": "2026-05-09T08:21:34Z",
+  "updated_at": "2026-05-09T08:25:35Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Packet extraction remains material_extracted_with_gaps because the supplementary PDF is text-indexed rather than table-structured; worker-6 reopened the local PDF/text and found no additional activity/toxicity/mechanism values beyond Table S1-S3 strain/plasmid/primer support and Figures S1-S5 structure/LC-MS/NMR support."
+  },
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/rework_context/doi__10.3390_md17020127/handoff_context.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.3390_md17020127/source/paper.xml",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.3390_md17020127/source/paper.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/extracted/pdf_text/marinedrugs-17-00127.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.3390_md17020127/source/supplementary/marinedrugs-17-00127-s001.pdf",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/extracted/supplementary_text/marinedrugs-17-00127-s001.txt",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/extracted/supplementary_tables.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/database/database_source_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_md17020127/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_records_source_reviewed": 89,
+    "database_status_summary": {
+      "source_verified": 44
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "table2_row5_mrse_recovered": true,
+    "supplementary_pdf_reviewed_no_gate_changing_activity_values": true,
+    "semantic_gate_path": "reports/doi__10.3390_md17020127.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_path": "reports/doi__10.3390_md17020127.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Preserved as a separate layer: material status remains material_extracted_with_gaps, but all local XML/PDF/OA package/supplement/database paths relevant to the worker-4/6 blocker were reopened.",
+    "validator_contract": "The prior framework/validator output was treated as structural evidence only; final acceptance is based on this source-reviewed worker-4/6 pass.",
+    "layer_1_database": "Worker-4 reconciled all 44 linked DBAASP/CAMP assay, experiment, and literature rows. The two previous MRSE source_conflict rows are resolved to XML/PDF Table 2 row 5; the CAMP aggregate activity text remains an explicit nonblocking aggregation caution.",
+    "layer_2_activity_toxicity": "Worker-6 final projection now includes 89 source-located MIC records, adding the omitted MRSE row 5 values while leaving packet extraction history visible.",
+    "layer_3_mechanism": "Automated placeholder mechanism notes were replaced with bounded source-reviewed claims: biosynthetic-context, production evidence, and MIC phenotype only; no direct antimicrobial molecular mechanism is overclaimed.",
+    "publication_grade_review": "The prior full_source_review_not_completed/database_conflicts_require_adjudication ticket is closed; remaining limitations are explicit nonblocking cautions and no open rework target remains."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "material_packet_still_records_extracted_with_gaps",
+      "evidence_context": "The packet did not structure the supplementary PDF as tables, but worker-6 reopened the supplement text/PDF and found no unresolved gate-changing local source values."
+    },
+    {
+      "caution_code": "table2_row5_recovered_by_worker6_review",
+      "evidence_context": "The automated activity parser omitted MRSE Table 2 row 5; worker-6 added the source-supported row to analysis/final activity artifacts and worker-4 resolved the matching database rows."
+    },
+    {
+      "caution_code": "database_aggregate_row_preserved",
+      "evidence_context": "The CAMP-linked aggregate row compresses several Table 2 targets; this is preserved as a database aggregation caution rather than treated as one exact source row."
+    },
+    {
+      "caution_code": "direct_antimicrobial_mechanism_not_resolved",
+      "evidence_context": "The paper supports biosynthetic origin, heterologous production, and antibacterial MIC phenotype, but not a direct molecular antimicrobial target."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 source re-review reopened the handoff packet, primary XML/PDF, OA package, supplementary PDF text, figure captions, and linked DBAASP/CAMP rows. The previous framework-only blocker is closed: MRSE database rows are source-verified against Table 2 row 5, the final activity projection includes the omitted MRSE MIC records, mechanism claims are bounded, and no blocking owner-layer rework remains."
+}

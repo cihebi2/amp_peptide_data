@@ -1,0 +1,137 @@
+{
+  "artifact": "worker4_database_repair_validation",
+  "blockers_for_terminal_publication_grade": [
+    "Authoritative linked database rows remain zero.",
+    "Final database_record_verification publication_grade is stale true in paper/packet final artifacts and requires worker-6 final rebuild/adjudication.",
+    "Strict semantic/publication gates did not pass in non-allowing mode."
+  ],
+  "checks": [
+    {
+      "check": "paper_audit_json_valid",
+      "passed": true
+    },
+    {
+      "check": "packet_audit_json_valid",
+      "passed": true
+    },
+    {
+      "check": "source_scan_json_valid",
+      "passed": true
+    },
+    {
+      "check": "paper_audit_statuses_allowed",
+      "passed": true,
+      "status_counts": {
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 0,
+        "source_conflict": 0,
+        "source_verified": 0,
+        "unresolved_record": 5
+      }
+    },
+    {
+      "check": "paper_audit_publication_grade_false",
+      "passed": true
+    },
+    {
+      "check": "paper_audit_fallback_not_promoted",
+      "passed": true
+    },
+    {
+      "check": "paper_audit_source_verified_zero",
+      "passed": true
+    },
+    {
+      "check": "paper_audit_linked_rows_zero_verified",
+      "linked_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "packet_audit_statuses_allowed",
+      "passed": true,
+      "status_counts": {
+        "database_only_no_primary_source": 0,
+        "sequence_modified_not_normalized": 0,
+        "source_conflict": 0,
+        "source_verified": 0,
+        "unresolved_record": 5
+      }
+    },
+    {
+      "check": "packet_audit_publication_grade_false",
+      "passed": true
+    },
+    {
+      "check": "packet_audit_fallback_not_promoted",
+      "passed": true
+    },
+    {
+      "check": "packet_audit_source_verified_zero",
+      "passed": true
+    },
+    {
+      "check": "packet_audit_linked_rows_zero_verified",
+      "linked_counts": {
+        "linked_article_records": 0,
+        "linked_assay_records": 0,
+        "linked_literature_records": 0,
+        "linked_sequence_records": 0
+      },
+      "passed": true
+    }
+  ],
+  "fallback_rows_promoted_to_source_verified": false,
+  "final_artifact_state_observed_not_repaired_by_worker4_scope": {
+    "final_database_packet": {
+      "publication_grade": true,
+      "review_status": null
+    },
+    "final_database_paper": {
+      "publication_grade": true,
+      "review_status": null
+    },
+    "final_review_packet": {
+      "publication_grade": false,
+      "review_status": "needs_targeted_rework"
+    },
+    "final_review_paper": {
+      "publication_grade": false,
+      "review_status": "needs_targeted_rework"
+    }
+  },
+  "linked_authoritative_row_counts": {
+    "linked_article_records": 0,
+    "linked_assay_records": 0,
+    "linked_literature_records": 0,
+    "linked_sequence_records": 0
+  },
+  "paper_id": "PMC12812963",
+  "publication_issue_category_counts": {},
+  "semantic_gate_summary": {
+    "failed_count": null,
+    "failed_paper_count": 1,
+    "issue_counts_by_paper": {
+      "PMC12812963": 2
+    },
+    "paper_count": 1
+  },
+  "strict_gate_artifacts": {
+    "gate_summary": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12812963/work/database_record_audit/worker4_repair_gate_run_summary.json",
+    "packet_gate_json": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12812963/work/database_record_audit/check_two_queue_packets.worker4_repair.json",
+    "publication_issues": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12812963/work/database_record_audit/check_three_layer_publication_quality.worker4_repair.issues.json",
+    "publication_json": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12812963/work/database_record_audit/check_three_layer_publication_quality.worker4_repair.json",
+    "semantic_stdout": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12812963/work/database_record_audit/semantic_gate.worker4_repair.stdout.txt"
+  },
+  "strict_gate_returncodes": {
+    "packet": 0,
+    "publication": 2,
+    "semantic": 1
+  },
+  "validation_passed_for_worker4_artifacts": true,
+  "worker": "worker-4"
+}

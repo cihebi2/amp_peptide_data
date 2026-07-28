@@ -1,0 +1,110 @@
+{
+  "paper_id": "doi__10.3390_ijms24043951",
+  "reviewed_at": "2026-05-08T17:21:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "paper_packets/doi__10.3390_ijms24043951/extracted/oa_package/local-DBAASP-PMC9959048/PMC9959048/ijms-24-03951-s001.zip::ijms-2189249-supplementary.pdf"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Worker-6 manually recovered and checked the supplementary PDF inside the OA-package zip despite stale supplementary_index metadata."
+  },
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-4/6 re-review rebuilt the final source-reviewed database audit, activity/toxicity table, and mechanism ontology from local XML/PDF/OA-package/supplement/database evidence. The paper is accepted with cautions because source conflicts and linked-database omissions are preserved rather than normalized.",
+  "summary": "Source-reviewed final accepted with cautions after resolving rwk-complete-test-0001.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms24043951/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms24043951/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms24043951/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms24043951/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms24043951/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_ijms24043951/source/paper.xml",
+    "papers/doi__10.3390_ijms24043951/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms24043951/extracted/pdf_text/ijms-24-03951.txt",
+    "paper_packets/doi__10.3390_ijms24043951/extracted/oa_package/local-DBAASP-PMC9959048/PMC9959048/ijms-24-03951.nxml",
+    "paper_packets/doi__10.3390_ijms24043951/extracted/oa_package/local-DBAASP-PMC9959048/PMC9959048/ijms-24-03951-s001.zip::ijms-2189249-supplementary.pdf",
+    "paper_packets/doi__10.3390_ijms24043951/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_ijms24043951/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms24043951/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms24043951/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 177,
+    "database_status_summary": {
+      "source_conflict": 44,
+      "source_verified": 316
+    },
+    "database_row_counts": {
+      "linked_assay_records": 171,
+      "linked_experiment_records": 171,
+      "linked_literature_records": 18,
+      "linked_dramp_activity_records": 0,
+      "linked_sequence_records": 0
+    },
+    "mechanism_claims_source_reviewed": 4,
+    "resolved_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gaps": []
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Packet material remains structurally usable; stale supplementary_index was compensated by direct OA-package zip inspection and pdftotext recovery of the supplementary PDF.",
+    "validator_contract": "Required final artifacts are present and source-located; no structural validator blocker is promoted to acceptance without source review.",
+    "layer_1_database": "All linked DBAASP assay, experiment, and literature rows were rechecked. Most rows are source_verified; strain-code, value/endpoint differences, and source-supported rows absent from the linked database are preserved as cautions instead of normalized.",
+    "layer_2_activity_toxicity": "Final activity/toxicity evidence was rebuilt from Table 1 MIC values and Table 2 IC50 values with compound entities, microbial/cell targets, raw values, units, and locators.",
+    "layer_3_mechanism": "Final mechanism ontology removes generic introduction-derived claims and separates direct C8-LL-I TEM evidence from model-membrane, self-assembly, and computational context.",
+    "publication_grade_review": "No blocking or major owner-layer issue remains after bounded source recovery; accepted_with_cautions is used because conflicts and material-index staleness remain documented."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_target_strain_code_conflict_preserved",
+      "status": "source_conflict",
+      "affected_rows": 36,
+      "evidence_context": "Rows for Staphylococcus aureus PMC 1650 are preserved as source_conflict because the primary table labels the strain PCM 1650."
+    },
+    {
+      "caution_code": "database_value_or_endpoint_conflict_preserved",
+      "status": "source_conflict",
+      "affected_rows": 8,
+      "evidence_context": "A small number of DBAASP rows have value or endpoint differences from the source table and are preserved as source_conflict rather than normalized."
+    },
+    {
+      "caution_code": "linked_database_snapshot_missing_source_supported_candida_albicans_rows",
+      "affected_rows": 6,
+      "evidence_context": "The source table has row-spanned Candida albicans >50 values for LL-I and C8-C16 LL-I, but those rows are absent from the linked DBAASP snapshot; final activity records retain the source-supported values without fabricating database rows."
+    },
+    {
+      "caution_code": "packet_supplement_index_stale_but_source_recovered",
+      "evidence_context": "packet supplementary_index reports no assets, but OA package contains ijms-24-03951-s001.zip with a recoverable supplementary PDF; worker-6 inspected it with unzip/pdftotext and used Table S1/S2/Figure S context where relevant."
+    },
+    {
+      "caution_code": "mechanism_generalization_limited_to_source_scope",
+      "evidence_context": "Direct cellular membrane disruption is source-supported for C8-LL-I; model membrane, self-assembly, and computational findings are preserved as contextual rather than direct mechanisms for all derivatives."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "publication_grade_ready": true
+  }
+}

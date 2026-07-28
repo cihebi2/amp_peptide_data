@@ -1,0 +1,106 @@
+{
+  "paper_id": "doi__10.3389_fmolb.2021.707013",
+  "reviewed_at": "2026-05-07T17:51:45Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "summary": "Source-reviewed worker-4/worker-6 re-review reconciled Table 1 peptide identities, Table 2 activity/toxicity values, linked DBAASP/CAMP/dbAMP rows, supplementary Table S1, and mechanism figures/prose. The paper is publication-grade with explicit cautions for figure-only database low-hemolysis thresholds and non-tabulated mechanism quantification.",
+  "adjudication_summary": "Accepted with cautions after bounded local source recovery. The previous framework-only rework target is closed because worker-4 row reconciliation and worker-6 final adjudication are now source-reviewed and gates have no open rework targets.",
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmolb.2021.707013/handoff_context.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extraction/extraction_status.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extraction/extraction_quality_report.json",
+    "papers/doi__10.3389_fmolb.2021.707013/source/paper.xml",
+    "papers/doi__10.3389_fmolb.2021.707013/source/paper.pdf",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/pdf_text/fmolb-08-707013.txt",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/xml_sections.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/figure_captions.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/oa_package/local-DBAASP-PMC8560897/PMC8560897/Table1.DOCX",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/oa_package/local-DBAASP-PMC8560897/PMC8560897/Image1.TIF",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/oa_package/local-DBAASP-PMC8560897/PMC8560897/Image2.TIF",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/extracted/oa_package/local-DBAASP-PMC8560897/PMC8560897/Image3.jpg",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/raw/supplementary_original/*.bin",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmolb.2021.707013/database/linked_literature_records.jsonl"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "notes": "All local materials relevant to the worker-4/6 blocker were opened. No external supplement chase was used; duplicate HTML .bin files and figure-only exact values are bounded cautions."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_final": 57,
+    "database_record_audits": 111,
+    "database_status_summary": {
+      "source_verified": 105,
+      "source_conflict": 6
+    },
+    "mechanism_claims_final": 4,
+    "supplementary_table_s1_parsed": true,
+    "open_rework_ticket_ids": [],
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked all 111 linked database rows. Table 1 and citation metadata support peptide identity/source linkage; Table 2 supports MIC/MBC/MBIC/MBEC/HC50/IC50 and CAMP/dbAMP summaries. Six duplicated low-hemolysis threshold database rows remain source_conflict because the exact threshold at fixed concentrations is figure-only, not tabulated.",
+    "layer_2_activity_toxicity": "Worker-6 final activity evidence replaces the framework candidate rows with 57 Table 2 source-located rows, preserving raw values, units, targets, endpoint types, and assay locators.",
+    "layer_3_mechanism": "Worker-6 final mechanism claims are bounded to direct membrane permeability, membrane depolarization, SEM/biofilm disruption, and structure-activity context. Exact figure numeric series are not invented.",
+    "supplementary_materials": "OA package includes Table1.DOCX and image supplements. Table1.DOCX was parsed; duplicate landing-page .bin files were checked and do not add recoverable spreadsheet/PDF values."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_low_hemolysis_thresholds",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "note": "Six linked database rows represent three unique DBAASP low-hemolysis threshold assertions duplicated across linked assay/experiment snapshots. Figure 4 is available locally, but no XML/PDF table gives exact threshold values at those concentrations, so they remain source_conflict rather than source_verified."
+    },
+    {
+      "scope": "truncation_sequence_display",
+      "severity": "caution",
+      "status": "source_verified_not_silently_normalized",
+      "note": "Temporin-FLa and Temporin-FLb are source-supported truncation derivatives; Table 1/Supplementary Table S1 underscore deleted residues, while final records separately preserve normalized sequence letters for comparison."
+    },
+    {
+      "scope": "supplementary_assets",
+      "severity": "caution",
+      "status": "nonblocking_exhausted",
+      "note": "Table1.DOCX was parsed and supports derivative parameters. Ten staged supplementary .bin files were duplicate Frontiers article HTML landing pages; no local supplementary spreadsheet/PDF table changed Table 2 activity, toxicity, database, or mechanism adjudication."
+    },
+    {
+      "scope": "mechanism_quantification",
+      "severity": "caution",
+      "status": "bounded_qualitative_direct_mechanism",
+      "note": "Figures 6-8 support membrane permeability, depolarization, and biofilm disruption qualitatively/dose-responsively, but local materials do not provide exact figure numeric series; final mechanism claims avoid fabricated quantification."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "last_worker6_re_reviewed_at": "2026-05-07T17:51:45Z",
+    "latest_re_review_status": "source_supported_accepted_with_cautions"
+  },
+  "unrecoverable_material_gaps": [],
+  "report_type": "worker6_packet_adjudication_report",
+  "packet_layer_note": "Packet analysis artifacts were reopened as evidence; final publication-grade artifacts under papers/<paper_id>/final and packet/final carry the source-reviewed worker-6 adjudication."
+}

@@ -1,0 +1,116 @@
+{
+  "artifact_type": "worker6_adjudication_report",
+  "paper_id": "doi__10.1371_journal.pcbi.1003212",
+  "doi": "10.1371/journal.pcbi.1003212",
+  "generated_at": "2026-05-03T12:28:51Z",
+  "reviewed_at": "2026-05-03T12:28:51Z",
+  "updated_at": "2026-05-03T12:28:51Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "summary": "Worker-4/6 source re-review replaced the framework-test placeholders with row-level Table 4/Table S4 activity evidence, linked-database reconciliation, and bounded mechanism adjudication. The paper is publication-grade only with cautions because local database sequence snapshots are absent and GMG_05Z is normalized as GMG_05X in several database rows.",
+  "adjudication_summary": "The prior full_source_review_not_completed and database_conflicts_require_adjudication blockers are resolved by source-reviewed worker-4 database audit and worker-6 final adjudication. No blocking/major rework target remains after bounded local recovery.",
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Opened packet manifest, locator index, XML/PDF text, OA package archive/member inventory, DOC supplementary Table S4, and linked database JSONL rows relevant to worker-4/6 blockers."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/raw/paper.xml",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/raw/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/pdf_text/pcbi.1003212.txt",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/oa_package/local-DBAASP-PMC3764005/PMC3764005/pcbi.1003212.s009.doc",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pcbi.1003212/database/database_source_manifest.json"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 16,
+    "toxicity_records": 0,
+    "activity_missing_core_fields": 0,
+    "database_status_summary": {
+      "source_verified": 45,
+      "sequence_modified_not_normalized": 4
+    },
+    "database_source_conflicts_preserved": 0,
+    "database_sequence_modified_not_normalized": 4,
+    "database_unresolved_records": 0,
+    "mechanism_claims": 2,
+    "direct_mechanism_claims_with_assay_types": 1,
+    "open_rework_targets": 0,
+    "source_review_gap_remaining": false
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains a separate structural/input layer; material_extracted_with_gaps is nonblocking for worker-4/6 because relevant XML, PDF text, OA package members, DOC supplement, and database JSONL rows were opened.",
+    "validator_contract": "Validator contract readiness is structural and remains separate from publication-grade acceptance.",
+    "layer_1_database": "Assay/experiment/literature rows were reconciled against Table 4 and article metadata. GMG_05X/GMG_05Z modified-residue notation remains caution-bearing rather than hidden.",
+    "layer_2_activity_toxicity": "Final activity rows are rebuilt from Table 4 and Table S4; parser-generated header/property rows are rejected. No toxicity endpoint is fabricated.",
+    "layer_3_mechanism": "Confocal imaging supports membrane contact/localization for labelled GMG_05Z, while pore/metabolic mechanism remains unresolved and bounded.",
+    "publication_grade_review": "Accepted_with_cautions is justified after source review because all obtainable worker-4/6 values are recorded and remaining limitations are nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "scope": "database_sequence_snapshot",
+      "severity": "caution",
+      "status": "source_sequence_from_primary_table_not_database_snapshot",
+      "note": "No linked_sequence_records rows were present; source sequences are preserved from primary Table 4 and database identity is reconciled by name/activity/literature linkage."
+    },
+    {
+      "scope": "modified_residue_notation",
+      "severity": "caution",
+      "status": "sequence_modified_not_normalized",
+      "note": "Primary source reports GMG_05Z with Z as norleucine; database rows spelling this as GMG_05X remain explicitly caution-bearing."
+    },
+    {
+      "scope": "mechanism_interpretation",
+      "severity": "caution",
+      "status": "bounded_direct_assay",
+      "note": "Confocal imaging supports membrane contact/localization, not a resolved pore-forming or metabolic mechanism."
+    },
+    {
+      "scope": "toxicity",
+      "severity": "caution",
+      "status": "not_reported_in_local_material",
+      "note": "No source-supported toxicity endpoint table was recovered from local material; toxicity rows remain empty rather than invented."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "resolved_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "gate_results": {
+    "semantic_gate_pass": true,
+    "semantic_issue_count": 0,
+    "semantic_report": "reports/doi__10.1371_journal.pcbi.1003212.semantic_gate.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_report": "reports/doi__10.1371_journal.pcbi.1003212.publication_quality.json",
+    "verified_at": "2026-05-03T12:28:51Z"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "paper_id": "doi__10.3390_antibiotics13010005",
+  "doi": "10.3390/antibiotics13010005",
+  "pmcid": "PMC10812557",
+  "title": "Progressive Design of a Ranatuerin-2 Peptide from Amolops wuyiensis: Enhancement of Bioactivity and In Vivo Efficacy.",
+  "generated_at": "2026-05-07T18:02:58Z",
+  "test_type": "complete_real_paper_message_transfer_test_after_codex_re_review",
+  "workflow_test_ok": true,
+  "current_state": "accepted_with_cautions_after_rework",
+  "terminal_status": "accepted_with_cautions",
+  "final_approval_status": "accepted_with_cautions",
+  "queue_status": {
+    "material": "material_extracted_with_nonblocking_gaps",
+    "analysis": "analysis_accepted_with_cautions"
+  },
+  "gate_summary": {
+    "structural_ready": true,
+    "validator_contract_ready": true,
+    "semantic_gate_ready": true,
+    "publication_grade_ready": true
+  },
+  "gate_results": {
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  },
+  "analysis": {
+    "activity_records": 197,
+    "database_record_audits": 322,
+    "database_status_summary": {
+      "source_verified": 182,
+      "source_conflict": 22,
+      "sequence_modified_not_normalized": 118
+    },
+    "mechanism_claims": 4,
+    "review_status": "accepted_with_cautions",
+    "publication_grade": true
+  },
+  "open_rework_ticket_count": 0,
+  "rework_ticket_ids": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "publication_quality_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "semantic_gate": "passed_after_worker2_worker4_worker6_source_review",
+  "publication_quality_report": "reports/doi__10.3390_antibiotics13010005.publication_quality.json",
+  "semantic_report": "reports/doi__10.3390_antibiotics13010005.semantic_gate.json",
+  "quality_feedback": "papers/doi__10.3390_antibiotics13010005/work/review/quality_feedback.json",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_figure_series_not_tabulated_locally",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics13010005/raw/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics13010005/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_antibiotics13010005/extracted/pdf_text/antibiotics-13-00005.txt",
+        "paper_packets/doi__10.3390_antibiotics13010005/raw/supplementary_original/local-APD6-antibiotics-13-00005-s001.zip"
+      ],
+      "tools_attempted": [
+        "xml table/caption parser",
+        "rg over extracted XML/PDF text",
+        "unzip -l",
+        "pdftotext on supplementary PDF"
+      ],
+      "why_unrecoverable": "Figures 6-11 are available as images/captions and prose summaries, but the local XML/PDF does not contain machine-readable per-timepoint or per-dose numeric data tables for those curves.",
+      "impact": "Nonblocking: source-supported table values for MIC/MBC, MBIC/MBEC, IC50, and prose-supported toxicity/in vivo context were captured; exact figure-series datapoints are preserved as caution rather than fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "enterococcus_label_conflict_preserved",
+      "evidence_context": "Tables 2-3 and linked DBAASP rows use E. faecium/NTCC 12697; body/method prose also uses E. faecalis/NCTC 12697. Activity rows preserve the table header and carry a source_conflict_note."
+    },
+    {
+      "caution_code": "database_sequence_modification_caveats_preserved",
+      "evidence_context": "Several APD6/DBAASP analogue sequence rows omit or underlabel C-terminal amidation that primary Table 1 prints as -NH2; database_record_verification.json preserves these as sequence_modified_not_normalized/source_conflict cases instead of smoothing them."
+    },
+    {
+      "caution_code": "hemolysis_exact_figure_values_not_promoted",
+      "evidence_context": "Figure 11/prose support qualitative and approximate haemolysis findings; exact DBAASP hemolysis bins are retained as source_conflict unless a local source table supports them exactly."
+    },
+    {
+      "caution_code": "supplement_checked_no_activity_tables",
+      "evidence_context": "The local supplementary ZIP contains a PDF with Ramachandran/HPLC/MALDI figure captions; no supplementary activity/toxicity table was recovered from local material."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "figures": [
+    {
+      "locator": "xml:fig:1",
+      "tag": "fig",
+      "text": "Fig. 1 Overview of AMPGen for de novo AMP sequence design. a Candidate peptide sequences are initially generated using a diffusion model pre-trained on the OpenFold database, with the AMP-multiple sequence alignment (MSA) dataset as a condition, referred to as conditional generation (MSA-conditional, indicated by red arrows). The model adopted a 100 M parameter MSA Transformer architecture. Baseline comparisons were made with sequences generated without the condition, referred to as unconditional generation (MSA-based, indicated by green arrows), using the same architecture, as well as with a separate model trained on Uniref50 adopting a ByteNet-style CNN architecture (Seq-based, indicated by blue arrows). The generated sequences are constrained to 15–35 amino acids in length to ensure appropriate AMP size and to manage synthesis costs. b After cleaning and filtering the initial generated sequences, a binary XGBoost-based discriminator is developed to determine whether they qualify as AMPs. This discriminator is trained on an AMP dataset and a negative dataset of non-AMP sequences, using a combination of feature extraction methods (PseKRAAC and QSOrder) as the embedding. c Sequences identified as AMPs are then subjected to target-specific scoring using a long short-term memory (LSTM) network. Deploying an ESM-2 embedding strategy, this scorer is trained on an AMP dataset with minimum inhibitory concentration (MIC) values."
+    },
+    {
+      "locator": "xml:caption:1",
+      "tag": "caption",
+      "text": "Overview of AMPGen for de novo AMP sequence design. a Candidate peptide sequences are initially generated using a diffusion model pre-trained on the OpenFold database, with the AMP-multiple sequence alignment (MSA) dataset as a condition, referred to as conditional generation (MSA-conditional, indicated by red arrows). The model adopted a 100 M parameter MSA Transformer architecture. Baseline comparisons were made with sequences generated without the condition, referred to as unconditional generation (MSA-based, indicated by green arrows), using the same architecture, as well as with a separate model trained on Uniref50 adopting a ByteNet-style CNN architecture (Seq-based, indicated by blue arrows). The generated sequences are constrained to 15–35 amino acids in length to ensure appropriate AMP size and to manage synthesis costs. b After cleaning and filtering the initial generated sequences, a binary XGBoost-based discriminator is developed to determine whether they qualify as AMPs. This discriminator is trained on an AMP dataset and a negative dataset of non-AMP sequences, using a combination of feature extraction methods (PseKRAAC and QSOrder) as the embedding. c Sequences identified as AMPs are then subjected to target-specific scoring using a long short-term memory (LSTM) network. Deploying an ESM-2 embedding strategy, this scorer is trained on an AMP dataset with minimum inhibitory concentration (MIC) values."
+    },
+    {
+      "locator": "xml:fig:2",
+      "tag": "fig",
+      "text": "Fig. 2 General features of generated AMP candidate sequences. The inverted pyramid diagram illustrates the process of refining the initial candidate peptide sequences into AMP candidates for the a seq-based, b MSA-based, and c MSA-conditional groups. The ‘Clean sequence’ denotes the initial pool of sequences after ambiguous amino acids have been removed, with subsequent steps showing the percentage of sequences remaining after each conditional screening. The ‘Physical properties’ refer to sequences filtered with physical properties (with a net charge greater than 0 at pH 7 and a hydrophilic amino acid ratio between 40% and 70%). The ‘XGBoost’ refers to sequences identified as AMPs by the XGBoost-based discriminator. The accompanying Venn diagram shows AMP candidates with predicted activity against Escherichia coli and Staphylococcus aureus , defined by a predicted MIC value of less than 5 μM using the LSTM-based scorer. d The proportion of each amino acid in the AMP candidates that passed the discriminator. The distribution of physicochemical properties for candidate AMP sequences includes e sequences length, f net charge, g isoelectric point, h hydrophobic moment, i Boman index, and j instability index for AMP sequences classified as AMPs by the discriminator. The MSA-conditional model consistently generates a higher number of sequences with diverse physicochemical properties compared to the Seq-based and MSA-based models, indicating enhanced variability and potential functional diversity in the MSA-conditional generated peptides. Panels show violin plots depicting the distribution of predicted minimum inhibitory concentration (MIC) values (μM, log10-transformed) against E. coli ( k ) and S. aureus ( l ). The number of sequences evaluated for each model is indicated at the bottom of each violin plot. The MSA-conditional model generated sequences with significantly lower MIC values, indicating higher antibacterial activity against both E. coli and S. aureus compared to the Seq-based and MSA-based models. Statistical significance is indicated by asterisks (***), representing P < 0.001 (Kruskal-Wallis multiple comparison, with P -values adjusted using the Benjamini-Hochberg method)."
+    },
+    {
+      "locator": "xml:caption:2",
+      "tag": "caption",
+      "text": "General features of generated AMP candidate sequences. The inverted pyramid diagram illustrates the process of refining the initial candidate peptide sequences into AMP candidates for the a seq-based, b MSA-based, and c MSA-conditional groups. The ‘Clean sequence’ denotes the initial pool of sequences after ambiguous amino acids have been removed, with subsequent steps showing the percentage of sequences remaining after each conditional screening. The ‘Physical properties’ refer to sequences filtered with physical properties (with a net charge greater than 0 at pH 7 and a hydrophilic amino acid ratio between 40% and 70%). The ‘XGBoost’ refers to sequences identified as AMPs by the XGBoost-based discriminator. The accompanying Venn diagram shows AMP candidates with predicted activity against Escherichia coli and Staphylococcus aureus , defined by a predicted MIC value of less than 5 μM using the LSTM-based scorer. d The proportion of each amino acid in the AMP candidates that passed the discriminator. The distribution of physicochemical properties for candidate AMP sequences includes e sequences length, f net charge, g isoelectric point, h hydrophobic moment, i Boman index, and j instability index for AMP sequences classified as AMPs by the discriminator. The MSA-conditional model consistently generates a higher number of sequences with diverse physicochemical properties compared to the Seq-based and MSA-based models, indicating enhanced variability and potential functional diversity in the MSA-conditional generated peptides. Panels show violin plots depicting the distribution of predicted minimum inhibitory concentration (MIC) values (μM, log10-transformed) against E. coli ( k ) and S. aureus ( l ). The number of sequences evaluated for each model is indicated at the bottom of each violin plot. The MSA-conditional model generated sequences with significantly lower MIC values, indicating higher antibacterial activity against both E. coli and S. aureus compared to the Seq-based and MSA-based models. Statistical significance is indicated by asterisks (***), representing P < 0.001 (Kruskal-Wallis multiple comparison, with P -values adjusted using the Benjamini-Hochberg method)."
+    },
+    {
+      "locator": "xml:fig:3",
+      "tag": "fig",
+      "text": "Fig. 3 Validation of AMP candidates. a The AlphaFold 3 predicted structure and net charge (at pH 7) of the 38 validated AMPs. AMP-1 to AMP-20 were randomly selected from the top 100 candidates targeting S. aureus , and AMP-21 to AMP-40 were randomly selected from the top 100 candidates targeting E. coli . Among them, the chemical synthesis of AMP-5 and 18 failed. The color of the ellipse in the lower right corner of each 3D structure diagram represents the minimum inhibitory concentration (MIC) value against E. coli K88 (left) and S. aureus ATCC 29213 (right). b Comparison of antimicrobial activity of AMP candidates against Gram-positive and Gram-negative bacteria. b displays the log10-transformed MIC values (μM) of AMP candidates against Gram-positive S. aureus ATCC 29213 (y-axis) and Gram-negative E. coli K88 (x-axis). Each dot represents a different AMP, color-coded by its designed target: yellow-green for AMPs with a top 100 score against Gram-positive bacteria (G+) and green for those with a top 100 score against Gram-negative bacteria (G-). The control of antibiotics Polymyxin B and Ampicillin is highlighted in red. AMPs clustered near the origin show broad-spectrum efficacy, while those positioned at the extremes indicate selective efficacy against either Gram-positive or Gram-negative bacteria. c Nine AMPs with MIC values less than 5 μM for both targets in a were selected for further determination of MIC against E. coli (ATCC 25922), P. aeruginosa (ATCC 27853), S. aureus (ATCC25923), and E. faecalis (ATCC 29212). The figure shows the MIC values of the nine AMPs against each target. Ampicillin and Polymyxin B were used as positive controls. The MIC was determined by averaging the results from triplicate assays across three independent experiments (n = 3)."
+    },
+    {
+      "locator": "xml:caption:3",
+      "tag": "caption",
+      "text": "Validation of AMP candidates. a The AlphaFold 3 predicted structure and net charge (at pH 7) of the 38 validated AMPs. AMP-1 to AMP-20 were randomly selected from the top 100 candidates targeting S. aureus , and AMP-21 to AMP-40 were randomly selected from the top 100 candidates targeting E. coli . Among them, the chemical synthesis of AMP-5 and 18 failed. The color of the ellipse in the lower right corner of each 3D structure diagram represents the minimum inhibitory concentration (MIC) value against E. coli K88 (left) and S. aureus ATCC 29213 (right). b Comparison of antimicrobial activity of AMP candidates against Gram-positive and Gram-negative bacteria. b displays the log10-transformed MIC values (μM) of AMP candidates against Gram-positive S. aureus ATCC 29213 (y-axis) and Gram-negative E. coli K88 (x-axis). Each dot represents a different AMP, color-coded by its designed target: yellow-green for AMPs with a top 100 score against Gram-positive bacteria (G+) and green for those with a top 100 score against Gram-negative bacteria (G-). The control of antibiotics Polymyxin B and Ampicillin is highlighted in red. AMPs clustered near the origin show broad-spectrum efficacy, while those positioned at the extremes indicate selective efficacy against either Gram-positive or Gram-negative bacteria. c Nine AMPs with MIC values less than 5 μM for both targets in a were selected for further determination of MIC against E. coli (ATCC 25922), P. aeruginosa (ATCC 27853), S. aureus (ATCC25923), and E. faecalis (ATCC 29212). The figure shows the MIC values of the nine AMPs against each target. Ampicillin and Polymyxin B were used as positive controls. The MIC was determined by averaging the results from triplicate assays across three independent experiments (n = 3)."
+    },
+    {
+      "locator": "xml:fig:4",
+      "tag": "fig",
+      "text": "Fig. 4 Bioactivity characterization and action of functional AMPs on E. coli. a Quantification of membrane damage in E. coli K88 treated with different AMPs using propidium iodide fluorescence. The fluorescence intensity, indicative of membrane permeabilization, is shown as mean ± standard deviation ( n = 3). The negative control (NC) represents untreated E. coli K88, while other bars represent various AMPs. Polymyxin B is included as reference antibiotics. Statistical significance is indicated by asterisks (***), P < 0.001 (one-way ANOVA). b Half-maximal cytotoxic concentration (CC50) and half-maximal hemolytic concentration (HC50) values of AMP candidates, along with minimum inhibitory concentrations (MIC) against E. coli K88 and S. aureus (ATCC 29213). All experiments were conducted in triplicate ( n = 3 independent experiments) and the results were averaged. Concentration values are expressed in log10 μg/mL. c Fluorescence microscopy images of E. coli K88 cells untreated (control) or treated with Polymyxin B (positive control) and AMPs. Red fluorescence indicates propidium iodide staining, which binds to DNA upon cell membrane disruption, highlighting compromised bacterial cells, marking compromised bacterial cell membranes. Untreated E. coli K88 serves as the control, displaying minimal fluorescence. Scale bar = 5 μm. All experiments were performed in triplicate, yielding reproducible outcomes. A representative figure is presented to illustrate the findings."
+    },
+    {
+      "locator": "xml:caption:4",
+      "tag": "caption",
+      "text": "Bioactivity characterization and action of functional AMPs on E. coli. a Quantification of membrane damage in E. coli K88 treated with different AMPs using propidium iodide fluorescence. The fluorescence intensity, indicative of membrane permeabilization, is shown as mean ± standard deviation ( n = 3). The negative control (NC) represents untreated E. coli K88, while other bars represent various AMPs. Polymyxin B is included as reference antibiotics. Statistical significance is indicated by asterisks (***), P < 0.001 (one-way ANOVA). b Half-maximal cytotoxic concentration (CC50) and half-maximal hemolytic concentration (HC50) values of AMP candidates, along with minimum inhibitory concentrations (MIC) against E. coli K88 and S. aureus (ATCC 29213). All experiments were conducted in triplicate ( n = 3 independent experiments) and the results were averaged. Concentration values are expressed in log10 μg/mL. c Fluorescence microscopy images of E. coli K88 cells untreated (control) or treated with Polymyxin B (positive control) and AMPs. Red fluorescence indicates propidium iodide staining, which binds to DNA upon cell membrane disruption, highlighting compromised bacterial cells, marking compromised bacterial cell membranes. Untreated E. coli K88 serves as the control, displaying minimal fluorescence. Scale bar = 5 μm. All experiments were performed in triplicate, yielding reproducible outcomes. A representative figure is presented to illustrate the findings."
+    },
+    {
+      "locator": "xml:caption:5",
+      "tag": "caption",
+      "text": "Supplementary Information (Fig. S1-10 & Table S1-4)"
+    },
+    {
+      "locator": "xml:caption:6",
+      "tag": "caption",
+      "text": "Supplementary Data 1-12"
+    },
+    {
+      "locator": "xml:caption:7",
+      "tag": "caption",
+      "text": "Description of Additional Supplementary Files"
+    },
+    {
+      "locator": "xml:caption:8",
+      "tag": "caption",
+      "text": "Reporting Summary"
+    },
+    {
+      "locator": "xml:caption:9",
+      "tag": "caption",
+      "text": "Supplementary Information (Fig. S1-10 & Table S1-4)"
+    },
+    {
+      "locator": "xml:caption:10",
+      "tag": "caption",
+      "text": "Supplementary Data 1-12"
+    },
+    {
+      "locator": "xml:caption:11",
+      "tag": "caption",
+      "text": "Description of Additional Supplementary Files"
+    },
+    {
+      "locator": "xml:caption:12",
+      "tag": "caption",
+      "text": "Reporting Summary"
+    }
+  ]
+}

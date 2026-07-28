@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "verdict",
+    "publication_grade_ready",
+    "independently_reviewed_primary_source",
+    "reviewed_every_current_final_record",
+    "recursive_authority_boundary_false",
+    "fallback_release_boundary_preserved",
+    "field_checks",
+    "blocking_findings",
+    "cautions"
+  ],
+  "properties": {
+    "paper_id": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "publication_grade_ready": {"type": "boolean"},
+    "independently_reviewed_primary_source": {"type": "boolean"},
+    "reviewed_every_current_final_record": {"type": "boolean"},
+    "recursive_authority_boundary_false": {"type": "boolean"},
+    "fallback_release_boundary_preserved": {"type": "boolean"},
+    "field_checks": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "check_id",
+          "status",
+          "summary",
+          "evidence_paths",
+          "source_locators"
+        ],
+        "properties": {
+          "check_id": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "enum": ["PASS", "FAIL", "CAUTION"]},
+          "summary": {"type": "string", "minLength": 1},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "source_locators": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "finding_id",
+          "owner_worker",
+          "reason",
+          "evidence_paths",
+          "source_locators",
+          "required_actions",
+          "acceptance_checks"
+        ],
+        "properties": {
+          "finding_id": {"type": "string", "minLength": 1},
+          "owner_worker": {
+            "type": "string",
+            "enum": ["worker-1", "worker-2", "worker-3", "worker-4", "worker-5"]
+          },
+          "reason": {"type": "string", "minLength": 1},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "source_locators": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "required_actions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "acceptance_checks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "cautions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["caution_id", "summary", "evidence_paths"],
+        "properties": {
+          "caution_id": {"type": "string", "minLength": 1},
+          "summary": {"type": "string", "minLength": 1},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "paper_id": "doi__10.3390_pharmaceutics15082047",
+  "reviewed_at": "2026-05-09T16:47:47Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-2/4/6 re-review recovered the primary Table 1 MIC matrix and Table 2 toxicity/selectivity rows, reconciled linked APD6/DBAASP records against source locators, and closed the prior Table 2/database/full-review rework ticket with cautions for figure-only database percentages and non-machine-readable sequence strings.",
+  "checked_inputs": [
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/packet_manifest.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/locators/locator_index.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/extraction/extraction_status.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/extraction/extraction_quality_report.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/extracted/xml_sections.json",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/extracted/pdf_text/pharmaceutics-15-02047.txt",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_pharmaceutics15082047/xml/local-DBAASP-PMC10458893.xml",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_pharmaceutics15082047/pdf/local-DBAASP-PMC10458893.pdf",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_pharmaceutics15082047/supplementary/local-APD6-pharmaceutics-15-02047-s001.zip",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/database/linked_assay_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/database/linked_experiment_records.jsonl",
+    "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_pharmaceutics15082047/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/apd6_activity_text_records.csv"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_detail": "supplementary zip opened with unzip+pdftotext; only Figure S1/S2 material found, no activity/toxicity tables"
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 195,
+    "activity_endpoint_counts": {
+      "MIC": 150,
+      "MHC": 15,
+      "MIC_GEOMETRIC_MEAN": 15,
+      "THERAPEUTIC_INDEX": 15
+    },
+    "table_1_mic_rows": 150,
+    "table_2_rows_added": 45,
+    "database_record_audits": 406,
+    "database_status_summary": {
+      "source_conflict": 72,
+      "source_verified": 332,
+      "database_only_no_primary_source": 2
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0,
+    "supplementary_tables_found": 0,
+    "database_conflicts_preserved_as_cautions": true
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked literature rows and Table 1/Table 2 matching assay rows are source_verified; figure-only exact hemolysis/cytotoxicity percentages and APD6 narrative sequence/activity summaries are preserved as source_conflict cautions instead of being hidden or over-normalized.",
+    "layer_2_activity_toxicity": "Table 1 now contributes all 150 MIC target/entity/value rows and Table 2 contributes 45 MHC/MIC-GM/TI rows with units and locators; no unsupported Table 2 parser gap remains.",
+    "layer_3_mechanism": "Mechanism claims are limited to ONPG permeabilization, CD/FTIR structural interpretation, and in vivo efficacy caveats from paper locators; no direct mechanism is overclaimed from figure-only data.",
+    "final_review": "Previous full_source_review_not_completed and activity_table_shape_not_supported blockers are resolved; remaining uncertainties are recorded as nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_figure_exact_percentages_preserved_as_conflicts",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "DBAASP/APD6 exact hemolysis and HaCaT cytotoxicity percentages are figure-derived database values; Table 2 source-verifies MHC thresholds and selectivity indices, so exact percentages are preserved as source_conflict rather than promoted to primary table rows."
+    },
+    {
+      "caution_code": "sequence_strings_not_machine_readable_in_xml",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "Figure 1B is the paper locator for the analog list; linked APD6/DBAASP sequence strings are retained with figure locator context because exact sequences are not embedded as XML table text."
+    },
+    {
+      "caution_code": "supplement_contains_figures_only",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "The local supplementary zip was opened and text-extracted; it contains Figure S1/S2 chromatogram/SDS-PAGE material and no structured activity/toxicity tables."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  },
+  "packet_analysis_artifacts": {
+    "activity_toxicity_evidence": "paper_packets/doi__10.3390_pharmaceutics15082047/analysis/activity_toxicity_evidence.json",
+    "database_record_audit": "paper_packets/doi__10.3390_pharmaceutics15082047/analysis/database_record_audit.json",
+    "mechanism_evidence": "paper_packets/doi__10.3390_pharmaceutics15082047/analysis/mechanism_evidence.json"
+  },
+  "gate_rerun_at": "2026-05-09T16:50:42Z",
+  "gate_results": {
+    "semantic_gate_report": "reports/doi__10.3390_pharmaceutics15082047.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.3390_pharmaceutics15082047.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {}
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "paper_id": "doi__10.1371_journal.pone.0047743",
+  "reviewed_at": "2026-05-03T05:11:20Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Source-reviewed rework closed rwk-complete-test-0001: worker-2 recovered primary-source activity/toxicity rows from XML/PDF/figures, worker-4 preserved unresolved database sequence conflicts while source-checking activity scope, and worker-6 accepts the paper with explicit cautions rather than unresolved rework.",
+  "checked_inputs": [
+    "paper_packets/doi__10.1371_journal.pone.0047743/packet_manifest.json",
+    "paper_packets/doi__10.1371_journal.pone.0047743/locators/locator_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extraction/extraction_status.json",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extraction/extraction_quality_report.json",
+    "papers/doi__10.1371_journal.pone.0047743/source/paper.xml",
+    "papers/doi__10.1371_journal.pone.0047743/source/paper.pdf",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/pdf_text/pone.0047743.txt",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/oa_package/local-APD6-pmc_package/PMC3480435/pone.0047743.g001.jpg",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/oa_package/local-APD6-pmc_package/PMC3480435/pone.0047743.g003.jpg",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/oa_package/local-APD6-pmc_package/PMC3480435/pone.0047743.g004.jpg",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/oa_package/local-APD6-pmc_package/PMC3480435/pone.0047743.g005.jpg",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/oa_package/local-APD6-pmc_package/PMC3480435/pone.0047743.g006.jpg",
+    "paper_packets/doi__10.1371_journal.pone.0047743/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0047743/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0047743/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0047743/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1371_journal.pone.0047743/extracted/supplementary_text.jsonl"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA figures and linked database snapshots were sufficient to repair the owner-layer blocker. Exact graph values and database sequence normalization remain nonblocking cautions, not fabricated values."
+  },
+  "semantic_quality_checks": {
+    "activity_records": 80,
+    "activity_missing_core_fields": 0,
+    "activity_parser_issues": 0,
+    "database_records_reviewed": 21,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 5,
+      "source_conflict": 12,
+      "database_only_no_primary_source": 2,
+      "source_verified": 2
+    },
+    "database_source_conflicts_preserved": 12,
+    "database_sequence_modified_not_normalized": 5,
+    "database_only_no_primary_source": 2,
+    "mechanism_claims": 5,
+    "direct_mechanism_claims": 0,
+    "open_rework_targets": 0,
+    "source_review_gap_remaining": false,
+    "supplementary_tables_affecting_activity_or_mechanism": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Linked literature rows are source_verified. Non-literature database rows have source-supported activity/citation context but preserve unresolved sequence/modification or database-only limits because the packet has no linked sequence rows and Figure 1 is image-only for exact mature-sequence reconciliation.",
+    "layer_2_activity_toxicity": "Worker-2 recovered 80 source-located activity/toxicity rows covering bactericidal activity against 12 bacteria, salt sensitivity against two bacterial targets, DHV-1 antiviral activity, and duck erythrocyte hemolysis. Exact figure bars are not fabricated.",
+    "layer_3_mechanism": "Mechanism is bounded to phenotypic activity/toxicity assays and salt-sensitivity context. The paper itself leaves DHV mechanism unresolved, so no direct viral mechanism is overclaimed.",
+    "worker_6_final_gate": "The previous open ticket is closed because owner-layer artifacts are source-reviewed, there are zero blocking/major QC failures, and remaining limitations are explicit nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "figure_activity_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Figures 3-6 support activity, salt sensitivity, antiviral, and hemolysis conclusions, but exact plotted bar/point values are not machine-readable tables. Final rows preserve source-supported concentrations, thresholds, significance, targets, and qualitative outcomes instead of fabricated graph values.",
+      "source_locator": {
+        "locator": "xml:fig=3; xml:fig=4; xml:fig=5; xml:fig=6",
+        "source_path": "papers/doi__10.1371_journal.pone.0047743/source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "database_sequence_snapshot_absent_or_image_only",
+      "severity": "caution",
+      "evidence_context": "The packet has zero linked_sequence_records. Database non-literature rows remain sequence_modified_not_normalized, source_conflict, or database_only_no_primary_source when exact sequence/modification identity cannot be verified from machine-readable primary text.",
+      "source_locator": {
+        "locator": "database:linked_sequence_records.jsonl; xml:fig=1",
+        "source_path": "paper_packets/doi__10.1371_journal.pone.0047743/database/linked_sequence_records.jsonl"
+      }
+    },
+    {
+      "caution_code": "supplementary_assets_are_landing_html_no_structured_assay_tables",
+      "severity": "caution",
+      "evidence_context": "The ten local supplementary/landing assets are HTML landing/download pages and did not provide additional structured activity tables. Primary XML/PDF/OA figures are the controlling evidence surface for this repair.",
+      "source_locator": {
+        "locator": "supp:landing-1..10",
+        "source_path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0047743/supplementary"
+      }
+    }
+  ],
+  "rework_targets": [],
+  "resolved_rework_tickets": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "updated_at": "2026-05-03T05:11:20Z"
+}

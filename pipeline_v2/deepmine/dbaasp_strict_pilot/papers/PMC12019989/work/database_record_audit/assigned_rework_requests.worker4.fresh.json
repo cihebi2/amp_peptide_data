@@ -1,0 +1,64 @@
+{
+  "paper_id": "PMC12019989",
+  "assigned_ticket_ids": [
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003"
+  ],
+  "matched_count": 1,
+  "tickets": [
+    {
+      "paper_id": "PMC12019989",
+      "created_at": "2026-07-16T11:18:13.951621+00:00",
+      "requested_by": "leader_post_initial_field_level_semantic_audit",
+      "severity": "blocking",
+      "target_queue": "analysis",
+      "evidence_paths": [
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/leader_candidate17_pre_repair_fail.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/leader_candidate17_validator.py",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/supplementary_methods/supplementary_evidence.json",
+        "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/final/activity_toxicity_evidence.json"
+      ],
+      "leader_validator": {
+        "path": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12019989/work/review/leader_candidate17_validator.py",
+        "sha256": "73b147fe01f3ee4ef5d4a0f9b4be5cbe2388de03309c9527a5a1123ed1796665",
+        "do_not_modify_weaken_or_bypass": true
+      },
+      "ticket_id": "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+      "owner_worker": "worker-2, worker-4",
+      "reason": "Field-level audit found owner artifacts with false or stale model metadata, a category error that labels all 13 non-authoritative fallback rows as sequence_modified_not_normalized, missing explicit paper-local identity/terminal-modification boundary, inconsistent final-layer adjudication metadata, and no explicit no-toxicity caution in the final review.",
+      "blocks": [
+        "database_record_verification",
+        "activity_toxicity_evidence",
+        "mechanism_ontology_record",
+        "review_report",
+        "publication_grade_acceptance",
+        "seventeen_paper_freeze"
+      ],
+      "required_owner_actions": {
+        "worker-2": "Set review_model=gpt-5.5 and reasoning_effort=xhigh in both canonical worker-2 artifacts using worker-2.run_report.json as proof; preserve 279/0 and all source conflicts.",
+        "worker-4": "Set review_model=gpt-5.5 and reasoning_effort=xhigh in both canonical worker-4 artifacts using worker-4.run_report.json as proof. Add paper_local_identity={entity:SK1260, sequence:KAFAVKFAWKFHAWKAWKKAW, sequence_length:21, status:source_verified, terminal_modifications:not explicitly reported} with source locators and synthesis/purification/mass-spectrometry evidence. Reclassify all 13 fallback machine candidates as unresolved_record, because they are not authoritative linked database records and their none modification field is not source-located; do not call the unmodified 21-aa sequence sequence_modified_not_normalized. Preserve authoritative_dbaasp_ingest_ready=false at every depth."
+      },
+      "worker6_required_actions": {
+        "final_layer_metadata": "After all owner repairs, independently rebuild all three final layers with one shared reviewed_at plus top-level review_status=accepted_with_cautions, publication_grade=true, review_model=gpt-5.5, reasoning_effort=xhigh, source_reviewed=true, and worker6_adjudication={worker:worker-6, decision:accepted_with_cautions, source_reviewed:true}.",
+        "review_cautions": "Add explicit no-source-located hemolysis/mammalian-cytotoxicity/healthy-animal-toxicity caution; keep Figure 5 as efficacy phenotype only; preserve all ten source conflicts and zero-authority boundary.",
+        "validation": "Run the immutable leader validator and require exit 0 before terminal closure, synchronize all four mirror pairs, append fresh terminal responses for tickets 002 and 003 only after owner responses, then rerun strict packet, semantic, and publication gates after final writes/responses."
+      },
+      "acceptance_checks": {
+        "worker2_and_worker4_runtime_metadata": "gpt-5.5/xhigh",
+        "paper_local_identity_status": "source_verified",
+        "paper_local_sequence": "KAFAVKFAWKFHAWKAWKKAW",
+        "paper_local_sequence_length": 21,
+        "terminal_modifications": "not explicitly reported",
+        "fallback_record_audits": 13,
+        "fallback_status": "unresolved_record",
+        "recursive_authoritative_true_count": 0,
+        "complete_final_layer_metadata_count": 3,
+        "shared_reviewed_at_count": 1,
+        "explicit_no_toxicity_caution": true,
+        "paper_packet_mirror_mismatch_count": 0,
+        "leader_validator_exit_code": 0,
+        "leader_validator_passed": true,
+        "leader_validator_issue_count": 0
+      }
+    }
+  ]
+}

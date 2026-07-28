@@ -1,0 +1,138 @@
+{
+  "paper_id": "doi__10.3390_antibiotics9110831",
+  "doi": "10.3390/antibiotics9110831",
+  "pmid": "33233541",
+  "pmcid": "PMC7699533",
+  "reviewed_at": "2026-05-07T15:06:30Z",
+  "generated_at": "2026-05-07T15:06:30Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "nonblocking_material_status": "material_extracted_with_gaps",
+    "unrecoverable_material_gaps": []
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics9110831/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/analysis/database_record_audit.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/analysis/adjudication_report.json",
+    "papers/doi__10.3390_antibiotics9110831/source/paper.xml",
+    "papers/doi__10.3390_antibiotics9110831/source/paper.pdf",
+    "papers/doi__10.3390_antibiotics9110831/source/supplementary/antibiotics-09-00831-s001.pdf",
+    "papers/doi__10.3390_antibiotics9110831/source/oa_package",
+    "paper_packets/doi__10.3390_antibiotics9110831/raw/paper.xml",
+    "paper_packets/doi__10.3390_antibiotics9110831/raw/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/pdf_text/antibiotics-09-00831.txt",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/supplementary_text/antibiotics-09-00831-s001.txt",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/extracted/archive_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics9110831/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics9110831/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics9110831/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+  ],
+  "tools_attempted": [
+    "jq JSON artifact inspection",
+    "rg source/database search",
+    "python xml.etree table parsing for paper.xml",
+    "pdftotext-derived local PDF text inspection",
+    "supplementary PDF text inspection",
+    "file/link inspection for OA package and supplementary assets"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_final": 13,
+    "database_status_summary": {
+      "source_verified": 19,
+      "source_conflict": 2
+    },
+    "mechanism_claims_final": 3,
+    "source_paths_checked_count": 27,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gap_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 source-reviewed DBAASP assay/experiment/literature rows against Table 1, Table 2, Figure 3, article metadata, and merged DBAASP sequence/experiment rows. MIC and hemolysis rows are source_verified; PK(15) endpoint orientation remains source_conflict with explicit caution.",
+    "layer_2_activity_toxicity": "Worker-6 final activity output retains Css54-supported MIC, hemolysis, cytotoxicity, and biofilm rows with raw units, concentrations, targets, and source locators; comparator columns were reviewed but not promoted to Css54 rows.",
+    "layer_3_mechanism": "Worker-6 final mechanism output limits direct mechanism to membrane-disruption assays and keeps CD/biofilm evidence as supporting or phenotype context.",
+    "supplementary_materials": "The OA supplementary PDF was opened; it supports synthesis/mass confirmation and contains no additional activity table requiring worker-2/3 rework for this owner-layer closeout."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_endpoint_orientation_conflict",
+      "severity": "caution",
+      "owner_worker": "worker-4",
+      "evidence_context": "DBAASP PK(15) rows encode approximately 50% cell death at 8 μM; primary source states approximately 50% cell viability at the same concentration. The target/concentration are source-supported, but the endpoint orientation is preserved as source_conflict.",
+      "affected_records": [
+        "database:linked_assay_records:row=2",
+        "database:linked_experiment_records:row=2"
+      ]
+    },
+    {
+      "caution_code": "material_packet_complete_with_nonblocking_gaps",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "Material packet status remains material_extracted_with_gaps, but the local XML/PDF/OA package/supplement/database evidence was sufficient for worker-4/6 adjudication. No missing local source blocks publication-grade review."
+    },
+    {
+      "caution_code": "figure_quantification_not_digitized",
+      "severity": "caution",
+      "owner_worker": "worker-6",
+      "evidence_context": "Figure-only curves were not digitized; final outputs keep qualitative membrane-mechanism claims and use source text for approximate toxicity/biofilm values only."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 re-review closed the targeted source-review ticket for Css54 by resolving source-supported database rows, preserving the PK(15) endpoint-orientation conflict as a caution, and replacing framework-test adjudication with source-reviewed final decisions.",
+  "summary": "Source-reviewed worker-4/6 adjudication accepted the paper with cautions: Css54 MIC, hemolysis, cytotoxicity, biofilm, database identity, and membrane-disruption mechanism are locally supported; the remaining PK(15) database endpoint-orientation mismatch is preserved and nonblocking.",
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true
+  },
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "updated_at": "2026-05-07T15:11:12Z",
+  "gate_results": {
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "semantic_report": "reports/doi__10.3390_antibiotics9110831.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_antibiotics9110831.publication_quality.json"
+  },
+  "gate_reports": {
+    "semantic_gate": "reports/doi__10.3390_antibiotics9110831.semantic_gate.json",
+    "publication_quality": "reports/doi__10.3390_antibiotics9110831.publication_quality.json",
+    "semantic_gate_after_worker": "reports/doi__10.3390_antibiotics9110831.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "publication_quality_after_worker": "reports/doi__10.3390_antibiotics9110831.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "paper_id": "doi__10.3390_ijms21165829",
+  "reviewed_at": "2026-05-08T14:41:45Z",
+  "updated_at": "2026-05-08T14:44:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "adjudication_summary": "Worker-2 recovered the Table 1 MIC and hemolysis matrix, worker-4 reconciled DBAASP/CAMP linked rows against the primary source, and worker-6 closes the prior framework-only rework with one preserved nonblocking database conflict.",
+  "summary": "Source-reviewed rework recovered 114 primary activity/toxicity rows and resolved the database audit to 247 source-verified rows plus one preserved CAMP aggregate conflict; no blocking rework remains.",
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms21165829/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms21165829/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms21165829/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms21165829/raw/paper.xml",
+    "paper_packets/doi__10.3390_ijms21165829/raw/paper.pdf",
+    "paper_packets/doi__10.3390_ijms21165829/extracted/pdf_text/ijms-21-05829.txt",
+    "paper_packets/doi__10.3390_ijms21165829/extracted/pdf_text/local-DBAASP-PMC7461568.txt",
+    "paper_packets/doi__10.3390_ijms21165829/extracted/supplementary_text/ijms-21-05829-s001.txt",
+    "paper_packets/doi__10.3390_ijms21165829/extracted/oa_package/local-DBAASP-PMC7461568/PMC7461568/ijms-21-05829-s001.pdf",
+    "paper_packets/doi__10.3390_ijms21165829/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165829/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165829/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165829/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21165829/database/linked_sequence_records.jsonl"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded owner-layer repair reopened XML, extracted PDF text, OA package members, supplementary PDF/text, and linked database snapshots. The supplementary asset contains analytical/purity/chromatogram/MS material, not additional activity tables."
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "per_layer_decision_rationale": {
+    "material_packet": "The material packet remains complete-with-gaps because no structured supplementary activity tables exist; this is nonblocking after source review because XML Table 1 contains the activity/toxicity matrix needed for worker-2/4/6.",
+    "validator_contract": "Structural files and schemas are present, but acceptance is based on source-reviewed repair and strict gate reruns, not validator success alone.",
+    "layer_1_database": "DBAASP assay and duplicate experiment rows match primary Table 1 peptide/target/value evidence; the one CAMP aggregate experiment row is preserved as source_conflict because it lacks one-to-one peptide identity.",
+    "layer_2_activity_toxicity": "Worker-2 rebuilt all 114 supported peptide rows from Table 1: five MIC targets plus one 150 uM hemolysis value for each of 19 peptides.",
+    "layer_3_mechanism": "Mechanism is bounded to structure-activity, hemolysis trend, and time-kill phenotype; no direct membrane-target or intracellular-target claim is promoted.",
+    "publication_grade_review": "The previous open ticket is closed because source-supported activity rows, database reconciliation, and worker-6 provenance are now present; remaining cautions are nonblocking and explicit."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 114,
+    "database_status_summary": {
+      "source_verified": 247,
+      "source_conflict": 1
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "source_paths_checked": [
+      "rework_context/doi__10.3390_ijms21165829/handoff_context.json",
+      "paper_packets/doi__10.3390_ijms21165829/packet_manifest.json",
+      "paper_packets/doi__10.3390_ijms21165829/locators/locator_index.json",
+      "paper_packets/doi__10.3390_ijms21165829/raw/paper.xml",
+      "paper_packets/doi__10.3390_ijms21165829/raw/paper.pdf",
+      "paper_packets/doi__10.3390_ijms21165829/extracted/pdf_text/ijms-21-05829.txt",
+      "paper_packets/doi__10.3390_ijms21165829/extracted/pdf_text/local-DBAASP-PMC7461568.txt",
+      "paper_packets/doi__10.3390_ijms21165829/extracted/supplementary_text/ijms-21-05829-s001.txt",
+      "paper_packets/doi__10.3390_ijms21165829/extracted/oa_package/local-DBAASP-PMC7461568/PMC7461568/ijms-21-05829-s001.pdf",
+      "paper_packets/doi__10.3390_ijms21165829/database/linked_assay_records.jsonl",
+      "paper_packets/doi__10.3390_ijms21165829/database/linked_experiment_records.jsonl",
+      "paper_packets/doi__10.3390_ijms21165829/database/linked_literature_records.jsonl",
+      "paper_packets/doi__10.3390_ijms21165829/database/linked_dramp_activity_records.jsonl",
+      "paper_packets/doi__10.3390_ijms21165829/database/linked_sequence_records.jsonl"
+    ],
+    "gate_evidence": {
+      "commands": {
+        "semantic": "python .codex/skills/paper-batch-orchestrator/scripts/semantic_three_layer_gate.py --root . --manifest reports/doi__10.3390_ijms21165829.complete_message_test_manifest.json --json > reports/doi__10.3390_ijms21165829.semantic_gate.json",
+        "publication": "python .codex/skills/paper-batch-orchestrator/scripts/check_three_layer_publication_quality.py --root . --manifest reports/doi__10.3390_ijms21165829.complete_message_test_manifest.json --json-out reports/doi__10.3390_ijms21165829.publication_quality.json"
+      },
+      "semantic_report": "reports/doi__10.3390_ijms21165829.semantic_gate.json",
+      "publication_quality_report": "reports/doi__10.3390_ijms21165829.publication_quality.json",
+      "semantic_returncode": 0,
+      "publication_returncode": 0,
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "semantic_issue_count": 0,
+      "publication_quality_pass": true,
+      "publication_risk_counts": {},
+      "gates_ready": true,
+      "updated_at": "2026-05-08T14:44:55Z"
+    }
+  },
+  "caution_findings": [
+    {
+      "caution_code": "camp_aggregate_database_row_source_conflict",
+      "evidence_context": "CAMP:CAMPSQ24410 preserves a database aggregate row that lists multiple MIC statements without one-to-one peptide sequence identity; it is not used as primary assay evidence."
+    },
+    {
+      "caution_code": "supplement_contains_analytical_not_activity_tables",
+      "evidence_context": "The local supplementary PDF/text was checked and contains peptide structure, mass, retention time, purity, chromatogram, and MS information, not additional activity/toxicity tables."
+    },
+    {
+      "caution_code": "mechanism_not_direct_target_assay",
+      "evidence_context": "The paper supports activity/hemolysis/time-kill phenotypes and structure-activity trends, but no direct molecular target or membrane-permeabilization assay is promoted."
+    }
+  ],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_targets": 0
+  }
+}

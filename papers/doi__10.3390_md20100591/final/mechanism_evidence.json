@@ -1,0 +1,58 @@
+{
+  "paper_id": "doi__10.3390_md20100591",
+  "generated_at": "2026-05-09T08:46:33Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed final mechanism ontology record from primary XML/PDF prose, Figure 5, and methods sections. Prior automated inflammation locator was rejected as non-paper-specific.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-g2-cell-cycle-arrest",
+      "claim_text": "Phaeosphamide A (compound 1) arrests AGS cells in the G2 phase in a dose-dependent manner.",
+      "entity_scope": "Phaeosphamide A (compound 1) in AGS human gastric adenocarcinoma cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "flow cytometry cell-cycle distribution assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2. Results and Discussion; xml:fig=5:Figure 5; xml:sec=13:3.8. Analysis of Cell Cycle Distribution"
+      },
+      "limitations": "Final claim is qualitative/dose-dependent; exact figure-only cell-cycle percentages were not converted from the image without source data."
+    },
+    {
+      "claim_id": "mech-002-apoptosis-induction",
+      "claim_text": "Phaeosphamide A (compound 1) induces apoptosis of AGS cells in a dose-dependent manner.",
+      "entity_scope": "Phaeosphamide A (compound 1) in AGS human gastric adenocarcinoma cells",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Annexin V-FITC/PI apoptosis flow cytometry assay"
+      ],
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:2. Results and Discussion; xml:fig=5:Figure 5; xml:sec=14:3.9. Detection of Cell Apoptosis"
+      },
+      "limitations": "Final claim is qualitative/dose-dependent; exact figure-only apoptosis percentages were not fabricated from the image."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "figure_exact_bar_values_not_machine_readable",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_md20100591/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_md20100591/extracted/oa_package/local-DBAASP-PMC9604837/PMC9604837/marinedrugs-20-00591-g003.jpg",
+        "paper_packets/doi__10.3390_md20100591/extracted/oa_package/local-DBAASP-PMC9604837/PMC9604837/marinedrugs-20-00591-g005.jpg"
+      ],
+      "tools_attempted": [
+        "XML figure caption review",
+        "manual image inspection",
+        "PDF text extraction around figures"
+      ],
+      "why_unrecoverable": "The local figure images support qualitative/statistical conclusions and treatment concentrations but do not provide source-data tables for exact bar heights or flow-cytometry percentages beyond what is visible in prose/captions.",
+      "impact": "Mechanism claims are limited to qualitative dose-dependent G2 arrest and apoptosis; no exact figure-only percentages were fabricated.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

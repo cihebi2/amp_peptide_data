@@ -1,0 +1,860 @@
+{
+  "artifacts": {
+    "packet_root": "paper_packets/doi__10.1002_advs.202205301",
+    "paper_root": "papers/doi__10.1002_advs.202205301",
+    "paths": {
+      "agent_logs": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/agent_logs.jsonl",
+      "analysis_status": "paper_packets/doi__10.1002_advs.202205301/analysis/analysis_status.json",
+      "chat_messages": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/chat_messages.jsonl",
+      "extraction_quality_report": "paper_packets/doi__10.1002_advs.202205301/extraction/extraction_quality_report.json",
+      "extraction_status": "paper_packets/doi__10.1002_advs.202205301/extraction/extraction_status.json",
+      "final_activity": "papers/doi__10.1002_advs.202205301/final/activity_toxicity_evidence.json",
+      "final_database": "papers/doi__10.1002_advs.202205301/final/database_record_verification.json",
+      "final_mechanism": "papers/doi__10.1002_advs.202205301/final/mechanism_ontology_record.json",
+      "final_review_report": "papers/doi__10.1002_advs.202205301/final/review_report.json",
+      "latest_capped_rework_report": "reports/doi__10.1002_advs.202205301.capped_rework_test_report.json",
+      "latest_complete_report": "reports/doi__10.1002_advs.202205301.complete_message_test_report.json",
+      "locator_index": "paper_packets/doi__10.1002_advs.202205301/locators/locator_index.json",
+      "packet_activity": "paper_packets/doi__10.1002_advs.202205301/analysis/activity_toxicity_evidence.json",
+      "packet_adjudication": "paper_packets/doi__10.1002_advs.202205301/analysis/adjudication_report.json",
+      "packet_database": "paper_packets/doi__10.1002_advs.202205301/analysis/database_record_audit.json",
+      "packet_manifest": "paper_packets/doi__10.1002_advs.202205301/packet_manifest.json",
+      "packet_mechanism": "paper_packets/doi__10.1002_advs.202205301/analysis/mechanism_evidence.json",
+      "quality_feedback": "papers/doi__10.1002_advs.202205301/work/review/quality_feedback.json",
+      "rework_requests": "paper_packets/doi__10.1002_advs.202205301/rework/rework_requests.jsonl",
+      "rework_responses": "paper_packets/doi__10.1002_advs.202205301/rework/rework_responses.jsonl",
+      "state_executions": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/state_executions.jsonl",
+      "workflow_context": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/workflow_context.json"
+    },
+    "source_roots": {
+      "landed_paper": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301",
+      "local_packet": "paper_packets/doi__10.1002_advs.202205301",
+      "local_paper": "papers/doi__10.1002_advs.202205301",
+      "merged_output": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+    },
+    "workflow_dir": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301"
+  },
+  "audit_entry": {
+    "activity_record_count": 77,
+    "activity_sanity_examples": [],
+    "activity_sanity_issue_count": 0,
+    "database_row_counts": {
+      "linked_assay_records": 120,
+      "linked_dramp_activity_records": 0,
+      "linked_experiment_records": 120,
+      "linked_literature_records": 5,
+      "linked_sequence_records": 0
+    },
+    "database_status_summary": {
+      "database_only_no_primary_source": 1,
+      "source_conflict": 27,
+      "source_verified": 217
+    },
+    "extraction_counts": {
+      "figure_caption_count": 9,
+      "package_member_count": 24,
+      "quality_status": "complete_with_targeted_analysis_rework",
+      "supplement_parse_count": 2,
+      "supplementary_asset_count": 2,
+      "supplementary_table_count": 4,
+      "xml_section_count": 46,
+      "xml_table_count": 1
+    },
+    "material_inventory": {
+      "package_files": 1,
+      "pdf_files": 1,
+      "supplementary_files": 2,
+      "xml_files": 2
+    },
+    "mechanism_claim_count": 3,
+    "next_owner": "analysis_worker + adjudicator",
+    "packet_root": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301",
+    "paper_id": "doi__10.1002_advs.202205301",
+    "publication_risk_counts": {
+      "open_rework_targets": 1
+    },
+    "real_rework_reasons": [
+      "review layer is deliberately not publication-grade: review_status=needs_targeted_rework, publication_grade=false, open rework ticket remains",
+      "database adjudication still needs worker-6 decision: source_conflict/database-only rows are preserved but not publication-grade resolved",
+      "material packet is usable but marked complete_with_targeted_analysis_rework, not final source-reviewed completion"
+    ],
+    "semantic_issue_count": 2,
+    "semantic_issue_groups": {
+      "review:publication_grade_not_true": 1,
+      "review:review_status_not_publication_grade": 1
+    },
+    "source_activity_hints": [
+      {
+        "label": "Table 1",
+        "locator": "xml:table=1:row=1",
+        "preview": [
+          "Organisms",
+          "MIC [µmol L−1]"
+        ]
+      }
+    ],
+    "source_root": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301",
+    "title": "Combating Escherichia coli O157:H7 with Functionalized Chickpea-Derived Antimicrobial Peptides."
+  },
+  "best_effort_source_protocol": {
+    "efficiency_guard": "Stop a paper after max_rework_attempts or after source exhaustion proves the blocking evidence is not locally recoverable; mark the gap and move on instead of looping.",
+    "goal": "Recover every paper-local value that can be recovered with existing local materials before marking a gap unrecoverable.",
+    "policy": "bounded_best_effort_source_recovery",
+    "priority_order": [
+      "paper-local packet manifest, locator index, extraction status, and prior rework tickets",
+      "primary XML/NXML, publisher PDF text/tables, figure captions, and OA package members",
+      "declared supplementary files, archives, spreadsheets, office documents, images, and OCR outputs",
+      "linked APD6/DBAASP/DRAMP rows and merged experimental database snapshots",
+      "prior final/work artifacts only as hypotheses that must be rechecked against source locators"
+    ],
+    "required_actions": [
+      "Open paths from handoff_context.json; do not rely on chat summaries as evidence.",
+      "Use local office/archive/OCR tools only when the missing evidence is relevant and the source path exists.",
+      "Prefer high-value recoverable sources first; do not spend attempts on peripheral gaps that cannot affect the gate.",
+      "Never fabricate missing sequence, activity, toxicity, mechanism, unit, target, or database evidence.",
+      "If a source cannot be recovered after reasonable local attempts, record an unrecoverable_material_gaps entry and continue to the next paper."
+    ],
+    "suggested_tools_by_surface": {
+      "archive": [
+        "/root/software/rar-tools/7zz",
+        "/root/software/rar-tools/extract-rar",
+        "python zipfile/tarfile"
+      ],
+      "image_or_scan": [
+        "/root/software/PaddleOCR/.venv/bin/python -m paddleocr"
+      ],
+      "office": [
+        "python stdlib OOXML readers",
+        "antiword",
+        "catdoc",
+        "xls2csv"
+      ],
+      "pdf": [
+        "pdftotext",
+        "pdfimages/OCR only when text extraction is insufficient"
+      ],
+      "xml_or_html": [
+        "xml parser",
+        "rg over extracted text/html"
+      ]
+    }
+  },
+  "bounded_rework_protocol": {
+    "attempt_policy": "worker repairs the owner layer, writes rework_responses.jsonl/quality_feedback.json, then worker-6/gates recheck",
+    "handoff_policy": "each failed gate builds or refreshes rework_context/<paper_id>/ and sends CODEX_REVIEW_PROMPT.md to a fresh Codex CLI owner worker",
+    "max_rework_attempts": 5,
+    "queue_start_policy": "start_once_per_manifest_or_paper; retries must not rerun the initial queue bootstrap unless explicitly reset",
+    "stop_policy": "accept only after open tickets are closed and strict gates pass; otherwise stop at max attempts as blocked/unrecoverable and advance to the next paper"
+  },
+  "codex_cli_command": "codex exec --skip-git-repo-check -C /root/work/抗菌肽/数据库/batch/4-team -m gpt-5.5 -s danger-full-access -o reports/doi__10.1002_advs.202205301.codex_re_review_last_message.md - < rework_context/doi__10.1002_advs.202205301/CODEX_REVIEW_PROMPT.md",
+  "do_not_copy_long_source_text": true,
+  "failure_reasons": [
+    "review layer is deliberately not publication-grade: review_status=needs_targeted_rework, publication_grade=false, open rework ticket remains",
+    "database adjudication still needs worker-6 decision: source_conflict/database-only rows are preserved but not publication-grade resolved",
+    "material packet is usable but marked complete_with_targeted_analysis_rework, not final source-reviewed completion"
+  ],
+  "gate_failures": {
+    "publication_report": "reports/doi__10.1002_advs.202205301.publication_quality.json",
+    "publication_risk_counts": {},
+    "publication_risk_examples": {},
+    "semantic_issue_codes": [],
+    "semantic_issue_count": 0,
+    "semantic_issue_examples": [],
+    "semantic_report": "reports/doi__10.1002_advs.202205301.semantic_gate.json"
+  },
+  "generated_at": "2026-05-01T14:28:23Z",
+  "max_rework_attempts": 5,
+  "message_bus_update": {
+    "commands": [
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/artifacts.jsonl"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/artifacts.jsonl"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/agent_logs.jsonl"
+      },
+      {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ".miaobi-paper-review/workflows/doi__10.1002_advs.202205301/workflow_context.json"
+      }
+    ],
+    "ok": true
+  },
+  "obtainable_only_mode": true,
+  "obtainable_only_protocol": {
+    "not_success": [
+      "fabricating exact numbers to satisfy a gate",
+      "repeating broad worker-6 passes after the same source gap is documented",
+      "turning parser/tool limitations into publication-grade acceptance"
+    ],
+    "policy": "obtainable_material_only",
+    "success_definition": "Capture source-supported facts available in local materials; do not require unsupported or missing-source values to be filled before the queue can advance.",
+    "worker_contract": [
+      "Treat locally opened XML/PDF/supplement/database artifacts as the only evidence surface unless the source file itself links to a recoverable local asset.",
+      "Extract values, targets, units, mechanism classes, and database statuses only when the local material supports them.",
+      "If an exact value exists only in a missing external supplement, image-only chart, unsupported scan, or absent primary source, preserve it as source_conflict/unresolved instead of inventing it.",
+      "Once the relevant local sources are exhausted, write unrecoverable_material_gaps and stop this paper; the controller will advance to the next paper."
+    ]
+  },
+  "owner_worker_skills": {
+    "worker-4": {
+      "owns": [
+        "APD6/DBAASP/DRAMP conflicts",
+        "sequence/source status",
+        "database-only rows"
+      ],
+      "role": "database record adjudication",
+      "skill_path": ".codex/skills/paper-database-record-auditor/SKILL.md"
+    },
+    "worker-6": {
+      "owns": [
+        "qc_failure_reasons",
+        "rework_targets",
+        "publication-grade decision"
+      ],
+      "role": "final adjudication and quality gate",
+      "skill_path": ".codex/skills/paper-adjudicator-review-worker/SKILL.md"
+    }
+  },
+  "owner_workers": [
+    "worker-4",
+    "worker-6"
+  ],
+  "paper_id": "doi__10.1002_advs.202205301",
+  "purpose": "targeted rework context packet for a new Codex CLI worker",
+  "quality_feedback": {
+    "caution_findings": [
+      {
+        "conflict_flags": [
+          "database_mutation_annotation_missing_F8W_for_RT"
+        ],
+        "note": "RT sequence and DOI/PMID/PMCID linkage are primary-source supported, but the DBAASP mutation label omits F8W relative to Leg2; preserve as source_conflict.",
+        "record": "DBAASP:DBAASPS_20504",
+        "scope": "database_record_annotation",
+        "severity": "caution",
+        "source_context": [
+          {
+            "kind": "primary_xml_section",
+            "locator": "lines 191-199; sec id=advs4960-sec-0030",
+            "path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+            "supports": [
+              "Leg2 sequence RIKTVTSFDLPALRWLKL",
+              "KTA sequence RIKTATWRLALRWLKL",
+              "KTR sequence RIKTRTWRLALRWLKL",
+              "RI sequence RIKRLALRWLKL",
+              "RT sequence RTRTWRLALRWLKL",
+              "D9R, F8W, S7/P11 deletion, V5A and V5R design logic"
+            ]
+          },
+          {
+            "kind": "primary_xml_table",
+            "locator": "lines 209-230; table-wrap id=advs4960-tbl-0001",
+            "path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+            "supports": [
+              "MIC matrix for KTA/KTR/RI/RT/Leg2",
+              "Table footnote names Leg2 as the natural parental antimicrobial peptide",
+              "Table footnote maps KTA, KTR, RI, and RT to their amino-acid strings"
+            ]
+          },
+          {
+            "kind": "primary_xml_section",
+            "locator": "line 424; sec id=advs4960-sec-0160",
+            "path": "papers/doi__10.1002_advs.202205301/source/paper.xml",
+            "supports": [
+              "FCLAPs synthesized by standard Fmoc solid-phase peptide synthesis",
+              "Q-TOF MS and HPLC used for fidelity and purity",
+              "No N-terminal, C-terminal, D-amino-acid, cyclization, disulfide, amidation, or lipidation marker is reported for these plain sequences"
+            ]
+          },
+          {
+            "kind": "supplementary_pdf_table",
+            "locator": "supp:ADVS-10-2205301-s001.pdf:page=3",
+            "path": "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt",
+            "supports": [
+              "MBC matrix for KTA/KTR/RI/RT",
+              "Supplementary sequence footnote for KTA/KTR/RI/RT"
+            ]
+          }
+        ],
+        "status": "source_conflict"
+      },
+      {
+        "note": "The staged paper.pdf is byte-identical to the supporting-information PDF. Primary article review used paper.xml, and the OA package contains the article PDF member PMC9951321/ADVS-10-2205301.pdf.",
+        "record": "source/paper.pdf",
+        "scope": "source_material_staging",
+        "severity": "caution",
+        "status": "nonblocking_material_caution"
+      },
+      {
+        "note": "Batch-4 packet database snapshot has DBAASP assay/experiment/literature rows but no packet sequence rows; merged corpus sequence rows were reopened for identity fields. No APD6 or DRAMP rows are present for this DOI.",
+        "record": "database_source_manifest",
+        "scope": "database_snapshot_scope",
+        "severity": "caution",
+        "status": "packet_scope_limited"
+      },
+      {
+        "note": "Table S2 title says minimal bactericidal concentration, but table/method context describes MIC values after protease incubation; activity rows preserve this as protease-conditioned MIC with source wording caution.",
+        "record": "Supporting Table S2",
+        "scope": "activity_endpoint_wording",
+        "severity": "caution",
+        "status": "source_wording_conflict_preserved"
+      },
+      {
+        "note": "Supplementary figure panels were caption/text reviewed and source-located; numeric values embedded only in images were not invented.",
+        "record": "Figures S5-S17",
+        "scope": "supplementary_figures",
+        "severity": "caution",
+        "status": "caption_text_reviewed_no_image_quantification"
+      },
+      {
+        "note": "Direct mechanism acceptance is limited to direct envelope/LPS/PGN assay evidence. Transcriptomic/metabolomic/KEGG signals and activity phenotypes remain supporting or non-promoted evidence.",
+        "record": "direct_mechanism claims",
+        "scope": "mechanism_ontology",
+        "severity": "caution",
+        "status": "scope_guard"
+      },
+      {
+        "note": "Worker-5 preserved a strain-label conflict: flow-cytometry method text names E. coli ATCC8739 while the Figure 5 caption and mechanism narrative label E. coli O157:H7.",
+        "record": "flow-cytometry method versus Figure 5 caption",
+        "scope": "mechanism_target_label",
+        "severity": "caution",
+        "status": "source_label_conflict_preserved"
+      }
+    ],
+    "checked_inputs": [
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "stage": "primary_article",
+        "summary": "article identifiers, design/sequence section, Table 1, figures/captions, methods, and supplementary declarations reopened"
+      },
+      {
+        "decision": "used_with_caution",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.pdf",
+        "stage": "source_pdf_check",
+        "summary": "symlinked staged paper.pdf is identical to s001 supporting PDF; article review uses paper.xml and OA package article PDF member"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/packet_manifest.json",
+        "stage": "packet_manifest",
+        "summary": "raw source roots, material status, analysis status, and rework ticket state checked"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/locators/locator_index.json",
+        "stage": "packet_locators",
+        "summary": "table row locators checked for Table 1"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extraction/extraction_status.json",
+        "stage": "extraction_status",
+        "summary": "source inventory and error_count checked"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extraction/extraction_quality_report.json",
+        "stage": "extraction_quality",
+        "summary": "XML section/table, supplement, PDF, and package counts checked"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt",
+        "stage": "supplementary_pdf",
+        "summary": "supporting table/figure captions and supplementary methods checked"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_tables.json",
+        "stage": "supplementary_xlsx",
+        "summary": "four structured KEGG sheets checked as mechanism context"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/database/database_source_manifest.json",
+        "stage": "packet_database_snapshot",
+        "summary": "Batch-4 packet database row counts checked: 120 assay, 120 experiment, 5 literature, 0 sequence rows"
+      },
+      {
+        "decision": "used",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/database/linked_assay_records.jsonl",
+        "stage": "packet_database_rows",
+        "summary": "current-paper DBAASP assay rows checked by source_id and PMID"
+      },
+      {
+        "decision": "used",
+        "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+        "stage": "merged_database_sequences",
+        "summary": "five DBAASP sequence rows checked for sequence/name/mutation-label support"
+      },
+      {
+        "decision": "used",
+        "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+        "stage": "merged_database_assays",
+        "summary": "120 current-paper DBAASP assay rows counted and matched to the five DBAASP IDs"
+      },
+      {
+        "decision": "accepted_with_cautions",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/work/database_record_audit/record_identity_audit.json",
+        "stage": "worker-4_database_audit",
+        "summary": "5 records; 4 source_verified, 1 preserved source_conflict"
+      },
+      {
+        "decision": "accepted",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/final/activity_toxicity_evidence.json",
+        "stage": "worker-6_final_activity",
+        "summary": "160 source-located records"
+      },
+      {
+        "decision": "accepted_with_scope_guard",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/final/mechanism_ontology_record.json",
+        "stage": "worker-6_final_mechanism",
+        "summary": "9 claims; 3 direct mechanism claims with assay types"
+      }
+    ],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "generated_at": "2026-04-29T08:21:50Z",
+    "last_re_reviewed_at": "2026-05-01T00:13:58Z",
+    "latest_gate_results": {
+      "publication_quality": {
+        "counts": {
+          "activity_records": 160,
+          "mechanism_claims": 9
+        },
+        "path": "reports/doi__10.1002_advs.202205301.publication_quality.json",
+        "publication_grade_pass": true,
+        "review_status": {
+          "accepted_with_cautions": 1
+        },
+        "risk_counts": {}
+      },
+      "semantic_gate": {
+        "failed_papers": [],
+        "issue_count": 0,
+        "path": "reports/doi__10.1002_advs.202205301.semantic_gate.json",
+        "publication_grade_pass": true
+      }
+    },
+    "materials_exhausted": {
+      "known_missing_or_blocked_materials": [],
+      "material_queue_status": "material_extracted_with_gaps_nonblocking_analysis_rework_closed",
+      "merged_database_rows": {
+        "available": true,
+        "blocker": false,
+        "used": true
+      },
+      "oa_package": {
+        "available": true,
+        "blocker": false,
+        "used": true
+      },
+      "open_rework_ticket_ids": [],
+      "paper_pdf": {
+        "available": true,
+        "blocker": false,
+        "note": "staged paper.pdf duplicates supporting PDF; article XML and OA article PDF member cover article source",
+        "used": "caution_check"
+      },
+      "paper_xml": {
+        "available": true,
+        "blocker": false,
+        "used": true
+      },
+      "source_review_gap_remaining": false,
+      "supplementary_assets": {
+        "available": true,
+        "blocker": false,
+        "used": true
+      }
+    },
+    "paper_id": "doi__10.1002_advs.202205301",
+    "publication_grade": true,
+    "qc_failure_reasons": [],
+    "reasoning_effort": "xhigh",
+    "remaining_open_rework_ticket_ids": [],
+    "review_model": "gpt-5.5",
+    "review_status": "accepted_with_cautions",
+    "reviewed_at": "2026-04-29T08:21:50Z",
+    "rework_targets": [],
+    "semantic_quality_checks": [
+      {
+        "check": "packet_material_status",
+        "evidence": "Batch-4 packet has XML/PDF/OA/s001/s002 assets and no material missing list; material status label reflects targeted analysis rework, not missing primary material.",
+        "result": "pass_with_caution"
+      },
+      {
+        "check": "database_record_status_and_locators",
+        "evidence": "5 DBAASP records reviewed; status_counts={\"source_verified\":4,\"source_conflict\":1}; source_verified records retain primary XML/table/supplement locators and merged sequence-row support.",
+        "result": "pass"
+      },
+      {
+        "check": "conflict_preservation",
+        "evidence": "DBAASPS_20504/RT remains source_conflict for a database mutation-label conflict while sequence and citation support are preserved.",
+        "result": "pass"
+      },
+      {
+        "check": "activity_toxicity_core_fields",
+        "evidence": "160 final activity/toxicity records; no missing endpoint/raw_value/unit/target/source_locator core fields.",
+        "result": "pass"
+      },
+      {
+        "check": "supplementary_exhaustion",
+        "evidence": "XML-declared s001 PDF and s002 XLSX were reopened through packet/source paths; table/caption/structured-sheet evidence used without image-only numeric invention.",
+        "result": "pass"
+      },
+      {
+        "check": "mechanism_claim_contract",
+        "evidence": "9 final mechanism claims; all carry claim_id, claim_text, evidence_class, source locator, and direct assay types where evidence_class=direct_mechanism.",
+        "result": "pass"
+      },
+      {
+        "check": "blocking_semantic_risks_remaining",
+        "evidence": "No unresolved_record, blocking material gap, final rework target, or open paper-local rework ticket remains after worker-6 adjudication.",
+        "result": "pass"
+      }
+    ],
+    "source_review_depth": {
+      "merged_database_rows": {
+        "coverage": "Batch-4 packet DBAASP assay/experiment/literature rows plus merged sequence/assay/literature rows for five DBAASP IDs reviewed; no APD6/DRAMP rows present for this DOI",
+        "paths": [
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/database/linked_assay_records.jsonl",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/database/linked_experiment_records.jsonl",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/database/linked_literature_records.jsonl",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/dbaasp_assay_records.csv",
+          "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/sequence_literature_links.csv"
+        ],
+        "status": "reviewed"
+      },
+      "oa_package": {
+        "coverage": "article nxml/pdf, s001 PDF, s002 XLSX, and figure image members present",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321",
+        "status": "reviewed_inventory"
+      },
+      "paper_pdf": {
+        "coverage": "staged paper.pdf is byte-identical to s001 supporting information; OA package article PDF member exists and paper.xml was used for article text",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.pdf",
+        "status": "reviewed_as_material_caution"
+      },
+      "paper_xml": {
+        "coverage": "article identifiers, design/sequence section, Table 1, activity/toxicity text, mechanism figures/captions, methods, and supplementary declarations",
+        "path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "status": "reviewed_primary_full_text"
+      },
+      "supplementary_assets": {
+        "coverage": "s001 PDF text and s002 structured sheets reviewed; figure-only numeric values not invented",
+        "paths": [
+          "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/supplementary/ADVS-10-2205301-s001.pdf",
+          "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/supplementary/ADVS-10-2205301-s002.xlsx",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt",
+          "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_tables.json"
+        ],
+        "status": "reviewed_exhausted"
+      }
+    },
+    "status": "no_targeted_rework_required",
+    "validator_contract_passed": true
+  },
+  "queue_policy": {
+    "advance_on_unrecoverable_gap": true,
+    "retry_from_rework_context_only": true,
+    "start_once": true
+  },
+  "rework_requests": [
+    {
+      "artifact_path": "papers/doi__10.1002_advs.202205301/final/review_report.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-04-29T07:02:01Z",
+      "failing_object": "publication_grade_ready",
+      "failure_code": "full_source_review_not_completed",
+      "layer": "review",
+      "omission_context": [],
+      "paper_id": "doi__10.1002_advs.202205301",
+      "qc_failure_reasons": [
+        {
+          "code": "full_source_review_not_completed",
+          "owner_worker": "worker-6",
+          "reason": "The framework test inventories real material but does not complete worker-6 source-reviewed adjudication.",
+          "severity": "blocking"
+        },
+        {
+          "code": "database_conflicts_require_adjudication",
+          "owner_worker": "worker-4 + worker-6",
+          "reason": "Linked database rows include source_conflict/database-only cases that must be preserved or resolved by source review.",
+          "severity": "major"
+        }
+      ],
+      "reason": "The framework test parsed real XML/package/database evidence, but did not complete human-level row-by-row database reconciliation, supported/unsupported activity-table repair, supplement table extraction, or figure-level mechanism quantification.",
+      "requested_by": "complete_message_test_adjudicator",
+      "requested_outputs": [
+        {
+          "asset": "source/paper.xml",
+          "need": "Complete Table 1/2/3 row reconciliation against database records.",
+          "required_locators": [
+            "xml:table=1",
+            "xml:table=2",
+            "xml:table=3"
+          ]
+        },
+        {
+          "asset": "source/supplementary/",
+          "need": "Complete supplement PDF/XLSX extraction and decide whether it changes activity/toxicity/mechanism evidence.",
+          "required_locators": [
+            "supp:*"
+          ]
+        }
+      ],
+      "required_action": "Assign a real worker-4/5/6 source-reviewed pass; rerun semantic and publication-quality gates after rework.",
+      "rework_context_expected_fields": [
+        "historical_artifacts",
+        "omission_codes",
+        "owner_worker_skill_paths",
+        "gate_failures",
+        "previous_outputs"
+      ],
+      "rework_context_packet_required": true,
+      "severity": "blocking",
+      "source_evidence_to_check": [
+        "source/paper.xml",
+        "source/supplementary/",
+        "packet/database/*.jsonl"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-complete-test-0001",
+      "worker": "worker-6"
+    }
+  ],
+  "source_inventory": {
+    "landed_paper_root": {
+      "exists": true,
+      "file_count": 6,
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301",
+      "sample_files": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/asset_manifest.csv",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/metadata.json",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/package/local-DBAASP-PMC9951321.tar.gz",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/pdf/local-DBAASP-PMC9951321.pdf",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/xml/local-DBAASP-PMC9951321.xml",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301/xml/remote-PMC9951321.xml"
+      ],
+      "suffix_counts": {
+        ".csv": 1,
+        ".gz": 1,
+        ".json": 1,
+        ".pdf": 1,
+        ".xml": 2
+      }
+    },
+    "local_packet_database": {
+      "exists": true,
+      "file_count": 6,
+      "path": "paper_packets/doi__10.1002_advs.202205301/database",
+      "sample_files": [
+        "paper_packets/doi__10.1002_advs.202205301/database/database_source_manifest.json"
+      ],
+      "suffix_counts": {
+        ".json": 1,
+        ".jsonl": 5
+      }
+    },
+    "local_packet_extracted": {
+      "exists": true,
+      "file_count": 34,
+      "path": "paper_packets/doi__10.1002_advs.202205301/extracted",
+      "sample_files": [
+        "paper_packets/doi__10.1002_advs.202205301/extracted/archive_manifest.json",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/figure_captions.json",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g001.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g002.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g003.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g004.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g005.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g006.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g007.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g008.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g009.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-g010.jpg",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-s001.pdf",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-s002.xlsx",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301.nxml",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301.pdf",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/pdf_tables.json",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/pdf_text/ADVS-10-2205301.txt",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/pdf_text/local-DBAASP-PMC9951321.txt",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/supplementary_text/ADVS-10-2205301-s001.txt",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/xml_sections.json"
+      ],
+      "suffix_counts": {
+        ".gif": 9,
+        ".jpg": 10,
+        ".json": 6,
+        ".jsonl": 2,
+        ".nxml": 1,
+        ".pdf": 2,
+        ".txt": 3,
+        ".xlsx": 1
+      }
+    },
+    "local_packet_locators": {
+      "exists": true,
+      "file_count": 1,
+      "path": "paper_packets/doi__10.1002_advs.202205301/locators",
+      "sample_files": [
+        "paper_packets/doi__10.1002_advs.202205301/locators/locator_index.json"
+      ],
+      "suffix_counts": {
+        ".json": 1
+      }
+    },
+    "local_packet_raw": {
+      "exists": true,
+      "file_count": 3,
+      "path": "paper_packets/doi__10.1002_advs.202205301/raw",
+      "sample_files": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/raw/oa_package/local-DBAASP-PMC9951321.tar.gz",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/raw/paper.pdf",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1002_advs.202205301/raw/paper.xml"
+      ],
+      "suffix_counts": {
+        ".gz": 1,
+        ".pdf": 1,
+        ".xml": 1
+      }
+    },
+    "local_paper_final": {
+      "exists": true,
+      "file_count": 5,
+      "path": "papers/doi__10.1002_advs.202205301/final",
+      "sample_files": [
+        "papers/doi__10.1002_advs.202205301/final/activity_toxicity_evidence.json",
+        "papers/doi__10.1002_advs.202205301/final/database_record_verification.json",
+        "papers/doi__10.1002_advs.202205301/final/mechanism_evidence.json",
+        "papers/doi__10.1002_advs.202205301/final/mechanism_ontology_record.json",
+        "papers/doi__10.1002_advs.202205301/final/review_report.json"
+      ],
+      "suffix_counts": {
+        ".json": 5
+      }
+    },
+    "local_paper_source": {
+      "exists": true,
+      "file_count": 4,
+      "path": "papers/doi__10.1002_advs.202205301/source",
+      "sample_files": [
+        "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.pdf",
+        "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1002_advs.202205301/source/paper.xml",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-s001.pdf",
+        "paper_packets/doi__10.1002_advs.202205301/extracted/oa_package/local-DBAASP-PMC9951321/PMC9951321/ADVS-10-2205301-s002.xlsx"
+      ],
+      "suffix_counts": {
+        ".pdf": 2,
+        ".xlsx": 1,
+        ".xml": 1
+      }
+    },
+    "local_paper_work": {
+      "exists": true,
+      "file_count": 4,
+      "path": "papers/doi__10.1002_advs.202205301/work",
+      "sample_files": [
+        "papers/doi__10.1002_advs.202205301/work/database_record_audit/record_identity_audit.json",
+        "papers/doi__10.1002_advs.202205301/work/review/adjudication_report.json",
+        "papers/doi__10.1002_advs.202205301/work/review/quality_feedback.json",
+        "papers/doi__10.1002_advs.202205301/work/supplementary_methods/supplementary_evidence.json"
+      ],
+      "suffix_counts": {
+        ".json": 4
+      }
+    },
+    "merged_output_root": {
+      "exists": true,
+      "note": "Large merged database output root; use specific linked rows or experiment manifests from packet/database before broad scans.",
+      "path": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+    }
+  },
+  "source_roots": {
+    "landed_paper": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1002_advs.202205301",
+    "local_packet": "paper_packets/doi__10.1002_advs.202205301",
+    "local_paper": "papers/doi__10.1002_advs.202205301",
+    "merged_output": "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  },
+  "supporting_worker_skills": {
+    "worker-2": {
+      "owns": [
+        "activity table shape",
+        "activity row value/unit/target",
+        "main-text table locators"
+      ],
+      "role": "body/table activity-toxicity repair",
+      "skill_path": ".codex/skills/paper-body-table-worker/SKILL.md"
+    },
+    "worker-3": {
+      "owns": [
+        "supplementary files",
+        "archives",
+        "office/OCR recovery",
+        "supplement locators"
+      ],
+      "role": "supplementary material repair",
+      "skill_path": ".codex/skills/paper-supp-evidence-worker/SKILL.md"
+    },
+    "worker-4": {
+      "owns": [
+        "APD6/DBAASP/DRAMP conflicts",
+        "sequence/source status",
+        "database-only rows"
+      ],
+      "role": "database record adjudication",
+      "skill_path": ".codex/skills/paper-database-record-auditor/SKILL.md"
+    },
+    "worker-5": {
+      "owns": [
+        "mechanism evidence class",
+        "direct assay type",
+        "claim locator"
+      ],
+      "role": "mechanism ontology repair",
+      "skill_path": ".codex/skills/paper-mechanism-ontology-worker/SKILL.md"
+    },
+    "worker-6": {
+      "owns": [
+        "qc_failure_reasons",
+        "rework_targets",
+        "publication-grade decision"
+      ],
+      "role": "final adjudication and quality gate",
+      "skill_path": ".codex/skills/paper-adjudicator-review-worker/SKILL.md"
+    }
+  },
+  "unrecoverable_material_gap_schema": {
+    "blocks_publication_grade": true,
+    "gap_code": "short_machine_code",
+    "impact": "which layer remains non-publication-grade",
+    "next_action": "record_and_continue|external_source_needed|manual_domain_review_needed",
+    "owner_worker": "worker-2|worker-3|worker-4|worker-5|worker-6",
+    "source_paths_checked": [
+      "paper-local paths actually opened"
+    ],
+    "tools_attempted": [
+      "tool or parser names actually attempted"
+    ],
+    "why_unrecoverable": "specific local reason, for example missing file, scanned figure unreadable, unsupported archive, absent primary source, or gate still failing after bounded repair"
+  }
+}

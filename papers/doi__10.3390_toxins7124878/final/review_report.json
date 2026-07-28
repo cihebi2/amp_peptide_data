@@ -1,0 +1,110 @@
+{
+  "paper_id": "doi__10.3390_toxins7124878",
+  "reviewed_at": "2026-05-10T18:06:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows",
+    "packet_database_rows",
+    "figure_image_inspection"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "The paper-local supplementary directory and packet supplementary indexes contain zero supplementary assets; the rework request's Table 2/3 and supplement expectations are not present in the local article package."
+  },
+  "checked_inputs": [
+    "paper_packets/doi__10.3390_toxins7124878/packet_manifest.json",
+    "paper_packets/doi__10.3390_toxins7124878/locators/locator_index.json",
+    "paper_packets/doi__10.3390_toxins7124878/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_toxins7124878/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/pdf_text/toxins-07-04878.txt",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/oa_package/local-APD6-pmc_package/PMC4690128/toxins-07-04878-g001.jpg",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/oa_package/local-APD6-pmc_package/PMC4690128/toxins-07-04878-g004.jpg",
+    "paper_packets/doi__10.3390_toxins7124878/extracted/oa_package/local-APD6-pmc_package/PMC4690128/toxins-07-04878-g008.jpg",
+    "paper_packets/doi__10.3390_toxins7124878/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_toxins7124878/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_toxins7124878/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_toxins7124878/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_toxins7124878/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_toxins7124878/source/paper.xml",
+    "papers/doi__10.3390_toxins7124878/source/paper.pdf",
+    "papers/doi__10.3390_toxins7124878/source/supplementary"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_reviewed": 21,
+    "database_status_summary": {
+      "sequence_modified_not_normalized": 8,
+      "source_conflict": 5,
+      "source_verified": 23
+    },
+    "mechanism_claims_reviewed": 3,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gap_count": 0,
+    "requested_table_2_3_present_in_source": false,
+    "supplementary_asset_count": 0
+  },
+  "per_layer_decision_rationale": {
+    "material_packet": "Material extraction remains a packet-layer status separate from final acceptance; local XML, PDF, OA images, and packet database rows were reopened for this review, and the supplementary directory/index is empty.",
+    "validator_contract": "Structural final and packet artifacts are present; validator success is treated only as a contract layer, not as source-review evidence.",
+    "layer_1_database": "Linked database rows were reconciled row-by-row. Source-supported rows now carry primary locators, while real conflicts such as DRAMP18413 terminal glycine and hemolysis subject mismatch are preserved as caution statuses.",
+    "layer_2_activity_toxicity": "Primary Table 1, Figure 8, and Figure 9 support the antimicrobial, hemolysis, and IC50 values captured in final activity evidence; database-added strain specificity is not promoted to primary evidence.",
+    "layer_3_mechanism": "Mechanism ontology is limited to structural context, indirect rationale, and phenotype evidence; no direct molecular mechanism is claimed.",
+    "publication_grade_review": "The prior open ticket is closed because the owner-layer source-review gap and database-conflict adjudication are now resolved; remaining issues are explicit nonblocking cautions."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dramp18413_precursor_glycine_not_normalized",
+      "severity": "caution",
+      "blocks_publication_grade": false,
+      "evidence_context": "DRAMP18413 keeps the terminal glycine in the sequence field; primary source supports the 19-residue L-amidated mature peptide with G as precursor amide donor."
+    },
+    {
+      "caution_code": "hemolysis_subject_conflict_in_database_rows",
+      "severity": "caution",
+      "blocks_publication_grade": false,
+      "evidence_context": "Primary hemolysis assay used horse erythrocytes; DBAASP/DRAMP rows that say human erythrocytes are retained as source_conflict."
+    },
+    {
+      "caution_code": "database_strain_or_unit_specificity_exceeds_primary_table",
+      "severity": "caution",
+      "blocks_publication_grade": false,
+      "evidence_context": "Primary Table 1 supports species-level MIC/MBC values; some database rows add strain identifiers or unit spellings not printed in the table."
+    },
+    {
+      "caution_code": "no_local_supplementary_assets",
+      "severity": "caution",
+      "blocks_publication_grade": false,
+      "evidence_context": "Packet and paper-local supplementary indexes/directories contain no supplementary assets; no unsupported supplement-derived values were invented."
+    },
+    {
+      "caution_code": "no_direct_molecular_mechanism_assay",
+      "severity": "caution",
+      "blocks_publication_grade": false,
+      "evidence_context": "Mechanism output is limited to structural/phenotype context because the primary paper does not report a direct mechanism assay."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review closed the framework-test ticket for Phylloseptin-PBa by reconciling packet database rows to primary Table 1 and Figures 1/4/8/9, preserving database conflicts as nonblocking cautions, and limiting mechanism claims to supported evidence classes."
+}

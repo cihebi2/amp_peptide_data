@@ -1,0 +1,31 @@
+{
+  "paper_id": "PMC12230126",
+  "created_at": "2026-07-26T13:17:43.548036Z",
+  "contract_id": "leader_recursive_authority_boundary_rework_20260726",
+  "owner_worker": "worker-4",
+  "fresh_worker6_required": true,
+  "blocking_finding": {
+    "finding_id": "F8_RECURSIVE_AUTHORITY_TRUE_IN_CURRENT_WORKER4_ARTIFACTS",
+    "observed_true_count": 4,
+    "affected_artifacts": [
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/database_record_audit/record_identity_audit.json",
+      "pipeline_v2/deepmine/dbaasp_strict_pilot/packets/PMC12230126/analysis/database_record_audit.worker4.json"
+    ],
+    "required_repair": "Set every recursive authoritative_dbaasp_ingest_ready boolean to false in both current worker-4 artifacts, preserve zero linked authoritative rows and fallback candidate-only status, then rebuild finals under a fresh worker-6 adjudication."
+  },
+  "acceptance_checks": {
+    "worker4_recursive_authority_true_count": 0,
+    "final_recursive_authority_true_count": 0,
+    "linked_authoritative_row_total": 0,
+    "fallback_rows_promoted_to_authoritative_ingest": false,
+    "worker4_paper_packet_artifacts_byte_identical": true,
+    "paper_packet_final_mirrors_byte_identical": true,
+    "fresh_worker4_gpt55_xhigh_rc0_codex_exec": true,
+    "fresh_worker6_after_latest_worker4": true,
+    "leader_validator_pass": true,
+    "strict_worker_run_gate_hard_finding_count": 0,
+    "strict_gates_all_zero_after_terminal_closure": true,
+    "authoritative_dbaasp_ingest_ready": false
+  },
+  "leader_acceptance_validator": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12230126/work/review/validate_recursive_authority_boundary.py"
+}

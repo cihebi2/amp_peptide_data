@@ -1,0 +1,588 @@
+{
+  "leader_contract": {
+    "acceptance_checks": {
+      "authoritative_dbaasp_ingest_ready": false,
+      "fresh_worker2_gpt55_xhigh_rc0_codex_exec": true,
+      "fresh_worker6_after_latest_worker2": true,
+      "leader_validator_all_pass": true,
+      "leader_validator_check_count": 11,
+      "maximum_range_conflict_preserved_separately": true,
+      "minimum_range_conflict_preserved": true,
+      "paper_packet_final_mirrors_byte_identical": true,
+      "paper_packet_worker2_mirrors_byte_identical": true,
+      "strict_gates_all_zero_after_terminal_closure": true,
+      "structured_inoculum_listed_unreported_count": 0
+    },
+    "blocking_findings": [
+      {
+        "affected_rows": "activity_records[0:5]",
+        "finding_id": "F6_STRUCTURED_INOCULUM_LISTED_UNREPORTED",
+        "required_repair": "For every one of the five activity rows, keep the source-structured 1.0 × 10^5 CFU/mL inoculum and remove inoculum from assay_conditions.not_reported_or_not_structured_fields. Preserve medium, temperature, and pH as unreported only when still null."
+      },
+      {
+        "finding_id": "F7_METHOD_TABLE_MAXIMUM_CONFLICT_OMITTED",
+        "method_locator": "xml:p:44",
+        "required_repair": "Add a separate explicit source-conflict caution preserving methods maximum 1000 µg/mL versus Table 1 footnote maximum 100 µg/mL. Do not merge it away into the existing 31.25 versus 3.125/6.25 minimum-range conflict.",
+        "table_locator": "xml:table-wrap:1"
+      }
+    ],
+    "contract_id": "leader_worker2_semantic_rework_20260726_v2",
+    "created_at": "2026-07-26T13:17:43.548036Z",
+    "current_expected_validator_result": {
+      "contract_pass": false,
+      "failed_checks": [
+        "structured_inoculum_is_not_listed_as_unreported",
+        "method_1000_vs_table_footnote_100_maximum_conflict_is_explicit"
+      ]
+    },
+    "fresh_worker6_required": true,
+    "leader_acceptance_validator": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/review/validate_candidate18_layer2_contract.py",
+    "owner_worker": "worker-2",
+    "paper_id": "PMC11905587",
+    "supersedes_mechanical_scope": "previous 9-check Layer-2 acceptance was incomplete; expanded contract has 11 checks"
+  },
+  "packet_final": {
+    "needs_targeted_rework": false,
+    "quality_checks": {
+      "activity_rows_inoculum_present": true,
+      "activity_rows_named_required_entity": true,
+      "activity_rows_replication_present": true,
+      "activity_rows_sequence_length_41": true,
+      "concentration_fields_consistent": true,
+      "database_only_primary_row_scan_passed": true,
+      "database_only_rows_promoted": 0,
+      "dilution_range_conflict_caution_present": true,
+      "direct_normalization_identity_checked": true,
+      "direct_rows_have_normalized_value_and_unit": true,
+      "direct_rows_preserve_raw_unit_as_normalized_unit": true,
+      "explicit_no_activity_rows_count_is_6": true,
+      "generic_endpoint_scan_passed": true,
+      "leader_contract_validator_passed_packet_worker2_artifact": true,
+      "leader_contract_validator_passed_work_artifact": true,
+      "machine_gt1000_not_promoted_as_primary": true,
+      "mic_like_unit_scan_passed": true,
+      "normalization_status_allowed_values": [
+        "direct",
+        "converted",
+        "not_convertible",
+        "ambiguous"
+      ],
+      "normalization_status_values_valid": true,
+      "packet_gate_manifest_status_limitation_recorded": true,
+      "publication_quality_gate_rerun_passed": true,
+      "required_layer2_fields_present": true,
+      "semantic_gate_paper_id_rerun_passed": true,
+      "sentence_fragment_target_guard_passed": true,
+      "sentence_fragment_target_scan_passed": true,
+      "source_locator_base": "xml:table-wrap:1",
+      "source_text_included": false,
+      "top_level_concentration_matches_assay_context": true,
+      "toxicity_source_surfaces_reviewed_as_no_source_located": true
+    },
+    "shared_assay_context": {
+      "activity_endpoint": "MIC",
+      "activity_table_locator": "xml:table-wrap:1",
+      "activity_unit": "µg/mL",
+      "dilution_range_conflict": {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      },
+      "method_conditions": {
+        "incubation_time": "24 h",
+        "inoculum": "1.0 × 10^5 CFU/mL",
+        "method": "modified two-fold microdilution",
+        "readout": "OD600",
+        "replication": "triplicates with independent biological repeats",
+        "reported_dilution_range": "1000 to 31.25 µg/mL"
+      }
+    },
+    "source_conflicts": [
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ],
+    "summary_counts": {
+      "accepted_machine_only_rows": 0,
+      "activity_records": 5,
+      "excluded_non_activity_table_entries": 6,
+      "explicit_no_activity_table_rows": 6,
+      "machine_candidate_rows_reviewed": 5,
+      "machine_gt1000_promoted_as_primary_count": 0,
+      "normalization_status_counts": {
+        "ambiguous": 0,
+        "converted": 0,
+        "direct": 5,
+        "not_convertible": 6
+      },
+      "source_located_activity_records": 5,
+      "source_located_toxicity_records": 0,
+      "toxicity_records": 0
+    },
+    "unresolved_blockers": [],
+    "validation_artifacts": [
+      "papers/PMC11905587/work/activity_evidence/worker2_current_activity_shape.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/assigned_rework_ticket_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_consistency_validation.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_semantic_suspicion_scan.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_source_review_depth_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/semantic_three_layer_gate.worker2.rerun2.json",
+      "papers/PMC11905587/work/activity_evidence/check_three_layer_publication_quality.worker2.rerun.json",
+      "papers/PMC11905587/work/activity_evidence/packet_gate_rerun_summary.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/source_locator_verification.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_work_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_packet_worker2_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_json_consistency.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/no_activity_locator_repair.no_source_text.json"
+    ],
+    "worker_cautions": [
+      "Toxicity/cytotoxicity-like packet surfaces are preserved as reviewed no-row evidence because no extracted row-level scalar value and unit were available to worker-2.",
+      "Treatment name is kept at table-context level; machine candidate sequence was not promoted to primary-source identity evidence in this worker-2 layer.",
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ]
+  },
+  "packet_worker2": {
+    "needs_targeted_rework": false,
+    "quality_checks": {
+      "activity_rows_inoculum_present": true,
+      "activity_rows_named_required_entity": true,
+      "activity_rows_replication_present": true,
+      "activity_rows_sequence_length_41": true,
+      "concentration_fields_consistent": true,
+      "database_only_primary_row_scan_passed": true,
+      "database_only_rows_promoted": 0,
+      "dilution_range_conflict_caution_present": true,
+      "direct_normalization_identity_checked": true,
+      "direct_rows_have_normalized_value_and_unit": true,
+      "direct_rows_preserve_raw_unit_as_normalized_unit": true,
+      "explicit_no_activity_rows_count_is_6": true,
+      "generic_endpoint_scan_passed": true,
+      "leader_contract_validator_passed_packet_worker2_artifact": true,
+      "leader_contract_validator_passed_work_artifact": true,
+      "machine_gt1000_not_promoted_as_primary": true,
+      "mic_like_unit_scan_passed": true,
+      "normalization_status_allowed_values": [
+        "direct",
+        "converted",
+        "not_convertible",
+        "ambiguous"
+      ],
+      "normalization_status_values_valid": true,
+      "packet_gate_manifest_status_limitation_recorded": true,
+      "publication_quality_gate_rerun_passed": true,
+      "required_layer2_fields_present": true,
+      "semantic_gate_paper_id_rerun_passed": true,
+      "sentence_fragment_target_guard_passed": true,
+      "sentence_fragment_target_scan_passed": true,
+      "source_locator_base": "xml:table-wrap:1",
+      "source_text_included": false,
+      "top_level_concentration_matches_assay_context": true,
+      "toxicity_source_surfaces_reviewed_as_no_source_located": true
+    },
+    "shared_assay_context": {
+      "activity_endpoint": "MIC",
+      "activity_table_locator": "xml:table-wrap:1",
+      "activity_unit": "µg/mL",
+      "dilution_range_conflict": {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      },
+      "method_conditions": {
+        "incubation_time": "24 h",
+        "inoculum": "1.0 × 10^5 CFU/mL",
+        "method": "modified two-fold microdilution",
+        "readout": "OD600",
+        "replication": "triplicates with independent biological repeats",
+        "reported_dilution_range": "1000 to 31.25 µg/mL"
+      }
+    },
+    "source_conflicts": [
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ],
+    "summary_counts": {
+      "accepted_machine_only_rows": 0,
+      "activity_records": 5,
+      "excluded_non_activity_table_entries": 6,
+      "explicit_no_activity_table_rows": 6,
+      "machine_candidate_rows_reviewed": 5,
+      "machine_gt1000_promoted_as_primary_count": 0,
+      "normalization_status_counts": {
+        "ambiguous": 0,
+        "converted": 0,
+        "direct": 5,
+        "not_convertible": 6
+      },
+      "source_located_activity_records": 5,
+      "source_located_toxicity_records": 0,
+      "toxicity_records": 0
+    },
+    "unresolved_blockers": [],
+    "validation_artifacts": [
+      "papers/PMC11905587/work/activity_evidence/worker2_current_activity_shape.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/assigned_rework_ticket_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_consistency_validation.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_semantic_suspicion_scan.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_source_review_depth_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/semantic_three_layer_gate.worker2.rerun2.json",
+      "papers/PMC11905587/work/activity_evidence/check_three_layer_publication_quality.worker2.rerun.json",
+      "papers/PMC11905587/work/activity_evidence/packet_gate_rerun_summary.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/source_locator_verification.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_work_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_packet_worker2_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_json_consistency.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/no_activity_locator_repair.no_source_text.json"
+    ],
+    "worker_cautions": [
+      "Toxicity/cytotoxicity-like packet surfaces are preserved as reviewed no-row evidence because no extracted row-level scalar value and unit were available to worker-2.",
+      "Treatment name is kept at table-context level; machine candidate sequence was not promoted to primary-source identity evidence in this worker-2 layer.",
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ]
+  },
+  "paper_final": {
+    "needs_targeted_rework": false,
+    "quality_checks": {
+      "activity_rows_inoculum_present": true,
+      "activity_rows_named_required_entity": true,
+      "activity_rows_replication_present": true,
+      "activity_rows_sequence_length_41": true,
+      "concentration_fields_consistent": true,
+      "database_only_primary_row_scan_passed": true,
+      "database_only_rows_promoted": 0,
+      "dilution_range_conflict_caution_present": true,
+      "direct_normalization_identity_checked": true,
+      "direct_rows_have_normalized_value_and_unit": true,
+      "direct_rows_preserve_raw_unit_as_normalized_unit": true,
+      "explicit_no_activity_rows_count_is_6": true,
+      "generic_endpoint_scan_passed": true,
+      "leader_contract_validator_passed_packet_worker2_artifact": true,
+      "leader_contract_validator_passed_work_artifact": true,
+      "machine_gt1000_not_promoted_as_primary": true,
+      "mic_like_unit_scan_passed": true,
+      "normalization_status_allowed_values": [
+        "direct",
+        "converted",
+        "not_convertible",
+        "ambiguous"
+      ],
+      "normalization_status_values_valid": true,
+      "packet_gate_manifest_status_limitation_recorded": true,
+      "publication_quality_gate_rerun_passed": true,
+      "required_layer2_fields_present": true,
+      "semantic_gate_paper_id_rerun_passed": true,
+      "sentence_fragment_target_guard_passed": true,
+      "sentence_fragment_target_scan_passed": true,
+      "source_locator_base": "xml:table-wrap:1",
+      "source_text_included": false,
+      "top_level_concentration_matches_assay_context": true,
+      "toxicity_source_surfaces_reviewed_as_no_source_located": true
+    },
+    "shared_assay_context": {
+      "activity_endpoint": "MIC",
+      "activity_table_locator": "xml:table-wrap:1",
+      "activity_unit": "µg/mL",
+      "dilution_range_conflict": {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      },
+      "method_conditions": {
+        "incubation_time": "24 h",
+        "inoculum": "1.0 × 10^5 CFU/mL",
+        "method": "modified two-fold microdilution",
+        "readout": "OD600",
+        "replication": "triplicates with independent biological repeats",
+        "reported_dilution_range": "1000 to 31.25 µg/mL"
+      }
+    },
+    "source_conflicts": [
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ],
+    "summary_counts": {
+      "accepted_machine_only_rows": 0,
+      "activity_records": 5,
+      "excluded_non_activity_table_entries": 6,
+      "explicit_no_activity_table_rows": 6,
+      "machine_candidate_rows_reviewed": 5,
+      "machine_gt1000_promoted_as_primary_count": 0,
+      "normalization_status_counts": {
+        "ambiguous": 0,
+        "converted": 0,
+        "direct": 5,
+        "not_convertible": 6
+      },
+      "source_located_activity_records": 5,
+      "source_located_toxicity_records": 0,
+      "toxicity_records": 0
+    },
+    "unresolved_blockers": [],
+    "validation_artifacts": [
+      "papers/PMC11905587/work/activity_evidence/worker2_current_activity_shape.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/assigned_rework_ticket_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_consistency_validation.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_semantic_suspicion_scan.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_source_review_depth_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/semantic_three_layer_gate.worker2.rerun2.json",
+      "papers/PMC11905587/work/activity_evidence/check_three_layer_publication_quality.worker2.rerun.json",
+      "papers/PMC11905587/work/activity_evidence/packet_gate_rerun_summary.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/source_locator_verification.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_work_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_packet_worker2_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_json_consistency.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/no_activity_locator_repair.no_source_text.json"
+    ],
+    "worker_cautions": [
+      "Toxicity/cytotoxicity-like packet surfaces are preserved as reviewed no-row evidence because no extracted row-level scalar value and unit were available to worker-2.",
+      "Treatment name is kept at table-context level; machine candidate sequence was not promoted to primary-source identity evidence in this worker-2 layer.",
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ]
+  },
+  "work_activity": {
+    "needs_targeted_rework": false,
+    "quality_checks": {
+      "activity_rows_inoculum_present": true,
+      "activity_rows_named_required_entity": true,
+      "activity_rows_replication_present": true,
+      "activity_rows_sequence_length_41": true,
+      "concentration_fields_consistent": true,
+      "database_only_primary_row_scan_passed": true,
+      "database_only_rows_promoted": 0,
+      "dilution_range_conflict_caution_present": true,
+      "direct_normalization_identity_checked": true,
+      "direct_rows_have_normalized_value_and_unit": true,
+      "direct_rows_preserve_raw_unit_as_normalized_unit": true,
+      "explicit_no_activity_rows_count_is_6": true,
+      "generic_endpoint_scan_passed": true,
+      "leader_contract_validator_passed_packet_worker2_artifact": true,
+      "leader_contract_validator_passed_work_artifact": true,
+      "machine_gt1000_not_promoted_as_primary": true,
+      "mic_like_unit_scan_passed": true,
+      "normalization_status_allowed_values": [
+        "direct",
+        "converted",
+        "not_convertible",
+        "ambiguous"
+      ],
+      "normalization_status_values_valid": true,
+      "packet_gate_manifest_status_limitation_recorded": true,
+      "publication_quality_gate_rerun_passed": true,
+      "required_layer2_fields_present": true,
+      "semantic_gate_paper_id_rerun_passed": true,
+      "sentence_fragment_target_guard_passed": true,
+      "sentence_fragment_target_scan_passed": true,
+      "source_locator_base": "xml:table-wrap:1",
+      "source_text_included": false,
+      "top_level_concentration_matches_assay_context": true,
+      "toxicity_source_surfaces_reviewed_as_no_source_located": true
+    },
+    "shared_assay_context": {
+      "activity_endpoint": "MIC",
+      "activity_table_locator": "xml:table-wrap:1",
+      "activity_unit": "µg/mL",
+      "dilution_range_conflict": {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      },
+      "method_conditions": {
+        "incubation_time": "24 h",
+        "inoculum": "1.0 × 10^5 CFU/mL",
+        "method": "modified two-fold microdilution",
+        "readout": "OD600",
+        "replication": "triplicates with independent biological repeats",
+        "reported_dilution_range": "1000 to 31.25 µg/mL"
+      }
+    },
+    "source_conflicts": [
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ],
+    "summary_counts": {
+      "accepted_machine_only_rows": 0,
+      "activity_records": 5,
+      "excluded_non_activity_table_entries": 6,
+      "explicit_no_activity_table_rows": 6,
+      "machine_candidate_rows_reviewed": 5,
+      "machine_gt1000_promoted_as_primary_count": 0,
+      "normalization_status_counts": {
+        "ambiguous": 0,
+        "converted": 0,
+        "direct": 5,
+        "not_convertible": 6
+      },
+      "source_located_activity_records": 5,
+      "source_located_toxicity_records": 0,
+      "toxicity_records": 0
+    },
+    "unresolved_blockers": [],
+    "validation_artifacts": [
+      "papers/PMC11905587/work/activity_evidence/worker2_current_activity_shape.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/assigned_rework_ticket_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_consistency_validation.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_semantic_suspicion_scan.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/worker2_source_review_depth_summary.no_source_text.json",
+      "papers/PMC11905587/work/activity_evidence/semantic_three_layer_gate.worker2.rerun2.json",
+      "papers/PMC11905587/work/activity_evidence/check_three_layer_publication_quality.worker2.rerun.json",
+      "papers/PMC11905587/work/activity_evidence/packet_gate_rerun_summary.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/source_locator_verification.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_work_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_packet_worker2_contract_validation2.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/post_repair_json_consistency.no_source_text.json",
+      "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11905587/work/activity_evidence/no_activity_locator_repair.no_source_text.json"
+    ],
+    "worker_cautions": [
+      "Toxicity/cytotoxicity-like packet surfaces are preserved as reviewed no-row evidence because no extracted row-level scalar value and unit were available to worker-2.",
+      "Treatment name is kept at table-context level; machine candidate sequence was not promoted to primary-source identity evidence in this worker-2 layer.",
+      {
+        "caution_id": "PMC11905587-layer2-dilution-range-conflict",
+        "disposition": "preserve table values exactly and add explicit caution; do not silently resolve",
+        "method_locator": "xml:p:44",
+        "method_minimum": "31.25 µg/mL",
+        "reported_dilution_range": "1000 to 31.25 µg/mL",
+        "severity": "caution",
+        "source_review_status": "source_conflict_preserved",
+        "table_locator": "xml:table-wrap:1",
+        "table_values_below_method_minimum": [
+          "3.125 µg/mL",
+          "6.25 µg/mL"
+        ],
+        "type": "intrapaper_method_table_dilution_range_conflict"
+      }
+    ]
+  }
+}

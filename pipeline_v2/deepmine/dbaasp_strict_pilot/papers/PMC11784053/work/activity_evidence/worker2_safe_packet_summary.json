@@ -1,0 +1,220 @@
+{
+  "paper_id": "PMC11784053",
+  "handoff_counts": {
+    "deterministic_table_candidate_rows": 0,
+    "excluded_non_activity_table_entries": 0,
+    "activity_table_locator_candidates": 3,
+    "toxicity_locator_candidates": 8,
+    "machine_candidate_rows": 77,
+    "machine_duplicate_candidate_rows": 0
+  },
+  "handoff_top_keys": [
+    "artifact_role",
+    "counts",
+    "deterministic_table_candidate_rows",
+    "excluded_non_activity_table_entries",
+    "generated_at",
+    "machine_candidate_rows",
+    "paper_id",
+    "safety_boundary",
+    "source_files",
+    "source_locator_groups",
+    "worker2_instructions"
+  ],
+  "machine_candidate_keys": [
+    "assay_medium",
+    "candidate_key",
+    "duplicate_group_size",
+    "endpoint",
+    "entity",
+    "inoculum",
+    "machine_evidence",
+    "machine_row_index",
+    "machine_verdict",
+    "modification",
+    "raw_unit",
+    "raw_value",
+    "sequence",
+    "source_locator_candidates",
+    "status",
+    "target"
+  ],
+  "locator_group_counts": {
+    "activity_table_locator_candidates": 3,
+    "table_1_mic_fraction_rows": 0,
+    "table_2_mic_peptide_rows": 0,
+    "mic_method_locator_candidates": 3,
+    "toxicity_locator_candidates": 8,
+    "hemolysis_locator_candidates": 8
+  },
+  "locator_group_ids": {
+    "activity_table_locator_candidates": [
+      "xml:table-wrap:1",
+      "xml:table-wrap:2",
+      "xml:table-wrap:3"
+    ],
+    "table_1_mic_fraction_rows": [],
+    "table_2_mic_peptide_rows": [],
+    "mic_method_locator_candidates": [
+      "xml:sec:11",
+      "xml:p:21",
+      "xml:article-title:18"
+    ],
+    "toxicity_locator_candidates": [
+      "xml:sec:13",
+      "xml:p:14",
+      "xml:sec:18",
+      "xml:table-wrap:3",
+      "xml:p:30",
+      "xml:article-title:19",
+      "pdf:page=3",
+      "supp:3.pdf:page=3"
+    ],
+    "hemolysis_locator_candidates": [
+      "xml:sec:13",
+      "xml:p:14",
+      "xml:sec:18",
+      "xml:table-wrap:3",
+      "xml:p:30",
+      "xml:article-title:19",
+      "pdf:page=3",
+      "supp:3.pdf:page=3"
+    ]
+  },
+  "rework_ticket_summaries": [
+    {
+      "ticket_id": "rwk-PMC11784053-semantic-coverage-001",
+      "owner_worker": "worker-2",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "status": "open",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "has_response": true,
+      "acceptance_check": "semantic and publication gates have no missing_activity_table_coverage for xml:table-wrap:3 and worker-6 preserves any endpoint-label conflict",
+      "expected_observation_counts": null,
+      "observed_counts": null,
+      "requested_output_fields": [
+        [
+          "asset",
+          "expected_shape",
+          "need",
+          "required_locators"
+        ]
+      ],
+      "requested_output_locator_ids": [
+        "xml:table-wrap:3"
+      ],
+      "need": "Re-open Table 3 and add source-located row-level toxicity/viability measurements, preserving the caption/header terminology conflict without guessing. If the values cannot safely be labeled hemolysis, retain raw endpoint wording and document the conflict."
+    },
+    {
+      "ticket_id": "rwk-PMC11784053-semantic-coverage-002",
+      "owner_worker": "worker-2",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "status": "open",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "has_response": true,
+      "acceptance_check": "exactly 24 total records cite xml:table-wrap:3; no cross-array duplicates; every row distinguishes treatment and concentration",
+      "expected_observation_counts": {
+        "xml:table-wrap:3": 24
+      },
+      "observed_counts": null,
+      "requested_output_fields": [
+        [
+          "asset",
+          "expected_shape",
+          "need",
+          "required_locators"
+        ]
+      ],
+      "requested_output_locator_ids": [
+        "xml:table-wrap:3"
+      ],
+      "need": "Represent exactly 8 concentrations x 3 treatment columns as 24 unique source observations. Preserve treatment identity and the caption/header endpoint conflict. Store each observation once; do not mirror the same rows across activity_records and toxicity_records."
+    },
+    {
+      "ticket_id": "rwk-PMC11784053-semantic-coverage-003",
+      "owner_worker": "worker-2",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "status": "open",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "has_response": false,
+      "acceptance_check": "24/24 unique row-cell locators; explicit caption/header endpoint conflict preserved; Table 3 rows occur only once",
+      "expected_observation_counts": {
+        "xml:table-wrap:3": 24
+      },
+      "observed_counts": null,
+      "requested_output_fields": [
+        [
+          "asset",
+          "expected_shape",
+          "need",
+          "required_locators"
+        ]
+      ],
+      "requested_output_locator_ids": [
+        "xml:table-wrap:3:body-row=<1-8>:cell=<2-4>"
+      ],
+      "need": "Add row/cell-level Table 3 locators for every one of the 24 observations and an explicit source endpoint conflict field noting caption red-blood-cell viable cells versus header Hemolysis %. Keep treatment identity, concentration, raw value/unit, and no cross-array mirroring."
+    },
+    {
+      "ticket_id": "rwk-PMC11784053-worker6-row-shape-003",
+      "owner_worker": null,
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "status": "open",
+      "blocks": [
+        "activity_toxicity_evidence",
+        "semantic_three_layer_gate",
+        "publication_quality_gate",
+        "review_report"
+      ],
+      "has_response": false,
+      "acceptance_check": null,
+      "expected_observation_counts": null,
+      "observed_counts": {
+        "activity_records": 37,
+        "combined": 74,
+        "toxicity_records": 37
+      },
+      "requested_output_fields": [
+        [
+          "asset",
+          "expected_observation_counts",
+          "need",
+          "required_locators"
+        ],
+        [
+          "asset",
+          "need",
+          "required_locators"
+        ]
+      ],
+      "requested_output_locator_ids": [
+        "xml:table-wrap:3",
+        "xml:table-wrap:3"
+      ],
+      "need": "Update analysis-lane source-review provenance so the repaired rows can be re-adjudicated without relying on DBAASP fallback rows as primary evidence."
+    }
+  ],
+  "database_linked_counts": {
+    "linked_article_records.jsonl": 0,
+    "linked_assay_records.jsonl": 0,
+    "linked_sequence_records.jsonl": 0,
+    "linked_literature_records.jsonl": 0,
+    "dbaasp_machine_extracted_rows.jsonl": 77
+  }
+}

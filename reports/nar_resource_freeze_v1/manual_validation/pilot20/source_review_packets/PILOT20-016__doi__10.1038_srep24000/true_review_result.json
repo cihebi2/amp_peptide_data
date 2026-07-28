@@ -1,0 +1,318 @@
+{
+  "paper_id": "doi__10.1038_srep24000",
+  "pilot_sample_id": "PILOT20-016",
+  "audit_record_id": "doi__10.1038_srep24000:database_audit:167",
+  "reviewed_at": "2026-06-22T04:20:14Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "decision": "unverifiable_best_effort",
+  "confidence": "medium",
+  "model_provenance_verified": false,
+  "best_effort_limits": [
+    "The Codex runtime environment did not expose a machine-verifiable model or reasoning-effort value; the required review_model and reasoning_effort fields are recorded to satisfy the packet schema, but terminal publication-grade confirmation is not claimed.",
+    "Review was local-only as requested; no web lookup was used.",
+    "This was a bounded source-review pass over the sampled row and relevant packet/final artifacts, not a full rerun of the six-worker queue."
+  ],
+  "material_review": {
+    "packet_dir": "paper_packets/doi__10.1038_srep24000",
+    "material_queue_status": "material_extracted_with_gaps",
+    "analysis_queue_status_from_packet_manifest": "analysis_needs_analysis_rework",
+    "material_surfaces_verified": {
+      "paper_xml": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_srep24000/raw/paper.xml",
+          "papers/doi__10.1038_srep24000/source/paper.xml"
+        ],
+        "locators_checked": [
+          "xml:article-meta:doi-pmid-pmcid",
+          "xml:table=1:row=12",
+          "xml:table=1:row=13",
+          "xml:sec=15:MTT assays"
+        ]
+      },
+      "paper_pdf": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_srep24000/raw/paper.pdf",
+          "paper_packets/doi__10.1038_srep24000/extracted/pdf_text.jsonl"
+        ],
+        "status": "parsed_pdf_text_available"
+      },
+      "oa_package": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_srep24000/raw/oa_package/local-DRAMP-27039838.tar.gz",
+          "paper_packets/doi__10.1038_srep24000/raw/oa_package/local-DBAASP-PMC4819177.tar.gz"
+        ]
+      },
+      "supplementary_assets": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_srep24000/raw/supplementary_original",
+          "paper_packets/doi__10.1038_srep24000/extracted/supplementary_index.json",
+          "paper_packets/doi__10.1038_srep24000/extracted/supplementary_text.jsonl",
+          "paper_packets/doi__10.1038_srep24000/extracted/supplementary_tables.json"
+        ],
+        "observations": [
+          "supplementary_original contains ten landing-*.bin HTML landing files and one Word document local-DRAMP-srep24000-s1.doc",
+          "supplementary_text.jsonl indexes the supplementary assets; supplementary_tables.json reports table_count=0"
+        ]
+      },
+      "database_rows": {
+        "exists": true,
+        "paths": [
+          "paper_packets/doi__10.1038_srep24000/database/linked_experiment_records.jsonl",
+          "paper_packets/doi__10.1038_srep24000/database/linked_assay_records.jsonl",
+          "paper_packets/doi__10.1038_srep24000/database/linked_dramp_activity_records.jsonl",
+          "paper_packets/doi__10.1038_srep24000/database/linked_literature_records.jsonl",
+          "paper_packets/doi__10.1038_srep24000/database/linked_sequence_records.jsonl"
+        ],
+        "sampled_locator": "database:linked_experiment_records.jsonl:row=85",
+        "linked_sequence_records_line_count": 0
+      }
+    },
+    "blocked_missing_primary_material": false,
+    "material_gap_assessment": "Primary XML/PDF and database rows were available for the sampled row. Supplementary extraction remains a caution because the packet reports material_extracted_with_gaps and no parsed supplementary tables, but this did not block checking the sampled dbAMP row against XML Table 1 and database row 85."
+  },
+  "layer1_database_record_review": {
+    "sample_source_id": "dbAMP_27310",
+    "sample_sequence_key": "dbAMP:dbAMP_27310",
+    "release_row_matches_sample_final_record": true,
+    "status_under_review": "database_only_no_primary_source",
+    "status_assessment": "database_only_no_primary_source_preserve",
+    "status_justified": true,
+    "evidence_checked": [
+      "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/release_row.json",
+      "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/sample_final_record.json",
+      "papers/doi__10.1038_srep24000/final/database_record_verification.json::record_audits[source_id=dbAMP_27310]",
+      "paper_packets/doi__10.1038_srep24000/database/linked_experiment_records.jsonl:85",
+      "papers/doi__10.1038_srep24000/source/paper.xml::xml:article-meta:doi-pmid-pmcid",
+      "paper_packets/doi__10.1038_srep24000/locators/locator_index.json::xml:table=1:row=12",
+      "paper_packets/doi__10.1038_srep24000/locators/locator_index.json::xml:table=1:row=13"
+    ],
+    "database_row_observation": {
+      "row_locator": "database:linked_experiment_records.jsonl:row=85",
+      "record_granularity": "entry_text",
+      "assay_type": "entry_activity",
+      "measure_group": "text",
+      "measure_value": "",
+      "unit": "",
+      "target_organism_text": "Human glioblastoma T67 (EC50=13uM)",
+      "problem": "The dbAMP row lists multiple Trichogin GA IV aliases/variants and carries no primary-source mappable sequence, raw value field, unit field, or specific matched primary table row."
+    },
+    "primary_source_crosscheck": {
+      "article_meta": "XML article metadata supports DOI 10.1038/srep24000, PMID 27039838, PMCID PMC4819177.",
+      "table1_relevant_rows": [
+        {
+          "locator": "xml:table=1:row=12",
+          "entity": "[TOAC1, Api4] TG",
+          "sequence": "Oct-XGLZGGLUGI-Lol",
+          "T67_EC50": "8 uM"
+        },
+        {
+          "locator": "xml:table=1:row=13",
+          "entity": "[Api8] TG",
+          "sequence": "Oct-UGLUGGLZGI-Lol",
+          "T67_EC50": "13 uM"
+        }
+      ],
+      "interpretation": "The source table contains primary evidence for separate Api4/Api8 entities, but the sampled dbAMP row conflates aliases and lacks enough row-level identity fields to promote dbAMP_27310 itself to source_verified."
+    },
+    "hard_failures_for_sampled_layer1_row": []
+  },
+  "layer2_activity_toxicity_review": {
+    "spot_check_scope": "Relevant Table 1 Api rows and sampled dbAMP row linkage",
+    "sampled_dbamp_row_promoted_to_primary_activity": false,
+    "activity_layer_assessment": "spot_check_source_backed_with_cautions",
+    "source_backed_rows_checked": [
+      {
+        "record_id": "doi__10.1038_srep24000-table1-toac1-api4-tg-t67-ec50",
+        "endpoint": "EC50",
+        "raw_value": "8",
+        "raw_unit": "uM",
+        "target": "Human glioblastoma T67",
+        "locator": "xml:table=1:row=12:target=T67"
+      },
+      {
+        "record_id": "doi__10.1038_srep24000-table1-api8-tg-t67-ec50",
+        "endpoint": "EC50",
+        "raw_value": "13",
+        "raw_unit": "uM",
+        "target": "Human glioblastoma T67",
+        "locator": "xml:table=1:row=13:target=T67"
+      }
+    ],
+    "method_locator_checked": "xml:sec=15:MTT assays",
+    "semantic_spot_checks": {
+      "missing_endpoint_value_unit_locator_count_for_activity_records": 0,
+      "sentence_fragment_target_detected_in_checked_rows": false,
+      "database_only_activity_treated_as_primary_evidence": false
+    },
+    "hard_failures_for_layer2_spot_check": []
+  },
+  "layer3_mechanism_review": {
+    "mechanism_claim_count": 3,
+    "mechanism_artifact": "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+    "assessment": "needs_analysis_rework_for_invalid_ontology_class",
+    "mandatory_field_check": {
+      "claims_missing_claim_id_text_evidence_class_locator_or_direct_assay_type": 0,
+      "direct_mechanism_claims_have_direct_assay_types": true
+    },
+    "invalid_evidence_classes": [
+      {
+        "claim_id": "mech-001",
+        "current_evidence_class": "mechanistic_context",
+        "allowed_classes": [
+          "direct_mechanism",
+          "phenotype_supported",
+          "inferred_mechanism",
+          "computational_only",
+          "unknown_or_not_tested"
+        ],
+        "locator": "xml:sec=4:Cytotoxicity assay; xml:sec=10:Discussion",
+        "required_action": "Reclassify to the strongest supported standard ontology class, likely inferred_mechanism or phenotype_supported depending on the reviewed claim wording."
+      },
+      {
+        "claim_id": "mech-003",
+        "current_evidence_class": "mechanistic_context",
+        "allowed_classes": [
+          "direct_mechanism",
+          "phenotype_supported",
+          "inferred_mechanism",
+          "computational_only",
+          "unknown_or_not_tested"
+        ],
+        "locator": "xml:sec=5:Cell membrane constituents assays; xml:fig=2; xml:sec=10:Discussion",
+        "required_action": "Reclassify to a standard ontology class and preserve the limitation that cell-surface composition is contextual support, not standalone direct proof for every analogue."
+      }
+    ],
+    "direct_mechanism_claims_checked": [
+      {
+        "claim_id": "mech-002",
+        "evidence_class": "direct_mechanism",
+        "direct_assay_types_present": true,
+        "locator": "xml:table=2; xml:fig=4; xml:sec=18:EPR samples preparation and measurements"
+      }
+    ]
+  },
+  "worker6_adjudication": {
+    "terminal_publication_grade_confirmation": false,
+    "scientific_decision_if_model_effort_were_proven": "needs_targeted_rework",
+    "rationale": "The sampled dbAMP row should remain database_only_no_primary_source rather than being smoothed to source_verified. Activity Table 1 spot checks are source-backed. However, final mechanism claims include two non-standard evidence classes, and packet-level status metadata still carries analysis-needs-rework/test-scope signals while final review_report claims publication_grade=true. Together these prevent confirming the existing final artifact in this true source-review pass.",
+    "owner_queue_for_rework": "analysis",
+    "owner_lanes": [
+      "worker-5/mechanism_ontology_extractor",
+      "worker-6/adjudicator_review"
+    ],
+    "existing_final_review_status": "accepted_with_cautions",
+    "existing_publication_grade": true,
+    "confirmed_elements": [
+      "dbAMP_27310 sampled row found in final database_record_verification.json and release TSV row 40386",
+      "Layer 1 database_only_no_primary_source is justified for the sampled row",
+      "Layer 2 relevant Api EC50 rows have endpoint, raw value, unit, target, assay context, and XML locators"
+    ],
+    "not_confirmed_elements": [
+      "Layer 3 mechanism evidence classes are not all in the required ontology",
+      "Packet manifest/material inventory still present analysis rework/test-scope/open-ticket signals that conflict with final publication_grade=true"
+    ]
+  },
+  "rework_targets": [
+    {
+      "worker": "worker-5",
+      "layer": "mechanism",
+      "artifact_path": "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+      "failing_object": "mechanism_claims[claim_id in mech-001,mech-003].evidence_class",
+      "failure_code": "invalid_mechanism_evidence_class",
+      "source_evidence_to_check": [
+        "papers/doi__10.1038_srep24000/source/paper.xml::xml:sec=4:Cytotoxicity assay",
+        "papers/doi__10.1038_srep24000/source/paper.xml::xml:sec=5:Cell membrane constituents assays",
+        "papers/doi__10.1038_srep24000/source/paper.xml::xml:sec=10:Discussion"
+      ],
+      "required_action": "Replace non-standard mechanistic_context evidence classes with allowed ontology values and preserve limitations without promoting inferred/contextual claims to direct_mechanism.",
+      "acceptance_check": "All mechanism_claims evidence_class values are one of direct_mechanism, phenotype_supported, inferred_mechanism, computational_only, or unknown_or_not_tested; direct_mechanism claims retain direct_assay_types and locators."
+    },
+    {
+      "worker": "worker-6",
+      "layer": "adjudication",
+      "artifact_path": "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+      "failing_object": "analysis_queue_status/open_rework_ticket_ids/test_scope versus final review_report publication_grade=true",
+      "failure_code": "stale_or_conflicting_packet_terminal_status",
+      "source_evidence_to_check": [
+        "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+        "paper_packets/doi__10.1038_srep24000/analysis/analysis_status.json",
+        "paper_packets/doi__10.1038_srep24000/rework/rework_requests.jsonl",
+        "paper_packets/doi__10.1038_srep24000/rework/rework_responses.jsonl",
+        "papers/doi__10.1038_srep24000/final/review_report.json"
+      ],
+      "required_action": "Reconcile packet-level terminal status after mechanism rework; do not leave test-scope/open-ticket or analysis-needs-rework signals alongside publication_grade=true without an explicit resolved mapping.",
+      "acceptance_check": "Packet manifest, analysis status, rework tickets/responses, and final review_report agree on accepted-with-cautions or nonpublication status with no contradictory open rework indicators."
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_only_status_preserved_for_sample",
+      "status": "database_only_no_primary_source",
+      "source_id": "dbAMP_27310",
+      "context": "The dbAMP entry text row has no raw value/unit/sequence fields and conflates multiple Trichogin aliases; primary Table 1 has source rows for the individual entities but not a clean dbAMP_27310 identity row."
+    },
+    {
+      "caution_code": "linked_sequence_records_snapshot_empty",
+      "context": "paper_packets/doi__10.1038_srep24000/database/linked_sequence_records.jsonl exists but has zero lines."
+    },
+    {
+      "caution_code": "material_extracted_with_gaps",
+      "context": "material_inventory and extraction_status report material_extracted_with_gaps; supplementary tables are not parsed, though this did not block the sampled row check."
+    },
+    {
+      "caution_code": "packet_terminal_status_conflict",
+      "context": "packet_manifest/material_inventory still report analysis_needs_analysis_rework/open rework/test-scope signals, while analysis_status and final review_report report accepted_with_cautions/publication_grade=true."
+    },
+    {
+      "caution_code": "model_effort_unverifiable",
+      "context": "Runtime environment did not expose independently verifiable gpt-5.5 xhigh provenance."
+    }
+  ],
+  "checked_inputs": [
+    ".codex/skills/amp-three-layer-curation/SKILL.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-source-review.md",
+    ".codex/skills/amp-three-layer-curation/references/publication-grade-quality-gate.md",
+    ".codex/skills/amp-three-layer-curation/references/team-rework-message-contract.md",
+    ".codex/skills/amp-three-layer-curation/references/two-queue-paper-packet-contract.md",
+    ".codex/skills/paper-adjudicator-review-worker/SKILL.md",
+    ".codex/skills/paper-database-record-auditor/SKILL.md",
+    ".codex/skills/paper-supp-evidence-worker/SKILL.md",
+    ".codex/skills/paper-intake-worker/SKILL.md",
+    ".codex/skills/paper-mechanism-ontology-worker/SKILL.md",
+    ".codex/skills/paper-body-table-worker/SKILL.md",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/material_inventory.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/validation_sample.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/release_row.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/sample_final_record.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/source_locator_hints.json",
+    "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/true_review_result.schema.json",
+    "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+    "paper_packets/doi__10.1038_srep24000/extraction/extraction_status.json",
+    "paper_packets/doi__10.1038_srep24000/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1038_srep24000/extracted/xml_sections.json",
+    "paper_packets/doi__10.1038_srep24000/extracted/pdf_text.jsonl",
+    "paper_packets/doi__10.1038_srep24000/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1038_srep24000/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1038_srep24000/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1038_srep24000/locators/locator_index.json",
+    "paper_packets/doi__10.1038_srep24000/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1038_srep24000/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1038_srep24000/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1038_srep24000/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1038_srep24000/database/linked_sequence_records.jsonl",
+    "papers/doi__10.1038_srep24000/source/paper.xml",
+    "papers/doi__10.1038_srep24000/final/database_record_verification.json",
+    "papers/doi__10.1038_srep24000/final/activity_toxicity_evidence.json",
+    "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+    "papers/doi__10.1038_srep24000/final/review_report.json",
+    "papers/doi__10.1038_srep24000/work/review/quality_feedback.json",
+    "paper_packets/doi__10.1038_srep24000/rework/rework_requests.jsonl",
+    "paper_packets/doi__10.1038_srep24000/rework/rework_responses.jsonl",
+    "releases/amp_evidence_atlas_v1_rc1/database_record_audits.tsv"
+  ]
+}

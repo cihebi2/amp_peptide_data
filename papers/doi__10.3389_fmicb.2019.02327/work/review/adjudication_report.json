@@ -1,0 +1,172 @@
+{
+  "artifact_type": "adjudication_report",
+  "paper_id": "doi__10.3389_fmicb.2019.02327",
+  "doi": "10.3389/fmicb.2019.02327",
+  "generated_at": "2026-05-06T22:00:07Z",
+  "reviewed_at": "2026-05-06T22:00:07Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "review_status": "accepted_with_cautions",
+  "adjudication_summary": "Worker-2/4/6 re-review recovered source-supported IC50 activity rows from XML Table 3 and OA supplementary Image_1.pdf, matched DBAASP assay values to source rows, preserved exact DBAASP sequence/isoform gaps as database conflicts, and adjudicated mechanism claims without overclaiming literature-only membrane hypotheses.",
+  "checked_inputs": [
+    "rework_context/doi__10.3389_fmicb.2019.02327/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/fmicb-10-02327.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/Image_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/Image_1.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/fmicb-10-02327.nxml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/supplementary_original/landing-*.bin",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.pdf"
+  ],
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "XML/PDF/OA package Image_1.pdf and linked DBAASP rows were sufficient for obtainable-only activity/database/mechanism adjudication."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 32,
+    "toxicity_rows_parsed": 0,
+    "activity_rows_with_source_locators": 32,
+    "database_record_status_counts": {
+      "source_conflict": 14
+    },
+    "mechanism_claims": 3,
+    "open_rework_targets": 0,
+    "strict_gate_after_repair": {
+      "semantic_publication_grade_pass_count": 1,
+      "semantic_publication_grade_fail_count": 0,
+      "publication_quality_pass": true
+    }
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP activity rows are matched to primary Table 3 values; exact DBAASP sequence/isoform identity is not source-verified and remains a preserved source_conflict caution.",
+    "layer_2_activity_toxicity": "Activity rows now cover primary Table 3 and supplementary tebuconazole-comparison IC50 matrices with units, targets, conditions, confidence intervals, and locators. No toxicity assay rows were present locally.",
+    "layer_3_mechanism": "Direct morphology observations are retained as direct microscopy evidence; membrane/ergosterol and synergy language remains context or hypothesis where the paper lacks direct biochemical assays."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_identity_not_primary_source_verified",
+      "evidence_context": "Primary source supports names/modality/activity but not exact DBAASP sequences for cyclic lipopeptide isoforms or mixtures.",
+      "affected_database_rows": 14
+    },
+    {
+      "caution_code": "parallel_ic50_analysis_sets_preserved",
+      "evidence_context": "XML Table 3 and supplementary Image_1.pdf contain different model/comparison scopes; both source-supported matrices are retained separately."
+    },
+    {
+      "caution_code": "no_local_toxicity_assay_rows",
+      "evidence_context": "The local paper reports antifungal activity and microscopy morphology, not hemolysis/cytotoxicity assay rows."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "primary_source_exact_sequence_absent_for_dbaasp_lipopeptide_ids",
+      "source_paths_checked": [
+        "rework_context/doi__10.3389_fmicb.2019.02327/handoff_context.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/packet_manifest.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/locators/locator_index.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.pdf",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/fmicb-10-02327.txt",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/Image_1.txt",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_tables.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/Image_1.pdf",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/fmicb-10-02327.nxml",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/database/database_source_manifest.json",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_literature_records.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_sequence_records.jsonl",
+        "paper_packets/doi__10.3389_fmicb.2019.02327/raw/supplementary_original/landing-*.bin",
+        "papers/doi__10.3389_fmicb.2019.02327/source/paper.xml",
+        "papers/doi__10.3389_fmicb.2019.02327/source/paper.pdf"
+      ],
+      "tools_attempted": [
+        "project-local worker-2/4/6 SKILL.md files",
+        "handoff_context.json source inventory",
+        "rg over XML/PDF text/database rows",
+        "perl XML table-wrap extraction for Tables 1-3",
+        "pdftotext-derived Image_1.txt supplementary table text",
+        "file over supplementary landing-*.bin assets",
+        "manual row reconciliation against linked DBAASP assay JSONL",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py"
+      ],
+      "why_unrecoverable": "The local XML/PDF/OA supplement reports lipopeptide family names, mixture ratios, production strains, and fatty-acid isoform ranges, but not exact DBAASP sequence records for DBAASPN identifiers.",
+      "impact": "Database identity remains source_conflict with activity values source matched; no unsupported source_verified status was assigned.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "preserve_conflict_as_caution"
+    }
+  ],
+  "source_paths_checked": [
+    "rework_context/doi__10.3389_fmicb.2019.02327/handoff_context.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/packet_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/locators/locator_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.xml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/paper.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/fmicb-10-02327.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_text/Image_1.txt",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/Image_1.pdf",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/extracted/oa_package/local-DBAASP-PMC6817503/PMC6817503/fmicb-10-02327.nxml",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/database_source_manifest.json",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/database/linked_sequence_records.jsonl",
+    "paper_packets/doi__10.3389_fmicb.2019.02327/raw/supplementary_original/landing-*.bin",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.xml",
+    "papers/doi__10.3389_fmicb.2019.02327/source/paper.pdf"
+  ],
+  "tools_attempted": [
+    "project-local worker-2/4/6 SKILL.md files",
+    "handoff_context.json source inventory",
+    "rg over XML/PDF text/database rows",
+    "perl XML table-wrap extraction for Tables 1-3",
+    "pdftotext-derived Image_1.txt supplementary table text",
+    "file over supplementary landing-*.bin assets",
+    "manual row reconciliation against linked DBAASP assay JSONL",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "required_rework_ticket_ids": [],
+    "publication_grade_ready": true
+  }
+}

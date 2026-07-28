@@ -1,0 +1,79 @@
+{
+  "paper_id": "doi__10.1038_s41598-025-18026-6",
+  "generated_at": "2026-05-03T09:30:38Z",
+  "status": "source_reviewed_rework_resolved_accepted_with_cautions",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "figure_curve_values_not_digitized",
+      "severity": "caution",
+      "evidence_context": "Fig. 4 curve-level viability values were not digitized; Table 3 IC50 and no-obvious-activity cells are preserved as the supported row-level outputs.",
+      "source_locator": {
+        "locator": "xml:fig=4; xml:table=3",
+        "source_path": "papers/doi__10.1038_s41598-025-18026-6/source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "assay_scope_is_anticancer_cytotoxicity_not_antimicrobial",
+      "severity": "caution",
+      "evidence_context": "The paper reports human glioma cell viability / IC50 assays for stapled peptide PROTACs, not microbial MIC/MBC activity."
+    },
+    {
+      "caution_code": "modified_sequence_placeholder_representation",
+      "severity": "caution",
+      "evidence_context": "Primary Table 1 reports Ac-/Ahx-/S5-/NH2-modified stapled peptide sequences. DBAASP sequence rows encode noncanonical Ahx/S5 positions with X and omit terminal Ac/NH2 notation, so modification notation is preserved rather than silently normalized.",
+      "source_locator": {
+        "locator": "pdf_text:landing-1.txt:lines=165-179; all_sequences.csv:31302-31303",
+        "source_path": "paper_packets/doi__10.1038_s41598-025-18026-6/extracted/pdf_text/landing-1.txt"
+      }
+    },
+    {
+      "caution_code": "database_scope_anticancer_not_antimicrobial",
+      "severity": "caution",
+      "evidence_context": "DBAASP linked rows are target_activity IC50 rows for human glioblastoma cell lines, not microbial AMP activity rows."
+    },
+    {
+      "caution_code": "mechanism_context_not_direct_degradation_assay",
+      "severity": "caution",
+      "evidence_context": "The final mechanism claim is supported by molecular docking text/figures for MDM2/MDMX binding context; the repaired owned layers do not add a direct degradation assay.",
+      "source_locator": {
+        "locator": "xml:sec=15:Molecular Docking; xml:fig=5; xml:fig=6",
+        "source_path": "papers/doi__10.1038_s41598-025-18026-6/source/paper.xml"
+      }
+    },
+    {
+      "caution_code": "supplementary_zip_payload_not_locally_recovered_nonblocking",
+      "severity": "caution",
+      "evidence_context": "The local supplementary landing-*.bin files are publisher HTML article pages, and the XML-named 41598_2025_18026_MOESM1_ESM.zip is not present as a local archive/member in the paper packet or landed-assets tree."
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_zip_payload_not_locally_recovered_nonblocking",
+      "source_paths_checked": [
+        "papers/doi__10.1038_s41598-025-18026-6/source/supplementary",
+        "paper_packets/doi__10.1038_s41598-025-18026-6/raw/supplementary_original/landing-*.bin",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1038_s41598-025-18026-6/supplementary/landing-*.bin",
+        "paper_packets/doi__10.1038_s41598-025-18026-6/extracted/supplementary_text.jsonl",
+        "papers/doi__10.1038_s41598-025-18026-6/source/paper.xml:MOESM1 supplementary zip reference"
+      ],
+      "tools_attempted": [
+        "file",
+        "rg",
+        "xml supplementary-material inspection",
+        "packet supplementary index review"
+      ],
+      "why_unrecoverable": "The local supplementary landing-*.bin files are publisher HTML article pages, and the XML-named 41598_2025_18026_MOESM1_ESM.zip is not present as a local archive/member in the paper packet or landed-assets tree.",
+      "impact": "No owner-layer activity/database value remains missing because Table 1/Table 3 plus linked DBAASP rows support the repaired records; unavailable supplement payload is retained as a nonblocking caution.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "paper_id": "doi__10.3390_biom13101453",
+  "generated_at": "2026-05-08T15:34:33Z",
+  "source_reviewed": true,
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "extraction_scope": "Worker-6 source-reviewed mechanism/function ontology records from the primary results sections and figure captions.",
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-antibacterial-table2",
+      "claim_text": "CATH 2 and MAP34-B show direct antimicrobial activity in Table 2 MIC assays, while CATH 1 is inactive against the tested organisms at the reported concentration range.",
+      "entity_scope": "CATH 1, CATH 2, MAP34-B",
+      "evidence_class": "direct_activity_table",
+      "direct_assay_types": [
+        "two-fold broth microdilution MIC"
+      ],
+      "limitations": "This is an activity table claim, not a mechanistic assay by itself.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.2; xml:table=2"
+      }
+    },
+    {
+      "claim_id": "mech-membrane-permeabilization",
+      "claim_text": "CATH 2 and MAP34-B directly permeabilize bacterial cytoplasmic and outer membranes in PI/calcein-AM and NPN assays, with concentration-dependent effects.",
+      "entity_scope": "CATH 2, MAP34-B; E. coli CMCC44102, E. coli ATCC25922, S. aureus CMCC26003",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide cytoplasmic membrane permeability",
+        "calcein-AM permeation",
+        "NPN outer membrane permeability"
+      ],
+      "limitations": "Primary data support membrane permeabilization for CATH 2 and MAP34-B, not for CATH 1.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.4; xml:sec=3.5; xml:fig=3; xml:fig=4"
+      }
+    },
+    {
+      "claim_id": "mech-ros-induction",
+      "claim_text": "CATH 2 and MAP34-B induce intracellular ROS in E. coli and S. aureus, which the authors frame as a possible contributor to bactericidal action.",
+      "entity_scope": "CATH 2, MAP34-B",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "intracellular ROS fluorescence assay"
+      ],
+      "limitations": "The paper states ROS may contribute; the final ontology keeps this as contributory rather than sole mechanism.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.7; xml:fig=6"
+      }
+    },
+    {
+      "claim_id": "mech-dna-binding",
+      "claim_text": "CATH 1, CATH 2, and MAP34-B bind E. coli genomic DNA in gel retardation assays, with stronger binding for CATH 2 and MAP34-B than CATH 1.",
+      "entity_scope": "CATH 1, CATH 2, MAP34-B; E. coli genomic DNA",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "bacterial genomic DNA gel retardation assay"
+      ],
+      "limitations": "The assay supports DNA binding; downstream inhibition of replication/translation remains an author interpretation.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.8; xml:fig=7"
+      }
+    },
+    {
+      "claim_id": "functional-immunomodulatory-antioxidant",
+      "claim_text": "All three peptides reduce LPS-induced IL-6 in mouse peritoneal macrophages; CATH 1 and CATH 2 have antioxidant activity, while MAP34-B does not show detectable antioxidant activity in the tested range.",
+      "entity_scope": "CATH 1, CATH 2, MAP34-B",
+      "evidence_class": "functional_context",
+      "direct_assay_types": [
+        "LPS-induced IL-6 ELISA",
+        "ABTS radical scavenging assay",
+        "DPPH radical scavenging assay"
+      ],
+      "limitations": "These are functional context assays, not direct antimicrobial killing mechanisms.",
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=3.6; xml:fig=5; xml:sec=3.9; xml:fig=8"
+      }
+    }
+  ]
+}

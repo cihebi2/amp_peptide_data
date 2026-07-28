@@ -1,0 +1,58 @@
+{
+  "paper_id": "doi__10.3390_antibiotics9120870",
+  "generated_at": "2026-05-07T16:42:28Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "resolved_rework_targets": [
+    "rwk-complete-test-0001"
+  ],
+  "quality_status": "accepted_with_cautions_after_worker246_re_review",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "semantic_gate_expected": "pass",
+  "caution_findings": [
+    {
+      "scope": "activity_unit_context",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "Table 1 ED/MFC rows",
+      "note": "Table 1 header in XML/PDF text says mg/mL, while methods/results prose and DBAASP/CAMP rows use µg/mL for the same class of peptide concentrations. Raw values are retained and not converted.",
+      "conflict_flags": [
+        "table1_unit_conflict_mg_per_mL_vs_database_microg_per_mL"
+      ]
+    },
+    {
+      "scope": "database_snapshot_scope",
+      "severity": "caution",
+      "status": "packet_scope_limited",
+      "record": "DBAASP:DBAASPS_16452 / WAMP-C",
+      "note": "Packet linked_assay_records omits WAMP-C current-paper assay rows, but merged DBAASP rows and primary Table 1 support WAMP-C ED/MFC values; final audit preserves the packet snapshot gap."
+    },
+    {
+      "scope": "database_aggregate_rows",
+      "severity": "caution",
+      "status": "source_conflict_preserved",
+      "record": "CAMP rows CAMPSQ23383/23386/23387/23388/23389",
+      "note": "CAMP text rows aggregate current-paper ED/MFC values with prior-paper IC50 values; current-paper source verification is limited to the Table 1 subset."
+    },
+    {
+      "scope": "mechanism_ontology",
+      "severity": "caution",
+      "status": "context_only_no_direct_mechanism_overclaim",
+      "record": "mechanism_evidence.json",
+      "note": "This DOI supports chemosensitization and inhibition of conidial germination; hevein/chitin/cell-wall and triazole/ergosterol rationale is contextual, not a direct molecular mechanism assay in this paper."
+    },
+    {
+      "scope": "supplementary_material",
+      "severity": "caution",
+      "status": "supplement_reviewed_no_table_values",
+      "record": "antibiotics-09-00870-s001.pdf",
+      "note": "The local supplement text contains Figure S1/caption material, not additional structured activity/toxicity tables; no absent supplement value was fabricated."
+    }
+  ],
+  "unrecoverable_material_gaps": []
+}

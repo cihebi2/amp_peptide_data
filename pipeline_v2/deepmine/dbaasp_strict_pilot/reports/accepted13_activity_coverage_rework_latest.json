@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-07-11T12:26:24Z",
+  "source_gate": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/accepted13_semantic_regression_latest.json",
+  "publication_gate": "pipeline_v2/deepmine/dbaasp_strict_pilot/reports/accepted13_publication_regression_latest.json",
+  "tickets": [
+    {
+      "ticket_id": "rwk-PMC11784053-semantic-coverage-001",
+      "paper_id": "PMC11784053",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "requested_by": "semantic_gate_hardening",
+      "owner_worker": "worker-2",
+      "reason": "xml:table-wrap:3 is a quantitative red-blood-cell/hemolysis table but lacks direct row-level coverage in the activity/toxicity artifact; the caption and header terminology also require explicit source-conflict adjudication.",
+      "requested_outputs": [
+        {
+          "asset": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC11784053/work/activity_evidence/activity_records.json",
+          "need": "Re-open Table 3 and add source-located row-level toxicity/viability measurements, preserving the caption/header terminology conflict without guessing. If the values cannot safely be labeled hemolysis, retain raw endpoint wording and document the conflict.",
+          "required_locators": [
+            "xml:table-wrap:3"
+          ],
+          "expected_shape": "8 concentrations x 3 treatment columns = 24 quantitative observations unless source inspection documents a narrower justified representation"
+        }
+      ],
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "created_at": "2026-07-11T12:26:24Z",
+      "acceptance_check": "semantic and publication gates have no missing_activity_table_coverage for xml:table-wrap:3 and worker-6 preserves any endpoint-label conflict"
+    },
+    {
+      "ticket_id": "rwk-PMC12229353-semantic-coverage-001",
+      "paper_id": "PMC12229353",
+      "target_queue": "analysis",
+      "severity": "blocking",
+      "requested_by": "semantic_gate_hardening",
+      "owner_worker": "worker-2",
+      "reason": "xml:table-wrap:2 reports MIC and MBC values for resistant P. aeruginosa clinical isolates but has no direct row-level coverage in the activity artifact.",
+      "requested_outputs": [
+        {
+          "asset": "pipeline_v2/deepmine/dbaasp_strict_pilot/papers/PMC12229353/work/activity_evidence/activity_records.json",
+          "need": "Add source-located Table 2 row-level MIC/MBC observations with isolate, treatment, endpoint, raw value/qualifier, micromolar unit, and locator. Preserve comparator rows rather than silently dropping them.",
+          "required_locators": [
+            "xml:table-wrap:2"
+          ],
+          "expected_shape": "12 resistant isolates x 3 treatments x 2 endpoints = 72 quantitative observations unless source inspection documents a narrower justified representation"
+        }
+      ],
+      "blocks": [
+        "activity_toxicity_evidence",
+        "review_report",
+        "publication_grade_acceptance"
+      ],
+      "created_at": "2026-07-11T12:26:24Z",
+      "acceptance_check": "semantic and publication gates have no missing_activity_table_coverage for xml:table-wrap:2"
+    }
+  ],
+  "new_ticket_ids": [
+    "rwk-PMC11784053-semantic-coverage-001",
+    "rwk-PMC12229353-semantic-coverage-001"
+  ],
+  "prompts_regenerated": [
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-1.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-2.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-3.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-4.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-5.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC11784053/worker-6.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-1.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-2.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-3.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-4.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-5.md",
+    "/home/cihebi/抗菌肽/数据集/batch/5-team/pipeline_v2/deepmine/dbaasp_strict_pilot/prompts/PMC12229353/worker-6.md"
+  ],
+  "boundary": "These papers are reopened for targeted AI rework; prior accepted_with_cautions state is not treated as current publication-grade acceptance."
+}

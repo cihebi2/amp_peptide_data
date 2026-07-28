@@ -1,0 +1,118 @@
+{
+  "paper_id": "doi__10.1021_acsinfecdis.4c00130",
+  "reviewed_at": "2026-05-02T12:51:41Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded owner-layer re-review reopened local NXML/PDF/OA package/SI PDF text/images and linked DBAASP rows. No remaining local-material blocker prevents worker-4/6 adjudication; packet extraction status itself is not promoted beyond material_extracted_with_gaps."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1021_acsinfecdis.4c00130/handoff_context.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/analysis/adjudication_report.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/oa_package/local-DBAASP-PMC11250030/PMC11250030/id4c00130.nxml",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/oa_package/local-DBAASP-PMC11250030/PMC11250030/id4c00130.pdf",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/oa_package/local-DBAASP-PMC11250030/PMC11250030/id4c00130_si_001.pdf",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/pdf_text/id4c00130_si_001.txt",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/oa_package/local-DBAASP-PMC11250030/PMC11250030/id4c00130_0001.jpg",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/extracted/oa_package/local-DBAASP-PMC11250030/PMC11250030/id4c00130_0002.jpg",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsinfecdis.4c00130/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv"
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "42 final records have entity, endpoint, raw value, unit, target, assay context, and source locator."
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "result": "pass_with_cautions",
+      "evidence": "All 66 linked DBAASP rows reviewed; status_summary={'source_verified': 56, 'source_conflict': 10}."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "Pseudomonas ATCC 27853-vs-25853 rows and peptide 1 clinical-biofilm MBEC50=75 μM remain source_conflict with concrete source locators."
+    },
+    {
+      "check": "supplementary_source_recovery",
+      "result": "pass_with_scope_guard",
+      "evidence": "SI PDF text was opened; Table S1 supports peptide identity/mass, Table S2 supports MDR isolate resistance profiles, and NMR/analytical SI content does not add activity/toxicity endpoints."
+    },
+    {
+      "check": "mechanism_scope",
+      "result": "pass_with_scope_guard",
+      "evidence": "Mechanism claims are bounded to direct membrane/permeabilization, bactericidal kinetics, membrane-model assays, and structural context with direct_assay_types where needed."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "rwk-complete-test-0001 is resolved by source-reviewed worker-4/6 artifacts; final review has no rework_targets."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet remains a separate complete-with-gaps layer. The owner repair used existing local NXML, PDF text, OA package, SI PDF text, images, locator index, and database snapshots without rerunning bootstrap.",
+    "validator_contract": "Structural readiness was already present; this pass does not treat validator success as publication-grade evidence.",
+    "database_layer_worker_4": "All linked DBAASP assay/experiment/literature rows were reconciled against primary Table 1/Table 2, Figure 1, Figure 2, SI Table S2, article metadata, and sequence catalog rows. True source conflicts are preserved rather than normalized.",
+    "activity_toxicity_final": "Worker-6 final activity/toxicity now contains all recoverable Table 2 MIC cells plus figure-supported biofilm/cytotoxicity endpoints with raw values/units/locators; unsupported interpolated database values are not fabricated into source activity rows.",
+    "mechanism_layer": "Mechanism claims are source-located and bounded to membrane permeabilization, killing kinetics, membrane-model biophysics, and structural context; no unsupported receptor-level mechanism is asserted.",
+    "adjudication_layer_worker_6": "The previous framework-test blocker is closed because source-reviewed final artifacts now exist, qc_failure_reasons are empty, and no concrete rework target remains open."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "pseudomonas_strain_conflict_preserved",
+      "evidence_context": "DBAASP linked MIC rows use Pseudomonas aeruginosa ATCC 27853, while primary Table 2 reports P. aeruginosa ATCC 25853 for the matching MIC values; these rows remain source_conflict."
+    },
+    {
+      "caution_code": "database_interpolated_biofilm_endpoint_preserved",
+      "evidence_context": "DBAASP reports peptide 1 MBEC50=75 μM for generic S. aureus biofilm, but local primary material does not tabulate that interpolated endpoint; it remains source_conflict."
+    },
+    {
+      "caution_code": "terminal_amidation_and_aib_encoding_preserved",
+      "evidence_context": "Primary Table 1 shows C-terminal -NH2 and Aib/lowercase p modifications; DBAASP sequence catalog omits terminal amide suffix and encodes Aib as X, so final sequence_check preserves the primary modification evidence."
+    },
+    {
+      "caution_code": "supplementary_material_scope_limited",
+      "evidence_context": "SI PDF contains analytical mass/HPLC/NMR and MDR resistance profile tables; it does not add extra activity/toxicity endpoints beyond the main text figures/tables."
+    },
+    {
+      "caution_code": "material_packet_layer_unchanged",
+      "evidence_context": "Material packet status remains material_extracted_with_gaps; this worker-4/6 pass repaired analysis/adjudication layers only."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "blocking_issue_count": 0,
+    "major_issue_count": 0
+  },
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review closes rwk-complete-test-0001 with cautions preserved: Table 1/Table 2/Figure 1/Figure 2/SI Table S2 and linked DBAASP rows support the recoverable values, while Pseudomonas strain mismatch and one database-only interpolated biofilm endpoint remain explicit source_conflict records."
+}

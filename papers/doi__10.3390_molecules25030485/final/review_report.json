@@ -1,0 +1,102 @@
+{
+  "paper_id": "doi__10.3390_molecules25030485",
+  "reviewed_at": "2026-05-09T16:25:11Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_reviewed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded worker-4/6 repair opened the handoff paths, primary XML/PDF, extracted supplement PDF text, OA package derivatives, packet database JSONL, and merged output sequence/activity snapshots."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_molecules25030485/handoff_context.json",
+    "paper_packets/doi__10.3390_molecules25030485/packet_manifest.json",
+    "paper_packets/doi__10.3390_molecules25030485/locators/locator_index.json",
+    "paper_packets/doi__10.3390_molecules25030485/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_molecules25030485/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_molecules25030485/raw/paper.xml",
+    "paper_packets/doi__10.3390_molecules25030485/raw/paper.pdf",
+    "papers/doi__10.3390_molecules25030485/source/paper.xml",
+    "papers/doi__10.3390_molecules25030485/source/paper.pdf",
+    "paper_packets/doi__10.3390_molecules25030485/extracted/pdf_text/molecules-25-00485.txt",
+    "paper_packets/doi__10.3390_molecules25030485/extracted/supplementary_text/molecules-25-00485-s001.txt",
+    "paper_packets/doi__10.3390_molecules25030485/extracted/oa_package/local-APD6-pmc_package/PMC7036871/molecules-25-00485-s001.pdf",
+    "paper_packets/doi__10.3390_molecules25030485/extracted/oa_package/local-DBAASP-PMC7036871/PMC7036871/molecules-25-00485-s001.pdf",
+    "paper_packets/doi__10.3390_molecules25030485/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_molecules25030485/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25030485/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_molecules25030485/database/linked_literature_records.jsonl",
+    "/mnt/d/work/antimicrobial_peptide_database/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/antimicrobial_peptide_database/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv"
+  ],
+  "tools_attempted": [
+    "jq review of handoff, packet, final, quality_feedback, and rework JSON artifacts",
+    "rg over primary XML, extracted PDF text, supplementary text, and linked database rows",
+    "pdftotext -layout on the paper PDF and supplementary PDF",
+    "manual source review of XML/PDF Table 3, section 2.6, section 3, and supplementary Tables S1/S2",
+    "linked APD6/DBAASP/CAMP/dbAMP sequence and activity row reconciliation from merged output snapshots",
+    "semantic_three_layer_gate.py",
+    "check_three_layer_publication_quality.py"
+  ],
+  "adjudication_summary": "Pantocin WH-1 was re-reviewed from local primary and packet material. The final activity layer now uses the paper's own MIC, time-kill, in vivo, and supplementary spectrum evidence; linked database rows are reconciled with exact unsupported MBC/BCG MIC values preserved as source conflicts; mechanism claims remain bounded to phenotype/stability context.",
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 21,
+    "database_status_summary": {
+      "source_verified": 20,
+      "source_conflict": 5,
+      "sequence_modified_not_normalized": 1
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "false_positive_table4_activity_removed": true,
+    "database_conflicts_preserved": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ]
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "APD6/DBAASP literature and sequence links match the paper; exact unsupported database activity values are retained as source_conflict instead of being normalized into source_verified rows.",
+    "layer_2_activity_toxicity": "The previous Table 4 comparison-table MIC rows were removed. Primary paper section 2.6 and supplementary Table S2 support the retained activity rows; no toxicity endpoint is present in local material.",
+    "layer_3_mechanism": "The paper supports anti-mycobacterial phenotype, stability, and cyclic peptide identity. It does not establish a direct molecular target; ROS/cell-wall text is carried as prior/unconfirmed context."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_exact_value_not_primary_supported",
+      "evidence_context": "DBAASP/CAMP exact MBC 5 µg/mL and BCG MIC 7.5 µg/mL are not found in local XML/PDF/supplement after bounded review; they remain source_conflict in the database audit."
+    },
+    {
+      "caution_code": "sequence_modified_not_normalized",
+      "evidence_context": "The 16-residue database sequence matches Table 3, but the paper describes pantocin WH-1 as circular/blocked; the final database layer preserves this modification caveat."
+    },
+    {
+      "caution_code": "mechanism_target_unknown",
+      "evidence_context": "No direct molecular target is assigned from this paper; mechanism entries are bounded to phenotype/stability and prior-context statements."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "publication_grade_ready": true
+  },
+  "unrecoverable_material_gaps": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ]
+}

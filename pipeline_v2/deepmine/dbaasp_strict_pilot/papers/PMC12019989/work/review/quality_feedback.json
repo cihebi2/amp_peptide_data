@@ -1,0 +1,55 @@
+{
+  "paper_id": "PMC12019989",
+  "worker": "worker-6",
+  "reviewed_at": "2026-07-16T13:00:22.831394+00:00",
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "needs_targeted_rework": false,
+  "rework_targets": [],
+  "caution_findings": [
+    {
+      "caution_id": "no-linked-authoritative-dbaasp-rows",
+      "layer": "database",
+      "severity": "caution",
+      "adjudication": "Authoritative DBAASP article/assay/sequence/literature linked rows are absent in the packet; fallback rows remain unresolved machine evidence and authoritative ingest remains false.",
+      "evidence": "database/authoritative_match_report.json row_counts all zero"
+    },
+    {
+      "caution_id": "fallback-machine-rows-not-authoritative",
+      "layer": "database",
+      "severity": "caution",
+      "adjudication": "DBAASP Codex fallback rows were retained only as candidate machine evidence and were not promoted to source_verified or authoritative ingest-ready.",
+      "evidence": "database/dbaasp_machine_extracted_rows.jsonl count 13"
+    },
+    {
+      "caution_id": "no-source-located-toxicity-records",
+      "layer": "activity_toxicity",
+      "severity": "caution",
+      "adjudication": "Source-reviewed final has zero toxicity records; no toxicity claim is promoted without source-located row evidence.",
+      "evidence": "final/activity_toxicity_evidence.json toxicity_records count 0"
+    },
+    {
+      "caution_id": "figure-values-approximate-digitized",
+      "layer": "activity_toxicity",
+      "severity": "caution",
+      "adjudication": "Quantitative figure rows preserve approximation/calibration evidence and are not promoted to exact source-table measurements.",
+      "evidence": "final/activity_toxicity_evidence.json figure quantitation metadata"
+    }
+  ],
+  "runtime_open_ticket_ids_ready_for_terminal_closure": [
+    "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001",
+    "rwk-PMC12019989-leader-color-digitization-enforced-004",
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+    "rwk-PMC12019989-true-figure2-digitization-and-integration-002"
+  ],
+  "owner_response_prerequisite_satisfied": true,
+  "notes": [
+    "No new hard rework target is emitted by worker-6 after local strict repair; terminal closure depends on fresh post-response strict gate artifacts."
+  ],
+  "runtime_open_ticket_ids_closed_by_worker6": [
+    "rwk-PMC12019989-complete-figure-and-conflict-reconstruction-001",
+    "rwk-PMC12019989-leader-color-digitization-enforced-004",
+    "rwk-PMC12019989-runtime-provenance-identity-and-final-metadata-003",
+    "rwk-PMC12019989-true-figure2-digitization-and-integration-002"
+  ]
+}

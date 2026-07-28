@@ -1,0 +1,112 @@
+{
+  "artifact_type": "mechanism_ontology_record",
+  "paper_id": "doi__10.1038_s41598-021-81734-2",
+  "doi": "10.1038/s41598-021-81734-2",
+  "run_id": "codex_cli_rereview_20260503_worker2_4_6",
+  "worker": "worker-6",
+  "stage_id": "codex_cli_worker6_mechanism_adjudication_from_local_sources",
+  "generated_at": "2026-05-03T19:14:25Z",
+  "reviewed_at": "2026-05-03T19:14:25Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001",
+      "claim_text": "CATH-1(6-26) and ABD1 are the strongest directly bactericidal peptides in the local source, with Table 2 MICs supporting CATH-1 activity across all five tested bacterial strains and ABD1 activity across four strains plus lower C. perfringens MIC.",
+      "entity_scope": [
+        "CATH-1(6–26)",
+        "ABD1"
+      ],
+      "evidence_class": "direct_functional_activity",
+      "direct_assay_types": [
+        "bacterial killing MIC assay"
+      ],
+      "target_context": {
+        "species_panel": [
+          "E. coli EC317",
+          "Salmonella Enteritidis LS101",
+          "Salmonella Typhimurium SL1344",
+          "Campylobacter jejuni Cj1",
+          "Clostridium perfringens JP26"
+        ]
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:table=2; xml:sec=4:Results:In vitro antibacterial activity"
+      },
+      "limitations": "This is direct functional activity, not a structural membrane-disruption assay; exact MIC rows are stored in final/activity_toxicity_evidence.json."
+    },
+    {
+      "claim_id": "mech-002",
+      "claim_text": "CATH-1(6-26) directly neutralized LPS-induced nitric oxide production in HD11 cells in the Griess assay when peptide and LPS were premixed before stimulation.",
+      "entity_scope": [
+        "CATH-1(6–26)"
+      ],
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "Griess assay for LPS-induced nitric oxide production"
+      ],
+      "target_context": {
+        "species": "Gallus gallus",
+        "strain": "HD11 macrophage cell line"
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:Results:NO production and neutralization; xml:fig=5",
+        "pdf_text_locator": "paper_packets/doi__10.1038_s41598-021-81734-2/extracted/pdf_text/41598_2021_Article_81734.txt:lines 664-675"
+      },
+      "limitations": "The paper discusses possible pathways but does not directly test CD14 or NF-kB binding/translocation for this peptide; those remain inferred mechanisms only."
+    },
+    {
+      "claim_id": "mech-003",
+      "claim_text": "ABD1 directly blocked LPS-induced IL-1β mRNA induction in HD11 cells in the qRT-PCR assay and is therefore supported as an anti-inflammatory/immunomodulatory peptide in this source.",
+      "entity_scope": [
+        "ABD1"
+      ],
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "qRT-PCR of LPS-induced IL-1β expression"
+      ],
+      "target_context": {
+        "species": "Gallus gallus",
+        "strain": "HD11 macrophage cell line"
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:Results:Suppression of LPS-induced IL-1β; xml:fig=6",
+        "pdf_text_locator": "paper_packets/doi__10.1038_s41598-021-81734-2/extracted/pdf_text/41598_2021_Article_81734.txt:lines 676-680"
+      },
+      "limitations": "The exact upstream signaling pathway for ABD1 is discussed as possible immunomodulation, not directly resolved by the paper."
+    },
+    {
+      "claim_id": "mech-004",
+      "claim_text": "In ovo ABD1 treatment improved post-challenge survival versus PBS control in the yolk-sac infection model, but the paper frames the protective mechanism as likely immunomodulation rather than simply direct anti-E. coli activity.",
+      "entity_scope": [
+        "ABD1"
+      ],
+      "evidence_class": "in_vivo_protection_context_inferred_mechanism",
+      "direct_assay_types": [],
+      "target_context": {
+        "host": "chicken embryos/chicks",
+        "challenge": "E. coli EC317 yolk sac infection model"
+      },
+      "source_locator": {
+        "source_path": "source/paper.xml",
+        "locator": "xml:sec=4:Results:In ovo administration; xml:fig=7; xml:sec=5:Discussion",
+        "pdf_text_locator": "paper_packets/doi__10.1038_s41598-021-81734-2/extracted/pdf_text/41598_2021_Article_81734.txt:lines 853-862,1085-1108"
+      },
+      "limitations": "Bacterial scores are described as data not shown; no unreported values were invented."
+    }
+  ],
+  "quality_controls": {
+    "mechanism_claim_count": 4,
+    "direct_mechanism_claims_with_assay_types": 2,
+    "context_claims_not_overpromoted": true,
+    "all_claims_have_source_locators": true,
+    "figure_only_exact_values_not_fabricated": true
+  },
+  "adjudication_note": "Worker-6 replaced framework placeholder mechanism notes with source-reviewed final mechanism claims using local XML/PDF text and figure locators."
+}

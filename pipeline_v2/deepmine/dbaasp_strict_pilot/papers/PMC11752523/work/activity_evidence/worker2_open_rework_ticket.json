@@ -1,0 +1,31 @@
+[
+  {
+    "blocks": [
+      "activity_toxicity_evidence",
+      "review_report",
+      "publication_grade_acceptance"
+    ],
+    "created_at": "2026-07-13T07:10:54Z",
+    "diagnostic_artifact": "papers/PMC11752523/work/review/source_cell_binding_audit.json",
+    "expected_shape": {
+      "accepted_activity_records": "source-bound rows only",
+      "artifact": "final/activity_toxicity_evidence.json",
+      "candidate_or_rejected_rows": "must remain separate from accepted activity_records"
+    },
+    "paper_id": "PMC11752523",
+    "reason": "Accepted activity rows reuse one XML row locator and fail worker-6 peptide/sequence cell-binding checks.",
+    "requested_by": "worker-6",
+    "requested_outputs": [
+      {
+        "asset": "final/activity_toxicity_evidence.json",
+        "need": "Repair activity records so each accepted observation has a row/cell locator bound to peptide or sequence identity plus endpoint, raw value, raw unit, and target fields.",
+        "required_locators": [
+          "xml:table-wrap:1"
+        ]
+      }
+    ],
+    "severity": "blocking",
+    "target_queue": "analysis",
+    "ticket_id": "rwk-PMC11752523-activity-cell-binding-001"
+  }
+]

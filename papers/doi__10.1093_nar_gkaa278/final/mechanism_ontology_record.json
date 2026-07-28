@@ -1,0 +1,99 @@
+{
+  "paper_id": "doi__10.1093_nar_gkaa278",
+  "generated_at": "2026-05-03T12:16:37Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "extraction_scope": "Worker-6 source-reviewed mechanism adjudication from XML/PDF figure captions, main-text results, supplemental PDF text, and local figure assets; unsupported figure-only numeric values were not fabricated.",
+  "source_paths_checked": [
+    "rework_context/doi__10.1093_nar_gkaa278/handoff_context.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/packet_manifest.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/locators/locator_index.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/extraction/extraction_status.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/analysis/analysis_status.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/analysis/adjudication_report.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/rework/rework_requests.jsonl",
+    "papers/doi__10.1093_nar_gkaa278/source/paper.xml",
+    "papers/doi__10.1093_nar_gkaa278/source/paper.pdf",
+    "paper_packets/doi__10.1093_nar_gkaa278/raw/paper.xml",
+    "paper_packets/doi__10.1093_nar_gkaa278/raw/paper.pdf",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/xml_sections.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/pdf_text/gkaa278.txt",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/pdf_text/gkaa278_supplemental_file.txt",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/figure_captions.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/oa_package/local-DBAASP-PMC7261172/PMC7261172/gkaa278fig1.jpg",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/oa_package/local-DBAASP-PMC7261172/PMC7261172/gkaa278fig2.jpg",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/oa_package/local-DBAASP-PMC7261172/PMC7261172/gkaa278fig3.jpg",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/oa_package/local-DBAASP-PMC7261172/PMC7261172/gkaa278fig4.jpg",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/oa_package/local-DBAASP-PMC7261172/PMC7261172/gkaa278fig5.jpg",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/database/database_source_manifest.json",
+    "paper_packets/doi__10.1093_nar_gkaa278/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1093_nar_gkaa278/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1093_nar_gkaa278/database/linked_literature_records.jsonl"
+  ],
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-001-beta-clamp-binding",
+      "claim_text": "RWLVK-containing APIM peptides directly interact with the E. coli beta-clamp binding pocket; RALVK/RWLK/R11 show weaker or no binding in the local assays.",
+      "entity_scope": "APIM peptide variants RWLVK, RFSLK, RALVK, RWLK and R11 controls",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "microscale thermophoresis",
+        "surface plasmon resonance",
+        "NMR spectroscopy",
+        "structural modeling"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=23:APIM-peptides interact with the β-clamp; xml:fig=2; supplementary_text:Supplementary Figure S2",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Binding measurements support beta-clamp interaction but do not alone quantify antibacterial MIC values; MIC rows are kept in activity_toxicity_evidence.json."
+    },
+    {
+      "claim_id": "mech-002-dna-replication-inhibition",
+      "claim_text": "RWLVK* inhibits DNA replication in E. coli MG1655 in a concentration-dependent flow-cytometry run-out assay, while R11 does not show the same replication effect at the tested concentrations.",
+      "entity_scope": "RWLVK* and R11 in E. coli MG1655",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "flow cytometry DNA-content replication/run-out assay"
+      ],
+      "source_locator": {
+        "locator": "xml:sec=24:APIM-peptides inhibit DNA replication; xml:fig=3",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Figure 3 is used for mechanism classification; exact histogram bin values are not converted into activity rows."
+    },
+    {
+      "claim_id": "mech-003-tls-mutagenesis-reduction",
+      "claim_text": "APIM peptides reduce RifR/GenR mutation-frequency readouts consistent with translesion-synthesis inhibition, especially for RWLVK/RFSLK variants.",
+      "entity_scope": "RWLVK, RWLVK*, RFSLK, RALVK, RWLK and R11 in E. coli/S. epidermidis assays",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "rifampicin-resistance mutagenicity assay",
+        "gentamicin-resistance mutation-frequency assay"
+      ],
+      "source_locator": {
+        "locator": "xml:table=4; xml:fig=4; xml:sec=25:APIM-peptides strongly inhibit mutagenesis",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Mutation-frequency records are mechanism/anti-resistance evidence, not MIC rows; raw Table 2 values are not promoted as antimicrobial potency endpoints."
+    },
+    {
+      "claim_id": "mech-004-in-vivo-activity-context",
+      "claim_text": "Topical RFSLK APIM peptide reduces MRSA 43484 burden in a mouse superficial skin infection model without detected local toxicity in the paper report.",
+      "entity_scope": "RFSLK APIM peptide in MRSA 43484 skin infection model",
+      "evidence_class": "in_vivo_activity_context",
+      "source_locator": {
+        "locator": "xml:sec=27:In vivo proof of concept; xml:fig=5",
+        "source_path": "source/paper.xml"
+      },
+      "limitations": "Exact CFU values are figure-only and were not manually digitized; the record is retained as contextual in vivo efficacy evidence, not as a row-level MIC/toxicity value."
+    }
+  ]
+}

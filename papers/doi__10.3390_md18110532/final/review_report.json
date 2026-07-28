@@ -1,0 +1,97 @@
+{
+  "paper_id": "doi__10.3390_md18110532",
+  "reviewed_at": "2026-05-09T12:36:22Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Local XML/PDF/OA package, supplementary PDF text index, and linked DBAASP snapshots were sufficient for worker-4/6 adjudication; no external source is required for the closed ticket."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_md18110532/handoff_context.json",
+    "paper_packets/doi__10.3390_md18110532/packet_manifest.json",
+    "paper_packets/doi__10.3390_md18110532/locators/locator_index.json",
+    "paper_packets/doi__10.3390_md18110532/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_md18110532/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_md18110532/analysis/analysis_status.json",
+    "papers/doi__10.3390_md18110532/source/paper.xml",
+    "papers/doi__10.3390_md18110532/source/paper.pdf",
+    "paper_packets/doi__10.3390_md18110532/extracted/pdf_text/marinedrugs-18-00532.txt",
+    "paper_packets/doi__10.3390_md18110532/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_md18110532/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_md18110532/extracted/supplementary_text/marinedrugs-18-00532-s001.txt",
+    "paper_packets/doi__10.3390_md18110532/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_md18110532/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_md18110532/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_md18110532/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_md18110532/database/linked_sequence_records.jsonl",
+    "papers/doi__10.3390_md18110532/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_md18110532/final/database_record_verification.json",
+    "papers/doi__10.3390_md18110532/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_md18110532/final/review_report.json",
+    "papers/doi__10.3390_md18110532/work/review/quality_feedback.json"
+  ],
+  "tools_attempted": [
+    "jq JSON artifact inspection",
+    "rg source text search over XML/PDF/supplement text",
+    "sed PDF text windows around activity and methods sections",
+    "xml.etree.ElementTree table extraction from paper.xml",
+    "JSONL row reconciliation for DBAASP linked assay/experiment/literature rows"
+  ],
+  "semantic_quality_checks": {
+    "activity_records": 62,
+    "database_record_audits": 180,
+    "database_status_summary": {
+      "source_verified": 172,
+      "source_conflict": 8
+    },
+    "mechanism_claims": 2,
+    "open_rework_targets": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Source review verifies compound identity, MIC/cytotoxicity values, and literature traceability for supported DBAASP rows; only staphylococcal target label granularity remains as preserved source_conflict, not a blocker.",
+    "layer_2_activity_toxicity": "Final activity/toxicity evidence now captures all Table 3 MIC cells, the ciprofloxacin control, and the source cytotoxicity threshold summary; the prior V. parahemolyticus/HC50 parser error is corrected in final adjudication.",
+    "layer_3_mechanism": "The final ontology downgrades automated mechanism hints to phenotypic/SAR context because no direct antimicrobial mechanism assay is locally reported.",
+    "worker_6_gate": "The open rework request is closed by this source-reviewed repair; no blocking or major QC failure remains after bounded local source recovery."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "staphylococcus_target_label_conflict_preserved",
+      "owner_worker": "worker-4",
+      "evidence_context": "DBAASP rows use Staphylococcus aureus where Table 3 reports staphylococcal columns as MRCNS and MRSA; rows remain source_conflict with matched MRSA-value context rather than being silently normalized."
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "owner_worker": "worker-4",
+      "evidence_context": "No linked_sequence_records rows are present; cyclic-tripeptide identity is supported from paper names/structures and database peptide names."
+    },
+    {
+      "caution_code": "no_direct_mechanism_assay",
+      "owner_worker": "worker-6",
+      "evidence_context": "Mechanism layer is limited to phenotypic MIC and SAR context."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Worker-4/6 re-review closed rwk-complete-test-0001 after source-reviewed database reconciliation and final adjudication. The paper is publication-grade with explicit nonblocking cautions for target-label granularity, absent linked sequence rows, and no direct mechanism assay."
+}

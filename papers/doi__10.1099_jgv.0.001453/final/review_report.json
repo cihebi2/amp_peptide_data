@@ -1,0 +1,81 @@
+{
+  "paper_id": "doi__10.1099_jgv.0.001453",
+  "reviewed_at": "2026-06-20T13:18:42Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf_text",
+    "oa_package_manifest",
+    "supplementary_assets",
+    "packet_database_jsonl",
+    "prior_final_packet_artifacts",
+    "paper_pdf",
+    "oa_package",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Primary XML/PDF text and OA package are sufficient for recovered activity rows; supplementary locators are HTML landing/indexed-only assets with zero structured supplementary tables, so they do not add recoverable rows."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1099_jgv.0.001453/handoff_context.json",
+    "papers/doi__10.1099_jgv.0.001453/source/paper.xml",
+    "paper_packets/doi__10.1099_jgv.0.001453/extracted/pdf_text/jgv-101-925.txt",
+    "paper_packets/doi__10.1099_jgv.0.001453/extracted/figure_captions.json",
+    "paper_packets/doi__10.1099_jgv.0.001453/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1099_jgv.0.001453/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1099_jgv.0.001453/extracted/supplementary_text.jsonl",
+    "paper_packets/doi__10.1099_jgv.0.001453/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1099_jgv.0.001453/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1099_jgv.0.001453/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.1099_jgv.0.001453/database/linked_literature_records.jsonl"
+  ],
+  "semantic_quality_checks": {
+    "activity_rows_parsed": 10,
+    "activity_rows_source_located": true,
+    "activity_rows_database_only": 0,
+    "database_snapshots": {
+      "linked_assay_records": 2,
+      "linked_dramp_activity_records": 4,
+      "linked_experiment_records": 6,
+      "linked_literature_records": 2,
+      "linked_sequence_records": 0
+    },
+    "database_conflicts_preserved": true,
+    "source_verified_records_require_primary_locator": true,
+    "mechanism_claims": 3,
+    "mechanism_overclaim_checked": true,
+    "supplementary_tables": 0
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP/DRAMP alisporivir activity rows were rechecked against primary Fig. 6 prose. The values match this paper for alisporivir EC50, but endpoint labels (database IC50 REP vs primary EC50), merged DRAMP external-reference claims, and absent primary sequence/modification evidence remain curated source_conflict cautions. Literature DOI/PMID/PMCID links are source_verified only for citation traceability.",
+    "layer_2_activity_toxicity": "Recovered source-backed EC50/CC50/qualitative PEG-IFN-alpha activity rows from the primary PDF/XML Fig. 6 assay text. No antimicrobial MIC/MBC/hemolysis table exists in this paper; zero-row parser output was repaired with manual source review.",
+    "layer_3_mechanism": "Mechanism claims were rewritten as indirect/contextual phenotypic evidence. The prior automated membrane/nucleic-acid/protein-synthesis placeholders were not supported as direct mechanism evidence for this paper."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_identity_conflict_preserved",
+      "evidence_context": "Alisporivir activity values are source-backed, but primary paper does not provide the database sequence XxXVXAaXXXX or modification identity and database endpoint labels differ from primary EC50 wording."
+    },
+    {
+      "caution_code": "dramp_merged_external_reference_claims",
+      "evidence_context": "DRAMP rows include Ref.32376613 values and CC50>20 µM not attributable to this DOI; this DOI supports EC50 4.9±1.3/4.3±1.0 µM and CC50>100 µM."
+    },
+    {
+      "caution_code": "supplementary_landing_pages_no_structured_tables",
+      "evidence_context": "Six supplementary locators are indexed-only HTML landing pages locally; supplementary_tables.json has zero tables."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "adjudication_summary": "Owner re-review completed source-backed repair for doi__10.1099_jgv.0.001453: activity/toxicity rows are recovered from Fig. 6 prose, alisporivir database rows are adjudicated with conflicts preserved, unsupported mechanism placeholders are replaced with non-overclaim contextual claims, and the prior rework ticket is closed with cautions rather than hidden."
+}

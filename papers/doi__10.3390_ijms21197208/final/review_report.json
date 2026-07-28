@@ -1,0 +1,110 @@
+{
+  "paper_id": "doi__10.3390_ijms21197208",
+  "reviewed_at": "2026-05-08T17:35:57Z",
+  "updated_at": "2026-05-08T17:38:55Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "validator_contract_passed": true,
+  "publication_grade": true,
+  "review_status": "accepted_with_cautions",
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded re-review opened the primary XML/PDF, packet extraction surfaces, local supplement text, OA package locators, and linked database snapshots. Remaining limitations are preserved as cautions rather than open blocking tickets."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_ijms21197208/handoff_context.json",
+    "paper_packets/doi__10.3390_ijms21197208/packet_manifest.json",
+    "paper_packets/doi__10.3390_ijms21197208/locators/locator_index.json",
+    "paper_packets/doi__10.3390_ijms21197208/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_ijms21197208/extraction/extraction_quality_report.json",
+    "papers/doi__10.3390_ijms21197208/source/paper.xml",
+    "papers/doi__10.3390_ijms21197208/source/paper.pdf",
+    "paper_packets/doi__10.3390_ijms21197208/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_ijms21197208/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_ijms21197208/extracted/pdf_text/ijms-21-07208.txt",
+    "paper_packets/doi__10.3390_ijms21197208/extracted/supplementary_text/ijms-21-07208-s001.txt",
+    "paper_packets/doi__10.3390_ijms21197208/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_ijms21197208/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21197208/database/linked_dramp_activity_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21197208/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_ijms21197208/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv",
+    "paper_packets/doi__10.3390_ijms21197208/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.3390_ijms21197208/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.3390_ijms21197208/analysis/database_record_audit.json",
+    "papers/doi__10.3390_ijms21197208/final/activity_toxicity_evidence.json",
+    "papers/doi__10.3390_ijms21197208/final/mechanism_ontology_record.json",
+    "papers/doi__10.3390_ijms21197208/final/database_record_verification.json"
+  ],
+  "adjudication_summary": "Worker-2 rebuilt all primary XML Tables 2-5 core activity/toxicity rows, worker-5 replaced automated mechanism placeholders with source-classified direct, phenotype, and computational mechanism claims, and worker-6 accepts with cautions because database-level conflicts remain explicitly preserved rather than hidden.",
+  "summary": "Publication-grade with cautions after bounded source re-review: activity/toxicity rows now cover the 378 core XML-supported rows, mechanism ontology is source-adjudicated, and database conflicts remain transparent caution findings.",
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_conflict": 306,
+      "source_verified": 50
+    },
+    "database_record_count": 356,
+    "source_activity_expected_counts": {
+      "MIC": 112,
+      "MBEC": 112,
+      "MBIC": 112,
+      "HC50_IC50": 42,
+      "total_core_rows_tables_2_to_5": 378
+    },
+    "final_activity_record_count": 378,
+    "activity_gap_count_estimate": 0,
+    "mechanism_claim_count": 7,
+    "mechanism_claims_pending_review": false,
+    "mechanism_evidence_classes": {
+      "direct_mechanism": 5,
+      "computational_only": 1,
+      "phenotype_supported": 1
+    },
+    "supplementary_checked": "Supplement text was checked for Table S1 and Figures S3-S10; Table S1 is retained as selectivity-index context and supplement figures support mechanism locator coverage where cited."
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Accepted with cautions. DRAMP rows with explicit name/sequence/source support remain source_verified; DBAASP/CAMP rows with blank, partial, or undefined database naming/modification fields remain source_conflict with conflict context preserved.",
+    "layer_2_activity_toxicity": "Accepted. Worker-2 rebuilt Tables 2-4 as 112 MIC, 112 MBEC, and 112 MBIC peptide-organism rows and Table 5 as 42 HC50/IC50 toxicity rows; group means, p-values, and SI were excluded from the core row count.",
+    "layer_3_mechanism": "Accepted with ontology cautions. Direct permeabilization/depolarization/microscopy evidence is scoped to selected peptides and organisms, CG MD is computational_only, and activity tables are phenotype_supported only.",
+    "layer_6_adjudication": "Accepted_with_cautions after worker-2/5 repair and strict gate rerun; no blocking or major rework targets remain open."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_conflicts_preserved",
+      "evidence_context": "DBAASP/CAMP rows can be linked to source sequence/activity patterns, but blank/undefined local database naming or non-row-normalized text prevents promotion of every row to source_verified."
+    },
+    {
+      "caution_code": "mechanism_scope_limited_to_selected_peptides",
+      "evidence_context": "Direct membrane assays and microscopy are for L2/C2/L4/C4 and selected organisms/cells; they do not prove direct mechanism for every L1-C7 table entry."
+    },
+    {
+      "caution_code": "md_not_direct_experimental_mechanism",
+      "evidence_context": "Coarse-grained MD membrane binding/local perturbation evidence is retained as computational_only and not promoted to direct mechanism."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "last_gate_results": {
+    "semantic_gate_report": "reports/doi__10.3390_ijms21197208.codex_worker256_postrecord.semantic_gate.json",
+    "semantic_publication_grade_pass": true,
+    "semantic_issue_codes": [],
+    "semantic_issue_count": 0,
+    "publication_quality_report": "reports/doi__10.3390_ijms21197208.codex_worker256_postrecord.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "interpretation": "Strict semantic and publication-quality gates passed after final artifact/status recording."
+  }
+}

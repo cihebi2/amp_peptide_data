@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://batch4.local/schemas/chat_message_record.schema.json",
+  "title": "Miaobi Chat Message Record",
+  "type": "object",
+  "required": ["record_type", "workflow_id", "paper_id", "role", "message", "created_at"],
+  "additionalProperties": true,
+  "properties": {
+    "record_type": { "const": "chat_message" },
+    "workflow_id": { "type": "string" },
+    "paper_id": { "type": "string" },
+    "state": { "type": "string" },
+    "role": { "type": "string", "enum": ["system", "agent", "user", "reviewer"] },
+    "message": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

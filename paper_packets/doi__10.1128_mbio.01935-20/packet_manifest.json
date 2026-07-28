@@ -1,0 +1,76 @@
+{
+  "analysis_queue_status": "analysis_blocked_after_best_effort",
+  "database_snapshot_inputs": {
+    "database_source_manifest": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/database/database_source_manifest.json",
+    "row_counts": {
+      "linked_assay_records": 49,
+      "linked_dramp_activity_records": 12,
+      "linked_experiment_records": 64,
+      "linked_literature_records": 6,
+      "linked_sequence_records": 0
+    }
+  },
+  "doi": "10.1128/mbio.01935-20",
+  "journal": "mBio",
+  "known_missing_or_blocked_materials": [
+    {
+      "gap_code": "supplementary_fig_s1_graph_exact_cytotoxicity_values_not_table_supported",
+      "source_paths_checked": [
+        "rework_context/doi__10.1128_mbio.01935-20/handoff_context.json",
+        "papers/doi__10.1128_mbio.01935-20/source/paper.xml",
+        "papers/doi__10.1128_mbio.01935-20/source/paper.pdf",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/pdf_text/mBio.01935-20.txt",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/xml_sections.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/figure_captions.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original/local-DRAMP-mbio01935-20_Supp_1_seq8.html.zip",
+        "paper_packets/doi__10.1128_mbio.01935-20/extracted/oa_package/local-DBAASP-PMC7587434/PMC7587434/mBio.01935-20-sf001.tif",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1128_mbio.01935-20/database/linked_literature_records.jsonl"
+      ],
+      "tools_attempted": [
+        "unzip -l/-p on supplementary HTML zip",
+        "rg over source XML, extracted XML/PDF text, supplementary_text.jsonl, figure captions, and database JSONL rows",
+        "file inventory for figure/TIFF assets",
+        "python stdlib TIFF parser decoded the uncompressed Fig. S1 TIFF to /tmp/mbio01935_sf001.png for diagnostic viewing",
+        "visual inspection of decoded Fig. S1 panels A-C",
+        "tesseract availability check (not installed)",
+        "PaddleOCR import availability check",
+        "PIL/tifffile/ImageMagick/ffmpeg/tiffinfo/tiff2rgba availability checks"
+      ],
+      "why_unrecoverable": "Fig. S1 TIFF is present and was decoded/visually inspected, but it is a plotted graph without machine-readable numeric labels or a source table. Local XML/PDF/supplement text provides methods/caption context only, and available local OCR/table tooling cannot recover exact percentage values for every linked database cytotoxicity row.",
+      "impact": "Exact cytotoxicity database rows remain source_conflict; publication-grade database reconciliation stays blocked unless a figure-digitization/manual domain pass can source-back the exact values or the controller explicitly accepts this exact-value gap as unrecoverable.",
+      "owner_worker": "worker-3",
+      "blocks_publication_grade": true,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "locator_index_path": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/locators/locator_index.json",
+  "material_queue_status": "material_extracted_with_gaps",
+  "open_rework_ticket_ids": [
+    "rwk-codex-rereview-20260506-0003"
+  ],
+  "packet_version": "v001-complete-message-test",
+  "paper_id": "doi__10.1128_mbio.01935-20",
+  "pmcid": "PMC7587434",
+  "pmid": "33082259",
+  "raw_files": {
+    "oa_package": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/raw/oa_package",
+    "paper_pdf": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/raw/paper.pdf",
+    "paper_xml": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/raw/paper.xml",
+    "supplementary_original": "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.1128_mbio.01935-20/raw/supplementary_original"
+  },
+  "source_roots": [
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1128_mbio.01935-20",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+  ],
+  "test_scope": "real complete message-transfer workflow test; terminal status is needs_targeted_rework, not publication-grade acceptance",
+  "title": "Inhibition of Coronavirus Entry In Vitro and Ex Vivo by a Lipid-Conjugated Peptide Derived from the SARS-CoV-2 Spike Glycoprotein HRC Domain.",
+  "updated_at": "2026-05-05T22:19:52Z",
+  "year": "2020"
+}

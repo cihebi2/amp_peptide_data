@@ -1,0 +1,52 @@
+{
+  "cleared_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "generated_at": "2026-05-07T17:45:02Z",
+  "issue_count": 0,
+  "paper_id": "doi__10.3390_antibiotics9020066",
+  "qc_failure_reasons": [],
+  "rework_context_packet_required": false,
+  "rework_targets": [],
+  "review_notes": "Prior worker-4/6 blockers were resolved by reopening source artifacts and preserving figure-only database exact-point uncertainty as nonblocking cautions.",
+  "status": "cleared_after_worker4_worker6_source_review",
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "no_separate_supplementary_assets_in_local_packet",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/archive_manifest.json"
+      ],
+      "tools_attempted": [
+        "find",
+        "jq",
+        "archive_manifest review"
+      ],
+      "why_unrecoverable": "Both local OA packages contain XML/PDF/figures but no separate supplementary data file; no supplement-derived value is required to resolve the owner-layer blocker.",
+      "impact": "Nonblocking; source review relies on XML/PDF text, figures, and database snapshots.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "exact_toxicity_graph_points_not_tabulated",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/pdf_text/antibiotics-09-00066.txt",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/figure_captions.json",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/oa_package/local-APD6-pmc_package/PMC7168153/antibiotics-09-00066-g010.jpg",
+        "paper_packets/doi__10.3390_antibiotics9020066/extracted/oa_package/local-APD6-pmc_package/PMC7168153/antibiotics-09-00066-g011.jpg"
+      ],
+      "tools_attempted": [
+        "sed",
+        "rg",
+        "file/identify",
+        "pre-extracted pdftotext review"
+      ],
+      "why_unrecoverable": "The paper text provides toxicity ranges/qualitative high-concentration statements and figure images, but no table of exact Figure 10/11 point values. Exact DBAASP point values are therefore preserved as source_conflict cautions, not fabricated as clean source-verified rows.",
+      "impact": "Nonblocking because source-supported toxicity context is recorded and database exact-point uncertainty is explicit.",
+      "owner_worker": "worker-4 + worker-6",
+      "blocks_publication_grade": false
+    }
+  ]
+}

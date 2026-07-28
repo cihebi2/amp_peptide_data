@@ -1,0 +1,131 @@
+{
+  "paper_id": "doi__10.1021_acsomega.1c01854",
+  "reviewed_at": "2026-05-02T08:14:59Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Bounded owner-layer re-review opened local NXML/PDF/SI PDF/OA images and linked DBAASP rows; no blocking local material gap remains for worker-4/6 adjudication."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.1021_acsomega.1c01854/handoff_context.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/packet_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/locators/locator_index.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extraction/extraction_status.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/analysis/mechanism_evidence.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/analysis/adjudication_report.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/oa_package/local-DBAASP-PMC8387982/PMC8387982/ao1c01854.nxml",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/oa_package/local-DBAASP-PMC8387982/PMC8387982/ao1c01854.pdf",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/pdf_text/ao1c01854.txt",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/oa_package/local-DBAASP-PMC8387982/PMC8387982/ao1c01854_si_001.pdf",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/pdf_text/ao1c01854_si_001.txt",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/oa_package/local-DBAASP-PMC8387982/PMC8387982/ao1c01854_0002.jpg",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/archive_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/supplementary_index.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/database/database_source_manifest.json",
+    "paper_packets/doi__10.1021_acsomega.1c01854/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.1c01854/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1021_acsomega.1c01854/database/linked_literature_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/five_database_sequence_catalog.csv"
+  ],
+  "semantic_quality_checks": [
+    {
+      "check": "activity_toxicity_core_fields",
+      "result": "pass",
+      "evidence": "256 Table 1/Table 2 rows have entity, endpoint, raw value, unit/index, target, assay context, and locator."
+    },
+    {
+      "check": "database_record_status_and_locators",
+      "result": "pass_with_cautions",
+      "evidence": "448 linked DBAASP rows reviewed; status_summary={'source_verified': 118, 'source_conflict': 330}."
+    },
+    {
+      "check": "database_conflict_preservation",
+      "result": "pass_with_cautions",
+      "evidence": "Generic/incomplete DBAASP peptide names for lipidated/dendrimerized analogues remain source_conflict rather than being smoothed to source_verified."
+    },
+    {
+      "check": "supplementary_source_recovery",
+      "result": "pass_with_scope_guard",
+      "evidence": "OA package SI PDF was opened; Table S1 supports MW/purity, while SI figure plots do not add exact table values beyond primary Table 1."
+    },
+    {
+      "check": "mechanism_scope",
+      "result": "pass_with_scope_guard",
+      "evidence": "No direct_mechanism claim is made; mechanism claims are bounded to membrane-directed author interpretation and CD context."
+    },
+    {
+      "check": "open_rework_targets",
+      "result": "pass",
+      "evidence": "Ticket rwk-complete-test-0001 is resolved by source-reviewed worker-4/6 artifacts; final review has no rework_targets."
+    }
+  ],
+  "per_layer_decision_rationale": {
+    "material_packet": "Material packet is sufficient for this owner-layer repair: OA NXML/PDF/SI PDF/package images and linked DBAASP rows are present; no material queue reset was run.",
+    "validator_contract": "Structural validator contract was already ready; this pass repairs semantic worker-4/6 evidence rather than relying on validator success.",
+    "database_layer_worker_4": "All linked DBAASP assay/experiment/literature rows were reconciled against Table 1/Table 2, Figure 1, article metadata, and sequence catalog rows. Generic/incomplete database names are preserved as source_conflict.",
+    "activity_toxicity_final": "Worker-6 final activity/toxicity was rebuilt from source tables to preserve Table 1 MIC/MHC/IC50 and Table 2 FIC values with raw units/indexes.",
+    "mechanism_layer": "Mechanism output is restricted to indirect membrane/structure-activity interpretation; no direct mechanism is asserted.",
+    "adjudication_layer_worker_6": "The previous framework-test blocker is closed because source-reviewed final artifacts now exist and rework_targets are empty."
+  },
+  "caution_findings": [
+    {
+      "caution_code": "database_name_conflicts_preserved",
+      "evidence_context": "Many DBAASP linked assay rows carry generic peptide names while the primary paper distinguishes A-C4/A-C6/A-C8/A-C10/A-C12, K-2A lipidated variants, and 2K-3A lipidated variants; these rows remain source_conflict with matching primary activity values."
+    },
+    {
+      "caution_code": "linked_sequence_records_absent",
+      "evidence_context": "The packet has no linked_sequence_records; Figure 1 image and the database sequence catalog were used for sequence/structure context, and missing database sequence fields for branched/lipidated variants are not normalized."
+    },
+    {
+      "caution_code": "no_direct_mechanism_assay",
+      "evidence_context": "The paper supports membrane-directed interpretation and CD structure context but no direct membrane permeabilization or target-binding assay."
+    },
+    {
+      "caution_code": "material_packet_layer_unchanged",
+      "evidence_context": "Material packet status remains material_extracted_with_gaps; owner re-review reopened OA NXML/PDF/SI/package/database materials without rerunning bootstrap."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "unrecoverable_material_gaps": [],
+  "adjudication_summary": "Source-reviewed worker-4/6 re-review closed rwk-complete-test-0001 with cautions preserved: primary Table 1/Table 2 values are recoverable and database assay values match them, but generic DBAASP names and absent linked sequence rows remain explicit source_conflict cautions rather than hidden normalization.",
+  "gate_results": {
+    "gate_decision": "passed_after_source_reviewed_worker_4_6_repair",
+    "reviewed_at": "2026-05-02T08:18:28Z",
+    "semantic_report": "reports/doi__10.1021_acsomega.1c01854.semantic_gate.json",
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "semantic_issue_count": 0,
+    "semantic_issue_codes": [],
+    "publication_quality_report": "reports/doi__10.1021_acsomega.1c01854.publication_quality.json",
+    "publication_quality_pass": true,
+    "publication_risk_counts": {},
+    "publication_review_status": {
+      "accepted_with_cautions": 1
+    },
+    "publication_counts": {
+      "activity_records": 256,
+      "mechanism_claims": 2
+    }
+  }
+}

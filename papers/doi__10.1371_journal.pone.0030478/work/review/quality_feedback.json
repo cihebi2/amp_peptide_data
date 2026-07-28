@@ -1,0 +1,180 @@
+{
+  "bounded_rework_result": {
+    "attempt_count": 1,
+    "max_rework_attempts": 3,
+    "note": "Controller stopped this paper and advanced the queue instead of retrying indefinitely.",
+    "result_reason_code": "obtainable_only_source_gap_documented",
+    "result_status": "blocked_rework_cap_unresolved",
+    "status": "blocked_after_best_effort",
+    "updated_at": "2026-05-03T01:11:35Z"
+  },
+  "generated_at": "2026-05-03T01:05:37Z",
+  "issue_count": 2,
+  "paper_id": "doi__10.1371_journal.pone.0030478",
+  "post_repair_gate_results": {
+    "interpretation": "After worker-2/4/6 repair, strict gates fail only because the paper remains intentionally non-accepted/open-rework due to unrecoverable primary activity support gaps.",
+    "publication_quality": {
+      "path": "reports/doi__10.1371_journal.pone.0030478.codex_worker246_20260503.publication_quality.json",
+      "publication_grade_pass": false,
+      "review_status": {
+        "blocked_missing_primary_material": 1
+      },
+      "risk_counts": {
+        "open_rework_targets": 1
+      }
+    },
+    "semantic_gate": {
+      "issue_codes": [
+        "review_status_not_publication_grade",
+        "publication_grade_not_true"
+      ],
+      "issue_count": 2,
+      "path": "reports/doi__10.1371_journal.pone.0030478.codex_worker246_20260503.semantic_gate.json",
+      "publication_grade_fail_count": 1,
+      "publication_grade_pass_count": 0
+    },
+    "updated_at": "2026-05-03T01:08:36Z"
+  },
+  "qc_failure_reasons": [
+    {
+      "code": "primary_activity_values_absent_from_local_paper",
+      "owner_worker": "worker-2+worker-4",
+      "reason": "Local XML/PDF/DOCX materials do not contain the exact MIC/toxicity/hemolysis values carried by linked database rows; those values are retained only as database-only evidence.",
+      "severity": "blocking"
+    },
+    {
+      "code": "database_activity_values_database_only_no_primary_source",
+      "owner_worker": "worker-4+worker-6",
+      "reason": "DRAMP/dbAMP activity rows cite this paper alongside another experimental source, but this paper only supports sequence/classification context for Bactridin entries, not the row-level assay values.",
+      "severity": "blocking"
+    },
+    {
+      "artifact_path": "/root/work/抗菌肽/数据库/batch/4-team/papers/doi__10.1371_journal.pone.0030478/work/review/quality_feedback.json",
+      "code": "obtainable_only_source_gap_documented",
+      "owner_worker": "worker-6",
+      "reason": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced.",
+      "severity": "blocking"
+    }
+  ],
+  "rework_context_packet_required": false,
+  "rework_targets": [
+    {
+      "artifact_path": "papers/doi__10.1371_journal.pone.0030478/final/database_record_verification.json",
+      "blocks": [
+        "publication_grade_ready",
+        "final_approval"
+      ],
+      "created_at": "2026-05-03T01:05:37Z",
+      "failing_object": "DRAMP03693/DRAMP03694 and dbAMP_04976/dbAMP_04977 activity values",
+      "failure_code": "database_activity_values_database_only_no_primary_source",
+      "layer": "database_activity_adjudication",
+      "omission_code": "primary_activity_values_absent_from_local_paper",
+      "paper_id": "doi__10.1371_journal.pone.0030478",
+      "reason": "Bounded local source review found sequence/classification context for Bactridin rows but no exact primary MIC/toxicity values in the local PLoS One XML/PDF/DOCX/source package.",
+      "requested_by": "codex_worker_2_4_6_rereview",
+      "required_action": "No more local extraction loop is requested unless new primary source material is added. Keep database-only MIC/toxicity rows preserved and leave the paper non-accepted under obtainable-only mode.",
+      "severity": "blocking",
+      "source_paths_to_check": [
+        "paper_packets/doi__10.1371_journal.pone.0030478/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extraction/extraction_status.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/paper.pdf",
+        "papers/doi__10.1371_journal.pone.0030478/source/paper.xml",
+        "papers/doi__10.1371_journal.pone.0030478/source/paper.pdf",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/pdf_text/pone.0030478.txt",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/supplementary_original/local-DRAMP-pone.0030478.s001.docx",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/oa_package/local-DRAMP-22355312/PMC3280238/pone.0030478.s001.docx",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/database_source_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_literature_records.jsonl"
+      ],
+      "target_queue": "analysis",
+      "ticket_id": "rwk-codex-20260503-database-only-primary-gap",
+      "unrecoverable_material_gap_code": "primary_activity_values_absent_from_local_paper",
+      "worker": "worker-4"
+    }
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "primary_activity_values_absent_from_local_paper",
+      "impact": "Exact activity/toxicity values can be preserved as database-only provenance, but this paper cannot be publication-grade accepted as a primary source for those assay values.",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-2+worker-4+worker-6",
+      "source_paths_checked": [
+        "paper_packets/doi__10.1371_journal.pone.0030478/packet_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/locators/locator_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extraction/extraction_status.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extraction/extraction_quality_report.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/paper.xml",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/paper.pdf",
+        "papers/doi__10.1371_journal.pone.0030478/source/paper.xml",
+        "papers/doi__10.1371_journal.pone.0030478/source/paper.pdf",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/pdf_text/pone.0030478.txt",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/pdf_text/landing-1.txt",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/supplementary_index.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/supplementary_text.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw/supplementary_original/local-DRAMP-pone.0030478.s001.docx",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted/oa_package/local-DRAMP-22355312/PMC3280238/pone.0030478.s001.docx",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/database_source_manifest.json",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_dramp_activity_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_experiment_records.jsonl",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database/linked_literature_records.jsonl"
+      ],
+      "tools_attempted": [
+        "jq for packet/final/database JSON review",
+        "rg over XML/PDF text/supplementary text for MIC/activity/toxicity terms",
+        "pdftotext-derived packet PDF text review",
+        "Python OOXML table extraction from local DOCX supplementary Table S1",
+        "Python XML table extraction from source paper.xml",
+        "file type check over supplementary landing assets"
+      ],
+      "why_unrecoverable": "Local XML/PDF text and the only local DOCX supplement contain toxin mass/sequence/classification context but no MIC, hemolysis, cytotoxicity, or antimicrobial assay value table for the linked Bactridin database rows; the exact MIC/toxicity values are only present in linked database snapshots that also cite another primary Toxicon record."
+    },
+    {
+      "blocks_publication_grade": true,
+      "gap_code": "obtainable_only_source_gap_documented",
+      "impact": "paper remains non-publication-grade and must stay blocked or await external/manual source recovery",
+      "next_action": "record_and_continue",
+      "owner_worker": "worker-6",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.1371_journal.pone.0030478",
+        "paper_packets/doi__10.1371_journal.pone.0030478/database",
+        "paper_packets/doi__10.1371_journal.pone.0030478/extracted",
+        "paper_packets/doi__10.1371_journal.pone.0030478/locators",
+        "paper_packets/doi__10.1371_journal.pone.0030478/raw",
+        "papers/doi__10.1371_journal.pone.0030478/final",
+        "papers/doi__10.1371_journal.pone.0030478/source",
+        "papers/doi__10.1371_journal.pone.0030478/work",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output"
+      ],
+      "tools_attempted": [
+        "codex_cli_owner_worker_attempts",
+        "semantic_three_layer_gate.py",
+        "check_three_layer_publication_quality.py",
+        "miaobi_message_bridge.py validate"
+      ],
+      "why_unrecoverable": "Obtainable-only mode: local source-supported evidence was preserved, but the remaining blocker is documented as not recoverable from local materials; controller marked the paper blocked_after_best_effort and advanced."
+    }
+  ],
+  "verification": {
+    "gates_rerun_after_repair": true,
+    "publication_quality_expected_to_fail_open_rework_targets": true,
+    "publication_quality_report": "reports/doi__10.1371_journal.pone.0030478.codex_worker246_20260503.publication_quality.json",
+    "publication_risk_counts_after_repair": {
+      "open_rework_targets": 1
+    },
+    "semantic_gate_expected_to_fail_until_nonaccepted_status_or_open_ticket_is cleared": true,
+    "semantic_gate_report": "reports/doi__10.1371_journal.pone.0030478.codex_worker246_20260503.semantic_gate.json",
+    "semantic_issue_codes_after_repair": [
+      "review_status_not_publication_grade",
+      "publication_grade_not_true"
+    ]
+  }
+}

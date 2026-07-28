@@ -1,0 +1,170 @@
+{
+  "paper_id": "doi__10.3390_antibiotics12071102",
+  "doi": "10.3390/antibiotics12071102",
+  "pmid": "37508198",
+  "pmcid": "PMC10376367",
+  "generated_at": "2026-05-07T15:49:02Z",
+  "reviewed_at": "2026-05-07T15:49:02Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": [
+    "paper_xml",
+    "paper_pdf",
+    "oa_package",
+    "supplementary_assets",
+    "merged_database_rows"
+  ],
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Material packet status remains material_extracted_with_gaps from initial extraction, but XML/PDF/OA package/supplement ZIP/database rows needed for worker-4/6 rework were reopened and adjudicated."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_antibiotics12071102/handoff_context.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/packet_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/locators/locator_index.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/raw/paper.xml",
+    "paper_packets/doi__10.3390_antibiotics12071102/raw/paper.pdf",
+    "papers/doi__10.3390_antibiotics12071102/source/paper.xml",
+    "papers/doi__10.3390_antibiotics12071102/source/paper.pdf",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/pdf_text/antibiotics-12-01102.txt",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/pdf_tables.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_index.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_tables.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_text.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12071102/supplementary/local-APD6-antibiotics-12-01102-s001.zip",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12071102/supplementary/local-APD6-antibiotics-12-01102-s001.zip!antibiotics-2448978-supplementary-done.pdf",
+    "paper_packets/doi__10.3390_antibiotics12071102/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_antibiotics12071102/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics12071102/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics12071102/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.3390_antibiotics12071102/database/linked_sequence_records.jsonl",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/sequences/all_sequences.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/experiments/all_experimental_records.csv",
+    "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/output/literature/all_literature_records.csv"
+  ],
+  "summary": "Worker-4/6 source-reviewed rework reconciled the linked APD6/DBAASP rows to primary Tables 1, 4, and 5, rebuilt final activity and mechanism evidence from source locators, and closed the prior framework-test rework ticket with cautions preserved.",
+  "adjudication_summary": "Accepted with cautions after bounded worker-4/6 source review; no blocking or major owner-layer rework remains open.",
+  "per_layer_decision_rationale": {
+    "layer_1_database": "DBAASP assay rows matching Table 4/5 values are source_verified except P. aeruginosa strain-mismatch rows; APD6 entry-text rows are preserved as source_conflict because endpoint wording is compressed relative to primary LC50 terminology.",
+    "layer_2_activity_toxicity": "Final activity/toxicity rows use only primary Table 4 MIC and Table 5 LC50 values with raw units, peptide entities, target labels, and locators; ND cells are not converted into activity values.",
+    "layer_3_mechanism": "Mechanism output is bounded to CD/structure/property and phenotypic context; no direct membrane-disruption or molecular-target mechanism is overclaimed.",
+    "supplementary_materials": "The local supplement is a methods PDF; it was opened and does not alter activity, toxicity, sequence, mechanism, or database rows."
+  },
+  "semantic_quality_checks": {
+    "activity_rows_source_reviewed": 26,
+    "database_record_count": 61,
+    "database_status_summary": {
+      "source_verified": 52,
+      "source_conflict": 9
+    },
+    "mechanism_claims_source_reviewed": 3,
+    "open_rework_targets": 0,
+    "unrecoverable_blocking_gap_count": 0,
+    "gate_semantic_issue_count": 0,
+    "publication_quality_risk_counts": {}
+  },
+  "caution_findings": [
+    {
+      "caution_code": "dbaasp_pseudomonas_strain_mismatch_preserved",
+      "severity": "caution",
+      "evidence_context": "Linked DBAASP P. aeruginosa rows use ATCC 9027 while the primary XML Table 4/Methods report ATCC 9072; values are not normalized into source_verified.",
+      "affected_record_count": 6
+    },
+    {
+      "caution_code": "apd6_entry_text_endpoint_wording_conflict",
+      "severity": "caution",
+      "evidence_context": "APD6 entry-text rows are linked to source-verified peptide sequences and activities, but compressed cytotoxicity endpoint wording differs from primary LC50 table terminology.",
+      "affected_record_count": 3
+    },
+    {
+      "caution_code": "supplement_methods_only",
+      "severity": "caution",
+      "evidence_context": "Recovered supplementary ZIP contains a methods PDF only; no supplementary activity/toxicity/database table changes final values."
+    },
+    {
+      "caution_code": "mechanism_context_not_direct_assay",
+      "severity": "caution",
+      "evidence_context": "CD and amphipathic-helix evidence supports membrane-context interpretation, but no direct antimicrobial membrane-disruption assay is reported."
+    }
+  ],
+  "rework_targets": [],
+  "qc_failure_reasons": [],
+  "closed_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "supplementary_zip_contains_methods_pdf_not_extra_activity_tables",
+      "source_paths_checked": [
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12071102/supplementary/local-APD6-antibiotics-12-01102-s001.zip",
+        "/mnt/d/work/抗菌肽/数据库/merged_amp_corpus/landed_assets/papers/doi__10.3390_antibiotics12071102/supplementary/local-APD6-antibiotics-12-01102-s001.zip!antibiotics-2448978-supplementary-done.pdf",
+        "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_index.json",
+        "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_tables.json",
+        "paper_packets/doi__10.3390_antibiotics12071102/extracted/supplementary_text.jsonl"
+      ],
+      "tools_attempted": [
+        "unzip",
+        "file",
+        "pdftotext",
+        "rg"
+      ],
+      "why_unrecoverable": "The local supplementary ZIP contains one two-page methods PDF; it adds purification/synthesis/CD procedural detail but no extra sequence, activity, toxicity, or database table to extract.",
+      "impact": "Supplementary material does not change source-supported activity/database adjudication; methods provenance is retained as a nonblocking review caution.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    },
+    {
+      "gap_code": "database_pseudomonas_atcc_9027_not_primary_supported",
+      "source_paths_checked": [
+        "paper_packets/doi__10.3390_antibiotics12071102/database/linked_assay_records.jsonl",
+        "paper_packets/doi__10.3390_antibiotics12071102/database/linked_experiment_records.jsonl",
+        "papers/doi__10.3390_antibiotics12071102/source/paper.xml",
+        "paper_packets/doi__10.3390_antibiotics12071102/extracted/xml_sections.json"
+      ],
+      "tools_attempted": [
+        "jq",
+        "xml.etree.ElementTree table extraction",
+        "JSONL database row comparison"
+      ],
+      "why_unrecoverable": "Local primary Table 4 and Methods support Pseudomonas aeruginosa ATCC 9072; the linked DBAASP rows carry ATCC 9027 and no local source supports changing the primary strain label.",
+      "impact": "Six linked DBAASP assay/experiment rows remain source_conflict cautions instead of source_verified.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false,
+      "next_action": "record_and_continue"
+    }
+  ],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_count": 0,
+    "publication_grade_ready": true,
+    "semantic_gate_pass": true,
+    "publication_quality_pass": true,
+    "semantic_report": "reports/doi__10.3390_antibiotics12071102.semantic_gate.json",
+    "publication_report": "reports/doi__10.3390_antibiotics12071102.publication_quality.json"
+  },
+  "gate_results": {
+    "semantic_returncode": 0,
+    "semantic_report": "reports/doi__10.3390_antibiotics12071102.semantic_gate.json",
+    "semantic_issue_count": 0,
+    "semantic_publication_grade_pass_count": 1,
+    "semantic_publication_grade_fail_count": 0,
+    "publication_returncode": 0,
+    "publication_report": "reports/doi__10.3390_antibiotics12071102.publication_quality.json",
+    "publication_grade_pass": true,
+    "publication_risk_counts": {},
+    "after_worker_semantic_report": "reports/doi__10.3390_antibiotics12071102.true_rework_queue_attempt_1.after_worker.semantic_gate.json",
+    "after_worker_publication_report": "reports/doi__10.3390_antibiotics12071102.true_rework_queue_attempt_1.after_worker.publication_quality.json"
+  }
+}

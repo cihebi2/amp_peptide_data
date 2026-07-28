@@ -1,0 +1,1 @@
+[{"assertion_index":0,"db_claimed":{"organism":"","endpoint":"Anti-Gram+ & Gram-, Antibiofilm","value":"","peptide":""},"verification_outcome":"cannot_determine","normalization_note":"none","is_database_error":false,"evidence":null,"short_reason":"No concrete peptide, organism, endpoint value, or matching cell is provided for deterministic verification."}]

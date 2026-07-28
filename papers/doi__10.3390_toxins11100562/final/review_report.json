@@ -1,0 +1,115 @@
+{
+  "paper_id": "doi__10.3390_toxins11100562",
+  "reviewed_at": "2026-05-10T16:48:31Z",
+  "review_model": "gpt-5.5",
+  "reasoning_effort": "xhigh",
+  "source_reviewed": true,
+  "review_status": "accepted_with_cautions",
+  "publication_grade": true,
+  "validator_contract_passed": true,
+  "source_review_depth": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "supplementary_pdf_text": true,
+    "linked_database_jsonl": true
+  },
+  "materials_exhausted": {
+    "paper_xml": true,
+    "paper_pdf": true,
+    "oa_package": true,
+    "supplementary_assets": true,
+    "merged_database_rows": true,
+    "note": "Owner-layer rework consumed local XML/NXML tables and sections, PDF text, OA package members, supplementary PDF text, locator index, and linked DBAASP/CAMP JSONL rows. No external acquisition was needed and no owner-layer source gap remains."
+  },
+  "checked_inputs": [
+    "rework_context/doi__10.3390_toxins11100562/handoff_context.json",
+    "paper_packets/doi__10.3390_toxins11100562/packet_manifest.json",
+    "paper_packets/doi__10.3390_toxins11100562/locators/locator_index.json",
+    "paper_packets/doi__10.3390_toxins11100562/extraction/extraction_status.json",
+    "paper_packets/doi__10.3390_toxins11100562/extraction/extraction_quality_report.json",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/xml_sections.json",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/figure_captions.json",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/pdf_text/toxins-11-00562.txt",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/pdf_text/local-DBAASP-PMC6832575.txt",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/supplementary_text/toxins-11-00562-s001.txt",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/oa_package/local-DBAASP-PMC6832575/PMC6832575/toxins-11-00562.nxml",
+    "paper_packets/doi__10.3390_toxins11100562/extracted/oa_package/local-DBAASP-PMC6832575/PMC6832575/toxins-11-00562-s001.pdf",
+    "paper_packets/doi__10.3390_toxins11100562/database/database_source_manifest.json",
+    "paper_packets/doi__10.3390_toxins11100562/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.3390_toxins11100562/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.3390_toxins11100562/database/linked_literature_records.jsonl",
+    "papers/doi__10.3390_toxins11100562/source/paper.xml",
+    "papers/doi__10.3390_toxins11100562/source/paper.pdf"
+  ],
+  "semantic_quality_checks": {
+    "database_status_summary": {
+      "source_verified": 30,
+      "source_conflict": 6,
+      "database_only_no_primary_source": 2
+    },
+    "activity_rows_parsed": 46,
+    "activity_rows_have_raw_values_and_units": true,
+    "activity_rows_have_source_locators": true,
+    "antimicrobial_nonactivity_rows": 11,
+    "table2_injection_survival_rows": 15,
+    "table3_behavior_rows": 3,
+    "supplementary_text_rows": 17,
+    "mechanism_claims": 3,
+    "mechanism_claims_publication_grade": true,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "unrecoverable_material_gaps": []
+  },
+  "per_layer_decision_rationale": {
+    "layer_1_database": "Worker-4 rechecked linked DBAASP assay/experiment/literature rows against article metadata, peptide sequence/modification text, antimicrobial methods, and Table 2 activity rows. U-MYRTX-MANr1 rows are source_verified; Myrmica comparator and CAMP aggregate rows retain explicit caution statuses instead of being smoothed away.",
+    "layer_2_activity_toxicity": "Worker-2 replaced the empty parser output with source-backed row-level records from antimicrobial text/methods, XML Table 2/3, and supplementary PDF text Tables S1/S6. Rows retain endpoints, raw values, units or qualitative-unit rationale, target species/strain, conditions, statistics when reported, and source locators.",
+    "layer_3_mechanism": "Worker-6 accepts only phenotype-level insecticidal and wound-healing/coagulation context. The final mechanism record does not claim a direct molecular target, antimicrobial mechanism, or exact channel/coagulation-protein target.",
+    "adjudication": "The blocking rework ticket rwk-complete-test-0001 is closed after owner-layer source review. Acceptance remains accepted_with_cautions because comparator/database-only rows and bounded mechanism interpretation require visible cautions."
+  },
+  "adjudication_summary": "Source-reviewed owner-layer rework repaired the missing activity/toxicity rows, adjudicated linked database conflicts, and replaced framework-test review placeholders. The paper is publication-grade accepted_with_cautions with no open rework targets and no unrecoverable owner-layer gaps.",
+  "summary": "U-MYRTX-MANr1 is source-supported as an amidated Manica rubida decapeptide with no antimicrobial activity up to 512 ug/mL but strong injection insecticidal phenotype in Acyrthosiphon pisum; database conflicts are preserved where local primary support is incomplete.",
+  "caution_findings": [
+    {
+      "code": "negative_antimicrobial_endpoint_is_censored",
+      "severity": "caution",
+      "finding": "MIC rows are reported as no activity up to 512 ug/mL, not exact MIC values; final rows use >512 ug/mL and avoid converting to molar units."
+    },
+    {
+      "code": "myrmica_comparator_sequence_not_local_primary",
+      "severity": "caution",
+      "finding": "U-MYRTX-MYRrub1 comparator activity values are source-supported in this paper, but sequence/identity primary support is cited prior work; database rows remain source_conflict rather than source_verified."
+    },
+    {
+      "code": "camp_rows_database_only_no_local_sequence_snapshot",
+      "severity": "caution",
+      "finding": "Two CAMP aggregate rows are retained as database_only_no_primary_source because no local CAMP sequence snapshot or identifier mapping exists."
+    },
+    {
+      "code": "mechanism_phenotype_only",
+      "severity": "caution",
+      "finding": "Aphid toxicity, paralysis, and hemolymph/wound-healing effects are source-backed phenotypes; final curation does not claim a direct molecular target."
+    },
+    {
+      "code": "supplement_pdf_text_no_structured_spreadsheet",
+      "severity": "caution",
+      "finding": "The local supplement is a PDF; recoverable tables were extracted from local text, and no separate spreadsheet asset was present."
+    }
+  ],
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "unrecoverable_material_gaps": [],
+  "strict_gate": {
+    "required_rework_count": 0,
+    "open_rework_ticket_ids": [],
+    "closed_rework_ticket_ids": [
+      "rwk-complete-test-0001"
+    ],
+    "semantic_gate_expected": "pass_after_repair",
+    "publication_quality_expected": "pass_after_repair"
+  }
+}

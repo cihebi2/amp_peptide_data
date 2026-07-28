@@ -1,0 +1,68 @@
+{
+  "paper_id": "doi__10.3390_biom8040122",
+  "generated_at": "2026-05-08T12:27:19Z",
+  "issue_count": 0,
+  "qc_failure_reasons": [],
+  "rework_targets": [],
+  "rework_context_packet_required": false,
+  "resolved_rework_ticket_ids": [
+    "rwk-complete-test-0001"
+  ],
+  "publication_grade_ready": true,
+  "unrecoverable_material_gaps": [
+    {
+      "gap_code": "exact_dbaasp_sequence_not_embedded_in_local_material",
+      "source_paths_checked": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/raw/paper.xml",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/raw/paper.pdf",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/database/linked_sequence_records.jsonl",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/database/linked_assay_records.jsonl"
+      ],
+      "tools_attempted": [
+        "XML section search",
+        "PDF text search",
+        "linked database JSONL reconciliation"
+      ],
+      "why_unrecoverable": "Local paper material identifies AA230 as the studied peptide but does not embed an exact sequence/modification row for the DBAASP peptide annotation; linked_sequence_records.jsonl is empty.",
+      "impact": "Database identity is preserved as a source-level caution; activity and FIC values remain source-supported from Tables 1 and 2.",
+      "owner_worker": "worker-4",
+      "blocks_publication_grade": false
+    },
+    {
+      "gap_code": "no_local_supplementary_assets_present",
+      "source_paths_checked": [
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/extracted/supplementary_index.json",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/extracted/archive_manifest.json",
+        "/root/work/抗菌肽/数据库/batch/4-team/paper_packets/doi__10.3390_biom8040122/raw/oa_package/local-DBAASP-PMC6315934.tar.gz"
+      ],
+      "tools_attempted": [
+        "OA package manifest inspection",
+        "supplementary index inspection"
+      ],
+      "why_unrecoverable": "The local landed paper and OA package contain XML/PDF/figures but no separate supplementary asset or supplementary table file.",
+      "impact": "No supplement-derived activity/toxicity/mechanism values were added; primary XML Tables 1 and 2 cover the rework blocker.",
+      "owner_worker": "worker-6",
+      "blocks_publication_grade": false
+    }
+  ],
+  "caution_findings": [
+    {
+      "caution_code": "database_sequence_identity_not_primary_source_verified",
+      "evidence_context": "AA230 is source-identified, but exact DBAASP modified sequence details are not embedded in local XML/PDF/database sequence snapshots.",
+      "affected_records": [
+        "DBAASP:DBAASPS_7485"
+      ],
+      "blocking": false
+    },
+    {
+      "caution_code": "no_supplementary_assets_present",
+      "evidence_context": "OA package and supplementary index contain no separate supplementary assets; no supplement-derived values were invented.",
+      "blocking": false
+    },
+    {
+      "caution_code": "figure_curves_not_digitized",
+      "evidence_context": "Time-kill figures support qualitative functional claims; exact curve-derived values were not extracted as row-level numeric endpoints.",
+      "blocking": false
+    }
+  ]
+}

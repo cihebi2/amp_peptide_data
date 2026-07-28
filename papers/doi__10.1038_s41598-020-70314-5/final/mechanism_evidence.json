@@ -1,0 +1,76 @@
+{
+  "paper_id": "doi__10.1038_s41598-020-70314-5",
+  "generated_at": "2026-05-03T16:48:52Z",
+  "extraction_scope": {
+    "owner_worker": "worker-6 final adjudication of mechanism artifact",
+    "checked_inputs": [
+      "paper_packets/doi__10.1038_s41598-020-70314-5/raw/paper.xml",
+      "paper_packets/doi__10.1038_s41598-020-70314-5/extracted/pdf_text/41598_2020_Article_70314.txt",
+      "paper_packets/doi__10.1038_s41598-020-70314-5/extracted/figure_captions.json",
+      "paper_packets/doi__10.1038_s41598-020-70314-5/extracted/pdf_text/41598_2020_70314_MOESM1_ESM.txt"
+    ],
+    "source_reviewed": true
+  },
+  "mechanism_claims": [
+    {
+      "claim_id": "mech-atR100-membrane-permeabilization",
+      "claim_text": "Purified AtR100 damages/permeabilizes Bacillus subtilis 168 cell membranes, supported by PI staining microscopy and flow-cytometry increases from PBS control to AtR100-treated cells.",
+      "entity_scope": "AtR100 purified protein",
+      "evidence_class": "direct_mechanism",
+      "direct_assay_types": [
+        "propidium iodide fluorescence microscopy",
+        "flow cytometry"
+      ],
+      "target": {
+        "species": "Bacillus subtilis",
+        "strain_or_isolate": "168"
+      },
+      "raw_values": [
+        {
+          "condition": "PBS control",
+          "fluorescent_cells_percent": "1.7"
+        },
+        {
+          "condition": "20 ng/µL AtR100",
+          "fluorescent_cells_percent": "56.7"
+        },
+        {
+          "condition": "40 ng/µL AtR100",
+          "fluorescent_cells_percent": "92.1"
+        }
+      ],
+      "source_locator": {
+        "locator": "xml:sec=12:Effect of purified AtR100 protein on cell membranes; xml:fig=5:Figure 5",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-70314-5/raw/paper.xml"
+      },
+      "limitations": "Direct membrane evidence was generated for purified AtR100; AtR472 was not quantified in this PI/flow-cytometry assay."
+    },
+    {
+      "claim_id": "mech-atR472-expression-host-cell-damage",
+      "claim_text": "AtR472 expression in Bacillus subtilis caused host-cell autolysis and SEM-visible cell damage in the screening system.",
+      "entity_scope": "AtR472 expressed in Bacillus subtilis screening host",
+      "evidence_class": "direct_cell_damage_context",
+      "target": {
+        "species": "Bacillus subtilis",
+        "strain_or_isolate": "screening host"
+      },
+      "source_locator": {
+        "locator": "xml:fig=1:Figure 1",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-70314-5/raw/paper.xml"
+      },
+      "limitations": "This is host-cell damage/autolysis evidence from expression screening, not a quantified membrane-permeabilization assay for purified AtR472."
+    },
+    {
+      "claim_id": "mech-structure-prediction-context",
+      "claim_text": "AtR100 and AtR472 were predicted to contain both α-helix and β-strand structure; the paper treats this as structure-function context rather than direct mechanism proof.",
+      "entity_scope": "AtR100 and AtR472",
+      "evidence_class": "computational_context",
+      "source_locator": {
+        "locator": "xml:table=2; xml:sec=11:Bioinformatics analysis of antimicrobial proteins",
+        "source_path": "paper_packets/doi__10.1038_s41598-020-70314-5/raw/paper.xml"
+      },
+      "limitations": "Secondary-structure prediction supports context only and is not promoted to direct mechanism evidence."
+    }
+  ],
+  "summary": "Worker-6 replaced automated mechanism-context placeholders with source-reviewed membrane/cell-damage and computational-context claims."
+}

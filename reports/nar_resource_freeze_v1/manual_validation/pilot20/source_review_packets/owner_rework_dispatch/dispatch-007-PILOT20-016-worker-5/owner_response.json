@@ -1,0 +1,159 @@
+{
+  "ticket_id": "pilot20-016-true-review-rwk-001",
+  "paper_id": "doi__10.1038_srep24000",
+  "owner_worker": "worker-5_mechanism_ontology_extractor",
+  "action_taken": "repair_ready",
+  "files_to_update_or_review": [
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/analysis/mechanism_evidence.json",
+      "dispatch_pass_status": "updated_by_worker5",
+      "repair_performed": [
+        {
+          "claim_id": "mech-001",
+          "previous_evidence_class": "mechanistic_context",
+          "new_evidence_class": "inferred_mechanism",
+          "basis": "xml:sec=4:Cytotoxicity assay and xml:sec=10:Discussion support a structure-activity interpretation around amphipathicity and hydrophobicity, not a direct mechanism assay."
+        },
+        {
+          "claim_id": "mech-003",
+          "previous_evidence_class": "mechanistic_context",
+          "new_evidence_class": "inferred_mechanism",
+          "basis": "xml:sec=5:Cell membrane constituents assays, xml:fig=2, and xml:sec=10:Discussion support measured cell-surface composition as selectivity context, not standalone causal proof for every analogue."
+        }
+      ],
+      "direct_mechanism_claims_preserved": [
+        {
+          "claim_id": "mech-002",
+          "evidence_class": "direct_mechanism",
+          "direct_assay_types_retained": true,
+          "locator": "xml:table=2; xml:fig=4; xml:sec=18:EPR samples preparation and measurements"
+        }
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/final/mechanism_evidence.json",
+      "dispatch_pass_status": "not_edited_worker6_review_required",
+      "recommended_repair": "Mirror the worker-5 ontology repair after adjudication: mech-001 and mech-003 should use inferred_mechanism; mech-002 should remain direct_mechanism with direct_assay_types and locators retained."
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/mechanism_evidence.json",
+      "dispatch_pass_status": "not_edited_worker6_review_required",
+      "recommended_repair": "Canonical final copy still contains non-standard mechanistic_context values until worker-6 or an explicit repair task refreshes final artifacts."
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+      "dispatch_pass_status": "not_edited_worker6_review_required",
+      "recommended_repair": "Replace mechanism_claims[mech-001].evidence_class and mechanism_claims[mech-003].evidence_class with inferred_mechanism while preserving claim text, entity scope, locators, and limitation notes."
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+      "dispatch_pass_status": "not_edited_worker6_owned",
+      "recommended_review": "Reconcile stale analysis_needs_analysis_rework, open rework ticket, and test_scope signals after the mechanism repair."
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/review_report.json",
+      "dispatch_pass_status": "not_edited_worker6_owned",
+      "recommended_review": "Worker-6 must re-adjudicate terminal status and publication_grade after final mechanism and packet metadata are reconciled."
+    }
+  ],
+  "source_inputs_checked": [
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/true_review_result.json",
+      "checked_for": "prior source-review decision, invalid layer-3 evidence classes, target locators, and worker-6 follow-up requirements"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/rework_ticket.json",
+      "checked_for": "ticket scope, requested outputs, required locators, acceptance checks, and blocking gates"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/owner_rework_dispatch/dispatch-007-PILOT20-016-worker-5/dispatch_packet.json",
+      "checked_for": "owner-worker dispatch context and local handoff scope"
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/mechanism_ontology_record.json",
+      "checked_for": "current claim IDs, source locators, limitations, direct assay types, and invalid custom evidence_class values"
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/mechanism_evidence.json",
+      "checked_for": "canonical mechanism mirror status before dispatch-pass repair"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/analysis/mechanism_evidence.json",
+      "checked_for": "worker-5 owned analysis mechanism artifact repaired in this pass"
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/source/paper.xml",
+      "checked_locators": [
+        "xml:sec=4:Cytotoxicity assay",
+        "xml:sec=5:Cell membrane constituents assays",
+        "xml:sec=10:Discussion",
+        "xml:sec=18:EPR samples preparation and measurements"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/raw/paper.xml",
+      "checked_for": "raw packet XML corroboration of source locators"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/extracted/xml_sections.json",
+      "checked_locators": [
+        "xml:sec=4:Cytotoxicity assay",
+        "xml:sec=5:Cell membrane constituents assays",
+        "xml:sec=10:Discussion",
+        "xml:sec=18:EPR samples preparation and measurements"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/extracted/figure_captions.json",
+      "checked_locators": [
+        "xml:fig=2:Figure 2",
+        "xml:fig=4:Figure 4"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/locators/locator_index.json",
+      "checked_locators": [
+        "xml:table=2",
+        "xml:fig=2",
+        "xml:fig=4"
+      ]
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/extraction/extraction_status.json",
+      "checked_for": "material_extracted_with_gaps status and absence of extraction errors"
+    },
+    {
+      "path": "reports/nar_resource_freeze_v1/manual_validation/pilot20/source_review_packets/PILOT20-016__doi__10.1038_srep24000/material_inventory.json",
+      "checked_for": "available primary XML/PDF/OA/supplement/database surfaces and packet status cautions"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/analysis/analysis_status.json",
+      "checked_for": "worker-6 owned terminal-status conflict context"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/packet_manifest.json",
+      "checked_for": "worker-6 owned packet status, open ticket, and test_scope conflict context"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/rework/rework_requests.jsonl",
+      "checked_for": "pre-existing open rework signal cited by the true review ticket"
+    },
+    {
+      "path": "paper_packets/doi__10.1038_srep24000/rework/rework_responses.jsonl",
+      "checked_for": "pre-existing resolved responses and stale manifest mismatch context"
+    },
+    {
+      "path": "papers/doi__10.1038_srep24000/final/review_report.json",
+      "checked_for": "final publication_grade and accepted_with_cautions status needing worker-6 re-adjudication"
+    }
+  ],
+  "remaining_gaps": [
+    "Worker-5 found no missing source material blocking the ontology repair for mech-001 and mech-003.",
+    "Canonical final files under papers/doi__10.1038_srep24000/final/ were intentionally not edited in this dispatch pass and still need final refresh/adjudication.",
+    "paper_packets/doi__10.1038_srep24000/final/mechanism_evidence.json was not edited and still needs worker-6 review or final refresh.",
+    "Packet terminal metadata remains contradictory: packet_manifest.json still reports analysis_needs_analysis_rework, open_rework_ticket_ids, and test_scope language while analysis_status.json and final review_report.json report accepted/closed states.",
+    "The material_extracted_with_gaps status remains a caution but did not block this mechanism ontology classification because the required XML sections, figure captions, and locator index entries were available.",
+    "Worker-5 does not claim publication-grade acceptance; worker-6 follow-up is required for terminal status and final review_report acceptance."
+  ],
+  "worker6_followup_required": true
+}

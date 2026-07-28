@@ -1,0 +1,85 @@
+{
+  "adjudication_summary": "Source re-review recovered the missing antiviral IC50 activity layer, resolved linked DBAASP row adjudication against local paper text/figures, repaired gate-required activity/mechanism schema fields, and closed the prior rework target. Remaining cautions are nonblocking provenance/scope cautions.",
+  "caution_findings": [
+    {
+      "caution_code": "antiviral_not_antibacterial_scope",
+      "evidence_context": "The paper reports SARS-CoV-2 antiviral IC50 values for HR2 peptides. No MIC/MBC/hemolysis/cytotoxicity values were found in local XML/PDF/supplement text.",
+      "severity": "nonblocking_caution"
+    },
+    {
+      "caution_code": "values_from_prose_and_figures_not_structured_tables",
+      "evidence_context": "XML has no table-wrap elements for activity data; exact IC50 values were recovered from article prose and figure-linked text, with figure locators retained.",
+      "severity": "nonblocking_caution"
+    },
+    {
+      "caution_code": "linked_sequence_snapshot_absent",
+      "evidence_context": "The database packet lacks linked_sequence_records; sequence/name checks used primary-source Fig. 1A/PDF text.",
+      "severity": "nonblocking_caution"
+    }
+  ],
+  "checked_inputs": [
+    "paper_packets/doi__10.1073_pnas.2210990119/packet_manifest.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/locators/locator_index.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/extracted/xml_sections.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/extracted/figure_captions.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/extracted/pdf_text/pnas.202210990.txt",
+    "paper_packets/doi__10.1073_pnas.2210990119/extracted/pdf_text/pnas.2210990119.sapp.txt",
+    "paper_packets/doi__10.1073_pnas.2210990119/database/linked_assay_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2210990119/database/linked_experiment_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2210990119/database/linked_literature_records.jsonl",
+    "paper_packets/doi__10.1073_pnas.2210990119/analysis/activity_toxicity_evidence.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/analysis/database_record_audit.json",
+    "paper_packets/doi__10.1073_pnas.2210990119/analysis/mechanism_evidence.json"
+  ],
+  "materials_exhausted": {
+    "merged_database_rows": true,
+    "note": "Local obtainable materials were sufficient to source-review the linked DBAASP activity/database rows. No external supplementation was used.",
+    "oa_package": true,
+    "paper_pdf_text": true,
+    "paper_xml": true,
+    "supplementary_assets": true
+  },
+  "paper_id": "doi__10.1073_pnas.2210990119",
+  "per_layer_decision_rationale": {
+    "adjudication": "The prior rework ticket is closed because the previously missing source review, database adjudication, and activity extraction have been completed from local obtainable materials.",
+    "layer_1_database": "Worker-4 repair matched all 12 linked DBAASP assay rows and 12 duplicate experiment rows to primary-source IC50 prose/figure locators; 3 literature rows match DOI/PMID/PMCID metadata. No source_conflict remains for the local packet rows.",
+    "layer_2_activity_toxicity": "Worker-2 repair extracted 12 antiviral IC50 rows with raw nM values, assay systems, cell lines, variant/strain context, database row links, and primary-source locators. No antibacterial MIC or toxicity rows are reported by the paper; this is recorded as a nonblocking scope caution.",
+    "layer_3_mechanism": "Worker-6 mechanism review preserves HR1/HR2 structural evidence, direct functional fusion/infection assays, and supported prehairpin-entry inference without labeling structural-only evidence as a direct_mechanism assay."
+  },
+  "publication_grade": true,
+  "qc_failure_reasons": [],
+  "reasoning_effort": "xhigh",
+  "review_model": "gpt-5.5",
+  "review_status": "accepted_with_cautions",
+  "reviewed_at": "2026-06-20T13:16:52Z",
+  "rework_targets": [],
+  "semantic_quality_checks": {
+    "activity_rows_have_endpoint_value_unit_target_locator": true,
+    "activity_rows_parsed": 12,
+    "database_status_summary": {
+      "database_only_no_primary_source": 0,
+      "sequence_modified_not_normalized": 0,
+      "source_conflict": 0,
+      "source_verified": 27,
+      "unresolved_record": 0
+    },
+    "mechanism_claims": 3,
+    "mechanism_overclaim_check": "passed: antiviral HR1/HR2 fusion-entry mechanism only; no antibacterial membrane-permeabilization claim",
+    "mechanism_schema_repair": "mech-001 classified as structural_mechanism_evidence rather than direct_mechanism to avoid assay-overclaim gate failure",
+    "open_rework_targets": 0,
+    "schema_gate_repairs": "added top-level species/source_locator activity fields and assay fields for direct mechanism claims",
+    "toxicity_rows_parsed": 0,
+    "unrecoverable_material_gaps": 0
+  },
+  "source_review_depth": [
+    "paper_xml",
+    "article_pdf_text",
+    "oa_package_nxml_pdf",
+    "supplementary_pdf_text",
+    "figure_captions",
+    "linked_DBAASP_rows"
+  ],
+  "source_reviewed": true,
+  "unrecoverable_material_gaps": [],
+  "validator_contract_passed": true
+}
